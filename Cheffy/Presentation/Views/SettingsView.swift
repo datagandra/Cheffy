@@ -33,6 +33,8 @@ struct SettingsView: View {
 
             
 
+            
+
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.large)
@@ -276,6 +278,8 @@ struct SettingsView: View {
             Text("PRO users get unlimited recipe generations and advanced features.")
         }
     }
+    
+
     
 
     
