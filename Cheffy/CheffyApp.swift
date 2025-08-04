@@ -38,15 +38,24 @@ struct CheffyApp: App {
     }
     
     private func setupGemini() {
-        // Use environment variable or secure configuration
-        let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
-        recipeManager.openAIClient.setAPIKey(apiKey)
+        // Use secure configuration manager
+        let secureConfig = SecureConfigManager.shared
+        let apiKey = secureConfig.geminiAPIKey
         
-        // Also save to keychain for persistence
-        let keychain = Keychain(service: "com.cheffy.app")
-        try? keychain.set(apiKey, key: "gemini_api_key")
+        if !apiKey.isEmpty {
+            recipeManager.openAIClient.setAPIKey(apiKey)
+            logger.security("Gemini API configured securely")
+            
+            // Perform security audit
+            let audit = secureConfig.performSecurityAudit()
+            if !audit.isSecure {
+                logger.warning("Security audit issues: \(audit.description)")
+            }
+        } else {
+            logger.error("No valid API key found - app functionality will be limited")
+        }
         
         // Log API key status (privacy-compliant)
-        os_log("Gemini API configured - hasKey: %{public}@", log: .default, type: .info, recipeManager.openAIClient.hasAPIKey() ? "true" : "false")
+        os_log("Gemini API configured - hasKey: %{public}@", log: .default, type: .info, secureConfig.hasValidAPIKey ? "true" : "false")
     }
 } 

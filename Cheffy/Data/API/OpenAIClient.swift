@@ -69,9 +69,15 @@ class OpenAIClient: ObservableObject {
     
     // MARK: - API Key Management
     private func loadAPIKey() {
-        // Use environment variable or secure configuration
-        self.apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
-        print("🔑 Gemini API key loaded")
+        // Use secure configuration manager
+        let secureConfig = SecureConfigManager.shared
+        self.apiKey = secureConfig.geminiAPIKey
+        
+        if let apiKey = self.apiKey, !apiKey.isEmpty {
+            logger.api("Gemini API key loaded securely")
+        } else {
+            logger.warning("No API key available - functionality will be limited")
+        }
     }
     
     func hasAPIKey() -> Bool {

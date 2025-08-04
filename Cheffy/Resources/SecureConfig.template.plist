@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 
+    SECURE CONFIGURATION TEMPLATE
+    
+    IMPORTANT SECURITY NOTES:
+    1. NEVER commit real API keys to source control
+    2. This file should be in .gitignore
+    3. Use environment variables in production
+    4. Use keychain for local development
+    
+    SETUP INSTRUCTIONS:
+    1. Copy this file to SecureConfig.plist
+    2. Replace YOUR_GEMINI_API_KEY_HERE with your actual API key
+    3. Add SecureConfig.plist to .gitignore
+    4. For production, use environment variables instead
+    -->
+    
+    <!-- Gemini API Configuration -->
+    <key>GEMINI_API_KEY</key>
+    <string>YOUR_GEMINI_API_KEY_HERE</string>
+    
+    <!-- Stripe Configuration -->
+    <key>STRIPE_PUBLISHABLE_KEY</key>
+    <string>pk_test_your_stripe_publishable_key_here</string>
+    
+    <!-- App Configuration -->
+    <key>APP_ENVIRONMENT</key>
+    <string>development</string>
+    
+    <!-- Feature Flags -->
+    <key>ENABLE_ANALYTICS</key>
+    <false/>
+    
+    <key>ENABLE_CRASH_REPORTING</key>
+    <false/>
+    
+    <key>ENABLE_DEBUG_LOGGING</key>
+    <true/>
+</dict>
+</plist> 

@@ -100,6 +100,14 @@ iOSInjectionProject/
 # Secure configuration files
 Cheffy/Resources/SecureConfig.plist
 Config/SecureConfig.plist
+*.plist.template
+
+# API Keys and Secrets
+.env
+.env.local
+.env.*.local
+secrets/
+keys/
 
 # Fastlane
 fastlane/report.xml
