@@ -1,0 +1,39 @@
+name: Cheffy
+options:
+  bundleIdPrefix: com.cheffy
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: en
+  xcodeVersion: "15.0"
+
+targets:
+  Cheffy:
+    type: application
+    platform: iOS
+    sources:
+      - path: Cheffy
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.cheffy.app
+      GENERATE_INFOPLIST_FILE: YES
+      INFOPLIST_KEY_NSMicrophoneUsageDescription: "This app uses the microphone for voice commands and speech recognition."
+      INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "This app uses speech recognition to convert your voice to text for recipe generation."
+      INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+      INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+      INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+      INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+    dependencies:
+      - package: KeychainAccess
+      - package: Stripe
+      - package: SDWebImageSwiftUI
+
+packages:
+  KeychainAccess:
+    url: https://github.com/kishikawakatsumi/KeychainAccess
+    from: 4.2.2
+  Stripe:
+    url: https://github.com/stripe/stripe-ios
+    from: 23.0.0
+  SDWebImageSwiftUI:
+    url: https://github.com/SDWebImage/SDWebImageSwiftUI
+    from: 2.0.0 
