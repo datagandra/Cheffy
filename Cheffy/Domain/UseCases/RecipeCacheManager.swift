@@ -23,17 +23,17 @@ class RecipeCacheManager: ObservableObject {
     /// Caches a recipe locally for offline access
     /// - Parameter recipe: The recipe to cache
     func cacheRecipe(_ recipe: Recipe) {
-        print("🔄 Attempting to cache recipe: \(recipe.name)")
+        logger.cache("Attempting to cache recipe: \(recipe.name)")
         
         // Check if recipe already exists in cache
         if let existingIndex = cachedRecipes.firstIndex(where: { $0.id == recipe.id }) {
             // Update existing recipe
             cachedRecipes[existingIndex] = recipe
-            print("📝 Updated existing recipe in cache: \(recipe.name)")
+            logger.cache("Updated existing recipe in cache: \(recipe.name)")
         } else {
             // Add new recipe to cache
             cachedRecipes.append(recipe)
-            print("➕ Added new recipe to cache: \(recipe.name)")
+            logger.cache("Added new recipe to cache: \(recipe.name)")
         }
         
         // Add to recently viewed
@@ -43,8 +43,8 @@ class RecipeCacheManager: ObservableObject {
         saveCachedRecipes()
         saveRecentlyViewedRecipes()
         
-        print("✅ Successfully cached recipe: \(recipe.name)")
-        print("📊 Current cache size: \(cachedRecipes.count)/\(maxCacheSize)")
+        logger.cache("Successfully cached recipe: \(recipe.name)")
+        logger.cache("Current cache size: \(cachedRecipes.count)/\(maxCacheSize)")
     }
     
     /// Caches multiple recipes at once
@@ -94,14 +94,14 @@ class RecipeCacheManager: ObservableObject {
     func removeFromCache(_ recipe: Recipe) {
         cachedRecipes.removeAll { $0.id == recipe.id }
         saveCachedRecipes()
-        print("🗑️ Removed from cache: \(recipe.name)")
+        logger.cache("Removed from cache: \(recipe.name)")
     }
     
     /// Clears all cached recipes
     func clearCache() {
         cachedRecipes.removeAll()
         saveCachedRecipes()
-        print("🗑️ Cleared all cached recipes")
+        logger.cache("Cleared all cached recipes")
     }
     
     /// Removes expired recipes from cache
@@ -111,7 +111,7 @@ class RecipeCacheManager: ObservableObject {
             recipe.createdAt < expirationDate
         }
         saveCachedRecipes()
-        print("🧹 Cleaned expired cache entries")
+        logger.cache("Cleaned expired cache entries")
     }
     
     // MARK: - Recently Viewed Recipes
@@ -141,7 +141,7 @@ class RecipeCacheManager: ObservableObject {
     func cacheCookingInstructions(recipeId: UUID, instructions: String) {
         let key = "cooking_instructions_\(recipeId.uuidString)"
         UserDefaults.standard.set(instructions, forKey: key)
-        print("📝 Cached cooking instructions for recipe: \(recipeId)")
+        logger.cache("Cached cooking instructions for recipe: \(recipeId)")
     }
     
     /// Retrieves cached cooking instructions for a recipe
@@ -193,9 +193,9 @@ class RecipeCacheManager: ObservableObject {
         do {
             let data = try JSONEncoder().encode(cachedRecipes)
             UserDefaults.standard.set(data, forKey: "cached_recipes")
-            print("💾 Saved \(cachedRecipes.count) recipes to UserDefaults")
+            logger.cache("Saved \(cachedRecipes.count) recipes to UserDefaults")
         } catch {
-            print("❌ Error saving cached recipes: \(error)")
+            logger.error("Error saving cached recipes: \(error)")
         }
     }
     
@@ -203,15 +203,15 @@ class RecipeCacheManager: ObservableObject {
     private func loadCachedRecipes() {
         guard let data = UserDefaults.standard.data(forKey: "cached_recipes") else {
             cachedRecipes = []
-            print("📱 No cached recipes found in UserDefaults")
+            logger.cache("No cached recipes found in UserDefaults")
             return
         }
         
         do {
             cachedRecipes = try JSONDecoder().decode([Recipe].self, from: data)
-            print("📱 Loaded \(cachedRecipes.count) recipes from UserDefaults")
+            logger.cache("Loaded \(cachedRecipes.count) recipes from UserDefaults")
         } catch {
-            print("❌ Error loading cached recipes: \(error)")
+            logger.error("Error loading cached recipes: \(error)")
             cachedRecipes = []
         }
     }
@@ -222,7 +222,7 @@ class RecipeCacheManager: ObservableObject {
             let data = try JSONEncoder().encode(recentlyViewedRecipes)
             UserDefaults.standard.set(data, forKey: "recently_viewed_recipes")
         } catch {
-            print("❌ Error saving recently viewed recipes: \(error)")
+            logger.error("Error saving recently viewed recipes: \(error)")
         }
     }
     
@@ -236,7 +236,7 @@ class RecipeCacheManager: ObservableObject {
         do {
             recentlyViewedRecipes = try JSONDecoder().decode([Recipe].self, from: data)
         } catch {
-            print("❌ Error loading recently viewed recipes: \(error)")
+            logger.error("Error loading recently viewed recipes: \(error)")
             recentlyViewedRecipes = []
         }
     }

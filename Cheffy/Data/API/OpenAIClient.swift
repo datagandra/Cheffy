@@ -86,17 +86,17 @@ class OpenAIClient: ObservableObject {
     
     func setAPIKey(_ key: String) {
         self.apiKey = key
-        print("🔑 Gemini API key updated")
+        logger.api("Gemini API key updated")
     }
 
     // MARK: - API Testing
     func testAPIKey() async -> Bool {
         guard let apiKey = apiKey else {
-            print("❌ No API key found")
+            logger.warning("No API key found")
             return false
         }
         
-        print("🔑 Testing API key...")
+        logger.api("Testing API key...")
         
         let testPrompt = "Hello, please respond with 'API test successful'"
         let request = GeminiRequest(
@@ -125,12 +125,12 @@ class OpenAIClient: ObservableObject {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("📡 Test HTTP Status: \(httpResponse.statusCode)")
+                logger.api("Test HTTP Status: \(httpResponse.statusCode)")
                 
                 if httpResponse.statusCode != 200 {
-                    print("❌ Test failed with HTTP \(httpResponse.statusCode)")
+                    logger.error("Test failed with HTTP \(httpResponse.statusCode)")
                     if let errorString = String(data: data, encoding: .utf8) {
-                        print("📄 Test error response: \(errorString)")
+                        logger.error("Test error response: \(errorString)")
                     }
                     return false
                 }
@@ -139,14 +139,14 @@ class OpenAIClient: ObservableObject {
             let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
             
             if let content = geminiResponse.candidates.first?.content.parts.first?.text {
-                print("✅ API test successful: \(content)")
+                logger.api("API test successful: \(content)")
                 return true
             } else {
-                print("❌ Test failed: No content in response")
+                logger.error("Test failed: No content in response")
                 return false
             }
         } catch {
-            print("❌ API test failed: \(error)")
+            logger.error("API test failed: \(error)")
             return false
         }
     }
@@ -163,11 +163,11 @@ class OpenAIClient: ObservableObject {
         servings: Int = 2
     ) async throws -> Recipe {
         guard let apiKey = apiKey else {
-            print("❌ No API key found")
+            logger.warning("No API key found")
             throw GeminiError.noAPIKey
         }
         
-        print("✅ API key found, starting generation...")
+        logger.api("API key found, starting generation...")
         isLoading = true
         error = nil
         
@@ -175,7 +175,7 @@ class OpenAIClient: ObservableObject {
         
         let prompt: String
         if let userPrompt = userPrompt, !userPrompt.isEmpty {
-            print("📝 Using user prompt: \(userPrompt)")
+            logger.api("Using user prompt: \(userPrompt)")
             prompt = userPrompt + """
 
                         IMPORTANT: You must respond with ONLY valid JSON in the exact format specified below. Do not include any additional text, explanations, or markdown formatting.
@@ -217,7 +217,7 @@ class OpenAIClient: ObservableObject {
                         }
                         """
         } else {
-            print("📝 Using structured prompt")
+            logger.api("Using structured prompt")
             prompt = createRecipePrompt(
                 cuisine: cuisine,
                 difficulty: difficulty,
@@ -229,7 +229,7 @@ class OpenAIClient: ObservableObject {
             )
         }
         
-        print("🌐 Making API request to Gemini...")
+        logger.api("Making API request to Gemini...")
         
         let request = GeminiRequest(
             contents: [
@@ -283,17 +283,17 @@ class OpenAIClient: ObservableObject {
             let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
             
             guard let content = geminiResponse.candidates.first?.content.parts.first?.text else {
-                print("❌ No content in response")
-                print("🔍 Candidates count: \(geminiResponse.candidates.count)")
+                logger.error("No content in response")
+                logger.debug("Candidates count: \(geminiResponse.candidates.count)")
                 if let firstCandidate = geminiResponse.candidates.first {
-                    print("🔍 First candidate content parts: \(firstCandidate.content.parts.count)")
+                    logger.debug("First candidate content parts: \(firstCandidate.content.parts.count)")
                 }
                 throw GeminiError.noContent
             }
             
-            print("✅ API request successful, parsing response...")
-            print("📄 Response content length: \(content.count) characters")
-            print("📄 Response content: \(content)")
+            logger.api("API request successful, parsing response...")
+            logger.debug("Response content length: \(content.count) characters")
+            logger.debug("Response content: \(content)")
             
             let recipe = try parseRecipeFromResponse(content, cuisine: cuisine, difficulty: difficulty)
             
@@ -301,9 +301,9 @@ class OpenAIClient: ObservableObject {
             if !dietaryRestrictions.isEmpty {
                 let isCompliant = validateRecipeCompliance(recipe, against: dietaryRestrictions)
                 if !isCompliant {
-                    print("⚠️ Generated recipe does not comply with dietary restrictions")
-                    print("🔍 Recipe ingredients: \(recipe.ingredients.map { $0.name })")
-                    print("🔍 Required restrictions: \(dietaryRestrictions.map { $0.rawValue })")
+                    logger.warning("Generated recipe does not comply with dietary restrictions")
+                    logger.debug("Recipe ingredients: \(recipe.ingredients.map { $0.name })")
+                    logger.debug("Required restrictions: \(dietaryRestrictions.map { $0.rawValue })")
                     throw GeminiError.apiError("Generated recipe does not comply with selected dietary restrictions")
                 }
             }
@@ -326,14 +326,14 @@ class OpenAIClient: ObservableObject {
         servings: Int = 2
     ) async throws -> [Recipe] {
         guard let apiKey = apiKey else {
-            print("❌ No API key found")
+            logger.warning("No API key found")
             throw GeminiError.noAPIKey
         }
         
-        print("✅ API key found, starting popular recipes generation...")
-        print("🍽️ Cuisine: \(cuisine.rawValue)")
-        print("📊 Difficulty: \(difficulty.rawValue)")
-        print("🥗 Dietary Restrictions: \(dietaryRestrictions.map { $0.rawValue })")
+        logger.api("API key found, starting popular recipes generation...")
+        logger.debug("Cuisine: \(cuisine.rawValue)")
+        logger.debug("Difficulty: \(difficulty.rawValue)")
+        logger.debug("Dietary Restrictions: \(dietaryRestrictions.map { $0.rawValue })")
         
         let prompt = createPopularRecipesPrompt(
             cuisine: cuisine,
@@ -343,7 +343,7 @@ class OpenAIClient: ObservableObject {
             servings: servings
         )
         
-        print("🌐 Making API request to Gemini for popular recipes...")
+        logger.api("Making API request to Gemini for popular recipes...")
         
         let request = GeminiRequest(
             contents: [
@@ -371,27 +371,27 @@ class OpenAIClient: ObservableObject {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("📡 HTTP Status: \(httpResponse.statusCode)")
+                logger.api("HTTP Status: \(httpResponse.statusCode)")
                 
                 // Check for HTTP errors
                 if httpResponse.statusCode != 200 {
-                    print("❌ HTTP Error: \(httpResponse.statusCode)")
+                    logger.error("HTTP Error: \(httpResponse.statusCode)")
                     if let errorString = String(data: data, encoding: .utf8) {
-                        print("📄 Error response: \(errorString)")
+                        logger.error("Error response: \(errorString)")
                     }
                     throw GeminiError.apiError("HTTP \(httpResponse.statusCode)")
                 }
             }
             
-            // Print raw response for debugging
+            // Log raw response for debugging
             if let responseString = String(data: data, encoding: .utf8) {
-                print("📄 Raw response: \(responseString)")
+                logger.debug("Raw response: \(responseString)")
             }
             
             // Try to decode as error response first
             if let errorResponse = try? JSONDecoder().decode(GeminiErrorResponse.self, from: data),
                let error = errorResponse.error {
-                print("❌ Gemini API Error: \(error.message)")
+                logger.error("Gemini API Error: \(error.message)")
                 throw GeminiError.apiError(error.message)
             }
             
@@ -399,9 +399,9 @@ class OpenAIClient: ObservableObject {
             let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
             
             if let content = geminiResponse.candidates.first?.content.parts.first?.text {
-                print("✅ Received response from Gemini")
-                print("📄 Response content length: \(content.count) characters")
-                print("📄 Response content: \(content)")
+                logger.api("Received response from Gemini")
+                logger.debug("Response content length: \(content.count) characters")
+                logger.debug("Response content: \(content)")
                 
                 var recipes = try parsePopularRecipesFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions)
                 
@@ -410,11 +410,11 @@ class OpenAIClient: ObservableObject {
                 recipes = filterRecipesByDietaryRestrictions(recipes, restrictions: dietaryRestrictions)
                 let filteredCount = recipes.count
                 
-                print("🔍 Dietary filtering: \(originalCount) -> \(filteredCount) recipes")
+                logger.debug("Dietary filtering: \(originalCount) -> \(filteredCount) recipes")
                 
                 // If we lost too many recipes due to filtering, generate compliant fallback recipes
                 if filteredCount < 5 && !dietaryRestrictions.isEmpty {
-                    print("⚠️ Too many recipes filtered out, generating compliant fallback recipes")
+                    logger.warning("Too many recipes filtered out, generating compliant fallback recipes")
                     let fallbackRecipes = generateCompliantFallbackRecipes(
                         cuisine: cuisine,
                         difficulty: difficulty,
@@ -422,24 +422,24 @@ class OpenAIClient: ObservableObject {
                         count: 10 - filteredCount
                     )
                     recipes.append(contentsOf: fallbackRecipes)
-                    print("✅ Added \(fallbackRecipes.count) compliant fallback recipes")
+                    logger.api("Added \(fallbackRecipes.count) compliant fallback recipes")
                 }
                 
-                print("✅ Returning \(recipes.count) recipes after dietary filtering")
+                logger.api("Returning \(recipes.count) recipes after dietary filtering")
                 
                 return recipes
             } else {
-                print("❌ No content in response")
-                print("🔍 Candidates count: \(geminiResponse.candidates.count)")
+                logger.error("No content in response")
+                logger.debug("Candidates count: \(geminiResponse.candidates.count)")
                 if let firstCandidate = geminiResponse.candidates.first {
-                    print("🔍 First candidate content parts: \(firstCandidate.content.parts.count)")
+                    logger.debug("First candidate content parts: \(firstCandidate.content.parts.count)")
                 }
                 throw GeminiError.noContent
             }
         } catch {
-            print("❌ Error generating top 10 recipes: \(error)")
+            logger.error("Error generating top 10 recipes: \(error)")
             if let decodingError = error as? DecodingError {
-                print("🔍 Decoding error details: \(decodingError)")
+                logger.debug("Decoding error details: \(decodingError)")
             }
             throw error
         }
@@ -449,7 +449,7 @@ class OpenAIClient: ObservableObject {
     func generateStepImages(for steps: [String]) async throws -> [URL] {
         // Gemini doesn't support image generation like DALL-E
         // Return empty array for now
-        print("⚠️ Image generation not supported with Gemini API")
+        logger.warning("Image generation not supported with Gemini API")
         return []
     }
 
@@ -677,8 +677,8 @@ class OpenAIClient: ObservableObject {
     }
 
     private func parseRecipeFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty) throws -> Recipe {
-        print("🔍 Parsing response content...")
-        print("📄 Full response: \(content)")
+        logger.debug("Parsing response content...")
+        logger.debug("Full response: \(content)")
         
         // First, try to find JSON in the response
         let jsonStart = content.firstIndex(of: "{")
@@ -686,18 +686,18 @@ class OpenAIClient: ObservableObject {
         
         if let start = jsonStart, let end = jsonEnd {
             let jsonString = String(content[start...end])
-            print("🔍 Extracted JSON: \(jsonString)")
+            logger.debug("Extracted JSON: \(jsonString)")
             
             do {
                 let decoder = JSONDecoder()
                 let recipeData = try decoder.decode(RecipeData.self, from: jsonString.data(using: .utf8)!)
                 
-                print("📋 Recipe: \(recipeData.name)")
-                print("🥗 Ingredients count: \(recipeData.ingredients.count)")
+                logger.debug("Recipe: \(recipeData.name)")
+                logger.debug("Ingredients count: \(recipeData.ingredients.count)")
                 
                 // Log all ingredients for this recipe
                 for (index, ingredient) in recipeData.ingredients.enumerated() {
-                    print("  - Ingredient \(index + 1): \(ingredient.amount) \(ingredient.unit) \(ingredient.name)")
+                    logger.debug("  - Ingredient \(index + 1): \(ingredient.amount) \(ingredient.unit) \(ingredient.name)")
                 }
                 
                 // Sanitize step descriptions to ensure they contain plain English instructions
@@ -730,20 +730,20 @@ class OpenAIClient: ObservableObject {
                     chefNotes: recipeData.chefNotes
                 )
                 
-                print("✅ Successfully parsed recipe with \(recipe.ingredients.count) ingredients")
+                logger.api("Successfully parsed recipe with \(recipe.ingredients.count) ingredients")
                 return recipe
             } catch {
-                print("❌ JSON parsing error: \(error)")
-                print("🔍 JSON string that failed: \(jsonString)")
+                logger.error("JSON parsing error: \(error)")
+                logger.debug("JSON string that failed: \(jsonString)")
                 
                 // Try to extract partial data if possible
                 if let data = jsonString.data(using: .utf8) {
                     do {
                         let decoder = JSONDecoder()
                         let recipeData = try decoder.decode(RecipeData.self, from: data)
-                        print("🔄 Partial JSON parsing successful")
-                        print("📋 Recipe: \(recipeData.name)")
-                        print("🥗 Ingredients count: \(recipeData.ingredients.count)")
+                        logger.debug("Partial JSON parsing successful")
+                        logger.debug("Recipe: \(recipeData.name)")
+                        logger.debug("Ingredients count: \(recipeData.ingredients.count)")
                         
                         let recipe = Recipe(
                             name: recipeData.name,
@@ -761,7 +761,7 @@ class OpenAIClient: ObservableObject {
                         )
                         return recipe
                     } catch {
-                        print("❌ Even partial JSON parsing failed: \(error)")
+                        logger.error("Even partial JSON parsing failed: \(error)")
                     }
                 }
                 
@@ -769,14 +769,14 @@ class OpenAIClient: ObservableObject {
                 return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty)
             }
         } else {
-            print("❌ No JSON brackets found in response")
+            logger.error("No JSON brackets found in response")
             // If no JSON found, try to create a basic recipe from the text
             return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty)
         }
     }
     
     private func createRecipeFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty) throws -> Recipe {
-        print("🔄 Creating recipe from text content...")
+        logger.debug("Creating recipe from text content...")
         
         // Extract recipe name (look for common patterns)
         let name: String
@@ -860,8 +860,8 @@ class OpenAIClient: ObservableObject {
     }
     
     private func parsePopularRecipesFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote]) throws -> [Recipe] {
-        print("🔍 Parsing popular recipes response...")
-        print("📄 Full response: \(content)")
+        logger.debug("Parsing popular recipes response...")
+        logger.debug("Full response: \(content)")
         
         // First, try to find JSON array in the response
         let jsonStart = content.firstIndex(of: "[")
@@ -869,7 +869,7 @@ class OpenAIClient: ObservableObject {
         
         if let start = jsonStart, let end = jsonEnd {
             let jsonString = String(content[start...end])
-            print("🔍 Extracted JSON array: \(jsonString)")
+            logger.debug("Extracted JSON array: \(jsonString)")
             
             do {
                 let decoder = JSONDecoder()
@@ -877,12 +877,12 @@ class OpenAIClient: ObservableObject {
                 
                 var recipes: [Recipe] = []
                 for (index, recipeData) in recipesData.enumerated() {
-                    print("📋 Recipe \(index + 1): \(recipeData.name)")
-                    print("🥗 Ingredients count: \(recipeData.ingredients.count)")
+                    logger.debug("Recipe \(index + 1): \(recipeData.name)")
+                    logger.debug("Ingredients count: \(recipeData.ingredients.count)")
                     
                     // Log all ingredients for this recipe
                     for (ingredientIndex, ingredient) in recipeData.ingredients.enumerated() {
-                        print("  - Ingredient \(ingredientIndex + 1): \(ingredient.amount) \(ingredient.unit) \(ingredient.name)")
+                        logger.debug("  - Ingredient \(ingredientIndex + 1): \(ingredient.amount) \(ingredient.unit) \(ingredient.name)")
                     }
                     
                     // Sanitize step descriptions to ensure they contain plain English instructions
@@ -917,18 +917,18 @@ class OpenAIClient: ObservableObject {
                     recipes.append(recipe)
                 }
                 
-                print("✅ Successfully parsed \(recipes.count) recipes with total of \(recipes.reduce(0) { $0 + $1.ingredients.count }) ingredients")
+                logger.api("Successfully parsed \(recipes.count) recipes with total of \(recipes.reduce(0) { $0 + $1.ingredients.count }) ingredients")
                 return recipes
             } catch {
-                print("❌ JSON parsing error: \(error)")
-                print("🔍 JSON string that failed: \(jsonString)")
+                logger.error("JSON parsing error: \(error)")
+                logger.debug("JSON string that failed: \(jsonString)")
                 
                 // Try to extract partial data if possible
                 if let data = jsonString.data(using: .utf8) {
                     do {
                         let decoder = JSONDecoder()
                         let recipesData = try decoder.decode([RecipeData].self, from: data)
-                        print("🔄 Partial JSON parsing successful, got \(recipesData.count) recipes")
+                        logger.debug("Partial JSON parsing successful, got \(recipesData.count) recipes")
                         
                         var recipes: [Recipe] = []
                         for recipeData in recipesData {
@@ -950,7 +950,7 @@ class OpenAIClient: ObservableObject {
                         }
                         return recipes
                     } catch {
-                        print("❌ Even partial JSON parsing failed: \(error)")
+                        logger.error("Even partial JSON parsing failed: \(error)")
                     }
                 }
                 
@@ -958,14 +958,14 @@ class OpenAIClient: ObservableObject {
                 return try createPopularRecipesFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions)
             }
         } else {
-            print("❌ No JSON array brackets found in response")
+            logger.error("No JSON array brackets found in response")
             // If no JSON found, try to create basic recipes from the text
             return try createPopularRecipesFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions)
         }
     }
     
     private func createPopularRecipesFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote]) throws -> [Recipe] {
-        print("🔄 Creating popular recipes from text content...")
+        logger.debug("Creating popular recipes from text content...")
         
         // Split content into sections and try to extract recipes
         let sections = content.components(separatedBy: "\n\n")
@@ -982,7 +982,7 @@ class OpenAIClient: ObservableObject {
                     updatedRecipe.dietaryNotes = dietaryRestrictions
                     recipes.append(updatedRecipe)
                 } catch {
-                    print("⚠️ Could not create recipe from section \(index + 1)")
+                    logger.warning("Could not create recipe from section \(index + 1)")
                 }
             }
         }
@@ -1471,7 +1471,7 @@ class OpenAIClient: ObservableObject {
         dietaryRestrictions: [DietaryNote],
         count: Int
     ) -> [Recipe] {
-        print("🔄 Generating \(count) compliant fallback recipes for \(cuisine.rawValue)")
+        logger.debug("Generating \(count) compliant fallback recipes for \(cuisine.rawValue)")
         
         var fallbackRecipes: [Recipe] = []
         
@@ -1718,11 +1718,11 @@ class OpenAIClient: ObservableObject {
     /// - Returns: Detailed cooking instructions in plain English
     func generateDetailedCookingInstructions(for recipe: Recipe) async throws -> String {
         guard let apiKey = apiKey else {
-            print("❌ No API key found")
+            logger.warning("No API key found")
             throw GeminiError.noAPIKey
         }
         
-        print("✅ Generating detailed cooking instructions for \(recipe.name)")
+        logger.api("Generating detailed cooking instructions for \(recipe.name)")
         isLoading = true
         error = nil
         
@@ -1730,7 +1730,7 @@ class OpenAIClient: ObservableObject {
         
         let prompt = createDetailedInstructionsPrompt(for: recipe)
         
-        print("🌐 Making API request to Gemini for detailed instructions...")
+        logger.api("Making API request to Gemini for detailed instructions...")
         
         let request = GeminiRequest(
             contents: [
@@ -1758,12 +1758,12 @@ class OpenAIClient: ObservableObject {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("📡 HTTP Status: \(httpResponse.statusCode)")
+                logger.api("HTTP Status: \(httpResponse.statusCode)")
                 
                 if httpResponse.statusCode != 200 {
-                    print("❌ HTTP Error: \(httpResponse.statusCode)")
+                    logger.error("HTTP Error: \(httpResponse.statusCode)")
                     if let errorString = String(data: data, encoding: .utf8) {
-                        print("📄 Error response: \(errorString)")
+                        logger.error("Error response: \(errorString)")
                     }
                     throw GeminiError.apiError("HTTP \(httpResponse.statusCode)")
                 }
@@ -1772,22 +1772,22 @@ class OpenAIClient: ObservableObject {
             // Try to decode as error response first
             if let errorResponse = try? JSONDecoder().decode(GeminiErrorResponse.self, from: data),
                let error = errorResponse.error {
-                print("❌ Gemini API Error: \(error.message)")
+                logger.error("Gemini API Error: \(error.message)")
                 throw GeminiError.apiError(error.message)
             }
             
             let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
             
             guard let content = geminiResponse.candidates.first?.content.parts.first?.text else {
-                print("❌ No content in response")
+                logger.error("No content in response")
                 throw GeminiError.noContent
             }
             
-            print("✅ Successfully generated detailed cooking instructions")
+            logger.api("Successfully generated detailed cooking instructions")
             return content
             
         } catch {
-            print("❌ Error generating detailed cooking instructions: \(error)")
+            logger.error("Error generating detailed cooking instructions: \(error)")
             throw error
         }
     }
@@ -1994,15 +1994,15 @@ class OpenAIClient: ObservableObject {
         let allIngredients = recipe.ingredients.map { $0.name.lowercased() }
         let recipeName = recipe.name.lowercased()
         
-        print("🔍 Validating recipe: '\(recipe.name)'")
-        print("🥗 Ingredients: \(allIngredients)")
-        print("🚫 Restrictions: \(restrictions.map { $0.rawValue })")
+        logger.debug("Validating recipe: '\(recipe.name)'")
+        logger.debug("Ingredients: \(allIngredients)")
+        logger.debug("Restrictions: \(restrictions.map { $0.rawValue })")
         
         // First check if recipe name itself violates restrictions
         for restriction in restrictions {
             let nameViolation = checkRecipeNameViolation(recipeName: recipeName, restriction: restriction)
             if nameViolation {
-                print("❌ Recipe name '\(recipe.name)' violates \(restriction.rawValue) restriction")
+                logger.warning("Recipe name '\(recipe.name)' violates \(restriction.rawValue) restriction")
                 return false
             }
         }
@@ -2010,15 +2010,15 @@ class OpenAIClient: ObservableObject {
         // Then check ingredients
         for restriction in restrictions {
             let isCompliant = isRecipeCompliantWithRestriction(allIngredients: allIngredients, restriction: restriction)
-            print("  - \(restriction.rawValue): \(isCompliant ? "✅ PASS" : "❌ FAIL")")
+            logger.debug("  - \(restriction.rawValue): \(isCompliant ? "PASS" : "FAIL")")
             
             if !isCompliant {
-                print("❌ Recipe '\(recipe.name)' FAILS \(restriction.rawValue) restriction")
+                logger.warning("Recipe '\(recipe.name)' FAILS \(restriction.rawValue) restriction")
                 return false
             }
         }
         
-        print("✅ Recipe '\(recipe.name)' PASSES all restrictions")
+        logger.debug("Recipe '\(recipe.name)' PASSES all restrictions")
         return true
     }
     
@@ -2028,7 +2028,7 @@ class OpenAIClient: ObservableObject {
             let meatKeywords = ["chicken", "turkey", "duck", "beef", "pork", "lamb", "fish", "meat", "steak", "burger", "sausage", "bacon", "ham"]
             for keyword in meatKeywords {
                 if recipeName.contains(keyword) {
-                    print("🚫 Recipe name contains meat keyword: '\(recipeName)' contains '\(keyword)'")
+                    logger.debug("Recipe name contains meat keyword: '\(recipeName)' contains '\(keyword)'")
                     return true
                 }
             }
@@ -2036,7 +2036,7 @@ class OpenAIClient: ObservableObject {
             let dairyKeywords = ["cheese", "milk", "cream", "butter", "yogurt", "dairy"]
             for keyword in dairyKeywords {
                 if recipeName.contains(keyword) {
-                    print("🚫 Recipe name contains dairy keyword: '\(recipeName)' contains '\(keyword)'")
+                    logger.debug("Recipe name contains dairy keyword: '\(recipeName)' contains '\(keyword)'")
                     return true
                 }
             }
@@ -2044,7 +2044,7 @@ class OpenAIClient: ObservableObject {
             let glutenKeywords = ["bread", "pasta", "wheat", "flour", "cake", "cookie"]
             for keyword in glutenKeywords {
                 if recipeName.contains(keyword) {
-                    print("🚫 Recipe name contains gluten keyword: '\(recipeName)' contains '\(keyword)'")
+                    logger.debug("Recipe name contains gluten keyword: '\(recipeName)' contains '\(keyword)'")
                     return true
                 }
             }
@@ -2124,13 +2124,13 @@ class OpenAIClient: ObservableObject {
             let lowercasedIngredient = ingredient.lowercased()
             for meatKeyword in meatKeywords {
                 if lowercasedIngredient.contains(meatKeyword.lowercased()) {
-                    print("🚫 Found meat ingredient: '\(ingredient)' contains '\(meatKeyword)'")
+                    logger.debug("Found meat ingredient: '\(ingredient)' contains '\(meatKeyword)'")
                     return true
                 }
             }
         }
         
-        print("✅ No meat ingredients found")
+        logger.debug("No meat ingredients found")
         return false
     }
     
@@ -2167,13 +2167,13 @@ class OpenAIClient: ObservableObject {
             let lowercasedIngredient = ingredient.lowercased()
             for dairyKeyword in dairyKeywords {
                 if lowercasedIngredient.contains(dairyKeyword.lowercased()) {
-                    print("🚫 Found dairy ingredient: '\(ingredient)' contains '\(dairyKeyword)'")
+                    logger.debug("Found dairy ingredient: '\(ingredient)' contains '\(dairyKeyword)'")
                     return true
                 }
             }
         }
         
-        print("✅ No dairy ingredients found")
+        logger.debug("No dairy ingredients found")
         return false
     }
     
@@ -2585,25 +2585,25 @@ class OpenAIClient: ObservableObject {
     // MARK: - Recipe Filtering
     private func filterRecipesByDietaryRestrictions(_ recipes: [Recipe], restrictions: [DietaryNote]) -> [Recipe] {
         guard !restrictions.isEmpty else { 
-            print("✅ No dietary restrictions - returning all \(recipes.count) recipes")
+            logger.debug("No dietary restrictions - returning all \(recipes.count) recipes")
             return recipes 
         }
         
-        print("🔍 Filtering \(recipes.count) recipes with restrictions: \(restrictions.map { $0.rawValue })")
+        logger.debug("Filtering \(recipes.count) recipes with restrictions: \(restrictions.map { $0.rawValue })")
         
         let filteredRecipes = recipes.filter { recipe in
             let isCompliant = validateRecipeCompliance(recipe, against: restrictions)
             if !isCompliant {
-                print("❌ REMOVED: '\(recipe.name)' - violates dietary restrictions")
-                print("   Ingredients: \(recipe.ingredients.map { $0.name })")
+                logger.debug("REMOVED: '\(recipe.name)' - violates dietary restrictions")
+                logger.debug("   Ingredients: \(recipe.ingredients.map { $0.name })")
             } else {
-                print("✅ KEPT: '\(recipe.name)' - compliant with all restrictions")
+                logger.debug("KEPT: '\(recipe.name)' - compliant with all restrictions")
             }
             return isCompliant
         }
         
-        print("📊 Filtering results: \(recipes.count) -> \(filteredRecipes.count) recipes")
-        print("✅ Final recipes: \(filteredRecipes.map { $0.name })")
+        logger.debug("Filtering results: \(recipes.count) -> \(filteredRecipes.count) recipes")
+        logger.debug("Final recipes: \(filteredRecipes.map { $0.name })")
         
         return filteredRecipes
     }

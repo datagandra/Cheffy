@@ -65,12 +65,12 @@ class RecipeManager: ObservableObject {
             await MainActor.run {
                 self.generatedRecipe = cachedRecipe
                 self.isUsingCachedData = true
-                print("📱 Using cached recipe: \(cachedRecipe.name)")
-                print("✅ Recipe loaded from cache - no LLM connection needed")
+                logger.cache("Using cached recipe: \(cachedRecipe.name)")
+                logger.cache("Recipe loaded from cache - no LLM connection needed")
             }
         } else {
             // No cached recipe found, generate new one from LLM
-            print("🔄 No cached recipe found, connecting to LLM...")
+            logger.cache("No cached recipe found, connecting to LLM...")
             
             do {
                 let recipe = try await openAIClient.generateRecipe(
@@ -131,7 +131,7 @@ class RecipeManager: ObservableObject {
         // Check if dietary restrictions have changed significantly
         let cachedRecipes: [Recipe]
         if hasDietaryRestrictionsChanged(dietaryRestrictions) {
-            print("⚠️ Dietary restrictions changed for popular recipes - will connect to LLM for fresh recipes")
+            logger.warning("Dietary restrictions changed for popular recipes - will connect to LLM for fresh recipes")
             // Force LLM generation by setting cached recipes to empty
             cachedRecipes = []
         } else {
@@ -150,12 +150,12 @@ class RecipeManager: ObservableObject {
             await MainActor.run {
                 self.popularRecipes = Array(cachedRecipes.prefix(10))
                 self.isUsingCachedData = true
-                print("📱 Using \(self.popularRecipes.count) cached recipes")
-                print("✅ Recipes loaded from cache - no LLM connection needed")
+                logger.cache("Using \(self.popularRecipes.count) cached recipes")
+                logger.cache("Recipes loaded from cache - no LLM connection needed")
             }
         } else {
             // No cached recipes, generate new ones from LLM
-            print("🔄 No cached recipes found, connecting to LLM...")
+            logger.cache("No cached recipes found, connecting to LLM...")
             
             do {
                 let recipes = try await openAIClient.generatePopularRecipes(
@@ -175,15 +175,15 @@ class RecipeManager: ObservableObject {
                     self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
                     
                     // Cache all generated recipes
-                    print("🔄 RecipeManager: Caching \(recipes.count) generated recipes")
+                    logger.cache("RecipeManager: Caching \(recipes.count) generated recipes")
                     self.cacheManager.cacheRecipes(recipes)
                     self.updateCachedData()
-                    print("✅ RecipeManager: All recipes cached successfully")
+                    logger.cache("RecipeManager: All recipes cached successfully")
                 }
                             } catch {
                     await MainActor.run {
                         self.error = error.localizedDescription
-                        print("❌ Error generating popular recipes: \(error)")
+                        logger.error("Error generating popular recipes: \(error)")
                     }
                 }
         }
@@ -245,7 +245,7 @@ class RecipeManager: ObservableObject {
             let data = try JSONEncoder().encode(favorites)
             UserDefaults.standard.set(data, forKey: "favorites")
         } catch {
-            print("❌ Error saving favorites: \(error)")
+            logger.error("Error saving favorites: \(error)")
         }
     }
     
@@ -258,7 +258,7 @@ class RecipeManager: ObservableObject {
         do {
             favorites = try JSONDecoder().decode([Recipe].self, from: data)
         } catch {
-            print("❌ Error loading favorites: \(error)")
+            logger.error("Error loading favorites: \(error)")
             favorites = []
         }
     }
@@ -418,9 +418,9 @@ class RecipeManager: ObservableObject {
         if !recipes.isEmpty {
             popularRecipes = recipes
             isUsingCachedData = true
-            print("📱 Loaded \(recipes.count) cached recipes")
+            logger.cache("Loaded \(recipes.count) cached recipes")
         } else {
-            print("📱 No cached recipes found")
+            logger.cache("No cached recipes found")
         }
     }
     
@@ -441,9 +441,9 @@ class RecipeManager: ObservableObject {
         if !cachedRecipes.isEmpty {
             popularRecipes = cachedRecipes
             isUsingCachedData = true
-            print("📱 Loaded all \(cachedRecipes.count) cached recipes")
+            logger.cache("Loaded all \(cachedRecipes.count) cached recipes")
         } else {
-            print("📱 No cached recipes available")
+            logger.cache("No cached recipes available")
         }
     }
     
@@ -462,15 +462,15 @@ class RecipeManager: ObservableObject {
         maxTime: Int?,
         servings: Int
     ) -> Recipe? {
-        print("🔍 Searching for cached recipe matching criteria...")
-        print("   - Cuisine: \(cuisine.rawValue)")
-        print("   - Difficulty: \(difficulty.rawValue)")
-        print("   - Servings: \(servings)")
-        print("   - Dietary restrictions: \(dietaryRestrictions.count)")
+        logger.debug("Searching for cached recipe matching criteria...")
+        logger.debug("   - Cuisine: \(cuisine.rawValue)")
+        logger.debug("   - Difficulty: \(difficulty.rawValue)")
+        logger.debug("   - Servings: \(servings)")
+        logger.debug("   - Dietary restrictions: \(dietaryRestrictions.count)")
         
         // Check if dietary restrictions have changed significantly
         if hasDietaryRestrictionsChanged(dietaryRestrictions) {
-            print("⚠️ Dietary restrictions changed - will connect to LLM for fresh recipe")
+            logger.warning("Dietary restrictions changed - will connect to LLM for fresh recipe")
             return nil
         }
         
@@ -481,7 +481,7 @@ class RecipeManager: ObservableObject {
             recipe.servings == servings
         }
         
-        print("📊 Found \(matchingRecipes.count) recipes matching basic criteria")
+        logger.debug("Found \(matchingRecipes.count) recipes matching basic criteria")
         
         // If we have a specific recipe name, prioritize exact matches
         if let recipeName = recipeName, !recipeName.isEmpty {
@@ -489,7 +489,7 @@ class RecipeManager: ObservableObject {
                 recipe.name.lowercased().contains(recipeName.lowercased())
             }
             if !exactMatches.isEmpty {
-                print("🎯 Found exact name match: \(exactMatches.first!.name)")
+                logger.debug("Found exact name match: \(exactMatches.first!.name)")
                 return exactMatches.first
             }
         }
@@ -501,7 +501,7 @@ class RecipeManager: ObservableObject {
                 let requestedDietaryNotes = Set(dietaryRestrictions)
                 return recipeDietaryNotes.isSuperset(of: requestedDietaryNotes)
             }
-            print("📊 After dietary filter: \(matchingRecipes.count) recipes")
+            logger.debug("After dietary filter: \(matchingRecipes.count) recipes")
         }
         
         // Filter by max time if specified
@@ -509,7 +509,7 @@ class RecipeManager: ObservableObject {
             matchingRecipes = matchingRecipes.filter { recipe in
                 (recipe.prepTime + recipe.cookTime) <= maxTime
             }
-            print("📊 After time filter: \(matchingRecipes.count) recipes")
+            logger.debug("After time filter: \(matchingRecipes.count) recipes")
         }
         
         // Filter by ingredients if specified
@@ -521,15 +521,15 @@ class RecipeManager: ObservableObject {
                     recipeIngredientNames.contains { $0.contains(ingredient) }
                 }
             }
-            print("📊 After ingredient filter: \(matchingRecipes.count) recipes")
+            logger.debug("After ingredient filter: \(matchingRecipes.count) recipes")
         }
         
         // Return the most recently cached recipe that matches
         if let bestMatch = matchingRecipes.first {
-            print("✅ Found matching cached recipe: \(bestMatch.name)")
+            logger.debug("Found matching cached recipe: \(bestMatch.name)")
             return bestMatch
         } else {
-            print("❌ No matching cached recipe found")
+            logger.debug("No matching cached recipe found")
             return nil
         }
     }
@@ -544,11 +544,11 @@ class RecipeManager: ObservableObject {
         maxTime: Int?,
         servings: Int
     ) -> [Recipe] {
-        print("🔍 Searching for cached popular recipes matching criteria...")
-        print("   - Cuisine: \(cuisine.rawValue)")
-        print("   - Difficulty: \(difficulty.rawValue)")
-        print("   - Servings: \(servings)")
-        print("   - Dietary restrictions: \(dietaryRestrictions.count)")
+        logger.debug("Searching for cached popular recipes matching criteria...")
+        logger.debug("   - Cuisine: \(cuisine.rawValue)")
+        logger.debug("   - Difficulty: \(difficulty.rawValue)")
+        logger.debug("   - Servings: \(servings)")
+        logger.debug("   - Dietary restrictions: \(dietaryRestrictions.count)")
         
         // Filter cached recipes by basic criteria
         var matchingRecipes = cachedRecipes.filter { recipe in
@@ -557,7 +557,7 @@ class RecipeManager: ObservableObject {
             recipe.servings == servings
         }
         
-        print("📊 Found \(matchingRecipes.count) recipes matching basic criteria")
+        logger.debug("Found \(matchingRecipes.count) recipes matching basic criteria")
         
         // Filter by dietary restrictions if specified
         if !dietaryRestrictions.isEmpty {
@@ -566,7 +566,7 @@ class RecipeManager: ObservableObject {
                 let requestedDietaryNotes = Set(dietaryRestrictions)
                 return recipeDietaryNotes.isSuperset(of: requestedDietaryNotes)
             }
-            print("📊 After dietary filter: \(matchingRecipes.count) recipes")
+            logger.debug("After dietary filter: \(matchingRecipes.count) recipes")
         }
         
         // Filter by max time if specified
@@ -574,7 +574,7 @@ class RecipeManager: ObservableObject {
             matchingRecipes = matchingRecipes.filter { recipe in
                 (recipe.prepTime + recipe.cookTime) <= maxTime
             }
-            print("📊 After time filter: \(matchingRecipes.count) recipes")
+            logger.debug("After time filter: \(matchingRecipes.count) recipes")
         }
         
         // Sort by most recently cached (newest first)
@@ -582,7 +582,7 @@ class RecipeManager: ObservableObject {
             recipe1.createdAt > recipe2.createdAt
         }
         
-        print("✅ Found \(matchingRecipes.count) matching cached recipes for popular recipes")
+        logger.debug("Found \(matchingRecipes.count) matching cached recipes for popular recipes")
         return matchingRecipes
     }
     
@@ -595,7 +595,7 @@ class RecipeManager: ObservableObject {
         // If this is the first request, no change detected
         if lastUsedDietaryRestrictions.isEmpty {
             lastUsedDietaryRestrictions = currentRestrictions
-            print("📱 First dietary restrictions set: \(currentRestrictions.map { $0.rawValue })")
+            logger.debug("First dietary restrictions set: \(currentRestrictions.map { $0.rawValue })")
             return false
         }
         
@@ -606,14 +606,14 @@ class RecipeManager: ObservableObject {
         let hasChanged = currentSet != lastSet
         
         if hasChanged {
-            print("⚠️ Dietary restrictions changed:")
-            print("   Previous: \(lastUsedDietaryRestrictions.map { $0.rawValue })")
-            print("   Current: \(currentRestrictions.map { $0.rawValue })")
+            logger.warning("Dietary restrictions changed:")
+            logger.debug("   Previous: \(lastUsedDietaryRestrictions.map { $0.rawValue })")
+            logger.debug("   Current: \(currentRestrictions.map { $0.rawValue })")
             
             // Update the last used restrictions
             lastUsedDietaryRestrictions = currentRestrictions
         } else {
-            print("✅ Dietary restrictions unchanged: \(currentRestrictions.map { $0.rawValue })")
+            logger.debug("Dietary restrictions unchanged: \(currentRestrictions.map { $0.rawValue })")
         }
         
         return hasChanged
@@ -622,6 +622,6 @@ class RecipeManager: ObservableObject {
     /// Updates the last used dietary restrictions (called when LLM generates new recipe)
     private func updateLastUsedDietaryRestrictions(_ restrictions: [DietaryNote]) {
         lastUsedDietaryRestrictions = restrictions
-        print("📱 Updated last used dietary restrictions: \(restrictions.map { $0.rawValue })")
+        logger.debug("Updated last used dietary restrictions: \(restrictions.map { $0.rawValue })")
     }
 } 

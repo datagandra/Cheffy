@@ -424,16 +424,16 @@ struct RecipeGeneratorView: View {
     
     private var cacheTestButton: some View {
         Button(action: {
-            print("🧪 Testing cache functionality...")
-            print("📊 Current cache stats:")
-            print("   - Cached recipes: \(recipeManager.getCachedRecipesCount())")
-            print("   - Has cached recipes: \(recipeManager.hasCachedRecipes())")
+            logger.debug("Testing cache functionality...")
+            logger.debug("Current cache stats:")
+            logger.debug("   - Cached recipes: \(recipeManager.getCachedRecipesCount())")
+            logger.debug("   - Has cached recipes: \(recipeManager.hasCachedRecipes())")
             
             if recipeManager.hasCachedRecipes() {
                 recipeManager.loadAllCachedRecipes()
-                print("✅ Loaded cached recipes successfully")
+                logger.debug("Loaded cached recipes successfully")
             } else {
-                print("❌ No cached recipes available")
+                logger.debug("No cached recipes available")
             }
         }) {
             HStack {

@@ -70,7 +70,7 @@ class UserManager: ObservableObject {
             userDefaults.set(data, forKey: "user_profile")
             try keychain.set(data, key: "user_profile")
         } catch {
-            print("Error saving user profile: \(error)")
+            logger.error("Error saving user profile: \(error)")
         }
     }
     
@@ -82,7 +82,7 @@ class UserManager: ObservableObject {
                 currentUser = profile
                 return
             } catch {
-                print("Error loading user profile from UserDefaults: \(error)")
+                logger.error("Error loading user profile from UserDefaults: \(error)")
             }
         }
         
@@ -93,7 +93,7 @@ class UserManager: ObservableObject {
                 currentUser = profile
                 return
             } catch {
-                print("Error loading user profile from Keychain: \(error)")
+                logger.error("Error loading user profile from Keychain: \(error)")
             }
         }
         
