@@ -108,7 +108,7 @@ struct RecipeGeneratorView: View {
     
     private var welcomeText: some View {
         VStack(spacing: 8) {
-            Text("CHEFFY")
+            Text("Cheffy")
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundColor(.primary)
             

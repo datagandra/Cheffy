@@ -1,0 +1,207 @@
+/* App General */
+"app_name" = "Cheffy";
+"app_subtitle" = "AI Recipe Generator";
+
+/* Navigation */
+"close" = "Close";
+"back" = "Back";
+"next" = "Next";
+"previous" = "Previous";
+"finish" = "Finish";
+"cancel" = "Cancel";
+"done" = "Done";
+
+/* Recipe Generation */
+"recipe_generator_title" = "AI Recipe Generator";
+"recipe_description_label" = "Recipe Description";
+"recipe_description_placeholder" = "Enter recipe name or description (Leave empty for popular %@ recipes)";
+"character_count" = "%d/200";
+"generate_recipe" = "Generate Recipe";
+"generate_popular_recipes" = "Generate Popular %@ Recipes";
+"generating" = "Generating...";
+"generate_button_hint" = "Double tap to generate recipe";
+"generate_button_disabled_hint" = "Please fill in required fields";
+
+/* Cuisine Selection */
+"cuisine_label" = "Cuisine";
+"cuisine_hint" = "Tap to select cuisine type";
+"italian" = "Italian";
+"french" = "French";
+"chinese" = "Chinese";
+"japanese" = "Japanese";
+"indian" = "Indian";
+"mexican" = "Mexican";
+"thai" = "Thai";
+"mediterranean" = "Mediterranean";
+"american" = "American";
+"greek" = "Greek";
+
+/* Difficulty Levels */
+"difficulty_label" = "Difficulty";
+"easy" = "Easy";
+"medium" = "Medium";
+"hard" = "Hard";
+
+/* Dietary Restrictions */
+"dietary_restrictions_label" = "Dietary Restrictions";
+"vegetarian" = "Vegetarian";
+"vegan" = "Vegan";
+"gluten_free" = "Gluten-Free";
+"dairy_free" = "Dairy-Free";
+"nut_free" = "Nut-Free";
+"low_carb" = "Low-Carb";
+"keto" = "Keto";
+"paleo" = "Paleo";
+
+/* Recipe Details */
+"recipe_name" = "Recipe Name";
+"prep_time" = "Prep Time";
+"cook_time" = "Cook Time";
+"total_time" = "Total Time";
+"servings" = "Servings";
+"calories" = "Calories";
+"ingredients" = "Ingredients";
+"instructions" = "Instructions";
+"steps" = "Steps";
+"step" = "Step";
+"step_of" = "%d of %d";
+"minutes" = "minutes";
+"min" = "min";
+"servings_count" = "%d servings";
+"ingredients_count" = "Ingredients (%d)";
+"show_less" = "Show Less";
+"show_more" = "+ %d more ingredients";
+
+/* Cooking Mode */
+"cooking_mode" = "Cooking Mode";
+"current_step" = "Current Step";
+"start_cooking" = "Start Cooking";
+"pause" = "Pause";
+"resume" = "Resume";
+"repeat_step" = "Repeat";
+"repeat_step_hint" = "Repeat current step";
+"cooking_complete" = "Cooking complete!";
+"chef_tip" = "Chef's Tip";
+"chef_pro_tips" = "Chef's Pro Tips";
+"cooking_techniques" = "Cooking Techniques";
+"temperature" = "Temperature";
+"temperature_celsius" = "%d°C";
+"step_timer" = "Step Timer";
+"timer_start" = "Start";
+"timer_pause" = "Pause";
+"timer_reset" = "Reset";
+"detailed_instructions" = "Detailed Instructions";
+"detailed_instructions_loading" = "Loading...";
+"detailed_instructions_refresh" = "Refresh";
+"detailed_instructions_generating" = "Generating detailed instructions...";
+"detailed_instructions_title" = "AI-Generated Detailed Cooking Instructions";
+"detailed_instructions_subtitle" = "Get AI-Generated Detailed Instructions";
+"detailed_instructions_description" = "Tap the refresh button to generate comprehensive cooking instructions with professional tips, timing guidance, and step-by-step details.";
+"detailed_instructions_unavailable" = "No detailed instructions available. Please generate them first.";
+"complete_recipe_steps" = "Complete Recipe Steps";
+"recipe_overview" = "Recipe Overview";
+"wine_pairings" = "Wine Pairings";
+"chef_notes" = "Chef's Notes";
+
+/* Favorites */
+"favorites" = "Favorites";
+"add_to_favorites" = "Add to favorites";
+"remove_from_favorites" = "Remove from favorites";
+"no_favorites" = "No favorites yet. Your favorite recipes will appear here.";
+"no_search_results" = "No search results found. Try adjusting your search terms.";
+"view_recipe_details" = "View recipe details for %@";
+"start_cooking_recipe" = "Start cooking %@";
+"remove_recipe_from_favorites" = "Remove %@ from favorites";
+
+/* Settings */
+"settings" = "Settings";
+"api_key" = "API Key";
+"api_key_set" = "Set";
+"api_key_not_set" = "Not Set";
+"api_key_hint" = "Double tap to configure API key";
+"subscription" = "Subscription";
+"subscription_free" = "Free";
+"subscription_pro" = "PRO";
+"generations_used" = "Generations Used";
+"reset_generations" = "Double tap to reset generation count";
+"upgrade_to_pro" = "Double tap to upgrade to PRO subscription";
+"app_version" = "App Version";
+"manage_cached_recipes" = "Double tap to manage cached recipes";
+
+/* Onboarding */
+"welcome_title" = "Welcome to Cheffy";
+"welcome_subtitle" = "Your AI-powered recipe companion";
+"onboarding_step_1_title" = "Discover Recipes";
+"onboarding_step_1_description" = "Generate personalized recipes based on your preferences and available ingredients";
+"onboarding_step_2_title" = "Smart Cooking";
+"onboarding_step_2_description" = "Get step-by-step cooking instructions with AI-powered tips and techniques";
+"onboarding_step_3_title" = "Save & Share";
+"onboarding_step_3_description" = "Save your favorite recipes and share them with friends and family";
+"get_started" = "Get Started";
+
+/* Errors */
+"error_generating_recipe" = "Error generating recipe";
+"error_network" = "Network error occurred";
+"error_api_key" = "Please configure your API key in Settings";
+"error_no_ingredients" = "No ingredients available";
+"error_no_steps" = "No cooking steps available";
+
+/* Hints and Tips */
+"hint_empty_prompt" = "Leave empty for popular %@ recipes";
+"hint_provide_details" = "Please provide more details";
+"warning_short_description" = "Warning: Please provide more details";
+"tip_timing_precise" = "• Follow the timing precisely for best results";
+"tip_temperature_settings" = "• Use the recommended temperature settings";
+"tip_visual_cues" = "• Pay attention to visual cues and doneness indicators";
+"tip_workspace_clean" = "• Keep your workspace clean and organized";
+
+/* Accessibility */
+"accessibility_recipe_card" = "%@, %@ cuisine, %@ difficulty, %@ total time";
+"accessibility_recipe_card_hint" = "Double tap to view recipe details";
+"accessibility_cooking_step" = "Step %d: %@";
+"accessibility_current_step" = "Current step";
+"accessibility_select_step" = "Tap to select this step";
+"accessibility_generate_button" = "Generate Recipe";
+"accessibility_generate_enabled" = "Double tap to generate recipe";
+"accessibility_generate_disabled" = "Please fill in required fields";
+"accessibility_character_count" = "Character count: %d out of 200";
+"accessibility_hint_empty" = "Hint: Leave empty for popular %@ recipes";
+"accessibility_warning_details" = "Warning: Please provide more details";
+"accessibility_error" = "Error: %@";
+"accessibility_favorite_button" = "%@";
+"accessibility_recipe_details" = "View recipe details for %@";
+"accessibility_recipe_details_hint" = "Navigate to detailed recipe view";
+"accessibility_start_cooking" = "Start cooking %@";
+"accessibility_start_cooking_hint" = "View detailed cooking instructions for this recipe";
+"accessibility_remove_favorite" = "Remove %@ from favorites";
+"accessibility_remove_favorite_hint" = "Delete this recipe from your favorites list";
+"accessibility_no_favorites" = "No favorites yet. Your favorite recipes will appear here.";
+"accessibility_no_search_results" = "No search results found. Try adjusting your search terms.";
+"accessibility_cooking_progress" = "Cooking progress: %@, %d%% complete";
+"accessibility_recipe_info" = "%@, %@ cuisine, %@ difficulty";
+"accessibility_close_cooking_guide" = "Close cooking guide";
+"accessibility_repeat_step" = "Repeat current step";
+"accessibility_recipe_name_input" = "Recipe name input field";
+"accessibility_recipe_name_hint" = "Enter your recipe name or description, or leave empty for popular recipes";
+"accessibility_cuisine_dropdown" = "Cuisine selection dropdown";
+"accessibility_cuisine_hint" = "Tap to select cuisine type";
+"accessibility_dietary_restriction" = "%@ dietary restriction";
+"accessibility_generate_button_title" = "%@";
+"accessibility_generate_button_hint" = "Double tap to generate recipe";
+"accessibility_cuisine_option" = "%@ cuisine";
+"accessibility_difficulty_option" = "%@ difficulty";
+"accessibility_dietary_option" = "%@ dietary restriction";
+"accessibility_error_message" = "Error: %@";
+"accessibility_favorite_toggle" = "%@";
+"accessibility_api_key" = "Gemini API Key";
+"accessibility_api_key_value" = "%@";
+"accessibility_api_key_hint" = "Double tap to configure API key";
+"accessibility_subscription" = "Subscription";
+"accessibility_subscription_value" = "%@";
+"accessibility_generations_used" = "Generations Used";
+"accessibility_generations_value" = "%d";
+"accessibility_reset_generations" = "Double tap to reset generation count";
+"accessibility_upgrade_pro" = "Double tap to upgrade to PRO subscription";
+"accessibility_app_version" = "App Version";
+"accessibility_app_version_value" = "1.0.0";
+"accessibility_manage_cache" = "Double tap to manage cached recipes"; 

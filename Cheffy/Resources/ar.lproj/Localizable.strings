@@ -1,0 +1,207 @@
+/* App General */
+"app_name" = "Cheffy";
+"app_subtitle" = "مولد الوصفات بالذكاء الاصطناعي";
+
+/* Navigation */
+"close" = "إغلاق";
+"back" = "رجوع";
+"next" = "التالي";
+"previous" = "السابق";
+"finish" = "إنهاء";
+"cancel" = "إلغاء";
+"done" = "تم";
+
+/* Recipe Generation */
+"recipe_generator_title" = "مولد الوصفات بالذكاء الاصطناعي";
+"recipe_description_label" = "وصف الوصفة";
+"recipe_description_placeholder" = "أدخل اسم أو وصف الوصفة (اتركه فارغاً للوصفات الشائعة من %@)";
+"character_count" = "%d/200";
+"generate_recipe" = "إنشاء وصفة";
+"generate_popular_recipes" = "إنشاء وصفات شائعة من %@";
+"generating" = "جاري الإنشاء...";
+"generate_button_hint" = "انقر مرتين لإنشاء وصفة";
+"generate_button_disabled_hint" = "يرجى ملء الحقول المطلوبة";
+
+/* Cuisine Selection */
+"cuisine_label" = "المطبخ";
+"cuisine_hint" = "انقر لاختيار نوع المطبخ";
+"italian" = "إيطالي";
+"french" = "فرنسي";
+"chinese" = "صيني";
+"japanese" = "ياباني";
+"indian" = "هندي";
+"mexican" = "مكسيكي";
+"thai" = "تايلندي";
+"mediterranean" = "متوسطي";
+"american" = "أمريكي";
+"greek" = "يوناني";
+
+/* Difficulty Levels */
+"difficulty_label" = "الصعوبة";
+"easy" = "سهل";
+"medium" = "متوسط";
+"hard" = "صعب";
+
+/* Dietary Restrictions */
+"dietary_restrictions_label" = "القيود الغذائية";
+"vegetarian" = "نباتي";
+"vegan" = "نباتي صرف";
+"gluten_free" = "خالي من الغلوتين";
+"dairy_free" = "خالي من الألبان";
+"nut_free" = "خالي من المكسرات";
+"low_carb" = "منخفض الكربوهيدرات";
+"keto" = "كيتو";
+"paleo" = "باليو";
+
+/* Recipe Details */
+"recipe_name" = "اسم الوصفة";
+"prep_time" = "وقت التحضير";
+"cook_time" = "وقت الطهي";
+"total_time" = "الوقت الإجمالي";
+"servings" = "الحصص";
+"calories" = "السعرات الحرارية";
+"ingredients" = "المكونات";
+"instructions" = "التعليمات";
+"steps" = "الخطوات";
+"step" = "خطوة";
+"step_of" = "%d من %d";
+"minutes" = "دقائق";
+"min" = "د";
+"servings_count" = "%d حصص";
+"ingredients_count" = "المكونات (%d)";
+"show_less" = "عرض أقل";
+"show_more" = "+ %d مكونات أخرى";
+
+/* Cooking Mode */
+"cooking_mode" = "وضع الطهي";
+"current_step" = "الخطوة الحالية";
+"start_cooking" = "بدء الطهي";
+"pause" = "إيقاف مؤقت";
+"resume" = "استئناف";
+"repeat_step" = "تكرار";
+"repeat_step_hint" = "تكرار الخطوة الحالية";
+"cooking_complete" = "اكتمل الطهي!";
+"chef_tip" = "نصيحة الشيف";
+"chef_pro_tips" = "نصائح الشيف المحترف";
+"cooking_techniques" = "تقنيات الطهي";
+"temperature" = "درجة الحرارة";
+"temperature_celsius" = "%d°م";
+"step_timer" = "مؤقت الخطوة";
+"timer_start" = "بدء";
+"timer_pause" = "إيقاف مؤقت";
+"timer_reset" = "إعادة تعيين";
+"detailed_instructions" = "تعليمات مفصلة";
+"detailed_instructions_loading" = "جاري التحميل...";
+"detailed_instructions_refresh" = "تحديث";
+"detailed_instructions_generating" = "جاري إنشاء تعليمات مفصلة...";
+"detailed_instructions_title" = "تعليمات مفصلة مولدة بالذكاء الاصطناعي";
+"detailed_instructions_subtitle" = "الحصول على تعليمات مفصلة مولدة بالذكاء الاصطناعي";
+"detailed_instructions_description" = "انقر على زر التحديث لإنشاء تعليمات طهي شاملة مع نصائح احترافية وتوجيهات زمنية وتفاصيل خطوة بخطوة.";
+"detailed_instructions_unavailable" = "لا توجد تعليمات مفصلة متاحة. يرجى إنشاؤها أولاً.";
+"complete_recipe_steps" = "خطوات الوصفة الكاملة";
+"recipe_overview" = "نظرة عامة على الوصفة";
+"wine_pairings" = "توصيلات النبيذ";
+"chef_notes" = "ملاحظات الشيف";
+
+/* Favorites */
+"favorites" = "المفضلة";
+"add_to_favorites" = "إضافة إلى المفضلة";
+"remove_from_favorites" = "إزالة من المفضلة";
+"no_favorites" = "لا توجد مفضلات بعد. ستظهر وصفاتك المفضلة هنا.";
+"no_search_results" = "لم يتم العثور على نتائج بحث. حاول تعديل مصطلحات البحث.";
+"view_recipe_details" = "عرض تفاصيل الوصفة %@";
+"start_cooking_recipe" = "بدء طهي %@";
+"remove_recipe_from_favorites" = "إزالة %@ من المفضلة";
+
+/* Settings */
+"settings" = "الإعدادات";
+"api_key" = "مفتاح API";
+"api_key_set" = "مضبوط";
+"api_key_not_set" = "غير مضبوط";
+"api_key_hint" = "انقر مرتين لضبط مفتاح API";
+"subscription" = "الاشتراك";
+"subscription_free" = "مجاني";
+"subscription_pro" = "PRO";
+"generations_used" = "الإنشاءات المستخدمة";
+"reset_generations" = "انقر مرتين لإعادة تعيين عدد الإنشاءات";
+"upgrade_to_pro" = "انقر مرتين للترقية إلى اشتراك PRO";
+"app_version" = "إصدار التطبيق";
+"manage_cached_recipes" = "انقر مرتين لإدارة الوصفات المخزنة مؤقتاً";
+
+/* Onboarding */
+"welcome_title" = "مرحباً بك في Cheffy";
+"welcome_subtitle" = "رفيق الوصفات بالذكاء الاصطناعي";
+"onboarding_step_1_title" = "اكتشف الوصفات";
+"onboarding_step_1_description" = "أنشئ وصفات مخصصة بناءً على تفضيلاتك والمكونات المتاحة";
+"onboarding_step_2_title" = "الطهي الذكي";
+"onboarding_step_2_description" = "احصل على تعليمات خطوة بخطوة مع نصائح وتقنيات مدعومة بالذكاء الاصطناعي";
+"onboarding_step_3_title" = "احفظ وشارك";
+"onboarding_step_3_description" = "احفظ وصفاتك المفضلة وشاركها مع الأصدقاء والعائلة";
+"get_started" = "ابدأ";
+
+/* Errors */
+"error_generating_recipe" = "خطأ في إنشاء الوصفة";
+"error_network" = "حدث خطأ في الشبكة";
+"error_api_key" = "يرجى ضبط مفتاح API في الإعدادات";
+"error_no_ingredients" = "لا توجد مكونات متاحة";
+"error_no_steps" = "لا توجد خطوات طهي متاحة";
+
+/* Hints and Tips */
+"hint_empty_prompt" = "اتركه فارغاً للوصفات الشائعة من %@";
+"hint_provide_details" = "يرجى تقديم المزيد من التفاصيل";
+"warning_short_description" = "تحذير: يرجى تقديم المزيد من التفاصيل";
+"tip_timing_precise" = "• اتبع التوقيت بدقة للحصول على أفضل النتائج";
+"tip_temperature_settings" = "• استخدم إعدادات درجة الحرارة الموصى بها";
+"tip_visual_cues" = "• انتبه للإشارات البصرية ومؤشرات النضج";
+"tip_workspace_clean" = "• حافظ على مساحة عملك نظيفة ومنظمة";
+
+/* Accessibility */
+"accessibility_recipe_card" = "%@، مطبخ %@، صعوبة %@، وقت إجمالي %@";
+"accessibility_recipe_card_hint" = "انقر مرتين لعرض تفاصيل الوصفة";
+"accessibility_cooking_step" = "خطوة %d: %@";
+"accessibility_current_step" = "الخطوة الحالية";
+"accessibility_select_step" = "انقر لاختيار هذه الخطوة";
+"accessibility_generate_button" = "إنشاء وصفة";
+"accessibility_generate_enabled" = "انقر مرتين لإنشاء وصفة";
+"accessibility_generate_disabled" = "يرجى ملء الحقول المطلوبة";
+"accessibility_character_count" = "عدد الأحرف: %d من 200";
+"accessibility_hint_empty" = "نصيحة: اتركه فارغاً للوصفات الشائعة من %@";
+"accessibility_warning_details" = "تحذير: يرجى تقديم المزيد من التفاصيل";
+"accessibility_error" = "خطأ: %@";
+"accessibility_favorite_button" = "%@";
+"accessibility_recipe_details" = "عرض تفاصيل الوصفة %@";
+"accessibility_recipe_details_hint" = "انتقل إلى عرض تفاصيل الوصفة";
+"accessibility_start_cooking" = "بدء طهي %@";
+"accessibility_start_cooking_hint" = "عرض تعليمات طهي مفصلة لهذه الوصفة";
+"accessibility_remove_favorite" = "إزالة %@ من المفضلة";
+"accessibility_remove_favorite_hint" = "احذف هذه الوصفة من قائمة المفضلة";
+"accessibility_no_favorites" = "لا توجد مفضلات بعد. ستظهر وصفاتك المفضلة هنا.";
+"accessibility_no_search_results" = "لم يتم العثور على نتائج بحث. حاول تعديل مصطلحات البحث.";
+"accessibility_cooking_progress" = "تقدم الطهي: %@، %d%% مكتمل";
+"accessibility_recipe_info" = "%@، مطبخ %@، صعوبة %@";
+"accessibility_close_cooking_guide" = "إغلاق دليل الطهي";
+"accessibility_repeat_step" = "تكرار الخطوة الحالية";
+"accessibility_recipe_name_input" = "حقل إدخال اسم الوصفة";
+"accessibility_recipe_name_hint" = "أدخل اسم أو وصف وصفتك، أو اتركه فارغاً للوصفات الشائعة";
+"accessibility_cuisine_dropdown" = "قائمة منسدلة لاختيار المطبخ";
+"accessibility_cuisine_hint" = "انقر لاختيار نوع المطبخ";
+"accessibility_dietary_restriction" = "قيود غذائية %@";
+"accessibility_generate_button_title" = "%@";
+"accessibility_generate_button_hint" = "انقر مرتين لإنشاء وصفة";
+"accessibility_cuisine_option" = "مطبخ %@";
+"accessibility_difficulty_option" = "صعوبة %@";
+"accessibility_dietary_option" = "قيود غذائية %@";
+"accessibility_error_message" = "خطأ: %@";
+"accessibility_favorite_toggle" = "%@";
+"accessibility_api_key" = "مفتاح API من Gemini";
+"accessibility_api_key_value" = "%@";
+"accessibility_api_key_hint" = "انقر مرتين لضبط مفتاح API";
+"accessibility_subscription" = "الاشتراك";
+"accessibility_subscription_value" = "%@";
+"accessibility_generations_used" = "الإنشاءات المستخدمة";
+"accessibility_generations_value" = "%d";
+"accessibility_reset_generations" = "انقر مرتين لإعادة تعيين عدد الإنشاءات";
+"accessibility_upgrade_pro" = "انقر مرتين للترقية إلى اشتراك PRO";
+"accessibility_app_version" = "إصدار التطبيق";
+"accessibility_app_version_value" = "1.0.0";
+"accessibility_manage_cache" = "انقر مرتين لإدارة الوصفات المخزنة مؤقتاً"; 

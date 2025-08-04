@@ -1,0 +1,207 @@
+/* App General */
+"app_name" = "Cheffy";
+"app_subtitle" = "Generador de Recetas IA";
+
+/* Navigation */
+"close" = "Cerrar";
+"back" = "Atrás";
+"next" = "Siguiente";
+"previous" = "Anterior";
+"finish" = "Terminar";
+"cancel" = "Cancelar";
+"done" = "Hecho";
+
+/* Recipe Generation */
+"recipe_generator_title" = "Generador de Recetas IA";
+"recipe_description_label" = "Descripción de la Receta";
+"recipe_description_placeholder" = "Ingresa el nombre o descripción de la receta (Deja vacío para recetas populares de %@)";
+"character_count" = "%d/200";
+"generate_recipe" = "Generar Receta";
+"generate_popular_recipes" = "Generar Recetas Populares de %@";
+"generating" = "Generando...";
+"generate_button_hint" = "Doble toque para generar receta";
+"generate_button_disabled_hint" = "Por favor completa los campos requeridos";
+
+/* Cuisine Selection */
+"cuisine_label" = "Cocina";
+"cuisine_hint" = "Toca para seleccionar tipo de cocina";
+"italian" = "Italiana";
+"french" = "Francesa";
+"chinese" = "China";
+"japanese" = "Japonesa";
+"indian" = "India";
+"mexican" = "Mexicana";
+"thai" = "Tailandesa";
+"mediterranean" = "Mediterránea";
+"american" = "Americana";
+"greek" = "Griega";
+
+/* Difficulty Levels */
+"difficulty_label" = "Dificultad";
+"easy" = "Fácil";
+"medium" = "Media";
+"hard" = "Difícil";
+
+/* Dietary Restrictions */
+"dietary_restrictions_label" = "Restricciones Dietéticas";
+"vegetarian" = "Vegetariana";
+"vegan" = "Vegana";
+"gluten_free" = "Sin Gluten";
+"dairy_free" = "Sin Lácteos";
+"nut_free" = "Sin Frutos Secos";
+"low_carb" = "Baja en Carbohidratos";
+"keto" = "Keto";
+"paleo" = "Paleo";
+
+/* Recipe Details */
+"recipe_name" = "Nombre de la Receta";
+"prep_time" = "Tiempo de Preparación";
+"cook_time" = "Tiempo de Cocción";
+"total_time" = "Tiempo Total";
+"servings" = "Porciones";
+"calories" = "Calorías";
+"ingredients" = "Ingredientes";
+"instructions" = "Instrucciones";
+"steps" = "Pasos";
+"step" = "Paso";
+"step_of" = "%d de %d";
+"minutes" = "minutos";
+"min" = "min";
+"servings_count" = "%d porciones";
+"ingredients_count" = "Ingredientes (%d)";
+"show_less" = "Mostrar Menos";
+"show_more" = "+ %d ingredientes más";
+
+/* Cooking Mode */
+"cooking_mode" = "Modo de Cocción";
+"current_step" = "Paso Actual";
+"start_cooking" = "Comenzar a Cocinar";
+"pause" = "Pausar";
+"resume" = "Reanudar";
+"repeat_step" = "Repetir";
+"repeat_step_hint" = "Repetir paso actual";
+"cooking_complete" = "¡Cocción completa!";
+"chef_tip" = "Consejo del Chef";
+"chef_pro_tips" = "Consejos Pro del Chef";
+"cooking_techniques" = "Técnicas de Cocción";
+"temperature" = "Temperatura";
+"temperature_celsius" = "%d°C";
+"step_timer" = "Temporizador del Paso";
+"timer_start" = "Iniciar";
+"timer_pause" = "Pausar";
+"timer_reset" = "Reiniciar";
+"detailed_instructions" = "Instrucciones Detalladas";
+"detailed_instructions_loading" = "Cargando...";
+"detailed_instructions_refresh" = "Actualizar";
+"detailed_instructions_generating" = "Generando instrucciones detalladas...";
+"detailed_instructions_title" = "Instrucciones Detalladas Generadas por IA";
+"detailed_instructions_subtitle" = "Obtener Instrucciones Detalladas Generadas por IA";
+"detailed_instructions_description" = "Toca el botón de actualizar para generar instrucciones de cocción completas con consejos profesionales, orientación de tiempo y detalles paso a paso.";
+"detailed_instructions_unavailable" = "No hay instrucciones detalladas disponibles. Por favor genera primero.";
+"complete_recipe_steps" = "Pasos Completos de la Receta";
+"recipe_overview" = "Resumen de la Receta";
+"wine_pairings" = "Maridajes de Vino";
+"chef_notes" = "Notas del Chef";
+
+/* Favorites */
+"favorites" = "Favoritos";
+"add_to_favorites" = "Agregar a favoritos";
+"remove_from_favorites" = "Quitar de favoritos";
+"no_favorites" = "Aún no hay favoritos. Tus recetas favoritas aparecerán aquí.";
+"no_search_results" = "No se encontraron resultados de búsqueda. Intenta ajustar tus términos de búsqueda.";
+"view_recipe_details" = "Ver detalles de la receta %@";
+"start_cooking_recipe" = "Comenzar a cocinar %@";
+"remove_recipe_from_favorites" = "Quitar %@ de favoritos";
+
+/* Settings */
+"settings" = "Configuración";
+"api_key" = "Clave API";
+"api_key_set" = "Configurada";
+"api_key_not_set" = "No Configurada";
+"api_key_hint" = "Doble toque para configurar clave API";
+"subscription" = "Suscripción";
+"subscription_free" = "Gratis";
+"subscription_pro" = "PRO";
+"generations_used" = "Generaciones Usadas";
+"reset_generations" = "Doble toque para reiniciar conteo de generaciones";
+"upgrade_to_pro" = "Doble toque para actualizar a suscripción PRO";
+"app_version" = "Versión de la App";
+"manage_cached_recipes" = "Doble toque para administrar recetas en caché";
+
+/* Onboarding */
+"welcome_title" = "Bienvenido a Cheffy";
+"welcome_subtitle" = "Tu compañero de recetas con IA";
+"onboarding_step_1_title" = "Descubre Recetas";
+"onboarding_step_1_description" = "Genera recetas personalizadas basadas en tus preferencias e ingredientes disponibles";
+"onboarding_step_2_title" = "Cocina Inteligente";
+"onboarding_step_2_description" = "Obtén instrucciones paso a paso con consejos y técnicas impulsadas por IA";
+"onboarding_step_3_title" = "Guarda y Comparte";
+"onboarding_step_3_description" = "Guarda tus recetas favoritas y compártelas con amigos y familia";
+"get_started" = "Comenzar";
+
+/* Errors */
+"error_generating_recipe" = "Error al generar receta";
+"error_network" = "Error de red ocurrió";
+"error_api_key" = "Por favor configura tu clave API en Configuración";
+"error_no_ingredients" = "No hay ingredientes disponibles";
+"error_no_steps" = "No hay pasos de cocción disponibles";
+
+/* Hints and Tips */
+"hint_empty_prompt" = "Deja vacío para recetas populares de %@";
+"hint_provide_details" = "Por favor proporciona más detalles";
+"warning_short_description" = "Advertencia: Por favor proporciona más detalles";
+"tip_timing_precise" = "• Sigue el tiempo precisamente para mejores resultados";
+"tip_temperature_settings" = "• Usa la configuración de temperatura recomendada";
+"tip_visual_cues" = "• Presta atención a las señales visuales e indicadores de cocción";
+"tip_workspace_clean" = "• Mantén tu espacio de trabajo limpio y organizado";
+
+/* Accessibility */
+"accessibility_recipe_card" = "%@, cocina %@, dificultad %@, tiempo total %@";
+"accessibility_recipe_card_hint" = "Doble toque para ver detalles de la receta";
+"accessibility_cooking_step" = "Paso %d: %@";
+"accessibility_current_step" = "Paso actual";
+"accessibility_select_step" = "Toca para seleccionar este paso";
+"accessibility_generate_button" = "Generar Receta";
+"accessibility_generate_enabled" = "Doble toque para generar receta";
+"accessibility_generate_disabled" = "Por favor completa los campos requeridos";
+"accessibility_character_count" = "Conteo de caracteres: %d de 200";
+"accessibility_hint_empty" = "Consejo: Deja vacío para recetas populares de %@";
+"accessibility_warning_details" = "Advertencia: Por favor proporciona más detalles";
+"accessibility_error" = "Error: %@";
+"accessibility_favorite_button" = "%@";
+"accessibility_recipe_details" = "Ver detalles de la receta %@";
+"accessibility_recipe_details_hint" = "Navegar a vista detallada de la receta";
+"accessibility_start_cooking" = "Comenzar a cocinar %@";
+"accessibility_start_cooking_hint" = "Ver instrucciones detalladas de cocción para esta receta";
+"accessibility_remove_favorite" = "Quitar %@ de favoritos";
+"accessibility_remove_favorite_hint" = "Eliminar esta receta de tu lista de favoritos";
+"accessibility_no_favorites" = "Aún no hay favoritos. Tus recetas favoritas aparecerán aquí.";
+"accessibility_no_search_results" = "No se encontraron resultados de búsqueda. Intenta ajustar tus términos de búsqueda.";
+"accessibility_cooking_progress" = "Progreso de cocción: %@, %d%% completo";
+"accessibility_recipe_info" = "%@, cocina %@, dificultad %@";
+"accessibility_close_cooking_guide" = "Cerrar guía de cocción";
+"accessibility_repeat_step" = "Repetir paso actual";
+"accessibility_recipe_name_input" = "Campo de entrada del nombre de la receta";
+"accessibility_recipe_name_hint" = "Ingresa el nombre o descripción de tu receta, o deja vacío para recetas populares";
+"accessibility_cuisine_dropdown" = "Menú desplegable de selección de cocina";
+"accessibility_cuisine_hint" = "Toca para seleccionar tipo de cocina";
+"accessibility_dietary_restriction" = "Restricción dietética %@";
+"accessibility_generate_button_title" = "%@";
+"accessibility_generate_button_hint" = "Doble toque para generar receta";
+"accessibility_cuisine_option" = "Cocina %@";
+"accessibility_difficulty_option" = "Dificultad %@";
+"accessibility_dietary_option" = "Restricción dietética %@";
+"accessibility_error_message" = "Error: %@";
+"accessibility_favorite_toggle" = "%@";
+"accessibility_api_key" = "Clave API de Gemini";
+"accessibility_api_key_value" = "%@";
+"accessibility_api_key_hint" = "Doble toque para configurar clave API";
+"accessibility_subscription" = "Suscripción";
+"accessibility_subscription_value" = "%@";
+"accessibility_generations_used" = "Generaciones Usadas";
+"accessibility_generations_value" = "%d";
+"accessibility_reset_generations" = "Doble toque para reiniciar conteo de generaciones";
+"accessibility_upgrade_pro" = "Doble toque para actualizar a suscripción PRO";
+"accessibility_app_version" = "Versión de la App";
+"accessibility_app_version_value" = "1.0.0";
+"accessibility_manage_cache" = "Doble toque para administrar recetas en caché"; 
