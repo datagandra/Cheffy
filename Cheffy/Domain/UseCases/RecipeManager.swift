@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import os.log
 
 class RecipeManager: ObservableObject {
     let openAIClient = OpenAIClient()
@@ -25,14 +26,8 @@ class RecipeManager: ObservableObject {
         loadFavorites()
         loadCachedData()
         
-        // Print cache status on initialization
-        print("📱 RecipeManager initialized with \(cachedRecipes.count) cached recipes")
-        if !cachedRecipes.isEmpty {
-            print("📱 Available cached recipes:")
-            for recipe in cachedRecipes {
-                print("   - \(recipe.name) (\(recipe.cuisine.rawValue))")
-            }
-        }
+        // Log cache status on initialization
+        os_log("RecipeManager initialized - cachedRecipes: %{public}d, favorites: %{public}d, generationCount: %{public}d", log: .default, type: .info, cachedRecipes.count, favorites.count, generationCount)
     }
     
     func generateRecipe(

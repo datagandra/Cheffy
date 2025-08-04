@@ -1,6 +1,7 @@
 import SwiftUI
 import Stripe
 import KeychainAccess
+import os.log
 
 @main
 struct CheffyApp: App {
@@ -45,7 +46,7 @@ struct CheffyApp: App {
         let keychain = Keychain(service: "com.cheffy.app")
         try? keychain.set(apiKey, key: "gemini_api_key")
         
-        // Debug: Print API key status
-        print("🔑 Gemini API Key set: \(recipeManager.openAIClient.hasAPIKey())")
+        // Log API key status (privacy-compliant)
+        os_log("Gemini API configured - hasKey: %{public}@", log: .default, type: .info, recipeManager.openAIClient.hasAPIKey() ? "true" : "false")
     }
 } 

@@ -1,4 +1,5 @@
 import Foundation
+import os.log
 
 // MARK: - Gemini Data Models
 struct GeminiRequest: Codable {
@@ -304,9 +305,9 @@ class OpenAIClient: ObservableObject {
             
             return recipe
         } catch {
-            print("❌ Error generating recipe: \(error)")
+            os_log("Error generating recipe: %{public}@", log: .default, type: .error, error.localizedDescription)
             if let decodingError = error as? DecodingError {
-                print("🔍 Decoding error details: \(decodingError)")
+                os_log("Decoding error details: %{public}@", log: .default, type: .error, String(describing: decodingError))
             }
             throw error
         }

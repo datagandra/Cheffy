@@ -2,6 +2,7 @@ import Foundation
 import Speech
 import AVFoundation
 import Combine
+import os.log
 
 class VoiceManager: NSObject, ObservableObject {
     @Published var isListening = false
@@ -32,14 +33,19 @@ class VoiceManager: NSObject, ObservableObject {
                 switch status {
                 case .authorized:
                     self?.error = nil
+                    os_log("Speech recognition authorized", log: .default, type: .info)
                 case .denied:
                     self?.error = "Speech recognition permission denied"
+                    os_log("Speech recognition permission denied", log: .default, type: .error)
                 case .restricted:
                     self?.error = "Speech recognition restricted on this device"
+                    os_log("Speech recognition restricted", log: .default, type: .error)
                 case .notDetermined:
                     self?.error = "Speech recognition not yet authorized"
+                    os_log("Speech recognition not determined", log: .default, type: .error)
                 @unknown default:
                     self?.error = "Speech recognition authorization failed"
+                    os_log("Speech recognition authorization failed", log: .default, type: .error)
                 }
             }
         }
