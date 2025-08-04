@@ -240,38 +240,37 @@ class OpenAIClient: ObservableObject {
         )
         
         let url = URL(string: "\(baseURL)/gemini-1.5-flash:generateContent?key=\(apiKey)")!
+        let jsonData = try JSONEncoder().encode(request)
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpBody = jsonData
+        urlRequest.timeoutInterval = 60.0
         
         do {
-            let jsonData = try JSONEncoder().encode(request)
-            urlRequest.httpBody = jsonData
-            
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
             if let httpResponse = response as? HTTPURLResponse {
-                print("📡 HTTP Status: \(httpResponse.statusCode)")
+                os_log("HTTP Status: %{public}d", log: .default, type: .info, httpResponse.statusCode)
                 
                 // Check for HTTP errors
                 if httpResponse.statusCode != 200 {
-                    print("❌ HTTP Error: \(httpResponse.statusCode)")
+                    os_log("HTTP Error: %{public}d", log: .default, type: .error, httpResponse.statusCode)
                     if let errorString = String(data: data, encoding: .utf8) {
-                        print("📄 Error response: \(errorString)")
+                        os_log("Error response: %{public}@", log: .default, type: .error, errorString)
                     }
                     throw GeminiError.apiError("HTTP \(httpResponse.statusCode)")
                 }
             }
             
-            // Print raw response for debugging
-            if let responseString = String(data: data, encoding: .utf8) {
-                print("📄 Raw response: \(responseString)")
-            }
+            // Log response size for debugging (privacy-compliant)
+            os_log("API response received - size: %{public}d bytes", log: .default, type: .debug, data.count)
             
             // Try to decode as error response first
             if let errorResponse = try? JSONDecoder().decode(GeminiErrorResponse.self, from: data),
                let error = errorResponse.error {
-                print("❌ Gemini API Error: \(error.message)")
+                os_log("Gemini API Error: %{public}@", log: .default, type: .error, error.message)
                 throw GeminiError.apiError(error.message)
             }
             
