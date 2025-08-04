@@ -38,8 +38,8 @@ struct CheffyApp: App {
     }
     
     private func setupGemini() {
-        // Set the API key directly
-        let apiKey = "AIzaSyC388zUu4JRefVt9phsxYGwm3KCS5P3Kao"
+        // Use environment variable or secure configuration
+        let apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
         recipeManager.openAIClient.setAPIKey(apiKey)
         
         // Also save to keychain for persistence

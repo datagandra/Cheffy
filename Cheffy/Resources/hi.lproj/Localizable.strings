@@ -1,0 +1,207 @@
+/* App General */
+"app_name" = "Cheffy";
+"app_subtitle" = "AI रेसिपी जनरेटर";
+
+/* Navigation */
+"close" = "बंद करें";
+"back" = "वापस";
+"next" = "अगला";
+"previous" = "पिछला";
+"finish" = "समाप्त";
+"cancel" = "रद्द करें";
+"done" = "हो गया";
+
+/* Recipe Generation */
+"recipe_generator_title" = "AI रेसिपी जनरेटर";
+"recipe_description_label" = "रेसिपी विवरण";
+"recipe_description_placeholder" = "रेसिपी का नाम या विवरण दर्ज करें (लोकप्रिय %@ रेसिपी के लिए खाली छोड़ें)";
+"character_count" = "%d/200";
+"generate_recipe" = "रेसिपी जनरेट करें";
+"generate_popular_recipes" = "लोकप्रिय %@ रेसिपी जनरेट करें";
+"generating" = "जनरेट हो रहा है...";
+"generate_button_hint" = "रेसिपी जनरेट करने के लिए दो बार टैप करें";
+"generate_button_disabled_hint" = "कृपया आवश्यक फ़ील्ड भरें";
+
+/* Cuisine Selection */
+"cuisine_label" = "खाना";
+"cuisine_hint" = "खाने का प्रकार चुनने के लिए टैप करें";
+"italian" = "इतालवी";
+"french" = "फ्रेंच";
+"chinese" = "चीनी";
+"japanese" = "जापानी";
+"indian" = "भारतीय";
+"mexican" = "मैक्सिकन";
+"thai" = "थाई";
+"mediterranean" = "मेडिटरेनियन";
+"american" = "अमेरिकन";
+"greek" = "ग्रीक";
+
+/* Difficulty Levels */
+"difficulty_label" = "कठिनाई";
+"easy" = "आसान";
+"medium" = "मध्यम";
+"hard" = "कठिन";
+
+/* Dietary Restrictions */
+"dietary_restrictions_label" = "आहार प्रतिबंध";
+"vegetarian" = "शाकाहारी";
+"vegan" = "वीगन";
+"gluten_free" = "ग्लूटेन फ्री";
+"dairy_free" = "डेयरी फ्री";
+"nut_free" = "नट फ्री";
+"low_carb" = "लो कार्ब";
+"keto" = "कीटो";
+"paleo" = "पैलियो";
+
+/* Recipe Details */
+"recipe_name" = "रेसिपी का नाम";
+"prep_time" = "तैयारी का समय";
+"cook_time" = "पकाने का समय";
+"total_time" = "कुल समय";
+"servings" = "सर्विंग्स";
+"calories" = "कैलोरी";
+"ingredients" = "सामग्री";
+"instructions" = "निर्देश";
+"steps" = "चरण";
+"step" = "चरण";
+"step_of" = "%d/%d";
+"minutes" = "मिनट";
+"min" = "मिन";
+"servings_count" = "%d सर्विंग्स";
+"ingredients_count" = "सामग्री (%d)";
+"show_less" = "कम दिखाएं";
+"show_more" = "+ %d और सामग्री";
+
+/* Cooking Mode */
+"cooking_mode" = "खाना बनाने का मोड";
+"current_step" = "वर्तमान चरण";
+"start_cooking" = "खाना बनाना शुरू करें";
+"pause" = "रोकें";
+"resume" = "जारी रखें";
+"repeat_step" = "दोहराएं";
+"repeat_step_hint" = "वर्तमान चरण दोहराएं";
+"cooking_complete" = "खाना बनाना पूरा!";
+"chef_tip" = "शेफ की सलाह";
+"chef_pro_tips" = "प्रोफेशनल शेफ की सलाह";
+"cooking_techniques" = "खाना बनाने की तकनीक";
+"temperature" = "तापमान";
+"temperature_celsius" = "%d°C";
+"step_timer" = "चरण टाइमर";
+"timer_start" = "शुरू करें";
+"timer_pause" = "रोकें";
+"timer_reset" = "रीसेट";
+"detailed_instructions" = "विस्तृत निर्देश";
+"detailed_instructions_loading" = "लोड हो रहा है...";
+"detailed_instructions_refresh" = "रिफ्रेश";
+"detailed_instructions_generating" = "विस्तृत निर्देश जनरेट हो रहे हैं...";
+"detailed_instructions_title" = "AI जनरेटेड विस्तृत खाना बनाने के निर्देश";
+"detailed_instructions_subtitle" = "AI जनरेटेड विस्तृत निर्देश प्राप्त करें";
+"detailed_instructions_description" = "पेशेवर सुझाव, समय मार्गदर्शन और चरण-दर-चरण विवरण के साथ व्यापक खाना बनाने के निर्देश जनरेट करने के लिए रिफ्रेश बटन टैप करें।";
+"detailed_instructions_unavailable" = "विस्तृत निर्देश उपलब्ध नहीं हैं। कृपया पहले जनरेट करें।";
+"complete_recipe_steps" = "पूरी रेसिपी के चरण";
+"recipe_overview" = "रेसिपी अवलोकन";
+"wine_pairings" = "वाइन पेयरिंग";
+"chef_notes" = "शेफ के नोट्स";
+
+/* Favorites */
+"favorites" = "पसंदीदा";
+"add_to_favorites" = "पसंदीदा में जोड़ें";
+"remove_from_favorites" = "पसंदीदा से हटाएं";
+"no_favorites" = "अभी तक कोई पसंदीदा नहीं। आपकी पसंदीदा रेसिपी यहाँ दिखाई देंगी।";
+"no_search_results" = "कोई खोज परिणाम नहीं मिला। कृपया अपने खोज शब्दों को समायोजित करने का प्रयास करें।";
+"view_recipe_details" = "%@ की रेसिपी विवरण देखें";
+"start_cooking_recipe" = "%@ खाना बनाना शुरू करें";
+"remove_recipe_from_favorites" = "%@ को पसंदीदा से हटाएं";
+
+/* Settings */
+"settings" = "सेटिंग्स";
+"api_key" = "API की";
+"api_key_set" = "सेट";
+"api_key_not_set" = "सेट नहीं";
+"api_key_hint" = "API की कॉन्फ़िगर करने के लिए दो बार टैप करें";
+"subscription" = "सदस्यता";
+"subscription_free" = "मुफ्त";
+"subscription_pro" = "प्रो";
+"generations_used" = "उपयोग किए गए जनरेशन";
+"reset_generations" = "जनरेशन काउंटर रीसेट करने के लिए दो बार टैप करें";
+"upgrade_to_pro" = "प्रो सदस्यता में अपग्रेड करने के लिए दो बार टैप करें";
+"app_version" = "ऐप संस्करण";
+"manage_cached_recipes" = "कैश की गई रेसिपी प्रबंधित करने के लिए दो बार टैप करें";
+
+/* Onboarding */
+"welcome_title" = "Cheffy में आपका स्वागत है";
+"welcome_subtitle" = "आपका AI रेसिपी साथी";
+"onboarding_step_1_title" = "रेसिपी खोजें";
+"onboarding_step_1_description" = "आपकी प्राथमिकताओं और उपलब्ध सामग्री के आधार पर व्यक्तिगत रेसिपी जनरेट करें";
+"onboarding_step_2_title" = "स्मार्ट कुकिंग";
+"onboarding_step_2_description" = "AI-संचालित सुझावों और तकनीकों के साथ चरण-दर-चरण खाना बनाने के निर्देश प्राप्त करें";
+"onboarding_step_3_title" = "सहेजें और साझा करें";
+"onboarding_step_3_description" = "अपनी पसंदीदा रेसिपी सहेजें और दोस्तों और परिवार के साथ साझा करें";
+"get_started" = "शुरू करें";
+
+/* Errors */
+"error_generating_recipe" = "रेसिपी जनरेट करने में त्रुटि";
+"error_network" = "नेटवर्क त्रुटि हुई";
+"error_api_key" = "कृपया सेटिंग्स में अपनी API की कॉन्फ़िगर करें";
+"error_no_ingredients" = "कोई सामग्री उपलब्ध नहीं";
+"error_no_steps" = "कोई खाना बनाने के चरण उपलब्ध नहीं";
+
+/* Hints and Tips */
+"hint_empty_prompt" = "लोकप्रिय %@ रेसिपी के लिए खाली छोड़ें";
+"hint_provide_details" = "कृपया अधिक विवरण प्रदान करें";
+"warning_short_description" = "चेतावनी: कृपया अधिक विवरण प्रदान करें";
+"tip_timing_precise" = "• सर्वोत्तम परिणामों के लिए समय का सटीक पालन करें";
+"tip_temperature_settings" = "• अनुशंसित तापमान सेटिंग्स का उपयोग करें";
+"tip_visual_cues" = "• दृश्य संकेतों और पकने के संकेतकों पर ध्यान दें";
+"tip_workspace_clean" = "• अपना कार्यस्थान साफ और व्यवस्थित रखें";
+
+/* Accessibility */
+"accessibility_recipe_card" = "%@, %@ खाना, %@ कठिनाई, %@ कुल समय";
+"accessibility_recipe_card_hint" = "रेसिपी विवरण देखने के लिए दो बार टैप करें";
+"accessibility_cooking_step" = "चरण %d: %@";
+"accessibility_current_step" = "वर्तमान चरण";
+"accessibility_select_step" = "इस चरण को चुनने के लिए टैप करें";
+"accessibility_generate_button" = "रेसिपी जनरेट करें";
+"accessibility_generate_enabled" = "रेसिपी जनरेट करने के लिए दो बार टैप करें";
+"accessibility_generate_disabled" = "कृपया आवश्यक फ़ील्ड भरें";
+"accessibility_character_count" = "अक्षर गणना: %d/200";
+"accessibility_hint_empty" = "सुझाव: लोकप्रिय %@ रेसिपी के लिए खाली छोड़ें";
+"accessibility_warning_details" = "चेतावनी: कृपया अधिक विवरण प्रदान करें";
+"accessibility_error" = "त्रुटि: %@";
+"accessibility_favorite_button" = "%@";
+"accessibility_recipe_details" = "%@ की रेसिपी विवरण देखें";
+"accessibility_recipe_details_hint" = "विस्तृत रेसिपी दृश्य पर नेविगेट करें";
+"accessibility_start_cooking" = "%@ खाना बनाना शुरू करें";
+"accessibility_start_cooking_hint" = "इस रेसिपी के लिए विस्तृत खाना बनाने के निर्देश देखें";
+"accessibility_remove_favorite" = "%@ को पसंदीदा से हटाएं";
+"accessibility_remove_favorite_hint" = "अपनी पसंदीदा सूची से इस रेसिपी को हटाएं";
+"accessibility_no_favorites" = "अभी तक कोई पसंदीदा नहीं। आपकी पसंदीदा रेसिपी यहाँ दिखाई देंगी।";
+"accessibility_no_search_results" = "कोई खोज परिणाम नहीं मिला। कृपया अपने खोज शब्दों को समायोजित करने का प्रयास करें।";
+"accessibility_cooking_progress" = "खाना बनाने की प्रगति: %@, %d%% पूर्ण";
+"accessibility_recipe_info" = "%@, %@ खाना, %@ कठिनाई";
+"accessibility_close_cooking_guide" = "खाना बनाने की गाइड बंद करें";
+"accessibility_repeat_step" = "वर्तमान चरण दोहराएं";
+"accessibility_recipe_name_input" = "रेसिपी नाम इनपुट फ़ील्ड";
+"accessibility_recipe_name_hint" = "अपनी रेसिपी का नाम या विवरण दर्ज करें, या लोकप्रिय रेसिपी के लिए खाली छोड़ें";
+"accessibility_cuisine_dropdown" = "खाना चयन ड्रॉपडाउन";
+"accessibility_cuisine_hint" = "खाने का प्रकार चुनने के लिए टैप करें";
+"accessibility_dietary_restriction" = "%@ आहार प्रतिबंध";
+"accessibility_generate_button_title" = "%@";
+"accessibility_generate_button_hint" = "रेसिपी जनरेट करने के लिए दो बार टैप करें";
+"accessibility_cuisine_option" = "%@ खाना";
+"accessibility_difficulty_option" = "%@ कठिनाई";
+"accessibility_dietary_option" = "%@ आहार प्रतिबंध";
+"accessibility_error_message" = "त्रुटि: %@";
+"accessibility_favorite_toggle" = "%@";
+"accessibility_api_key" = "Gemini API की";
+"accessibility_api_key_value" = "%@";
+"accessibility_api_key_hint" = "API की कॉन्फ़िगर करने के लिए दो बार टैप करें";
+"accessibility_subscription" = "सदस्यता";
+"accessibility_subscription_value" = "%@";
+"accessibility_generations_used" = "उपयोग किए गए जनरेशन";
+"accessibility_generations_value" = "%d";
+"accessibility_reset_generations" = "जनरेशन काउंटर रीसेट करने के लिए दो बार टैप करें";
+"accessibility_upgrade_pro" = "प्रो सदस्यता में अपग्रेड करने के लिए दो बार टैप करें";
+"accessibility_app_version" = "ऐप संस्करण";
+"accessibility_app_version_value" = "1.0.0";
+"accessibility_manage_cache" = "कैश की गई रेसिपी प्रबंधित करने के लिए दो बार टैप करें"; 

@@ -69,8 +69,8 @@ class OpenAIClient: ObservableObject {
     
     // MARK: - API Key Management
     private func loadAPIKey() {
-        // Using Gemini API key
-        self.apiKey = "AIzaSyC388zUu4JRefVt9phsxYGwm3KCS5P3Kao"
+        // Use environment variable or secure configuration
+        self.apiKey = ProcessInfo.processInfo.environment["GEMINI_API_KEY"] ?? ""
         print("🔑 Gemini API key loaded")
     }
     
@@ -80,7 +80,7 @@ class OpenAIClient: ObservableObject {
     
     func setAPIKey(_ key: String) {
         self.apiKey = key
-        print("🔑 DeepSeek API key updated")
+        print("🔑 Gemini API key updated")
     }
 
     // MARK: - API Testing
@@ -441,9 +441,9 @@ class OpenAIClient: ObservableObject {
 
     // MARK: - Image Generation (Not supported in Gemini, but keeping for compatibility)
     func generateStepImages(for steps: [String]) async throws -> [URL] {
-        // DeepSeek doesn't support image generation like DALL-E
+        // Gemini doesn't support image generation like DALL-E
         // Return empty array for now
-        print("⚠️ Image generation not supported with DeepSeek API")
+        print("⚠️ Image generation not supported with Gemini API")
         return []
     }
 

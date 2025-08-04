@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import os.log
 
 // MARK: - Localization Manager
 class LocalizationManager: ObservableObject {
@@ -12,8 +13,7 @@ class LocalizationManager: ObservableObject {
     private let dateFormatter = DateFormatter()
     private let currencyFormatter = NumberFormatter()
     
-    private override init() {
-        super.init()
+    private init() {
         updateLocale(.current)
     }
     
@@ -21,7 +21,7 @@ class LocalizationManager: ObservableObject {
     
     func updateLocale(_ locale: Locale) {
         currentLocale = locale
-        isRTL = locale.characterDirection == .rightToLeft
+        isRTL = locale.language.characterDirection == .rightToLeft
         
         // Update formatters
         numberFormatter.locale = locale
@@ -154,7 +154,7 @@ class LocalizationManager: ObservableObject {
     func validateLocale(_ locale: Locale) -> Bool {
         // Check if the locale is supported
         let supportedLocales = ["en", "es", "ar"]
-        return supportedLocales.contains(locale.languageCode ?? "")
+        return supportedLocales.contains(locale.language.languageCode?.identifier ?? "")
     }
     
     func getSupportedLocales() -> [Locale] {

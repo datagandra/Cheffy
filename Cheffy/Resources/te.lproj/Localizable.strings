@@ -1,0 +1,207 @@
+/* App General */
+"app_name" = "Cheffy";
+"app_subtitle" = "AI వంటకాల జనరేటర్";
+
+/* Navigation */
+"close" = "మూసివేయి";
+"back" = "వెనుకకు";
+"next" = "తదుపరి";
+"previous" = "మునుపటి";
+"finish" = "పూర్తి";
+"cancel" = "రద్దు";
+"done" = "పూర్తయింది";
+
+/* Recipe Generation */
+"recipe_generator_title" = "AI వంటకాల జనరేటర్";
+"recipe_description_label" = "వంటక వివరణ";
+"recipe_description_placeholder" = "వంటక పేరు లేదా వివరణను నమోదు చేయండి (జనప్రియ %@ వంటకాల కోసం ఖాళీగా వదిలివేయండి)";
+"character_count" = "%d/200";
+"generate_recipe" = "వంటకాన్ని జనరేట్ చేయండి";
+"generate_popular_recipes" = "జనప్రియ %@ వంటకాలను జనరేట్ చేయండి";
+"generating" = "జనరేట్ చేస్తోంది...";
+"generate_button_hint" = "వంటకాన్ని జనరేట్ చేయడానికి రెండుసార్లు నొక్కండి";
+"generate_button_disabled_hint" = "దయచేసి అవసరమైన ఫీల్డ్లను నింపండి";
+
+/* Cuisine Selection */
+"cuisine_label" = "వంటక శైలి";
+"cuisine_hint" = "వంటక శైలిని ఎంచుకోవడానికి నొక్కండి";
+"italian" = "ఇటాలియన్";
+"french" = "ఫ్రెంచ్";
+"chinese" = "చైనీస్";
+"japanese" = "జపనీస్";
+"indian" = "భారతీయ";
+"mexican" = "మెక్సికన్";
+"thai" = "థాయ్";
+"mediterranean" = "మెడిటరేనియన్";
+"american" = "అమెరికన్";
+"greek" = "గ్రీక్";
+
+/* Difficulty Levels */
+"difficulty_label" = "కష్టత";
+"easy" = "సులభం";
+"medium" = "మధ్యస్థం";
+"hard" = "కష్టం";
+
+/* Dietary Restrictions */
+"dietary_restrictions_label" = "ఆహార పరిమితులు";
+"vegetarian" = "శాకాహారి";
+"vegan" = "వీగన్";
+"gluten_free" = "గ్లూటెన్ ఫ్రీ";
+"dairy_free" = "పాల ఉత్పత్తులు లేని";
+"nut_free" = "గింజలు లేని";
+"low_carb" = "తక్కువ కార్బోహైడ్రేట్";
+"keto" = "కీటో";
+"paleo" = "పాలియో";
+
+/* Recipe Details */
+"recipe_name" = "వంటక పేరు";
+"prep_time" = "సిద్ధపరచే సమయం";
+"cook_time" = "వండే సమయం";
+"total_time" = "మొత్తం సమయం";
+"servings" = "వంతులు";
+"calories" = "కేలరీలు";
+"ingredients" = "పదార్థాలు";
+"instructions" = "సూచనలు";
+"steps" = "దశలు";
+"step" = "దశ";
+"step_of" = "%d/%d";
+"minutes" = "నిమిషాలు";
+"min" = "నిమి";
+"servings_count" = "%d వంతులు";
+"ingredients_count" = "పదార్థాలు (%d)";
+"show_less" = "తక్కువ చూపించు";
+"show_more" = "+ %d మరిన్ని పదార్థాలు";
+
+/* Cooking Mode */
+"cooking_mode" = "వంటక మోడ్";
+"current_step" = "ప్రస్తుత దశ";
+"start_cooking" = "వంటకం ప్రారంభించండి";
+"pause" = "ఆపు";
+"resume" = "కొనసాగించు";
+"repeat_step" = "పునరావృతం";
+"repeat_step_hint" = "ప్రస్తుత దశను పునరావృతం చేయండి";
+"cooking_complete" = "వంటకం పూర్తయింది!";
+"chef_tip" = "శెఫ్ చిట్కా";
+"chef_pro_tips" = "ప్రొఫెషనల్ శెఫ్ చిట్కాలు";
+"cooking_techniques" = "వంటక పద్ధతులు";
+"temperature" = "ఉష్ణోగ్రత";
+"temperature_celsius" = "%d°C";
+"step_timer" = "దశ టైమర్";
+"timer_start" = "ప్రారంభించు";
+"timer_pause" = "ఆపు";
+"timer_reset" = "రీసెట్";
+"detailed_instructions" = "వివరణాత్మక సూచనలు";
+"detailed_instructions_loading" = "లోడ్ అవుతోంది...";
+"detailed_instructions_refresh" = "రిఫ్రెష్";
+"detailed_instructions_generating" = "వివరణాత్మక సూచనలను జనరేట్ చేస్తోంది...";
+"detailed_instructions_title" = "AI జనరేట్ చేసిన వివరణాత్మక వంటక సూచనలు";
+"detailed_instructions_subtitle" = "AI జనరేట్ చేసిన వివరణాత్మక సూచనలను పొందండి";
+"detailed_instructions_description" = "ప్రొఫెషనల్ చిట్కాలు, సమయ మార్గదర్శకత్వం మరియు దశలవారీ వివరాలతో కూడిన సమగ్ర వంటక సూచనలను జనరేట్ చేయడానికి రిఫ్రెష్ బటన్ నొక్కండి.";
+"detailed_instructions_unavailable" = "వివరణాత్మక సూచనలు అందుబాటులో లేవు. దయచేసి మొదట జనరేట్ చేయండి.";
+"complete_recipe_steps" = "పూర్తి వంటక దశలు";
+"recipe_overview" = "వంటక అవలోకనం";
+"wine_pairings" = "వైన్ జతలు";
+"chef_notes" = "శెఫ్ గమనికలు";
+
+/* Favorites */
+"favorites" = "ఇష్టమైనవి";
+"add_to_favorites" = "ఇష్టమైనవాటికి జోడించండి";
+"remove_from_favorites" = "ఇష్టమైనవాటి నుండి తీసివేయండి";
+"no_favorites" = "ఇంకా ఇష్టమైనవి లేవు. మీ ఇష్టమైన వంటకాలు ఇక్కడ కనిపిస్తాయి.";
+"no_search_results" = "శోధన ఫలితాలు కనుగొనబడలేదు. మీ శోధన పదాలను సర్దుబాటు చేయడానికి ప్రయత్నించండి.";
+"view_recipe_details" = "%@ వంటక వివరాలను చూడండి";
+"start_cooking_recipe" = "%@ వంటకాన్ని ప్రారంభించండి";
+"remove_recipe_from_favorites" = "%@ ని ఇష్టమైనవాటి నుండి తీసివేయండి";
+
+/* Settings */
+"settings" = "సెట్టింగ్లు";
+"api_key" = "API కీ";
+"api_key_set" = "సెట్ చేయబడింది";
+"api_key_not_set" = "సెట్ చేయబడలేదు";
+"api_key_hint" = "API కీని కాన్ఫిగర్ చేయడానికి రెండుసార్లు నొక్కండి";
+"subscription" = "చందా";
+"subscription_free" = "ఉచితం";
+"subscription_pro" = "ప్రొ";
+"generations_used" = "ఉపయోగించిన జనరేషన్లు";
+"reset_generations" = "జనరేషన్ కౌంటర్ రీసెట్ చేయడానికి రెండుసార్లు నొక్కండి";
+"upgrade_to_pro" = "ప్రొ చందాకు అప్‌గ్రేడ్ చేయడానికి రెండుసార్లు నొక్కండి";
+"app_version" = "యాప్ వెర్షన్";
+"manage_cached_recipes" = "కాష్ చేయబడిన వంటకాలను నిర్వహించడానికి రెండుసార్లు నొక్కండి";
+
+/* Onboarding */
+"welcome_title" = "Cheffy కి స్వాగతం";
+"welcome_subtitle" = "మీ AI వంటక సహచరుడు";
+"onboarding_step_1_title" = "వంటకాలను کشف کریں";
+"onboarding_step_1_description" = "మీ ప్రాధాన్యతలు మరియు అందుబాటులో ఉన్న పదార్థాల ఆధారంగా వ్యక్తిగతీకరించిన వంటకాలను జనరేట్ చేయండి";
+"onboarding_step_2_title" = "స్మార్ట్ వంటకం";
+"onboarding_step_2_description" = "AI-ఆధారిత చిట్కాలు మరియు పద్ధతులతో దశలవారీ వంటక సూచనలను పొందండి";
+"onboarding_step_3_title" = "సేవ్ మరియు షేర్";
+"onboarding_step_3_description" = "మీ ఇష్టమైన వంటకాలను సేవ్ చేసి స్నేహితులు మరియు కుటుంబంతో షేర్ చేయండి";
+"get_started" = "ప్రారంభించండి";
+
+/* Errors */
+"error_generating_recipe" = "వంటకాన్ని జనరేట్ చేయడంలో లోపం";
+"error_network" = "నెట్‌వర్క్ లోపం సంభవించింది";
+"error_api_key" = "దయచేసి సెట్టింగ్లలో మీ API కీని కాన్ఫిగర్ చేయండి";
+"error_no_ingredients" = "పదార్థాలు అందుబాటులో లేవు";
+"error_no_steps" = "వంటక దశలు అందుబాటులో లేవు";
+
+/* Hints and Tips */
+"hint_empty_prompt" = "జనప్రియ %@ వంటకాల కోసం ఖాళీగా వదిలివేయండి";
+"hint_provide_details" = "దయచేసి మరిన్ని వివరాలను అందించండి";
+"warning_short_description" = "హెచ్చరిక: దయచేసి మరిన్ని వివరాలను అందించండి";
+"tip_timing_precise" = "• ఉత్తమ ఫలితాల కోసం సమయాన్ని ఖచ్చితంగా అనుసరించండి";
+"tip_temperature_settings" = "• సిఫార్సు చేయబడిన ఉష్ణోగ్రత సెట్టింగ్లను ఉపయోగించండి";
+"tip_visual_cues" = "• దృశ్య సంకేతాలు మరియు పరిపక్వత సూచికలకు శ్రద్ధ వహించండి";
+"tip_workspace_clean" = "• మీ పని ప్రదేశాన్ని శుభ్రంగా మరియు క్రమబద్ధంగా ఉంచండి";
+
+/* Accessibility */
+"accessibility_recipe_card" = "%@, %@ వంటక శైలి, %@ కష్టత, %@ మొత్తం సమయం";
+"accessibility_recipe_card_hint" = "వంటక వివరాలను చూడడానికి రెండుసార్లు నొక్కండి";
+"accessibility_cooking_step" = "దశ %d: %@";
+"accessibility_current_step" = "ప్రస్తుత దశ";
+"accessibility_select_step" = "ఈ దశను ఎంచుకోవడానికి నొక్కండి";
+"accessibility_generate_button" = "వంటకాన్ని జనరేట్ చేయండి";
+"accessibility_generate_enabled" = "వంటకాన్ని జనరేట్ చేయడానికి రెండుసార్లు నొక్కండి";
+"accessibility_generate_disabled" = "దయచేసి అవసరమైన ఫీల్డ్లను నింపండి";
+"accessibility_character_count" = "అక్షరాల సంఖ్య: %d/200";
+"accessibility_hint_empty" = "చిట్కా: జనప్రియ %@ వంటకాల కోసం ఖాళీగా వదిలివేయండి";
+"accessibility_warning_details" = "హెచ్చరిక: దయచేసి మరిన్ని వివరాలను అందించండి";
+"accessibility_error" = "లోపం: %@";
+"accessibility_favorite_button" = "%@";
+"accessibility_recipe_details" = "%@ వంటక వివరాలను చూడండి";
+"accessibility_recipe_details_hint" = "వివరణాత్మక వంటక దృశ్యానికి నావిగేట్ చేయండి";
+"accessibility_start_cooking" = "%@ వంటకాన్ని ప్రారంభించండి";
+"accessibility_start_cooking_hint" = "ఈ వంటకానికి వివరణాత్మక వంటక సూచనలను చూడండి";
+"accessibility_remove_favorite" = "%@ ని ఇష్టమైనవాటి నుండి తీసివేయండి";
+"accessibility_remove_favorite_hint" = "మీ ఇష్టమైనవాటి జాబితా నుండి ఈ వంటకాన్ని తొలగించండి";
+"accessibility_no_favorites" = "ఇంకా ఇష్టమైనవి లేవు. మీ ఇష్టమైన వంటకాలు ఇక్కడ కనిపిస్తాయి.";
+"accessibility_no_search_results" = "శోధన ఫలితాలు కనుగొనబడలేదు. మీ శోధన పదాలను సర్దుబాటు చేయడానికి ప్రయత్నించండి.";
+"accessibility_cooking_progress" = "వంటక పురోగతి: %@, %d%% పూర్తయింది";
+"accessibility_recipe_info" = "%@, %@ వంటక శైలి, %@ కష్టత";
+"accessibility_close_cooking_guide" = "వంటక గైడ్‌ని మూసివేయండి";
+"accessibility_repeat_step" = "ప్రస్తుత దశను పునరావృతం చేయండి";
+"accessibility_recipe_name_input" = "వంటక పేరు ఇన్‌పుట్ ఫీల్డ్";
+"accessibility_recipe_name_hint" = "మీ వంటక పేరు లేదా వివరణను నమోదు చేయండి, లేదా జనప్రియ వంటకాల కోసం ఖాళీగా వదిలివేయండి";
+"accessibility_cuisine_dropdown" = "వంటక శైలి ఎంపిక డ్రాప్‌డౌన్";
+"accessibility_cuisine_hint" = "వంటక శైలిని ఎంచుకోవడానికి నొక్కండి";
+"accessibility_dietary_restriction" = "%@ ఆహార పరిమితి";
+"accessibility_generate_button_title" = "%@";
+"accessibility_generate_button_hint" = "వంటకాన్ని జనరేట్ చేయడానికి రెండుసార్లు నొక్కండి";
+"accessibility_cuisine_option" = "%@ వంటక శైలి";
+"accessibility_difficulty_option" = "%@ కష్టత";
+"accessibility_dietary_option" = "%@ ఆహార పరిమితి";
+"accessibility_error_message" = "లోపం: %@";
+"accessibility_favorite_toggle" = "%@";
+"accessibility_api_key" = "Gemini API కీ";
+"accessibility_api_key_value" = "%@";
+"accessibility_api_key_hint" = "API కీని కాన్ఫిగర్ చేయడానికి రెండుసార్లు నొక్కండి";
+"accessibility_subscription" = "చందా";
+"accessibility_subscription_value" = "%@";
+"accessibility_generations_used" = "ఉపయోగించిన జనరేషన్లు";
+"accessibility_generations_value" = "%d";
+"accessibility_reset_generations" = "జనరేషన్ కౌంటర్ రీసెట్ చేయడానికి రెండుసార్లు నొక్కండి";
+"accessibility_upgrade_pro" = "ప్రొ చందాకు అప్‌గ్రేడ్ చేయడానికి రెండుసార్లు నొక్కండి";
+"accessibility_app_version" = "యాప్ వెర్షన్";
+"accessibility_app_version_value" = "1.0.0";
+"accessibility_manage_cache" = "కాష్ చేయబడిన వంటకాలను నిర్వహించడానికి రెండుసార్లు నొక్కండి"; 

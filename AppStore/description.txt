@@ -1,0 +1,56 @@
+Cheffy - AI Recipe Generator
+
+Transform your cooking experience with Cheffy, the intelligent recipe generator that creates personalized recipes just for you. Whether you're a beginner cook or a culinary expert, Cheffy adapts to your preferences and helps you discover amazing dishes.
+
+🎯 PERSONALIZED RECIPES
+• AI-powered recipe generation based on your preferences
+• Customizable dietary restrictions and allergies
+• Cooking skill level adaptation
+• Personalized ingredient suggestions
+
+🎤 VOICE COMMANDS
+• Hands-free recipe generation with voice commands
+• Natural language processing for intuitive interaction
+• Speech-to-text for recipe notes and modifications
+• Voice-guided cooking instructions
+
+🍳 SMART COOKING FEATURES
+• Step-by-step cooking instructions
+• Ingredient substitutions and alternatives
+• Cooking time and difficulty adjustments
+• Nutritional information and calorie tracking
+• Recipe scaling for different serving sizes
+
+📱 USER-FRIENDLY INTERFACE
+• Beautiful, intuitive design
+• Easy-to-follow recipe layouts
+• Favorite recipes collection
+• Offline recipe access
+• Dark mode support
+
+🔒 PRIVACY & SECURITY
+• Your data stays private and secure
+• No personal information shared with third parties
+• Local processing for voice commands
+• Secure API key management
+
+🎨 ACCESSIBILITY
+• VoiceOver support for visually impaired users
+• High contrast mode support
+• Dynamic text sizing
+• Reduced motion options
+
+Whether you're looking for quick weeknight dinners, impressive dinner party recipes, or healthy meal options, Cheffy has you covered. Our AI understands your cooking style and creates recipes that match your taste preferences and dietary needs.
+
+Download Cheffy today and discover a world of personalized cooking possibilities!
+
+---
+
+SUPPORT & FEEDBACK
+We love hearing from our users! If you have any questions, suggestions, or feedback, please reach out to us at support@cheffy.app
+
+PRIVACY POLICY
+Your privacy is important to us. Read our privacy policy at https://cheffy.app/privacy
+
+TERMS OF SERVICE
+By using Cheffy, you agree to our terms of service at https://cheffy.app/terms 

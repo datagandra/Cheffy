@@ -87,7 +87,7 @@ class NetworkClientImpl: NetworkClient {
     private let session: URLSession
     private let monitor: NWPathMonitor
     private let queue: DispatchQueue
-    private var isConnected: Bool = false
+    private var isConnectedStatus: Bool = false
     private let cache = NSCache<NSString, CachedResponse>()
     
     init() {
@@ -108,7 +108,7 @@ class NetworkClientImpl: NetworkClient {
     private func setupNetworkMonitoring() {
         monitor.pathUpdateHandler = { [weak self] path in
             DispatchQueue.main.async {
-                self?.isConnected = path.status == .satisfied
+                self?.isConnectedStatus = path.status == .satisfied
                 os_log("Network connectivity changed: %{public}@", log: .default, type: .info, path.status == .satisfied ? "Connected" : "Disconnected")
             }
         }
@@ -116,7 +116,7 @@ class NetworkClientImpl: NetworkClient {
     }
     
     func isConnected() -> Bool {
-        return isConnected
+        return isConnectedStatus
     }
     
     // MARK: - Main Request Method
@@ -224,7 +224,7 @@ class NetworkClientImpl: NetworkClient {
         
         for attempt in 0...maxRetries {
             do {
-                return try await request(request)
+                return try await self.request(request)
             } catch {
                 lastError = error
                 

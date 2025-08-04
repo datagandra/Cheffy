@@ -11,23 +11,22 @@ class PerformanceMonitor: ObservableObject {
     @Published var isMonitoring = false
     
     private var timer: Timer?
-    private let memoryWarningObserver: NSObjectProtocol?
-    
-    private override init() {
-        self.memoryWarningObserver = NotificationCenter.default.addObserver(
+    private lazy var memoryWarningObserver: NSObjectProtocol = {
+        NotificationCenter.default.addObserver(
             forName: UIApplication.didReceiveMemoryWarningNotification,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             self?.handleMemoryWarning()
         }
-        super.init()
+    }()
+    
+    private init() {
+        // No need to initialize memoryWarningObserver here
     }
     
     deinit {
-        if let observer = memoryWarningObserver {
-            NotificationCenter.default.removeObserver(observer)
-        }
+        NotificationCenter.default.removeObserver(memoryWarningObserver)
         stopMonitoring()
     }
     
@@ -57,12 +56,12 @@ class PerformanceMonitor: ObservableObject {
         
         // Log if memory usage is high
         if memoryUsage > 80.0 {
-            os_log("High memory usage detected: %{public}@%%", log: .default, type: .warning, String(format: "%.1f", memoryUsage))
+            os_log("High memory usage detected: %{public}@%%", log: .default, type: .error, String(format: "%.1f", memoryUsage))
         }
         
         // Log if CPU usage is high
         if cpuUsage > 80.0 {
-            os_log("High CPU usage detected: %{public}@%%", log: .default, type: .warning, String(format: "%.1f", cpuUsage))
+            os_log("High CPU usage detected: %{public}@%%", log: .default, type: .error, String(format: "%.1f", cpuUsage))
         }
     }
     
@@ -95,7 +94,7 @@ class PerformanceMonitor: ObservableObject {
     }
     
     private func handleMemoryWarning() {
-        os_log("Memory warning received - clearing caches", log: .default, type: .warning)
+        os_log("Memory warning received - clearing caches", log: .default, type: .error)
         
         // Clear image caches
         URLCache.shared.removeAllCachedResponses()
@@ -154,7 +153,7 @@ class ImageCacheManager {
     }
     
     func cacheImage(_ image: UIImage, forKey key: String) {
-        let cost = image.size.width * image.size.height * 4 // Approximate memory cost
+        let cost = Int(image.size.width * image.size.height * 4) // Approximate memory cost
         cache.setObject(image, forKey: key as NSString, cost: cost)
     }
     

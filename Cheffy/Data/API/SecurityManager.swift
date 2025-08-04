@@ -1,6 +1,7 @@
 import Foundation
 import Security
 import os.log
+import KeychainAccess
 
 // MARK: - Security Manager
 class SecurityManager: NSObject {
@@ -184,8 +185,7 @@ class PrivacyManager: ObservableObject {
     
     private let userDefaults = UserDefaults.standard
     
-    private override init() {
-        super.init()
+    private init() {
         loadPrivacySettings()
     }
     

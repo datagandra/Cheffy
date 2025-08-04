@@ -1,0 +1,207 @@
+/* App General */
+"app_name" = "Cheffy";
+"app_subtitle" = "AI食谱生成器";
+
+/* Navigation */
+"close" = "关闭";
+"back" = "返回";
+"next" = "下一步";
+"previous" = "上一步";
+"finish" = "完成";
+"cancel" = "取消";
+"done" = "完成";
+
+/* Recipe Generation */
+"recipe_generator_title" = "AI食谱生成器";
+"recipe_description_label" = "食谱描述";
+"recipe_description_placeholder" = "输入食谱名称或描述（留空生成热门%@食谱）";
+"character_count" = "%d/200";
+"generate_recipe" = "生成食谱";
+"generate_popular_recipes" = "生成热门%@食谱";
+"generating" = "生成中...";
+"generate_button_hint" = "双击生成食谱";
+"generate_button_disabled_hint" = "请填写必填字段";
+
+/* Cuisine Selection */
+"cuisine_label" = "菜系";
+"cuisine_hint" = "点击选择菜系类型";
+"italian" = "意大利";
+"french" = "法国";
+"chinese" = "中国";
+"japanese" = "日本";
+"indian" = "印度";
+"mexican" = "墨西哥";
+"thai" = "泰国";
+"mediterranean" = "地中海";
+"american" = "美国";
+"greek" = "希腊";
+
+/* Difficulty Levels */
+"difficulty_label" = "难度";
+"easy" = "简单";
+"medium" = "中等";
+"hard" = "困难";
+
+/* Dietary Restrictions */
+"dietary_restrictions_label" = "饮食限制";
+"vegetarian" = "素食";
+"vegan" = "纯素";
+"gluten_free" = "无麸质";
+"dairy_free" = "无乳制品";
+"nut_free" = "无坚果";
+"low_carb" = "低碳水";
+"keto" = "生酮";
+"paleo" = "古饮食";
+
+/* Recipe Details */
+"recipe_name" = "食谱名称";
+"prep_time" = "准备时间";
+"cook_time" = "烹饪时间";
+"total_time" = "总时间";
+"servings" = "份数";
+"calories" = "卡路里";
+"ingredients" = "食材";
+"instructions" = "说明";
+"steps" = "步骤";
+"step" = "步骤";
+"step_of" = "%d/%d";
+"minutes" = "分钟";
+"min" = "分";
+"servings_count" = "%d份";
+"ingredients_count" = "食材（%d）";
+"show_less" = "显示更少";
+"show_more" = "+ %d个更多食材";
+
+/* Cooking Mode */
+"cooking_mode" = "烹饪模式";
+"current_step" = "当前步骤";
+"start_cooking" = "开始烹饪";
+"pause" = "暂停";
+"resume" = "继续";
+"repeat_step" = "重复";
+"repeat_step_hint" = "重复当前步骤";
+"cooking_complete" = "烹饪完成！";
+"chef_tip" = "厨师小贴士";
+"chef_pro_tips" = "专业厨师贴士";
+"cooking_techniques" = "烹饪技巧";
+"temperature" = "温度";
+"temperature_celsius" = "%d°C";
+"step_timer" = "步骤计时器";
+"timer_start" = "开始";
+"timer_pause" = "暂停";
+"timer_reset" = "重置";
+"detailed_instructions" = "详细说明";
+"detailed_instructions_loading" = "加载中...";
+"detailed_instructions_refresh" = "刷新";
+"detailed_instructions_generating" = "生成详细说明中...";
+"detailed_instructions_title" = "AI生成的详细烹饪说明";
+"detailed_instructions_subtitle" = "获取AI生成的详细说明";
+"detailed_instructions_description" = "点击刷新按钮生成包含专业技巧、时间指导和逐步细节的综合烹饪说明。";
+"detailed_instructions_unavailable" = "暂无详细说明。请先生成。";
+"complete_recipe_steps" = "完整食谱步骤";
+"recipe_overview" = "食谱概览";
+"wine_pairings" = "葡萄酒搭配";
+"chef_notes" = "厨师笔记";
+
+/* Favorites */
+"favorites" = "收藏";
+"add_to_favorites" = "添加到收藏";
+"remove_from_favorites" = "从收藏中移除";
+"no_favorites" = "暂无收藏。您收藏的食谱将显示在这里。";
+"no_search_results" = "未找到搜索结果。请尝试调整搜索词。";
+"view_recipe_details" = "查看%@的食谱详情";
+"start_cooking_recipe" = "开始烹饪%@";
+"remove_recipe_from_favorites" = "从收藏中移除%@";
+
+/* Settings */
+"settings" = "设置";
+"api_key" = "API密钥";
+"api_key_set" = "已设置";
+"api_key_not_set" = "未设置";
+"api_key_hint" = "双击配置API密钥";
+"subscription" = "订阅";
+"subscription_free" = "免费";
+"subscription_pro" = "专业版";
+"generations_used" = "已使用生成次数";
+"reset_generations" = "双击重置生成计数";
+"upgrade_to_pro" = "双击升级到专业版订阅";
+"app_version" = "应用版本";
+"manage_cached_recipes" = "双击管理缓存的食谱";
+
+/* Onboarding */
+"welcome_title" = "欢迎使用Cheffy";
+"welcome_subtitle" = "您的AI食谱助手";
+"onboarding_step_1_title" = "发现食谱";
+"onboarding_step_1_description" = "根据您的偏好和可用食材生成个性化食谱";
+"onboarding_step_2_title" = "智能烹饪";
+"onboarding_step_2_description" = "获得AI驱动的技巧和技术的逐步烹饪说明";
+"onboarding_step_3_title" = "保存和分享";
+"onboarding_step_3_description" = "保存您喜爱的食谱并与朋友和家人分享";
+"get_started" = "开始使用";
+
+/* Errors */
+"error_generating_recipe" = "生成食谱时出错";
+"error_network" = "网络错误";
+"error_api_key" = "请在设置中配置您的API密钥";
+"error_no_ingredients" = "没有可用食材";
+"error_no_steps" = "没有可用的烹饪步骤";
+
+/* Hints and Tips */
+"hint_empty_prompt" = "留空生成热门%@食谱";
+"hint_provide_details" = "请提供更多详情";
+"warning_short_description" = "警告：请提供更多详情";
+"tip_timing_precise" = "• 严格按照时间以获得最佳效果";
+"tip_temperature_settings" = "• 使用推荐的温度设置";
+"tip_visual_cues" = "• 注意视觉提示和熟度指标";
+"tip_workspace_clean" = "• 保持工作区域清洁有序";
+
+/* Accessibility */
+"accessibility_recipe_card" = "%@，%@菜系，%@难度，%@总时间";
+"accessibility_recipe_card_hint" = "双击查看食谱详情";
+"accessibility_cooking_step" = "步骤%d：%@";
+"accessibility_current_step" = "当前步骤";
+"accessibility_select_step" = "点击选择此步骤";
+"accessibility_generate_button" = "生成食谱";
+"accessibility_generate_enabled" = "双击生成食谱";
+"accessibility_generate_disabled" = "请填写必填字段";
+"accessibility_character_count" = "字符计数：%d/200";
+"accessibility_hint_empty" = "提示：留空生成热门%@食谱";
+"accessibility_warning_details" = "警告：请提供更多详情";
+"accessibility_error" = "错误：%@";
+"accessibility_favorite_button" = "%@";
+"accessibility_recipe_details" = "查看%@的食谱详情";
+"accessibility_recipe_details_hint" = "导航到详细食谱视图";
+"accessibility_start_cooking" = "开始烹饪%@";
+"accessibility_start_cooking_hint" = "查看此食谱的详细烹饪说明";
+"accessibility_remove_favorite" = "从收藏中移除%@";
+"accessibility_remove_favorite_hint" = "从您的收藏列表中删除此食谱";
+"accessibility_no_favorites" = "暂无收藏。您收藏的食谱将显示在这里。";
+"accessibility_no_search_results" = "未找到搜索结果。请尝试调整搜索词。";
+"accessibility_cooking_progress" = "烹饪进度：%@，%d%%完成";
+"accessibility_recipe_info" = "%@，%@菜系，%@难度";
+"accessibility_close_cooking_guide" = "关闭烹饪指南";
+"accessibility_repeat_step" = "重复当前步骤";
+"accessibility_recipe_name_input" = "食谱名称输入字段";
+"accessibility_recipe_name_hint" = "输入您的食谱名称或描述，或留空生成热门食谱";
+"accessibility_cuisine_dropdown" = "菜系选择下拉菜单";
+"accessibility_cuisine_hint" = "点击选择菜系类型";
+"accessibility_dietary_restriction" = "%@饮食限制";
+"accessibility_generate_button_title" = "%@";
+"accessibility_generate_button_hint" = "双击生成食谱";
+"accessibility_cuisine_option" = "%@菜系";
+"accessibility_difficulty_option" = "%@难度";
+"accessibility_dietary_option" = "%@饮食限制";
+"accessibility_error_message" = "错误：%@";
+"accessibility_favorite_toggle" = "%@";
+"accessibility_api_key" = "Gemini API密钥";
+"accessibility_api_key_value" = "%@";
+"accessibility_api_key_hint" = "双击配置API密钥";
+"accessibility_subscription" = "订阅";
+"accessibility_subscription_value" = "%@";
+"accessibility_generations_used" = "已使用生成次数";
+"accessibility_generations_value" = "%d";
+"accessibility_reset_generations" = "双击重置生成计数";
+"accessibility_upgrade_pro" = "双击升级到专业版订阅";
+"accessibility_app_version" = "应用版本";
+"accessibility_app_version_value" = "1.0.0";
+"accessibility_manage_cache" = "双击管理缓存的食谱"; 

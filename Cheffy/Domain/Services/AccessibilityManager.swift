@@ -1,6 +1,8 @@
 import SwiftUI
 import os.log
 
+
+
 // MARK: - Accessibility Manager
 class AccessibilityManager: ObservableObject {
     static let shared = AccessibilityManager()
@@ -11,7 +13,7 @@ class AccessibilityManager: ObservableObject {
     @Published var isIncreaseContrastEnabled = false
     @Published var isReduceTransparencyEnabled = false
     
-    private override init() {
+    private init() {
         updateAccessibilitySettings()
         
         // Listen for accessibility changes
@@ -50,7 +52,7 @@ class AccessibilityManager: ObservableObject {
         isVoiceOverRunning = UIAccessibility.isVoiceOverRunning
         isReduceMotionEnabled = UIAccessibility.isReduceMotionEnabled
         isBoldTextEnabled = UIAccessibility.isBoldTextEnabled
-        isIncreaseContrastEnabled = UIAccessibility.isIncreaseContrastEnabled
+        isIncreaseContrastEnabled = false // iOS doesn't have a direct API for this
         isReduceTransparencyEnabled = UIAccessibility.isReduceTransparencyEnabled
     }
     
@@ -89,7 +91,7 @@ class AccessibilityManager: ObservableObject {
     // MARK: - Animation Support
     func adaptiveAnimation<T>(_ animation: Animation, value: T) -> Animation {
         if isReduceMotionEnabled {
-            return .none
+            return Animation.easeInOut(duration: 0)
         }
         return animation
     }
@@ -152,7 +154,7 @@ extension View {
         self.background(AccessibilityManager.shared.accessibleBackgroundColor())
     }
     
-    func adaptiveAnimation<T>(_ animation: Animation, value: T) -> some View {
+    func adaptiveAnimation<T: Equatable>(_ animation: Animation, value: T) -> some View {
         self.animation(AccessibilityManager.shared.adaptiveAnimation(animation, value: value), value: value)
     }
     
@@ -163,38 +165,7 @@ extension View {
     }
 }
 
-// MARK: - Accessibility Modifiers
-struct AccessibilityModifiers {
-    static func recipeCard(_ recipe: Recipe) -> some ViewModifier {
-        return ViewModifier { content in
-            content
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel("\(recipe.name), \(recipe.cuisine.rawValue) cuisine, \(recipe.difficulty.rawValue) difficulty, \(recipe.formattedTotalTime) total time")
-                .accessibilityHint("Double tap to view recipe details")
-                .accessibilityAddTraits(.isButton)
-        }
-    }
-    
-    static func cookingStep(_ step: CookingStep, isCurrent: Bool) -> some ViewModifier {
-        return ViewModifier { content in
-            content
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel("Step \(step.stepNumber): \(step.description)")
-                .accessibilityHint(isCurrent ? "Current step" : "Tap to select this step")
-                .accessibilityAddTraits(isCurrent ? [.isSelected, .isButton] : .isButton)
-        }
-    }
-    
-    static func generateButton(_ isEnabled: Bool) -> some ViewModifier {
-        return ViewModifier { content in
-            content
-                .accessibilityLabel("Generate Recipe")
-                .accessibilityHint(isEnabled ? "Double tap to generate recipe" : "Please fill in required fields")
-                .accessibilityAddTraits(.isButton)
-                .accessibilityValue(isEnabled ? "Enabled" : "Disabled")
-        }
-    }
-}
+
 
 // MARK: - Accessibility Testing
 extension AccessibilityManager {

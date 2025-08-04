@@ -1,0 +1,19 @@
+// Debug Configuration
+PRODUCT_BUNDLE_IDENTIFIER = com.cheffy.app.debug
+PRODUCT_NAME = $(TARGET_NAME) Debug
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+GCC_OPTIMIZATION_LEVEL = 0
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+ENABLE_TESTABILITY = YES
+COPY_PHASE_STRIP = NO
+STRIP_INSTALLED_PRODUCT = NO
+STRIP_STYLE = debugging
+
+// Development API Keys (use SecureConfig.plist for local development)
+GEMINI_API_KEY = YOUR_GEMINI_API_KEY_HERE
+STRIPE_PUBLISHABLE_KEY = pk_test_your_stripe_publishable_key_here
+
+// Debug flags
+DEBUG = 1
+ENABLE_LOGGING = 1
+ENABLE_ANALYTICS = 0 

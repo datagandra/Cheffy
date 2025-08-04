@@ -95,6 +95,29 @@ iOSInjectionProject/
 # Environment variables
 .env
 .env.local
+.env.*.local
+
+# Secure configuration files
+Cheffy/Resources/SecureConfig.plist
+Config/SecureConfig.plist
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/build_output
+
+# Certificates and provisioning profiles
+*.cer
+*.p12
+*.mobileprovision
+*.provisionprofile
+
+# Xcode Cloud
+.xcode-cloud/
+.env
+.env.local
 .env.production
 
 # API Keys (if stored in files)
