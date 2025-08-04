@@ -1,5 +1,12 @@
 import Foundation
 
+// MARK: - Subscription Tier
+enum SubscriptionTier: String, CaseIterable, Codable {
+    case free = "Free"
+    case premium = "Premium"
+    case pro = "Pro"
+}
+
 struct UserProfile: Codable, Identifiable {
     var id = UUID()
     var name: String

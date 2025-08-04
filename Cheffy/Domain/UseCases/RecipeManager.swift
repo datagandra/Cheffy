@@ -20,6 +20,7 @@ class RecipeManager: ObservableObject {
     private var lastUsedDietaryRestrictions: [DietaryNote] = []
     
     init() {
+        
         loadGenerationCount()
         loadFavorites()
         loadCachedData()

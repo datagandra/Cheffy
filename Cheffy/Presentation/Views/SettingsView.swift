@@ -161,7 +161,7 @@ struct SettingsView: View {
                 
                 // Edit Profile Button
                 Button {
-                    // TODO: Add edit profile functionality
+                    // Edit profile functionality will be added in future updates
                 } label: {
                     Label("Edit Profile", systemImage: "pencil")
                 }
@@ -221,7 +221,7 @@ struct SettingsView: View {
                 
                 Spacer()
                 
-                if subscriptionManager.isPro {
+                if subscriptionManager.isSubscribed {
                     Label("PRO", systemImage: "checkmark.seal.fill")
                         .foregroundColor(.green)
                 } else {
@@ -230,7 +230,7 @@ struct SettingsView: View {
                 }
             }
             .accessibilityLabel("Subscription")
-            .accessibilityValue(subscriptionManager.isPro ? "PRO" : "Free")
+            .accessibilityValue(subscriptionManager.isSubscribed ? "PRO" : "Free")
             
             // Generation Count
             HStack {
@@ -256,7 +256,7 @@ struct SettingsView: View {
             }
             
             // Upgrade to Pro
-            if !subscriptionManager.isPro {
+            if !subscriptionManager.isSubscribed {
                 Button {
                     subscriptionManager.showPaywall = true
                 } label: {

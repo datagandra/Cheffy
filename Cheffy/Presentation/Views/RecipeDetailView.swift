@@ -14,7 +14,7 @@ struct RecipeDetailView: View {
                 recipeHeader
                 
                 // Michelin Cooking Guide Button
-                // TODO: Add when cookingGuide and michelinChefTechniques are added to Recipe model
+                // Cooking guide and Michelin chef techniques will be added in future updates
                 // if recipe.cookingGuide != nil || recipe.michelinChefTechniques != nil {
                 //     michelinGuideButton
                 // }
@@ -233,7 +233,7 @@ struct RecipeDetailView: View {
             )
         }
         .sheet(isPresented: $showingMichelinGuide) {
-            // TODO: Add MichelinCookingGuideView when file is added to project
+            // MichelinCookingGuideView will be added in future updates
             Text("Michelin Star Cooking Guide")
                 .font(.title)
                 .padding()
