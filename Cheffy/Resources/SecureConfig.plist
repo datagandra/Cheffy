@@ -2,13 +2,36 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GEMINI_API_KEY</key>
-	<string>YOUR_GEMINI_API_KEY_HERE</string>
-	<key>STRIPE_PUBLISHABLE_KEY</key>
-	<string>YOUR_STRIPE_PUBLISHABLE_KEY_HERE</string>
-	<key>STRIPE_SECRET_KEY</key>
-	<string>YOUR_STRIPE_SECRET_KEY_HERE</string>
-	<key>ANALYTICS_KEY</key>
-	<string>YOUR_ANALYTICS_KEY_HERE</string>
+    <!-- 
+    SECURE CONFIGURATION FILE
+    
+    IMPORTANT SECURITY NOTES:
+    1. This file contains sensitive API keys
+    2. This file should be in .gitignore
+    3. For production, use environment variables instead
+    4. Never commit real API keys to source control
+    -->
+    
+    <!-- Gemini API Configuration -->
+    <key>GEMINI_API_KEY</key>
+    <string>YOUR_GEMINI_API_KEY_HERE</string>
+    
+    <!-- Stripe Configuration -->
+    <key>STRIPE_PUBLISHABLE_KEY</key>
+    <string>pk_test_your_stripe_publishable_key_here</string>
+    
+    <!-- App Configuration -->
+    <key>APP_ENVIRONMENT</key>
+    <string>development</string>
+    
+    <!-- Feature Flags -->
+    <key>ENABLE_ANALYTICS</key>
+    <false/>
+    
+    <key>ENABLE_CRASH_REPORTING</key>
+    <false/>
+    
+    <key>ENABLE_DEBUG_LOGGING</key>
+    <true/>
 </dict>
 </plist> 

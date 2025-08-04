@@ -14,6 +14,7 @@ struct SettingsView: View {
     @State private var showingPrivacyPolicy = false
     @State private var showingTermsOfService = false
     @State private var showingCacheManagement = false
+    @State private var showingLLMDiagnostics = false
 
     
     var body: some View {
@@ -70,6 +71,9 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $showingCacheManagement) {
             CacheManagementView()
+        }
+        .sheet(isPresented: $showingLLMDiagnostics) {
+            LLMDiagnosticView()
         }
         .onAppear {
             checkAPIKeyStatus()
@@ -315,6 +319,14 @@ struct SettingsView: View {
                 Label("Cache Management", systemImage: "externaldrive")
             }
             .accessibilityHint("Double tap to manage cached recipes")
+            
+            // LLM Diagnostics
+            Button {
+                showingLLMDiagnostics = true
+            } label: {
+                Label("LLM Diagnostics", systemImage: "stethoscope")
+            }
+            .accessibilityHint("Double tap to diagnose LLM connection issues")
             
             // Terms of Service
             Button {
