@@ -84,24 +84,27 @@ class RecipeManager: ObservableObject {
                     servings: servings
                 )
                 
-                await MainActor.run {
-                    self.generatedRecipe = recipe
-                    self.incrementGenerationCount()
-                    self.isUsingCachedData = false
-                    
-                    // Update dietary restrictions tracking
-                    self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
-                    
-                    // Cache the generated recipe
-                    print("🔄 RecipeManager: Caching generated recipe: \(recipe.name)")
-                    self.cacheManager.cacheRecipe(recipe)
-                    self.updateCachedData()
-                    print("✅ RecipeManager: Recipe cached successfully")
-                }
+                        await MainActor.run {
+            self.generatedRecipe = recipe
+            self.incrementGenerationCount()
+            self.isUsingCachedData = false
+            
+            // Update dietary restrictions tracking
+            self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
+            
+            // Cache the generated recipe
+            os_log("Recipe cached successfully - recipeName: %{public}@", log: .default, type: .info, recipe.name)
+            self.cacheManager.cacheRecipe(recipe)
+            self.updateCachedData()
+            
+
+        }
             } catch {
                 await MainActor.run {
                     self.error = error.localizedDescription
                 }
+                
+
             }
         }
         

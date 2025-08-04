@@ -14,6 +14,7 @@ struct SettingsView: View {
     @State private var showingPrivacyPolicy = false
     @State private var showingTermsOfService = false
     @State private var showingCacheManagement = false
+
     
     var body: some View {
         List {
@@ -28,6 +29,8 @@ struct SettingsView: View {
             
             // App Section
             appSection
+            
+
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.large)
@@ -272,6 +275,8 @@ struct SettingsView: View {
         }
     }
     
+
+    
     // MARK: - App Section
     
     private var appSection: some View {
@@ -383,6 +388,16 @@ struct PrivacyPolicyView: View {
                             .font(.headline)
                         
                         Text("Your API key is stored securely using iOS Keychain and is never transmitted to our servers.")
+                        
+                        Text("Privacy Controls")
+                            .font(.headline)
+                        
+                        Text("You can control analytics, crash reporting, and data collection in the app settings. All data is anonymized before collection.")
+                        
+                        Text("SSL Certificate Pinning")
+                            .font(.headline)
+                        
+                        Text("We use SSL certificate pinning to ensure secure connections to our API endpoints.")
                     }
                     .font(.body)
                 }
