@@ -105,7 +105,7 @@ struct RecipeLandingPageView: View {
             
             // Recipe Title and Badges
             VStack(alignment: .leading, spacing: 12) {
-                Text(recipe.name)
+                Text(recipe.title)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
@@ -482,7 +482,7 @@ struct RecipeLandingPageView: View {
     // MARK: - Helper Methods
     private func shareRecipe() {
         let recipeText = """
-        \(recipe.name)
+        \(recipe.title)
         
         Cuisine: \(recipe.cuisine.rawValue)
         Difficulty: \(recipe.difficulty.rawValue)

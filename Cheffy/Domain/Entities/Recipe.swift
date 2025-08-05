@@ -4,7 +4,8 @@ import CoreData
 // MARK: - Recipe Entity
 struct Recipe: Identifiable, Codable {
     let id: UUID
-    let name: String
+    let title: String
+    let name: String // Keep for backward compatibility
     let cuisine: Cuisine
     let difficulty: Difficulty
     let prepTime: Int // minutes
@@ -23,7 +24,8 @@ struct Recipe: Identifiable, Codable {
     
     init(
         id: UUID = UUID(),
-        name: String,
+        title: String,
+        name: String? = nil,
         cuisine: Cuisine,
         difficulty: Difficulty,
         prepTime: Int,
@@ -41,7 +43,8 @@ struct Recipe: Identifiable, Codable {
         isFavorite: Bool = false
     ) {
         self.id = id
-        self.name = name
+        self.title = title
+        self.name = name ?? title // Use title as name if not provided
         self.cuisine = cuisine
         self.difficulty = difficulty
         self.prepTime = prepTime

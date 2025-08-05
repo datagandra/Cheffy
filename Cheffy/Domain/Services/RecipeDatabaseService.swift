@@ -70,20 +70,49 @@ class RecipeDatabaseService: ObservableObject {
         
         for (cuisineName, cuisineRecipes) in recipeData.cuisines {
             for recipeData in cuisineRecipes {
+                // Convert ingredients from strings to Ingredient objects
+                let ingredients = recipeData.ingredients.enumerated().map { index, ingredientString in
+                    Ingredient(
+                        name: ingredientString,
+                        amount: 1.0, // Default amount
+                        unit: "piece", // Default unit
+                        notes: nil
+                    )
+                }
+                
+                // Convert instructions to cooking steps
+                let steps = [CookingStep(
+                    stepNumber: 1,
+                    description: recipeData.instructions,
+                    duration: recipeData.cooking_time,
+                    temperature: nil,
+                    imageURL: nil,
+                    tips: nil
+                )]
+                
+                // Convert dietary restrictions
+                let dietaryNotes = (recipeData.dietary_restrictions ?? []).compactMap { restrictionString in
+                    DietaryNote(rawValue: restrictionString)
+                }
+                
                 let recipe = Recipe(
                     id: UUID(),
                     title: recipeData.title,
-                    cuisine: Cuisine(rawValue: cuisineName) ?? .other,
-                    ingredients: recipeData.ingredients,
-                    instructions: recipeData.instructions,
+                    cuisine: Cuisine(rawValue: cuisineName) ?? .italian,
                     difficulty: Difficulty(rawValue: recipeData.difficulty ?? "medium") ?? .medium,
                     prepTime: 15, // Default prep time
                     cookTime: recipeData.cooking_time ?? 45, // Use provided cooking time or default
                     servings: 4, // Default servings
+                    ingredients: ingredients,
+                    steps: steps,
+                    winePairings: [],
+                    dietaryNotes: dietaryNotes,
+                    platingTips: "",
+                    chefNotes: "",
                     imageURL: nil,
-                    isFavorite: false,
+                    stepImages: [],
                     createdAt: Date(),
-                    tags: [cuisineName.lowercased()] + (recipeData.proteins ?? [])
+                    isFavorite: false
                 )
                 recipes.append(recipe)
             }
