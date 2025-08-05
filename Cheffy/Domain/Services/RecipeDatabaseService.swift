@@ -9,7 +9,7 @@ class RecipeDatabaseService: ObservableObject {
     @Published var isLoading = false
     @Published var error: String?
     
-    private let logger = Logger()
+    private let logger = Logger.shared
     
     // MARK: - Recipe Database Management
     
@@ -72,9 +72,9 @@ class RecipeDatabaseService: ObservableObject {
         var recipes: [Recipe] = []
         
         for (cuisineName, cuisineRecipes) in recipeData.cuisines {
-            for recipeData in cuisineRecipes {
+            for localRecipeData in cuisineRecipes {
                 // Convert ingredients from strings to Ingredient objects
-                let ingredients = recipeData.ingredients.enumerated().map { index, ingredientString in
+                let ingredients = localRecipeData.ingredients.enumerated().map { index, ingredientString in
                     Ingredient(
                         name: ingredientString,
                         amount: 1.0, // Default amount
@@ -86,25 +86,25 @@ class RecipeDatabaseService: ObservableObject {
                 // Convert instructions to cooking steps
                 let steps = [CookingStep(
                     stepNumber: 1,
-                    description: recipeData.instructions,
-                    duration: recipeData.cooking_time,
+                    description: localRecipeData.instructions,
+                    duration: localRecipeData.cooking_time,
                     temperature: nil,
                     imageURL: nil,
                     tips: nil
                 )]
                 
                 // Convert dietary restrictions
-                let dietaryNotes = (recipeData.dietary_restrictions ?? []).compactMap { restrictionString in
+                let dietaryNotes = (localRecipeData.dietary_restrictions ?? []).compactMap { restrictionString in
                     DietaryNote(rawValue: restrictionString)
                 }
                 
                 let recipe = Recipe(
                     id: UUID(),
-                    title: recipeData.title,
+                    title: localRecipeData.title,
                     cuisine: Cuisine(rawValue: cuisineName) ?? .italian,
-                    difficulty: Difficulty(rawValue: recipeData.difficulty ?? "medium") ?? .medium,
+                    difficulty: Difficulty(rawValue: localRecipeData.difficulty ?? "medium") ?? .medium,
                     prepTime: 15, // Default prep time
-                    cookTime: recipeData.cooking_time ?? 45, // Use provided cooking time or default
+                    cookTime: localRecipeData.cooking_time ?? 45, // Use provided cooking time or default
                     servings: 4, // Default servings
                     ingredients: ingredients,
                     steps: steps,
@@ -139,8 +139,7 @@ class RecipeDatabaseService: ObservableObject {
         let lowercasedQuery = query.lowercased()
         return recipes.filter { recipe in
             recipe.title.lowercased().contains(lowercasedQuery) ||
-            recipe.ingredients.contains { $0.lowercased().contains(lowercasedQuery) } ||
-            recipe.tags.contains { $0.lowercased().contains(lowercasedQuery) }
+            recipe.ingredients.contains { $0.name.lowercased().contains(lowercasedQuery) }
         }
     }
     
@@ -163,16 +162,15 @@ class RecipeDatabaseService: ObservableObject {
     func getRecipes(by protein: String) -> [Recipe] {
         let lowercasedProtein = protein.lowercased()
         return recipes.filter { recipe in
-            recipe.tags.contains { $0.lowercased().contains(lowercasedProtein) } ||
-            recipe.ingredients.contains { $0.lowercased().contains(lowercasedProtein) }
+            recipe.ingredients.contains { $0.name.lowercased().contains(lowercasedProtein) }
         }
     }
     
     /// Gets all available protein types
     func getAvailableProteins() -> [String] {
-        let allProteins = recipes.flatMap { $0.tags }.filter { tag in
+        let allProteins = recipes.flatMap { $0.ingredients }.map { $0.name }.filter { ingredientName in
             let proteinKeywords = ["chicken", "beef", "pork", "lamb", "fish", "shrimp", "salmon", "tuna", "clams", "cheese", "egg", "tofu", "paneer", "lentils", "beans"]
-            return proteinKeywords.contains { tag.lowercased().contains($0) }
+            return proteinKeywords.contains { ingredientName.lowercased().contains($0) }
         }
         return Array(Set(allProteins)).sorted()
     }
@@ -183,7 +181,7 @@ class RecipeDatabaseService: ObservableObject {
             // Get dietary restrictions from recipe data if available
             let recipeData = getRecipeData(for: recipe)
             let recipeRestrictions = recipeData?.dietary_restrictions ?? []
-            let ingredients = recipe.ingredients.joined(separator: " ").lowercased()
+            let ingredients = recipe.ingredients.map { $0.name }.joined(separator: " ").lowercased()
             
             for restriction in dietaryRestrictions {
                 // Check explicit dietary restrictions first
@@ -241,7 +239,7 @@ class RecipeDatabaseService: ObservableObject {
     }
     
     /// Helper function to get recipe data for dietary restrictions
-    private func getRecipeData(for recipe: Recipe) -> RecipeData? {
+    private func getRecipeData(for recipe: Recipe) -> LocalRecipeData? {
         // This would need to be implemented to access the original recipe data
         // For now, we'll use ingredient-based filtering
         return nil
@@ -266,10 +264,10 @@ class RecipeDatabaseService: ObservableObject {
 // MARK: - Data Models
 
 struct RecipeDatabase: Codable {
-    let cuisines: [String: [RecipeData]]
+    let cuisines: [String: [LocalRecipeData]]
 }
 
-struct RecipeData: Codable {
+struct LocalRecipeData: Codable {
     let title: String
     let cuisine: String
     let ingredients: [String]

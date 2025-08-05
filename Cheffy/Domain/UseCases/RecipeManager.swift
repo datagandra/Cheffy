@@ -100,8 +100,18 @@ class RecipeManager: ObservableObject {
 
         }
             } catch {
-                await MainActor.run {
-                    self.error = error.localizedDescription
+                // Check if it's an API key error and fall back to local recipes
+                if let geminiError = error as? GeminiError, case .noAPIKey = geminiError {
+                    logger.warning("No API key available, falling back to local recipe database")
+                    await fallbackToLocalRecipes(
+                        cuisine: cuisine,
+                        difficulty: difficulty,
+                        dietaryRestrictions: dietaryRestrictions
+                    )
+                } else {
+                    await MainActor.run {
+                        self.error = error.localizedDescription
+                    }
                 }
             }
         }
@@ -179,9 +189,19 @@ class RecipeManager: ObservableObject {
                     logger.cache("RecipeManager: All recipes cached successfully")
                 }
                             } catch {
-                    await MainActor.run {
-                        self.error = error.localizedDescription
-                        logger.error("Error generating popular recipes: \(error)")
+                    // Check if it's an API key error and fall back to local recipes
+                    if let geminiError = error as? GeminiError, case .noAPIKey = geminiError {
+                        logger.warning("No API key available, falling back to local recipe database for popular recipes")
+                        await fallbackToLocalPopularRecipes(
+                            cuisine: cuisine,
+                            difficulty: difficulty,
+                            dietaryRestrictions: dietaryRestrictions
+                        )
+                    } else {
+                        await MainActor.run {
+                            self.error = error.localizedDescription
+                            logger.error("Error generating popular recipes: \(error)")
+                        }
                     }
                 }
         }
@@ -442,6 +462,102 @@ class RecipeManager: ObservableObject {
             logger.cache("Loaded all \(cachedRecipes.count) cached recipes")
         } else {
             logger.cache("No cached recipes available")
+        }
+    }
+    
+    // MARK: - Fallback Methods
+    
+    private func fallbackToLocalRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote]
+    ) async {
+        logger.info("Using local recipe database as fallback")
+        
+        // Load recipes from local database
+        let recipeDatabase = RecipeDatabaseService.shared
+        await recipeDatabase.loadAllRecipes()
+        
+        // Filter recipes based on criteria
+        var filteredRecipes = recipeDatabase.recipes.filter { recipe in
+            recipe.cuisine == cuisine
+        }
+        
+        // Apply dietary restrictions filter
+        if !dietaryRestrictions.isEmpty {
+            filteredRecipes = filteredRecipes.filter { recipe in
+                let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+                let userDietaryNotes = Set(dietaryRestrictions.map { $0.rawValue })
+                return !recipeDietaryNotes.isDisjoint(with: userDietaryNotes)
+            }
+        }
+        
+        // If no recipes match exact criteria, show all recipes for the cuisine
+        if filteredRecipes.isEmpty {
+            filteredRecipes = recipeDatabase.recipes.filter { recipe in
+                recipe.cuisine == cuisine
+            }
+        }
+        
+        // Select a random recipe or the first one
+        let selectedRecipe = filteredRecipes.randomElement() ?? filteredRecipes.first
+        
+        await MainActor.run {
+            if let recipe = selectedRecipe {
+                self.generatedRecipe = recipe
+                self.isUsingCachedData = true
+                self.error = nil
+                logger.info("Successfully loaded recipe from local database: \(recipe.title)")
+            } else {
+                self.error = "No recipes found for \(cuisine.rawValue) cuisine. Please try a different cuisine or set up your API key."
+            }
+        }
+    }
+    
+    private func fallbackToLocalPopularRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote]
+    ) async {
+        logger.info("Using local recipe database as fallback for popular recipes")
+        
+        // Load recipes from local database
+        let recipeDatabase = RecipeDatabaseService.shared
+        await recipeDatabase.loadAllRecipes()
+        
+        // Filter recipes based on criteria
+        var filteredRecipes = recipeDatabase.recipes.filter { recipe in
+            recipe.cuisine == cuisine
+        }
+        
+        // Apply dietary restrictions filter
+        if !dietaryRestrictions.isEmpty {
+            filteredRecipes = filteredRecipes.filter { recipe in
+                let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+                let userDietaryNotes = Set(dietaryRestrictions.map { $0.rawValue })
+                return !recipeDietaryNotes.isDisjoint(with: userDietaryNotes)
+            }
+        }
+        
+        // If no recipes match exact criteria, show all recipes for the cuisine
+        if filteredRecipes.isEmpty {
+            filteredRecipes = recipeDatabase.recipes.filter { recipe in
+                recipe.cuisine == cuisine
+            }
+        }
+        
+        // Take up to 10 recipes
+        let selectedRecipes = Array(filteredRecipes.prefix(10))
+        
+        await MainActor.run {
+            if !selectedRecipes.isEmpty {
+                self.popularRecipes = selectedRecipes
+                self.isUsingCachedData = true
+                self.error = nil
+                logger.info("Successfully loaded \(selectedRecipes.count) recipes from local database")
+            } else {
+                self.error = "No recipes found for \(cuisine.rawValue) cuisine. Please try a different cuisine or set up your API key."
+            }
         }
     }
     

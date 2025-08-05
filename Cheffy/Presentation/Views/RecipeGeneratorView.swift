@@ -365,6 +365,11 @@ struct RecipeGeneratorView: View {
                 cacheStatusIndicator
             }
             
+            // Local Database Indicator
+            if recipeManager.isUsingCachedData && recipeManager.error == nil {
+                localDatabaseIndicator
+            }
+            
 
             
             if let error = recipeManager.error {
@@ -419,6 +424,22 @@ struct RecipeGeneratorView: View {
         .padding(.horizontal, 12)
         .padding(.vertical, 6)
         .background(Color.green.opacity(0.1))
+        .cornerRadius(8)
+    }
+    
+    // MARK: - Local Database Indicator
+    
+    private var localDatabaseIndicator: some View {
+        HStack {
+            Image(systemName: "folder.fill")
+                .foregroundColor(.blue)
+            Text("Using local recipe database")
+                .font(.caption)
+                .foregroundColor(.blue)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
+        .background(Color.blue.opacity(0.1))
         .cornerRadius(8)
     }
     

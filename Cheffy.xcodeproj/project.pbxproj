@@ -39,6 +39,7 @@
 		AF0FC52EF67FD31B9891F6CF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5415799FC91B4D79B3A3AB55 /* UserProfile.swift */; };
 		B366B234BF02EA39FF086CCF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8378B578EC00E23FF5C9CA /* Logger.swift */; };
 		B58F1A4C24AC2401CF18688B /* SecureConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB7AA437251675B1B3B2CE /* SecureConfig.swift */; };
+		B58F1A4C24AC2401CF18688D /* RecipeDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB7AA437251675B1B3B2D0 /* RecipeDatabaseService.swift */; };
 
 		B88D6B67011FA939A72862D4 /* VoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B602A4403986FC8A07CFA196 /* VoiceManager.swift */; };
 		C50E2AB5938246A32A6FA771 /* EnhancedCookingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491C322DE545CBC50AED9180 /* EnhancedCookingModeView.swift */; };
@@ -66,6 +67,7 @@
 		460349C1427146AB327C839A /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		491C322DE545CBC50AED9180 /* EnhancedCookingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedCookingModeView.swift; sourceTree = "<group>"; };
 		4BBB7AA437251675B1B3B2CE /* SecureConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureConfig.swift; sourceTree = "<group>"; };
+		4BBB7AA437251675B1B3B2D0 /* RecipeDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheffy/Domain/Services/RecipeDatabaseService.swift; sourceTree = "<group>"; };
 
 		4D3CF88073EA42D16850DF39 /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 		504D9FAFB630F4E1F9865997 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				AB4BD891F1FBE472313CE581 /* PerformanceMonitor.swift in Sources */,
 				5E92EC27A6D3038129DAC540 /* Recipe.swift in Sources */,
 				4057C42B7F5B69D9B8CD1044 /* RecipeCacheManager.swift in Sources */,
+				B58F1A4C24AC2401CF18688D /* RecipeDatabaseService.swift in Sources */,
 
 				623110870DB2906C82CD7852 /* RecipeDetailView.swift in Sources */,
 				F3735C2A9631E6EEDD1CC901 /* RecipeGeneratorView.swift in Sources */,
