@@ -26,17 +26,35 @@ else
     echo "❌ Mediterranean Cuisines: Not found"
 fi
 
+if [ -f "Cheffy/Resources/recipes/indian_cuisines.json" ]; then
+    echo "✅ Indian Cuisines: Indian (10 recipes)"
+else
+    echo "❌ Indian Cuisines: Not found"
+fi
+
+if [ -f "Cheffy/Resources/recipes/american_cuisines.json" ]; then
+    echo "✅ American Cuisines: American (10 recipes)"
+else
+    echo "❌ American Cuisines: Not found"
+fi
+
+if [ -f "Cheffy/Resources/recipes/mexican_cuisines.json" ]; then
+    echo "✅ Mexican Cuisines: Mexican (10 recipes)"
+else
+    echo "❌ Mexican Cuisines: Not found"
+fi
+
 echo ""
 echo "📋 Recipe Database Structure:"
 echo "├── Cheffy/Resources/recipes/"
 echo "│   ├── asian_cuisines.json (Chinese, Japanese)"
 echo "│   ├── mediterranean_cuisines.json (Italian, Greek)"
-echo "│   ├── indian_cuisines.json (Coming soon)"
-echo "│   ├── mexican_cuisines.json (Coming soon)"
+echo "│   ├── indian_cuisines.json (Indian)"
+echo "│   ├── american_cuisines.json (American)"
+echo "│   ├── mexican_cuisines.json (Mexican)"
 echo "│   ├── french_cuisines.json (Coming soon)"
 echo "│   ├── thai_cuisines.json (Coming soon)"
-echo "│   ├── korean_cuisines.json (Coming soon)"
-echo "│   └── american_cuisines.json (Coming soon)"
+echo "│   └── korean_cuisines.json (Coming soon)"
 echo ""
 
 echo "🎯 Each cuisine file contains:"
@@ -103,11 +121,11 @@ check_missing() {
         "asian_cuisines.json"
         "mediterranean_cuisines.json"
         "indian_cuisines.json"
+        "american_cuisines.json"
         "mexican_cuisines.json"
         "french_cuisines.json"
         "thai_cuisines.json"
         "korean_cuisines.json"
-        "american_cuisines.json"
     )
     
     for file in "${expected_files[@]}"; do

@@ -1,0 +1,106 @@
+{
+  "cuisines": {
+    "Indian": [
+      {
+        "title": "Butter Chicken (Murgh Makhani)",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb chicken breast, cubed", "1 cup yogurt", "2 tbsp tandoori masala", "1/2 cup heavy cream", "1/4 cup butter", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tbsp tomato paste", "1 cup tomato puree", "1 tbsp garam masala", "1 tsp turmeric", "1 tsp chili powder", "1/2 cup cashews, ground", "1/4 cup fresh cilantro", "2 tbsp vegetable oil", "1 tsp fenugreek leaves", "1/2 cup chicken stock"],
+        "instructions": "Marinate chicken breast cubes in yogurt and tandoori masala for 30 minutes. Heat vegetable oil in a large pan and sauté diced onion, minced garlic, and grated ginger until golden brown. Add tomato paste and cook for 2 minutes until oil separates. Add tomato puree, garam masala, turmeric, and chili powder. Cook for 5 minutes until sauce thickens. Add marinated chicken breast and cook for 8-10 minutes until chicken is fully cooked through. Add heavy cream and ground cashews, simmering for 5 minutes until sauce thickens. Stir in butter and fenugreek leaves. Garnish with fresh cilantro and serve hot with naan bread and basmati rice.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": ["contains_dairy", "contains_nuts"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Biryani",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups basmati rice", "1 lb chicken thighs, cubed", "1/2 cup yogurt", "2 tbsp biryani masala", "1 large onion, sliced", "4 cloves garlic, minced", "1 inch ginger, grated", "1/2 cup mint leaves", "1/2 cup cilantro", "4 green cardamom pods", "4 cloves", "2 cinnamon sticks", "1 bay leaf", "1/2 cup ghee", "1/4 cup fried onions", "1/4 cup cashews", "1/4 cup raisins", "Saffron strands", "1 cup warm milk", "Salt to taste"],
+        "instructions": "Soak basmati rice for 30 minutes. Marinate chicken thighs in yogurt and biryani masala for 1 hour. Heat ghee in a large pot and add whole spices (cardamom, cloves, cinnamon, bay leaf). Add sliced onions and cook until golden. Add minced garlic and grated ginger, cook for 2 minutes. Add marinated chicken and cook for 10 minutes until partially done. Layer half the soaked rice over chicken. Sprinkle mint, cilantro, fried onions, cashews, and raisins. Layer remaining rice. Soak saffron in warm milk and drizzle over rice. Cover tightly and cook on low heat for 25 minutes. Let rest for 10 minutes before serving.",
+        "proteins": ["chicken thighs"],
+        "dietary_restrictions": ["contains_dairy", "contains_nuts"],
+        "cooking_time": 90,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Palak Paneer",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb fresh spinach, chopped", "1/2 lb paneer, cubed", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric", "1/2 tsp chili powder", "1/4 cup heavy cream", "2 tbsp ghee", "1/4 cup cashews", "1/2 cup water", "Salt to taste"],
+        "instructions": "Blanch spinach in boiling water for 2 minutes, then blend to a smooth paste. Heat ghee in a pan and add cumin seeds. Add diced onion and cook until translucent. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add spinach paste, turmeric, chili powder, and garam masala. Cook for 5 minutes. Add paneer cubes and heavy cream. Simmer for 5 minutes until paneer is heated through. Garnish with cashews and serve hot with naan or rice.",
+        "proteins": ["paneer"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
+        "cooking_time": 30,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Rogan Josh",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb lamb shoulder, cubed", "2 large onions, diced", "4 cloves garlic, minced", "1 inch ginger, grated", "2 tbsp Kashmiri chili powder", "1 tsp turmeric", "1 tsp garam masala", "1/2 cup yogurt", "1/4 cup ghee", "4 green cardamom pods", "4 cloves", "2 cinnamon sticks", "1 bay leaf", "1 cup water", "1/4 cup fresh cilantro", "Salt to taste"],
+        "instructions": "Heat ghee in a large pot and add whole spices (cardamom, cloves, cinnamon, bay leaf). Add diced onions and cook until golden brown. Add minced garlic and grated ginger, cook for 2 minutes. Add lamb cubes and brown on all sides. Add Kashmiri chili powder, turmeric, and garam masala. Cook for 2 minutes until spices are fragrant. Add yogurt and water. Cover and simmer for 1.5 hours until lamb is tender. Garnish with fresh cilantro and serve hot with naan bread.",
+        "proteins": ["lamb shoulder"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 120,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Masala Dosa",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups rice", "1 cup urad dal", "1/2 cup poha", "1/4 cup fenugreek seeds", "1 large potato, boiled and mashed", "1 large onion, diced", "2 green chilies, minced", "1 tsp mustard seeds", "1 tsp turmeric", "1/2 cup coconut chutney", "1/2 cup sambar", "1/4 cup oil", "Salt to taste"],
+        "instructions": "Soak rice, urad dal, and fenugreek seeds separately for 6 hours. Grind rice and dal separately to smooth batter. Mix both batters and add salt. Ferment overnight. For potato filling, heat oil and add mustard seeds. Add diced onion and green chilies. Add mashed potato and turmeric. Cook for 5 minutes. Heat a dosa tawa and spread batter in circular motion. Cook until golden. Add potato filling and fold. Serve hot with coconut chutney and sambar.",
+        "proteins": ["urad dal"],
+        "dietary_restrictions": ["vegetarian", "vegan", "gluten_free"],
+        "cooking_time": 60,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Tandoori Chicken",
+        "cuisine": "Indian",
+        "ingredients": ["2 lbs chicken pieces", "1 cup yogurt", "2 tbsp tandoori masala", "1 tbsp ginger paste", "1 tbsp garlic paste", "1 tsp red chili powder", "1 tsp turmeric", "1/2 tsp garam masala", "2 tbsp mustard oil", "1 lemon, juiced", "1/4 cup fresh cilantro", "Salt to taste"],
+        "instructions": "Make deep cuts in chicken pieces. Mix yogurt, tandoori masala, ginger paste, garlic paste, red chili powder, turmeric, garam masala, mustard oil, lemon juice, and salt. Marinate chicken in this mixture for 4 hours. Preheat oven to 400°F. Place marinated chicken on a baking sheet and bake for 30-35 minutes until cooked through and slightly charred. Garnish with fresh cilantro and serve hot with mint chutney and onion salad.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 75,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Dal Makhani",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup black lentils", "1/4 cup kidney beans", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric", "1/2 cup heavy cream", "2 tbsp butter", "1/4 cup fresh cilantro", "1 cup water", "Salt to taste"],
+        "instructions": "Soak black lentils and kidney beans overnight. Pressure cook for 3 whistles or boil until soft. Heat butter in a pan and add cumin seeds. Add diced onion and cook until golden. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add cooked lentils and beans. Add turmeric, garam masala, and salt. Simmer for 20 minutes until thick. Add heavy cream and simmer for 5 minutes. Garnish with fresh cilantro and serve hot with rice or naan.",
+        "proteins": ["black lentils", "kidney beans"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 90,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Chicken Tikka Masala",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb chicken breast, cubed", "1 cup yogurt", "2 tbsp tikka masala", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1/2 cup heavy cream", "1/4 cup butter", "1 tsp garam masala", "1 tsp turmeric", "1/2 tsp chili powder", "1/4 cup fresh cilantro", "2 tbsp vegetable oil", "1 cup chicken stock"],
+        "instructions": "Marinate chicken breast cubes in yogurt and tikka masala for 30 minutes. Heat vegetable oil in a large pan and sauté diced onion until golden. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add marinated chicken and cook for 8-10 minutes until chicken is done. Add chicken stock and simmer for 10 minutes. Add heavy cream, butter, garam masala, turmeric, and chili powder. Simmer for 5 minutes until sauce thickens. Garnish with fresh cilantro and serve hot with naan bread.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 50,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Aloo Gobi",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb potatoes, cubed", "1 lb cauliflower, florets", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp garam masala", "1/2 tsp chili powder", "1/4 cup fresh cilantro", "2 tbsp vegetable oil", "Salt to taste"],
+        "instructions": "Heat vegetable oil in a large pan and add cumin seeds. Add diced onion and cook until translucent. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add potato cubes and cook for 5 minutes. Add cauliflower florets, turmeric, garam masala, chili powder, and salt. Cook for 15-20 minutes until vegetables are tender. Garnish with fresh cilantro and serve hot with rice or roti.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan", "gluten_free"],
+        "cooking_time": 40,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Gulab Jamun",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup milk powder", "1/4 cup all-purpose flour", "1/4 tsp baking soda", "2 tbsp ghee", "1/4 cup milk", "1 cup sugar", "1 cup water", "4 green cardamom pods", "1/4 tsp rose water", "1/4 cup pistachios, chopped"],
+        "instructions": "Mix milk powder, all-purpose flour, and baking soda. Add ghee and milk to form a soft dough. Shape into small balls. Heat oil and deep fry balls until golden brown. For syrup, boil sugar and water with cardamom pods for 10 minutes. Add rose water. Soak fried balls in warm syrup for 30 minutes. Garnish with chopped pistachios and serve warm or cold.",
+        "proteins": ["milk powder"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
+        "cooking_time": 60,
+        "difficulty": "medium"
+      }
+    ]
+  }
+} 
