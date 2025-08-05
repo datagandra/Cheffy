@@ -103,8 +103,6 @@ class RecipeManager: ObservableObject {
                 await MainActor.run {
                     self.error = error.localizedDescription
                 }
-                
-
             }
         }
         
@@ -448,6 +446,8 @@ class RecipeManager: ObservableObject {
     }
     
     // MARK: - Smart Caching Logic
+    
+
     
     /// Finds a cached recipe that matches the given criteria
     /// - Parameters: All the recipe generation parameters

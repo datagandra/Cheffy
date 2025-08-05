@@ -365,6 +365,8 @@ struct RecipeGeneratorView: View {
                 cacheStatusIndicator
             }
             
+
+            
             if let error = recipeManager.error {
                 ErrorView(error: error)
             }
@@ -419,6 +421,8 @@ struct RecipeGeneratorView: View {
         .background(Color.green.opacity(0.1))
         .cornerRadius(8)
     }
+    
+
     
     // MARK: - Cache Test Button
     
