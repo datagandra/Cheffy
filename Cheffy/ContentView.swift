@@ -7,29 +7,23 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             TabView(selection: $selectedTab) {
-                RecipeDiscoveryView()
-                    .tabItem { 
-                        Label("Discover", systemImage: "magnifyingglass")
-                    }
-                    .tag(0)
-                
                 RecipeGeneratorView()
                     .tabItem { 
                         Label("Generate", systemImage: "wand.and.stars")
                     }
-                    .tag(1)
+                    .tag(0)
                 
                 FavoritesView()
                     .tabItem { 
                         Label("Favorites", systemImage: "heart.fill")
                     }
-                    .tag(2)
+                    .tag(1)
                 
                 SettingsView()
                     .tabItem { 
                         Label("Settings", systemImage: "gear")
                     }
-                    .tag(3)
+                    .tag(2)
             }
             .tint(.orange)
             .sheet(isPresented: $subscriptionManager.showPaywall) {

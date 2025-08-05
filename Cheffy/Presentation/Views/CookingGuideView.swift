@@ -377,7 +377,7 @@ struct CookingBadgeView: View {
 #Preview {
     // Create a sample recipe for preview
     let sampleRecipe = Recipe(
-        name: "Sample Recipe",
+        title: "Sample Recipe",
         cuisine: .italian,
         difficulty: .medium,
         prepTime: 15,
@@ -391,5 +391,5 @@ struct CookingBadgeView: View {
         ]
     )
     
-    return CookingGuideView(recipe: sampleRecipe)
+    CookingGuideView(recipe: sampleRecipe)
 } 

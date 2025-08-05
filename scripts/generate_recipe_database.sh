@@ -44,6 +44,30 @@ else
     echo "❌ Mexican Cuisines: Not found"
 fi
 
+if [ -f "Cheffy/Resources/recipes/european_cuisines.json" ]; then
+    echo "✅ European Cuisines: French (5 recipes), Italian (5 recipes), Spanish (5 recipes)"
+else
+    echo "❌ European Cuisines: Not found"
+fi
+
+if [ -f "Cheffy/Resources/recipes/asian_cuisines_extended.json" ]; then
+    echo "✅ Extended Asian Cuisines: Chinese (5 recipes), Japanese (5 recipes), Thai (5 recipes), Korean (5 recipes)"
+else
+    echo "❌ Extended Asian Cuisines: Not found"
+fi
+
+if [ -f "Cheffy/Resources/recipes/middle_eastern_african_cuisines.json" ]; then
+    echo "✅ Middle Eastern & African Cuisines: Lebanese (5 recipes), Moroccan (5 recipes), Egyptian (5 recipes), Ethiopian (5 recipes)"
+else
+    echo "❌ Middle Eastern & African Cuisines: Not found"
+fi
+
+if [ -f "Cheffy/Resources/recipes/latin_american_cuisines.json" ]; then
+    echo "✅ Latin American Cuisines: Brazilian (5 recipes), Argentine (5 recipes), Peruvian (5 recipes), Colombian (5 recipes)"
+else
+    echo "❌ Latin American Cuisines: Not found"
+fi
+
 echo ""
 echo "📋 Recipe Database Structure:"
 echo "├── Cheffy/Resources/recipes/"
@@ -52,9 +76,10 @@ echo "│   ├── mediterranean_cuisines.json (Italian, Greek)"
 echo "│   ├── indian_cuisines.json (Indian)"
 echo "│   ├── american_cuisines.json (American)"
 echo "│   ├── mexican_cuisines.json (Mexican)"
-echo "│   ├── french_cuisines.json (Coming soon)"
-echo "│   ├── thai_cuisines.json (Coming soon)"
-echo "│   └── korean_cuisines.json (Coming soon)"
+echo "│   ├── european_cuisines.json (French, Italian, Spanish)"
+echo "│   ├── asian_cuisines_extended.json (Chinese, Japanese, Thai, Korean)"
+echo "│   ├── middle_eastern_african_cuisines.json (Lebanese, Moroccan, Egyptian, Ethiopian)"
+echo "│   └── latin_american_cuisines.json (Brazilian, Argentine, Peruvian, Colombian)"
 echo ""
 
 echo "🎯 Each cuisine file contains:"

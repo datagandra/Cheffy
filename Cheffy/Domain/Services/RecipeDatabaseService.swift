@@ -29,8 +29,11 @@ class RecipeDatabaseService: ObservableObject {
                 "mediterranean_cuisines.json",
                 "indian_cuisines.json",
                 "american_cuisines.json",
-                "mexican_cuisines.json"
-                // Add more files as they're created
+                "mexican_cuisines.json",
+                "european_cuisines.json",
+                "asian_cuisines_extended.json",
+                "middle_eastern_african_cuisines.json",
+                "latin_american_cuisines.json"
             ]
             
             for fileName in cuisineFiles {

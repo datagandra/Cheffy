@@ -436,7 +436,7 @@ struct DetailedCookingInstructionsView: View {
 
 #Preview {
     let sampleRecipe = Recipe(
-        name: "Coq au Vin",
+        title: "Coq au Vin",
         cuisine: .french,
         difficulty: .medium,
         prepTime: 30,

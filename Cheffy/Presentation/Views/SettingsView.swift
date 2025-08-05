@@ -73,7 +73,8 @@ struct SettingsView: View {
             CacheManagementView()
         }
         .sheet(isPresented: $showingLLMDiagnostics) {
-            LLMDiagnosticView()
+            Text("LLM Diagnostics - Coming Soon")
+                .padding()
         }
         .onAppear {
             checkAPIKeyStatus()

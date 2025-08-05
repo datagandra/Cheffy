@@ -716,7 +716,7 @@ class OpenAIClient: ObservableObject {
                 let kidFriendlySteps = convertToKidFriendlySteps(sanitizedSteps)
                 
                 let recipe = Recipe(
-                    name: recipeData.name,
+                    title: recipeData.name,
                     cuisine: cuisine,
                     difficulty: difficulty,
                     prepTime: recipeData.prepTime,
@@ -746,7 +746,7 @@ class OpenAIClient: ObservableObject {
                         logger.debug("Ingredients count: \(recipeData.ingredients.count)")
                         
                         let recipe = Recipe(
-                            name: recipeData.name,
+                            title: recipeData.name,
                             cuisine: cuisine,
                             difficulty: difficulty,
                             prepTime: recipeData.prepTime,
@@ -844,7 +844,7 @@ class OpenAIClient: ObservableObject {
         }
         
         return Recipe(
-            name: name,
+            title: name,
             cuisine: cuisine,
             difficulty: difficulty,
             prepTime: 15,
@@ -901,7 +901,7 @@ class OpenAIClient: ObservableObject {
                     let kidFriendlySteps = convertToKidFriendlySteps(sanitizedSteps)
                     
                     let recipe = Recipe(
-                        name: recipeData.name,
+                        title: recipeData.name,
                         cuisine: cuisine,
                         difficulty: difficulty,
                         prepTime: recipeData.prepTime,
@@ -933,7 +933,7 @@ class OpenAIClient: ObservableObject {
                         var recipes: [Recipe] = []
                         for recipeData in recipesData {
                             let recipe = Recipe(
-                                name: recipeData.name,
+                                title: recipeData.name,
                                 cuisine: cuisine,
                                 difficulty: difficulty,
                                 prepTime: recipeData.prepTime,
@@ -996,7 +996,7 @@ class OpenAIClient: ObservableObject {
             let dynamicIngredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
             
             let recipe = Recipe(
-                name: recipeName,
+                title: recipeName,
                 cuisine: cuisine,
                 difficulty: difficulty,
                 prepTime: 15,
@@ -1480,7 +1480,7 @@ class OpenAIClient: ObservableObject {
             let ingredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
             
             let recipe = Recipe(
-                name: recipeName,
+                title: recipeName,
                 cuisine: cuisine,
                 difficulty: difficulty,
                 prepTime: 15,

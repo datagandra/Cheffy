@@ -1154,7 +1154,7 @@ struct EquipmentRow: View {
 
 #Preview {
     RecipeLandingPageView(recipe: Recipe(
-        name: "Sample Recipe",
+        title: "Sample Recipe",
         cuisine: .italian,
         difficulty: .medium,
         prepTime: 15,
