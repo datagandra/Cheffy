@@ -9,6 +9,7 @@ struct CheffyApp: App {
     @StateObject private var recipeManager = RecipeManager()
     @StateObject private var voiceManager = VoiceManager()
     @StateObject private var userManager = UserManager()
+    @StateObject private var shoppingCartService = ShoppingCartService()
 
     var body: some Scene {
         WindowGroup {
@@ -18,12 +19,14 @@ struct CheffyApp: App {
                     .environmentObject(subscriptionManager)
                     .environmentObject(recipeManager)
                     .environmentObject(voiceManager)
+                    .environmentObject(shoppingCartService)
             } else {
                 ContentView()
                     .environmentObject(userManager)
                     .environmentObject(subscriptionManager)
                     .environmentObject(recipeManager)
                     .environmentObject(voiceManager)
+                    .environmentObject(shoppingCartService)
                     .onAppear {
                         setupStripe()
                         setupGemini()
