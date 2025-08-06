@@ -15,6 +15,7 @@ struct SettingsView: View {
     @State private var showingTermsOfService = false
     @State private var showingCacheManagement = false
     @State private var showingLLMDiagnostics = false
+    @State private var showingDatabaseTest = false
 
     
     var body: some View {
@@ -75,6 +76,41 @@ struct SettingsView: View {
         .sheet(isPresented: $showingLLMDiagnostics) {
             Text("LLM Diagnostics - Coming Soon")
                 .padding()
+        }
+        .sheet(isPresented: $showingDatabaseTest) {
+            VStack(spacing: 20) {
+                Text("Local Recipe Database Test")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                let recipeService = RecipeDatabaseService.shared
+                let allRecipes = recipeService.recipes
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("📊 Total recipes: \(allRecipes.count)")
+                    
+                    let cuisines = Set(allRecipes.map { $0.cuisine.rawValue })
+                    Text("🌍 Cuisines: \(cuisines.count)")
+                    Text("   \(cuisines.joined(separator: ", "))")
+                    
+                    let vegetarianRecipes = recipeService.getRecipes(for: [.vegetarian])
+                    Text("🥬 Vegetarian: \(vegetarianRecipes.count)")
+                    
+                    let chickenRecipes = recipeService.searchRecipes(query: "chicken")
+                    Text("🍗 Chicken recipes: \(chickenRecipes.count)")
+                    
+                    if let firstRecipe = allRecipes.first {
+                        Text("Sample: \(firstRecipe.title)")
+                        Text("Cuisine: \(firstRecipe.cuisine.rawValue)")
+                    }
+                }
+                .padding()
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(8)
+                
+                Spacer()
+            }
+            .padding()
         }
         .onAppear {
             checkAPIKeyStatus()
@@ -328,6 +364,14 @@ struct SettingsView: View {
                 Label("LLM Diagnostics", systemImage: "stethoscope")
             }
             .accessibilityHint("Double tap to diagnose LLM connection issues")
+            
+            // Database Test
+            Button {
+                showingDatabaseTest = true
+            } label: {
+                Label("Database Test", systemImage: "database")
+            }
+            .accessibilityHint("Double tap to test local recipe database")
             
             // Terms of Service
             Button {
