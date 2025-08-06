@@ -295,7 +295,7 @@ class OpenAIClient: ObservableObject {
             logger.debug("Response content length: \(content.count) characters")
             logger.debug("Response content: \(content)")
             
-            let recipe = try parseRecipeFromResponse(content, cuisine: cuisine, difficulty: difficulty)
+            let recipe = try parseRecipeFromResponse(content, cuisine: cuisine, difficulty: difficulty, servings: servings)
             
             // Apply strict dietary filtering for single recipe
             if !dietaryRestrictions.isEmpty {
@@ -403,7 +403,7 @@ class OpenAIClient: ObservableObject {
                 logger.debug("Response content length: \(content.count) characters")
                 logger.debug("Response content: \(content)")
                 
-                var recipes = try parsePopularRecipesFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions)
+                var recipes = try parsePopularRecipesFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
                 
                 // Apply strict dietary filtering
                 let originalCount = recipes.count
@@ -419,7 +419,8 @@ class OpenAIClient: ObservableObject {
                         cuisine: cuisine,
                         difficulty: difficulty,
                         dietaryRestrictions: dietaryRestrictions,
-                        count: 10 - filteredCount
+                        count: 10 - filteredCount,
+                        servings: servings
                     )
                     recipes.append(contentsOf: fallbackRecipes)
                     logger.api("Added \(fallbackRecipes.count) compliant fallback recipes")
@@ -526,6 +527,9 @@ class OpenAIClient: ObservableObject {
         - List ingredients for any side dishes or accompaniments mentioned
         - Include ALL ingredients for any sub-recipes (sauces, dressings, etc.)
         - Be extremely detailed - chefs need to source everything
+        - 🚨 CRITICAL SERVINGS SCALING: ALL ingredient amounts MUST be calculated for exactly \(servings) servings
+        - 🚨 SERVINGS REQUIREMENT: Every ingredient amount must be appropriate for \(servings) people
+        - 🚨 SCALING RULE: If a recipe normally serves 4, multiply all amounts by \(servings)/4 for \(servings) servings
 
                         Create MICHELIN-LEVEL detailed, step-by-step cooking instructions that are easy to follow for home cooks. Each step should include:
                         - Extremely detailed, specific instructions with exact measurements and techniques
@@ -634,7 +638,10 @@ class OpenAIClient: ObservableObject {
         17. Specify quality requirements (extra virgin olive oil, fresh herbs, etc.)
         18. Include ALL ingredients for any side dishes or accompaniments
         19. Be extremely detailed - chefs need to source everything from scratch
-        13. Do not skip any ingredients - include everything needed for the recipe
+        20. 🚨 CRITICAL SERVINGS SCALING: ALL ingredient amounts MUST be calculated for exactly \(servings) servings
+        21. 🚨 SERVINGS REQUIREMENT: Every ingredient amount must be appropriate for \(servings) people
+        22. 🚨 SCALING RULE: If a recipe normally serves 4, multiply all amounts by \(servings)/4 for \(servings) servings
+        23. Do not skip any ingredients - include everything needed for the recipe
         14. FINAL CHECK: Verify every ingredient in every recipe complies with ALL restrictions
         15. FINAL CHECK: Verify every recipe name complies with ALL restrictions
         16. DYNAMIC POPULARITY RANKING: Research and rank recipes by CURRENT popularity and culinary significance in \(cuisine.rawValue) cuisine
@@ -676,7 +683,7 @@ class OpenAIClient: ObservableObject {
         return prompt
     }
 
-    private func parseRecipeFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty) throws -> Recipe {
+    private func parseRecipeFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty, servings: Int = 2) throws -> Recipe {
         logger.debug("Parsing response content...")
         logger.debug("Full response: \(content)")
         
@@ -721,7 +728,7 @@ class OpenAIClient: ObservableObject {
                     difficulty: difficulty,
                     prepTime: recipeData.prepTime,
                     cookTime: recipeData.cookTime,
-                    servings: 2, // Default
+                    servings: servings,
                     ingredients: recipeData.ingredients,
                     steps: kidFriendlySteps,
                     winePairings: recipeData.winePairings,
@@ -751,7 +758,7 @@ class OpenAIClient: ObservableObject {
                             difficulty: difficulty,
                             prepTime: recipeData.prepTime,
                             cookTime: recipeData.cookTime,
-                            servings: 2,
+                            servings: servings,
                             ingredients: recipeData.ingredients,
                             steps: recipeData.steps,
                             winePairings: recipeData.winePairings,
@@ -766,16 +773,16 @@ class OpenAIClient: ObservableObject {
                 }
                 
                 // If JSON parsing fails, try to create a basic recipe from the text
-                return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty)
+                return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty, servings: servings)
             }
         } else {
             logger.error("No JSON brackets found in response")
             // If no JSON found, try to create a basic recipe from the text
-            return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty)
+            return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty, servings: servings)
         }
     }
     
-    private func createRecipeFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty) throws -> Recipe {
+    private func createRecipeFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty, servings: Int = 2) throws -> Recipe {
         logger.debug("Creating recipe from text content...")
         
         // Extract recipe name (look for common patterns)
@@ -849,7 +856,7 @@ class OpenAIClient: ObservableObject {
             difficulty: difficulty,
             prepTime: 15,
             cookTime: 30,
-            servings: 2,
+            servings: servings,
             ingredients: dynamicIngredients,
             steps: steps,
             winePairings: [],
@@ -859,7 +866,7 @@ class OpenAIClient: ObservableObject {
         )
     }
     
-    private func parsePopularRecipesFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote]) throws -> [Recipe] {
+    private func parsePopularRecipesFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote], servings: Int = 2) throws -> [Recipe] {
         logger.debug("Parsing popular recipes response...")
         logger.debug("Full response: \(content)")
         
@@ -906,7 +913,7 @@ class OpenAIClient: ObservableObject {
                         difficulty: difficulty,
                         prepTime: recipeData.prepTime,
                         cookTime: recipeData.cookTime,
-                        servings: 2, // Default
+                        servings: servings,
                         ingredients: recipeData.ingredients,
                         steps: kidFriendlySteps,
                         winePairings: recipeData.winePairings,
@@ -938,7 +945,7 @@ class OpenAIClient: ObservableObject {
                                 difficulty: difficulty,
                                 prepTime: recipeData.prepTime,
                                 cookTime: recipeData.cookTime,
-                                servings: 2,
+                                servings: servings,
                                 ingredients: recipeData.ingredients,
                                 steps: recipeData.steps,
                                 winePairings: recipeData.winePairings,
@@ -955,16 +962,16 @@ class OpenAIClient: ObservableObject {
                 }
                 
                 // If JSON parsing fails, try to create basic recipes from the text
-                return try createPopularRecipesFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions)
+                return try createPopularRecipesFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
             }
         } else {
             logger.error("No JSON array brackets found in response")
             // If no JSON found, try to create basic recipes from the text
-            return try createPopularRecipesFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions)
+            return try createPopularRecipesFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
         }
     }
     
-    private func createPopularRecipesFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote]) throws -> [Recipe] {
+    private func createPopularRecipesFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote], servings: Int = 2) throws -> [Recipe] {
         logger.debug("Creating popular recipes from text content...")
         
         // Split content into sections and try to extract recipes
@@ -977,7 +984,7 @@ class OpenAIClient: ObservableObject {
             let trimmedSection = section.trimmingCharacters(in: .whitespacesAndNewlines)
             if trimmedSection.count > 50 { // Only process substantial sections
                 do {
-                    let recipe = try createRecipeFromText(trimmedSection, cuisine: cuisine, difficulty: difficulty)
+                    let recipe = try createRecipeFromText(trimmedSection, cuisine: cuisine, difficulty: difficulty, servings: servings)
                     var updatedRecipe = recipe
                     updatedRecipe.dietaryNotes = dietaryRestrictions
                     recipes.append(updatedRecipe)
@@ -1001,7 +1008,7 @@ class OpenAIClient: ObservableObject {
                 difficulty: difficulty,
                 prepTime: 15,
                 cookTime: 30,
-                servings: 2,
+                servings: servings,
                 ingredients: dynamicIngredients,
                 steps: [
                     CookingStep(
@@ -1469,7 +1476,8 @@ class OpenAIClient: ObservableObject {
         cuisine: Cuisine,
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
-        count: Int
+        count: Int,
+        servings: Int = 2
     ) -> [Recipe] {
         logger.debug("Generating \(count) compliant fallback recipes for \(cuisine.rawValue)")
         
@@ -1485,7 +1493,7 @@ class OpenAIClient: ObservableObject {
                 difficulty: difficulty,
                 prepTime: 15,
                 cookTime: 30,
-                servings: 2,
+                servings: servings,
                 ingredients: ingredients,
                 steps: [
                     CookingStep(
