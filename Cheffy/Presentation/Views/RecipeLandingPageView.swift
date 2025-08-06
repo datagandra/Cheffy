@@ -14,6 +14,7 @@ struct RecipeLandingPageView: View {
     @State private var showingRecipeTips = false
     @State private var showingSubstitutions = false
     @State private var showingEquipment = false
+    @State private var showingKindleReading = false
     
     var body: some View {
         NavigationStack {
@@ -75,6 +76,9 @@ struct RecipeLandingPageView: View {
         }
         .sheet(isPresented: $showingCookingMode) {
             CookingModeView(recipe: recipe)
+        }
+        .fullScreenCover(isPresented: $showingKindleReading) {
+            InlineKindleReadingView(recipe: recipe)
         }
     }
     
@@ -467,6 +471,34 @@ struct RecipeLandingPageView: View {
                         )
                         .foregroundColor(.purple)
                     }
+                }
+                
+                // Kindle Reading Mode button (full width)
+                Button(action: {
+                    showingKindleReading = true
+                }) {
+                    HStack {
+                        Image(systemName: "book.fill")
+                            .font(.title3)
+                        Text("📚 Kindle Reading Mode")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                        Spacer()
+                        Image(systemName: "speaker.wave.2.fill")
+                            .font(.subheadline)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .padding(.horizontal, 16)
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.purple.opacity(0.8)]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
                 }
             }
         }

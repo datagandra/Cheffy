@@ -1,82 +1,58 @@
 #!/bin/bash
 
-# App Icon Generator Script for Cheffy
-# This script generates all required app icon sizes from a base 1024x1024 icon
+# Generate iOS App Icons from SVG
+# This script converts the SVG logo to all required iOS app icon sizes
 
-echo "🎨 Generating App Icons for Cheffy..."
+echo "🎨 Generating iOS App Icons for Cheffy..."
 
-# Check if base icon exists
-if [ ! -f "AppStore/base_icon_1024.png" ]; then
-    echo "❌ Error: base_icon_1024.png not found in AppStore/ directory"
-    echo "Please create a 1024x1024 PNG icon and place it in AppStore/base_icon_1024.png"
+# Check if ImageMagick is installed
+if ! command -v convert &> /dev/null; then
+    echo "❌ ImageMagick is required. Please install it first:"
+    echo "   brew install imagemagick"
     exit 1
 fi
 
-# Create output directory
-mkdir -p "Cheffy/Assets.xcassets/AppIcon.appiconset"
+# Create icons directory if it doesn't exist
+mkdir -p Cheffy/Resources/AppIcons
 
-# iPhone Icons
-echo "📱 Generating iPhone icons..."
+# iOS App Icon sizes (in pixels)
+sizes=(
+    "20x20"
+    "29x29" 
+    "40x40"
+    "58x58"
+    "60x60"
+    "76x76"
+    "80x80"
+    "87x87"
+    "120x120"
+    "152x152"
+    "167x167"
+    "180x180"
+    "1024x1024"
+)
 
-# iPhone 20pt @2x (40x40)
-convert "AppStore/base_icon_1024.png" -resize 40x40 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-40@2x.png"
-
-# iPhone 20pt @3x (60x60)
-convert "AppStore/base_icon_1024.png" -resize 60x60 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-60@3x.png"
-
-# iPhone 29pt @2x (58x58)
-convert "AppStore/base_icon_1024.png" -resize 58x58 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-58@2x.png"
-
-# iPhone 29pt @3x (87x87)
-convert "AppStore/base_icon_1024.png" -resize 87x87 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-87@3x.png"
-
-# iPhone 40pt @2x (80x80)
-convert "AppStore/base_icon_1024.png" -resize 80x80 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-80@2x.png"
-
-# iPhone 40pt @3x (120x120)
-convert "AppStore/base_icon_1024.png" -resize 120x120 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-120@3x.png"
-
-# iPhone 60pt @2x (120x120)
-convert "AppStore/base_icon_1024.png" -resize 120x120 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-120@2x.png"
-
-# iPhone 60pt @3x (180x180)
-convert "AppStore/base_icon_1024.png" -resize 180x180 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-180@3x.png"
-
-# iPad Icons
-echo "📱 Generating iPad icons..."
-
-# iPad 20pt @1x (20x20)
-convert "AppStore/base_icon_1024.png" -resize 20x20 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-20@1x.png"
-
-# iPad 20pt @2x (40x40)
-convert "AppStore/base_icon_1024.png" -resize 40x40 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-40@2x.png"
-
-# iPad 29pt @1x (29x29)
-convert "AppStore/base_icon_1024.png" -resize 29x29 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-29@1x.png"
-
-# iPad 29pt @2x (58x58)
-convert "AppStore/base_icon_1024.png" -resize 58x58 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-58@2x.png"
-
-# iPad 40pt @1x (40x40)
-convert "AppStore/base_icon_1024.png" -resize 40x40 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-40@1x.png"
-
-# iPad 40pt @2x (80x80)
-convert "AppStore/base_icon_1024.png" -resize 80x80 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-80@2x.png"
-
-# iPad 76pt @2x (152x152)
-convert "AppStore/base_icon_1024.png" -resize 152x152 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-152@2x.png"
-
-# iPad 83.5pt @2x (167x167)
-convert "AppStore/base_icon_1024.png" -resize 167x167 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-167@2x.png"
-
-# App Store Icon
-echo "🏪 Generating App Store icon..."
-convert "AppStore/base_icon_1024.png" -resize 1024x1024 "Cheffy/Assets.xcassets/AppIcon.appiconset/Icon-1024@1x.png"
+# Generate each size
+for size in "${sizes[@]}"; do
+    echo "📱 Generating ${size} icon..."
+    
+    # Extract dimensions
+    width=$(echo $size | cut -d'x' -f1)
+    height=$(echo $size | cut -d'x' -f2)
+    
+    # Convert SVG to PNG
+    convert Cheffy/Resources/AppIcon.svg \
+        -resize "${width}x${height}" \
+        -background transparent \
+        -gravity center \
+        -extent "${width}x${height}" \
+        "Cheffy/Resources/AppIcons/AppIcon-${size}.png"
+done
 
 echo "✅ App icons generated successfully!"
-echo "📁 Icons saved to: Cheffy/Assets.xcassets/AppIcon.appiconset/"
+echo "📁 Icons saved to: Cheffy/Resources/AppIcons/"
 echo ""
-echo "Next steps:"
-echo "1. Open Xcode and verify all icons are displayed correctly"
-echo "2. Build and test the app to ensure icons load properly"
-echo "3. Archive the app for App Store submission" 
+echo "🎯 Next steps:"
+echo "1. Add the PNG files to your Xcode project's Assets.xcassets"
+echo "2. Update your Info.plist to reference the new app icon"
+echo "3. Test the icons on different devices and orientations" 

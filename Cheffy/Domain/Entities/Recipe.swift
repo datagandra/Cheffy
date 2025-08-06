@@ -333,4 +333,40 @@ extension Recipe {
         
         return cookingCalories
     }
+    
+    /// Scale recipe to a different number of servings
+    func scaledForServings(_ newServings: Int) -> Recipe {
+        let scalingFactor = Double(newServings) / Double(servings)
+        
+        let scaledIngredients = ingredients.map { ingredient in
+            Ingredient(
+                id: ingredient.id,
+                name: ingredient.name,
+                amount: ingredient.amount * scalingFactor,
+                unit: ingredient.unit,
+                notes: ingredient.notes
+            )
+        }
+        
+        return Recipe(
+            id: id,
+            title: title,
+            name: name,
+            cuisine: cuisine,
+            difficulty: difficulty,
+            prepTime: prepTime,
+            cookTime: cookTime,
+            servings: newServings,
+            ingredients: scaledIngredients,
+            steps: steps,
+            winePairings: winePairings,
+            dietaryNotes: dietaryNotes,
+            platingTips: platingTips,
+            chefNotes: chefNotes,
+            imageURL: imageURL,
+            stepImages: stepImages,
+            createdAt: createdAt,
+            isFavorite: isFavorite
+        )
+    }
 } 

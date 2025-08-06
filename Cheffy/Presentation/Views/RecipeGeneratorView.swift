@@ -8,18 +8,17 @@ struct RecipeGeneratorView: View {
     // MARK: - State Management
     @State private var selectedCuisine: Cuisine = .french
     @State private var selectedDietaryRestrictions: Set<DietaryNote> = []
-    @State private var userPrompt: String = ""
+    @State private var selectedServings: Int = 4
     @State private var showValidationError = false
     @State private var validationMessage = ""
     @State private var showIngredientAnalysis = false
-    @FocusState private var isPromptFieldFocused: Bool
     
     // MARK: - Haptic Feedback
     private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     // MARK: - Computed Properties
     private var shouldDisableInteractions: Bool {
-        isPromptFieldFocused
+        false
     }
     
     private func initializeUserPreferences() {
@@ -34,9 +33,6 @@ struct RecipeGeneratorView: View {
             LazyVStack(spacing: 24) {
                 // Header Section
                 headerSection
-                
-                // Input Section
-                inputSection
                 
                 // Options Section
                 optionsSection
@@ -62,10 +58,7 @@ struct RecipeGeneratorView: View {
             await refreshData()
         }
         .accessibilityElement(children: .contain)
-        .onTapGesture {
-            // Dismiss keyboard when tapping outside text field
-            isPromptFieldFocused = false
-        }
+
         .onAppear {
             initializeUserPreferences()
         }
@@ -124,64 +117,55 @@ struct RecipeGeneratorView: View {
         }
     }
     
-    // MARK: - Input Section
+    // MARK: - Servings Section
     
-    private var inputSection: some View {
+    private var servingsSelection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Input Label
-            Label("Recipe Description", systemImage: "text.bubble")
+            Label("Number of Servings", systemImage: "person.2")
                 .font(.headline)
                 .foregroundColor(.primary)
             
-            // Text Field
-            TextField("", text: $userPrompt, axis: .vertical)
-                .textFieldStyle(.roundedBorder)
-                .focused($isPromptFieldFocused)
-                .lineLimit(3...6)
-                .placeholder(when: userPrompt.isEmpty) {
-                    Text("Enter recipe name or description (Leave empty for popular \(selectedCuisine.rawValue) recipes)")
-                        .foregroundColor(.secondary)
-                        .font(.body)
-                }
-                .onChange(of: userPrompt) { _, newValue in
-                    if showValidationError {
-                        showValidationError = false
-                        validationMessage = ""
+            HStack(spacing: 16) {
+                ForEach([2, 4, 6, 8], id: \.self) { serving in
+                    Button(action: {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            selectedServings = serving
+                        }
+                        impactFeedback.impactOccurred()
+                    }) {
+                        Text("\(serving)")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(selectedServings == serving ? .white : .primary)
+                            .frame(width: 50, height: 50)
+                            .background(
+                                Circle()
+                                    .fill(selectedServings == serving ? Color.blue : Color(.systemGray6))
+                            )
+                            .overlay(
+                                Circle()
+                                    .stroke(selectedServings == serving ? Color.blue : Color(.systemGray4), lineWidth: 1)
+                            )
                     }
+                    .buttonStyle(PlainButtonStyle())
+                    .accessibilityLabel("\(serving) servings")
+                    .accessibilityAddTraits(selectedServings == serving ? .isSelected : [])
                 }
-                .onTapGesture {
-                    // Ensure focus stays on text field when tapped
-                    isPromptFieldFocused = true
+                
+                Spacer()
+                
+                // Custom serving input
+                HStack {
+                    Text("Custom:")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    TextField("#", value: $selectedServings, format: .number)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 60)
+                        .keyboardType(.numberPad)
+                        .accessibilityLabel("Custom servings input")
                 }
-                .accessibilityLabel("Recipe name input field")
-                                    .accessibilityHint("Enter your recipe name or description, or leave empty for popular recipes")
-            
-            // Character Count and Hints
-            inputHints
-        }
-    }
-    
-    private var inputHints: some View {
-        HStack {
-            // Character Count
-            Text("\(userPrompt.count)/200")
-                .font(.caption)
-                .foregroundColor(userPrompt.count > 180 ? .orange : .secondary)
-                .accessibilityLabel("Character count: \(userPrompt.count) out of 200")
-            
-            Spacer()
-            
-            // Dynamic Hints
-            if userPrompt.isEmpty {
-                Label("Leave empty for popular \(selectedCuisine.rawValue) recipes", systemImage: "lightbulb")
-                    .font(.caption)
-                    .foregroundColor(.blue)
-                    .accessibilityLabel("Hint: Leave empty for popular \(selectedCuisine.rawValue) recipes")
-            } else if userPrompt.count < 10 {
-                Label("Please provide more details", systemImage: "exclamationmark.triangle")
-                    .font(.caption)
-                    .foregroundColor(.orange)
-                    .accessibilityLabel("Warning: Please provide more details")
             }
         }
     }
@@ -190,6 +174,9 @@ struct RecipeGeneratorView: View {
     
     private var optionsSection: some View {
         VStack(spacing: 24) {
+            // Servings Selection
+            servingsSelection
+            
             // Cuisine Selection
             cuisineSelection
             
@@ -244,10 +231,6 @@ struct RecipeGeneratorView: View {
                         .stroke(Color(.systemGray4), lineWidth: 1)
                 )
             }
-            .onTapGesture {
-                // Ensure text field loses focus when cuisine menu is tapped
-                isPromptFieldFocused = false
-            }
             .accessibilityLabel("Cuisine selection dropdown")
             .accessibilityHint("Tap to select cuisine type")
         }
@@ -295,10 +278,7 @@ struct RecipeGeneratorView: View {
                                     .stroke(selectedDietaryRestrictions.contains(restriction) ? Color.blue : Color(.systemGray4), lineWidth: 1)
                             )
                         }
-                        .onTapGesture {
-                            // Ensure text field loses focus when dietary restriction is tapped
-                            isPromptFieldFocused = false
-                        }
+
                         .accessibilityLabel("\(restriction.rawValue) dietary restriction")
                         .accessibilityAddTraits(selectedDietaryRestrictions.contains(restriction) ? .isSelected : [])
                     }
@@ -312,8 +292,6 @@ struct RecipeGeneratorView: View {
     
     private var generateButton: some View {
         Button(action: {
-            // Ensure text field loses focus when generate button is tapped
-            isPromptFieldFocused = false
             generateRecipe()
         }) {
             HStack {
@@ -349,10 +327,8 @@ struct RecipeGeneratorView: View {
     private var generateButtonTitle: String {
         if recipeManager.isLoading {
             return "Generating..."
-        } else if userPrompt.isEmpty {
-            return "Generate Popular \(selectedCuisine.rawValue) Recipes"
         } else {
-            return "Generate Recipe"
+            return "Generate Popular \(selectedCuisine.rawValue) Recipes"
         }
     }
     
@@ -527,32 +503,22 @@ struct RecipeGeneratorView: View {
     private func generateRecipe() {
         guard validateInput() else { return }
         
-        isPromptFieldFocused = false
         impactFeedback.impactOccurred()
         
         Task {
-            if userPrompt.isEmpty {
-                await recipeManager.generatePopularRecipes(
-                    cuisine: selectedCuisine,
-                    difficulty: .medium, // Default to medium difficulty
-                    dietaryRestrictions: Array(selectedDietaryRestrictions)
-                )
-            } else {
-                await recipeManager.generateRecipe(
-                    userPrompt: userPrompt,
-                    recipeName: userPrompt.isEmpty ? nil : userPrompt,
-                    cuisine: selectedCuisine,
-                    difficulty: .medium, // Default to medium difficulty
-                    dietaryRestrictions: Array(selectedDietaryRestrictions)
-                )
-            }
+            await recipeManager.generatePopularRecipes(
+                cuisine: selectedCuisine,
+                difficulty: .medium, // Default to medium difficulty
+                dietaryRestrictions: Array(selectedDietaryRestrictions),
+                servings: selectedServings
+            )
         }
     }
     
     private func validateInput() -> Bool {
-        if !userPrompt.isEmpty && userPrompt.count < 10 {
+        if selectedServings < 1 || selectedServings > 20 {
             showValidationError = true
-            validationMessage = "Please provide more details for your recipe"
+            validationMessage = "Please select a valid number of servings (1-20)"
             return false
         }
         return true
@@ -726,6 +692,7 @@ struct SingleRecipeView: View {
     @State private var showingWinePairings = false
     @State private var showingChefNotes = false
     @State private var showingLandingPage = false
+    @State private var showingKindleReading = false
     
     var body: some View {
         VStack(spacing: 16) {
@@ -737,6 +704,9 @@ struct SingleRecipeView: View {
         }
         .sheet(isPresented: $showingLandingPage) {
             RecipeLandingPageView(recipe: recipe)
+        }
+        .fullScreenCover(isPresented: $showingKindleReading) {
+            InlineKindleReadingView(recipe: recipe)
         }
     }
     
@@ -875,36 +845,66 @@ struct SingleRecipeView: View {
     
     // MARK: - Quick Action Buttons
     private var quickActionButtons: some View {
-        HStack(spacing: 12) {
-            Button(action: {
-                showingLandingPage = true
-            }) {
-                HStack {
-                    Image(systemName: "doc.text")
-                    Text("View Details")
+        VStack(spacing: 12) {
+            // First row: View Details and Save buttons
+            HStack(spacing: 12) {
+                Button(action: {
+                    showingLandingPage = true
+                }) {
+                    HStack {
+                        Image(systemName: "doc.text")
+                        Text("View Details")
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(Color.orange)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
                 }
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity)
-                .frame(height: 44)
-                .background(Color.orange)
-                .foregroundColor(.white)
-                .cornerRadius(12)
+                
+                Button(action: {
+                    recipeManager.toggleFavorite(recipe)
+                }) {
+                    HStack {
+                        Image(systemName: recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? "heart.fill" : "heart")
+                        Text(recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? "Saved" : "Save")
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(Color.gray.opacity(0.1))
+                    .foregroundColor(recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? .red : .primary)
+                    .cornerRadius(12)
+                }
             }
             
+            // Second row: Kindle Reading Mode button
             Button(action: {
-                recipeManager.toggleFavorite(recipe)
+                showingKindleReading = true
             }) {
                 HStack {
-                    Image(systemName: recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? "heart.fill" : "heart")
-                    Text(recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? "Saved" : "Save")
+                    Image(systemName: "book.fill")
+                    Text("📚 Kindle Reading Mode")
+                    Spacer()
+                    Image(systemName: "speaker.wave.2.fill")
+                        .font(.caption)
                 }
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .frame(maxWidth: .infinity)
                 .frame(height: 44)
-                .background(Color.gray.opacity(0.1))
-                .foregroundColor(recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? .red : .primary)
+                .padding(.horizontal, 16)
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.purple.opacity(0.8)]),
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .foregroundColor(.white)
                 .cornerRadius(12)
             }
         }
@@ -938,6 +938,7 @@ struct PopularRecipeRow: View {
     let recipe: Recipe
     @EnvironmentObject var recipeManager: RecipeManager
     @State private var showingLandingPage = false
+    @State private var showingKindleReading = false
     
     var body: some View {
         Button(action: {
@@ -1007,6 +1008,14 @@ struct PopularRecipeRow: View {
                 
                 VStack(spacing: 8) {
                     Button(action: {
+                        showingKindleReading = true
+                    }) {
+                        Image(systemName: "book.fill")
+                            .foregroundColor(.blue)
+                    }
+                    .accessibilityLabel("Open in Kindle reading mode")
+                    
+                    Button(action: {
                         recipeManager.toggleFavorite(recipe)
                     }) {
                         Image(systemName: recipeManager.favorites.contains(where: { $0.id == recipe.id }) ? "heart.fill" : "heart")
@@ -1026,6 +1035,9 @@ struct PopularRecipeRow: View {
         .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $showingLandingPage) {
             RecipeLandingPageView(recipe: recipe)
+        }
+        .fullScreenCover(isPresented: $showingKindleReading) {
+            InlineKindleReadingView(recipe: recipe)
         }
     }
 }
