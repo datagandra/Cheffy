@@ -1210,8 +1210,7 @@ struct EquipmentRow: View {
     .environmentObject(RecipeManager())
 }
 
-// MARK: - Inline Shopping Cart View
-// Added here to avoid project file issues
+// Shopping cart views are now in ShoppingCartViews.swift
 
 struct InlineShoppingCartView: View {
     @EnvironmentObject var shoppingCartService: ShoppingCartService

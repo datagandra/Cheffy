@@ -215,6 +215,8 @@ struct FavoriteRecipeRow: View {
     let isSelected: Bool
     let onSelectionToggle: () -> Void
     @EnvironmentObject var recipeManager: RecipeManager
+    @EnvironmentObject var shoppingCartService: ShoppingCartService
+    @State private var showingShoppingCart = false
     
     var body: some View {
         HStack(spacing: 12) {
@@ -307,6 +309,24 @@ struct FavoriteRecipeRow: View {
                     .accessibilityLabel("Start cooking \(recipe.name)")
                     .accessibilityHint("View detailed cooking instructions for this recipe")
                     
+                    // Shopping List Button
+                    Button(action: {
+                        shoppingCartService.addRecipeIngredients(recipe)
+                        showingShoppingCart = true
+                    }) {
+                        Text("Shopping List")
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(Color.purple)
+                            .cornerRadius(6)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .accessibilityLabel("Add ingredients to shopping list")
+                    .accessibilityHint("Add all ingredients for \(recipe.name) to your shopping list")
+                    
                     Spacer()
                     
                     if !isSelectionMode {
@@ -324,6 +344,9 @@ struct FavoriteRecipeRow: View {
             .accessibilityElement(children: .combine)
             .accessibilityLabel("\(recipe.name), \(recipe.cuisine.rawValue) cuisine, \(recipe.difficulty.rawValue) difficulty, \(recipe.formattedTotalTime) total time")
             .accessibilityHint("Double tap to view recipe details")
+        }
+        .sheet(isPresented: $showingShoppingCart) {
+            InlineShoppingCartView()
         }
     }
     
