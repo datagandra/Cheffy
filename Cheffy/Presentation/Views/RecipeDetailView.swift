@@ -6,6 +6,21 @@ struct RecipeDetailView: View {
     @State private var showingWinePairings = false
     @State private var showingChefNotes = false
     @State private var showingMichelinGuide = false
+    @State private var targetServings: Int
+    
+    init(recipe: Recipe) {
+        self.recipe = recipe
+        self._targetServings = State(initialValue: recipe.servings)
+    }
+    
+    // Computed property to get scaled recipe for target servings
+    private var scaledRecipe: Recipe {
+        if targetServings == recipe.servings {
+            return recipe
+        } else {
+            return recipe.scaledForServings(targetServings)
+        }
+    }
     
     var body: some View {
         ScrollView {
@@ -23,17 +38,17 @@ struct RecipeDetailView: View {
                 ingredientsSection
                 
                 // Wine Pairings (if available)
-                if !recipe.winePairings.isEmpty {
+                if !scaledRecipe.winePairings.isEmpty {
                     winePairingsSection
                 }
                 
                 // Chef Notes (if available)
-                if !recipe.chefNotes.isEmpty {
+                if !scaledRecipe.chefNotes.isEmpty {
                     chefNotesSection
                 }
                 
                 // Plating Tips (if available)
-                if !recipe.platingTips.isEmpty {
+                if !scaledRecipe.platingTips.isEmpty {
                     platingTipsSection
                 }
                 
@@ -52,15 +67,15 @@ struct RecipeDetailView: View {
         VStack(alignment: .leading, spacing: 16) {
             // Title and badges
             VStack(alignment: .leading, spacing: 12) {
-                Text(recipe.name)
+                Text(scaledRecipe.name)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
                     .lineLimit(nil)
                 
                 HStack(spacing: 8) {
-                    BadgeView(text: recipe.cuisine.rawValue, color: Color.orange)
-                    BadgeView(text: recipe.difficulty.rawValue, color: Color.blue)
+                    BadgeView(text: scaledRecipe.cuisine.rawValue, color: Color.orange)
+                    BadgeView(text: scaledRecipe.difficulty.rawValue, color: Color.blue)
                     Spacer()
                 }
             }
@@ -73,15 +88,37 @@ struct RecipeDetailView: View {
                 HStack {
                     Image(systemName: "person.2.fill")
                         .foregroundColor(.green)
-                    Text("\(recipe.servings) servings")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    
+                    // Servings selector
+                    Menu {
+                        ForEach([2, 4, 6, 8, 10, 12], id: \.self) { serving in
+                            Button(action: {
+                                targetServings = serving
+                            }) {
+                                HStack {
+                                    Text("\(serving) servings")
+                                    if targetServings == serving {
+                                        Image(systemName: "checkmark")
+                                    }
+                                }
+                            }
+                        }
+                    } label: {
+                        HStack {
+                            Text("\(scaledRecipe.servings) servings")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            Image(systemName: "chevron.down")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
                 }
                 
                 HStack {
                     Image(systemName: "flame.fill")
                         .foregroundColor(.orange)
-                    Text("\(recipe.caloriesPerServing) cal/serving")
+                    Text("\(scaledRecipe.caloriesPerServing) cal/serving")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -98,13 +135,13 @@ struct RecipeDetailView: View {
     // MARK: - Time Breakdown
     private var timeBreakdownView: some View {
         HStack(spacing: 0) {
-            TimeCard(title: "Prep", time: recipe.formattedPrepTime, icon: "clock")
+            TimeCard(title: "Prep", time: scaledRecipe.formattedPrepTime, icon: "clock")
             Divider()
                 .frame(height: 40)
-            TimeCard(title: "Cook", time: recipe.formattedCookTime, icon: "flame")
+            TimeCard(title: "Cook", time: scaledRecipe.formattedCookTime, icon: "flame")
             Divider()
                 .frame(height: 40)
-            TimeCard(title: "Total", time: recipe.formattedTotalTime, icon: "timer", isHighlighted: true)
+            TimeCard(title: "Total", time: scaledRecipe.formattedTotalTime, icon: "timer", isHighlighted: true)
         }
         .padding(.vertical, 16)
         .background(Color(.systemGray6))
@@ -123,7 +160,7 @@ struct RecipeDetailView: View {
             
             if showingIngredients {
                 VStack(alignment: .leading, spacing: 12) {
-                    ForEach(recipe.ingredients) { ingredient in
+                    ForEach(scaledRecipe.ingredients) { ingredient in
                         IngredientRow(ingredient: ingredient)
                     }
                 }
@@ -148,7 +185,7 @@ struct RecipeDetailView: View {
             
             if showingWinePairings {
                 VStack(alignment: .leading, spacing: 12) {
-                    ForEach(recipe.winePairings) { wine in
+                    ForEach(scaledRecipe.winePairings) { wine in
                         WinePairingRow(wine: wine)
                     }
                 }
@@ -172,7 +209,7 @@ struct RecipeDetailView: View {
             )
             
             if showingChefNotes {
-                Text(recipe.chefNotes)
+                Text(scaledRecipe.chefNotes)
                     .font(.body)
                     .foregroundColor(.secondary)
                     .lineSpacing(4)
@@ -198,7 +235,7 @@ struct RecipeDetailView: View {
                 Spacer()
             }
             
-            Text(recipe.platingTips)
+            Text(scaledRecipe.platingTips)
                 .font(.body)
                 .foregroundColor(.secondary)
                 .lineSpacing(4)
@@ -243,7 +280,7 @@ struct RecipeDetailView: View {
     // MARK: - Start Cooking Button
     private var startCookingButton: some View {
         VStack(spacing: 16) {
-            NavigationLink(destination: CookingModeView(recipe: recipe)) {
+            NavigationLink(destination: CookingModeView(recipe: scaledRecipe)) {
                 HStack {
                     Image(systemName: "play.circle.fill")
                         .font(.title2)

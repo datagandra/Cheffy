@@ -21,12 +21,30 @@ struct CookingModeView: View {
     @State private var showingDetailedInstructions = false
     @State private var showingAllIngredients = false
     
+    // Add target servings state
+    @State private var targetServings: Int
+    
+    init(recipe: Recipe) {
+        self.recipe = recipe
+        // Initialize target servings to the recipe's current servings
+        self._targetServings = State(initialValue: recipe.servings)
+    }
+    
+    // Computed property to get scaled recipe for target servings
+    private var scaledRecipe: Recipe {
+        if targetServings == recipe.servings {
+            return recipe
+        } else {
+            return recipe.scaledForServings(targetServings)
+        }
+    }
+    
     var currentStep: CookingStep {
-        recipe.steps[currentStepIndex]
+        scaledRecipe.steps[currentStepIndex]
     }
     
     var progress: Double {
-        Double(currentStepIndex + 1) / Double(recipe.steps.count)
+        Double(currentStepIndex + 1) / Double(scaledRecipe.steps.count)
     }
     
     var body: some View {
@@ -55,7 +73,7 @@ struct CookingModeView: View {
                         navigationControls
                         
                         // Timer Card (using recipe cook time)
-                        timerCard(duration: recipe.cookTime)
+                        timerCard(duration: scaledRecipe.cookTime)
                         
                     }
                     .padding(.horizontal, 16)
@@ -147,7 +165,7 @@ struct CookingModeView: View {
                     Text("Calories")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("\(recipe.caloriesPerServing)")
+                    Text("\(scaledRecipe.caloriesPerServing)")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(.green)
@@ -157,7 +175,7 @@ struct CookingModeView: View {
                     Text("Prep")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("\(recipe.prepTime)m")
+                    Text("\(scaledRecipe.prepTime)m")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                 }
@@ -166,7 +184,7 @@ struct CookingModeView: View {
                     Text("Cook")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("\(recipe.cookTime)m")
+                    Text("\(scaledRecipe.cookTime)m")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                 }
@@ -175,7 +193,7 @@ struct CookingModeView: View {
                     Text("Total")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("\(recipe.prepTime + recipe.cookTime)m")
+                    Text("\(scaledRecipe.prepTime + scaledRecipe.cookTime)m")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(.blue)
@@ -185,9 +203,30 @@ struct CookingModeView: View {
                     Text("Servings")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("\(recipe.servings)")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
+                    
+                    // Servings selector
+                    Menu {
+                        ForEach([2, 4, 6, 8, 10, 12], id: \.self) { serving in
+                            Button(action: {
+                                targetServings = serving
+                            }) {
+                                HStack {
+                                    Text("\(serving)")
+                                    if targetServings == serving {
+                                        Image(systemName: "checkmark")
+                                    }
+                                }
+                            }
+                        }
+                    } label: {
+                        HStack {
+                            Text("\(scaledRecipe.servings)")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                            Image(systemName: "chevron.down")
+                                .font(.caption)
+                        }
+                    }
                 }
                 
                 Spacer()
@@ -195,7 +234,7 @@ struct CookingModeView: View {
             
             // Ingredients Preview
             VStack(alignment: .leading, spacing: 8) {
-                Text("Ingredients (\(recipe.ingredients.count))")
+                Text("Ingredients (\(scaledRecipe.ingredients.count))")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                 
@@ -203,7 +242,7 @@ struct CookingModeView: View {
                     GridItem(.flexible()),
                     GridItem(.flexible())
                 ], spacing: 8) {
-                    ForEach(showingAllIngredients ? Array(recipe.ingredients) : Array(recipe.ingredients.prefix(6))) { ingredient in
+                    ForEach(showingAllIngredients ? Array(scaledRecipe.ingredients) : Array(scaledRecipe.ingredients.prefix(6))) { ingredient in
                         HStack {
                             Circle()
                                 .fill(Color.orange.opacity(0.3))
@@ -218,14 +257,14 @@ struct CookingModeView: View {
                     }
                 }
                 
-                if recipe.ingredients.count > 6 {
+                if scaledRecipe.ingredients.count > 6 {
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.3)) {
                             showingAllIngredients.toggle()
                         }
                     }) {
                         HStack {
-                            Text(showingAllIngredients ? "Show Less" : "+ \(recipe.ingredients.count - 6) more ingredients")
+                            Text(showingAllIngredients ? "Show Less" : "+ \(scaledRecipe.ingredients.count - 6) more ingredients")
                                 .font(.caption)
                                 .foregroundColor(.blue)
                                 .italic()
@@ -235,7 +274,6 @@ struct CookingModeView: View {
                                 .foregroundColor(.blue)
                         }
                     }
-                    .buttonStyle(PlainButtonStyle())
                 }
             }
         }
@@ -470,8 +508,8 @@ struct CookingModeView: View {
             
             Button(action: nextStep) {
                 HStack {
-                    Text(currentStepIndex == recipe.steps.count - 1 ? "Finish" : "Next")
-                    Image(systemName: currentStepIndex == recipe.steps.count - 1 ? "checkmark" : "chevron.right")
+                    Text(currentStepIndex == scaledRecipe.steps.count - 1 ? "Finish" : "Next")
+                    Image(systemName: currentStepIndex == scaledRecipe.steps.count - 1 ? "checkmark" : "chevron.right")
                 }
                 .font(.subheadline)
                 .fontWeight(.medium)
@@ -631,7 +669,7 @@ struct CookingModeView: View {
                 .fontWeight(.semibold)
             
             LazyVStack(spacing: 12) {
-                ForEach(Array(recipe.steps.enumerated()), id: \.element.id) { index, step in
+                ForEach(Array(scaledRecipe.steps.enumerated()), id: \.element.id) { index, step in
                     HStack(spacing: 12) {
                         ZStack {
                             Circle()
@@ -932,7 +970,7 @@ struct CookingModeView: View {
                             currentStep,
                             recipeName: recipe.name,
                             stepNumber: currentStep.stepNumber,
-                            totalSteps: recipe.steps.count
+                            totalSteps: scaledRecipe.steps.count
                         )
                     }
                     .foregroundColor(.blue)
@@ -1027,7 +1065,7 @@ struct CookingModeView: View {
     }
     
     private func nextStep() {
-        if currentStepIndex < recipe.steps.count - 1 {
+        if currentStepIndex < scaledRecipe.steps.count - 1 {
             let fromStep = currentStepIndex + 1
             let toStep = currentStepIndex + 2
             
@@ -1132,7 +1170,7 @@ struct CookingModeView: View {
             currentStep,
             recipeName: recipe.name,
             stepNumber: currentStep.stepNumber,
-            totalSteps: recipe.steps.count
+            totalSteps: scaledRecipe.steps.count
         )
         
         // Announce temperature if available
