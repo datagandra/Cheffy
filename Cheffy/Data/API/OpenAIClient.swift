@@ -530,6 +530,15 @@ class OpenAIClient: ObservableObject {
         - 🚨 CRITICAL SERVINGS SCALING: ALL ingredient amounts MUST be calculated for exactly \(servings) servings
         - 🚨 SERVINGS REQUIREMENT: Every ingredient amount must be appropriate for \(servings) people
         - 🚨 SCALING RULE: If a recipe normally serves 4, multiply all amounts by \(servings)/4 for \(servings) servings
+        
+        🚨 CRITICAL INGREDIENT ACCURACY REQUIREMENTS:
+        - Ingredients MUST match the recipe name exactly (e.g., "Fish Curry" must contain fish, not chicken)
+        - Protein ingredients must be appropriate for the recipe (fish for fish dishes, chicken for chicken dishes, etc.)
+        - NO generic protein substitutions - use the specific protein mentioned in the recipe name
+        - For vegetarian/vegan dishes, use appropriate plant-based proteins (tofu, paneer, legumes, etc.)
+        - Spices and seasonings must be authentic to the cuisine and recipe
+        - Include all traditional ingredients specific to the recipe type
+        - Double-check that ingredients align with the recipe name and cuisine
 
                         Create MICHELIN-LEVEL detailed, step-by-step cooking instructions that are easy to follow for home cooks. Each step should include:
                         - Extremely detailed, specific instructions with exact measurements and techniques
@@ -642,13 +651,21 @@ class OpenAIClient: ObservableObject {
         21. 🚨 SERVINGS REQUIREMENT: Every ingredient amount must be appropriate for \(servings) people
         22. 🚨 SCALING RULE: If a recipe normally serves 4, multiply all amounts by \(servings)/4 for \(servings) servings
         23. Do not skip any ingredients - include everything needed for the recipe
-        14. FINAL CHECK: Verify every ingredient in every recipe complies with ALL restrictions
-        15. FINAL CHECK: Verify every recipe name complies with ALL restrictions
-        16. DYNAMIC POPULARITY RANKING: Research and rank recipes by CURRENT popularity and culinary significance in \(cuisine.rawValue) cuisine
-        17. USE AUTHENTIC RECIPE NAMES: Generate authentic, specific recipe names that reflect current culinary trends and traditional favorites
-        18. NEVER create recipes with names containing restricted ingredients (e.g., no "Chicken Curry" for vegan)
-        19. ALWAYS use traditional, authentic recipe names that food enthusiasts would recognize
-        20. FOCUS ON CURRENT TRENDS: Include recipes that are currently popular, trending, or highly regarded in the culinary world
+        24. 🚨 CRITICAL INGREDIENT ACCURACY REQUIREMENTS:
+            - Ingredients MUST match the recipe name exactly (e.g., "Fish Curry" must contain fish, not chicken)
+            - Protein ingredients must be appropriate for the recipe (fish for fish dishes, chicken for chicken dishes, etc.)
+            - NO generic protein substitutions - use the specific protein mentioned in the recipe name
+            - For vegetarian/vegan dishes, use appropriate plant-based proteins (tofu, paneer, legumes, etc.)
+            - Spices and seasonings must be authentic to the cuisine and recipe
+            - Include all traditional ingredients specific to the recipe type
+            - Double-check that ingredients align with the recipe name and cuisine
+        25. FINAL CHECK: Verify every ingredient in every recipe complies with ALL restrictions
+        26. FINAL CHECK: Verify every recipe name complies with ALL restrictions
+        27. DYNAMIC POPULARITY RANKING: Research and rank recipes by CURRENT popularity and culinary significance in \(cuisine.rawValue) cuisine
+        28. USE AUTHENTIC RECIPE NAMES: Generate authentic, specific recipe names that reflect current culinary trends and traditional favorites
+        29. NEVER create recipes with names containing restricted ingredients (e.g., no "Chicken Curry" for vegan)
+        30. ALWAYS use traditional, authentic recipe names that food enthusiasts would recognize
+        31. FOCUS ON CURRENT TRENDS: Include recipes that are currently popular, trending, or highly regarded in the culinary world
 
         IMPORTANT: You must respond with ONLY valid JSON in the exact format specified below. Do not include any additional text, explanations, or markdown formatting.
 
@@ -1161,9 +1178,30 @@ class OpenAIClient: ObservableObject {
                 ingredients.append(Ingredient(name: "Fresh Tomatoes", amount: 2.0, unit: "medium", notes: "fresh, diced"))
             }
             
-            // Add meat only for non-vegetarian curry dishes
-            if recipeName.contains("curry") && !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
-                ingredients.append(Ingredient(name: "Chicken Breast", amount: 1.0, unit: "lb", notes: "boneless, skinless, cut into 1-inch pieces"))
+            // Add specific protein based on recipe name, not generic curry
+            if recipeName.contains("fish curry") || recipeName.contains("fish masala") {
+                ingredients.append(Ingredient(name: "Fresh Fish Fillets", amount: 1.0, unit: "lb", notes: "firm white fish like cod, haddock, or tilapia, cut into 2-inch pieces"))
+                ingredients.append(Ingredient(name: "Coconut Milk", amount: 1.0, unit: "can", notes: "13.5 oz, for rich sauce"))
+                ingredients.append(Ingredient(name: "Tamarind Paste", amount: 1.0, unit: "tsp", notes: "for tangy flavor"))
+                ingredients.append(Ingredient(name: "Curry Leaves", amount: 10.0, unit: "leaves", notes: "fresh, for authentic flavor"))
+            } else if recipeName.contains("chicken curry") || recipeName.contains("chicken masala") {
+                if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
+                    ingredients.append(Ingredient(name: "Chicken Breast", amount: 1.0, unit: "lb", notes: "boneless, skinless, cut into 1-inch pieces"))
+                    ingredients.append(Ingredient(name: "Heavy Cream", amount: 0.5, unit: "cup", notes: "for rich sauce"))
+                    ingredients.append(Ingredient(name: "Yogurt", amount: 0.5, unit: "cup", notes: "plain, for marinade"))
+                }
+            } else if recipeName.contains("lamb curry") || recipeName.contains("lamb masala") {
+                if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
+                    ingredients.append(Ingredient(name: "Lamb Shoulder", amount: 1.0, unit: "lb", notes: "boneless, cut into 1-inch pieces"))
+                    ingredients.append(Ingredient(name: "Heavy Cream", amount: 0.5, unit: "cup", notes: "for rich sauce"))
+                    ingredients.append(Ingredient(name: "Yogurt", amount: 0.5, unit: "cup", notes: "plain, for marinade"))
+                }
+            } else if recipeName.contains("paneer curry") || recipeName.contains("paneer masala") {
+                ingredients.append(Ingredient(name: "Paneer", amount: 0.5, unit: "lb", notes: "fresh, cubed"))
+                ingredients.append(Ingredient(name: "Heavy Cream", amount: 0.5, unit: "cup", notes: "for rich sauce"))
+            } else if recipeName.contains("curry") && !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
+                // Generic curry - let LLM decide the protein, don't hardcode chicken
+                ingredients.append(Ingredient(name: "Protein of Choice", amount: 1.0, unit: "lb", notes: "chicken, fish, lamb, or paneer based on recipe"))
                 ingredients.append(Ingredient(name: "Heavy Cream", amount: 0.5, unit: "cup", notes: "for rich sauce"))
                 ingredients.append(Ingredient(name: "Yogurt", amount: 0.5, unit: "cup", notes: "plain, for marinade"))
             }
@@ -1209,8 +1247,10 @@ class OpenAIClient: ObservableObject {
             ingredients.append(Ingredient(name: "Cornstarch", amount: 1.0, unit: "tsp", notes: "for thickening sauces"))
             ingredients.append(Ingredient(name: "White Pepper", amount: 0.25, unit: "tsp", notes: "ground, to taste"))
             
-            if recipeName.contains("stir") || recipeName.contains("kung pao") {
-                ingredients.append(Ingredient(name: "Chicken Breast", amount: 1.0, unit: "lb", notes: "boneless, skinless, cut into 1-inch pieces"))
+            if recipeName.contains("kung pao chicken") {
+                if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
+                    ingredients.append(Ingredient(name: "Chicken Breast", amount: 1.0, unit: "lb", notes: "boneless, skinless, cut into 1-inch pieces"))
+                }
                 ingredients.append(Ingredient(name: "Peanut Oil", amount: 2.0, unit: "tbsp", notes: "for high-heat cooking"))
                 ingredients.append(Ingredient(name: "Fresh Garlic", amount: 3.0, unit: "cloves", notes: "fresh, minced"))
                 ingredients.append(Ingredient(name: "Green Onions", amount: 3.0, unit: "stalks", notes: "fresh, chopped"))
@@ -1218,6 +1258,12 @@ class OpenAIClient: ObservableObject {
                 ingredients.append(Ingredient(name: "Sichuan Peppercorns", amount: 0.5, unit: "tsp", notes: "whole, toasted"))
                 ingredients.append(Ingredient(name: "Bell Peppers", amount: 2.0, unit: "medium", notes: "red and green, diced"))
                 ingredients.append(Ingredient(name: "Cashews", amount: 0.5, unit: "cup", notes: "roasted, for garnish"))
+            } else if recipeName.contains("stir fry") || recipeName.contains("stir-fry") {
+                ingredients.append(Ingredient(name: "Protein of Choice", amount: 1.0, unit: "lb", notes: "chicken, beef, pork, shrimp, or tofu based on recipe"))
+                ingredients.append(Ingredient(name: "Peanut Oil", amount: 2.0, unit: "tbsp", notes: "for high-heat cooking"))
+                ingredients.append(Ingredient(name: "Fresh Garlic", amount: 3.0, unit: "cloves", notes: "fresh, minced"))
+                ingredients.append(Ingredient(name: "Green Onions", amount: 3.0, unit: "stalks", notes: "fresh, chopped"))
+                ingredients.append(Ingredient(name: "Mixed Vegetables", amount: 2.0, unit: "cups", notes: "bell peppers, broccoli, carrots, etc."))
             }
             if recipeName.contains("soup") {
                 ingredients.append(Ingredient(name: "Chicken Stock", amount: 6.0, unit: "cups", notes: "homemade or high-quality store-bought"))
@@ -1321,16 +1367,29 @@ class OpenAIClient: ObservableObject {
             ingredients.append(Ingredient(name: "Fish Sauce", amount: 1.0, unit: "tbsp", notes: "nam pla"))
             ingredients.append(Ingredient(name: "Palm Sugar", amount: 1.0, unit: "tbsp", notes: "or brown sugar"))
             ingredients.append(Ingredient(name: "Thai Basil", amount: 0.5, unit: "cup", notes: "fresh, torn"))
-            if recipeName.contains("curry") {
+            if recipeName.contains("chicken curry") {
+                if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
+                    ingredients.append(Ingredient(name: "Chicken Breast", amount: 1.0, unit: "lb", notes: "boneless, skinless, cut into pieces"))
+                }
                 ingredients.append(Ingredient(name: "Coconut Milk", amount: 1.0, unit: "can", notes: "13.5 oz"))
                 ingredients.append(Ingredient(name: "Curry Paste", amount: 2.0, unit: "tbsp", notes: "red, green, or yellow"))
                 ingredients.append(Ingredient(name: "Bamboo Shoots", amount: 0.5, unit: "cup", notes: "canned, sliced"))
                 ingredients.append(Ingredient(name: "Bell Peppers", amount: 2.0, unit: "medium", notes: "sliced"))
                 ingredients.append(Ingredient(name: "Thai Eggplant", amount: 4.0, unit: "small", notes: "quartered"))
-                // Add chicken only for non-vegetarian curry dishes
-                if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
-                    ingredients.append(Ingredient(name: "Chicken Breast", amount: 1.0, unit: "lb", notes: "boneless, skinless, cut into pieces"))
-                }
+            } else if recipeName.contains("fish curry") {
+                ingredients.append(Ingredient(name: "Fresh Fish Fillets", amount: 1.0, unit: "lb", notes: "firm white fish like cod or tilapia, cut into pieces"))
+                ingredients.append(Ingredient(name: "Coconut Milk", amount: 1.0, unit: "can", notes: "13.5 oz"))
+                ingredients.append(Ingredient(name: "Curry Paste", amount: 2.0, unit: "tbsp", notes: "red, green, or yellow"))
+                ingredients.append(Ingredient(name: "Bamboo Shoots", amount: 0.5, unit: "cup", notes: "canned, sliced"))
+                ingredients.append(Ingredient(name: "Bell Peppers", amount: 2.0, unit: "medium", notes: "sliced"))
+                ingredients.append(Ingredient(name: "Thai Eggplant", amount: 4.0, unit: "small", notes: "quartered"))
+            } else if recipeName.contains("curry") {
+                ingredients.append(Ingredient(name: "Protein of Choice", amount: 1.0, unit: "lb", notes: "chicken, fish, shrimp, or tofu based on recipe"))
+                ingredients.append(Ingredient(name: "Coconut Milk", amount: 1.0, unit: "can", notes: "13.5 oz"))
+                ingredients.append(Ingredient(name: "Curry Paste", amount: 2.0, unit: "tbsp", notes: "red, green, or yellow"))
+                ingredients.append(Ingredient(name: "Bamboo Shoots", amount: 0.5, unit: "cup", notes: "canned, sliced"))
+                ingredients.append(Ingredient(name: "Bell Peppers", amount: 2.0, unit: "medium", notes: "sliced"))
+                ingredients.append(Ingredient(name: "Thai Eggplant", amount: 4.0, unit: "small", notes: "quartered"))
             }
             if recipeName.contains("pad thai") {
                 ingredients.append(Ingredient(name: "Rice Noodles", amount: 8.0, unit: "oz", notes: "flat, soaked"))
