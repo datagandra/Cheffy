@@ -659,6 +659,15 @@ class OpenAIClient: ObservableObject {
             - Spices and seasonings must be authentic to the cuisine and recipe
             - Include all traditional ingredients specific to the recipe type
             - Double-check that ingredients align with the recipe name and cuisine
+        25. 🚨 CALORIE CALCULATION REQUIREMENTS:
+            - Provide SPECIFIC ingredient names for accurate calorie calculation (e.g., "chicken breast" not just "chicken")
+            - Include exact protein types (e.g., "salmon fillet", "cod fillet", "tilapia fillet")
+            - Specify dairy types (e.g., "cheddar cheese", "mozzarella cheese", "greek yogurt")
+            - Include specific vegetable varieties (e.g., "red bell pepper", "roma tomato", "baby spinach")
+            - Specify oil types (e.g., "extra virgin olive oil", "sesame oil", "coconut oil")
+            - Include specific grain types (e.g., "basmati rice", "whole wheat pasta", "quinoa")
+            - Provide detailed preparation notes for accurate weight estimation
+            - Include ALL ingredients needed for proper nutritional calculation
         25. FINAL CHECK: Verify every ingredient in every recipe complies with ALL restrictions
         26. FINAL CHECK: Verify every recipe name complies with ALL restrictions
         27. DYNAMIC POPULARITY RANKING: Research and rank recipes by CURRENT popularity and culinary significance in \(cuisine.rawValue) cuisine
@@ -666,6 +675,15 @@ class OpenAIClient: ObservableObject {
         29. NEVER create recipes with names containing restricted ingredients (e.g., no "Chicken Curry" for vegan)
         30. ALWAYS use traditional, authentic recipe names that food enthusiasts would recognize
         31. FOCUS ON CURRENT TRENDS: Include recipes that are currently popular, trending, or highly regarded in the culinary world
+        32. 🚨 CALORIE CALCULATION REQUIREMENTS:
+            - Provide SPECIFIC ingredient names for accurate calorie calculation (e.g., "chicken breast" not just "chicken")
+            - Include exact protein types (e.g., "salmon fillet", "cod fillet", "tilapia fillet")
+            - Specify dairy types (e.g., "cheddar cheese", "mozzarella cheese", "greek yogurt")
+            - Include specific vegetable varieties (e.g., "red bell pepper", "roma tomato", "baby spinach")
+            - Specify oil types (e.g., "extra virgin olive oil", "sesame oil", "coconut oil")
+            - Include specific grain types (e.g., "basmati rice", "whole wheat pasta", "quinoa")
+            - Provide detailed preparation notes for accurate weight estimation
+            - Include ALL ingredients needed for proper nutritional calculation
 
         IMPORTANT: You must respond with ONLY valid JSON in the exact format specified below. Do not include any additional text, explanations, or markdown formatting.
 
