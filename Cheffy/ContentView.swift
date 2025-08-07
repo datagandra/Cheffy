@@ -5,32 +5,35 @@ struct ContentView: View {
     @State private var selectedTab = 0
 
     var body: some View {
-        NavigationStack {
-            TabView(selection: $selectedTab) {
+        TabView(selection: $selectedTab) {
+            NavigationView {
                 RecipeGeneratorView()
-                    .tabItem { 
-                        Label("Generate", systemImage: "wand.and.stars")
-                    }
-                    .tag(0)
-                
+            }
+            .tabItem { 
+                Label("Generate", systemImage: "wand.and.stars")
+            }
+            .tag(0)
+            
+            NavigationView {
                 FavoritesView()
-                    .tabItem { 
-                        Label("Favorites", systemImage: "heart.fill")
-                    }
-                    .tag(1)
-                
+            }
+            .tabItem { 
+                Label("Favorites", systemImage: "heart.fill")
+            }
+            .tag(1)
+            
+            NavigationView {
                 SettingsView()
-                    .tabItem { 
-                        Label("Settings", systemImage: "gear")
-                    }
-                    .tag(2)
             }
-            .tint(.orange)
-            .sheet(isPresented: $subscriptionManager.showPaywall) {
-                PaywallView()
+            .tabItem { 
+                Label("Settings", systemImage: "gear")
             }
+            .tag(2)
         }
-        .navigationViewStyle(.stack)
+        .tint(.orange)
+        .sheet(isPresented: $subscriptionManager.showPaywall) {
+            PaywallView()
+        }
     }
 }
 
