@@ -52,7 +52,6 @@ struct RecipeGeneratorView: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
         }
-        .navigationTitle("Recipe Generator")
         .navigationBarTitleDisplayMode(.large)
         .refreshable {
             await refreshData()
