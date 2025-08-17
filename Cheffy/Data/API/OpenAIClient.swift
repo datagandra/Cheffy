@@ -295,7 +295,7 @@ class OpenAIClient: ObservableObject {
             logger.debug("Response content length: \(content.count) characters")
             logger.debug("Response content: \(content)")
             
-            let recipe = try parseRecipeFromResponse(content, cuisine: cuisine, difficulty: difficulty, servings: servings)
+            let recipe = try parseRecipeFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
             
             // Apply strict dietary filtering for single recipe
             if !dietaryRestrictions.isEmpty {
@@ -718,7 +718,7 @@ class OpenAIClient: ObservableObject {
         return prompt
     }
 
-    private func parseRecipeFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty, servings: Int = 2) throws -> Recipe {
+    private func parseRecipeFromResponse(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote], servings: Int = 2) throws -> Recipe {
         logger.debug("Parsing response content...")
         logger.debug("Full response: \(content)")
         
@@ -808,16 +808,16 @@ class OpenAIClient: ObservableObject {
                 }
                 
                 // If JSON parsing fails, try to create a basic recipe from the text
-                return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty, servings: servings)
+                return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
             }
         } else {
             logger.error("No JSON brackets found in response")
             // If no JSON found, try to create a basic recipe from the text
-            return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty, servings: servings)
+            return try createRecipeFromText(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
         }
     }
     
-    private func createRecipeFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty, servings: Int = 2) throws -> Recipe {
+    private func createRecipeFromText(_ content: String, cuisine: Cuisine, difficulty: Difficulty, dietaryRestrictions: [DietaryNote], servings: Int = 2) throws -> Recipe {
         logger.debug("Creating recipe from text content...")
         
         // Extract recipe name (look for common patterns)
@@ -826,11 +826,11 @@ class OpenAIClient: ObservableObject {
             name = String(content[nameMatch]).trimmingCharacters(in: .whitespacesAndNewlines)
         } else {
             // Use proper recipe name instead of generic
-            name = generateProperRecipeName(cuisine: cuisine, index: 1)
+            name = generateProperRecipeName(cuisine: cuisine, index: 1, dietaryRestrictions: dietaryRestrictions)
         }
         
         // Generate dynamic ingredients based on recipe name and cuisine
-        let dynamicIngredients = generateDynamicIngredientsForRecipe(name: name, cuisine: cuisine, dietaryRestrictions: [])
+        let dynamicIngredients = generateDynamicIngredientsForRecipe(name: name, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
         
         // Create detailed steps from the content
         let lines = content.components(separatedBy: .newlines)
@@ -1019,7 +1019,7 @@ class OpenAIClient: ObservableObject {
             let trimmedSection = section.trimmingCharacters(in: .whitespacesAndNewlines)
             if trimmedSection.count > 50 { // Only process substantial sections
                 do {
-                    let recipe = try createRecipeFromText(trimmedSection, cuisine: cuisine, difficulty: difficulty, servings: servings)
+                    let recipe = try createRecipeFromText(trimmedSection, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
                     var updatedRecipe = recipe
                     updatedRecipe.dietaryNotes = dietaryRestrictions
                     recipes.append(updatedRecipe)
@@ -1032,7 +1032,7 @@ class OpenAIClient: ObservableObject {
         // If we couldn't extract enough recipes, create some basic ones with proper names and dynamic ingredients
         while recipes.count < 10 {
             let recipeNumber = recipes.count + 1
-            let recipeName = generateProperRecipeName(cuisine: cuisine, index: recipeNumber)
+            let recipeName = generateProperRecipeName(cuisine: cuisine, index: recipeNumber, dietaryRestrictions: dietaryRestrictions)
             
             // Generate dynamic ingredients based on recipe name, cuisine and dietary restrictions
             let dynamicIngredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
@@ -1599,9 +1599,9 @@ class OpenAIClient: ObservableObject {
         return authenticNames[nameIndex]
     }
     
-    private func generateProperRecipeName(cuisine: Cuisine, index: Int) -> String {
+    private func generateProperRecipeName(cuisine: Cuisine, index: Int, dietaryRestrictions: [DietaryNote]) -> String {
         // Generate authentic, specific recipe names that reflect current popularity and trends
-        let authenticNames = getAuthenticRecipeNames(for: cuisine, dietaryRestrictions: [])
+        let authenticNames = getAuthenticRecipeNames(for: cuisine, dietaryRestrictions: dietaryRestrictions)
         let nameIndex = (index - 1) % authenticNames.count
         return authenticNames[nameIndex]
     }
@@ -1614,7 +1614,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Pasta alla Norma", "Risotto ai Funghi", "Minestrone Verde", "Penne Arrabbiata", "Spaghetti Aglio e Olio", "Pasta e Fagioli", "Risotto alla Milanese", "Pasta al Pomodoro", "Minestrone Classico", "Penne all'Arrabbiata"]
             } else {
-                return ["Osso Buco alla Milanese", "Spaghetti alla Carbonara", "Risotto ai Porcini", "Saltimbocca alla Romana", "Penne all'Arrabbiata", "Bistecca alla Fiorentina", "Lasagna alla Bolognese", "Pasta alla Norma", "Risotto ai Funghi", "Minestrone Classico"]
+                return ["Osso Buco alla Milanese", "Spaghetti alla Carbonara", "Risotto ai Porcini", "Saltimbocca alla Romana", "Penne all'Arrabbiata", "Bistecca alla Fiorentina", "Lasagna alla Bolognese", "Pollo alla Milanese", "Vitello Tonnato", "Saltimbocca"]
             }
         case .french:
             if dietaryRestrictions.contains(.vegan) {
@@ -1622,7 +1622,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Ratatouille Niçoise", "Soupe à l'Oignon", "Salade Niçoise", "Pissaladière", "Soupe au Pistou", "Salade de Lentilles", "Soupe de Légumes", "Salade de Haricots", "Soupe de Pois", "Salade de Tomates"]
             } else {
-                return ["Coq au Vin", "Boeuf Bourguignon", "Duck Confit", "Escargots de Bourgogne", "Ratatouille Niçoise", "Soupe à l'Oignon", "Salade Niçoise", "Pissaladière", "Soupe au Pistou", "Salade de Lentilles"]
+                return ["Coq au Vin", "Boeuf Bourguignon", "Duck Confit", "Escargots de Bourgogne", "Steak Frites", "Poulet à la Moutarde", "Ratatouille Niçoise", "Soupe à l'Oignon", "Salade Niçoise", "Pissaladière"]
             }
         case .indian:
             if dietaryRestrictions.contains(.vegan) {
@@ -1630,7 +1630,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Chana Masala", "Aloo Gobi", "Dal Makhani", "Baingan Bharta", "Palak Paneer", "Chole Bhature", "Rajma Masala", "Kadhi Pakora", "Sambar", "Rasam"]
             } else {
-                return ["Chicken Tikka Masala", "Lamb Biryani", "Butter Chicken", "Fish Curry", "Chana Masala", "Aloo Gobi", "Dal Makhani", "Baingan Bharta", "Palak Paneer", "Chole Bhature"]
+                return ["Chicken Tikka Masala", "Lamb Biryani", "Butter Chicken", "Fish Curry", "Rogan Josh", "Vindaloo", "Mutton Curry", "Chicken Biryani", "Chana Masala", "Aloo Gobi"]
             }
         case .chinese:
             if dietaryRestrictions.contains(.vegan) {
@@ -1638,7 +1638,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Mapo Tofu", "Kung Pao Tofu", "Buddha's Delight", "Stir-Fried Vegetables", "Hot and Sour Soup", "Wonton Soup", "Dim Sum", "Spring Rolls", "Fried Rice", "Noodle Soup"]
             } else {
-                return ["Kung Pao Chicken", "Sweet and Sour Pork", "Mapo Tofu", "Peking Duck", "Dim Sum", "Hot and Sour Soup", "Wonton Soup", "Spring Rolls", "Fried Rice", "Noodle Soup"]
+                return ["Kung Pao Chicken", "Sweet and Sour Pork", "Peking Duck", "General Tso's Chicken", "Orange Chicken", "Honey Walnut Shrimp", "Beef and Broccoli", "Mapo Tofu", "Dim Sum", "Hot and Sour Soup"]
             }
         case .japanese:
             if dietaryRestrictions.contains(.vegan) {
@@ -1646,7 +1646,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Miso Soup", "Vegetable Tempura", "Edamame", "Seaweed Salad", "Pickled Vegetables", "Rice Balls", "Natto", "Umeboshi", "Kombu Dashi", "Shiitake Mushrooms"]
             } else {
-                return ["Sushi Nigiri", "Ramen", "Tempura", "Teriyaki Chicken", "Miso Soup", "Sashimi", "Gyoza", "Yakitori", "Tonkatsu", "Okonomiyaki"]
+                return ["Sushi Nigiri", "Ramen", "Tempura", "Teriyaki Chicken", "Sashimi", "Gyoza", "Yakitori", "Tonkatsu", "Okonomiyaki", "Unagi Don"]
             }
         case .mexican:
             if dietaryRestrictions.contains(.vegan) {
@@ -1654,11 +1654,11 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Chiles Rellenos", "Enchiladas Verdes", "Guacamole", "Salsa Verde", "Pico de Gallo", "Frijoles Refritos", "Arroz Mexicano", "Sopa de Tortilla", "Chiles en Nogada", "Mole Poblano"]
             } else {
-                return ["Tacos al Pastor", "Enchiladas Rojas", "Chiles Rellenos", "Guacamole", "Salsa Verde", "Pico de Gallo", "Frijoles Refritos", "Arroz Mexicano", "Sopa de Tortilla", "Chiles en Nogada"]
+                return ["Tacos al Pastor", "Enchiladas Rojas", "Carne Asada", "Pollo Asado", "Carnitas", "Barbacoa", "Chiles Rellenos", "Guacamole", "Salsa Verde", "Pico de Gallo"]
             }
         case .thai:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Pad Thai", "Green Curry", "Tom Yum Soup", "Som Tam", "Massaman Curry", "Red Curry", "Yellow Curry", "Panang Curry", "Tom Kha Soup", "Larb"]
+                return ["Pad Thai Chay", "Green Curry Chay", "Tom Yum Chay", "Som Tam Chay", "Massaman Curry Chay", "Red Curry Chay", "Yellow Curry Chay", "Panang Curry Chay", "Tom Kha Chay", "Larb Chay"]
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Pad Thai", "Green Curry", "Tom Yum Soup", "Som Tam", "Massaman Curry", "Red Curry", "Yellow Curry", "Panang Curry", "Tom Kha Soup", "Larb"]
             } else {
@@ -1670,7 +1670,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma", "Moussaka", "Paella"]
             } else {
-                return ["Lamb Tagine", "Chicken Shawarma", "Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma"]
+                return ["Lamb Tagine", "Chicken Shawarma", "Kafta", "Shish Taouk", "Mixed Grill", "Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara"]
             }
         case .american:
             if dietaryRestrictions.contains(.vegan) {
@@ -1678,7 +1678,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Veggie Burger", "Vegetarian Chili", "Mac and Cheese", "BBQ Tofu", "Vegetarian Meatloaf", "Shepherd's Pie", "Pot Pie", "Casserole", "Stew", "Soup"]
             } else {
-                return ["Classic Burger", "BBQ Ribs", "Mac and Cheese", "Chili", "Meatloaf", "Shepherd's Pie", "Pot Pie", "Casserole", "Stew", "Soup"]
+                return ["Classic Burger", "BBQ Ribs", "Steak", "Fried Chicken", "Mac and Cheese", "Chili", "Meatloaf", "Shepherd's Pie", "Pot Pie", "Casserole"]
             }
         case .greek:
             if dietaryRestrictions.contains(.vegan) {
@@ -1686,7 +1686,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Fasolada", "Gemista", "Horta", "Fava", "Dolmades", "Spanakopita", "Moussaka", "Pastitsio", "Souvlaki", "Gyros"]
             } else {
-                return ["Moussaka", "Pastitsio", "Souvlaki", "Gyros", "Fasolada", "Gemista", "Horta", "Fava", "Dolmades", "Spanakopita"]
+                return ["Moussaka", "Pastitsio", "Souvlaki", "Gyros", "Kleftiko", "Stifado", "Arni Souvla", "Kotopoulo", "Bifteki", "Fasolada"]
             }
         case .spanish:
             if dietaryRestrictions.contains(.vegan) {
@@ -1694,7 +1694,7 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Paella Valenciana", "Gazpacho", "Pisto", "Escalivada", "Salmorejo", "Ajoblanco", "Sopa de Ajo", "Ensalada Mixta", "Patatas Bravas", "Tortilla Española"]
             } else {
-                return ["Paella Valenciana", "Gazpacho", "Pisto", "Escalivada", "Salmorejo", "Ajoblanco", "Sopa de Ajo", "Ensalada Mixta", "Patatas Bravas", "Tortilla Española"]
+                return ["Paella de Mariscos", "Pulpo a la Gallega", "Jamon Iberico", "Chorizo", "Cochinillo", "Paella Valenciana", "Gazpacho", "Pisto", "Escalivada", "Salmorejo"]
             }
         case .moroccan:
             if dietaryRestrictions.contains(.vegan) {
@@ -1702,31 +1702,31 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Harira", "Zaalouk", "Bessara", "Taktouka", "Salata Mechouia", "Harira Soup", "Vegetable Tagine", "Couscous", "Bread", "Tea"]
             } else {
-                return ["Lamb Tagine", "Chicken Tagine", "Couscous", "Harira", "Zaalouk", "Bessara", "Taktouka", "Salata Mechouia", "Harira Soup", "Bread"]
+                return ["Lamb Tagine", "Chicken Tagine", "Couscous", "Pastilla", "Merguez", "Kefta", "Harira", "Zaalouk", "Bessara", "Taktouka"]
             }
         case .vietnamese:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo", "Pho", "Banh Mi", "Goi Cuon", "Com Tam", "Banh Xeo"]
+                return ["Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo", "Bun Chay", "Banh Cuon Chay", "Chao Chay", "Banh Xoi Chay", "Che Chay"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo", "Pho", "Banh Mi", "Goi Cuon", "Com Tam", "Banh Xeo"]
+                return ["Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo", "Bun Chay", "Banh Cuon Chay", "Chao Chay", "Banh Xoi Chay", "Che Chay"]
             } else {
-                return ["Pho", "Banh Mi", "Goi Cuon", "Com Tam", "Banh Xeo", "Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo"]
+                return ["Pho", "Banh Mi", "Goi Cuon", "Com Tam", "Banh Xeo", "Bun Bo Hue", "Banh Cuon", "Chao Ga", "Banh Xoi", "Che"]
             }
         case .korean:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki"]
+                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Doenjang Jjigae", "Kongnamul Guk", "Sundubu Jjigae", "Yachae Bokkeum", "Kongnamul Muchim"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki"]
+                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Doenjang Jjigae", "Kongnamul Guk", "Sundubu Jjigae", "Yachae Bokkeum", "Kongnamul Muchim"]
             } else {
-                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki"]
+                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Bulgogi", "Galbi", "Samgyeopsal", "Samgyetang", "Jjajangmyeon"]
             }
         case .turkish:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası"]
+                return ["Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Yaprak Sarma", "Karnıyarık", "Patlıcan Kebabı", "Mercimek Köftesi", "Zeytinyağlı Yemekler"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası"]
+                return ["Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Yaprak Sarma", "Karnıyarık", "Patlıcan Kebabı", "Mercimek Köftesi", "Zeytinyağlı Yemekler"]
             } else {
-                return ["Kebap", "Döner", "Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Kebap", "Döner", "Mercimek Çorbası"]
+                return ["Kebap", "Döner", "Adana Kebap", "İskender", "Lahmacun", "Pide", "Urfa Kebap", "Mercimek Çorbası", "Imam Bayildi", "Dolma"]
             }
         case .lebanese:
             if dietaryRestrictions.contains(.vegan) {
@@ -1734,39 +1734,39 @@ class OpenAIClient: ObservableObject {
             } else if dietaryRestrictions.contains(.vegetarian) {
                 return ["Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma", "Moussaka", "Paella"]
             } else {
-                return ["Lamb Tagine", "Chicken Shawarma", "Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma"]
+                return ["Lamb Tagine", "Chicken Shawarma", "Kafta", "Shish Taouk", "Kibbeh", "Shawarma", "Hummus", "Baba Ganoush", "Falafel", "Tabbouleh"]
             }
         case .persian:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo"]
+                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Mirza Ghasemi", "Kashk-e Bademjan", "Borani", "Ash-e Reshteh", "Sholeh Zard"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo"]
+                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Mirza Ghasemi", "Kashk-e Bademjan", "Borani", "Ash-e Reshteh", "Sholeh Zard"]
             } else {
-                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo"]
+                return ["Kebab", "Joojeh Kebab", "Barg", "Koobideh", "Shishlik", "Gheymeh", "Dizi", "Ghormeh Sabzi", "Fesenjan", "Tahchin"]
             }
         case .ethiopian:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu"]
+                return ["Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Kik Alicha", "Azifa", "Tikil Gomen", "Yekik Alicha", "Gomen Besiga"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu"]
+                return ["Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Kik Alicha", "Azifa", "Tikil Gomen", "Yekik Alicha", "Gomen Besiga"]
             } else {
-                return ["Doro Wot", "Tibs", "Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Doro Wot", "Tibs", "Shiro"]
+                return ["Doro Wot", "Tibs", "Kitfo", "Dulet", "Gored Gored", "Awaze Tibs", "Siga Tibs", "Shiro", "Misir Wot", "Gomen"]
             }
         case .brazilian:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru"]
+                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Bobó de Camarão", "Coxinha", "Pão de Queijo", "Farofa", "Tutu de Feijão"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru"]
+                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Bobó de Camarão", "Coxinha", "Pão de Queijo", "Farofa", "Tutu de Feijão"]
             } else {
-                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru"]
+                return ["Churrasco", "Picanha", "Frango à Passarinho", "Bife à Cavalo", "X-Tudo", "Feijão Tropeiro", "Carne de Sol", "Feijoada", "Moqueca", "Vatapá"]
             }
         case .peruvian:
             if dietaryRestrictions.contains(.vegan) {
-                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos"]
+                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Rocoto Relleno", "Chupe de Camarones", "Papa a la Huancaína", "Causa Rellena", "Chicharrones"]
             } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos"]
+                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Rocoto Relleno", "Chupe de Camarones", "Papa a la Huancaína", "Causa Rellena", "Chicharrones"]
             } else {
-                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos"]
+                return ["Pollo a la Brasa", "Chaufa", "Arroz con Pollo", "Seco de Cordero", "Chicharrones", "Anticuchos", "Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa"]
             }
         }
     }

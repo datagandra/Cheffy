@@ -124,47 +124,45 @@ struct RecipeGeneratorView: View {
                 .font(.headline)
                 .foregroundColor(.primary)
             
-            HStack(spacing: 16) {
-                ForEach([2, 4, 6, 8], id: \.self) { serving in
+            Menu {
+                ForEach(2...10, id: \.self) { serving in
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             selectedServings = serving
                         }
                         impactFeedback.impactOccurred()
                     }) {
-                        Text("\(serving)")
-                            .font(.headline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(selectedServings == serving ? .white : .primary)
-                            .frame(width: 50, height: 50)
-                            .background(
-                                Circle()
-                                    .fill(selectedServings == serving ? Color.blue : Color(.systemGray6))
-                            )
-                            .overlay(
-                                Circle()
-                                    .stroke(selectedServings == serving ? Color.blue : Color(.systemGray4), lineWidth: 1)
-                            )
+                        HStack {
+                            Text("\(serving)")
+                            if selectedServings == serving {
+                                Spacer()
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.blue)
+                            }
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .accessibilityLabel("\(serving) servings")
-                    .accessibilityAddTraits(selectedServings == serving ? .isSelected : [])
                 }
-                
-                Spacer()
-                
-                // Custom serving input
+            } label: {
                 HStack {
-                    Text("Custom:")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    Text("\(selectedServings)")
+                        .foregroundColor(.primary)
                     
-                    TextField("#", value: $selectedServings, format: .number)
-                        .textFieldStyle(.roundedBorder)
-                        .frame(width: 60)
-                        .keyboardType(.numberPad)
-                        .accessibilityLabel("Custom servings input")
+                    Spacer()
+                    
+                    Image(systemName: "chevron.down")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(.systemGray6))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color(.systemGray4), lineWidth: 1)
+                )
             }
         }
     }
@@ -355,8 +353,36 @@ struct RecipeGeneratorView: View {
                 SingleRecipeView(recipe: recipe)
             }
             
-                    if !recipeManager.popularRecipes.isEmpty {
-            PopularRecipesView(recipes: recipeManager.popularRecipes)
+            // Show message when no recipes match dietary restrictions
+            if !selectedDietaryRestrictions.isEmpty && recipeManager.popularRecipes.isEmpty && !recipeManager.isLoading && recipeManager.error == nil {
+                VStack(spacing: 16) {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(.orange)
+                    
+                    Text("No Recipes Found")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                    
+                    Text("No \(selectedCuisine.rawValue) recipes match your selected dietary restrictions: \(selectedDietaryRestrictions.map { $0.rawValue }.joined(separator: ", "))")
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                    
+                    Text("Please modify your dietary restrictions or try a different cuisine to find suitable recipes.")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(12)
+                .padding(.horizontal)
+            }
+            
+            if !recipeManager.popularRecipes.isEmpty {
+                PopularRecipesView(recipes: recipeManager.popularRecipes)
                 
                 // Analysis button
                 Button(action: {
@@ -515,9 +541,9 @@ struct RecipeGeneratorView: View {
     }
     
     private func validateInput() -> Bool {
-        if selectedServings < 1 || selectedServings > 20 {
+        if selectedServings < 2 || selectedServings > 10 {
             showValidationError = true
-            validationMessage = "Please select a valid number of servings (1-20)"
+            validationMessage = "Please select a valid number of servings (2-10)"
             return false
         }
         return true

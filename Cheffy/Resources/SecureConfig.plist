@@ -3,13 +3,19 @@
 <plist version="1.0">
 <dict>
     <!-- 
-    SECURE CONFIGURATION FILE
+    SECURE CONFIGURATION TEMPLATE
     
     IMPORTANT SECURITY NOTES:
-    1. This file contains sensitive API keys
+    1. NEVER commit real API keys to source control
     2. This file should be in .gitignore
-    3. For production, use environment variables instead
-    4. Never commit real API keys to source control
+    3. Use environment variables in production
+    4. Use keychain for local development
+    
+    SETUP INSTRUCTIONS:
+    1. Copy this file to SecureConfig.plist
+    2. Replace YOUR_GEMINI_API_KEY_HERE with your actual API key
+    3. Add SecureConfig.plist to .gitignore
+    4. For production, use environment variables instead
     -->
     
     <!-- Gemini API Configuration -->

@@ -243,7 +243,7 @@ extension Recipe {
             "fish fillet": 120, "salmon": 208, "tuna": 144, "cod": 105, "haddock": 116, "tilapia": 96,
             "shrimp": 99, "prawn": 99, "crab": 97, "lobster": 89, "mussel": 86, "oyster": 69,
             "egg": 155, "egg white": 52, "egg yolk": 322,
-            "tofu": 76, "tempeh": 192, "seitan": 370,
+            "tofu": 76, "seitan": 370,
             "lentil": 116, "chickpea": 164, "black bean": 132, "kidney bean": 127, "pinto bean": 143,
             "quinoa": 120, "brown rice": 111, "white rice": 130, "basmati rice": 130,
             
