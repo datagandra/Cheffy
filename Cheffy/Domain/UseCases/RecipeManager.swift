@@ -612,7 +612,8 @@ class RecipeManager: ObservableObject {
         
         // Filter cached recipes by basic criteria
         var matchingRecipes = cachedRecipes.filter { recipe in
-            recipe.cuisine == cuisine &&
+            let cuisineMatches = cuisine == .any || recipe.cuisine == cuisine
+            return cuisineMatches &&
             recipe.difficulty == difficulty &&
             recipe.servings == servings
         }
@@ -688,7 +689,8 @@ class RecipeManager: ObservableObject {
         
         // Filter cached recipes by basic criteria
         var matchingRecipes = cachedRecipes.filter { recipe in
-            recipe.cuisine == cuisine &&
+            let cuisineMatches = cuisine == .any || recipe.cuisine == cuisine
+            return cuisineMatches &&
             recipe.difficulty == difficulty &&
             recipe.servings == servings
         }

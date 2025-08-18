@@ -65,6 +65,7 @@ struct Recipe: Identifiable, Codable {
 
 // MARK: - Enums
 enum Cuisine: String, CaseIterable, Codable {
+    case any = "Any Cuisine"
     case french = "French"
     case italian = "Italian"
     case japanese = "Japanese"

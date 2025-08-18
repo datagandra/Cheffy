@@ -6,7 +6,7 @@ struct RecipeGeneratorView: View {
     @EnvironmentObject var userManager: UserManager
     
     // MARK: - State Management
-    @State private var selectedCuisine: Cuisine = .french
+    @State private var selectedCuisine: Cuisine = .any
     @State private var selectedDietaryRestrictions: Set<DietaryNote> = []
     @State private var selectedServings: Int = 4
     @State private var selectedCookingTime: CookingTimeFilter = .any
@@ -24,7 +24,7 @@ struct RecipeGeneratorView: View {
     
     private func initializeUserPreferences() {
         if let user = userManager.currentUser {
-            selectedCuisine = user.favoriteCuisines.first ?? .italian
+            selectedCuisine = user.favoriteCuisines.first ?? .any
             selectedDietaryRestrictions = Set(user.dietaryPreferences)
             // Default to any cooking time for new users
             selectedCookingTime = .any

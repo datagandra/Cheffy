@@ -325,6 +325,16 @@ class OpenAIClient: ObservableObject {
         maxTime: Int? = nil,
         servings: Int = 2
     ) async throws -> [Recipe] {
+        
+        // Handle "Any Cuisine" selection
+        if cuisine == .any {
+            return try await generateMultiCuisinePopularRecipes(
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions,
+                maxTime: maxTime,
+                servings: servings
+            )
+        }
         guard let apiKey = apiKey else {
             logger.warning("No API key found")
             throw GeminiError.noAPIKey
@@ -475,6 +485,132 @@ class OpenAIClient: ObservableObject {
         return []
     }
 
+    // MARK: - Multi-Cuisine Recipe Generation
+    
+    /// Generates popular recipes from multiple cuisines when "Any Cuisine" is selected
+    private func generateMultiCuisinePopularRecipes(
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int? = nil,
+        servings: Int = 2
+    ) async throws -> [Recipe] {
+        logger.api("Generating multi-cuisine popular recipes")
+        
+        // Select diverse cuisines for variety
+        let selectedCuisines: [Cuisine] = [
+            .italian, .french, .japanese, .indian, .mexican,
+            .thai, .mediterranean, .chinese, .greek, .spanish
+        ]
+        
+        var allRecipes: [Recipe] = []
+        let recipesPerCuisine = max(1, 10 / selectedCuisines.count) // Distribute recipes evenly
+        
+        for cuisine in selectedCuisines {
+            do {
+                logger.debug("Generating \(recipesPerCuisine) recipes for \(cuisine.rawValue) cuisine")
+                
+                let cuisineRecipes = try await generatePopularRecipesForSpecificCuisine(
+                    cuisine: cuisine,
+                    difficulty: difficulty,
+                    dietaryRestrictions: dietaryRestrictions,
+                    maxTime: maxTime,
+                    servings: servings,
+                    count: recipesPerCuisine
+                )
+                
+                allRecipes.append(contentsOf: cuisineRecipes)
+                logger.debug("Generated \(cuisineRecipes.count) recipes for \(cuisine.rawValue)")
+                
+            } catch {
+                logger.warning("Failed to generate recipes for \(cuisine.rawValue): \(error.localizedDescription)")
+                // Continue with other cuisines
+            }
+        }
+        
+        // Shuffle recipes for variety and take top 10
+        let shuffledRecipes = allRecipes.shuffled()
+        let finalRecipes = Array(shuffledRecipes.prefix(10))
+        
+        logger.api("Multi-cuisine generation complete: \(finalRecipes.count) recipes from \(selectedCuisines.count) cuisines")
+        return finalRecipes
+    }
+    
+    /// Generates recipes for a specific cuisine (internal function)
+    private func generatePopularRecipesForSpecificCuisine(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int? = nil,
+        servings: Int = 2,
+        count: Int = 10
+    ) async throws -> [Recipe] {
+        guard let apiKey = apiKey else {
+            throw GeminiError.noAPIKey
+        }
+        
+        let prompt = createPopularRecipesPrompt(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings
+        )
+        
+        let request = GeminiRequest(
+            contents: [
+                GeminiContent(
+                    parts: [
+                        GeminiPart(text: prompt)
+                    ]
+                )
+            ],
+            generationConfig: GeminiGenerationConfig(
+                temperature: 0.1,
+                maxOutputTokens: 500
+            )
+        )
+        
+        let url = URL(string: "\(baseURL)/gemini-1.5-flash:generateContent?key=\(apiKey)")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(request)
+            urlRequest.httpBody = jsonData
+            
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                throw GeminiError.apiError("HTTP \(httpResponse.statusCode)")
+            }
+            
+            let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
+            
+            if let content = geminiResponse.candidates.first?.content.parts.first?.text {
+                var recipes = try parsePopularRecipesFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
+                
+                // Apply strict dietary filtering
+                recipes = filterRecipesByDietaryRestrictions(recipes, restrictions: dietaryRestrictions)
+                
+                // Apply strict cooking time filtering
+                if let maxTime = maxTime {
+                    recipes = filterRecipesByCookingTime(recipes, maxTime: maxTime)
+                }
+                
+                // Limit to requested count
+                recipes = Array(recipes.prefix(count))
+                
+                return recipes
+            } else {
+                throw GeminiError.noContent
+            }
+        } catch {
+            logger.error("Error generating recipes for \(cuisine.rawValue): \(error)")
+            throw error
+        }
+    }
+    
     // MARK: - Cooking Time Filtering
     
     /// Filters recipes by cooking time constraint
@@ -1878,6 +2014,25 @@ class OpenAIClient: ObservableObject {
     
     private func getAllRecipesForCuisine(_ cuisine: Cuisine) -> [RecipeOption] {
         switch cuisine {
+        case .any:
+            // For "Any Cuisine", return a diverse selection from multiple cuisines
+            var allRecipes: [RecipeOption] = []
+            
+            // Add recipes from major cuisines for variety
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.italian))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.french))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.indian))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.chinese))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.japanese))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.mexican))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.thai))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.mediterranean))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.american))
+            allRecipes.append(contentsOf: getAllRecipesForCuisine(.greek))
+            
+            // Shuffle and return top recipes for variety
+            return Array(allRecipes.shuffled().prefix(50))
+            
         case .italian:
             return [
                 // Vegan recipes (no animal products)
