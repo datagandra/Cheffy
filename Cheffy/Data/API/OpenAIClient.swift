@@ -1069,9 +1069,16 @@ class OpenAIClient: ObservableObject {
         // Generate recipe-specific ingredients based on recipe name and cuisine
         var ingredients: [Ingredient] = []
         
-        // Add base ingredients that are common across cuisines
-        ingredients.append(Ingredient(name: "Salt", amount: 1.0, unit: "tsp", notes: "to taste"))
+        // Add base ingredients that are common across cuisines - respect dietary restrictions
+        ingredients.append(Ingredient(name: "Sea Salt", amount: 1.0, unit: "tsp", notes: "to taste"))
         ingredients.append(Ingredient(name: "Black Pepper", amount: 0.5, unit: "tsp", notes: "freshly ground"))
+        
+        // Add oil based on dietary restrictions
+        if !dietaryRestrictions.contains(.dairyFree) {
+            ingredients.append(Ingredient(name: "Extra Virgin Olive Oil", amount: 2.0, unit: "tbsp", notes: "for cooking"))
+        } else {
+            ingredients.append(Ingredient(name: "Coconut Oil", amount: 2.0, unit: "tbsp", notes: "dairy-free alternative for cooking"))
+        }
         
         // Generate recipe-specific ingredients based on recipe name
         let recipeSpecificIngredients = generateRecipeSpecificIngredients(name: name, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
@@ -1088,14 +1095,27 @@ class OpenAIClient: ObservableObject {
         // Add cuisine-specific base ingredients with comprehensive details
         switch cuisine {
         case .italian:
-            ingredients.append(Ingredient(name: "Extra Virgin Olive Oil", amount: 3.0, unit: "tbsp", notes: "cold-pressed, for cooking and finishing"))
+            // Add oil based on dietary restrictions
+            if !dietaryRestrictions.contains(.dairyFree) {
+                ingredients.append(Ingredient(name: "Extra Virgin Olive Oil", amount: 3.0, unit: "tbsp", notes: "cold-pressed, for cooking and finishing"))
+            } else {
+                ingredients.append(Ingredient(name: "Coconut Oil", amount: 3.0, unit: "tbsp", notes: "dairy-free alternative for cooking"))
+            }
             ingredients.append(Ingredient(name: "Garlic", amount: 4.0, unit: "cloves", notes: "fresh, finely minced"))
             ingredients.append(Ingredient(name: "Sea Salt", amount: 1.0, unit: "tsp", notes: "fine grain, to taste"))
             ingredients.append(Ingredient(name: "Black Pepper", amount: 0.5, unit: "tsp", notes: "freshly ground"))
             
             if recipeName.contains("pasta") || recipeName.contains("spaghetti") || recipeName.contains("penne") {
-                ingredients.append(Ingredient(name: "Durum Wheat Pasta", amount: 8.0, unit: "oz", notes: "spaghetti, penne, or your choice of shape"))
-                ingredients.append(Ingredient(name: "Parmigiano-Reggiano", amount: 0.75, unit: "cup", notes: "freshly grated, aged 24 months"))
+                if !dietaryRestrictions.contains(.glutenFree) {
+                    ingredients.append(Ingredient(name: "Durum Wheat Pasta", amount: 8.0, unit: "oz", notes: "spaghetti, penne, or your choice of shape"))
+                } else {
+                    ingredients.append(Ingredient(name: "Gluten-Free Pasta", amount: 8.0, unit: "oz", notes: "rice, quinoa, or chickpea pasta"))
+                }
+                if !dietaryRestrictions.contains(.dairyFree) {
+                    ingredients.append(Ingredient(name: "Parmigiano-Reggiano", amount: 0.75, unit: "cup", notes: "freshly grated, aged 24 months"))
+                } else {
+                    ingredients.append(Ingredient(name: "Nutritional Yeast", amount: 0.5, unit: "cup", notes: "dairy-free alternative for cheesy flavor"))
+                }
                 ingredients.append(Ingredient(name: "Fresh Basil", amount: 0.5, unit: "cup", notes: "fresh, torn leaves"))
                 ingredients.append(Ingredient(name: "Red Pepper Flakes", amount: 0.25, unit: "tsp", notes: "optional, for heat"))
                 ingredients.append(Ingredient(name: "San Marzano Tomatoes", amount: 1.0, unit: "can", notes: "28 oz, crushed for sauce"))
@@ -1103,27 +1123,55 @@ class OpenAIClient: ObservableObject {
             if recipeName.contains("risotto") {
                 ingredients.append(Ingredient(name: "Arborio Rice", amount: 1.0, unit: "cup", notes: "short-grain, high-starch rice"))
                 ingredients.append(Ingredient(name: "Dry White Wine", amount: 0.75, unit: "cup", notes: "Pinot Grigio or similar"))
-                ingredients.append(Ingredient(name: "Chicken Stock", amount: 4.0, unit: "cups", notes: "homemade or high-quality store-bought, warm"))
+                if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
+                    ingredients.append(Ingredient(name: "Chicken Stock", amount: 4.0, unit: "cups", notes: "homemade or high-quality store-bought, warm"))
+                } else {
+                    ingredients.append(Ingredient(name: "Vegetable Stock", amount: 4.0, unit: "cups", notes: "homemade or high-quality store-bought, warm"))
+                }
                 ingredients.append(Ingredient(name: "Shallots", amount: 2.0, unit: "medium", notes: "finely diced"))
-                ingredients.append(Ingredient(name: "Butter", amount: 2.0, unit: "tbsp", notes: "unsalted, for finishing"))
+                if !dietaryRestrictions.contains(.dairyFree) {
+                    ingredients.append(Ingredient(name: "Butter", amount: 2.0, unit: "tbsp", notes: "unsalted, for finishing"))
+                } else {
+                    ingredients.append(Ingredient(name: "Coconut Oil", amount: 2.0, unit: "tbsp", notes: "dairy-free alternative for finishing"))
+                }
             }
             if recipeName.contains("pizza") {
-                ingredients.append(Ingredient(name: "Pizza Dough", amount: 1.0, unit: "ball", notes: "store-bought or homemade, room temperature"))
-                ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, torn into pieces"))
+                if !dietaryRestrictions.contains(.glutenFree) {
+                    ingredients.append(Ingredient(name: "Pizza Dough", amount: 1.0, unit: "ball", notes: "store-bought or homemade, room temperature"))
+                } else {
+                    ingredients.append(Ingredient(name: "Gluten-Free Pizza Dough", amount: 1.0, unit: "ball", notes: "store-bought or homemade, room temperature"))
+                }
+                if !dietaryRestrictions.contains(.dairyFree) {
+                    ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, torn into pieces"))
+                } else {
+                    ingredients.append(Ingredient(name: "Dairy-Free Mozzarella", amount: 8.0, unit: "oz", notes: "cashew or almond-based alternative"))
+                }
                 ingredients.append(Ingredient(name: "San Marzano Tomatoes", amount: 1.0, unit: "can", notes: "28 oz, crushed for sauce"))
                 ingredients.append(Ingredient(name: "Fresh Basil", amount: 0.25, unit: "cup", notes: "fresh, torn leaves"))
-                ingredients.append(Ingredient(name: "Semolina Flour", amount: 0.25, unit: "cup", notes: "for dusting pizza peel"))
+                if !dietaryRestrictions.contains(.glutenFree) {
+                    ingredients.append(Ingredient(name: "Semolina Flour", amount: 0.25, unit: "cup", notes: "for dusting pizza peel"))
+                } else {
+                    ingredients.append(Ingredient(name: "Gluten-Free Flour", amount: 0.25, unit: "cup", notes: "rice or almond flour for dusting"))
+                }
             }
             
             // Traditional Italian vegetarian dishes
             if recipeName.contains("caprese") {
-                ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, sliced"))
+                if !dietaryRestrictions.contains(.dairyFree) {
+                    ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, sliced"))
+                } else {
+                    ingredients.append(Ingredient(name: "Dairy-Free Mozzarella", amount: 8.0, unit: "oz", notes: "cashew or almond-based alternative"))
+                }
                 ingredients.append(Ingredient(name: "Heirloom Tomatoes", amount: 4.0, unit: "large", notes: "sliced"))
                 ingredients.append(Ingredient(name: "Fresh Basil", amount: 0.5, unit: "cup", notes: "fresh, whole leaves"))
                 ingredients.append(Ingredient(name: "Balsamic Glaze", amount: 2.0, unit: "tbsp", notes: "for drizzling"))
             }
             if recipeName.contains("bruschetta") {
-                ingredients.append(Ingredient(name: "Baguette", amount: 1.0, unit: "loaf", notes: "sliced and toasted"))
+                if !dietaryRestrictions.contains(.glutenFree) {
+                    ingredients.append(Ingredient(name: "Baguette", amount: 1.0, unit: "loaf", notes: "sliced and toasted"))
+                } else {
+                    ingredients.append(Ingredient(name: "Gluten-Free Baguette", amount: 1.0, unit: "loaf", notes: "rice or quinoa-based alternative"))
+                }
                 ingredients.append(Ingredient(name: "Roma Tomatoes", amount: 4.0, unit: "medium", notes: "diced"))
                 ingredients.append(Ingredient(name: "Fresh Basil", amount: 0.25, unit: "cup", notes: "fresh, chopped"))
             }
@@ -1160,7 +1208,7 @@ class OpenAIClient: ObservableObject {
             }
             
             // Traditional French vegetarian dishes
-            if recipeName.contains("quiche") {
+            if recipeName.contains("quiche") && !dietaryRestrictions.contains(.dairyFree) {
                 ingredients.append(Ingredient(name: "Pie Crust", amount: 1.0, unit: "9-inch", notes: "store-bought or homemade"))
                 ingredients.append(Ingredient(name: "Heavy Cream", amount: 1.0, unit: "cup", notes: "for custard"))
                 ingredients.append(Ingredient(name: "Eggs", amount: 4.0, unit: "large", notes: "for custard"))
@@ -1169,10 +1217,12 @@ class OpenAIClient: ObservableObject {
             if recipeName.contains("soupe") || recipeName.contains("onion") {
                 ingredients.append(Ingredient(name: "Yellow Onions", amount: 4.0, unit: "large", notes: "thinly sliced"))
                 ingredients.append(Ingredient(name: "Beef Stock", amount: 4.0, unit: "cups", notes: "or vegetable stock for vegetarian"))
-                ingredients.append(Ingredient(name: "Gruyère Cheese", amount: 1.0, unit: "cup", notes: "grated"))
+                if !dietaryRestrictions.contains(.dairyFree) {
+                    ingredients.append(Ingredient(name: "Gruyère Cheese", amount: 1.0, unit: "cup", notes: "grated"))
+                }
                 ingredients.append(Ingredient(name: "Baguette", amount: 0.5, unit: "loaf", notes: "sliced and toasted"))
             }
-            if recipeName.contains("gratin") {
+            if recipeName.contains("gratin") && !dietaryRestrictions.contains(.dairyFree) {
                 ingredients.append(Ingredient(name: "Potatoes", amount: 2.0, unit: "lbs", notes: "thinly sliced"))
                 ingredients.append(Ingredient(name: "Heavy Cream", amount: 1.0, unit: "cup", notes: "for sauce"))
                 ingredients.append(Ingredient(name: "Gruyère Cheese", amount: 1.0, unit: "cup", notes: "grated"))
@@ -1214,7 +1264,7 @@ class OpenAIClient: ObservableObject {
                     ingredients.append(Ingredient(name: "Heavy Cream", amount: 0.5, unit: "cup", notes: "for rich sauce"))
                     ingredients.append(Ingredient(name: "Yogurt", amount: 0.5, unit: "cup", notes: "plain, for marinade"))
                 }
-            } else if recipeName.contains("paneer curry") || recipeName.contains("paneer masala") {
+            } else if (recipeName.contains("paneer curry") || recipeName.contains("paneer masala")) && !dietaryRestrictions.contains(.dairyFree) {
                 ingredients.append(Ingredient(name: "Paneer", amount: 0.5, unit: "lb", notes: "fresh, cubed"))
                 ingredients.append(Ingredient(name: "Heavy Cream", amount: 0.5, unit: "cup", notes: "for rich sauce"))
             } else if recipeName.contains("curry") && !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
@@ -1234,7 +1284,7 @@ class OpenAIClient: ObservableObject {
             if recipeName.contains("palak") || recipeName.contains("spinach") {
                 ingredients.append(Ingredient(name: "Fresh Spinach", amount: 2.0, unit: "cups", notes: "chopped"))
             }
-            if recipeName.contains("paneer") {
+            if recipeName.contains("paneer") && !dietaryRestrictions.contains(.dairyFree) {
                 ingredients.append(Ingredient(name: "Paneer", amount: 0.5, unit: "lb", notes: "fresh, cubed"))
             }
             if recipeName.contains("dal") || recipeName.contains("lentil") {
@@ -1248,7 +1298,7 @@ class OpenAIClient: ObservableObject {
             }
             if recipeName.contains("biryani") {
                 ingredients.append(Ingredient(name: "Basmati Rice", amount: 2.0, unit: "cups", notes: "aged, rinsed and soaked"))
-                ingredients.append(Ingredient(name: "Saffron Threads", amount: 0.25, unit: "tsp", notes: "soaked in 2 tbsp warm milk"))
+                ingredients.append(Ingredient(name: "Saffron Threads", amount: 0.25, unit: "tsp", notes: dietaryRestrictions.contains(.dairyFree) ? "soaked in 2 tbsp warm water" : "soaked in 2 tbsp warm milk"))
                 ingredients.append(Ingredient(name: "Green Cardamom", amount: 8.0, unit: "pods", notes: "whole, lightly crushed"))
                 ingredients.append(Ingredient(name: "Cinnamon Stick", amount: 1.0, unit: "piece", notes: "2-inch piece"))
                 ingredients.append(Ingredient(name: "Bay Leaves", amount: 2.0, unit: "leaves", notes: "dried, whole"))
@@ -1606,168 +1656,547 @@ class OpenAIClient: ObservableObject {
         return authenticNames[nameIndex]
     }
     
+    // MARK: - Recipe Option Structure
+    private struct RecipeOption {
+        let name: String
+        let restrictions: [DietaryNote] // What restrictions this recipe CAN accommodate
+    }
+    
+    // MARK: - Advanced Dietary Filtering
+    private func filterRecipesByDietaryRestrictions(_ recipes: [RecipeOption], dietaryRestrictions: [DietaryNote]) -> [String] {
+        // If no restrictions, return all recipes
+        if dietaryRestrictions.isEmpty {
+            return recipes.map { $0.name }
+        }
+        
+        // Filter recipes that can accommodate ALL selected restrictions
+        let compatibleRecipes = recipes.filter { recipe in
+            // Recipe must be compatible with ALL selected restrictions
+            dietaryRestrictions.allSatisfy { restriction in
+                recipe.restrictions.contains(restriction)
+            }
+        }
+        
+        // If no compatible recipes found, try to find recipes that match most restrictions
+        if compatibleRecipes.isEmpty {
+            let partiallyCompatibleRecipes = recipes.filter { recipe in
+                let matchingRestrictions = dietaryRestrictions.filter { restriction in
+                    recipe.restrictions.contains(restriction)
+                }
+                // Recipe must match at least 70% of restrictions
+                return Double(matchingRestrictions.count) / Double(dietaryRestrictions.count) >= 0.7
+            }
+            
+            if !partiallyCompatibleRecipes.isEmpty {
+                return partiallyCompatibleRecipes.map { $0.name }
+            }
+        }
+        
+        return compatibleRecipes.map { $0.name }
+    }
+    
     private func getAuthenticRecipeNames(for cuisine: Cuisine, dietaryRestrictions: [DietaryNote]) -> [String] {
+        // Get all possible recipes for this cuisine
+        let allRecipes = getAllRecipesForCuisine(cuisine)
+        
+        // Filter recipes based on ALL dietary restrictions
+        return filterRecipesByDietaryRestrictions(allRecipes, dietaryRestrictions: dietaryRestrictions)
+    }
+    
+    private func getAllRecipesForCuisine(_ cuisine: Cuisine) -> [RecipeOption] {
         switch cuisine {
         case .italian:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Pasta alla Norma", "Risotto ai Funghi", "Minestrone Verde", "Penne Arrabbiata", "Spaghetti Aglio e Olio", "Pasta e Fagioli", "Risotto alla Milanese", "Pasta al Pomodoro", "Minestrone Classico", "Penne all'Arrabbiata"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Pasta alla Norma", "Risotto ai Funghi", "Minestrone Verde", "Penne Arrabbiata", "Spaghetti Aglio e Olio", "Pasta e Fagioli", "Risotto alla Milanese", "Pasta al Pomodoro", "Minestrone Classico", "Penne all'Arrabbiata"]
-            } else {
-                return ["Osso Buco alla Milanese", "Spaghetti alla Carbonara", "Risotto ai Porcini", "Saltimbocca alla Romana", "Penne all'Arrabbiata", "Bistecca alla Fiorentina", "Lasagna alla Bolognese", "Pollo alla Milanese", "Vitello Tonnato", "Saltimbocca"]
-            }
+            return [
+                // Vegan recipes (no animal products)
+                RecipeOption(name: "Pasta alla Norma", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Risotto ai Funghi", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Minestrone Verde", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Penne Arrabbiata", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Spaghetti Aglio e Olio", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pasta e Fagioli", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pasta al Pomodoro", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Minestrone Classico", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Penne all'Arrabbiata", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pasta e Ceci", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Risotto alla Milanese", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Lasagna Vegetariana", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pasta al Pesto", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Frittata di Verdure", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Parmigiana di Melanzane", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Osso Buco alla Milanese", restrictions: [.glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Spaghetti alla Carbonara", restrictions: [.nutFree, .halal, .kosher]),
+                RecipeOption(name: "Risotto ai Porcini", restrictions: [.nutFree, .halal, .kosher]),
+                RecipeOption(name: "Saltimbocca alla Romana", restrictions: [.glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Bistecca alla Fiorentina", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Lasagna alla Bolognese", restrictions: [.nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pollo alla Milanese", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vitello Tonnato", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Saltimbocca", restrictions: [.glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .french:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Ratatouille Niçoise", "Soupe à l'Oignon", "Salade Niçoise", "Pissaladière", "Soupe au Pistou", "Salade de Lentilles", "Soupe de Légumes", "Salade de Haricots", "Soupe de Pois", "Salade de Tomates"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Ratatouille Niçoise", "Soupe à l'Oignon", "Salade Niçoise", "Pissaladière", "Soupe au Pistou", "Salade de Lentilles", "Soupe de Légumes", "Salade de Haricots", "Soupe de Pois", "Salade de Tomates"]
-            } else {
-                return ["Coq au Vin", "Boeuf Bourguignon", "Duck Confit", "Escargots de Bourgogne", "Steak Frites", "Poulet à la Moutarde", "Ratatouille Niçoise", "Soupe à l'Oignon", "Salade Niçoise", "Pissaladière"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Ratatouille Niçoise", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Soupe à l'Oignon", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salade Niçoise", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Pissaladière", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Soupe au Pistou", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salade de Lentilles", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Soupe de Légumes", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salade de Haricots", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Soupe de Pois", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salade de Tomates", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Coq au Vin", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Boeuf Bourguignon", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Duck Confit", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Escargots de Bourgogne", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Steak Frites", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Poulet à la Moutarde", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .indian:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Chana Masala", "Aloo Gobi", "Dal Makhani", "Baingan Bharta", "Palak Paneer", "Chole Bhature", "Rajma Masala", "Kadhi Pakora", "Sambar", "Rasam"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Chana Masala", "Aloo Gobi", "Dal Makhani", "Baingan Bharta", "Palak Paneer", "Chole Bhature", "Rajma Masala", "Kadhi Pakora", "Sambar", "Rasam"]
-            } else {
-                return ["Chicken Tikka Masala", "Lamb Biryani", "Butter Chicken", "Fish Curry", "Rogan Josh", "Vindaloo", "Mutton Curry", "Chicken Biryani", "Chana Masala", "Aloo Gobi"]
-            }
+            return [
+                // Vegan recipes (no animal products, no dairy)
+                RecipeOption(name: "Chana Masala", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Aloo Gobi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Dal Makhani", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Baingan Bharta", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Rajma Masala", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Sambar", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Rasam", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Bhindi Masala", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Palak Paneer", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Chole Bhature", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Kadhi Pakora", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Dahi Bhalla", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Malai Kofta", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Chicken Tikka Masala", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Lamb Biryani", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Butter Chicken", restrictions: [.glutenFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Fish Curry", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Rogan Josh", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vindaloo", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Mutton Curry", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chicken Biryani", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .chinese:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Mapo Tofu", "Kung Pao Tofu", "Buddha's Delight", "Stir-Fried Vegetables", "Hot and Sour Soup", "Wonton Soup", "Dim Sum", "Spring Rolls", "Fried Rice", "Noodle Soup"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Mapo Tofu", "Kung Pao Tofu", "Buddha's Delight", "Stir-Fried Vegetables", "Hot and Sour Soup", "Wonton Soup", "Dim Sum", "Spring Rolls", "Fried Rice", "Noodle Soup"]
-            } else {
-                return ["Kung Pao Chicken", "Sweet and Sour Pork", "Peking Duck", "General Tso's Chicken", "Orange Chicken", "Honey Walnut Shrimp", "Beef and Broccoli", "Mapo Tofu", "Dim Sum", "Hot and Sour Soup"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Mapo Tofu", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kung Pao Tofu", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Buddha's Delight", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Stir-Fried Vegetables", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Hot and Sour Soup", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Spring Rolls", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Fried Rice", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Noodle Soup", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain gluten)
+                RecipeOption(name: "Wonton Soup", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Dim Sum", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Kung Pao Chicken", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Sweet and Sour Pork", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Peking Duck", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "General Tso's Chicken", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Orange Chicken", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Honey Walnut Shrimp", restrictions: [.glutenFree, .dairyFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Beef and Broccoli", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .japanese:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Miso Soup", "Vegetable Tempura", "Edamame", "Seaweed Salad", "Pickled Vegetables", "Rice Balls", "Natto", "Umeboshi", "Kombu Dashi", "Shiitake Mushrooms"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Miso Soup", "Vegetable Tempura", "Edamame", "Seaweed Salad", "Pickled Vegetables", "Rice Balls", "Natto", "Umeboshi", "Kombu Dashi", "Shiitake Mushrooms"]
-            } else {
-                return ["Sushi Nigiri", "Ramen", "Tempura", "Teriyaki Chicken", "Sashimi", "Gyoza", "Yakitori", "Tonkatsu", "Okonomiyaki", "Unagi Don"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Miso Soup", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Edamame", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Seaweed Salad", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Pickled Vegetables", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Rice Balls", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Natto", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Umeboshi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kombu Dashi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Shiitake Mushrooms", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain gluten)
+                RecipeOption(name: "Vegetable Tempura", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Sushi Nigiri", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Ramen", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tempura", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Teriyaki Chicken", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Sashimi", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gyoza", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Yakitori", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Tonkatsu", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Okonomiyaki", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Unagi Don", restrictions: [.dairyFree, .nutFree, .halal, .kosher])
+            ]
         case .mexican:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Chiles Rellenos", "Enchiladas Verdes", "Guacamole", "Salsa Verde", "Pico de Gallo", "Frijoles Refritos", "Arroz Mexicano", "Sopa de Tortilla", "Chiles en Nogada", "Mole Poblano"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Chiles Rellenos", "Enchiladas Verdes", "Guacamole", "Salsa Verde", "Pico de Gallo", "Frijoles Refritos", "Arroz Mexicano", "Sopa de Tortilla", "Chiles en Nogada", "Mole Poblano"]
-            } else {
-                return ["Tacos al Pastor", "Enchiladas Rojas", "Carne Asada", "Pollo Asado", "Carnitas", "Barbacoa", "Chiles Rellenos", "Guacamole", "Salsa Verde", "Pico de Gallo"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Guacamole", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salsa Verde", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Pico de Gallo", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Frijoles Refritos", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Arroz Mexicano", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Sopa de Tortilla", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Mole Poblano", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy/gluten)
+                RecipeOption(name: "Chiles Rellenos", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Enchiladas Verdes", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Chiles en Nogada", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Tacos al Pastor", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Enchiladas Rojas", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Carne Asada", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Pollo Asado", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Carnitas", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Barbacoa", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .thai:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Pad Thai Chay", "Green Curry Chay", "Tom Yum Chay", "Som Tam Chay", "Massaman Curry Chay", "Red Curry Chay", "Yellow Curry Chay", "Panang Curry Chay", "Tom Kha Chay", "Larb Chay"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Pad Thai", "Green Curry", "Tom Yum Soup", "Som Tam", "Massaman Curry", "Red Curry", "Yellow Curry", "Panang Curry", "Tom Kha Soup", "Larb"]
-            } else {
-                return ["Pad Thai", "Green Curry", "Tom Yum Soup", "Som Tam", "Massaman Curry", "Red Curry", "Yellow Curry", "Panang Curry", "Tom Kha Soup", "Larb"]
-            }
+            return [
+                // Vegan recipes (Chay = vegetarian/vegan)
+                RecipeOption(name: "Pad Thai Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Green Curry Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tom Yum Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Som Tam Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Massaman Curry Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Red Curry Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Yellow Curry Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Panang Curry Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tom Kha Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Larb Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Pad Thai", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Green Curry", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tom Yum Soup", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Som Tam", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Massaman Curry", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Red Curry", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Yellow Curry", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Panang Curry", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tom Kha Soup", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Larb", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .mediterranean:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma", "Moussaka", "Paella"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma", "Moussaka", "Paella"]
-            } else {
-                return ["Lamb Tagine", "Chicken Shawarma", "Kafta", "Shish Taouk", "Mixed Grill", "Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Hummus", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Baba Ganoush", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Falafel", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tabbouleh", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Mujadara", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Fattoush", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Dolma", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Paella", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Shakshuka", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Moussaka", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Lamb Tagine", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chicken Shawarma", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kafta", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Shish Taouk", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Mixed Grill", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .american:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Vegan Burger", "Plant-Based Chili", "Vegan Mac and Cheese", "Vegan BBQ", "Vegan Meatloaf", "Vegan Shepherd's Pie", "Vegan Pot Pie", "Vegan Casserole", "Vegan Stew", "Vegan Soup"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Veggie Burger", "Vegetarian Chili", "Mac and Cheese", "BBQ Tofu", "Vegetarian Meatloaf", "Shepherd's Pie", "Pot Pie", "Casserole", "Stew", "Soup"]
-            } else {
-                return ["Classic Burger", "BBQ Ribs", "Steak", "Fried Chicken", "Mac and Cheese", "Chili", "Meatloaf", "Shepherd's Pie", "Pot Pie", "Casserole"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Vegan Burger", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Plant-Based Chili", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vegan Mac and Cheese", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Vegan BBQ", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vegan Meatloaf", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Vegan Shepherd's Pie", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Vegan Pot Pie", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Vegan Casserole", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Vegan Stew", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vegan Soup", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Veggie Burger", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Vegetarian Chili", restrictions: [.vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Mac and Cheese", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "BBQ Tofu", restrictions: [.vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vegetarian Meatloaf", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Shepherd's Pie", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pot Pie", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Casserole", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Stew", restrictions: [.vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Soup", restrictions: [.vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Classic Burger", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "BBQ Ribs", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Steak", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Fried Chicken", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Chili", restrictions: [.dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Meatloaf", restrictions: [.dairyFree, .nutFree, .halal, .kosher])
+            ]
         case .greek:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Fasolada", "Gemista", "Horta", "Fava", "Dolmades", "Spanakopita", "Moussaka", "Pastitsio", "Souvlaki", "Gyros"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Fasolada", "Gemista", "Horta", "Fava", "Dolmades", "Spanakopita", "Moussaka", "Pastitsio", "Souvlaki", "Gyros"]
-            } else {
-                return ["Moussaka", "Pastitsio", "Souvlaki", "Gyros", "Kleftiko", "Stifado", "Arni Souvla", "Kotopoulo", "Bifteki", "Fasolada"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Fasolada", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gemista", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Horta", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Fava", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Dolmades", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Spanakopita", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Moussaka", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pastitsio", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Souvlaki", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gyros", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Kleftiko", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Stifado", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Arni Souvla", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kotopoulo", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Bifteki", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .spanish:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Paella Valenciana", "Gazpacho", "Pisto", "Escalivada", "Salmorejo", "Ajoblanco", "Sopa de Ajo", "Ensalada Mixta", "Patatas Bravas", "Tortilla Española"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Paella Valenciana", "Gazpacho", "Pisto", "Escalivada", "Salmorejo", "Ajoblanco", "Sopa de Ajo", "Ensalada Mixta", "Patatas Bravas", "Tortilla Española"]
-            } else {
-                return ["Paella de Mariscos", "Pulpo a la Gallega", "Jamon Iberico", "Chorizo", "Cochinillo", "Paella Valenciana", "Gazpacho", "Pisto", "Escalivada", "Salmorejo"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Paella Valenciana", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gazpacho", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Pisto", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Escalivada", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salmorejo", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Ajoblanco", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Sopa de Ajo", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Ensalada Mixta", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Patatas Bravas", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Tortilla Española", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Paella de Mariscos", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pulpo a la Gallega", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Jamon Iberico", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chorizo", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Cochinillo", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .moroccan:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Harira", "Zaalouk", "Bessara", "Taktouka", "Salata Mechouia", "Harira Soup", "Vegetable Tagine", "Couscous", "Bread", "Tea"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Harira", "Zaalouk", "Bessara", "Taktouka", "Salata Mechouia", "Harira Soup", "Vegetable Tagine", "Couscous", "Bread", "Tea"]
-            } else {
-                return ["Lamb Tagine", "Chicken Tagine", "Couscous", "Pastilla", "Merguez", "Kefta", "Harira", "Zaalouk", "Bessara", "Taktouka"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Harira", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Zaalouk", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Bessara", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Taktouka", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Salata Mechouia", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Harira Soup", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vegetable Tagine", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Tea", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain gluten)
+                RecipeOption(name: "Couscous", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Bread", restrictions: [.vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Lamb Tagine", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chicken Tagine", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Pastilla", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Merguez", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kefta", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .vietnamese:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo", "Bun Chay", "Banh Cuon Chay", "Chao Chay", "Banh Xoi Chay", "Che Chay"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Pho Chay", "Banh Mi Chay", "Goi Cuon", "Com Tam", "Banh Xeo", "Bun Chay", "Banh Cuon Chay", "Chao Chay", "Banh Xoi Chay", "Che Chay"]
-            } else {
-                return ["Pho", "Banh Mi", "Goi Cuon", "Com Tam", "Banh Xeo", "Bun Bo Hue", "Banh Cuon", "Chao Ga", "Banh Xoi", "Che"]
-            }
+            return [
+                // Vegan recipes (Chay = vegetarian/vegan)
+                RecipeOption(name: "Pho Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Banh Mi Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Goi Cuon", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Com Tam", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Banh Xeo", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Bun Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Banh Cuon Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Chao Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Banh Xoi Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Che Chay", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Pho", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Banh Mi", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Banh Xeo", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Bun Bo Hue", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Banh Cuon", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Chao Ga", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Banh Xoi", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Che", restrictions: [.dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .korean:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Doenjang Jjigae", "Kongnamul Guk", "Sundubu Jjigae", "Yachae Bokkeum", "Kongnamul Muchim"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Doenjang Jjigae", "Kongnamul Guk", "Sundubu Jjigae", "Yachae Bokkeum", "Kongnamul Muchim"]
-            } else {
-                return ["Bibimbap", "Kimchi", "Japchae", "Kimbap", "Tteokbokki", "Bulgogi", "Galbi", "Samgyeopsal", "Samgyetang", "Jjajangmyeon"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Bibimbap", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Kimchi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Japchae", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Kimbap", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tteokbokki", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Doenjang Jjigae", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kongnamul Guk", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Sundubu Jjigae", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Yachae Bokkeum", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kongnamul Muchim", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Bulgogi", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Galbi", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Samgyeopsal", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Samgyetang", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Jjajangmyeon", restrictions: [.dairyFree, .nutFree, .halal, .kosher])
+            ]
         case .turkish:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Yaprak Sarma", "Karnıyarık", "Patlıcan Kebabı", "Mercimek Köftesi", "Zeytinyağlı Yemekler"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Mercimek Çorbası", "Imam Bayildi", "Dolma", "Piyaz", "Ezogelin Çorbası", "Yaprak Sarma", "Karnıyarık", "Patlıcan Kebabı", "Mercimek Köftesi", "Zeytinyağlı Yemekler"]
-            } else {
-                return ["Kebap", "Döner", "Adana Kebap", "İskender", "Lahmacun", "Pide", "Urfa Kebap", "Mercimek Çorbası", "Imam Bayildi", "Dolma"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Mercimek Çorbası", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Imam Bayildi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Dolma", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Piyaz", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Ezogelin Çorbası", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Yaprak Sarma", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Karnıyarık", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Patlıcan Kebabı", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Mercimek Köftesi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Zeytinyağlı Yemekler", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Kebap", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Döner", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Adana Kebap", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "İskender", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Lahmacun", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Pide", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Urfa Kebap", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .lebanese:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma", "Moussaka", "Paella"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Hummus", "Baba Ganoush", "Falafel", "Tabbouleh", "Mujadara", "Fattoush", "Shakshuka", "Dolma", "Moussaka", "Paella"]
-            } else {
-                return ["Lamb Tagine", "Chicken Shawarma", "Kafta", "Shish Taouk", "Kibbeh", "Shawarma", "Hummus", "Baba Ganoush", "Falafel", "Tabbouleh"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Hummus", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Baba Ganoush", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Falafel", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tabbouleh", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Mujadara", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Fattoush", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Dolma", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Moussaka", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Paella", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Lamb Tagine", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chicken Shawarma", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kafta", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Shish Taouk", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kibbeh", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Shawarma", restrictions: [.dairyFree, .nutFree, .halal, .kosher])
+            ]
         case .persian:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Mirza Ghasemi", "Kashk-e Bademjan", "Borani", "Ash-e Reshteh", "Sholeh Zard"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Ghormeh Sabzi", "Fesenjan", "Tahchin", "Zereshk Polo", "Adas Polo", "Mirza Ghasemi", "Kashk-e Bademjan", "Borani", "Ash-e Reshteh", "Sholeh Zard"]
-            } else {
-                return ["Kebab", "Joojeh Kebab", "Barg", "Koobideh", "Shishlik", "Gheymeh", "Dizi", "Ghormeh Sabzi", "Fesenjan", "Tahchin"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Ghormeh Sabzi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Fesenjan", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Tahchin", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Zereshk Polo", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Adas Polo", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Mirza Ghasemi", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kashk-e Bademjan", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Borani", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Ash-e Reshteh", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Sholeh Zard", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Kebab", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Joojeh Kebab", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Barg", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Koobideh", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Shishlik", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gheymeh", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Dizi", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .ethiopian:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Kik Alicha", "Azifa", "Tikil Gomen", "Yekik Alicha", "Gomen Besiga"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Shiro", "Misir Wot", "Gomen", "Atkilt", "Beyaynetu", "Kik Alicha", "Azifa", "Tikil Gomen", "Yekik Alicha", "Gomen Besiga"]
-            } else {
-                return ["Doro Wot", "Tibs", "Kitfo", "Dulet", "Gored Gored", "Awaze Tibs", "Siga Tibs", "Shiro", "Misir Wot", "Gomen"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Shiro", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Misir Wot", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gomen", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Atkilt", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Beyaynetu", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kik Alicha", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Azifa", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Tikil Gomen", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Yekik Alicha", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gomen Besiga", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Doro Wot", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Tibs", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Kitfo", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Dulet", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Gored Gored", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Awaze Tibs", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Siga Tibs", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher])
+            ]
         case .brazilian:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Bobó de Camarão", "Coxinha", "Pão de Queijo", "Farofa", "Tutu de Feijão"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Feijoada", "Moqueca", "Vatapá", "Acarajé", "Caruru", "Bobó de Camarão", "Coxinha", "Pão de Queijo", "Farofa", "Tutu de Feijão"]
-            } else {
-                return ["Churrasco", "Picanha", "Frango à Passarinho", "Bife à Cavalo", "X-Tudo", "Feijão Tropeiro", "Carne de Sol", "Feijoada", "Moqueca", "Vatapá"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Feijoada", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Moqueca", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Vatapá", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Acarajé", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Caruru", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Farofa", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Tutu de Feijão", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Pão de Queijo", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Churrasco", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Picanha", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Frango à Passarinho", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Bife à Cavalo", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "X-Tudo", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Feijão Tropeiro", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Carne de Sol", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Bobó de Camarão", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Coxinha", restrictions: [.dairyFree, .nutFree, .halal, .kosher])
+            ]
         case .peruvian:
-            if dietaryRestrictions.contains(.vegan) {
-                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Rocoto Relleno", "Chupe de Camarones", "Papa a la Huancaína", "Causa Rellena", "Chicharrones"]
-            } else if dietaryRestrictions.contains(.vegetarian) {
-                return ["Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa", "Anticuchos", "Rocoto Relleno", "Chupe de Camarones", "Papa a la Huancaína", "Causa Rellena", "Chicharrones"]
-            } else {
-                return ["Pollo a la Brasa", "Chaufa", "Arroz con Pollo", "Seco de Cordero", "Chicharrones", "Anticuchos", "Ceviche", "Lomo Saltado", "Aji de Gallina", "Causa"]
-            }
+            return [
+                // Vegan recipes
+                RecipeOption(name: "Causa", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Rocoto Relleno", restrictions: [.vegan, .vegetarian, .dairyFree, .glutenFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Causa Rellena", restrictions: [.vegan, .vegetarian, .dairyFree, .nutFree, .halal, .kosher]),
+                
+                // Vegetarian recipes (may contain dairy)
+                RecipeOption(name: "Papa a la Huancaína", restrictions: [.vegetarian, .nutFree, .halal, .kosher]),
+                
+                // Non-vegetarian recipes
+                RecipeOption(name: "Pollo a la Brasa", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chaufa", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Arroz con Pollo", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Seco de Cordero", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Chicharrones", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Anticuchos", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Ceviche", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Lomo Saltado", restrictions: [.glutenFree, .dairyFree, .nutFree, .lowCarb, .keto, .paleo, .halal, .kosher]),
+                RecipeOption(name: "Aji de Gallina", restrictions: [.dairyFree, .nutFree, .halal, .kosher]),
+                RecipeOption(name: "Chupe de Camarones", restrictions: [.dairyFree, .nutFree, .halal, .kosher])
+            ]
         }
     }
     
