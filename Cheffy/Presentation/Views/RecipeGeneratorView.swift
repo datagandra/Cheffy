@@ -9,6 +9,7 @@ struct RecipeGeneratorView: View {
     @State private var selectedCuisine: Cuisine = .french
     @State private var selectedDietaryRestrictions: Set<DietaryNote> = []
     @State private var selectedServings: Int = 4
+    @State private var selectedCookingTime: CookingTimeFilter = .any
     @State private var showValidationError = false
     @State private var validationMessage = ""
     @State private var showIngredientAnalysis = false
@@ -25,6 +26,8 @@ struct RecipeGeneratorView: View {
         if let user = userManager.currentUser {
             selectedCuisine = user.favoriteCuisines.first ?? .italian
             selectedDietaryRestrictions = Set(user.dietaryPreferences)
+            // Default to any cooking time for new users
+            selectedCookingTime = .any
         }
     }
 
@@ -167,12 +170,68 @@ struct RecipeGeneratorView: View {
         }
     }
     
+    // MARK: - Cooking Time Section
+    
+    private var cookingTimeSelection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Cooking Time", systemImage: "clock")
+                .font(.headline)
+                .foregroundColor(.primary)
+            
+            Menu {
+                ForEach(CookingTimeFilter.allCases, id: \.self) { timeFilter in
+                    Button(action: {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            selectedCookingTime = timeFilter
+                        }
+                        impactFeedback.impactOccurred()
+                    }) {
+                        HStack {
+                            Text(timeFilter.rawValue)
+                            if selectedCookingTime == timeFilter {
+                                Spacer()
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                    }
+                }
+            } label: {
+                HStack {
+                    Text(selectedCookingTime.rawValue)
+                        .foregroundColor(.primary)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.down")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color(.systemGray6))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color(.systemGray4), lineWidth: 1)
+                )
+            }
+            .accessibilityLabel("Cooking time filter dropdown")
+            .accessibilityHint("Tap to select maximum cooking time")
+        }
+    }
+    
     // MARK: - Options Section
     
     private var optionsSection: some View {
         VStack(spacing: 24) {
             // Servings Selection
             servingsSelection
+            
+            // Cooking Time Selection
+            cookingTimeSelection
             
             // Cuisine Selection
             cuisineSelection
@@ -535,6 +594,7 @@ struct RecipeGeneratorView: View {
                 cuisine: selectedCuisine,
                 difficulty: .medium, // Default to medium difficulty
                 dietaryRestrictions: Array(selectedDietaryRestrictions),
+                maxTime: selectedCookingTime == .any ? nil : selectedCookingTime.maxTotalTime,
                 servings: selectedServings
             )
         }
@@ -546,6 +606,20 @@ struct RecipeGeneratorView: View {
             validationMessage = "Please select a valid number of servings (2-10)"
             return false
         }
+        
+        // Validate cooking time selection
+        if selectedCookingTime == .under5min && selectedServings > 4 {
+            showValidationError = true
+            validationMessage = "Under 5 min recipes are limited to 4 servings or less"
+            return false
+        }
+        
+        if selectedCookingTime == .under10min && selectedServings > 6 {
+            showValidationError = true
+            validationMessage = "Under 10 min recipes are limited to 6 servings or less"
+            return false
+        }
+        
         return true
     }
     

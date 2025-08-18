@@ -408,18 +408,39 @@ class OpenAIClient: ObservableObject {
                 // Apply strict dietary filtering
                 let originalCount = recipes.count
                 recipes = filterRecipesByDietaryRestrictions(recipes, restrictions: dietaryRestrictions)
-                let filteredCount = recipes.count
+                let dietaryFilteredCount = recipes.count
                 
-                logger.debug("Dietary filtering: \(originalCount) -> \(filteredCount) recipes")
+                logger.debug("Dietary filtering: \(originalCount) -> \(dietaryFilteredCount) recipes")
+                
+                // Apply strict cooking time filtering
+                if let maxTime = maxTime {
+                    let timeFilteredRecipes = filterRecipesByCookingTime(recipes, maxTime: maxTime)
+                    let timeFilteredCount = timeFilteredRecipes.count
+                    logger.debug("Time filtering: \(dietaryFilteredCount) -> \(timeFilteredCount) recipes (max time: \(maxTime) min)")
+                    
+                    // If we lost too many recipes due to time filtering, regenerate with stricter time constraints
+                    if timeFilteredCount < 3 {
+                        logger.warning("Too many recipes filtered out by time constraint, regenerating with stricter time requirements")
+                        return try await generatePopularRecipesWithStrictTimeConstraint(
+                            cuisine: cuisine,
+                            difficulty: difficulty,
+                            dietaryRestrictions: dietaryRestrictions,
+                            maxTime: maxTime,
+                            servings: servings
+                        )
+                    }
+                    
+                    recipes = timeFilteredRecipes
+                }
                 
                 // If we lost too many recipes due to filtering, generate compliant fallback recipes
-                if filteredCount < 5 && !dietaryRestrictions.isEmpty {
+                if recipes.count < 5 && !dietaryRestrictions.isEmpty {
                     logger.warning("Too many recipes filtered out, generating compliant fallback recipes")
                     let fallbackRecipes = generateCompliantFallbackRecipes(
                         cuisine: cuisine,
                         difficulty: difficulty,
                         dietaryRestrictions: dietaryRestrictions,
-                        count: 10 - filteredCount,
+                        count: 10 - recipes.count,
                         servings: servings
                     )
                     recipes.append(contentsOf: fallbackRecipes)
@@ -454,6 +475,89 @@ class OpenAIClient: ObservableObject {
         return []
     }
 
+    // MARK: - Cooking Time Filtering
+    
+    /// Filters recipes by cooking time constraint
+    private func filterRecipesByCookingTime(_ recipes: [Recipe], maxTime: Int) -> [Recipe] {
+        return recipes.filter { recipe in
+            let totalTime = recipe.prepTime + recipe.cookTime
+            let isWithinTime = totalTime <= maxTime
+            
+            if !isWithinTime {
+                logger.debug("Recipe '\(recipe.title)' filtered out: total time \(totalTime) min > max time \(maxTime) min (prep: \(recipe.prepTime) min, cook: \(recipe.cookTime) min)")
+            }
+            
+            return isWithinTime
+        }
+    }
+    
+    /// Generates recipes with strict time constraints when initial generation doesn't meet time requirements
+    private func generatePopularRecipesWithStrictTimeConstraint(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int
+    ) async throws -> [Recipe] {
+        logger.warning("Regenerating recipes with strict time constraint: \(maxTime) minutes")
+        
+        let strictPrompt = createPopularRecipesPromptWithStrictTime(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings
+        )
+        
+        let request = GeminiRequest(
+            contents: [
+                GeminiContent(
+                    parts: [
+                        GeminiPart(text: strictPrompt)
+                    ]
+                )
+            ],
+            generationConfig: GeminiGenerationConfig(
+                temperature: 0.05, // Lower temperature for more consistent time adherence
+                maxOutputTokens: 500
+            )
+        )
+        
+        let url = URL(string: "\(baseURL)/gemini-1.5-flash:generateContent?key=\(apiKey!)")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(request)
+            urlRequest.httpBody = jsonData
+            
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                throw GeminiError.apiError("HTTP \(httpResponse.statusCode)")
+            }
+            
+            let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
+            
+            if let content = geminiResponse.candidates.first?.content.parts.first?.text {
+                var recipes = try parsePopularRecipesFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
+                
+                // Apply both dietary and time filtering
+                recipes = filterRecipesByDietaryRestrictions(recipes, restrictions: dietaryRestrictions)
+                recipes = filterRecipesByCookingTime(recipes, maxTime: maxTime)
+                
+                logger.warning("Strict time constraint generation: \(recipes.count) recipes meet \(maxTime) min requirement")
+                return recipes
+            } else {
+                throw GeminiError.noContent
+            }
+        } catch {
+            logger.error("Error in strict time constraint generation: \(error)")
+            throw error
+        }
+    }
+    
     // MARK: - Helper Methods
     private func createRecipePrompt(
         cuisine: Cuisine,
@@ -587,6 +691,78 @@ class OpenAIClient: ObservableObject {
         maxTime: Int? = nil,
         servings: Int = 2
     ) -> String {
+        
+        let timeConstraint = maxTime != nil ? " with STRICT cooking time constraint of \(maxTime!) minutes or less" : ""
+        
+        var prompt = """
+        Generate 10 popular \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level\(timeConstraint). Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine to ensure the recipes reflect current popularity and authenticity.
+        
+        """
+        
+        if let maxTime = maxTime {
+            prompt += """
+            🚨 CRITICAL TIME CONSTRAINT - ABSOLUTELY REQUIRED:
+            - ALL recipes MUST have a TOTAL cooking time (prep + cook) of \(maxTime) minutes or less
+            - Prep time + Cook time ≤ \(maxTime) minutes
+            - If a recipe would take longer, DO NOT include it
+            - Focus on quick, efficient recipes that can be prepared within the time limit
+            - Examples of quick techniques: stir-frying, grilling, simple pasta dishes, salads
+            
+            """
+        }
+        
+        prompt += """
+        🚨 AUTHENTIC RECIPE NAMES - ABSOLUTELY REQUIRED:
+        - Use ONLY authentic, specific recipe names that food enthusiasts would recognize
+        - Examples: "Coq au Vin", "Pad Thai", "Chicken Tikka Masala", "Osso Buco alla Milanese"
+        - NEVER use generic names like "Italian Recipe", "French Dish", or "Asian Food"
+        - Research current culinary trends and traditional favorites for authentic names
+        - Each recipe name must be specific and recognizable to culinary experts
+        """
+        
+        if dietaryRestrictions.isEmpty {
+            prompt += "\n- No specific dietary restrictions"
+        } else {
+            for restriction in dietaryRestrictions {
+                prompt += "\n- \(restriction.rawValue): \(getDietaryDescription(restriction))"
+            }
+        }
+        
+        prompt += "\n\nRecipe Requirements:"
+        prompt += "\n- Cuisine: \(cuisine.rawValue)"
+        prompt += "\n- Difficulty: \(difficulty.rawValue)"
+        prompt += "\n- Servings: \(servings)"
+        
+        if let maxTime = maxTime {
+            prompt += "\n- MAXIMUM TOTAL TIME: \(maxTime) minutes (prep + cook combined)"
+        }
+        
+        prompt += "\n\nCRITICAL OUTPUT FORMAT - MUST BE EXACTLY AS SPECIFIED:"
+        prompt += "\nEach recipe must include:"
+        prompt += "\n- Recipe name (authentic and specific)"
+        prompt += "\n- Prep time in minutes (MUST be accurate and realistic)"
+        prompt += "\n- Cook time in minutes (MUST be accurate and realistic)"
+        if let maxTime = maxTime {
+            prompt += "\n- Total time validation: prep + cook ≤ \(maxTime) minutes"
+        } else {
+            prompt += "\n- Total time validation: prep + cook ≤ unlimited minutes"
+        }
+        prompt += "\n- Difficulty level"
+        prompt += "\n- Servings"
+        prompt += "\n- Brief description (1-2 sentences)"
+        
+        prompt += "\n\nGenerate exactly 10 recipes that meet ALL requirements. If you cannot generate 10 recipes within the time constraint, generate fewer but ensure ALL meet the time requirement."
+        
+        return prompt
+    }
+    
+    private func createPopularRecipesPromptWithStrictTime(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int
+    ) -> String {
         var prompt = """
         Create diverse \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level, ranked by CURRENT popularity and culinary significance. Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine. Generate as many high-quality recipes as possible (aim for 10-15 recipes).
         
@@ -612,10 +788,7 @@ class OpenAIClient: ObservableObject {
         prompt += "\n- Cuisine: \(cuisine.rawValue)"
         prompt += "\n- Difficulty: \(difficulty.rawValue)"
         prompt += "\n- Servings: \(servings)"
-        
-        if let maxTime = maxTime {
-            prompt += "\n- Maximum total time: \(maxTime) minutes"
-        }
+        prompt += "\n- Maximum total time: \(maxTime) minutes"
         
         prompt += """
 

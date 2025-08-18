@@ -94,6 +94,26 @@ enum Difficulty: String, CaseIterable, Codable {
     case expert = "Expert"
 }
 
+enum CookingTimeFilter: String, CaseIterable, Codable {
+    case any = "Any Time"
+    case under5min = "Under 5 min"
+    case under10min = "Under 10 min"
+    case under20min = "Under 20 min"
+    
+    var maxTotalTime: Int {
+        switch self {
+        case .any:
+            return Int.max
+        case .under5min:
+            return 5
+        case .under10min:
+            return 10
+        case .under20min:
+            return 20
+        }
+    }
+}
+
 // MARK: - Supporting Models
 struct Ingredient: Identifiable, Codable {
     let id: UUID

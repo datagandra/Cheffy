@@ -166,13 +166,33 @@ class RecipeManager: ObservableObject {
             logger.cache("No cached recipes found, connecting to LLM...")
             
             do {
-                let recipes = try await openAIClient.generatePopularRecipes(
+                var recipes = try await openAIClient.generatePopularRecipes(
                     cuisine: cuisine,
                     difficulty: difficulty,
                     dietaryRestrictions: dietaryRestrictions,
                     maxTime: maxTime,
                     servings: servings
                 )
+                
+                // Final validation: ensure all recipes meet time constraint if specified
+                if let maxTime = maxTime {
+                    let invalidRecipes = recipes.filter { recipe in
+                        (recipe.prepTime + recipe.cookTime) > maxTime
+                    }
+                    
+                    if !invalidRecipes.isEmpty {
+                        logger.error("CRITICAL: LLM generated \(invalidRecipes.count) recipes that violate time constraint:")
+                        for recipe in invalidRecipes {
+                            logger.error("  - '\(recipe.title)': \(recipe.prepTime) + \(recipe.cookTime) = \(recipe.prepTime + recipe.cookTime) min > \(maxTime) min")
+                        }
+                        
+                        // Remove invalid recipes
+                        recipes = recipes.filter { recipe in
+                            (recipe.prepTime + recipe.cookTime) <= maxTime
+                        }
+                        logger.warning("Removed \(invalidRecipes.count) invalid recipes, remaining: \(recipes.count)")
+                    }
+                }
                 
                 await MainActor.run {
                     self.popularRecipes = recipes
@@ -688,14 +708,46 @@ class RecipeManager: ObservableObject {
         // Filter by max time if specified
         if let maxTime = maxTime {
             matchingRecipes = matchingRecipes.filter { recipe in
-                (recipe.prepTime + recipe.cookTime) <= maxTime
+                let totalTime = recipe.prepTime + recipe.cookTime
+                let isWithinTime = totalTime <= maxTime
+                
+                if !isWithinTime {
+                    logger.warning("Recipe '\(recipe.title)' filtered out: total time \(totalTime) min > max time \(maxTime) min (prep: \(recipe.prepTime) min, cook: \(recipe.cookTime) min)")
+                }
+                
+                return isWithinTime
             }
             logger.debug("After time filter: \(matchingRecipes.count) recipes")
+            
+            // If we have very few recipes after time filtering, log a warning
+            if matchingRecipes.count < 3 {
+                logger.warning("Only \(matchingRecipes.count) recipes meet the \(maxTime) minute time constraint")
+            }
         }
         
         // Sort by most recently cached (newest first)
         matchingRecipes.sort { recipe1, recipe2 in
             recipe1.createdAt > recipe2.createdAt
+        }
+        
+        // Final validation: ensure all recipes meet time constraint
+        if let maxTime = maxTime {
+            let invalidRecipes = matchingRecipes.filter { recipe in
+                (recipe.prepTime + recipe.cookTime) > maxTime
+            }
+            
+            if !invalidRecipes.isEmpty {
+                logger.error("CRITICAL: Found \(invalidRecipes.count) recipes that violate time constraint:")
+                for recipe in invalidRecipes {
+                    logger.error("  - '\(recipe.title)': \(recipe.prepTime) + \(recipe.cookTime) = \(recipe.prepTime + recipe.cookTime) min > \(maxTime) min")
+                }
+                
+                // Remove invalid recipes
+                matchingRecipes = matchingRecipes.filter { recipe in
+                    (recipe.prepTime + recipe.cookTime) <= maxTime
+                }
+                logger.warning("Removed \(invalidRecipes.count) invalid recipes, remaining: \(matchingRecipes.count)")
+            }
         }
         
         logger.debug("Found \(matchingRecipes.count) matching cached recipes for popular recipes")
