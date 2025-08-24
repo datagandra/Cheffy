@@ -154,76 +154,43 @@ class RecipeManager: ObservableObject {
         }
         
         if !cachedRecipes.isEmpty {
-            // Use cached recipes if we have any
-            await MainActor.run {
-                self.popularRecipes = Array(cachedRecipes.prefix(20)) // Allow up to 20 recipes
-                self.isUsingCachedData = true
-                logger.cache("Using \(self.popularRecipes.count) cached recipes")
-                logger.cache("Recipes loaded from cache - no LLM connection needed")
-            }
-        } else {
-            // No cached recipes, generate new ones from LLM
-            logger.cache("No cached recipes found, connecting to LLM...")
+            // Use cached recipes if we have any, but filter them properly
+            let filteredCachedRecipes = findCachedPopularRecipes(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions,
+                maxTime: maxTime,
+                servings: servings
+            )
             
-            do {
-                var recipes = try await openAIClient.generatePopularRecipes(
+            if !filteredCachedRecipes.isEmpty {
+                await MainActor.run {
+                    self.popularRecipes = filteredCachedRecipes
+                    self.isUsingCachedData = true
+                    logger.cache("Using \(self.popularRecipes.count) filtered cached recipes")
+                    logger.cache("Recipes loaded from cache - no LLM connection needed")
+                }
+            } else {
+                // No matching cached recipes, generate new ones from LLM
+                logger.cache("No matching cached recipes found, connecting to LLM...")
+                await generatePopularRecipesFromLLM(
                     cuisine: cuisine,
                     difficulty: difficulty,
                     dietaryRestrictions: dietaryRestrictions,
                     maxTime: maxTime,
                     servings: servings
                 )
-                
-                // Final validation: ensure all recipes meet time constraint if specified
-                if let maxTime = maxTime {
-                    let invalidRecipes = recipes.filter { recipe in
-                        (recipe.prepTime + recipe.cookTime) > maxTime
-                    }
-                    
-                    if !invalidRecipes.isEmpty {
-                        logger.error("CRITICAL: LLM generated \(invalidRecipes.count) recipes that violate time constraint:")
-                        for recipe in invalidRecipes {
-                            logger.error("  - '\(recipe.title)': \(recipe.prepTime) + \(recipe.cookTime) = \(recipe.prepTime + recipe.cookTime) min > \(maxTime) min")
-                        }
-                        
-                        // Remove invalid recipes
-                        recipes = recipes.filter { recipe in
-                            (recipe.prepTime + recipe.cookTime) <= maxTime
-                        }
-                        logger.warning("Removed \(invalidRecipes.count) invalid recipes, remaining: \(recipes.count)")
-                    }
-                }
-                
-                await MainActor.run {
-                    self.popularRecipes = recipes
-                    self.incrementGenerationCount()
-                    self.isUsingCachedData = false
-                    
-                    // Update dietary restrictions tracking
-                    self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
-                    
-                    // Cache all generated recipes
-                    logger.cache("RecipeManager: Caching \(recipes.count) generated recipes")
-                    self.cacheManager.cacheRecipes(recipes)
-                    self.updateCachedData()
-                    logger.cache("RecipeManager: All recipes cached successfully")
-                }
-                            } catch {
-                    // Check if it's an API key error and fall back to local recipes
-                    if let geminiError = error as? GeminiError, case .noAPIKey = geminiError {
-                        logger.warning("No API key available, falling back to local recipe database for popular recipes")
-                        await fallbackToLocalPopularRecipes(
-                            cuisine: cuisine,
-                            difficulty: difficulty,
-                            dietaryRestrictions: dietaryRestrictions
-                        )
-                    } else {
-                        await MainActor.run {
-                            self.error = error.localizedDescription
-                            logger.error("Error generating popular recipes: \(error)")
-                        }
-                    }
-                }
+            }
+        } else {
+            // No cached recipes, generate new ones from LLM
+            logger.cache("No cached recipes found, connecting to LLM...")
+            await generatePopularRecipesFromLLM(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions,
+                maxTime: maxTime,
+                servings: servings
+            )
         }
         
         await MainActor.run {
@@ -863,5 +830,76 @@ class RecipeManager: ObservableObject {
         }
         
         return cleanTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    // MARK: - LLM Recipe Generation
+    
+    /// Generates popular recipes from LLM when no cached recipes are available
+    private func generatePopularRecipesFromLLM(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) async {
+        do {
+            var recipes = try await openAIClient.generatePopularRecipes(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions,
+                maxTime: maxTime,
+                servings: servings
+            )
+            
+            // Final validation: ensure all recipes meet time constraint if specified
+            if let maxTime = maxTime {
+                let invalidRecipes = recipes.filter { recipe in
+                    (recipe.prepTime + recipe.cookTime) > maxTime
+                }
+                
+                if !invalidRecipes.isEmpty {
+                    logger.error("CRITICAL: LLM generated \(invalidRecipes.count) recipes that violate time constraint:")
+                    for recipe in invalidRecipes {
+                        logger.error("  - '\(recipe.title)': \(recipe.prepTime) + \(recipe.cookTime) = \(recipe.prepTime + recipe.cookTime) min > \(maxTime) min")
+                    }
+                    
+                    // Remove invalid recipes
+                    recipes = recipes.filter { recipe in
+                        (recipe.prepTime + recipe.cookTime) <= maxTime
+                    }
+                    logger.warning("Removed \(invalidRecipes.count) invalid recipes, remaining: \(recipes.count)")
+                }
+            }
+            
+            await MainActor.run {
+                self.popularRecipes = recipes
+                self.incrementGenerationCount()
+                self.isUsingCachedData = false
+                
+                // Update dietary restrictions tracking
+                self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
+                
+                // Cache all generated recipes
+                logger.cache("RecipeManager: Caching \(recipes.count) generated recipes")
+                self.cacheManager.cacheRecipes(recipes)
+                self.updateCachedData()
+                logger.cache("RecipeManager: All recipes cached successfully")
+            }
+        } catch {
+            // Check if it's an API key error and fall back to local recipes
+            if let geminiError = error as? GeminiError, case .noAPIKey = geminiError {
+                logger.warning("No API key available, falling back to local recipe database for popular recipes")
+                await fallbackToLocalPopularRecipes(
+                    cuisine: cuisine,
+                    difficulty: difficulty,
+                    dietaryRestrictions: dietaryRestrictions
+                )
+            } else {
+                await MainActor.run {
+                    self.error = error.localizedDescription
+                    logger.error("Error generating popular recipes: \(error)")
+                }
+            }
+        }
     }
 } 
