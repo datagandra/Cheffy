@@ -1039,7 +1039,16 @@ class OpenAIClient: ObservableObject {
         """
         
         if dietaryRestrictions.isEmpty {
-            prompt += "\n- No specific dietary restrictions"
+            prompt += """
+            
+            🚨 DIETARY DIVERSITY - ABSOLUTELY REQUIRED:
+            - Include a MIX of vegetarian, meat, poultry, fish, and seafood recipes
+            - Ensure at least 40% of recipes contain meat, chicken, fish, or seafood
+            - Include popular meat dishes like Chicken Tikka Masala, Fish Curry, Lamb Biryani
+            - Include vegetarian dishes like Dal, Aloo Gobi, Chana Masala
+            - Balance traditional meat-based and vegetarian recipes
+            - NO restrictions - show the full diversity of \(cuisine.rawValue) cuisine
+            """
         } else {
             for restriction in dietaryRestrictions {
                 prompt += "\n- \(restriction.rawValue): \(getDietaryDescription(restriction))"
