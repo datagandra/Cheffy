@@ -7,7 +7,7 @@ struct RecipeGeneratorView: View {
     
     // MARK: - State Management
     @State private var selectedCuisine: Cuisine = .any
-    @State private var selectedDietaryRestrictions: Set<DietaryNote> = [] // Default: NO restrictions = show ALL recipes including meat
+    @State private var selectedDietaryRestrictions: Set<DietaryNote> = [.nonVegetarian] // Default: Non-Vegetarian to ensure meat recipes
     @State private var selectedServings: Int = 4
     @State private var selectedCookingTime: CookingTimeFilter = .any
     @State private var showValidationError = false
@@ -25,9 +25,8 @@ struct RecipeGeneratorView: View {
     private func initializeUserPreferences() {
         if let user = userManager.currentUser {
             selectedCuisine = user.favoriteCuisines.first ?? .any
-            // Don't load dietary restrictions by default - show ALL recipes including meat
-            // selectedDietaryRestrictions = Set(user.dietaryPreferences)
-            selectedDietaryRestrictions = [] // Always start with no restrictions
+            // Default to Non-Vegetarian to ensure meat recipes are included
+            selectedDietaryRestrictions = Set(user.dietaryPreferences).isEmpty ? [.nonVegetarian] : Set(user.dietaryPreferences)
             // Default to any cooking time for new users
             selectedCookingTime = .any
         }

@@ -136,16 +136,13 @@ class RecipeManager: ObservableObject {
             self.popularRecipes = []
         }
         
-        // CRITICAL FIX: Force fresh LLM generation when no dietary restrictions are selected
-        // This ensures we get diverse recipes including meat dishes
-        let shouldForceLLM = dietaryRestrictions.isEmpty
-        
-        if shouldForceLLM {
-            logger.warning("No dietary restrictions selected - FORCING fresh LLM generation for diverse recipes")
-            await generatePopularRecipesFromLLM(
+        // CRITICAL FIX: Handle Non-Vegetarian and empty restrictions for guaranteed diversity
+        if dietaryRestrictions.isEmpty || dietaryRestrictions.contains(.nonVegetarian) {
+            let reason = dietaryRestrictions.isEmpty ? "No dietary restrictions" : "Non-Vegetarian selected"
+            logger.warning("\(reason) - using HYBRID approach for guaranteed meat + vegetarian diversity")
+            await generateHybridDiverseRecipes(
                 cuisine: cuisine,
                 difficulty: difficulty,
-                dietaryRestrictions: dietaryRestrictions,
                 maxTime: maxTime,
                 servings: servings
             )
@@ -267,6 +264,206 @@ class RecipeManager: ObservableObject {
     func clearRecipeCache() {
         cachedRecipes.removeAll()
         logger.warning("Recipe cache cleared - next generation will use fresh LLM data")
+    }
+    
+    /// Generates diverse recipes using a hybrid approach: database recipes + LLM generation
+    /// This ensures guaranteed diversity when no dietary restrictions are selected
+    private func generateHybridDiverseRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        maxTime: Int?,
+        servings: Int
+    ) async {
+        logger.warning("Starting HYBRID recipe generation for guaranteed diversity")
+        
+        var allRecipes: [Recipe] = []
+        
+        // Step 1: Load meat-based recipes from our database
+        let meatRecipes = loadMeatBasedRecipesFromDatabase(cuisine: cuisine, servings: servings)
+        allRecipes.append(contentsOf: meatRecipes)
+        logger.warning("Loaded \(meatRecipes.count) meat-based recipes from database")
+        
+        // Step 2: Generate vegetarian recipes from LLM (since LLM is good at those)
+        let vegetarianRecipes = await generateVegetarianRecipesFromLLM(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            maxTime: maxTime,
+            servings: servings
+        )
+        allRecipes.append(contentsOf: vegetarianRecipes)
+        logger.warning("Generated \(vegetarianRecipes.count) vegetarian recipes from LLM")
+        
+        // Step 3: Ensure we have at least 10 recipes total
+        if allRecipes.count < 10 {
+            let additionalRecipes = await generateAdditionalRecipesFromLLM(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                maxTime: maxTime,
+                servings: servings,
+                targetCount: 10 - allRecipes.count
+            )
+            allRecipes.append(contentsOf: additionalRecipes)
+            logger.warning("Generated \(additionalRecipes.count) additional recipes to reach minimum count")
+        }
+        
+        // Step 4: Shuffle and limit to 20 recipes
+        allRecipes.shuffle()
+        let finalRecipes = Array(allRecipes.prefix(20))
+        
+        await MainActor.run {
+            self.popularRecipes = finalRecipes
+            logger.warning("HYBRID generation complete: \(finalRecipes.count) diverse recipes (meat + vegetarian)")
+        }
+    }
+    
+    /// Loads meat-based recipes from our local recipe database
+    private func loadMeatBasedRecipesFromDatabase(cuisine: Cuisine, servings: Int) -> [Recipe] {
+        var meatRecipes: [Recipe] = []
+        
+        // Load recipes from JSON files based on cuisine
+        let cuisineFileName = getCuisineFileName(cuisine)
+        if let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json"),
+           let data = try? Data(contentsOf: url),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let cuisines = json["cuisines"] as? [String: Any],
+           let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] {
+            
+            for recipeData in recipes {
+                if let title = recipeData["title"] as? String,
+                   let ingredients = recipeData["ingredients"] as? [String],
+                   let instructions = recipeData["instructions"] as? String,
+                   let cookingTime = recipeData["cooking_time"] as? Int,
+                   let difficultyString = recipeData["difficulty"] as? String {
+                    
+                    // Check if this is a meat-based recipe
+                    let hasMeat = ingredients.contains { ingredient in
+                        let lowercased = ingredient.lowercased()
+                        return lowercased.contains("chicken") || lowercased.contains("beef") || 
+                               lowercased.contains("lamb") || lowercased.contains("pork") ||
+                               lowercased.contains("fish") || lowercased.contains("shrimp") ||
+                               lowercased.contains("goat") || lowercased.contains("turkey")
+                    }
+                    
+                    if hasMeat {
+                        let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+                        let recipe = Recipe(
+                            title: title,
+                            cuisine: cuisine,
+                            difficulty: difficulty,
+                            prepTime: max(5, cookingTime / 3),
+                            cookTime: max(10, cookingTime * 2 / 3),
+                            servings: servings,
+                            ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                            steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
+                            winePairings: [],
+                            dietaryNotes: [], // Will be inferred from ingredients
+                            platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
+                            chefNotes: "Traditional \(cuisine.rawValue) recipe from our database"
+                        )
+                        meatRecipes.append(recipe)
+                    }
+                }
+            }
+        }
+        
+        logger.warning("Loaded \(meatRecipes.count) meat-based recipes from \(cuisine.rawValue) database")
+        return meatRecipes
+    }
+    
+    /// Generates vegetarian recipes from LLM (since LLM is good at those)
+    private func generateVegetarianRecipesFromLLM(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        maxTime: Int?,
+        servings: Int
+    ) async -> [Recipe] {
+        // Create a temporary dietary restriction for vegetarian recipes
+        let vegetarianRestrictions: [DietaryNote] = [.vegetarian]
+        
+        do {
+            let recipes = try await openAIClient.generatePopularRecipes(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: vegetarianRestrictions,
+                maxTime: maxTime,
+                servings: servings
+            )
+            return recipes
+        } catch {
+            logger.error("Error generating vegetarian recipes from LLM: \(error)")
+            return []
+        }
+    }
+    
+    /// Generates additional recipes to reach target count
+    private func generateAdditionalRecipesFromLLM(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        maxTime: Int?,
+        servings: Int,
+        targetCount: Int
+    ) async -> [Recipe] {
+        do {
+            let recipes = try await openAIClient.generatePopularRecipes(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: [], // No restrictions for variety
+                maxTime: maxTime,
+                servings: servings
+            )
+            return Array(recipes.prefix(targetCount))
+        } catch {
+            logger.error("Error generating additional recipes from LLM: \(error)")
+            return []
+        }
+    }
+    
+    /// Gets the filename for a cuisine's recipe database
+    private func getCuisineFileName(_ cuisine: Cuisine) -> String {
+        switch cuisine {
+        case .indian:
+            return "indian_cuisines"
+        case .italian:
+            return "european_cuisines" // Italian recipes are in european_cuisines.json
+        case .chinese:
+            return "asian_cuisines"
+        case .mexican:
+            return "mexican_cuisines"
+        case .mediterranean:
+            return "mediterranean_cuisines"
+        case .american:
+            return "american_cuisines"
+        case .thai:
+            return "asian_cuisines"
+        case .japanese:
+            return "asian_cuisines"
+        case .french:
+            return "european_cuisines"
+        case .greek:
+            return "mediterranean_cuisines"
+        case .spanish:
+            return "european_cuisines"
+        case .lebanese:
+            return "middle_eastern_african_cuisines"
+        case .moroccan:
+            return "middle_eastern_african_cuisines"
+        case .vietnamese:
+            return "asian_cuisines"
+        case .korean:
+            return "asian_cuisines"
+        case .turkish:
+            return "middle_eastern_african_cuisines"
+        case .persian:
+            return "middle_eastern_african_cuisines"
+        case .ethiopian:
+            return "middle_eastern_african_cuisines"
+        case .brazilian:
+            return "latin_american_cuisines"
+        case .peruvian:
+            return "latin_american_cuisines"
+        case .any:
+            return "indian_cuisines" // Default to Indian for multi-cuisine
+        }
     }
     
     // MARK: - Favorites Persistence

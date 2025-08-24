@@ -2796,6 +2796,8 @@ class OpenAIClient: ObservableObject {
     
     private func getDietaryDescription(_ restriction: DietaryNote) -> String {
         switch restriction {
+        case .nonVegetarian:
+            return "MUST include meat, poultry, fish, or seafood - NO vegetarian-only recipes allowed"
         case .vegetarian:
             return "ABSOLUTELY NO: chicken, turkey, duck, beef, pork, lamb, fish, seafood, meat, bacon, ham, sausage, or ANY animal flesh - ONLY plant-based ingredients allowed"
         case .vegan:
@@ -3164,6 +3166,8 @@ class OpenAIClient: ObservableObject {
     
     private func isRecipeCompliantWithRestriction(allIngredients: [String], restriction: DietaryNote) -> Bool {
         switch restriction {
+        case .nonVegetarian:
+            return containsMeatIngredients(allIngredients)
         case .vegetarian:
             return !containsMeatIngredients(allIngredients)
         case .vegan:

@@ -179,6 +179,7 @@ enum WineType: String, CaseIterable, Codable {
 }
 
 enum DietaryNote: String, CaseIterable, Codable {
+    case nonVegetarian = "Non-Vegetarian"
     case vegetarian = "Vegetarian"
     case vegan = "Vegan"
     case glutenFree = "Gluten-Free"
