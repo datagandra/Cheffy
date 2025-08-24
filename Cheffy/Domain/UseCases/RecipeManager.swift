@@ -657,9 +657,11 @@ class RecipeManager: ObservableObject {
         // Filter cached recipes by basic criteria
         var matchingRecipes = cachedRecipes.filter { recipe in
             let cuisineMatches = cuisine == .any || recipe.cuisine == cuisine
-            return cuisineMatches &&
-            recipe.difficulty == difficulty &&
-            recipe.servings == servings
+            let difficultyMatches = recipe.difficulty == difficulty
+            // Make servings filter more flexible - allow recipes with similar serving sizes
+            let servingsMatches = abs(recipe.servings - servings) <= 2 || recipe.servings == servings
+            
+            return cuisineMatches && difficultyMatches && servingsMatches
         }
         
         logger.debug("Found \(matchingRecipes.count) recipes matching basic criteria")
@@ -672,6 +674,9 @@ class RecipeManager: ObservableObject {
                 return recipeDietaryNotes.isSuperset(of: requestedDietaryNotes)
             }
             logger.debug("After dietary filter: \(matchingRecipes.count) recipes")
+        } else {
+            // No dietary restrictions selected - show ALL recipes (this is the key fix!)
+            logger.debug("No dietary restrictions selected - showing ALL recipes")
         }
         
         // Filter by max time if specified
@@ -729,6 +734,57 @@ class RecipeManager: ObservableObject {
         }
         
         logger.debug("Found \(matchingRecipes.count) unique matching cached recipes for popular recipes")
+        
+        // Ensure minimum recipe count for better user experience
+        if matchingRecipes.count < 10 {
+            logger.warning("Only \(matchingRecipes.count) recipes found - below minimum threshold of 10")
+            
+            // If we have very few recipes, try more relaxed filtering to get more recipes
+            if matchingRecipes.count < 5 {
+                logger.warning("Very few recipes found - trying relaxed filtering...")
+                
+                // Try more relaxed filtering: only match cuisine and difficulty
+                let relaxedRecipes = cachedRecipes.filter { recipe in
+                    let cuisineMatches = cuisine == .any || recipe.cuisine == cuisine
+                    let difficultyMatches = recipe.difficulty == difficulty
+                    return cuisineMatches && difficultyMatches
+                }
+                
+                if relaxedRecipes.count > matchingRecipes.count {
+                    logger.debug("Relaxed filtering found \(relaxedRecipes.count) recipes (was \(matchingRecipes.count))")
+                    // Use relaxed recipes but still apply dietary and time filters
+                    var newMatchingRecipes = relaxedRecipes
+                    
+                    // Apply dietary restrictions if specified
+                    if !dietaryRestrictions.isEmpty {
+                        newMatchingRecipes = newMatchingRecipes.filter { recipe in
+                            let recipeDietaryNotes = Set(recipe.dietaryNotes)
+                            let requestedDietaryNotes = Set(dietaryRestrictions)
+                            return recipeDietaryNotes.isSuperset(of: requestedDietaryNotes)
+                        }
+                    }
+                    
+                    // Apply time filter if specified
+                    if let maxTime = maxTime {
+                        newMatchingRecipes = newMatchingRecipes.filter { recipe in
+                            (recipe.prepTime + recipe.cookTime) <= maxTime
+                        }
+                    }
+                    
+                    // Remove duplicates and sort
+                    newMatchingRecipes = removeDuplicateCachedRecipes(newMatchingRecipes)
+                    newMatchingRecipes.sort { recipe1, recipe2 in
+                        recipe1.createdAt > recipe2.createdAt
+                    }
+                    
+                    if newMatchingRecipes.count > matchingRecipes.count {
+                        logger.debug("Using relaxed filtering results: \(newMatchingRecipes.count) recipes")
+                        matchingRecipes = newMatchingRecipes
+                    }
+                }
+            }
+        }
+        
         return matchingRecipes
     }
     
