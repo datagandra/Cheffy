@@ -365,7 +365,7 @@ class OpenAIClient: ObservableObject {
             ],
             generationConfig: GeminiGenerationConfig(
                 temperature: 0.1,
-                maxOutputTokens: 500
+                maxOutputTokens: 2000
             )
         )
         
@@ -635,7 +635,7 @@ class OpenAIClient: ObservableObject {
         ]
         
         var allRecipes: [Recipe] = []
-        let recipesPerCuisine = max(1, 10 / selectedCuisines.count) // Distribute recipes evenly
+        let recipesPerCuisine = 3 // Generate 3 recipes per cuisine for better variety
         
         for cuisine in selectedCuisines {
             do {
@@ -659,9 +659,10 @@ class OpenAIClient: ObservableObject {
             }
         }
         
-        // Remove duplicates based on recipe names and take top 10
+        // Remove duplicates based on recipe names and take top 15-20
         let uniqueRecipes = removeDuplicateRecipes(allRecipes)
-        let finalRecipes = Array(uniqueRecipes.prefix(10))
+        let targetCount = min(20, uniqueRecipes.count) // Aim for 15-20 recipes
+        let finalRecipes = Array(uniqueRecipes.prefix(targetCount))
         
         logger.api("Multi-cuisine generation complete: \(finalRecipes.count) unique recipes from \(selectedCuisines.count) cuisines")
         return finalRecipes
@@ -698,7 +699,7 @@ class OpenAIClient: ObservableObject {
             ],
             generationConfig: GeminiGenerationConfig(
                 temperature: 0.1,
-                maxOutputTokens: 500
+                maxOutputTokens: 2000
             )
         )
         
@@ -787,7 +788,7 @@ class OpenAIClient: ObservableObject {
             ],
             generationConfig: GeminiGenerationConfig(
                 temperature: 0.05, // Lower temperature for more consistent time adherence
-                maxOutputTokens: 500
+                maxOutputTokens: 2000
             )
         )
         
@@ -963,7 +964,14 @@ class OpenAIClient: ObservableObject {
         let timeConstraint = maxTime != nil ? " with STRICT cooking time constraint of \(maxTime!) minutes or less" : ""
         
         var prompt = """
-        Generate 10 popular \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level\(timeConstraint). Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine to ensure the recipes reflect current popularity and authenticity.
+        Generate 15-20 popular \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level\(timeConstraint). Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine to ensure the recipes reflect current popularity and authenticity.
+        
+        🚨 REGIONAL RECIPE COVERAGE - ABSOLUTELY REQUIRED:
+        - Include recipes from ALL major regions of \(cuisine.rawValue) cuisine
+        - Cover traditional, modern, and fusion variations
+        - Include street food, home cooking, and restaurant favorites
+        - Ensure diversity in cooking methods (grilled, fried, steamed, baked, etc.)
+        - Include both classic and contemporary popular dishes
         
         """
         
@@ -1021,7 +1029,7 @@ class OpenAIClient: ObservableObject {
         prompt += "\n- Servings"
         prompt += "\n- Brief description (1-2 sentences)"
         
-        prompt += "\n\nGenerate exactly 10 recipes that meet ALL requirements. If you cannot generate 10 recipes within the time constraint, generate fewer but ensure ALL meet the time requirement."
+        prompt += "\n\nGenerate exactly 15-20 recipes that meet ALL requirements. If you cannot generate 15-20 recipes within the time constraint, generate fewer but ensure ALL meet the time requirement. Prioritize quantity and variety while maintaining quality."
         
         return prompt
     }
@@ -1034,7 +1042,7 @@ class OpenAIClient: ObservableObject {
         servings: Int
     ) -> String {
         var prompt = """
-        Create diverse \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level, ranked by CURRENT popularity and culinary significance. Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine. Generate as many high-quality recipes as possible (aim for 10-15 recipes).
+        Create diverse \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level, ranked by CURRENT popularity and culinary significance. Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine. Generate as many high-quality recipes as possible (aim for 15-20 recipes).
         
         🚨 CRITICAL: Output ONLY recipe names and details. NO descriptive text like "Here are 10 popular recipes" or "focusing on authenticity". Start directly with recipe names.
         

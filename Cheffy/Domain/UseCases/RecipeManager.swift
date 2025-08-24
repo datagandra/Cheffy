@@ -156,7 +156,7 @@ class RecipeManager: ObservableObject {
         if !cachedRecipes.isEmpty {
             // Use cached recipes if we have any
             await MainActor.run {
-                self.popularRecipes = Array(cachedRecipes.prefix(10))
+                self.popularRecipes = Array(cachedRecipes.prefix(20)) // Allow up to 20 recipes
                 self.isUsingCachedData = true
                 logger.cache("Using \(self.popularRecipes.count) cached recipes")
                 logger.cache("Recipes loaded from cache - no LLM connection needed")
@@ -566,8 +566,8 @@ class RecipeManager: ObservableObject {
             }
         }
         
-        // Take up to 10 recipes
-        let selectedRecipes = Array(filteredRecipes.prefix(10))
+        // Take up to 20 recipes for better variety
+        let selectedRecipes = Array(filteredRecipes.prefix(20))
         
         await MainActor.run {
             if !selectedRecipes.isEmpty {
