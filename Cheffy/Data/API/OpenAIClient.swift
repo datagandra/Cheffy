@@ -457,7 +457,16 @@ class OpenAIClient: ObservableObject {
                     logger.api("Added \(fallbackRecipes.count) compliant fallback recipes")
                 }
                 
-                logger.api("Returning \(recipes.count) recipes after dietary filtering")
+                // Remove any duplicate recipes
+                let duplicateRemovalCount = recipes.count
+                recipes = removeDuplicateRecipes(recipes)
+                let uniqueCount = recipes.count
+                
+                if duplicateRemovalCount != uniqueCount {
+                    logger.debug("Removed \(duplicateRemovalCount - uniqueCount) duplicate recipes")
+                }
+                
+                logger.api("Returning \(recipes.count) unique recipes after filtering and deduplication")
                 
                 return recipes
             } else {
@@ -485,6 +494,68 @@ class OpenAIClient: ObservableObject {
         return []
     }
 
+    // MARK: - Recipe Deduplication
+    
+    /// Removes duplicate recipes based on name similarity
+    private func removeDuplicateRecipes(_ recipes: [Recipe]) -> [Recipe] {
+        var uniqueRecipes: [Recipe] = []
+        var seenNames: Set<String> = []
+        
+        for recipe in recipes {
+            // Clean the recipe name by removing common prefixes and suffixes
+            let cleanName = cleanRecipeName(recipe.title)
+            
+            if !seenNames.contains(cleanName) {
+                seenNames.insert(cleanName)
+                uniqueRecipes.append(recipe)
+            } else {
+                logger.debug("Removing duplicate recipe: '\(recipe.title)' (clean name: '\(cleanName)')")
+            }
+        }
+        
+        logger.debug("Deduplication: \(recipes.count) -> \(uniqueRecipes.count) recipes")
+        return uniqueRecipes
+    }
+    
+    /// Cleans recipe names by removing common prefixes and suffixes
+    private func cleanRecipeName(_ name: String) -> String {
+        var cleanName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Remove common prefixes that might be added by the LLM
+        let prefixesToRemove = [
+            "Top 10 recipes: ",
+            "Top 10: ",
+            "Popular recipes: ",
+            "Recipe: ",
+            "Dish: ",
+            "Food: "
+        ]
+        
+        for prefix in prefixesToRemove {
+            if cleanName.hasPrefix(prefix) {
+                cleanName = String(cleanName.dropFirst(prefix.count))
+                break
+            }
+        }
+        
+        // Remove common suffixes
+        let suffixesToRemove = [
+            " (Popular)",
+            " (Trending)",
+            " (Famous)",
+            " (Classic)"
+        ]
+        
+        for suffix in suffixesToRemove {
+            if cleanName.hasSuffix(suffix) {
+                cleanName = String(cleanName.dropLast(suffix.count))
+                break
+            }
+        }
+        
+        return cleanName.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
     // MARK: - Multi-Cuisine Recipe Generation
     
     /// Generates popular recipes from multiple cuisines when "Any Cuisine" is selected
@@ -527,11 +598,11 @@ class OpenAIClient: ObservableObject {
             }
         }
         
-        // Shuffle recipes for variety and take top 10
-        let shuffledRecipes = allRecipes.shuffled()
-        let finalRecipes = Array(shuffledRecipes.prefix(10))
+        // Remove duplicates based on recipe names and take top 10
+        let uniqueRecipes = removeDuplicateRecipes(allRecipes)
+        let finalRecipes = Array(uniqueRecipes.prefix(10))
         
-        logger.api("Multi-cuisine generation complete: \(finalRecipes.count) recipes from \(selectedCuisines.count) cuisines")
+        logger.api("Multi-cuisine generation complete: \(finalRecipes.count) unique recipes from \(selectedCuisines.count) cuisines")
         return finalRecipes
     }
     

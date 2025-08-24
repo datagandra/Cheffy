@@ -752,7 +752,16 @@ class RecipeManager: ObservableObject {
             }
         }
         
-        logger.debug("Found \(matchingRecipes.count) matching cached recipes for popular recipes")
+        // Remove duplicate recipes based on title
+        let originalCount = matchingRecipes.count
+        matchingRecipes = removeDuplicateCachedRecipes(matchingRecipes)
+        let uniqueCount = matchingRecipes.count
+        
+        if originalCount != uniqueCount {
+            logger.debug("Removed \(originalCount - uniqueCount) duplicate cached recipes")
+        }
+        
+        logger.debug("Found \(matchingRecipes.count) unique matching cached recipes for popular recipes")
         return matchingRecipes
     }
     
@@ -793,5 +802,66 @@ class RecipeManager: ObservableObject {
     private func updateLastUsedDietaryRestrictions(_ restrictions: [DietaryNote]) {
         lastUsedDietaryRestrictions = restrictions
         logger.debug("Updated last used dietary restrictions: \(restrictions.map { $0.rawValue })")
+    }
+    
+    // MARK: - Recipe Deduplication
+    
+    /// Removes duplicate recipes from cached results based on title similarity
+    private func removeDuplicateCachedRecipes(_ recipes: [Recipe]) -> [Recipe] {
+        var uniqueRecipes: [Recipe] = []
+        var seenTitles: Set<String> = []
+        
+        for recipe in recipes {
+            // Clean the recipe title by removing common prefixes and suffixes
+            let cleanTitle = cleanRecipeTitle(recipe.title)
+            
+            if !seenTitles.contains(cleanTitle) {
+                seenTitles.insert(cleanTitle)
+                uniqueRecipes.append(recipe)
+            } else {
+                logger.debug("Removing duplicate cached recipe: '\(recipe.title)' (clean title: '\(cleanTitle)')")
+            }
+        }
+        
+        return uniqueRecipes
+    }
+    
+    /// Cleans recipe titles by removing common prefixes and suffixes
+    private func cleanRecipeTitle(_ title: String) -> String {
+        var cleanTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Remove common prefixes that might be added by the LLM
+        let prefixesToRemove = [
+            "Top 10 recipes: ",
+            "Top 10: ",
+            "Popular recipes: ",
+            "Recipe: ",
+            "Dish: ",
+            "Food: "
+        ]
+        
+        for prefix in prefixesToRemove {
+            if cleanTitle.hasPrefix(prefix) {
+                cleanTitle = String(cleanTitle.dropFirst(prefix.count))
+                break
+            }
+        }
+        
+        // Remove common suffixes
+        let suffixesToRemove = [
+            " (Popular)",
+            " (Trending)",
+            " (Famous)",
+            " (Classic)"
+        ]
+        
+        for suffix in suffixesToRemove {
+            if cleanTitle.hasSuffix(suffix) {
+                cleanTitle = String(cleanTitle.dropLast(suffix.count))
+                break
+            }
+        }
+        
+        return cleanTitle.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 } 
