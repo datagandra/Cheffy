@@ -866,7 +866,7 @@ class OpenAIClient: ObservableObject {
             throw error
         }
     }
-    
+
     // MARK: - Helper Methods
     private func createRecipePrompt(
         cuisine: Cuisine,
@@ -1048,6 +1048,19 @@ class OpenAIClient: ObservableObject {
             - Include vegetarian dishes like Dal, Aloo Gobi, Chana Masala
             - Balance traditional meat-based and vegetarian recipes
             - NO restrictions - show the full diversity of \(cuisine.rawValue) cuisine
+            
+            🚨 MEAT DIVERSITY EXAMPLES - MUST INCLUDE:
+            - Chicken dishes (Chicken Tikka, Chicken Curry, Chicken Biryani)
+            - Fish dishes (Fish Curry, Fish Fry, Fish Biryani)
+            - Lamb dishes (Lamb Curry, Lamb Biryani, Lamb Kebab)
+            - Goat dishes (Goat Curry, Goat Biryani)
+            - Mixed meat dishes (Mixed Grill, Meat Platter)
+            
+            🚨 VEGETARIAN DIVERSITY EXAMPLES - MUST INCLUDE:
+            - Legume dishes (Dal, Chana Masala, Rajma)
+            - Vegetable dishes (Aloo Gobi, Baingan Bharta, Bhindi Masala)
+            - Rice dishes (Vegetable Biryani, Pulao)
+            - Bread dishes (Naan, Roti, Paratha)
             """
         } else {
             for restriction in dietaryRestrictions {
@@ -1093,6 +1106,10 @@ class OpenAIClient: ObservableObject {
         prompt += "\n]"
         
         prompt += "\n\n🚨 FINAL INSTRUCTION: Generate EXACTLY 15-20 recipes in valid JSON format. Do not include any text before or after the JSON array. Start with [ and end with ]."
+        
+        if dietaryRestrictions.isEmpty {
+            prompt += "\n\n🚨 CRITICAL REMINDER: When NO dietary restrictions are selected, you MUST include meat, chicken, fish, and seafood recipes. Do NOT generate only vegetarian recipes. The user wants to see the FULL diversity of \(cuisine.rawValue) cuisine including traditional meat dishes."
+        }
         
         return prompt
     }
@@ -1458,6 +1475,10 @@ class OpenAIClient: ObservableObject {
                     // Convert to kid-friendly instructions
                     let kidFriendlySteps = convertToKidFriendlySteps(sanitizedSteps)
                     
+                    // Infer dietary notes from ingredients since RecipeData doesn't include them
+                    let recipeDietaryNotes = inferDietaryNotesFromIngredients(recipeData.ingredients, cuisine: cuisine)
+                    logger.debug("Inferred dietary notes for '\(recipeData.name)': \(recipeDietaryNotes.map { $0.rawValue })")
+                    
                     let recipe = Recipe(
                         title: recipeData.name,
                         cuisine: cuisine,
@@ -1468,7 +1489,7 @@ class OpenAIClient: ObservableObject {
                         ingredients: recipeData.ingredients,
                         steps: kidFriendlySteps,
                         winePairings: recipeData.winePairings,
-                        dietaryNotes: dietaryRestrictions,
+                        dietaryNotes: recipeDietaryNotes,
                         platingTips: recipeData.platingTips,
                         chefNotes: recipeData.chefNotes
                     )
@@ -1490,6 +1511,10 @@ class OpenAIClient: ObservableObject {
                         
                         var recipes: [Recipe] = []
                         for recipeData in recipesData {
+                            // Infer dietary notes from ingredients since RecipeData doesn't include them
+                            let recipeDietaryNotes = inferDietaryNotesFromIngredients(recipeData.ingredients, cuisine: cuisine)
+                            logger.debug("Inferred dietary notes for '\(recipeData.name)': \(recipeDietaryNotes.map { $0.rawValue })")
+                            
                             let recipe = Recipe(
                                 title: recipeData.name,
                                 cuisine: cuisine,
@@ -1500,7 +1525,7 @@ class OpenAIClient: ObservableObject {
                                 ingredients: recipeData.ingredients,
                                 steps: recipeData.steps,
                                 winePairings: recipeData.winePairings,
-                                dietaryNotes: dietaryRestrictions,
+                                dietaryNotes: recipeDietaryNotes,
                                 platingTips: recipeData.platingTips,
                                 chefNotes: recipeData.chefNotes
                             )
@@ -1541,9 +1566,8 @@ class OpenAIClient: ObservableObject {
             if trimmedSection.count > 50 { // Only process substantial sections
                 do {
                     let recipe = try createRecipeFromText(trimmedSection, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
-                    var updatedRecipe = recipe
-                    updatedRecipe.dietaryNotes = dietaryRestrictions
-                    recipes.append(updatedRecipe)
+                    // Don't override dietary notes - preserve what was parsed from text
+                    recipes.append(recipe)
                 } catch {
                     logger.warning("Could not create recipe from section \(index + 1)")
                 }
@@ -1557,8 +1581,19 @@ class OpenAIClient: ObservableObject {
             let recipeNumber = recipes.count + 1
             let recipeName = generateProperRecipeName(cuisine: cuisine, index: recipeNumber, dietaryRestrictions: dietaryRestrictions)
             
+            // Generate diverse dietary notes for fallback recipes to ensure variety
+            let fallbackDietaryNotes: [DietaryNote]
+            if dietaryRestrictions.isEmpty {
+                // When no restrictions, create diverse fallback recipes
+                let allDietaryOptions: [DietaryNote] = [.vegetarian, .glutenFree, .dairyFree]
+                fallbackDietaryNotes = [allDietaryOptions[recipeNumber % allDietaryOptions.count]]
+                logger.debug("Creating fallback recipe with diverse dietary notes: \(fallbackDietaryNotes.map { $0.rawValue })")
+            } else {
+                fallbackDietaryNotes = dietaryRestrictions
+            }
+            
             // Generate dynamic ingredients based on recipe name, cuisine and dietary restrictions
-            let dynamicIngredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
+            let dynamicIngredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: fallbackDietaryNotes)
             
             // Create more realistic cooking times
             let prepTime = 10 + (recipeNumber * 2) // Vary prep time
@@ -1589,7 +1624,7 @@ class OpenAIClient: ObservableObject {
                     )
                 ],
                 winePairings: [],
-                dietaryNotes: dietaryRestrictions,
+                dietaryNotes: fallbackDietaryNotes,
                 platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
                 chefNotes: "This is a fallback \(cuisine.rawValue) recipe to ensure minimum recipe count"
             )
@@ -1634,7 +1669,7 @@ class OpenAIClient: ObservableObject {
         case .italian:
             // Add oil based on dietary restrictions
             if !dietaryRestrictions.contains(.dairyFree) {
-                ingredients.append(Ingredient(name: "Extra Virgin Olive Oil", amount: 3.0, unit: "tbsp", notes: "cold-pressed, for cooking and finishing"))
+            ingredients.append(Ingredient(name: "Extra Virgin Olive Oil", amount: 3.0, unit: "tbsp", notes: "cold-pressed, for cooking and finishing"))
             } else {
                 ingredients.append(Ingredient(name: "Coconut Oil", amount: 3.0, unit: "tbsp", notes: "dairy-free alternative for cooking"))
             }
@@ -1644,12 +1679,12 @@ class OpenAIClient: ObservableObject {
             
             if recipeName.contains("pasta") || recipeName.contains("spaghetti") || recipeName.contains("penne") {
                 if !dietaryRestrictions.contains(.glutenFree) {
-                    ingredients.append(Ingredient(name: "Durum Wheat Pasta", amount: 8.0, unit: "oz", notes: "spaghetti, penne, or your choice of shape"))
+                ingredients.append(Ingredient(name: "Durum Wheat Pasta", amount: 8.0, unit: "oz", notes: "spaghetti, penne, or your choice of shape"))
                 } else {
                     ingredients.append(Ingredient(name: "Gluten-Free Pasta", amount: 8.0, unit: "oz", notes: "rice, quinoa, or chickpea pasta"))
                 }
                 if !dietaryRestrictions.contains(.dairyFree) {
-                    ingredients.append(Ingredient(name: "Parmigiano-Reggiano", amount: 0.75, unit: "cup", notes: "freshly grated, aged 24 months"))
+                ingredients.append(Ingredient(name: "Parmigiano-Reggiano", amount: 0.75, unit: "cup", notes: "freshly grated, aged 24 months"))
                 } else {
                     ingredients.append(Ingredient(name: "Nutritional Yeast", amount: 0.5, unit: "cup", notes: "dairy-free alternative for cheesy flavor"))
                 }
@@ -1661,32 +1696,32 @@ class OpenAIClient: ObservableObject {
                 ingredients.append(Ingredient(name: "Arborio Rice", amount: 1.0, unit: "cup", notes: "short-grain, high-starch rice"))
                 ingredients.append(Ingredient(name: "Dry White Wine", amount: 0.75, unit: "cup", notes: "Pinot Grigio or similar"))
                 if !dietaryRestrictions.contains(.vegetarian) && !dietaryRestrictions.contains(.vegan) {
-                    ingredients.append(Ingredient(name: "Chicken Stock", amount: 4.0, unit: "cups", notes: "homemade or high-quality store-bought, warm"))
+                ingredients.append(Ingredient(name: "Chicken Stock", amount: 4.0, unit: "cups", notes: "homemade or high-quality store-bought, warm"))
                 } else {
                     ingredients.append(Ingredient(name: "Vegetable Stock", amount: 4.0, unit: "cups", notes: "homemade or high-quality store-bought, warm"))
                 }
                 ingredients.append(Ingredient(name: "Shallots", amount: 2.0, unit: "medium", notes: "finely diced"))
                 if !dietaryRestrictions.contains(.dairyFree) {
-                    ingredients.append(Ingredient(name: "Butter", amount: 2.0, unit: "tbsp", notes: "unsalted, for finishing"))
+                ingredients.append(Ingredient(name: "Butter", amount: 2.0, unit: "tbsp", notes: "unsalted, for finishing"))
                 } else {
                     ingredients.append(Ingredient(name: "Coconut Oil", amount: 2.0, unit: "tbsp", notes: "dairy-free alternative for finishing"))
                 }
             }
             if recipeName.contains("pizza") {
                 if !dietaryRestrictions.contains(.glutenFree) {
-                    ingredients.append(Ingredient(name: "Pizza Dough", amount: 1.0, unit: "ball", notes: "store-bought or homemade, room temperature"))
+                ingredients.append(Ingredient(name: "Pizza Dough", amount: 1.0, unit: "ball", notes: "store-bought or homemade, room temperature"))
                 } else {
                     ingredients.append(Ingredient(name: "Gluten-Free Pizza Dough", amount: 1.0, unit: "ball", notes: "store-bought or homemade, room temperature"))
                 }
                 if !dietaryRestrictions.contains(.dairyFree) {
-                    ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, torn into pieces"))
+                ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, torn into pieces"))
                 } else {
                     ingredients.append(Ingredient(name: "Dairy-Free Mozzarella", amount: 8.0, unit: "oz", notes: "cashew or almond-based alternative"))
                 }
                 ingredients.append(Ingredient(name: "San Marzano Tomatoes", amount: 1.0, unit: "can", notes: "28 oz, crushed for sauce"))
                 ingredients.append(Ingredient(name: "Fresh Basil", amount: 0.25, unit: "cup", notes: "fresh, torn leaves"))
                 if !dietaryRestrictions.contains(.glutenFree) {
-                    ingredients.append(Ingredient(name: "Semolina Flour", amount: 0.25, unit: "cup", notes: "for dusting pizza peel"))
+                ingredients.append(Ingredient(name: "Semolina Flour", amount: 0.25, unit: "cup", notes: "for dusting pizza peel"))
                 } else {
                     ingredients.append(Ingredient(name: "Gluten-Free Flour", amount: 0.25, unit: "cup", notes: "rice or almond flour for dusting"))
                 }
@@ -1695,7 +1730,7 @@ class OpenAIClient: ObservableObject {
             // Traditional Italian vegetarian dishes
             if recipeName.contains("caprese") {
                 if !dietaryRestrictions.contains(.dairyFree) {
-                    ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, sliced"))
+                ingredients.append(Ingredient(name: "Fresh Mozzarella", amount: 8.0, unit: "oz", notes: "fresh, sliced"))
                 } else {
                     ingredients.append(Ingredient(name: "Dairy-Free Mozzarella", amount: 8.0, unit: "oz", notes: "cashew or almond-based alternative"))
                 }
@@ -1705,7 +1740,7 @@ class OpenAIClient: ObservableObject {
             }
             if recipeName.contains("bruschetta") {
                 if !dietaryRestrictions.contains(.glutenFree) {
-                    ingredients.append(Ingredient(name: "Baguette", amount: 1.0, unit: "loaf", notes: "sliced and toasted"))
+                ingredients.append(Ingredient(name: "Baguette", amount: 1.0, unit: "loaf", notes: "sliced and toasted"))
                 } else {
                     ingredients.append(Ingredient(name: "Gluten-Free Baguette", amount: 1.0, unit: "loaf", notes: "rice or quinoa-based alternative"))
                 }
@@ -1755,7 +1790,7 @@ class OpenAIClient: ObservableObject {
                 ingredients.append(Ingredient(name: "Yellow Onions", amount: 4.0, unit: "large", notes: "thinly sliced"))
                 ingredients.append(Ingredient(name: "Beef Stock", amount: 4.0, unit: "cups", notes: "or vegetable stock for vegetarian"))
                 if !dietaryRestrictions.contains(.dairyFree) {
-                    ingredients.append(Ingredient(name: "Gruyère Cheese", amount: 1.0, unit: "cup", notes: "grated"))
+                ingredients.append(Ingredient(name: "Gruyère Cheese", amount: 1.0, unit: "cup", notes: "grated"))
                 }
                 ingredients.append(Ingredient(name: "Baguette", amount: 0.5, unit: "loaf", notes: "sliced and toasted"))
             }
@@ -3650,6 +3685,81 @@ class OpenAIClient: ObservableObject {
         }
         
         return kidFriendly
+    }
+    
+    // MARK: - Dietary Notes Inference
+    
+    /// Infers dietary notes from recipe ingredients
+    /// - Parameters:
+    ///   - ingredients: Array of ingredients to analyze
+    ///   - cuisine: The cuisine type for context
+    /// - Returns: Array of inferred dietary notes
+    private func inferDietaryNotesFromIngredients(_ ingredients: [Ingredient], cuisine: Cuisine) -> [DietaryNote] {
+        var dietaryNotes: Set<DietaryNote> = []
+        
+        // Check for meat, poultry, fish, seafood
+        let meatKeywords = ["chicken", "beef", "pork", "lamb", "goat", "turkey", "duck", "fish", "salmon", "tuna", "shrimp", "prawn", "crab", "lobster", "mutton", "veal", "bacon", "ham", "sausage", "mince", "ground"]
+        let hasMeat = ingredients.contains { ingredient in
+            meatKeywords.contains { keyword in
+                ingredient.name.lowercased().contains(keyword)
+            }
+        }
+        
+        // Check for dairy
+        let dairyKeywords = ["milk", "cheese", "yogurt", "cream", "butter", "ghee", "curd", "paneer", "sour cream", "heavy cream", "half and half"]
+        let hasDairy = ingredients.contains { ingredient in
+            dairyKeywords.contains { keyword in
+                ingredient.name.lowercased().contains(keyword)
+            }
+        }
+        
+        // Check for gluten
+        let glutenKeywords = ["flour", "bread", "pasta", "wheat", "barley", "rye", "couscous", "bulgur", "semolina"]
+        let hasGluten = ingredients.contains { ingredient in
+            glutenKeywords.contains { keyword in
+                ingredient.name.lowercased().contains(keyword)
+            }
+        }
+        
+        // Check for nuts
+        let nutKeywords = ["almond", "walnut", "cashew", "peanut", "pistachio", "hazelnut", "pecan", "macadamia", "pine nut", "brazil nut"]
+        let hasNuts = ingredients.contains { ingredient in
+            nutKeywords.contains { keyword in
+                ingredient.name.lowercased().contains(keyword)
+            }
+        }
+        
+        // Determine dietary notes based on ingredients
+        if !hasMeat {
+            dietaryNotes.insert(.vegetarian)
+            if !hasDairy {
+                dietaryNotes.insert(.vegan)
+            }
+        }
+        
+        if !hasGluten {
+            dietaryNotes.insert(.glutenFree)
+        }
+        
+        if !hasDairy {
+            dietaryNotes.insert(.dairyFree)
+        }
+        
+        if !hasNuts {
+            dietaryNotes.insert(.nutFree)
+        }
+        
+        // If no specific dietary notes were inferred, add a default note
+        if dietaryNotes.isEmpty {
+            if hasMeat {
+                dietaryNotes.insert(.glutenFree) // Most meat dishes are gluten-free by default
+            } else {
+                dietaryNotes.insert(.vegetarian) // Default for non-meat dishes
+            }
+        }
+        
+        logger.debug("Inferred dietary notes from ingredients: \(dietaryNotes.map { $0.rawValue })")
+        return Array(dietaryNotes)
     }
     
     // MARK: - Recipe Filtering
