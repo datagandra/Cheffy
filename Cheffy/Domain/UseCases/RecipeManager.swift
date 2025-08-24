@@ -136,6 +136,25 @@ class RecipeManager: ObservableObject {
             self.popularRecipes = []
         }
         
+        // CRITICAL FIX: Force fresh LLM generation when no dietary restrictions are selected
+        // This ensures we get diverse recipes including meat dishes
+        let shouldForceLLM = dietaryRestrictions.isEmpty
+        
+        if shouldForceLLM {
+            logger.warning("No dietary restrictions selected - FORCING fresh LLM generation for diverse recipes")
+            await generatePopularRecipesFromLLM(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions,
+                maxTime: maxTime,
+                servings: servings
+            )
+            await MainActor.run {
+                self.isLoading = false
+            }
+            return
+        }
+        
         // Check if dietary restrictions have changed significantly
         let cachedRecipes: [Recipe]
         if hasDietaryRestrictionsChanged(dietaryRestrictions) {
@@ -242,6 +261,12 @@ class RecipeManager: ObservableObject {
     func resetGenerationCount() {
         generationCount = 0
         UserDefaults.standard.set(0, forKey: "generation_count")
+    }
+    
+    /// Clears all cached recipes to force fresh LLM generation
+    func clearRecipeCache() {
+        cachedRecipes.removeAll()
+        logger.warning("Recipe cache cleared - next generation will use fresh LLM data")
     }
     
     // MARK: - Favorites Persistence

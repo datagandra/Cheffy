@@ -1041,7 +1041,7 @@ class OpenAIClient: ObservableObject {
         if dietaryRestrictions.isEmpty {
             prompt += """
             
-            🚨 DIETARY DIVERSITY - ABSOLUTELY REQUIRED:
+            🚨 CRITICAL DIETARY DIVERSITY - ABSOLUTELY REQUIRED:
             - Include a MIX of vegetarian, meat, poultry, fish, and seafood recipes
             - Ensure at least 40% of recipes contain meat, chicken, fish, or seafood
             - Include popular meat dishes like Chicken Tikka Masala, Fish Curry, Lamb Biryani
@@ -1061,6 +1061,8 @@ class OpenAIClient: ObservableObject {
             - Vegetable dishes (Aloo Gobi, Baingan Bharta, Bhindi Masala)
             - Rice dishes (Vegetable Biryani, Pulao)
             - Bread dishes (Naan, Roti, Paratha)
+            
+            🚨 CRITICAL INSTRUCTION: You MUST generate at least 6-8 meat-based recipes and 6-8 vegetarian recipes. This is NOT optional. The user specifically wants to see BOTH meat and vegetarian options.
             """
         } else {
             for restriction in dietaryRestrictions {
@@ -1109,6 +1111,7 @@ class OpenAIClient: ObservableObject {
         
         if dietaryRestrictions.isEmpty {
             prompt += "\n\n🚨 CRITICAL REMINDER: When NO dietary restrictions are selected, you MUST include meat, chicken, fish, and seafood recipes. Do NOT generate only vegetarian recipes. The user wants to see the FULL diversity of \(cuisine.rawValue) cuisine including traditional meat dishes."
+            prompt += "\n\n🚨 FINAL WARNING: If you generate only vegetarian recipes when no restrictions are selected, the user will be very disappointed. You MUST include meat dishes like Chicken Tikka Masala, Fish Curry, Lamb Biryani, Goat Curry, and Mixed Grill."
         }
         
         return prompt

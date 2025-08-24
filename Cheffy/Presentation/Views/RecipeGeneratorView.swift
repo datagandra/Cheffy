@@ -51,6 +51,9 @@ struct RecipeGeneratorView: View {
                 // Cache Test Button (for debugging)
                 cacheTestButton
                 
+                // Force Fresh Generation Button
+                forceFreshGenerationButton
+                
                 // Results Section
                 resultsSection
             }
@@ -529,6 +532,34 @@ struct RecipeGeneratorView: View {
             }
             .font(.caption)
             .foregroundColor(.blue)
+        }
+        .padding(.horizontal)
+    }
+    
+    private var forceFreshGenerationButton: some View {
+        Button(action: {
+            Task {
+                // Clear cache and force fresh LLM generation
+                recipeManager.clearRecipeCache()
+                await recipeManager.generatePopularRecipes(
+                    cuisine: selectedCuisine,
+                    difficulty: .medium,
+                    dietaryRestrictions: Array(selectedDietaryRestrictions),
+                    maxTime: selectedCookingTime == .any ? nil : selectedCookingTime.maxTotalTime,
+                    servings: selectedServings
+                )
+            }
+        }) {
+            HStack {
+                Image(systemName: "arrow.clockwise.circle.fill")
+                Text("🔄 Force Fresh Generation")
+            }
+            .font(.caption)
+            .foregroundColor(.white)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(Color.orange)
+            .cornerRadius(8)
         }
         .padding(.horizontal)
     }
