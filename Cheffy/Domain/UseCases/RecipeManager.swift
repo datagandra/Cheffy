@@ -322,51 +322,114 @@ class RecipeManager: ObservableObject {
         
         // Load recipes from JSON files based on cuisine
         let cuisineFileName = getCuisineFileName(cuisine)
-        if let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-           let cuisines = json["cuisines"] as? [String: Any],
-           let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] {
-            
-            for recipeData in recipes {
-                if let title = recipeData["title"] as? String,
-                   let ingredients = recipeData["ingredients"] as? [String],
-                   let instructions = recipeData["instructions"] as? String,
-                   let cookingTime = recipeData["cooking_time"] as? Int,
-                   let difficultyString = recipeData["difficulty"] as? String {
-                    
-                    // Check if this is a meat-based recipe
-                    let hasMeat = ingredients.contains { ingredient in
-                        let lowercased = ingredient.lowercased()
-                        return lowercased.contains("chicken") || lowercased.contains("beef") || 
-                               lowercased.contains("lamb") || lowercased.contains("pork") ||
-                               lowercased.contains("fish") || lowercased.contains("shrimp") ||
-                               lowercased.contains("goat") || lowercased.contains("turkey")
-                    }
-                    
-                    if hasMeat {
-                        let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
-                        let recipe = Recipe(
-                            title: title,
-                            cuisine: cuisine,
-                            difficulty: difficulty,
-                            prepTime: max(5, cookingTime / 3),
-                            cookTime: max(10, cookingTime * 2 / 3),
-                            servings: servings,
-                            ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
-                            steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
-                            winePairings: [],
-                            dietaryNotes: [], // Will be inferred from ingredients
-                            platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
-                            chefNotes: "Traditional \(cuisine.rawValue) recipe from our database"
-                        )
-                        meatRecipes.append(recipe)
-                    }
-                }
+        logger.warning("🔍 Attempting to load meat recipes from: \(cuisineFileName).json")
+        
+        // Debug: List all available resources in the bundle
+        if let resourcePath = Bundle.main.resourcePath {
+            logger.warning("📁 Bundle resource path: \(resourcePath)")
+            do {
+                let items = try FileManager.default.contentsOfDirectory(atPath: resourcePath)
+                let jsonFiles = items.filter { $0.hasSuffix(".json") }
+                logger.warning("📋 Available JSON files: \(jsonFiles)")
+            } catch {
+                logger.error("❌ Could not list bundle contents: \(error)")
             }
         }
         
-        logger.warning("Loaded \(meatRecipes.count) meat-based recipes from \(cuisine.rawValue) database")
+        guard let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json") else {
+            logger.error("❌ Could not find JSON file: \(cuisineFileName).json")
+            // Try alternative paths
+            let alternativePaths = [
+                "\(cuisineFileName)",
+                "Resources/\(cuisineFileName)",
+                "Cheffy/Resources/\(cuisineFileName)"
+            ]
+            
+            for path in alternativePaths {
+                if let altUrl = Bundle.main.url(forResource: path, withExtension: "json") {
+                    logger.warning("✅ Found file at alternative path: \(path).json")
+                    // Continue with this URL
+                    return loadRecipesFromURL(altUrl, cuisine: cuisine, servings: servings)
+                }
+            }
+            return meatRecipes
+        }
+        
+        return loadRecipesFromURL(url, cuisine: cuisine, servings: servings)
+    }
+    
+    /// Helper function to load recipes from a specific URL
+    private func loadRecipesFromURL(_ url: URL, cuisine: Cuisine, servings: Int) -> [Recipe] {
+        var meatRecipes: [Recipe] = []
+        
+        logger.warning("📖 Reading from URL: \(url)")
+        
+        guard let data = try? Data(contentsOf: url) else {
+            logger.error("❌ Could not read data from: \(url)")
+            return meatRecipes
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            logger.error("❌ Could not parse JSON from: \(url)")
+            return meatRecipes
+        }
+        
+        guard let cuisines = json["cuisines"] as? [String: Any] else {
+            logger.error("❌ Could not find 'cuisines' key in JSON")
+            return meatRecipes
+        }
+        
+        guard let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] else {
+            logger.error("❌ Could not find recipes for cuisine: \(cuisine.rawValue)")
+            return meatRecipes
+        }
+        
+        logger.warning("✅ Found \(recipes.count) total recipes in \(url.lastPathComponent) for \(cuisine.rawValue)")
+        
+        for (index, recipeData) in recipes.enumerated() {
+            guard let title = recipeData["title"] as? String,
+                  let ingredients = recipeData["ingredients"] as? [String],
+                  let instructions = recipeData["instructions"] as? String,
+                  let cookingTime = recipeData["cooking_time"] as? Int,
+                  let difficultyString = recipeData["difficulty"] as? String else {
+                logger.warning("⚠️ Skipping recipe \(index) - missing required fields")
+                continue
+            }
+            
+            // Check if this is a meat-based recipe
+            let hasMeat = ingredients.contains { ingredient in
+                let lowercased = ingredient.lowercased()
+                return lowercased.contains("chicken") || lowercased.contains("beef") || 
+                       lowercased.contains("lamb") || lowercased.contains("pork") ||
+                       lowercased.contains("fish") || lowercased.contains("shrimp") ||
+                       lowercased.contains("goat") || lowercased.contains("turkey") ||
+                       lowercased.contains("mutton") || lowercased.contains("prawn")
+            }
+            
+            if hasMeat {
+                logger.warning("🥩 Found meat recipe: \(title)")
+                let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+                let recipe = Recipe(
+                    title: title,
+                    cuisine: cuisine,
+                    difficulty: difficulty,
+                    prepTime: max(5, cookingTime / 3),
+                    cookTime: max(10, cookingTime * 2 / 3),
+                    servings: servings,
+                    ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                    steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
+                    winePairings: [],
+                    dietaryNotes: [], // Will be inferred from ingredients
+                    platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
+                    chefNotes: "Traditional \(cuisine.rawValue) recipe from our database"
+                )
+                meatRecipes.append(recipe)
+            } else {
+                logger.debug("🥬 Skipping vegetarian recipe: \(title)")
+            }
+        }
+        
+        logger.warning("✅ Successfully loaded \(meatRecipes.count) meat-based recipes from \(cuisine.rawValue) database")
         return meatRecipes
     }
     
@@ -390,9 +453,156 @@ class RecipeManager: ObservableObject {
             )
             return recipes
         } catch {
-            logger.error("Error generating vegetarian recipes from LLM: \(error)")
-            return []
+            logger.warning("LLM failed (likely quota exceeded) - falling back to database-only mode: \(error)")
+            // Fallback: Generate vegetarian recipes from database instead
+            return generateVegetarianRecipesFromDatabase(cuisine: cuisine, servings: servings)
         }
+    }
+    
+    /// Fallback: Generate vegetarian recipes from database when LLM fails
+    private func generateVegetarianRecipesFromDatabase(cuisine: Cuisine, servings: Int) -> [Recipe] {
+        var vegetarianRecipes: [Recipe] = []
+        
+        let cuisineFileName = getCuisineFileName(cuisine)
+        logger.warning("🔄 LLM fallback: Loading vegetarian recipes from \(cuisineFileName).json")
+        
+        guard let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json") else {
+            logger.error("❌ Could not find JSON file: \(cuisineFileName).json")
+            return vegetarianRecipes
+        }
+        
+        guard let data = try? Data(contentsOf: url) else {
+            logger.error("❌ Could not read data from: \(cuisineFileName).json")
+            return vegetarianRecipes
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            logger.error("❌ Could not parse JSON from: \(cuisineFileName).json")
+            return vegetarianRecipes
+        }
+        
+        guard let cuisines = json["cuisines"] as? [String: Any] else {
+            logger.error("❌ Could not find 'cuisines' key in JSON")
+            return vegetarianRecipes
+        }
+        
+        guard let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] else {
+            logger.error("❌ Could not find recipes for cuisine: \(cuisine.rawValue)")
+            return vegetarianRecipes
+        }
+        
+        for (index, recipeData) in recipes.enumerated() {
+            guard let title = recipeData["title"] as? String,
+                  let ingredients = recipeData["ingredients"] as? [String],
+                  let instructions = recipeData["instructions"] as? String,
+                  let cookingTime = recipeData["cooking_time"] as? Int,
+                  let difficultyString = recipeData["difficulty"] as? String else {
+                logger.warning("⚠️ Skipping recipe \(index) - missing required fields")
+                continue
+            }
+            
+            // Check if this is a vegetarian recipe (no meat)
+            let hasMeat = ingredients.contains { ingredient in
+                let lowercased = ingredient.lowercased()
+                return lowercased.contains("chicken") || lowercased.contains("beef") || 
+                       lowercased.contains("lamb") || lowercased.contains("pork") ||
+                       lowercased.contains("fish") || lowercased.contains("shrimp") ||
+                       lowercased.contains("goat") || lowercased.contains("turkey") ||
+                       lowercased.contains("mutton") || lowercased.contains("prawn")
+            }
+            
+            if !hasMeat {
+                logger.warning("🥬 Found vegetarian recipe: \(title)")
+                let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+                let recipe = Recipe(
+                    title: title,
+                    cuisine: cuisine,
+                    difficulty: difficulty,
+                    prepTime: max(5, cookingTime / 3),
+                    cookTime: max(10, cookingTime * 2 / 3),
+                    servings: servings,
+                    ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                    steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
+                    winePairings: [],
+                    dietaryNotes: [.vegetarian],
+                    platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
+                    chefNotes: "Traditional \(cuisine.rawValue) recipe from our database (LLM fallback)"
+                )
+                vegetarianRecipes.append(recipe)
+            }
+        }
+        
+        logger.warning("✅ LLM fallback: Loaded \(vegetarianRecipes.count) vegetarian recipes from \(cuisine.rawValue) database")
+        return vegetarianRecipes
+    }
+    
+    /// Fallback: Generate additional recipes from database when LLM fails
+    private func generateAdditionalRecipesFromDatabase(cuisine: Cuisine, servings: Int, targetCount: Int) -> [Recipe] {
+        var additionalRecipes: [Recipe] = []
+        
+        let cuisineFileName = getCuisineFileName(cuisine)
+        logger.warning("🔄 LLM fallback: Loading additional recipes from \(cuisineFileName).json")
+        
+        guard let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json") else {
+            logger.error("❌ Could not find JSON file: \(cuisineFileName).json")
+            return additionalRecipes
+        }
+        
+        guard let data = try? Data(contentsOf: url) else {
+            logger.error("❌ Could not read data from: \(cuisineFileName).json")
+            return additionalRecipes
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            logger.error("❌ Could not parse JSON from: \(cuisineFileName).json")
+            return additionalRecipes
+        }
+        
+        guard let cuisines = json["cuisines"] as? [String: Any] else {
+            logger.error("❌ Could not find 'cuisines' key in JSON")
+            return additionalRecipes
+        }
+        
+        guard let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] else {
+            logger.error("❌ Could not find recipes for cuisine: \(cuisine.rawValue)")
+            return additionalRecipes
+        }
+        
+        // Take a mix of meat and vegetarian recipes to reach target count
+        var recipeCount = 0
+        for (index, recipeData) in recipes.enumerated() {
+            if recipeCount >= targetCount { break }
+            
+            guard let title = recipeData["title"] as? String,
+                  let ingredients = recipeData["ingredients"] as? [String],
+                  let instructions = recipeData["instructions"] as? String,
+                  let cookingTime = recipeData["cooking_time"] as? Int,
+                  let difficultyString = recipeData["difficulty"] as? String else {
+                logger.warning("⚠️ Skipping recipe \(index) - missing required fields")
+                continue
+            }
+            
+            let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+            let recipe = Recipe(
+                title: title,
+                cuisine: cuisine,
+                difficulty: difficulty,
+                prepTime: max(5, cookingTime / 3),
+                cookTime: max(10, cookingTime * 2 / 3),
+                servings: servings,
+                ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
+                winePairings: [],
+                dietaryNotes: [], // Will be inferred from ingredients
+                platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
+                chefNotes: "Traditional \(cuisine.rawValue) recipe from our database (LLM fallback)"
+            )
+            additionalRecipes.append(recipe)
+            recipeCount += 1
+        }
+        
+        logger.warning("✅ LLM fallback: Loaded \(additionalRecipes.count) additional recipes from \(cuisine.rawValue) database")
+        return additionalRecipes
     }
     
     /// Generates additional recipes to reach target count
@@ -413,8 +623,9 @@ class RecipeManager: ObservableObject {
             )
             return Array(recipes.prefix(targetCount))
         } catch {
-            logger.error("Error generating additional recipes from LLM: \(error)")
-            return []
+            logger.warning("LLM failed (likely quota exceeded) - falling back to database for additional recipes: \(error)")
+            // Fallback: Generate additional recipes from database instead
+            return generateAdditionalRecipesFromDatabase(cuisine: cuisine, servings: servings, targetCount: targetCount)
         }
     }
     
