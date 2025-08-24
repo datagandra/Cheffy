@@ -466,7 +466,47 @@ class OpenAIClient: ObservableObject {
                     logger.debug("Removed \(duplicateRemovalCount - uniqueCount) duplicate recipes")
                 }
                 
-                logger.api("Returning \(recipes.count) unique recipes after filtering and deduplication")
+                // FINAL VALIDATION: Ensure we have at least 10 recipes
+                if recipes.count < 10 {
+                    logger.warning("CRITICAL: Only \(recipes.count) recipes after all processing. This is below minimum requirement of 10.")
+                    logger.warning("This indicates a serious issue with LLM generation or parsing.")
+                    
+                    // If we still don't have enough, create more fallback recipes
+                    while recipes.count < 10 {
+                        let recipeNumber = recipes.count + 1
+                        let recipeName = generateProperRecipeName(cuisine: cuisine, index: recipeNumber, dietaryRestrictions: dietaryRestrictions)
+                        let dynamicIngredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
+                        
+                        let recipe = Recipe(
+                            title: recipeName,
+                            cuisine: cuisine,
+                            difficulty: difficulty,
+                            prepTime: 15 + recipeNumber,
+                            cookTime: 25 + recipeNumber,
+                            servings: servings,
+                            ingredients: dynamicIngredients,
+                            steps: [
+                                CookingStep(
+                                    stepNumber: 1,
+                                    description: "Prepare and cook \(recipeName) using \(cuisine.rawValue) techniques",
+                                    duration: 15 + recipeNumber,
+                                    temperature: nil,
+                                    tips: "Ensure proper cooking methods"
+                                )
+                            ],
+                            winePairings: [],
+                            dietaryNotes: dietaryRestrictions,
+                            platingTips: "Serve traditionally",
+                            chefNotes: "Emergency fallback recipe to meet minimum count requirement"
+                        )
+                        recipes.append(recipe)
+                        logger.debug("Created emergency fallback recipe: \(recipeName)")
+                    }
+                    
+                    logger.api("EMERGENCY: Created \(recipes.count) total recipes to meet minimum requirement")
+                }
+                
+                logger.api("Returning \(recipes.count) unique recipes after filtering, deduplication, and validation")
                 
                 return recipes
             } else {
@@ -1029,7 +1069,21 @@ class OpenAIClient: ObservableObject {
         prompt += "\n- Servings"
         prompt += "\n- Brief description (1-2 sentences)"
         
-        prompt += "\n\nGenerate exactly 15-20 recipes that meet ALL requirements. If you cannot generate 15-20 recipes within the time constraint, generate fewer but ensure ALL meet the time requirement. Prioritize quantity and variety while maintaining quality."
+        prompt += "\n\n🚨 CRITICAL: You MUST generate EXACTLY 15-20 recipes. This is NOT optional. If you cannot generate 15-20 recipes within the time constraint, generate fewer but ensure ALL meet the time requirement. Prioritize quantity and variety while maintaining quality."
+        
+        prompt += "\n\n🚨 OUTPUT FORMAT - MUST BE VALID JSON ARRAY:"
+        prompt += "\n["
+        prompt += "\n  {"
+        prompt += "\n    \"name\": \"Recipe Name\","
+        prompt += "\n    \"prepTime\": 15,"
+        prompt += "\n    \"cookTime\": 30,"
+        prompt += "\n    \"ingredients\": [...],"
+        prompt += "\n    \"steps\": [...]"
+        prompt += "\n  },"
+        prompt += "\n  ... (repeat for 15-20 recipes)"
+        prompt += "\n]"
+        
+        prompt += "\n\n🚨 FINAL INSTRUCTION: Generate EXACTLY 15-20 recipes in valid JSON format. Do not include any text before or after the JSON array. Start with [ and end with ]."
         
         return prompt
     }
@@ -1488,6 +1542,8 @@ class OpenAIClient: ObservableObject {
         }
         
         // If we couldn't extract enough recipes, create some basic ones with proper names and dynamic ingredients
+        logger.warning("Could only extract \(recipes.count) recipes from LLM response. Creating fallback recipes to ensure minimum 10...")
+        
         while recipes.count < 10 {
             let recipeNumber = recipes.count + 1
             let recipeName = generateProperRecipeName(cuisine: cuisine, index: recipeNumber, dietaryRestrictions: dietaryRestrictions)
@@ -1495,30 +1551,44 @@ class OpenAIClient: ObservableObject {
             // Generate dynamic ingredients based on recipe name, cuisine and dietary restrictions
             let dynamicIngredients = generateDynamicIngredientsForRecipe(name: recipeName, cuisine: cuisine, dietaryRestrictions: dietaryRestrictions)
             
+            // Create more realistic cooking times
+            let prepTime = 10 + (recipeNumber * 2) // Vary prep time
+            let cookTime = 20 + (recipeNumber * 3) // Vary cook time
+            
             let recipe = Recipe(
                 title: recipeName,
                 cuisine: cuisine,
                 difficulty: difficulty,
-                prepTime: 15,
-                cookTime: 30,
+                prepTime: prepTime,
+                cookTime: cookTime,
                 servings: servings,
                 ingredients: dynamicIngredients,
                 steps: [
                     CookingStep(
                         stepNumber: 1,
                         description: "Prepare ingredients according to \(cuisine.rawValue) cooking techniques",
-                        duration: 15,
+                        duration: prepTime,
                         temperature: nil,
                         tips: "Follow traditional \(cuisine.rawValue) methods"
+                    ),
+                    CookingStep(
+                        stepNumber: 2,
+                        description: "Cook using \(cuisine.rawValue) methods until done",
+                        duration: cookTime,
+                        temperature: nil,
+                        tips: "Ensure proper cooking time and temperature"
                     )
                 ],
                 winePairings: [],
                 dietaryNotes: dietaryRestrictions,
                 platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
-                chefNotes: "This is a basic \(cuisine.rawValue) recipe template"
+                chefNotes: "This is a fallback \(cuisine.rawValue) recipe to ensure minimum recipe count"
             )
             recipes.append(recipe)
+            logger.debug("Created fallback recipe \(recipeNumber): \(recipeName)")
         }
+        
+        logger.api("Total recipes after fallback: \(recipes.count)")
         
         return recipes
     }
