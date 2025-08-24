@@ -556,6 +556,67 @@ class OpenAIClient: ObservableObject {
         return cleanName.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
+    /// Determines if a text section is descriptive content rather than an actual recipe
+    private func isDescriptiveText(_ text: String) -> Bool {
+        let lowercasedText = text.lowercased()
+        
+        // Check for descriptive phrases that indicate this is not a recipe
+        let descriptivePhrases = [
+            "here are",
+            "here are 10",
+            "here are 5",
+            "here are 15",
+            "popular recipes",
+            "with a medium difficulty level",
+            "focusing on authenticity",
+            "reflecting current culinary trends",
+            "using authentic names",
+            "focusing on authentic names",
+            "realistic timings",
+            "current popularity",
+            "culinary significance",
+            "traditional favorites"
+        ]
+        
+        // If any descriptive phrase is found, consider it descriptive text
+        for phrase in descriptivePhrases {
+            if lowercasedText.contains(phrase) {
+                return true
+            }
+        }
+        
+        // Check if the text is too long and doesn't contain recipe-like content
+        if text.count > 200 && !containsRecipeContent(text) {
+            return true
+        }
+        
+        return false
+    }
+    
+    /// Checks if text contains recipe-like content (ingredients, steps, etc.)
+    private func containsRecipeContent(_ text: String) -> Bool {
+        let lowercasedText = text.lowercased()
+        
+        let recipeIndicators = [
+            "ingredients:",
+            "ingredients",
+            "steps:",
+            "step 1:",
+            "step 2:",
+            "preparation:",
+            "cooking:",
+            "serves",
+            "servings:",
+            "prep time:",
+            "cook time:",
+            "total time:",
+            "calories:",
+            "nutrition:"
+        ]
+        
+        return recipeIndicators.contains { lowercasedText.contains($0) }
+    }
+    
     // MARK: - Multi-Cuisine Recipe Generation
     
     /// Generates popular recipes from multiple cuisines when "Any Cuisine" is selected
@@ -923,8 +984,10 @@ class OpenAIClient: ObservableObject {
         - Use ONLY authentic, specific recipe names that food enthusiasts would recognize
         - Examples: "Coq au Vin", "Pad Thai", "Chicken Tikka Masala", "Osso Buco alla Milanese"
         - NEVER use generic names like "Italian Recipe", "French Dish", or "Asian Food"
+        - NEVER include descriptive text like "Here are 10 popular recipes" or "focusing on authenticity"
         - Research current culinary trends and traditional favorites for authentic names
         - Each recipe name must be specific and recognizable to culinary experts
+        - Output ONLY recipe names with their details, no introductory or descriptive text
         """
         
         if dietaryRestrictions.isEmpty {
@@ -972,6 +1035,8 @@ class OpenAIClient: ObservableObject {
     ) -> String {
         var prompt = """
         Create diverse \(cuisine.rawValue) recipes with \(difficulty.rawValue) difficulty level, ranked by CURRENT popularity and culinary significance. Research current culinary trends and popular dishes in \(cuisine.rawValue) cuisine. Generate as many high-quality recipes as possible (aim for 10-15 recipes).
+        
+        🚨 CRITICAL: Output ONLY recipe names and details. NO descriptive text like "Here are 10 popular recipes" or "focusing on authenticity". Start directly with recipe names.
         
         🚨 CRITICAL DIETARY RESTRICTIONS - ABSOLUTELY NO EXCEPTIONS:
         
@@ -1394,9 +1459,14 @@ class OpenAIClient: ObservableObject {
         var recipes: [Recipe] = []
         
         for (index, section) in sections.enumerated() {
-                            // No limit on number of recipes
-            
             let trimmedSection = section.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            // Skip descriptive text sections that don't contain actual recipe names
+            if isDescriptiveText(trimmedSection) {
+                logger.debug("Skipping descriptive text section: \(trimmedSection.prefix(100))...")
+                continue
+            }
+            
             if trimmedSection.count > 50 { // Only process substantial sections
                 do {
                     let recipe = try createRecipeFromText(trimmedSection, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
