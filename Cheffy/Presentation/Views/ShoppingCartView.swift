@@ -345,14 +345,7 @@ struct AddItemView: View {
     }
 }
 
-// MARK: - Extensions
-extension ShoppingCartService {
-    func saveCartItems() {
-        if let encoded = try? JSONEncoder().encode(cartItems) {
-            userDefaults.set(encoded, forKey: cartKey)
-        }
-    }
-}
+
 
 #Preview {
     ShoppingCartView()

@@ -59,6 +59,7 @@ class NetworkManager: ObservableObject {
         }
         
         var lastError: Error?
+        var currentRetryDelay = retryDelay
         
         for attempt in 1...retryCount {
             do {
@@ -74,10 +75,10 @@ class NetworkManager: ObservableObject {
                     )
                     
                     // Wait before retry
-                    try await Task.sleep(nanoseconds: UInt64(retryDelay * 1_000_000_000))
+                    try await Task.sleep(nanoseconds: UInt64(currentRetryDelay * 1_000_000_000))
                     
                     // Increase delay for next retry (exponential backoff)
-                    retryDelay *= 1.5
+                    currentRetryDelay *= 1.5
                 }
             }
         }

@@ -201,8 +201,3 @@ extension TextToSpeechService: AVSpeechSynthesizerDelegate {
     }
 }
 
-// MARK: - Supporting Types
-struct TextComponent {
-    let text: String
-    let range: NSRange
-}

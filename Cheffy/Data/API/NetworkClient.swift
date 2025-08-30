@@ -2,38 +2,9 @@ import Foundation
 import Network
 import os.log
 
-// MARK: - Network Errors
-enum NetworkError: LocalizedError {
-    case noInternetConnection
-    case timeout
-    case invalidURL
-    case invalidResponse
-    case decodingError(Error)
-    case serverError(Int)
-    case clientError(Int)
-    case unknown(Error)
-    
-    var errorDescription: String? {
-        switch self {
-        case .noInternetConnection:
-            return "No internet connection available"
-        case .timeout:
-            return "Request timed out"
-        case .invalidURL:
-            return "Invalid URL"
-        case .invalidResponse:
-            return "Invalid response from server"
-        case .decodingError(let error):
-            return "Failed to decode response: \(error.localizedDescription)"
-        case .serverError(let code):
-            return "Server error: \(code)"
-        case .clientError(let code):
-            return "Client error: \(code)"
-        case .unknown(let error):
-            return "Unknown error: \(error.localizedDescription)"
-        }
-    }
-}
+
+
+
 
 // MARK: - Network Request
 struct NetworkRequest {
@@ -124,7 +95,7 @@ class NetworkClientImpl: NetworkClient {
         // Check connectivity first
         guard isConnected() else {
             os_log("Network request failed - no internet connection", log: .default, type: .error)
-            throw NetworkError.noInternetConnection
+            throw NetworkError.noConnection
         }
         
         // Check cache first for GET requests
@@ -194,7 +165,7 @@ class NetworkClientImpl: NetworkClient {
                 
             case 400...499:
                 os_log("Client error %{public}d for %{public}@", log: .default, type: .error, httpResponse.statusCode, request.url.absoluteString)
-                throw NetworkError.clientError(httpResponse.statusCode)
+                throw NetworkError.httpError(httpResponse.statusCode)
                 
             case 500...599:
                 os_log("Server error %{public}d for %{public}@", log: .default, type: .error, httpResponse.statusCode, request.url.absoluteString)
@@ -202,7 +173,7 @@ class NetworkClientImpl: NetworkClient {
                 
             default:
                 os_log("Unknown status code %{public}d for %{public}@", log: .default, type: .error, httpResponse.statusCode, request.url.absoluteString)
-                throw NetworkError.unknown(NetworkError.invalidResponse)
+                throw NetworkError.unknown
             }
             
         } catch let error as NetworkError {
@@ -213,7 +184,7 @@ class NetworkClientImpl: NetworkClient {
                 throw NetworkError.timeout
             } else {
                 os_log("Network error for %{public}@: %{public}@", log: .default, type: .error, request.url.absoluteString, error.localizedDescription)
-                throw NetworkError.unknown(error)
+                throw NetworkError.unknown
             }
         }
     }
@@ -231,7 +202,7 @@ class NetworkClientImpl: NetworkClient {
                 // Don't retry certain errors
                 if let networkError = error as? NetworkError {
                     switch networkError {
-                    case .noInternetConnection, .clientError, .decodingError:
+                    case .noConnection, .httpError, .decodingError:
                         throw networkError
                     default:
                         break
@@ -251,7 +222,7 @@ class NetworkClientImpl: NetworkClient {
             }
         }
         
-        throw lastError ?? NetworkError.unknown(NetworkError.invalidResponse)
+        throw lastError ?? NetworkError.unknown
     }
     
     // MARK: - Caching

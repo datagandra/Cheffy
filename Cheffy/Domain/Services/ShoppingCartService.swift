@@ -9,7 +9,7 @@ struct ShoppingCartItem: Identifiable, Codable {
     let unit: String
     let notes: String?
     let category: IngredientCategory
-    let isChecked: Bool
+    var isChecked: Bool
     let addedFromRecipe: String?
     let addedDate: Date
     
@@ -85,6 +85,7 @@ enum IngredientCategory: String, CaseIterable, Codable {
 class ShoppingCartService: ObservableObject {
     @Published var cartItems: [ShoppingCartItem] = []
     @Published var isShowingCart = false
+    @Published var selectedCategory: IngredientCategory = .other
     
     private let userDefaults = UserDefaults.standard
     private let cartKey = "ShoppingCartItems"
@@ -154,9 +155,38 @@ class ShoppingCartService: ObservableObject {
         saveCartItems()
     }
     
+    func addItem(_ item: ShoppingCartItem) {
+        cartItems.append(item)
+        saveCartItems()
+    }
+    
     func clearCheckedItems() {
         cartItems.removeAll { $0.isChecked }
         saveCartItems()
+    }
+    
+    // MARK: - Computed Properties
+    var checkedItems: Int {
+        cartItems.filter { $0.isChecked }.count
+    }
+    
+    var totalItems: Int {
+        cartItems.count
+    }
+    
+    var sortedCategories: [IngredientCategory] {
+        Array(Set(cartItems.map { $0.category })).sorted { $0.rawValue < $1.rawValue }
+    }
+    
+    var itemsByCategory: [IngredientCategory: [ShoppingCartItem]] {
+        Dictionary(grouping: cartItems, by: { $0.category })
+    }
+    
+    // MARK: - Persistence
+    func saveCartItems() {
+        if let encoded = try? JSONEncoder().encode(cartItems) {
+            userDefaults.set(encoded, forKey: cartKey)
+        }
     }
     
     // MARK: - Categorization
@@ -220,12 +250,7 @@ class ShoppingCartService: ObservableObject {
         return .other
     }
     
-    // MARK: - Persistence
-    private func saveCartItems() {
-        if let encoded = try? JSONEncoder().encode(cartItems) {
-            userDefaults.set(encoded, forKey: cartKey)
-        }
-    }
+
     
     private func loadCartItems() {
         if let data = userDefaults.data(forKey: cartKey),
@@ -234,26 +259,5 @@ class ShoppingCartService: ObservableObject {
         }
     }
     
-    // MARK: - Computed Properties
-    var totalItems: Int {
-        cartItems.count
-    }
-    
-    var checkedItems: Int {
-        cartItems.filter { $0.isChecked }.count
-    }
-    
-    var uncheckedItems: Int {
-        totalItems - checkedItems
-    }
-    
-    var itemsByCategory: [IngredientCategory: [ShoppingCartItem]] {
-        Dictionary(grouping: cartItems) { $0.category }
-    }
-    
-    var sortedCategories: [IngredientCategory] {
-        IngredientCategory.allCases.filter { category in
-            cartItems.contains { $0.category == category }
-        }
-    }
+
 } 

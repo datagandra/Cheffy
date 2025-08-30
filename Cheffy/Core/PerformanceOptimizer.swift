@@ -1,12 +1,11 @@
 import Foundation
 import UIKit
-import os.log
 
 // MARK: - Performance Optimizer
 class PerformanceOptimizer: ObservableObject {
     static let shared = PerformanceOptimizer()
     
-    private let logger = Logger(subsystem: "com.cheffy.app", category: "Performance")
+    private let logger = Logger.shared
     private let errorReporting = ErrorReporting.shared
     private var performanceMetrics: [String: PerformanceMetric] = [:]
     private var memoryWarnings = 0
@@ -236,12 +235,12 @@ class PerformanceOptimizer: ObservableObject {
     func optimizeUIUpdates() {
         // Reduce animation duration in performance mode
         if isPerformanceMode {
-            UIView.setAnimationDuration(0.1) // Faster animations
+            // Use modern animation API instead of deprecated setAnimationDuration
         }
     }
     
     func shouldUseLazyLoading() -> Bool {
-        return isPerformanceMode || currentMemoryUsage > getMemoryThreshold() * 0.7
+        return isPerformanceMode || currentMemoryUsage > UInt64(Double(getMemoryThreshold()) * 0.7)
     }
     
     // MARK: - Utility Methods
@@ -324,22 +323,4 @@ struct PerformanceReport {
     let activeOperations: [[String: Any]]
 }
 
-// MARK: - Performance Optimizer Extensions
-
-extension PerformanceOptimizer: PerformanceMonitoringProtocol {
-    func startTimer(for operation: String) {
-        startTimer(for: operation)
-    }
-    
-    func endTimer(for operation: String) {
-        endTimer(for: operation)
-    }
-    
-    func trackMemoryUsage() {
-        trackMemoryUsage()
-    }
-    
-    func trackCPUUsage() {
-        trackCPUUsage()
-    }
-} 
+ 

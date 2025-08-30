@@ -14,7 +14,7 @@ struct KindleReadingView: View {
     @State private var showControls = true
     
     // Auto-scroll
-    @State private var scrollViewReader: ScrollViewReader?
+
     @State private var autoScrollTimer: Timer?
     
     // Content sections for navigation
@@ -104,7 +104,7 @@ struct KindleReadingView: View {
                             .padding(.bottom, 100) // Space for controls
                         }
                         .onAppear {
-                            scrollViewReader = proxy
+
                         }
                     }
                     
@@ -123,7 +123,7 @@ struct KindleReadingView: View {
         }
         .preferredColorScheme(.light) // Kindle-like light mode
         .onReceive(speechService.$currentCharacterIndex) { characterIndex in
-            autoScrollToCurrentSection()
+
         }
         .onAppear {
             setupAutoHideTimer()
@@ -331,16 +331,7 @@ struct KindleReadingView: View {
         }
     }
     
-    private func autoScrollToCurrentSection() {
-        guard let proxy = scrollViewReader, speechService.isPlaying else { return }
-        
-        // Calculate which section we're currently in based on character index
-        let currentSection = getCurrentSection()
-        
-        withAnimation(.easeInOut(duration: 0.5)) {
-            proxy.scrollTo(currentSection.id, anchor: .top)
-        }
-    }
+
     
     private func getCurrentSection() -> ReadingSection {
         // Simplified logic - in reality, you'd track character positions more precisely

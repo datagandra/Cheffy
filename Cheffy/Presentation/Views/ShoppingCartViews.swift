@@ -76,7 +76,7 @@ struct InlineShoppingCartView: View {
                 Spacer()
                 
                 VStack(alignment: .trailing, spacing: 4) {
-                    Text("\(shoppingCartService.checkedItemsCount)")
+                    Text("\(shoppingCartService.checkedItems)")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.green)

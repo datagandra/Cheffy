@@ -96,7 +96,7 @@ struct LocalDatabaseTestView: View {
             testResults.append("\n📊 Testing recipe loading...")
         }
         
-        let recipes = recipeService.getAllRecipes()
+        let recipes = recipeService.recipes
         
         await MainActor.run {
             testResults.append("📈 Total recipes loaded: \(recipes.count)")
@@ -115,9 +115,9 @@ struct LocalDatabaseTestView: View {
             testResults.append("\n🔍 Testing filtering...")
         }
         
-        let vegetarianRecipes = recipeService.getRecipes(for: ["vegetarian"])
-        let veganRecipes = recipeService.getRecipes(for: ["vegan"])
-        let glutenFreeRecipes = recipeService.getRecipes(for: ["gluten-free"])
+        let vegetarianRecipes = recipeService.getRecipes(for: [.vegetarian])
+        let veganRecipes = recipeService.getRecipes(for: [.vegan])
+        let glutenFreeRecipes = recipeService.getRecipes(for: [.glutenFree])
         
         await MainActor.run {
             testResults.append("🥬 Vegetarian recipes: \(vegetarianRecipes.count)")
@@ -147,8 +147,8 @@ struct LocalDatabaseTestView: View {
             testResults.append("\n🇮🇳 Testing specific cuisine...")
         }
         
-        let indianRecipes = recipeService.getAllRecipes().filter { $0.cuisine == .indian }
-        let italianRecipes = recipeService.getAllRecipes().filter { $0.cuisine == .italian }
+        let indianRecipes = recipeService.recipes.filter { $0.cuisine == .indian }
+        let italianRecipes = recipeService.recipes.filter { $0.cuisine == .italian }
         
         await MainActor.run {
             testResults.append("🇮🇳 Indian recipes: \(indianRecipes.count)")

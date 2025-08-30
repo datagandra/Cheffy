@@ -21,7 +21,7 @@ struct RecipeDiscoveryView: View {
         var recipes = recipeDatabase.recipes
         
         // Filter by cuisine
-        if selectedCuisine != .other {
+        if selectedCuisine != .any {
             recipes = recipes.filter { $0.cuisine == selectedCuisine }
         }
         

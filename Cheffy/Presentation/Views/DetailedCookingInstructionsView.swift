@@ -1032,17 +1032,7 @@ struct InlineKindleReadingView: View {
     }
 }
 
-// MARK: - Supporting Types for Kindle View
-struct ReadingSection: Identifiable {
-    let id: String
-    let title: String
-    let content: String
-    let type: SectionType
-    
-    enum SectionType {
-        case title, overview, ingredients, instructions, notes
-    }
-}
+
 
 // MARK: - Kindle Color Extensions
 extension Color {

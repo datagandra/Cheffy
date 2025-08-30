@@ -1,6 +1,7 @@
 import Foundation
 import Network
 import os.log
+import KeychainAccess
 
 /// Diagnostic service for troubleshooting LLM connection issues
 class LLMDiagnosticService: ObservableObject {

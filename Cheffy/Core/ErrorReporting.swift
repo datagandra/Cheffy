@@ -1,11 +1,12 @@
 import Foundation
+import UIKit
 import os.log
 
 // MARK: - Error Reporting System
 class ErrorReporting {
     static let shared = ErrorReporting()
     
-    private let logger = Logger(subsystem: "com.cheffy.app", category: "ErrorReporting")
+    private let logger = Logger.shared
     private var crashHandler: CrashHandler?
     private var analyticsService: AnalyticsServiceProtocol?
     
@@ -64,7 +65,7 @@ class ErrorReporting {
     // MARK: - Signal Handling
     
     private func handleSignal(_ signal: Int32, name: String) {
-        let context = [
+        let context: [String: Any] = [
             "signal": signal,
             "signal_name": name,
             "timestamp": Date().timeIntervalSince1970,
@@ -88,7 +89,7 @@ class ErrorReporting {
     // MARK: - Exception Handling
     
     private func handleUncaughtException(_ exception: NSException) {
-        let context = [
+        let context: [String: Any] = [
             "exception_name": exception.name.rawValue,
             "exception_reason": exception.reason ?? "Unknown",
             "call_stack": exception.callStackSymbols,
@@ -110,7 +111,7 @@ class ErrorReporting {
     // MARK: - Error Reporting
     
     func reportError(_ error: Error, context: String, severity: ErrorSeverity = .medium) {
-        let errorInfo = [
+        let errorInfo: [String: Any] = [
             "error_domain": (error as NSError).domain,
             "error_code": (error as NSError).code,
             "error_description": error.localizedDescription,
@@ -133,7 +134,7 @@ class ErrorReporting {
     }
     
     func reportWarning(_ message: String, context: String) {
-        let warningInfo = [
+        let warningInfo: [String: Any] = [
             "message": message,
             "context": context,
             "timestamp": Date().timeIntervalSince1970,
@@ -147,7 +148,7 @@ class ErrorReporting {
     // MARK: - Performance Monitoring
     
     func reportPerformanceIssue(_ issue: String, metrics: [String: Any]) {
-        let performanceInfo = [
+        let performanceInfo: [String: Any] = [
             "issue": issue,
             "metrics": metrics,
             "timestamp": Date().timeIntervalSince1970,
@@ -162,7 +163,7 @@ class ErrorReporting {
     // MARK: - Memory Issues
     
     func reportMemoryWarning() {
-        let memoryInfo = [
+        let memoryInfo: [String: Any] = [
             "type": "memory_warning",
             "timestamp": Date().timeIntervalSince1970,
             "available_memory": ProcessInfo.processInfo.physicalMemory
@@ -176,7 +177,7 @@ class ErrorReporting {
     // MARK: - Network Issues
     
     func reportNetworkError(_ error: Error, endpoint: String) {
-        let networkInfo = [
+        let networkInfo: [String: Any] = [
             "error_domain": (error as NSError).domain,
             "error_code": (error as NSError).code,
             "endpoint": endpoint,
@@ -192,7 +193,7 @@ class ErrorReporting {
     // MARK: - File Operations
     
     private func saveCrashReport(context: [String: Any], type: String) {
-        let report = [
+        let report: [String: Any] = [
             "type": type,
             "context": context,
             "device_info": getDeviceInfo(),
@@ -266,7 +267,7 @@ class ErrorReporting {
     // MARK: - User Notifications
     
     private func showUserNotification(for error: Error, context: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             // Show a user-friendly error message
             // This could be integrated with your UI system
             logger.info("Showing user notification for critical error")
