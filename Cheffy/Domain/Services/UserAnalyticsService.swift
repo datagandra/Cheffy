@@ -35,6 +35,7 @@ protocol UserAnalyticsServiceProtocol: ObservableObject {
     func getAggregatedStats() async throws -> [String: Any]
     
     // Privacy & Settings
+    func setAnalyticsEnabled(_ enabled: Bool)
     func clearUserData() async throws
     func exportUserData() async throws -> Data
 }
@@ -532,6 +533,25 @@ class UserAnalyticsService: @preconcurrency UserAnalyticsServiceProtocol {
         userDefaults.removeObject(forKey: userStatsKey)
         userDefaults.removeObject(forKey: lastSyncKey)
     }
+    // MARK: - Analytics Settings
+    
+    func setAnalyticsEnabled(_ enabled: Bool) {
+        isAnalyticsEnabled = enabled
+        
+        // Update user profile if available
+        if var profile = currentUserProfile {
+            profile.isAnalyticsEnabled = enabled
+            currentUserProfile = profile
+            
+            // Save to UserDefaults
+            if let profileData = try? JSONEncoder().encode(profile) {
+                userDefaults.set(profileData, forKey: userProfileKey)
+            }
+        }
+        
+        // Save analytics setting to UserDefaults
+        userDefaults.set(enabled, forKey: "isAnalyticsEnabled")
+    }
 }
 
 // MARK: - Mock Implementation for Testing
@@ -562,6 +582,10 @@ class MockUserAnalyticsService: UserAnalyticsServiceProtocol {
     
     func toggleAnalytics() async throws {
         isAnalyticsEnabled.toggle()
+    }
+    
+    func setAnalyticsEnabled(_ enabled: Bool) {
+        isAnalyticsEnabled = enabled
     }
     
     func logRecipeView(_ recipe: Recipe) async {}

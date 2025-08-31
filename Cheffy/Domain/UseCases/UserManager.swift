@@ -160,4 +160,25 @@ class UserManager: ObservableObject {
         // Default to 2 servings since we don't track household size anymore
         return 2
     }
+    
+    // MARK: - Analytics Preferences
+    
+    func updateAnalyticsPreference(enabled: Bool) {
+        guard var user = currentUser else { return }
+        
+        // Create updated user profile with new analytics preference
+        let updatedUser = UserProfile(
+            id: user.id,
+            userID: user.userID,
+            deviceType: user.deviceType,
+            preferredCuisines: user.preferredCuisines,
+            dietaryPreferences: user.dietaryPreferences,
+            appVersion: user.appVersion,
+            createdAt: user.createdAt,
+            lastUpdatedAt: Date(),
+            isAnalyticsEnabled: enabled
+        )
+        
+        updateUserProfile(updatedUser)
+    }
 } 

@@ -55,15 +55,6 @@ struct RecipeGeneratorView: View {
                 // Generate Button
                 generateButton
                 
-                // Cache Status Display
-                cacheStatusDisplay
-                
-                // Cache Test Button (for debugging)
-                cacheTestButton
-                
-                // Force Fresh Generation Button
-                forceFreshGenerationButton
-                
                 // Results Section
                 resultsSection
             }
@@ -75,7 +66,6 @@ struct RecipeGeneratorView: View {
             await refreshData()
         }
         .accessibilityElement(children: .contain)
-
         .onAppear {
             initializeUserPreferences()
         }
@@ -307,8 +297,6 @@ struct RecipeGeneratorView: View {
         }
     }
     
-
-    
     private var dietaryRestrictions: some View {
         VStack(alignment: .leading, spacing: 12) {
             Label("Dietary Restrictions", systemImage: "leaf")
@@ -349,7 +337,6 @@ struct RecipeGeneratorView: View {
                                     .stroke(selectedDietaryRestrictions.contains(restriction) ? Color.blue : Color(.systemGray4), lineWidth: 1)
                             )
                         }
-
                         .accessibilityLabel("\(restriction.rawValue) dietary restriction")
                         .accessibilityAddTraits(selectedDietaryRestrictions.contains(restriction) ? .isSelected : [])
                     }
@@ -365,29 +352,31 @@ struct RecipeGeneratorView: View {
         Button(action: {
             generateRecipe()
         }) {
-            HStack {
+            HStack(spacing: 12) {
                 if recipeManager.isLoading {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .white))
                         .scaleEffect(1.2)
                 } else {
                     Image(systemName: "wand.and.stars")
-                        .font(.headline)
+                        .font(.title2)
+                        .foregroundColor(.white)
                 }
                 
                 Text(generateButtonTitle)
-                    .font(.headline)
-                    .fontWeight(.semibold)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 56)
+            .frame(height: 60)
             .background(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: 20)
                     .fill(
                         recipeManager.isLoading ? Color.gray : Color.orange
                     )
+                    .shadow(color: .orange.opacity(0.3), radius: 8, x: 0, y: 4)
             )
-            .foregroundColor(.white)
         }
         .buttonStyle(ScaleButtonStyle())
         .disabled(recipeManager.isLoading)
@@ -407,18 +396,6 @@ struct RecipeGeneratorView: View {
     
     private var resultsSection: some View {
         VStack(spacing: 16) {
-            // Cache Status Indicator
-            if recipeManager.isUsingCachedData {
-                cacheStatusIndicator
-            }
-            
-            // Local Database Indicator
-            if recipeManager.isUsingCachedData && recipeManager.error == nil {
-                localDatabaseIndicator
-            }
-            
-
-            
             if let error = recipeManager.error {
                 ErrorView(error: error)
             }
@@ -427,32 +404,9 @@ struct RecipeGeneratorView: View {
                 SingleRecipeView(recipe: recipe)
             }
             
-            // Show message when no recipes match dietary restrictions
+            // Show friendly empty state when no recipes match dietary restrictions
             if !selectedDietaryRestrictions.isEmpty && recipeManager.popularRecipes.isEmpty && !recipeManager.isLoading && recipeManager.error == nil {
-                VStack(spacing: 16) {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(.orange)
-                    
-                    Text("No Recipes Found")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primary)
-                    
-                    Text("No \(selectedCuisine.rawValue) recipes match your selected dietary restrictions: \(selectedDietaryRestrictions.map { $0.rawValue }.joined(separator: ", "))")
-                        .font(.body)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.center)
-                    
-                    Text("Please modify your dietary restrictions or try a different cuisine to find suitable recipes.")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.center)
-                }
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(12)
-                .padding(.horizontal)
+                emptyStateView
             }
             
             if !recipeManager.popularRecipes.isEmpty {
@@ -462,7 +416,7 @@ struct RecipeGeneratorView: View {
                 Button(action: {
                     showIngredientAnalysis = true
                 }) {
-                    HStack {
+                    HStack(spacing: 8) {
                         Image(systemName: "doc.text.magnifyingglass")
                             .font(.headline)
                         Text("Show Ingredient Analysis")
@@ -486,143 +440,72 @@ struct RecipeGeneratorView: View {
         }
     }
     
-    // MARK: - Cache Status Indicator
+    // MARK: - Empty State View
     
-    private var cacheStatusIndicator: some View {
-        HStack {
-            Image(systemName: "externaldrive.fill")
-                .foregroundColor(.green)
-            Text("Using cached data")
-                .font(.caption)
-                .foregroundColor(.green)
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 6)
-        .background(Color.green.opacity(0.1))
-        .cornerRadius(8)
-    }
-    
-    // MARK: - Local Database Indicator
-    
-    private var localDatabaseIndicator: some View {
-        HStack {
-            Image(systemName: "folder.fill")
-                .foregroundColor(.blue)
-            Text("Using local recipe database")
-                .font(.caption)
-                .foregroundColor(.blue)
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 6)
-        .background(Color.blue.opacity(0.1))
-        .cornerRadius(8)
-    }
-    
-
-    
-    // MARK: - Cache Test Button
-    
-    private var cacheTestButton: some View {
-        Button(action: {
-            logger.debug("Testing cache functionality...")
-            logger.debug("Current cache stats:")
-            logger.debug("   - Cached recipes: \(recipeManager.getCachedRecipesCount())")
-            logger.debug("   - Has cached recipes: \(recipeManager.hasCachedRecipes())")
+    private var emptyStateView: some View {
+        VStack(spacing: 20) {
+            // Friendly illustration
+            Image(systemName: "fork.knife.circle")
+                .font(.system(size: 60))
+                .foregroundColor(.orange)
+                .accessibilityHidden(true)
             
-            if recipeManager.hasCachedRecipes() {
-                recipeManager.loadAllCachedRecipes()
-                logger.debug("Loaded cached recipes successfully")
-            } else {
-                logger.debug("No cached recipes available")
-            }
-        }) {
-            HStack {
-                Image(systemName: "externaldrive.arrow.down")
-                Text("Test Cache (\(recipeManager.getCachedRecipesCount()) recipes)")
-            }
-            .font(.caption)
-            .foregroundColor(.blue)
-        }
-        .padding(.horizontal)
-    }
-    
-    private var forceFreshGenerationButton: some View {
-        Button(action: {
-            Task {
-                // Clear cache and force fresh LLM generation
-                recipeManager.clearRecipeCache()
-                await recipeManager.generatePopularRecipes(
-                    cuisine: selectedCuisine,
-                    difficulty: .medium,
-                    dietaryRestrictions: Array(selectedDietaryRestrictions),
-                    maxTime: selectedCookingTime == .any ? nil : selectedCookingTime.maxTotalTime,
-                    servings: selectedServings
-                )
-            }
-        }) {
-            HStack {
-                Image(systemName: "arrow.clockwise.circle.fill")
-                Text("🔄 Force Fresh Generation")
-            }
-            .font(.caption)
-            .foregroundColor(.white)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
-            .background(Color.orange)
-            .cornerRadius(8)
-        }
-        .padding(.horizontal)
-    }
-    
-    // MARK: - Cache Status Display
-    
-    private var cacheStatusDisplay: some View {
-        VStack(spacing: 8) {
-            HStack {
-                Image(systemName: "externaldrive.fill")
-                    .foregroundColor(.green)
-                Text("Cache Status")
-                    .font(.caption)
-                    .fontWeight(.medium)
-                Spacer()
-                Text("\(recipeManager.getCachedRecipesCount()) recipes")
-                    .font(.caption)
+            VStack(spacing: 12) {
+                Text("No Recipes Found")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                
+                Text("We couldn't find any \(selectedCuisine.rawValue) recipes that match your dietary preferences.")
+                    .font(.body)
                     .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
             }
             
-            if recipeManager.isUsingCachedData {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                    Text("Using cached data")
-                        .font(.caption)
-                        .foregroundColor(.green)
+            // Quick action buttons
+            VStack(spacing: 12) {
+                Button(action: {
+                    selectedCuisine = .any
+                    generateRecipe()
+                }) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "globe")
+                        Text("Try Different Cuisine")
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
                 }
-            } else {
-                HStack {
-                    Image(systemName: "arrow.up.circle.fill")
-                        .foregroundColor(.orange)
-                    Text("Connecting to LLM")
-                        .font(.caption)
-                        .foregroundColor(.orange)
-                }
-            }
-            
-            // Show dietary restrictions change notice
-            if !recipeManager.isUsingCachedData && !selectedDietaryRestrictions.isEmpty {
-                HStack {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundColor(.yellow)
-                    Text("Fresh recipe for dietary restrictions")
-                        .font(.caption)
-                        .foregroundColor(.yellow)
+                
+                Button(action: {
+                    selectedDietaryRestrictions = [.nonVegetarian]
+                    generateRecipe()
+                }) {
+                    HStack(spacing: 8) {
+                        Image(systemName: "leaf")
+                        Text("Relax Dietary Restrictions")
+                    }
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 44)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
                 }
             }
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(Color(.systemGray6))
-        .cornerRadius(8)
+        .padding(24)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.systemGray6))
+        )
+        .padding(.horizontal)
     }
     
     // MARK: - Helper Methods
@@ -805,23 +688,46 @@ struct ErrorView: View {
     let error: String
     
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle.fill")
-                .font(.title2)
+                .font(.system(size: 40))
                 .foregroundColor(.red)
+                .accessibilityHidden(true)
             
-            Text("Error")
-                .font(.headline)
-                .foregroundColor(.red)
+            VStack(spacing: 8) {
+                Text("Something went wrong")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                
+                Text(error)
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+            }
             
-            Text(error)
-                .font(.body)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
+            Button(action: {
+                // Retry action could be added here
+            }) {
+                HStack(spacing: 8) {
+                    Image(systemName: "arrow.clockwise")
+                    Text("Try Again")
+                }
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(12)
+            }
         }
-        .padding()
-        .background(Color.red.opacity(0.1))
-        .cornerRadius(16)
+        .padding(24)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color.red.opacity(0.05))
+        )
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Error: \(error)")
     }
@@ -890,7 +796,7 @@ struct SingleRecipeView: View {
     private var recipeHeader: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text(recipe.name)
+                Text(recipe.title)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
@@ -1051,10 +957,6 @@ struct SingleRecipeView: View {
             }
         }
     }
-    
-
-    
-
 }
 
 struct PopularRecipesView: View {
@@ -1067,8 +969,8 @@ struct PopularRecipesView: View {
                 .fontWeight(.bold)
             
             LazyVStack(spacing: 12) {
-                            ForEach(Array(recipes.enumerated()), id: \.element.id) { index, recipe in
-                PopularRecipeRow(index: index, recipe: recipe)
+                ForEach(Array(recipes.enumerated()), id: \.element.id) { index, recipe in
+                    PopularRecipeRow(index: index, recipe: recipe)
                 }
             }
         }
@@ -1094,7 +996,7 @@ struct PopularRecipeRow: View {
                     .frame(width: 30)
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(recipe.name)
+                    Text(recipe.title)
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
