@@ -64,6 +64,7 @@
 		6660DD28E0A876B94EAFF423 /* asian_cuisines.json in Resources */ = {isa = PBXBuildFile; fileRef = 344D2EFA999B213867513C81 /* asian_cuisines.json */; };
 		700AD6102B99E49822F83B98 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB03C573D34B7BAF3E4820B4 /* RecipeViewModel.swift */; };
 		7896CE31B40827E26BFD5DF8 /* AppIcon-58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F89597705BEF620C2C7F582 /* AppIcon-58x58.png */; };
+		79A07DC0B6CA5A5A5F1738DC /* DietaryRestrictionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D185BF53A53F5F08ADDA86 /* DietaryRestrictionManager.swift */; };
 		7ABECE4C7757000E52318F09 /* AppIcon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7BE7217C8D6571CBD32D1D38 /* AppIcon.svg */; };
 		7AC18E71A4B2F0B85FF741A7 /* Top10RecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADE0D46B0DAD194A1BE592 /* Top10RecipesTests.swift */; };
 		7CEA88581BD1305DED153E68 /* LocalDatabaseTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB20FBCD0F4C139EE16AFEE /* LocalDatabaseTestView.swift */; };
@@ -86,6 +87,7 @@
 		9DF6B06355D6C6AA2DAEAEA0 /* ImageGenerationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF98B053B2F4E3090EB255FF /* ImageGenerationViewModel.swift */; };
 		9E9E9929EE06325F980C99B6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245C1E74F4BB2B2C99AAA6BF /* FavoritesView.swift */; };
 		9F186C1675453D7BEFBB379B /* CloudKitServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EAB03BA5295D748C819117 /* CloudKitServiceTests.swift */; };
+		A46D1B0FF8290E8B0CFBF85A /* SettingsViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76CE6FC368CE1E2BFD0BFA8 /* SettingsViewUITests.swift */; };
 		A5D6B6990C557DC0AF8D7B83 /* indian_cuisines.json in Resources */ = {isa = PBXBuildFile; fileRef = 126334324BFC05241C84E03E /* indian_cuisines.json */; };
 		A7458E8560F93B80DE691D79 /* UserAnalyticsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5062AEFEDEC2FCBAFB3956BC /* UserAnalyticsServiceTests.swift */; };
 		AB3B267FF9511E27F20C4572 /* AppIcon-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = C1F7CE0C35A2D23933A848AE /* AppIcon-29x29.png */; };
@@ -93,6 +95,7 @@
 		AD9AB8473070D93E842A37B9 /* ImageGenerationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386EDB2470A2A0845C867C90 /* ImageGenerationServiceTests.swift */; };
 		AF0FC52EF67FD31B9891F6CF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5415799FC91B4D79B3A3AB55 /* UserProfile.swift */; };
 		B366B234BF02EA39FF086CCF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8378B578EC00E23FF5C9CA /* Logger.swift */; };
+		B3AECE173E3EDE68E9BE0A2C /* SettingsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F245D74DFFB0224A98208DA3 /* SettingsViewTests.swift */; };
 		B58F1A4C24AC2401CF18688B /* SecureConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB7AA437251675B1B3B2CE /* SecureConfig.swift */; };
 		B88D6B67011FA939A72862D4 /* VoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B602A4403986FC8A07CFA196 /* VoiceManager.swift */; };
 		B99D5CC27010C1D0AB7B59C6 /* mexican_cuisines.json in Resources */ = {isa = PBXBuildFile; fileRef = 238E21913EF8D18871491AD5 /* mexican_cuisines.json */; };
@@ -221,6 +224,7 @@
 		AEE20557647DB569164951DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B602A4403986FC8A07CFA196 /* VoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceManager.swift; sourceTree = "<group>"; };
 		B692BD4B3A90028CF8EB598C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B76CE6FC368CE1E2BFD0BFA8 /* SettingsViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewUITests.swift; sourceTree = "<group>"; };
 		B8DFEE4CB38FE31EA6BF2A8A /* AppIcon-80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-80x80.png"; sourceTree = "<group>"; };
 		BB4ED026A95E87AE0B1595EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB8BAA322D0AA1DFD7AA222B /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 		EDA812FAEC0905F531F0BDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EE54C3E677C8DC72A8AEFA6A /* CheffyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CheffyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBF841BBB7CCC73506C41FD /* PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
+		F0D185BF53A53F5F08ADDA86 /* DietaryRestrictionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestrictionManager.swift; sourceTree = "<group>"; };
+		F245D74DFFB0224A98208DA3 /* SettingsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTests.swift; sourceTree = "<group>"; };
 		F25394B2F5B53A7DA21611C7 /* CheffyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheffyUITests.swift; sourceTree = "<group>"; };
 		F3431EFFC197C45D72C8E319 /* ImageGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerationService.swift; sourceTree = "<group>"; };
 		F3C4CBBB7B89100B36D8A91D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -392,6 +398,7 @@
 				55EAB03BA5295D748C819117 /* CloudKitServiceTests.swift */,
 				386EDB2470A2A0845C867C90 /* ImageGenerationServiceTests.swift */,
 				E2663AF67F2C497BE35E957F /* RecipeManagerTests.swift */,
+				F245D74DFFB0224A98208DA3 /* SettingsViewTests.swift */,
 				5062AEFEDEC2FCBAFB3956BC /* UserAnalyticsServiceTests.swift */,
 				E35FDC4146183C53B23E8307 /* FeatureTests */,
 				E3206DF8C909D3ED31D24FB8 /* IntegrationTests */,
@@ -514,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				F25394B2F5B53A7DA21611C7 /* CheffyUITests.swift */,
+				B76CE6FC368CE1E2BFD0BFA8 /* SettingsViewUITests.swift */,
 			);
 			path = CheffyUITests;
 			sourceTree = "<group>";
@@ -560,6 +568,7 @@
 				3C1941AE94E2382AAB508163 /* AccessibilityManager.swift */,
 				7034C100B1E76EA6B9D611DB /* CloudKitService.swift */,
 				F4D1980D21558B1DAA0502E0 /* CrashHandlerService.swift */,
+				F0D185BF53A53F5F08ADDA86 /* DietaryRestrictionManager.swift */,
 				F3431EFFC197C45D72C8E319 /* ImageGenerationService.swift */,
 				1035FCACBE44EC3C3A9BAF9D /* LLMDiagnosticService.swift */,
 				5C16AFA6DC7DB9E8B025F423 /* LocalizationManager.swift */,
@@ -773,6 +782,7 @@
 				0E6B4EB31041F64E5C9992DF /* DetailedCookingInstructionsView.swift in Sources */,
 				85EDCF1A50244D4947214437 /* DeveloperAnalyticsView.swift in Sources */,
 				95DF73FA0406CC937DD639B0 /* DeveloperAnalyticsViewModel.swift in Sources */,
+				79A07DC0B6CA5A5A5F1738DC /* DietaryRestrictionManager.swift in Sources */,
 				C50E2AB5938246A32A6FA771 /* EnhancedCookingModeView.swift in Sources */,
 				0FEC07BD2E4EC7B1F0AC1B11 /* ErrorReporting.swift in Sources */,
 				9E9E9929EE06325F980C99B6 /* FavoritesView.swift in Sources */,
@@ -829,6 +839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B94779C9D442DB32C4C28C /* CheffyUITests.swift in Sources */,
+				A46D1B0FF8290E8B0CFBF85A /* SettingsViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +854,7 @@
 				0DCCED3817E66FBB6ABE78E8 /* LLMCloudKitIntegrationTests.swift in Sources */,
 				03353AF670BCD48CED5A382E /* RecipeFilterTests.swift in Sources */,
 				1974A163FEB95BDD83669475 /* RecipeManagerTests.swift in Sources */,
+				B3AECE173E3EDE68E9BE0A2C /* SettingsViewTests.swift in Sources */,
 				97528FE54FDCED9077211C8F /* TestSuite.swift in Sources */,
 				7AC18E71A4B2F0B85FF741A7 /* Top10RecipesTests.swift in Sources */,
 				A7458E8560F93B80DE691D79 /* UserAnalyticsServiceTests.swift in Sources */,
@@ -906,13 +918,29 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone for voice commands and speech recognition.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to convert your voice to text for recipe generation.";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
+				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
+				INFOPLIST_KEY_CFBundleShortVersionString = 1.0.0;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = NO;
+				INFOPLIST_KEY_NSAppTransportSecurity_NSExceptionDomains_generativelanguage.googleapis.com_NSExceptionAllowsInsecureHTTPLoads = NO;
+				INFOPLIST_KEY_NSAppTransportSecurity_NSExceptionDomains_generativelanguage.googleapis.com_NSExceptionMinimumTLSVersion = 1.2;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to scan ingredients and take photos of your cooking creations.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone for voice commands and speech recognition to help you generate recipes hands-free.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app accesses your photo library to save recipe images and cooking photos.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to convert your voice to text for recipe generation and cooking instructions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationShortcutItems = (
+				);
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = audio;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIViewControllerBasedStatusBarAppearance = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1099,13 +1127,29 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone for voice commands and speech recognition.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to convert your voice to text for recipe generation.";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
+				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
+				INFOPLIST_KEY_CFBundleShortVersionString = 1.0.0;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads = NO;
+				INFOPLIST_KEY_NSAppTransportSecurity_NSExceptionDomains_generativelanguage.googleapis.com_NSExceptionAllowsInsecureHTTPLoads = NO;
+				INFOPLIST_KEY_NSAppTransportSecurity_NSExceptionDomains_generativelanguage.googleapis.com_NSExceptionMinimumTLSVersion = 1.2;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to scan ingredients and take photos of your cooking creations.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses the microphone for voice commands and speech recognition to help you generate recipes hands-free.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app accesses your photo library to save recipe images and cooking photos.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to convert your voice to text for recipe generation and cooking instructions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationShortcutItems = (
+				);
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = audio;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIViewControllerBasedStatusBarAppearance = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -348,6 +348,8 @@ class OpenAIClient: OpenAIClientProtocol {
         }
     }
     
+
+    
     func generatePopularRecipes(
         cuisine: Cuisine,
         difficulty: Difficulty,

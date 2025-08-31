@@ -505,6 +505,9 @@ struct RecipeFilterView: View {
     let availableProteins: [String]
     
     @Environment(\.dismiss) private var dismiss
+    @State private var validationMessage: String = ""
+    @State private var showingValidationAlert = false
+    @State private var autoAddedRestrictions: Set<DietaryNote> = []
     
     var body: some View {
         NavigationStack {
@@ -565,10 +568,41 @@ struct RecipeFilterView: View {
                 
                 // Dietary Restrictions
                 Section("Dietary Restrictions") {
+                    // Validation Message
+                    if !validationMessage.isEmpty {
+                        HStack {
+                            Image(systemName: validationMessage.contains("cannot") ? "exclamationmark.triangle.fill" : "info.circle.fill")
+                                .foregroundColor(validationMessage.contains("cannot") ? .red : .blue)
+                            Text(validationMessage)
+                                .font(.caption)
+                                .foregroundColor(validationMessage.contains("cannot") ? .red : .blue)
+                        }
+                    }
+                    
+                    // Auto-added restrictions info
+                    if !autoAddedRestrictions.isEmpty {
+                        HStack {
+                            Image(systemName: "info.circle.fill")
+                                .foregroundColor(.blue)
+                            Text("Auto-added: \(autoAddedRestrictions.map { $0.rawValue }.joined(separator: ", "))")
+                                .font(.caption)
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    
                     ForEach(DietaryNote.allCases, id: \.self) { restriction in
                         HStack {
-                            Text(restriction.rawValue)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(restriction.rawValue)
+                                
+                                // Show restriction description
+                                Text(getRestrictionDescription(restriction))
+                                    .font(.caption2)
+                                    .foregroundColor(.secondary)
+                            }
+                            
                             Spacer()
+                            
                             if selectedDietaryRestrictions.contains(restriction) {
                                 Image(systemName: "checkmark")
                                     .foregroundColor(.orange)
@@ -576,11 +610,7 @@ struct RecipeFilterView: View {
                         }
                         .contentShape(Rectangle())
                         .onTapGesture {
-                            if selectedDietaryRestrictions.contains(restriction) {
-                                selectedDietaryRestrictions.remove(restriction)
-                            } else {
-                                selectedDietaryRestrictions.insert(restriction)
-                            }
+                            toggleDietaryRestriction(restriction)
                         }
                     }
                 }
@@ -625,6 +655,79 @@ struct RecipeFilterView: View {
                     }
                 }
             }
+            .onChange(of: selectedDietaryRestrictions) { _, newValue in
+                validateDietaryRestrictions(newValue)
+            }
+            .alert("Dietary Restriction Conflict", isPresented: $showingValidationAlert) {
+                Button("OK") { }
+            } message: {
+                Text(validationMessage)
+            }
+        }
+    }
+    
+    // MARK: - Helper Methods
+    private func toggleDietaryRestriction(_ restriction: DietaryNote) {
+        if selectedDietaryRestrictions.contains(restriction) {
+            selectedDietaryRestrictions.remove(restriction)
+        } else {
+            selectedDietaryRestrictions.insert(restriction)
+        }
+    }
+    
+    private func validateDietaryRestrictions(_ restrictions: Set<DietaryNote>) {
+        var conflicts: [String] = []
+        
+        // Check for mutual exclusivity conflicts
+        if restrictions.contains(.vegetarian) && restrictions.contains(.nonVegetarian) {
+            conflicts.append("Vegetarian and Non-Vegetarian cannot be selected together")
+        }
+        if restrictions.contains(.vegan) && restrictions.contains(.nonVegetarian) {
+            conflicts.append("Vegan and Non-Vegetarian cannot be selected together")
+        }
+        
+        if !conflicts.isEmpty {
+            validationMessage = conflicts.joined(separator: "\n")
+            showingValidationAlert = true
+            
+            // Remove conflicting restrictions
+            if restrictions.contains(.vegetarian) && restrictions.contains(.nonVegetarian) {
+                selectedDietaryRestrictions.remove(.vegetarian)
+                selectedDietaryRestrictions.remove(.nonVegetarian)
+            } else if restrictions.contains(.vegan) && restrictions.contains(.nonVegetarian) {
+                selectedDietaryRestrictions.remove(.vegan)
+                selectedDietaryRestrictions.remove(.nonVegetarian)
+            }
+        } else {
+            validationMessage = ""
+            autoAddedRestrictions.removeAll()
+        }
+    }
+    
+    private func getRestrictionDescription(_ restriction: DietaryNote) -> String {
+        switch restriction {
+        case .nonVegetarian:
+            return "Includes meat, fish, eggs"
+        case .vegetarian:
+            return "No meat or fish, may include dairy/eggs"
+        case .vegan:
+            return "No animal products"
+        case .glutenFree:
+            return "No wheat, barley, rye"
+        case .dairyFree:
+            return "No milk, cheese, butter"
+        case .nutFree:
+            return "No nuts or nut products"
+        case .lowCarb:
+            return "Limited carbohydrates"
+        case .keto:
+            return "Very low carb, high fat"
+        case .paleo:
+            return "No grains, legumes, dairy"
+        case .halal:
+            return "No pork or alcohol"
+        case .kosher:
+            return "No pork or shellfish"
         }
     }
 }

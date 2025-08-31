@@ -15,13 +15,45 @@ targets:
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.cheffy.app
       GENERATE_INFOPLIST_FILE: YES
-      INFOPLIST_KEY_NSMicrophoneUsageDescription: "This app uses the microphone for voice commands and speech recognition."
-      INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "This app uses speech recognition to convert your voice to text for recipe generation."
+      
+      # App Store Compliance
+      INFOPLIST_KEY_CFBundleDisplayName: "Cheffy-AI"
+      INFOPLIST_KEY_CFBundleName: "Cheffy-AI"
+      INFOPLIST_KEY_CFBundleShortVersionString: "1.0.0"
+      INFOPLIST_KEY_CFBundleVersion: "1"
+      
+      # Privacy & Permissions
+      INFOPLIST_KEY_NSMicrophoneUsageDescription: "This app uses the microphone for voice commands and speech recognition to help you generate recipes hands-free."
+      INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "This app uses speech recognition to convert your voice to text for recipe generation and cooking instructions."
+      INFOPLIST_KEY_NSCameraUsageDescription: "This app uses the camera to scan ingredients and take photos of your cooking creations."
+      INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "This app accesses your photo library to save recipe images and cooking photos."
+      
+      # App Transport Security (ATS)
+      INFOPLIST_KEY_NSAppTransportSecurity_NSAllowsArbitraryLoads: NO
+      INFOPLIST_KEY_NSAppTransportSecurity_NSExceptionDomains_generativelanguage.googleapis.com_NSExceptionAllowsInsecureHTTPLoads: NO
+      INFOPLIST_KEY_NSAppTransportSecurity_NSExceptionDomains_generativelanguage.googleapis.com_NSExceptionMinimumTLSVersion: "1.2"
+      
+      # UI Configuration
       INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
       INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
       INFOPLIST_KEY_UILaunchScreen_Generation: YES
       INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
       INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+      
+      # Background Modes (if needed for voice processing)
+      INFOPLIST_KEY_UIBackgroundModes: "audio"
+      
+      # App Store Optimization
+      INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.food-and-drink"
+      
+      # Accessibility
+      INFOPLIST_KEY_UIRequiresFullScreen: NO
+      INFOPLIST_KEY_UIStatusBarHidden: NO
+      
+      # Performance & Security
+      INFOPLIST_KEY_UIViewControllerBasedStatusBarAppearance: YES
+      INFOPLIST_KEY_UIApplicationShortcutItems: []
+      
     dependencies:
       - package: KeychainAccess
       - package: Stripe
