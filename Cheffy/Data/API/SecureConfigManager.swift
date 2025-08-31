@@ -62,6 +62,61 @@ class SecureConfigManager {
         return !geminiAPIKey.isEmpty
     }
     
+    // MARK: - OpenAI API Key Management (for Image Generation)
+    
+    /// Retrieves the OpenAI API key through multiple secure layers
+    var openaiAPIKey: String {
+        // Layer 1: Keychain (most secure)
+        if let keychainKey = try? keychain.get("openai_api_key"), !keychainKey.isEmpty {
+            logger.security("OpenAI API key retrieved from keychain")
+            return keychainKey
+        }
+        
+        // Layer 2: Environment variable (for CI/CD)
+        if let envKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"], !envKey.isEmpty {
+            logger.security("OpenAI API key retrieved from environment variable")
+            // Store in keychain for future use
+            try? keychain.set(envKey, key: "openai_api_key")
+            return envKey
+        }
+        
+        // Layer 3: Secure config file (development only)
+        if let configKey = loadOpenAIFromSecureConfig(), !configKey.isEmpty {
+            logger.security("OpenAI API key retrieved from secure config file")
+            // Store in keychain for future use
+            try? keychain.set(configKey, key: "openai_api_key")
+            return configKey
+        }
+        
+        logger.error("No OpenAI API key found in any secure source")
+        return ""
+    }
+    
+    /// Stores OpenAI API key securely in keychain
+    func storeOpenAIAPIKey(_ key: String) {
+        do {
+            try keychain.set(key, key: "openai_api_key")
+            logger.security("OpenAI API key stored securely in keychain")
+        } catch {
+            logger.error("Failed to store OpenAI API key: \(error)")
+        }
+    }
+    
+    /// Generic method to get secure values (for future extensibility)
+    func getSecureValue(for key: String) async throws -> String? {
+        switch key {
+        case "OPENAI_API_KEY":
+            return openaiAPIKey
+        case "OPENAI_BASE_URL":
+            return "https://api.openai.com"
+        case "GEMINI_API_KEY":
+            return geminiAPIKey
+        default:
+            // Try keychain for unknown keys
+            return try? keychain.get(key)
+        }
+    }
+    
     // MARK: - Secure Configuration File
     
     private func loadFromSecureConfig() -> String? {
@@ -69,6 +124,16 @@ class SecureConfigManager {
               let config = NSDictionary(contentsOfFile: configPath),
               let apiKey = config["GEMINI_API_KEY"] as? String,
               apiKey != "YOUR_GEMINI_API_KEY_HERE" else {
+            return nil
+        }
+        return apiKey
+    }
+    
+    private func loadOpenAIFromSecureConfig() -> String? {
+        guard let configPath = Bundle.main.path(forResource: "SecureConfig", ofType: "plist"),
+              let config = NSDictionary(contentsOfFile: configPath),
+              let apiKey = config["OPENAI_API_KEY"] as? String,
+              apiKey != "YOUR_OPENAI_API_KEY_HERE" else {
             return nil
         }
         return apiKey

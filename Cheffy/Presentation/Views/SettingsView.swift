@@ -16,6 +16,7 @@ struct SettingsView: View {
     @State private var showingCacheManagement = false
     @State private var showingLLMDiagnostics = false
     @State private var showingDatabaseTest = false
+    @State private var showingDeveloperDashboard = false
 
     
     var body: some View {
@@ -112,6 +113,9 @@ struct SettingsView: View {
             }
             .padding()
         }
+        .sheet(isPresented: $showingDeveloperDashboard) {
+            DeveloperAnalyticsView()
+        }
         .onAppear {
             checkAPIKeyStatus()
         }
@@ -176,10 +180,10 @@ struct SettingsView: View {
                             .foregroundColor(.orange)
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(user.name)
+                            Text("User Profile")
                                 .font(.headline)
                             
-                            Text(user.email)
+                            Text("Device: \(user.deviceType)")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
@@ -187,22 +191,24 @@ struct SettingsView: View {
                         Spacer()
                     }
                     
-                    // Cooking Experience
+                    // Analytics Status
                     HStack {
-                        Image(systemName: user.cookingExperience.icon)
-                            .foregroundColor(.orange)
-                        Text(user.cookingExperience.rawValue)
+                        Image(systemName: user.isAnalyticsEnabled ? "chart.bar.fill" : "chart.bar")
+                            .foregroundColor(user.isAnalyticsEnabled ? .green : .gray)
+                        Text("Analytics: \(user.isAnalyticsEnabled ? "Enabled" : "Disabled")")
                             .font(.subheadline)
                         Spacer()
                     }
                     
-                    // Household Size
-                    HStack {
-                        Image(systemName: "person.3")
-                            .foregroundColor(.green)
-                        Text("\(user.householdSize) people")
-                            .font(.subheadline)
-                        Spacer()
+                    // Preferences
+                    if user.hasPreferences {
+                        HStack {
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                            Text("Preferences set")
+                                .font(.subheadline)
+                            Spacer()
+                        }
                     }
                 }
                 .padding(.vertical, 8)
@@ -372,6 +378,15 @@ struct SettingsView: View {
                 Label("Database Test", systemImage: "database")
             }
             .accessibilityHint("Double tap to test local recipe database")
+            
+            // Developer Dashboard
+            Button {
+                showingDeveloperDashboard = true
+            } label: {
+                Label("Developer Dashboard", systemImage: "chart.bar.doc.horizontal")
+            }
+            .foregroundColor(.purple)
+            .accessibilityHint("Double tap to access developer analytics dashboard")
             
             // Terms of Service
             Button {

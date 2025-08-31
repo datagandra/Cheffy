@@ -114,8 +114,9 @@ class UserManager: ObservableObject {
     
     func updateLastActive() {
         guard var user = currentUser else { return }
-        user.lastActive = Date()
-        updateUserProfile(user)
+        // Update the lastUpdatedAt field instead of lastActive
+        let updatedUser = user.updatePreferences(cuisines: user.preferredCuisines, dietary: user.dietaryPreferences)
+        updateUserProfile(updatedUser)
     }
     
     // MARK: - Profile Validation
@@ -123,11 +124,8 @@ class UserManager: ObservableObject {
     func isProfileComplete() -> Bool {
         guard let user = currentUser else { return false }
         
-        return !user.name.isEmpty &&
-               !user.email.isEmpty &&
-               !user.favoriteCuisines.isEmpty &&
-               !user.cookingGoals.isEmpty &&
-               user.householdSize > 0
+        // Check if user has basic preferences set
+        return user.hasPreferences
     }
     
     // MARK: - Recommendations
@@ -135,30 +133,31 @@ class UserManager: ObservableObject {
     func getRecommendedCuisines() -> [Cuisine] {
         guard let user = currentUser else { return Cuisine.allCases }
         
-        // Return user's favorite cuisines, or all cuisines if none selected
-        return user.favoriteCuisines.isEmpty ? Cuisine.allCases : user.favoriteCuisines
+        // Convert string cuisine names to Cuisine enum values
+        let userCuisines = user.preferredCuisines.compactMap { cuisineName in
+            Cuisine.allCases.first { $0.rawValue.lowercased() == cuisineName.lowercased() }
+        }
+        
+        // Return user's preferred cuisines, or all cuisines if none selected
+        return userCuisines.isEmpty ? Cuisine.allCases : userCuisines
     }
     
     func getRecommendedDietaryRestrictions() -> [DietaryNote] {
         guard let user = currentUser else { return [] }
-        return user.dietaryPreferences
-    }
-    
-    func getRecommendedDifficulty() -> Difficulty {
-        guard let user = currentUser else { return .easy }
         
-        switch user.cookingExperience {
-        case .beginner:
-            return .easy
-        case .intermediate:
-            return .medium
-        case .advanced, .expert:
-            return .hard
+        // Convert string dietary preferences to DietaryNote enum values
+        return user.dietaryPreferences.compactMap { dietaryName in
+            DietaryNote.allCases.first { $0.rawValue.lowercased() == dietaryName.lowercased() }
         }
     }
     
+    func getRecommendedDifficulty() -> Difficulty {
+        // Default to medium difficulty since we don't track cooking experience anymore
+        return .medium
+    }
+    
     func getRecommendedServings() -> Int {
-        guard let user = currentUser else { return 2 }
-        return user.householdSize
+        // Default to 2 servings since we don't track household size anymore
+        return 2
     }
 } 

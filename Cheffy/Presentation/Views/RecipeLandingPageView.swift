@@ -17,6 +17,7 @@ struct RecipeLandingPageView: View {
     @State private var showingEquipment = false
     @State private var showingKindleReading = false
     @State private var showingShoppingCart = false
+    @State private var showingImageGeneration = false
     
     var body: some View {
         NavigationStack {
@@ -84,6 +85,12 @@ struct RecipeLandingPageView: View {
         }
         .sheet(isPresented: $showingShoppingCart) {
             InlineShoppingCartView()
+        }
+        .sheet(isPresented: $showingEquipment) {
+            EquipmentView(recipe: recipe)
+        }
+        .sheet(isPresented: $showingImageGeneration) {
+            ImageGenerationView(recipe: recipe)
         }
     }
     
@@ -506,6 +513,36 @@ struct RecipeLandingPageView: View {
                     .foregroundColor(.white)
                     .cornerRadius(12)
                 }
+                
+                // AI Image Generation button (full width)
+                Button(action: {
+                    showingImageGeneration = true
+                }) {
+                    HStack {
+                        Image(systemName: "sparkles")
+                            .font(.title3)
+                        Text("🎨 Generate AI Image")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                        Spacer()
+                        Image(systemName: "camera.fill")
+                            .font(.subheadline)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .padding(.horizontal, 16)
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color.orange.opacity(0.8), Color.pink.opacity(0.8)]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+                }
+                .accessibilityLabel("Generate AI image for this recipe")
+                .accessibilityHint("Tap to create an AI-generated image based on the recipe")
             }
         }
         .padding(20)

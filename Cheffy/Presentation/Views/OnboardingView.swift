@@ -3,7 +3,7 @@ import SwiftUI
 struct OnboardingView: View {
     @EnvironmentObject var userManager: UserManager
     @State private var currentStep = 0
-    @State private var userProfile = UserProfile()
+    @State private var userProfile = UserProfile(userID: UUID().uuidString)
     
     private let totalSteps = 5
     
@@ -99,13 +99,13 @@ struct OnboardingView: View {
         case 0: // Welcome
             return true
         case 1: // Personal Info
-            return !userProfile.name.isEmpty && !userProfile.email.isEmpty && userProfile.householdSize > 0
+            return true // Always valid for basic info
         case 2: // Cooking Experience
             return true // Always valid
         case 3: // Dietary Preferences
             return true // Optional
         case 4: // Cooking Goals
-            return !userProfile.cookingGoals.isEmpty
+            return true // Optional
         default:
             return false
         }
@@ -169,32 +169,38 @@ struct PersonalInfoStepView: View {
                 }
                 
                 VStack(spacing: 20) {
-                    // Name
+                    // Device Type (read-only)
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Name")
+                        Text("Device Type")
                             .font(.headline)
                         
-                        TextField("Enter your name", text: $userProfile.name)
-                            .textFieldStyle(.roundedBorder)
+                        Text(userProfile.deviceType)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(12)
+                            .foregroundColor(.secondary)
                     }
                     
-                    // Email
+                    // App Version (read-only)
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Email")
+                        Text("App Version")
                             .font(.headline)
                         
-                        TextField("Enter your email", text: $userProfile.email)
-                            .textFieldStyle(.roundedBorder)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
+                        Text(userProfile.appVersion)
+                            .padding()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(12)
+                            .foregroundColor(.secondary)
                     }
                     
-                    // Household Size
+                    // Analytics Toggle
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Household Size")
+                        Text("Analytics & Privacy")
                             .font(.headline)
                         
-                        Stepper("\(userProfile.householdSize) people", value: $userProfile.householdSize, in: 1...10)
+                        Toggle("Share anonymous usage data to improve Cheffy", isOn: $userProfile.isAnalyticsEnabled)
                             .padding()
                             .background(Color(.systemGray6))
                             .cornerRadius(12)
@@ -209,32 +215,39 @@ struct PersonalInfoStepView: View {
     }
 }
 
-// MARK: - Cooking Experience Step
+// MARK: - Preferred Cuisines Step
 struct CookingExperienceStepView: View {
     @Binding var userProfile: UserProfile
     
     var body: some View {
         VStack(spacing: 32) {
             VStack(spacing: 16) {
-                Text("What's your cooking experience?")
+                Text("What cuisines do you prefer?")
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("This helps us suggest recipes at the right difficulty level.")
+                Text("Select your favorite cuisines to get personalized recipe recommendations.")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
             }
             
-            VStack(spacing: 16) {
-                ForEach(CookingExperience.allCases, id: \.self) { experience in
-                    ExperienceCard(
-                        experience: experience,
-                        isSelected: userProfile.cookingExperience == experience
-                    ) {
-                        userProfile.cookingExperience = experience
+            ScrollView {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 16) {
+                    ForEach(Cuisine.allCases, id: \.self) { cuisine in
+                        CuisineCard(
+                            cuisine: cuisine,
+                            isSelected: userProfile.preferredCuisines.contains(cuisine.rawValue)
+                        ) {
+                            if userProfile.preferredCuisines.contains(cuisine.rawValue) {
+                                userProfile.preferredCuisines.removeAll { $0 == cuisine.rawValue }
+                            } else {
+                                userProfile.preferredCuisines.append(cuisine.rawValue)
+                            }
+                        }
                     }
                 }
+                .padding(.horizontal, 20)
             }
             
             Spacer()
@@ -244,38 +257,22 @@ struct CookingExperienceStepView: View {
     }
 }
 
-struct ExperienceCard: View {
-    let experience: CookingExperience
+struct CuisineCard: View {
+    let cuisine: Cuisine
     let isSelected: Bool
     let action: () -> Void
     
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 16) {
-                Image(systemName: experience.icon)
-                    .font(.title2)
-                    .foregroundColor(isSelected ? .white : .orange)
-                    .frame(width: 40)
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(experience.rawValue)
-                        .font(.headline)
-                        .foregroundColor(isSelected ? .white : .primary)
-                    
-                    Text(experience.description)
-                        .font(.caption)
-                        .foregroundColor(isSelected ? .white.opacity(0.8) : .secondary)
-                }
-                
-                Spacer()
-                
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.white)
-                        .font(.title2)
-                }
+            VStack(spacing: 8) {
+                Text(cuisine.rawValue.capitalized)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(isSelected ? .white : .primary)
+                    .multilineTextAlignment(.center)
             }
-            .padding()
+            .frame(height: 60)
+            .frame(maxWidth: .infinity)
             .background(
                 RoundedRectangle(cornerRadius: 12)
                     .fill(isSelected ? Color.orange : Color(.systemGray6))
@@ -308,13 +305,13 @@ struct DietaryPreferencesStepView: View {
             ], spacing: 12) {
                 ForEach(DietaryNote.allCases, id: \.self) { restriction in
                     DietaryRestrictionCard(
-                        restriction: restriction,
-                        isSelected: userProfile.dietaryPreferences.contains(restriction)
+                        restriction: restriction.rawValue,
+                        isSelected: userProfile.dietaryPreferences.contains(restriction.rawValue)
                     ) {
-                        if userProfile.dietaryPreferences.contains(restriction) {
-                            userProfile.dietaryPreferences.removeAll { $0 == restriction }
+                        if userProfile.dietaryPreferences.contains(restriction.rawValue) {
+                            userProfile.dietaryPreferences.removeAll { $0 == restriction.rawValue }
                         } else {
-                            userProfile.dietaryPreferences.append(restriction)
+                            userProfile.dietaryPreferences.append(restriction.rawValue)
                         }
                     }
                 }
@@ -328,14 +325,14 @@ struct DietaryPreferencesStepView: View {
 }
 
 struct DietaryRestrictionCard: View {
-    let restriction: DietaryNote
+    let restriction: String
     let isSelected: Bool
     let action: () -> Void
     
     var body: some View {
         Button(action: action) {
             VStack(spacing: 8) {
-                Text(restriction.rawValue)
+                Text(restriction)
                     .font(.subheadline)
                     .fontWeight(.medium)
                     .foregroundColor(isSelected ? .white : .primary)
@@ -352,39 +349,48 @@ struct DietaryRestrictionCard: View {
     }
 }
 
-// MARK: - Cooking Goals Step
+// MARK: - Final Step
 struct CookingGoalsStepView: View {
     @Binding var userProfile: UserProfile
     
     var body: some View {
         VStack(spacing: 32) {
             VStack(spacing: 16) {
-                Text("What are your cooking goals?")
+                Text("You're all set!")
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("Select your primary cooking goals to help us recommend the perfect recipes.")
+                Text("We'll use your preferences to provide personalized recipe recommendations and improve the app based on anonymous usage data.")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
             }
             
-            LazyVGrid(columns: [
-                GridItem(.flexible()),
-                GridItem(.flexible())
-            ], spacing: 16) {
-                ForEach(CookingGoal.allCases, id: \.self) { goal in
-                    CookingGoalCard(
-                        goal: goal,
-                        isSelected: userProfile.cookingGoals.contains(goal)
-                    ) {
-                        if userProfile.cookingGoals.contains(goal) {
-                            userProfile.cookingGoals.removeAll { $0 == goal }
-                        } else {
-                            userProfile.cookingGoals.append(goal)
-                        }
+            VStack(spacing: 20) {
+                // Summary of preferences
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Your Preferences:")
+                        .font(.headline)
+                    
+                    if !userProfile.preferredCuisines.isEmpty {
+                        Text("• Preferred cuisines: \(userProfile.preferredCuisines.joined(separator: ", "))")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                     }
+                    
+                    if !userProfile.dietaryPreferences.isEmpty {
+                        Text("• Dietary preferences: \(userProfile.dietaryPreferences.joined(separator: ", "))")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    
+                    Text("• Analytics enabled: \(userProfile.isAnalyticsEnabled ? "Yes" : "No")")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(12)
             }
             
             Spacer()
@@ -394,40 +400,4 @@ struct CookingGoalsStepView: View {
     }
 }
 
-struct CookingGoalCard: View {
-    let goal: CookingGoal
-    let isSelected: Bool
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 12) {
-                Image(systemName: goal.icon)
-                    .font(.title2)
-                    .foregroundColor(isSelected ? .white : .orange)
-                
-                VStack(spacing: 4) {
-                    Text(goal.rawValue)
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundColor(isSelected ? .white : .primary)
-                        .multilineTextAlignment(.center)
-                    
-                    Text(goal.description)
-                        .font(.caption)
-                        .foregroundColor(isSelected ? .white.opacity(0.8) : .secondary)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(2)
-                }
-            }
-            .frame(height: 100)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(isSelected ? Color.orange : Color(.systemGray6))
-            )
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-} 
+ 

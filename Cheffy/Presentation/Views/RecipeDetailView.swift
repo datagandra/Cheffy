@@ -6,6 +6,7 @@ struct RecipeDetailView: View {
     @State private var showingWinePairings = false
     @State private var showingChefNotes = false
     @State private var showingMichelinGuide = false
+    @State private var showingImageGeneration = false
     @State private var targetServings: Int
     
     init(recipe: Recipe) {
@@ -59,6 +60,9 @@ struct RecipeDetailView: View {
             .padding(.vertical, 20)
         }
         .background(Color(.systemGroupedBackground))
+        .sheet(isPresented: $showingImageGeneration) {
+            ImageGenerationView(recipe: recipe)
+        }
 
     }
     
@@ -310,6 +314,42 @@ struct RecipeDetailView: View {
                 .shadow(color: .orange.opacity(0.3), radius: 8, x: 0, y: 4)
             }
             .buttonStyle(PlainButtonStyle())
+            
+            // AI Image Generation Button
+            Button(action: {
+                showingImageGeneration = true
+            }) {
+                HStack {
+                    Image(systemName: "sparkles")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                    
+                    Text("Generate AI Image")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "camera.fill")
+                        .font(.subheadline)
+                        .foregroundColor(.white.opacity(0.8))
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 16)
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color.blue, Color.purple]),
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .cornerRadius(12)
+                .shadow(color: .blue.opacity(0.3), radius: 8, x: 0, y: 4)
+            }
+            .buttonStyle(PlainButtonStyle())
+            .accessibilityLabel("Generate AI image for this recipe")
+            .accessibilityHint("Tap to create an AI-generated image based on the recipe")
         }
         .padding(20)
         .background(Color(.systemBackground))

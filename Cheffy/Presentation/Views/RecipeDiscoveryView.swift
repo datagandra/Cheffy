@@ -350,8 +350,19 @@ struct RecipeDiscoveryView: View {
     // MARK: - Helper Methods
     private func initializeUserPreferences() {
         if let user = userManager.currentUser {
-            selectedCuisine = user.favoriteCuisines.first ?? .italian
-            selectedDietaryRestrictions = Set(user.dietaryPreferences)
+            // Convert string cuisine names to Cuisine enum values
+            if let firstCuisineString = user.preferredCuisines.first,
+               let cuisine = Cuisine.allCases.first(where: { $0.rawValue.lowercased() == firstCuisineString.lowercased() }) {
+                selectedCuisine = cuisine
+            } else {
+                selectedCuisine = .italian
+            }
+            
+            // Convert string dietary preferences to DietaryNote enum values
+            let dietaryNotes = user.dietaryPreferences.compactMap { dietaryString in
+                DietaryNote.allCases.first { $0.rawValue.lowercased() == dietaryString.lowercased() }
+            }
+            selectedDietaryRestrictions = Set(dietaryNotes)
         }
     }
     

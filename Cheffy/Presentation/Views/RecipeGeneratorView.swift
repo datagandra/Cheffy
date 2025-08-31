@@ -24,9 +24,20 @@ struct RecipeGeneratorView: View {
     
     private func initializeUserPreferences() {
         if let user = userManager.currentUser {
-            selectedCuisine = user.favoriteCuisines.first ?? .any
-            // Default to Non-Vegetarian to ensure meat recipes are included
-            selectedDietaryRestrictions = Set(user.dietaryPreferences).isEmpty ? [.nonVegetarian] : Set(user.dietaryPreferences)
+            // Convert string cuisine names to Cuisine enum values
+            if let firstCuisineString = user.preferredCuisines.first,
+               let cuisine = Cuisine.allCases.first(where: { $0.rawValue.lowercased() == firstCuisineString.lowercased() }) {
+                selectedCuisine = cuisine
+            } else {
+                selectedCuisine = .any
+            }
+            
+            // Convert string dietary preferences to DietaryNote enum values
+            let dietaryNotes = user.dietaryPreferences.compactMap { dietaryString in
+                DietaryNote.allCases.first { $0.rawValue.lowercased() == dietaryString.lowercased() }
+            }
+            selectedDietaryRestrictions = dietaryNotes.isEmpty ? [.nonVegetarian] : Set(dietaryNotes)
+            
             // Default to any cooking time for new users
             selectedCookingTime = .any
         }
