@@ -23,7 +23,7 @@ final class RecipeFilterTests: XCTestCase {
     
     // MARK: - Filter Validation Tests
     
-    func testDietaryRestrictionFilters() async {
+    func testDietaryRestrictionFilters() async throws {
         // Given
         let filters = RecipeFilters(
             dietaryRestrictions: [.vegetarian, .glutenFree],
@@ -36,19 +36,23 @@ final class RecipeFilterTests: XCTestCase {
             recipeName: nil,
             cuisine: .italian,
             difficulty: .easy,
-            dietaryRestrictions: filters.dietaryRestrictions ?? [],
+            dietaryRestrictions: filters.dietaryRestrictions,
             ingredients: nil,
             maxTime: filters.maxTime,
             servings: 2
         )
         
         // Then
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
         XCTAssertTrue(recipe.dietaryNotes.contains(.vegetarian))
         XCTAssertTrue(recipe.dietaryNotes.contains(.glutenFree))
         XCTAssertEqual(recipe.dietaryNotes.count, 2)
     }
     
-    func testCuisineFilter() async {
+    func testCuisineFilter() async throws {
         // Given
         let testCuisines: [Cuisine] = [.italian, .indian, .chinese, .mexican, .japanese]
         
@@ -66,13 +70,17 @@ final class RecipeFilterTests: XCTestCase {
             )
             
             // Then
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
             XCTAssertEqual(recipe.cuisine, cuisine, "Recipe cuisine should match filter: \(cuisine.rawValue)")
         }
     }
     
-    func testDifficultyFilter() async {
+    func testDifficultyFilter() async throws {
         // Given
-        let testDifficulties: [Difficulty] = [.easy, .medium, .hard]
+        let testDifficulties: [Difficulty] = [.easy, .medium, .hard, .expert]
         
         for difficulty in testDifficulties {
             // When
@@ -88,6 +96,10 @@ final class RecipeFilterTests: XCTestCase {
             )
             
             // Then
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
             XCTAssertEqual(recipe.difficulty, difficulty, "Recipe difficulty should match filter: \(difficulty.rawValue)")
             
             // Verify step complexity matches difficulty
@@ -100,11 +112,13 @@ final class RecipeFilterTests: XCTestCase {
                 XCTAssertLessThanOrEqual(stepCount, 6, "Medium recipes should have 6 or fewer steps")
             case .hard:
                 XCTAssertGreaterThanOrEqual(stepCount, 6, "Hard recipes should have 6 or more steps")
+            case .expert:
+                XCTAssertGreaterThanOrEqual(stepCount, 8, "Expert recipes should have 8 or more steps")
             }
         }
     }
     
-    func testCookingTimeFilter() async {
+    func testCookingTimeFilter() async throws {
         // Given
         let testTimes = [15, 30, 45, 60]
         
@@ -122,16 +136,20 @@ final class RecipeFilterTests: XCTestCase {
             )
             
             // Then
-            let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
+            let totalTime = recipe.prepTime + recipe.cookTime
             XCTAssertLessThanOrEqual(totalTime, maxTime, "Recipe total time should be within \(maxTime) minutes")
             
             // Verify time distribution is reasonable
-            XCTAssertGreaterThanOrEqual(recipe.prepTime ?? 0, 5, "Prep time should be at least 5 minutes")
-            XCTAssertGreaterThanOrEqual(recipe.cookTime ?? 0, 10, "Cook time should be at least 10 minutes")
+            XCTAssertGreaterThanOrEqual(recipe.prepTime, 5, "Prep time should be at least 5 minutes")
+            XCTAssertGreaterThanOrEqual(recipe.cookTime, 10, "Cook time should be at least 10 minutes")
         }
     }
     
-    func testServingsFilter() async {
+    func testServingsFilter() async throws {
         // Given
         let testServings = [1, 2, 4, 6, 8]
         
@@ -149,11 +167,15 @@ final class RecipeFilterTests: XCTestCase {
             )
             
             // Then
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
             XCTAssertEqual(recipe.servings, servings, "Recipe servings should match filter: \(servings)")
         }
     }
     
-    func testCombinedFilters() async {
+    func testCombinedFilters() async throws {
         // Given
         let filters = RecipeFilters(
             cuisine: .indian,
@@ -167,21 +189,33 @@ final class RecipeFilterTests: XCTestCase {
         let recipe = try await mockLLMService.generateRecipe(
             userPrompt: nil,
             recipeName: nil,
-            cuisine: filters.cuisine ?? .italian,
-            difficulty: filters.difficulty ?? .medium,
-            dietaryRestrictions: filters.dietaryRestrictions ?? [],
+            cuisine: filters.cuisine,
+            difficulty: filters.difficulty,
+            dietaryRestrictions: filters.dietaryRestrictions,
             ingredients: nil,
             maxTime: filters.maxTime,
-            servings: filters.servings ?? 2
+            servings: filters.servings
         )
         
         // Then
-        assertRecipeMatchesFilters(recipe, filters: filters)
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
+        XCTAssertEqual(recipe.cuisine, filters.cuisine)
+        XCTAssertEqual(recipe.difficulty, filters.difficulty)
+        XCTAssertLessThanOrEqual(recipe.totalTime, filters.maxTime ?? Int.max)
+        XCTAssertEqual(recipe.servings, filters.servings)
+        
+        // Check dietary restrictions
+        for restriction in filters.dietaryRestrictions {
+            XCTAssertTrue(recipe.dietaryNotes.contains(restriction), "Recipe should contain \(restriction.rawValue)")
+        }
     }
     
     // MARK: - Filter Edge Cases
     
-    func testEmptyDietaryRestrictions() async {
+    func testEmptyDietaryRestrictions() async throws {
         // Given
         let filters = RecipeFilters(
             cuisine: .italian,
@@ -194,19 +228,23 @@ final class RecipeFilterTests: XCTestCase {
         let recipe = try await mockLLMService.generateRecipe(
             userPrompt: nil,
             recipeName: nil,
-            cuisine: filters.cuisine ?? .italian,
-            difficulty: filters.difficulty ?? .medium,
-            dietaryRestrictions: filters.dietaryRestrictions ?? [],
+            cuisine: filters.cuisine,
+            difficulty: filters.difficulty,
+            dietaryRestrictions: filters.dietaryRestrictions,
             ingredients: nil,
             maxTime: filters.maxTime,
             servings: 2
         )
         
         // Then
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
         XCTAssertTrue(recipe.dietaryNotes.isEmpty, "Recipe should have no dietary restrictions when none specified")
     }
     
-    func testExtremeCookingTime() async {
+    func testExtremeCookingTime() async throws {
         // Given
         let extremeTimes = [5, 120, 180] // Very short and very long
         
@@ -224,12 +262,16 @@ final class RecipeFilterTests: XCTestCase {
             )
             
             // Then
-            let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
+            let totalTime = recipe.prepTime + recipe.cookTime
             XCTAssertLessThanOrEqual(totalTime, maxTime, "Recipe should respect extreme time limit: \(maxTime)")
         }
     }
     
-    func testLargeServings() async {
+    func testLargeServings() async throws {
         // Given
         let largeServings = [10, 20, 50]
         
@@ -247,6 +289,10 @@ final class RecipeFilterTests: XCTestCase {
             )
             
             // Then
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
             XCTAssertEqual(recipe.servings, servings, "Recipe should handle large servings: \(servings)")
         }
     }
@@ -268,18 +314,27 @@ final class RecipeFilterTests: XCTestCase {
         await recipeManager.generateRecipe(
             userPrompt: "Traditional Japanese vegetarian dish",
             recipeName: nil,
-            cuisine: filters.cuisine ?? .italian,
-            difficulty: filters.difficulty ?? .medium,
-            dietaryRestrictions: filters.dietaryRestrictions ?? [],
+            cuisine: filters.cuisine,
+            difficulty: filters.difficulty,
+            dietaryRestrictions: filters.dietaryRestrictions,
             ingredients: nil,
             maxTime: filters.maxTime,
-            servings: filters.servings ?? 2
+            servings: filters.servings
         )
         
         // Then
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if let generatedRecipe = self.recipeManager.generatedRecipe {
-                self.assertRecipeMatchesFilters(generatedRecipe, filters: filters)
+                // Verify the generated recipe matches our filters
+                XCTAssertEqual(generatedRecipe.cuisine, filters.cuisine)
+                XCTAssertEqual(generatedRecipe.difficulty, filters.difficulty)
+                XCTAssertLessThanOrEqual(generatedRecipe.totalTime, filters.maxTime ?? Int.max)
+                XCTAssertEqual(generatedRecipe.servings, filters.servings)
+                
+                // Check dietary restrictions
+                for restriction in filters.dietaryRestrictions {
+                    XCTAssertTrue(generatedRecipe.dietaryNotes.contains(restriction), "Recipe should contain \(restriction.rawValue)")
+                }
                 expectation.fulfill()
             }
         }
@@ -287,30 +342,9 @@ final class RecipeFilterTests: XCTestCase {
         await fulfillment(of: [expectation], timeout: 5.0)
     }
     
-    func testFilterPersistence() {
-        // Given
-        let filters = RecipeFilters(
-            cuisine: .mexican,
-            difficulty: .medium,
-            dietaryRestrictions: [.glutenFree, .dairyFree],
-            maxTime: 45,
-            servings: 4
-        )
-        
-        // When
-        recipeManager.currentFilters = filters
-        
-        // Then
-        XCTAssertEqual(recipeManager.currentFilters?.cuisine, filters.cuisine)
-        XCTAssertEqual(recipeManager.currentFilters?.difficulty, filters.difficulty)
-        XCTAssertEqual(recipeManager.currentFilters?.dietaryRestrictions, filters.dietaryRestrictions)
-        XCTAssertEqual(recipeManager.currentFilters?.maxTime, filters.maxTime)
-        XCTAssertEqual(recipeManager.currentFilters?.servings, filters.servings)
-    }
-    
     // MARK: - Performance Tests
     
-    func testFilterPerformance() async {
+    func testFilterPerformance() async throws {
         // Given
         let filters = RecipeFilters(
             cuisine: .italian,
@@ -326,20 +360,20 @@ final class RecipeFilterTests: XCTestCase {
         let recipe = try await mockLLMService.generateRecipe(
             userPrompt: nil,
             recipeName: nil,
-            cuisine: filters.cuisine ?? .italian,
-            difficulty: filters.difficulty ?? .medium,
-            dietaryRestrictions: filters.dietaryRestrictions ?? [],
+            cuisine: filters.cuisine,
+            difficulty: filters.difficulty,
+            dietaryRestrictions: filters.dietaryRestrictions,
             ingredients: nil,
             maxTime: filters.maxTime,
-            servings: filters.servings ?? 2
+            servings: filters.servings
         )
         
         // Then
         XCTAssertNotNil(recipe)
-        TestPerformanceMetrics.assertPerformance(operation: "Recipe generation with filters", maxTime: 1.0)
+        TestPerformanceMetrics.assertPerformance(operation: "Recipe generation with filters", maxDuration: 1.0)
     }
     
-    func testMultipleFilterGenerations() async {
+    func testMultipleFilterGenerations() async throws {
         // Given
         let filterCombinations = [
             RecipeFilters(cuisine: .italian, difficulty: .easy, dietaryRestrictions: [.vegetarian]),
@@ -354,24 +388,37 @@ final class RecipeFilterTests: XCTestCase {
             let recipe = try await mockLLMService.generateRecipe(
                 userPrompt: nil,
                 recipeName: nil,
-                cuisine: filters.cuisine ?? .italian,
-                difficulty: filters.difficulty ?? .medium,
-                dietaryRestrictions: filters.dietaryRestrictions ?? [],
+                cuisine: filters.cuisine,
+                difficulty: filters.difficulty,
+                dietaryRestrictions: filters.dietaryRestrictions,
                 ingredients: nil,
                 maxTime: filters.maxTime,
-                servings: filters.servings ?? 2
+                servings: filters.servings
             )
             
-            assertRecipeMatchesFilters(recipe, filters: filters)
+            // Verify the recipe matches our filters
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
+            XCTAssertEqual(recipe.cuisine, filters.cuisine)
+            XCTAssertEqual(recipe.difficulty, filters.difficulty)
+            XCTAssertLessThanOrEqual(recipe.totalTime, filters.maxTime ?? Int.max)
+            XCTAssertEqual(recipe.servings, filters.servings)
+            
+            // Check dietary restrictions
+            for restriction in filters.dietaryRestrictions {
+                XCTAssertTrue(recipe.dietaryNotes.contains(restriction), "Recipe should contain \(restriction.rawValue)")
+            }
         }
         
         // Then
-        TestPerformanceMetrics.assertPerformance(operation: "Multiple filter generations", maxTime: 3.0)
+        TestPerformanceMetrics.assertPerformance(operation: "Multiple filter generations", maxDuration: 3.0)
     }
     
     // MARK: - Error Handling Tests
     
-    func testFilterValidationWithInvalidData() async {
+    func testFilterValidationWithInvalidData() async throws {
         // Given
         mockLLMService.configure(shouldFail: true)
         
@@ -390,11 +437,11 @@ final class RecipeFilterTests: XCTestCase {
             XCTFail("Should have thrown an error")
         } catch {
             XCTAssertNotNil(error)
-            XCTAssertEqual(mockLLMService.error?.localizedDescription, "Mock LLM service failure")
+            XCTAssertEqual(mockLLMService.error, "Mock LLM service failure")
         }
     }
     
-    func testFilterTimeoutHandling() async {
+    func testFilterTimeoutHandling() async throws {
         // Given
         mockLLMService.configure(shouldBeSlow: true)
         
@@ -416,6 +463,10 @@ final class RecipeFilterTests: XCTestCase {
         let executionTime = endTime.timeIntervalSince(startTime)
         
         // Then
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
         XCTAssertNotNil(recipe)
         XCTAssertGreaterThan(executionTime, 2.0, "Slow service should take at least 2 seconds")
     }

@@ -27,6 +27,28 @@ targets:
       - package: Stripe
       - package: SDWebImageSwiftUI
 
+  CheffyTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CheffyTests
+    dependencies:
+      - target: Cheffy
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.cheffy.tests
+      GENERATE_INFOPLIST_FILE: YES
+
+  CheffyUITests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CheffyUITests
+    dependencies:
+      - target: Cheffy
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.cheffy.uitests
+      GENERATE_INFOPLIST_FILE: YES
+
 packages:
   KeychainAccess:
     url: https://github.com/kishikawakatsumi/KeychainAccess

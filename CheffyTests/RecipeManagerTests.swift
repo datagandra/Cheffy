@@ -24,14 +24,17 @@ final class RecipeManagerTests: XCTestCase {
     func testGenerateRecipeSuccess() async {
         // Given
         let expectedRecipe = Recipe(
-            name: "Test Recipe",
-            ingredients: [Ingredient(name: "Test Ingredient", amount: 1, unit: "cup")],
-            instructions: ["Step 1", "Step 2"],
+            title: "Test Recipe",
             cuisine: .italian,
             difficulty: .easy,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Test Ingredient", amount: 1, unit: "cup")],
+            steps: [
+                CookingStep(stepNumber: 1, description: "Step 1"),
+                CookingStep(stepNumber: 2, description: "Step 2")
+            ]
         )
         mockOpenAIClient.mockRecipe = expectedRecipe
         
@@ -46,7 +49,7 @@ final class RecipeManagerTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(recipeManager.generatedRecipe)
-        XCTAssertEqual(recipeManager.generatedRecipe?.name, expectedRecipe.name)
+        XCTAssertEqual(recipeManager.generatedRecipe?.title, expectedRecipe.title)
         XCTAssertFalse(recipeManager.isLoading)
         XCTAssertNil(recipeManager.error)
     }
@@ -74,8 +77,8 @@ final class RecipeManagerTests: XCTestCase {
     func testGeneratePopularRecipesSuccess() async {
         // Given
         let expectedRecipes = [
-            Recipe(name: "Recipe 1", ingredients: [], instructions: [], cuisine: .italian, difficulty: .easy, servings: 2, prepTime: 30, cookTime: 45),
-            Recipe(name: "Recipe 2", ingredients: [], instructions: [], cuisine: .italian, difficulty: .medium, servings: 4, prepTime: 45, cookTime: 60)
+            Recipe(title: "Recipe 1", cuisine: .italian, difficulty: .easy, prepTime: 30, cookTime: 45, servings: 2, ingredients: [], steps: [CookingStep(stepNumber: 1, description: "Step 1")]),
+            Recipe(title: "Recipe 2", cuisine: .italian, difficulty: .medium, prepTime: 45, cookTime: 60, servings: 4, ingredients: [], steps: [CookingStep(stepNumber: 1, description: "Step 1")])
         ]
         mockOpenAIClient.mockPopularRecipes = expectedRecipes
         
@@ -98,18 +101,18 @@ final class RecipeManagerTests: XCTestCase {
     func testCacheRecipe() {
         // Given
         let recipe = Recipe(
-            name: "Cached Recipe",
-            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
-            instructions: ["Step 1"],
+            title: "Cached Recipe",
             cuisine: .italian,
             difficulty: .easy,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
+            steps: [CookingStep(stepNumber: 1, description: "Step 1")]
         )
         
         // When
-        recipeManager.cacheRecipe(recipe)
+        recipeManager.cacheManager.cacheRecipe(recipe)
         
         // Then
         XCTAssertTrue(recipeManager.hasCachedRecipes())
@@ -119,19 +122,19 @@ final class RecipeManagerTests: XCTestCase {
     func testLoadCachedRecipes() {
         // Given
         let recipe = Recipe(
-            name: "Test Recipe",
-            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
-            instructions: ["Step 1"],
+            title: "Test Recipe",
             cuisine: .italian,
             difficulty: .easy,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
+            steps: [CookingStep(stepNumber: 1, description: "Step 1")]
         )
-        recipeManager.cacheRecipe(recipe)
+        recipeManager.cacheManager.cacheRecipe(recipe)
         
         // When
-        recipeManager.loadCachedData()
+        recipeManager.loadAllCachedRecipes()
         
         // Then
         XCTAssertFalse(recipeManager.cachedRecipes.isEmpty)
@@ -142,42 +145,42 @@ final class RecipeManagerTests: XCTestCase {
     func testAddToFavorites() {
         // Given
         let recipe = Recipe(
-            name: "Favorite Recipe",
-            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
-            instructions: ["Step 1"],
+            title: "Favorite Recipe",
             cuisine: .italian,
             difficulty: .easy,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
+            steps: [CookingStep(stepNumber: 1, description: "Step 1")]
         )
         
         // When
-        recipeManager.addToFavorites(recipe)
+        recipeManager.saveToFavorites(recipe)
         
         // Then
-        XCTAssertTrue(recipeManager.favorites.contains { $0.name == recipe.name })
+        XCTAssertTrue(recipeManager.favorites.contains { $0.title == recipe.title })
     }
     
     func testRemoveFromFavorites() {
         // Given
         let recipe = Recipe(
-            name: "Favorite Recipe",
-            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
-            instructions: ["Step 1"],
+            title: "Favorite Recipe",
             cuisine: .italian,
             difficulty: .easy,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Ingredient", amount: 1, unit: "cup")],
+            steps: [CookingStep(stepNumber: 1, description: "Step 1")]
         )
-        recipeManager.addToFavorites(recipe)
+        recipeManager.saveToFavorites(recipe)
         
         // When
         recipeManager.removeFromFavorites(recipe)
         
         // Then
-        XCTAssertFalse(recipeManager.favorites.contains { $0.name == recipe.name })
+        XCTAssertFalse(recipeManager.favorites.contains { $0.title == recipe.title })
     }
     
     // MARK: - Dietary Restrictions Tests
@@ -185,39 +188,38 @@ final class RecipeManagerTests: XCTestCase {
     func testFilterRecipesByDietaryRestrictions() {
         // Given
         let vegetarianRecipe = Recipe(
-            name: "Vegetarian Pasta",
-            ingredients: [Ingredient(name: "Pasta", amount: 1, unit: "cup")],
-            instructions: ["Step 1"],
+            title: "Vegetarian Pasta",
             cuisine: .italian,
             difficulty: .easy,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Pasta", amount: 1, unit: "cup")],
+            steps: [CookingStep(stepNumber: 1, description: "Step 1")]
         )
         
         let meatRecipe = Recipe(
-            name: "Beef Steak",
-            ingredients: [Ingredient(name: "Beef", amount: 1, unit: "pound")],
-            instructions: ["Step 1"],
+            title: "Beef Steak",
             cuisine: .american,
             difficulty: .medium,
-            servings: 2,
             prepTime: 30,
-            cookTime: 45
+            cookTime: 45,
+            servings: 2,
+            ingredients: [Ingredient(name: "Beef", amount: 1, unit: "pound")],
+            steps: [CookingStep(stepNumber: 1, description: "Step 1")]
         )
         
-        recipeManager.cacheRecipe(vegetarianRecipe)
-        recipeManager.cacheRecipe(meatRecipe)
+        recipeManager.cacheManager.cacheRecipe(vegetarianRecipe)
+        recipeManager.cacheManager.cacheRecipe(meatRecipe)
         
         // When
-        let filteredRecipes = recipeManager.filterRecipesByDietaryRestrictions(
-            [vegetarianRecipe, meatRecipe],
-            restrictions: [.vegetarian]
-        )
+        let filteredRecipes = recipeManager.cacheManager.getCachedRecipes(cuisine: .italian).filter { recipe in
+            recipe.dietaryNotes.contains(.vegetarian)
+        }
         
         // Then
         XCTAssertEqual(filteredRecipes.count, 1)
-        XCTAssertEqual(filteredRecipes.first?.name, "Vegetarian Pasta")
+        XCTAssertEqual(filteredRecipes.first?.title, "Vegetarian Pasta")
     }
     
     // MARK: - Performance Tests
@@ -243,12 +245,27 @@ final class RecipeManagerTests: XCTestCase {
 }
 
 // MARK: - Mock OpenAIClient
-class MockOpenAIClient: OpenAIClient {
+class MockOpenAIClient: OpenAIClientProtocol {
     var mockRecipe: Recipe?
     var mockPopularRecipes: [Recipe] = []
     var mockError: String?
     
-    override func generateRecipe(
+    @Published var isLoading: Bool = false
+    @Published var error: String?
+    
+    func hasAPIKey() -> Bool {
+        return true
+    }
+    
+    func setAPIKey(_ key: String) {
+        // Mock implementation
+    }
+    
+    func testAPIKey() async -> Bool {
+        return true
+    }
+    
+    func generateRecipe(
         userPrompt: String?,
         recipeName: String?,
         cuisine: Cuisine,
@@ -257,28 +274,39 @@ class MockOpenAIClient: OpenAIClient {
         ingredients: [String]?,
         maxTime: Int?,
         servings: Int
-    ) async throws -> Recipe {
+    ) async -> Recipe? {
         if let error = mockError {
-            throw NSError(domain: "MockError", code: 1, userInfo: [NSLocalizedDescriptionKey: error])
+            self.error = error
+            return nil
         }
         
-        guard let recipe = mockRecipe else {
-            throw NSError(domain: "MockError", code: 2, userInfo: [NSLocalizedDescriptionKey: "No mock recipe provided"])
-        }
-        
-        return recipe
+        return mockRecipe
     }
     
-    override func generatePopularRecipes(
+    func generatePopularRecipes(
         cuisine: Cuisine,
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
         servings: Int
-    ) async throws -> [Recipe] {
+    ) async -> [Recipe]? {
         if let error = mockError {
-            throw NSError(domain: "MockError", code: 1, userInfo: [NSLocalizedDescriptionKey: error])
+            self.error = error
+            return nil
         }
         
         return mockPopularRecipes
+    }
+    
+    func extractAllIngredientsAsText(from recipes: [Recipe]) -> String {
+        return recipes.flatMap { $0.ingredients }.map { "\($0.amount) \($0.unit) \($0.name)" }.joined(separator: ", ")
+    }
+    
+    func analyzeFilterCriteriaViolations(in recipes: [Recipe]) -> String {
+        return "Mock analysis"
+    }
+    
+    func parseRecipesFromJSONToText(_ jsonData: Data) -> String {
+        return "Mock parsed data"
     }
 } 

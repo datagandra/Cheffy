@@ -39,15 +39,29 @@ protocol UserAnalyticsServiceProtocol: ObservableObject {
     func exportUserData() async throws -> Data
 }
 
-enum AnalyticsSyncStatus {
+enum AnalyticsSyncStatus: Equatable {
     case notAvailable
     case checking
     case available
     case syncing
     case error(String)
+    
+    static func == (lhs: AnalyticsSyncStatus, rhs: AnalyticsSyncStatus) -> Bool {
+        switch (lhs, rhs) {
+        case (.notAvailable, .notAvailable),
+             (.checking, .checking),
+             (.available, .available),
+             (.syncing, .syncing):
+            return true
+        case (.error(let lhsError), .error(let rhsError)):
+            return lhsError == rhsError
+        default:
+            return false
+        }
+    }
 }
 
-enum AnalyticsError: LocalizedError {
+enum AnalyticsError: LocalizedError, Equatable {
     case analyticsDisabled
     case userNotAuthenticated
     case cloudKitNotAvailable
@@ -66,6 +80,20 @@ enum AnalyticsError: LocalizedError {
             return "Sync failed: \(message)"
         case .invalidData:
             return "Invalid data format"
+        }
+    }
+    
+    static func == (lhs: AnalyticsError, rhs: AnalyticsError) -> Bool {
+        switch (lhs, rhs) {
+        case (.analyticsDisabled, .analyticsDisabled),
+             (.userNotAuthenticated, .userNotAuthenticated),
+             (.cloudKitNotAvailable, .cloudKitNotAvailable),
+             (.invalidData, .invalidData):
+            return true
+        case (.syncFailed(let lhsMessage), .syncFailed(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        default:
+            return false
         }
     }
 }

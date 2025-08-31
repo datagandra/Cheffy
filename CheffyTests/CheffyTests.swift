@@ -58,31 +58,27 @@ final class CheffyTests: XCTestCase {
         // Given
         let recipeManager = RecipeManager()
         let testRecipe = Recipe(
-            id: UUID(),
-            name: "Test Recipe",
+            title: "Test Recipe",
             cuisine: .italian,
             difficulty: .medium,
-            servings: 2,
             prepTime: 15,
             cookTime: 30,
+            servings: 2,
             ingredients: [],
-            steps: [],
-            dietaryNotes: [],
-            nutritionInfo: NutritionInfo(),
-            tags: []
+            steps: []
         )
         
         // When
         recipeManager.toggleFavorite(testRecipe)
         
         // Then
-        XCTAssertTrue(recipeManager.favorites.contains(testRecipe))
+        XCTAssertTrue(recipeManager.favorites.contains { $0.id == testRecipe.id })
         
         // When toggling again
         recipeManager.toggleFavorite(testRecipe)
         
         // Then
-        XCTAssertFalse(recipeManager.favorites.contains(testRecipe))
+        XCTAssertFalse(recipeManager.favorites.contains { $0.id == testRecipe.id })
     }
     
     // MARK: - SubscriptionManager Tests
@@ -152,22 +148,20 @@ final class CheffyTests: XCTestCase {
         // Given
         let userManager = UserManager()
         let testProfile = UserProfile(
-            name: "Test User",
-            email: "test@example.com",
-            cookingExperience: .intermediate,
-            dietaryPreferences: [.vegetarian],
-            favoriteCuisines: [.italian],
-            cookingGoals: [.healthyEating],
-            householdSize: 2
+            userID: UUID().uuidString,
+            deviceType: "iPhone",
+            preferredCuisines: ["Italian"],
+            dietaryPreferences: ["Vegetarian"],
+            appVersion: "1.0.0"
         )
         
         // When
         userManager.createUserProfile(testProfile)
         
         // Then
-        XCTAssertEqual(userManager.currentUser?.name, "Test User")
-        XCTAssertEqual(userManager.currentUser?.email, "test@example.com")
-        XCTAssertEqual(userManager.currentUser?.cookingExperience, .intermediate)
+        XCTAssertEqual(userManager.currentUser?.userID, testProfile.userID)
+        XCTAssertEqual(userManager.currentUser?.deviceType, "iPhone")
+        XCTAssertEqual(userManager.currentUser?.preferredCuisines, ["Italian"])
     }
     
     func testUserManagerOnboardingFlow() {
@@ -205,25 +199,21 @@ final class CheffyTests: XCTestCase {
         // Given
         let cacheManager = RecipeCacheManager.shared
         let testRecipe = Recipe(
-            id: UUID(),
-            name: "Cached Recipe",
+            title: "Cached Recipe",
             cuisine: .french,
             difficulty: .easy,
-            servings: 4,
             prepTime: 10,
             cookTime: 20,
+            servings: 4,
             ingredients: [],
-            steps: [],
-            dietaryNotes: [],
-            nutritionInfo: NutritionInfo(),
-            tags: []
+            steps: []
         )
         
         // When
         cacheManager.cacheRecipe(testRecipe)
         
         // Then
-        XCTAssertTrue(cacheManager.cachedRecipes.contains(testRecipe))
+        XCTAssertTrue(cacheManager.cachedRecipes.contains { $0.id == testRecipe.id })
         XCTAssertEqual(cacheManager.cachedRecipes.count, 1)
     }
     
@@ -231,28 +221,24 @@ final class CheffyTests: XCTestCase {
         // Given
         let cacheManager = RecipeCacheManager.shared
         let testRecipe = Recipe(
-            id: UUID(),
-            name: "Test Recipe",
+            title: "Test Recipe",
             cuisine: .italian,
             difficulty: .medium,
-            servings: 2,
             prepTime: 15,
             cookTime: 30,
+            servings: 2,
             ingredients: [],
-            steps: [],
-            dietaryNotes: [],
-            nutritionInfo: NutritionInfo(),
-            tags: []
+            steps: []
         )
         
         cacheManager.cacheRecipe(testRecipe)
-        XCTAssertTrue(cacheManager.cachedRecipes.contains(testRecipe))
+        XCTAssertTrue(cacheManager.cachedRecipes.contains { $0.id == testRecipe.id })
         
         // When
         cacheManager.removeFromCache(testRecipe)
         
         // Then
-        XCTAssertFalse(cacheManager.cachedRecipes.contains(testRecipe))
+        XCTAssertFalse(cacheManager.cachedRecipes.contains { $0.id == testRecipe.id })
     }
     
     // MARK: - OpenAIClient Tests

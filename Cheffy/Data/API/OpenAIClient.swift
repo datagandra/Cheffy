@@ -56,7 +56,37 @@ enum GeminiError: Error {
     }
 }
 
-class OpenAIClient: ObservableObject {
+// MARK: - OpenAIClient Protocol
+protocol OpenAIClientProtocol: ObservableObject {
+    var isLoading: Bool { get set }
+    var error: String? { get set }
+    
+    func hasAPIKey() -> Bool
+    func setAPIKey(_ key: String)
+    func testAPIKey() async -> Bool
+    func generateRecipe(
+        userPrompt: String?,
+        recipeName: String?,
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        ingredients: [String]?,
+        maxTime: Int?,
+        servings: Int
+    ) async throws -> Recipe?
+    func generatePopularRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) async throws -> [Recipe]?
+    func extractAllIngredientsAsText(from recipes: [Recipe]) -> String
+    func analyzeFilterCriteriaViolations(in recipes: [Recipe]) -> String
+    func parseRecipesFromJSONToText(_ jsonData: Data) -> String
+}
+
+class OpenAIClient: OpenAIClientProtocol {
     private let baseURL = "https://generativelanguage.googleapis.com/v1beta/models"
     private var apiKey: String?
     
@@ -161,10 +191,10 @@ class OpenAIClient: ObservableObject {
         ingredients: [String]? = nil,
         maxTime: Int? = nil,
         servings: Int = 2
-    ) async throws -> Recipe {
+    ) async throws -> Recipe? {
         guard let apiKey = apiKey else {
             logger.warning("No API key found")
-            throw GeminiError.noAPIKey
+            return nil
         }
         
         logger.api("API key found, starting generation...")
@@ -324,11 +354,11 @@ class OpenAIClient: ObservableObject {
         dietaryRestrictions: [DietaryNote],
         maxTime: Int? = nil,
         servings: Int = 2
-    ) async throws -> [Recipe] {
+    ) async throws -> [Recipe]? {
         
         // Handle "Any Cuisine" selection
         if cuisine == .any {
-            return try await generateMultiCuisinePopularRecipes(
+            return try? await generateMultiCuisinePopularRecipes(
                 difficulty: difficulty,
                 dietaryRestrictions: dietaryRestrictions,
                 maxTime: maxTime,
@@ -431,7 +461,7 @@ class OpenAIClient: ObservableObject {
                     // If we lost too many recipes due to time filtering, regenerate with stricter time constraints
                     if timeFilteredCount < 3 {
                         logger.warning("Too many recipes filtered out by time constraint, regenerating with stricter time requirements")
-                        return try await generatePopularRecipesWithStrictTimeConstraint(
+                        return try? await generatePopularRecipesWithStrictTimeConstraint(
                             cuisine: cuisine,
                             difficulty: difficulty,
                             dietaryRestrictions: dietaryRestrictions,

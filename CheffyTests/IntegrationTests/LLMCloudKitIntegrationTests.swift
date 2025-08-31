@@ -53,12 +53,24 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         )
         
         // Then - Verify recipe matches filters
-        assertRecipeMatchesFilters(recipe, filters: filters)
+        guard let recipe = recipe else {
+            XCTFail("Recipe is nil")
+            return
+        }
+        XCTAssertEqual(recipe.cuisine, filters.cuisine)
+        XCTAssertEqual(recipe.difficulty, filters.difficulty)
+        XCTAssertLessThanOrEqual(recipe.totalTime, filters.maxTime ?? Int.max)
+        XCTAssertEqual(recipe.servings, filters.servings)
+        
+        // Check dietary restrictions
+        for restriction in filters.dietaryRestrictions {
+            XCTAssertTrue(recipe.dietaryNotes.contains(restriction), "Recipe should contain \(restriction.rawValue)")
+        }
         
         // When - Convert to UserRecipe and upload to CloudKit
         let userRecipe = UserRecipe(
             id: UUID().uuidString,
-            title: recipe.name,
+            title: recipe.title,
             ingredients: recipe.ingredients.map { "\($0.amount) \($0.unit) \($0.name)" },
             instructions: recipe.steps.map { $0.description },
             createdAt: Date(),
@@ -132,7 +144,15 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if let generatedRecipe = self.recipeManager.generatedRecipe {
                 // Verify recipe generation
-                self.assertRecipeMatchesFilters(generatedRecipe, filters: filters)
+                XCTAssertEqual(generatedRecipe.cuisine, filters.cuisine)
+                XCTAssertEqual(generatedRecipe.difficulty, filters.difficulty)
+                XCTAssertLessThanOrEqual(generatedRecipe.totalTime, filters.maxTime ?? Int.max)
+                XCTAssertEqual(generatedRecipe.servings, filters.servings)
+                
+                // Check dietary restrictions
+                for restriction in filters.dietaryRestrictions {
+                    XCTAssertTrue(generatedRecipe.dietaryNotes.contains(restriction), "Recipe should contain \(restriction.rawValue)")
+                }
                 
                 // Simulate user interactions
                 Task {
@@ -144,7 +164,7 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
                         // Upload to CloudKit
                         let userRecipe = UserRecipe(
                             id: UUID().uuidString,
-                            title: generatedRecipe.name,
+                            title: generatedRecipe.title,
                             ingredients: generatedRecipe.ingredients.map { "\($0.amount) \($0.unit) \($0.name)" },
                             instructions: generatedRecipe.steps.map { $0.description },
                             createdAt: Date(),
@@ -227,7 +247,7 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         // When - Try to upload recipe (should fail)
         let userRecipe = UserRecipe(
             id: UUID().uuidString,
-            title: recipe.name,
+            title: recipe.title,
             ingredients: recipe.ingredients.map { "\($0.amount) \($0.unit) \($0.name)" },
             instructions: recipe.steps.map { $0.description },
             createdAt: Date(),
@@ -272,7 +292,7 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         let recipes = try await withThrowingTaskGroup(of: Recipe.self) { group in
             for filters in filterCombinations {
                 group.addTask {
-                    return try await self.mockLLMService.generateRecipe(
+                    let recipe = try await self.mockLLMService.generateRecipe(
                         userPrompt: nil,
                         recipeName: nil,
                         cuisine: filters.cuisine ?? .italian,
@@ -282,6 +302,10 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
                         maxTime: filters.maxTime,
                         servings: filters.servings ?? 2
                     )
+                    guard let recipe = recipe else {
+                        throw NSError(domain: "TestError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recipe generation failed"])
+                    }
+                    return recipe
                 }
             }
             
@@ -313,7 +337,7 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         let userRecipes = recipes.map { recipe in
             UserRecipe(
                 id: UUID().uuidString,
-                title: recipe.name,
+                title: recipe.title,
                 ingredients: recipe.ingredients.map { "\($0.amount) \($0.unit) \($0.name)" },
                 instructions: recipe.steps.map { $0.description },
                 createdAt: Date(),
@@ -372,10 +396,15 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
             servings: filters.servings ?? 2
         )
         
+        guard let recipe = recipe else {
+            XCTFail("Recipe is nil")
+            return
+        }
+        
         // Convert to UserRecipe
         let userRecipe = UserRecipe(
             id: UUID().uuidString,
-            title: recipe.name,
+            title: recipe.title,
             ingredients: recipe.ingredients.map { "\($0.amount) \($0.unit) \($0.name)" },
             instructions: recipe.steps.map { $0.description },
             createdAt: Date(),
@@ -399,7 +428,7 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         
         // Then - Verify data consistency
         XCTAssertNotNil(fetchedRecipe)
-        XCTAssertEqual(fetchedRecipe?.title, recipe.name)
+        XCTAssertEqual(fetchedRecipe?.title, recipe.title)
         XCTAssertEqual(fetchedRecipe?.cuisine, recipe.cuisine.rawValue)
         XCTAssertEqual(fetchedRecipe?.difficulty, recipe.difficulty.rawValue)
         XCTAssertEqual(fetchedRecipe?.prepTime, recipe.prepTime)
@@ -476,7 +505,7 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
         let recipes = try await withThrowingTaskGroup(of: Recipe.self) { group in
             for _ in 0..<numberOfRecipes {
                 group.addTask {
-                    return try await self.mockLLMService.generateRecipe(
+                    let recipe = try await self.mockLLMService.generateRecipe(
                         userPrompt: nil,
                         recipeName: nil,
                         cuisine: filters.cuisine ?? .italian,
@@ -486,6 +515,10 @@ final class LLMCloudKitIntegrationTests: XCTestCase {
                         maxTime: filters.maxTime,
                         servings: filters.servings ?? 2
                     )
+                    guard let recipe = recipe else {
+                        throw NSError(domain: "TestError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recipe generation failed"])
+                    }
+                    return recipe
                 }
             }
             

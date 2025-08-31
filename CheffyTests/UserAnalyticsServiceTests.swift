@@ -37,7 +37,7 @@ final class UserAnalyticsServiceTests: XCTestCase {
                 CookingStep(stepNumber: 1, description: "Step 1"),
                 CookingStep(stepNumber: 2, description: "Step 2")
             ],
-            winePairings: ["Wine 1"],
+            winePairings: [],
             dietaryNotes: [.vegetarian],
             chefNotes: "Test recipe"
         )
@@ -171,7 +171,7 @@ final class UserAnalyticsServiceTests: XCTestCase {
         XCTAssertEqual(analyticsService.currentUserStats?.featureUsage["session_start"], 1)
     }
     
-    func testLogSessionEnd() async {
+    func testLogSessionEnd() async throws {
         // Start session first
         await analyticsService.logSessionStart()
         
@@ -283,47 +283,4 @@ final class UserAnalyticsServiceTests: XCTestCase {
     }
 }
 
-// MARK: - Mock CloudKit Service Extensions
 
-extension MockCloudKitService {
-    var mockUserProfiles: [UserProfile] {
-        get { return [] }
-        set { }
-    }
-    
-    var mockUserStats: [UserStats] {
-        get { return [] }
-        set { }
-    }
-    
-    func uploadUserProfile(_ profile: UserProfile) async throws {
-        // Mock implementation
-    }
-    
-    func fetchUserProfile(userID: String) async throws -> UserProfile? {
-        return mockUserProfiles.first
-    }
-    
-    func uploadUserStats(_ stats: UserStats) async throws {
-        // Mock implementation
-    }
-    
-    func fetchUserStats(userID: String) async throws -> UserStats? {
-        return mockUserStats.first
-    }
-    
-    func getAggregatedStats() async throws -> [String: Any] {
-        return [
-            "totalUsers": 100,
-            "totalRecipesViewed": 1000,
-            "totalRecipesSaved": 500,
-            "totalSearches": 750,
-            "averageTimeSpent": 3600.0,
-            "lastUpdated": "2024-01-01T00:00:00Z"
-        ]
-    }
-    
-    func deleteUserData(userID: String) async throws {
-        // Mock implementation
-    }
-}

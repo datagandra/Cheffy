@@ -3,7 +3,7 @@ import Combine
 import os.log
 
 class RecipeManager: ObservableObject {
-    let openAIClient = OpenAIClient()
+    var openAIClient: any OpenAIClientProtocol = OpenAIClient()
     let cacheManager = RecipeCacheManager.shared
     
     @Published var generatedRecipe: Recipe?
@@ -152,8 +152,10 @@ class RecipeManager: ObservableObject {
             self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
             
             // Cache the generated recipe
-            os_log("Recipe cached successfully - recipeName: %{public}@", log: .default, type: .info, recipe.name)
-            self.cacheManager.cacheRecipe(recipe)
+            os_log("Recipe cached successfully - recipeName: %{public}@", log: .default, type: .info, recipe?.title ?? "Unknown")
+            if let recipe = recipe {
+                self.cacheManager.cacheRecipe(recipe)
+            }
             self.updateCachedData()
             
 
@@ -510,7 +512,7 @@ class RecipeManager: ObservableObject {
                 maxTime: maxTime,
                 servings: servings
             )
-            return recipes
+            return recipes ?? []
         } catch {
             logger.warning("LLM failed (likely quota exceeded) - falling back to database-only mode: \(error)")
             // Fallback: Generate vegetarian recipes from database instead
@@ -680,7 +682,7 @@ class RecipeManager: ObservableObject {
                 maxTime: maxTime,
                 servings: servings
             )
-            return Array(recipes.prefix(targetCount))
+            return Array((recipes ?? []).prefix(targetCount))
         } catch {
             logger.warning("LLM failed (likely quota exceeded) - falling back to database for additional recipes: \(error)")
             // Fallback: Generate additional recipes from database instead
@@ -1508,7 +1510,7 @@ class RecipeManager: ObservableObject {
             
             // CRITICAL: Apply strict filtering to ensure LLM-generated recipes meet all criteria
             logger.warning("Applying STRICT filtering to LLM-generated recipes")
-            recipes = recipes.filter { recipe in
+            recipes = (recipes ?? []).filter { recipe in
                 // Cuisine must match exactly
                 guard recipe.cuisine == cuisine else {
                     logger.warning("Recipe \(recipe.name) cuisine mismatch: \(recipe.cuisine.rawValue) != \(cuisine.rawValue)")
@@ -1549,12 +1551,17 @@ class RecipeManager: ObservableObject {
                 return true
             }
             
+            guard let recipes = recipes else {
+                logger.error("No recipes generated from LLM")
+                return
+            }
+            
             logger.warning("After strict filtering: \(recipes.count) recipes meet all criteria")
             
             // Cache all generated recipes for future offline use
             for recipe in recipes {
                 cacheManager.cacheRecipe(recipe)
-                logger.cache("Cached LLM-generated recipe: \(recipe.name)")
+                logger.cache("Cached LLM-generated recipe: \(recipe.title)")
             }
             
             // Update the published recipes
@@ -1610,6 +1617,11 @@ class RecipeManager: ObservableObject {
                     servings: servings
                 )
                 
+                guard let newRecipes = newRecipes else {
+                    logger.error("No new recipes generated in attempt \(attempts)")
+                    continue
+                }
+                
                 // Apply strict filtering to new recipes
                 let filteredRecipes = newRecipes.filter { recipe in
                     // Check dietary restrictions
@@ -1623,7 +1635,7 @@ class RecipeManager: ObservableObject {
                 
                 // Add unique recipes that we don't already have
                 for recipe in filteredRecipes {
-                    if !additionalRecipes.contains(where: { $0.name == recipe.name }) {
+                    if !additionalRecipes.contains(where: { $0.title == recipe.title }) {
                         additionalRecipes.append(recipe)
                         if additionalRecipes.count >= targetCount {
                             break

@@ -34,15 +34,29 @@ protocol CloudKitServiceProtocol: ObservableObject {
     func requestPermission() async throws
 }
 
-enum CloudKitSyncStatus {
+enum CloudKitSyncStatus: Equatable {
     case notAvailable
     case checking
     case available
     case syncing
     case error(String)
+    
+    static func == (lhs: CloudKitSyncStatus, rhs: CloudKitSyncStatus) -> Bool {
+        switch (lhs, rhs) {
+        case (.notAvailable, .notAvailable),
+             (.checking, .checking),
+             (.available, .available),
+             (.syncing, .syncing):
+            return true
+        case (.error(let lhsMessage), .error(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        default:
+            return false
+        }
+    }
 }
 
-enum CloudKitError: LocalizedError {
+enum CloudKitError: LocalizedError, Equatable {
     case notAvailable
     case permissionDenied
     case networkError
@@ -70,6 +84,26 @@ enum CloudKitError: LocalizedError {
             return "Server error: \(message)"
         case .unknown(let error):
             return "Unknown error: \(error.localizedDescription)"
+        }
+    }
+    
+    static func == (lhs: CloudKitError, rhs: CloudKitError) -> Bool {
+        switch (lhs, rhs) {
+        case (.notAvailable, .notAvailable),
+             (.permissionDenied, .permissionDenied),
+             (.networkError, .networkError),
+             (.quotaExceeded, .quotaExceeded),
+             (.recordNotFound, .recordNotFound),
+             (.invalidRecord, .invalidRecord):
+            return true
+        case (.serverError(let lhsMessage), .serverError(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        case (.unknown, .unknown):
+            // For unknown errors, we can't compare the underlying Error objects
+            // so we'll consider them equal if both are unknown
+            return true
+        default:
+            return false
         }
     }
 }

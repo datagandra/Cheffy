@@ -52,19 +52,23 @@ final class UserScenarioTests: XCTestCase {
         )
         
         // Then - Verify recipe meets morning cooking requirements
+        guard let recipe = recipe else {
+            XCTFail("Recipe is nil")
+            return
+        }
         XCTAssertEqual(recipe.difficulty, .easy, "Morning recipes should be easy")
         
-        let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
+        let totalTime = recipe.prepTime + recipe.cookTime
         XCTAssertLessThanOrEqual(totalTime, 15, "Morning recipes should be very quick")
         
         XCTAssertEqual(recipe.servings, 4, "Should serve family of 4")
         XCTAssertTrue(recipe.dietaryNotes.contains(.vegetarian), "Should be vegetarian")
         
         // Verify recipe is family-friendly
-        XCTAssertTrue(recipe.name.lowercased().contains("breakfast") || 
-                     recipe.name.lowercased().contains("pancake") ||
-                     recipe.name.lowercased().contains("oatmeal") ||
-                     recipe.name.lowercased().contains("smoothie"), "Should be breakfast-appropriate")
+        XCTAssertTrue(recipe.title.lowercased().contains("breakfast") || 
+                     recipe.title.lowercased().contains("pancake") ||
+                     recipe.title.lowercased().contains("oatmeal") ||
+                     recipe.title.lowercased().contains("smoothie"), "Should be breakfast-appropriate")
         
         // Test multiple quick recipes for variety
         let quickRecipes = try await generateMultipleQuickRecipes(count: 3, maxTime: 15)
@@ -99,6 +103,10 @@ final class UserScenarioTests: XCTestCase {
         )
         
         // Then - Verify recipe is kid-friendly
+        guard let recipe = recipe else {
+            XCTFail("Recipe is nil")
+            return
+        }
         XCTAssertEqual(recipe.difficulty, .easy, "Kid recipes should be easy")
         
         // Check for kid-friendly ingredients
@@ -137,6 +145,10 @@ final class UserScenarioTests: XCTestCase {
             )
             
             // Then - Verify authentic cuisine characteristics
+            guard let recipe = recipe else {
+                XCTFail("Recipe is nil")
+                return
+            }
             XCTAssertEqual(recipe.cuisine, cuisine, "Recipe should match requested cuisine: \(cuisine.rawValue)")
             XCTAssertEqual(recipe.difficulty, .hard, "Chef recipes should be challenging")
             
@@ -181,6 +193,10 @@ final class UserScenarioTests: XCTestCase {
         )
         
         // Then - Verify advanced techniques
+        guard let recipe = recipe else {
+            XCTFail("Recipe is nil")
+            return
+        }
         XCTAssertEqual(recipe.difficulty, .hard, "Should be advanced difficulty")
         XCTAssertGreaterThanOrEqual(recipe.steps.count, 8, "Advanced recipes should have many steps")
         
@@ -194,7 +210,7 @@ final class UserScenarioTests: XCTestCase {
         XCTAssertTrue(hasAdvancedTerms, "Advanced recipe should contain technical terms")
         
         // Verify longer cooking times
-        let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
+        let totalTime = recipe.prepTime + recipe.cookTime
         XCTAssertGreaterThanOrEqual(totalTime, 60, "Advanced recipes should take significant time")
     }
     
@@ -223,6 +239,10 @@ final class UserScenarioTests: XCTestCase {
         )
         
         // Then - Verify beginner-friendly characteristics
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
         XCTAssertEqual(recipe.difficulty, .easy, "Should be easy for beginners")
         XCTAssertLessThanOrEqual(recipe.steps.count, 5, "Beginner recipes should have few steps")
         
@@ -236,11 +256,11 @@ final class UserScenarioTests: XCTestCase {
         XCTAssertTrue(hasSimpleIngredients, "Should contain simple, common ingredients")
         
         // Verify helpful tips in steps
-        let stepsWithTips = recipe.steps.filter { !$0.tips.isEmpty }
+        let stepsWithTips = recipe.steps.filter { !($0.tips?.isEmpty ?? true) }
         XCTAssertGreaterThanOrEqual(stepsWithTips.count, 2, "Beginner recipes should have helpful tips")
         
         // Verify reasonable cooking times
-        let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
+        let totalTime = recipe.prepTime + recipe.cookTime
         XCTAssertLessThanOrEqual(totalTime, 30, "Beginner recipes should be quick")
     }
     
@@ -267,6 +287,10 @@ final class UserScenarioTests: XCTestCase {
         )
         
         // Then - Verify voice-friendly characteristics
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
         XCTAssertEqual(recipe.difficulty, .easy, "Voice recipes should be easy")
         
         // Verify clear, descriptive steps
@@ -283,7 +307,7 @@ final class UserScenarioTests: XCTestCase {
         }
         
         // Verify helpful tips for voice guidance
-        let stepsWithTips = recipe.steps.filter { !$0.tips.isEmpty }
+        let stepsWithTips = recipe.steps.filter { !($0.tips?.isEmpty ?? true) }
         XCTAssertGreaterThanOrEqual(stepsWithTips.count, 1, "Voice recipes should have helpful tips")
     }
     
@@ -312,6 +336,10 @@ final class UserScenarioTests: XCTestCase {
         )
         
         // Then - Verify restaurant-scale characteristics
+        guard let recipe = recipe else {
+            XCTFail("Recipe should not be nil")
+            return
+        }
         XCTAssertEqual(recipe.servings, 20, "Should serve restaurant quantity")
         XCTAssertEqual(recipe.difficulty, .medium, "Restaurant recipes should be manageable")
         
@@ -321,7 +349,7 @@ final class UserScenarioTests: XCTestCase {
         }
         
         // Verify efficient cooking methods
-        let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
+        let totalTime = recipe.prepTime + recipe.cookTime
         XCTAssertLessThanOrEqual(totalTime, 45, "Restaurant recipes should be time-efficient")
         
         // Verify professional techniques
@@ -352,6 +380,10 @@ final class UserScenarioTests: XCTestCase {
                 servings: 15
             )
             
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
             allRecipes.append(recipe)
         }
         
@@ -385,16 +417,20 @@ final class UserScenarioTests: XCTestCase {
         let recipes = try await withThrowingTaskGroup(of: Recipe.self) { group in
             for filters in filterCombinations {
                 group.addTask {
-                    return try await self.mockLLMService.generateRecipe(
-                        userPrompt: nil,
-                        recipeName: nil,
-                        cuisine: filters.cuisine ?? .italian,
-                        difficulty: filters.difficulty ?? .medium,
-                        dietaryRestrictions: filters.dietaryRestrictions ?? [],
-                        ingredients: nil,
-                        maxTime: filters.maxTime,
-                        servings: filters.servings ?? 2
-                    )
+                                    let recipe = try await self.mockLLMService.generateRecipe(
+                    userPrompt: nil,
+                    recipeName: nil,
+                    cuisine: filters.cuisine ?? .italian,
+                    difficulty: filters.difficulty ?? .medium,
+                    dietaryRestrictions: filters.dietaryRestrictions ?? [],
+                    ingredients: nil,
+                    maxTime: filters.maxTime,
+                    servings: filters.servings ?? 2
+                )
+                guard let recipe = recipe else {
+                    throw NSError(domain: "TestError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Recipe generation failed"])
+                }
+                return recipe
                 }
             }
             
@@ -409,11 +445,18 @@ final class UserScenarioTests: XCTestCase {
         XCTAssertEqual(recipes.count, filterCombinations.count, "All filter combinations should generate recipes")
         
         // Verify performance under rapid changes
-        TestPerformanceMetrics.assertPerformance(operation: "Rapid filter changes", maxTime: 6.0)
+        TestPerformanceMetrics.assertPerformance(operation: "Rapid filter changes", maxDuration: 6.0)
         
         // Verify each recipe matches its filters
         for (index, filters) in filterCombinations.enumerated() {
-            assertRecipeMatchesFilters(recipes[index], filters: filters)
+            // Verify recipe matches filters
+            XCTAssertEqual(recipes[index].cuisine, filters.cuisine)
+            XCTAssertEqual(recipes[index].difficulty, filters.difficulty)
+            XCTAssertLessThanOrEqual(recipes[index].totalTime, filters.maxTime ?? Int.max)
+            XCTAssertEqual(recipes[index].servings, filters.servings)
+            for restriction in filters.dietaryRestrictions {
+                XCTAssertTrue(recipes[index].dietaryNotes.contains(restriction), "Recipe should contain \(restriction.rawValue)")
+            }
         }
     }
     
@@ -433,6 +476,10 @@ final class UserScenarioTests: XCTestCase {
                 maxTime: maxTime,
                 servings: 4
             )
+            guard let recipe = recipe else {
+                XCTFail("Recipe should not be nil")
+                return
+            }
             recipes.append(recipe)
         }
         

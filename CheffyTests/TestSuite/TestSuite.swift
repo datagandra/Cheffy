@@ -4,7 +4,7 @@ import Combine
 
 // MARK: - Test Suite Configuration
 class TestSuite: XCTestCase {
-    
+
     // MARK: - Test Categories
     enum TestCategory: String, CaseIterable {
         case unit = "Unit Tests"
@@ -14,115 +14,101 @@ class TestSuite: XCTestCase {
         case accessibility = "Accessibility Tests"
         case stress = "Stress Tests"
     }
-    
+
     // MARK: - Test Data
     struct TestData {
-        static let sampleRecipes: [Recipe] = [
-            Recipe(
-                id: UUID(),
-                name: "Quick Pasta Carbonara",
-                cuisine: .italian,
-                difficulty: .easy,
-                servings: 2,
-                prepTime: 10,
-                cookTime: 15,
-                ingredients: [
-                    Ingredient(name: "Spaghetti", amount: 200, unit: "g", notes: "Fresh pasta preferred"),
-                    Ingredient(name: "Eggs", amount: 2, unit: "whole", notes: "Room temperature"),
-                    Ingredient(name: "Pancetta", amount: 100, unit: "g", notes: "Cubed")
-                ],
-                steps: [
-                    RecipeStep(stepNumber: 1, description: "Boil pasta in salted water", duration: 10, temperature: nil, tips: ["Salt the water well"]),
-                    RecipeStep(stepNumber: 2, description: "Cook pancetta until crispy", duration: 5, temperature: nil, tips: ["Medium heat"]),
-                    RecipeStep(stepNumber: 3, description: "Mix eggs with cheese", duration: 2, temperature: nil, tips: ["Don't scramble"])
-                ],
-                dietaryNotes: [.vegetarian],
-                nutritionInfo: NutritionInfo(),
-                tags: ["quick", "pasta", "italian"]
-            ),
-            Recipe(
-                id: UUID(),
-                name: "Vegetarian Curry",
-                cuisine: .indian,
-                difficulty: .medium,
-                servings: 4,
-                prepTime: 20,
-                cookTime: 30,
-                ingredients: [
-                    Ingredient(name: "Chickpeas", amount: 400, unit: "g", notes: "Canned or cooked"),
-                    Ingredient(name: "Coconut Milk", amount: 400, unit: "ml", notes: "Full fat for creaminess"),
-                    Ingredient(name: "Curry Powder", amount: 2, unit: "tbsp", notes: "Mild or hot to taste")
-                ],
-                steps: [
-                    RecipeStep(stepNumber: 1, description: "Sauté onions and garlic", duration: 5, temperature: nil, tips: ["Until translucent"]),
-                    RecipeStep(stepNumber: 2, description: "Add spices and cook", duration: 2, temperature: nil, tips: ["Don't burn the spices"]),
-                    RecipeStep(stepNumber: 3, description: "Simmer with coconut milk", duration: 25, temperature: nil, tips: ["Low heat to prevent curdling"])
-                ],
-                dietaryNotes: [.vegetarian, .vegan, .glutenFree],
-                nutritionInfo: NutritionInfo(),
-                tags: ["curry", "vegetarian", "indian"]
-            )
-        ]
-        
+            static let sampleRecipes: [Recipe] = [
+        Recipe(
+            title: "Spaghetti Carbonara",
+            cuisine: .italian,
+            difficulty: .medium,
+            prepTime: 15,
+            cookTime: 20,
+            servings: 4,
+            ingredients: [
+                Ingredient(name: "Spaghetti", amount: 400, unit: "grams", notes: "Dried"),
+                Ingredient(name: "Eggs", amount: 4, unit: "large", notes: "Fresh"),
+                Ingredient(name: "Pancetta", amount: 150, unit: "grams", notes: "Cubed"),
+                Ingredient(name: "Parmesan", amount: 100, unit: "grams", notes: "Freshly grated")
+            ],
+            steps: [
+                CookingStep(stepNumber: 1, description: "Boil pasta according to package instructions"),
+                CookingStep(stepNumber: 2, description: "Cook pancetta until crispy"),
+                CookingStep(stepNumber: 3, description: "Mix eggs and cheese in a bowl"),
+                CookingStep(stepNumber: 4, description: "Combine pasta with egg mixture and pancetta")
+            ]
+        ),
+        Recipe(
+            title: "Chicken Curry",
+            cuisine: .indian,
+            difficulty: .easy,
+            prepTime: 20,
+            cookTime: 30,
+            servings: 6,
+            ingredients: [
+                Ingredient(name: "Chicken", amount: 500, unit: "grams", notes: "Boneless, cubed"),
+                Ingredient(name: "Onion", amount: 2, unit: "medium", notes: "Diced"),
+                Ingredient(name: "Garlic", amount: 4, unit: "cloves", notes: "Minced"),
+                Ingredient(name: "Coconut Milk", amount: 400, unit: "ml", notes: "Full fat")
+            ],
+            steps: [
+                CookingStep(stepNumber: 1, description: "Sauté onions and garlic"),
+                CookingStep(stepNumber: 2, description: "Add chicken and brown"),
+                CookingStep(stepNumber: 3, description: "Add coconut milk and simmer"),
+                CookingStep(stepNumber: 4, description: "Season and serve")
+            ]
+        )
+    ]
+
         static let dietaryRestrictions: [DietaryNote] = [.vegetarian, .vegan, .glutenFree, .dairyFree]
         static let cuisines: [Cuisine] = [.italian, .indian, .chinese, .mexican, .japanese]
         static let difficulties: [Difficulty] = [.easy, .medium, .hard]
         static let cookingTimes: [Int] = [15, 30, 45, 60, 90]
     }
-    
+
     // MARK: - Test Utilities
     func waitForAsyncOperation(timeout: TimeInterval = 5.0) async {
         try? await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
     }
-    
-    func createMockRecipe(with filters: RecipeFilters) -> Recipe {
+
+    static func createMockRecipe(
+        title: String = "Mock Recipe",
+        cuisine: Cuisine = .italian,
+        difficulty: Difficulty = .easy,
+        prepTime: Int = 15,
+        cookTime: Int = 20,
+        servings: Int = 2,
+        dietaryRestrictions: [DietaryNote] = []
+    ) -> Recipe {
         return Recipe(
-            id: UUID(),
-            name: "Mock Recipe with Filters",
-            cuisine: filters.cuisine ?? .italian,
-            difficulty: filters.difficulty ?? .medium,
-            servings: filters.servings ?? 2,
-            prepTime: filters.maxTime.map { $0 / 2 } ?? 15,
-            cookTime: filters.maxTime.map { $0 / 2 } ?? 30,
-            ingredients: [],
-            steps: [],
-            dietaryNotes: filters.dietaryRestrictions ?? [],
-            nutritionInfo: NutritionInfo(),
-            tags: []
+            title: title,
+            cuisine: cuisine,
+            difficulty: difficulty,
+            prepTime: prepTime,
+            cookTime: cookTime,
+            servings: servings,
+            ingredients: [
+                Ingredient(name: "Mock Ingredient", amount: 100, unit: "grams", notes: "For testing")
+            ],
+            steps: [
+                CookingStep(stepNumber: 1, description: "Mock step for testing")
+            ],
+            dietaryNotes: dietaryRestrictions
         )
     }
-    
-    func assertRecipeMatchesFilters(_ recipe: Recipe, filters: RecipeFilters) {
-        if let cuisine = filters.cuisine {
-            XCTAssertEqual(recipe.cuisine, cuisine, "Recipe cuisine should match filter")
-        }
-        
-        if let difficulty = filters.difficulty {
-            XCTAssertEqual(recipe.difficulty, difficulty, "Recipe difficulty should match filter")
-        }
-        
-        if let maxTime = filters.maxTime {
-            let totalTime = (recipe.prepTime ?? 0) + (recipe.cookTime ?? 0)
-            XCTAssertLessThanOrEqual(totalTime, maxTime, "Recipe total time should be within filter limit")
-        }
-        
-        if let dietaryRestrictions = filters.dietaryRestrictions {
-            for restriction in dietaryRestrictions {
-                XCTAssertTrue(recipe.dietaryNotes.contains(restriction), "Recipe should contain dietary restriction: \(restriction)")
-            }
-        }
-    }
+
+
 }
 
 // MARK: - Recipe Filters Test Helper
 struct RecipeFilters {
-    let cuisine: Cuisine?
-    let difficulty: Difficulty?
-    let dietaryRestrictions: [DietaryNote]?
+    let cuisine: Cuisine
+    let difficulty: Difficulty
+    let dietaryRestrictions: [DietaryNote]
     let maxTime: Int?
-    let servings: Int?
+    let servings: Int
     
-    init(cuisine: Cuisine? = nil, difficulty: Difficulty? = nil, dietaryRestrictions: [DietaryNote]? = nil, maxTime: Int? = nil, servings: Int? = nil) {
+    init(cuisine: Cuisine = .any, difficulty: Difficulty = .easy, dietaryRestrictions: [DietaryNote] = [], maxTime: Int? = nil, servings: Int = 4) {
         self.cuisine = cuisine
         self.difficulty = difficulty
         self.dietaryRestrictions = dietaryRestrictions
@@ -133,8 +119,8 @@ struct RecipeFilters {
 
 // MARK: - Test Performance Metrics
 class TestPerformanceMetrics {
-    static var startTime: Date?
-    static var endTime: Date?
+    static var startTime: Date = Date()
+    static var endTime: Date = Date()
     
     static func startMeasuring() {
         startTime = Date()
@@ -142,11 +128,11 @@ class TestPerformanceMetrics {
     
     static func stopMeasuring() -> TimeInterval {
         endTime = Date()
-        return endTime?.timeIntervalSince(startTime ?? Date()) ?? 0
+        return endTime.timeIntervalSince(startTime)
     }
     
-    static func assertPerformance(operation: String, maxTime: TimeInterval) {
-        let executionTime = stopMeasuring()
-        XCTAssertLessThan(executionTime, maxTime, "\(operation) took too long: \(executionTime)s (max: \(maxTime)s)")
+    static func assertPerformance(operation: String, maxDuration: TimeInterval, file: StaticString = #file, line: UInt = #line) {
+        let duration = stopMeasuring()
+        XCTAssertLessThan(duration, maxDuration, "\(operation) took \(duration)s, expected less than \(maxDuration)s", file: file, line: line)
     }
 }

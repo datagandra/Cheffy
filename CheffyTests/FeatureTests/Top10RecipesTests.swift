@@ -308,7 +308,7 @@ final class Top10RecipesTests: XCTestCase {
         
         // Then - Verify performance
         XCTAssertEqual(top10.count, 10)
-        TestPerformanceMetrics.assertPerformance(operation: "Top 10 generation from 1000 recipes", maxTime: 0.1)
+        TestPerformanceMetrics.assertPerformance(operation: "Top 10 generation from 1000 recipes", maxDuration: 0.1)
     }
     
     func testMonthlyAggregationPerformance() async throws {
@@ -322,7 +322,7 @@ final class Top10RecipesTests: XCTestCase {
         
         // Then - Verify performance
         XCTAssertGreaterThan(monthlyStats.count, 0)
-        TestPerformanceMetrics.assertPerformance(operation: "Monthly aggregation from large dataset", maxTime: 0.5)
+        TestPerformanceMetrics.assertPerformance(operation: "Monthly aggregation from large dataset", maxDuration: 0.5)
     }
     
     // MARK: - Edge Case Tests
@@ -385,7 +385,23 @@ final class Top10RecipesTests: XCTestCase {
     
     func testTop10WithAnalyticsIntegration() async throws {
         // Given - Mock analytics service
-        let recipe = TestData.sampleRecipes[0]
+        let recipe = Recipe(
+            id: UUID(),
+            title: "Test Recipe",
+            cuisine: .italian,
+            difficulty: .medium,
+            prepTime: 20,
+            cookTime: 30,
+            servings: 4,
+            ingredients: [
+                Ingredient(name: "flour", amount: 1.0, unit: "cup")
+            ],
+            steps: [
+                CookingStep(stepNumber: 1, description: "Mix ingredients", tips: "Use a whisk")
+            ],
+            winePairings: [],
+            dietaryNotes: [.vegetarian]
+        )
         
         // When - Log recipe view and check top 10 impact
         try await mockUserAnalyticsService.logRecipeView(recipe)
