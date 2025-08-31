@@ -20,6 +20,65 @@ class RecipeManager: ObservableObject {
     // Track last used dietary restrictions for change detection
     private var lastUsedDietaryRestrictions: [DietaryNote] = []
     
+    // Track last used filter combinations to prevent duplicate LLM calls
+    private var lastUsedFilters: [String: Any] = [:]
+    private var lastLLMGenerationTime: Date = Date.distantPast
+    private let minimumLLMInterval: TimeInterval = 300 // 5 minutes between LLM calls for same filters
+    
+    // Cache key generator for filter combinations
+    private func generateFilterKey(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) -> String {
+        let dietaryString = dietaryRestrictions.sorted(by: { $0.rawValue < $1.rawValue }).map { $0.rawValue }.joined(separator: ",")
+        let timeString = maxTime?.description ?? "any"
+        return "\(cuisine.rawValue)_\(difficulty.rawValue)_\(dietaryString)_\(timeString)_\(servings)"
+    }
+    
+    // Check if we should use cached data instead of calling LLM
+    private func shouldUseCachedData(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) -> Bool {
+        let filterKey = generateFilterKey(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
+        
+        // Check if we have the exact same filters
+        guard let lastFilters = lastUsedFilters["last_key"] as? String,
+              lastFilters == filterKey else {
+            return false
+        }
+        
+        // Check if enough time has passed since last LLM call
+        let timeSinceLastCall = Date().timeIntervalSince(lastLLMGenerationTime)
+        if timeSinceLastCall < minimumLLMInterval {
+            logger.cache("Using cached data - LLM called recently (\(Int(timeSinceLastCall))s ago)")
+            return true
+        }
+        
+        // Check if we have sufficient cached recipes for these filters
+        let cachedCount = findCachedPopularRecipes(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings
+        ).count
+        
+        // If we have 3+ cached recipes for these exact filters, use cache
+        if cachedCount >= 3 {
+            logger.cache("Using cached data - have \(cachedCount) recipes for exact filter match")
+            return true
+        }
+        
+        return false
+    }
+    
     init() {
         
         loadGenerationCount()
@@ -981,6 +1040,52 @@ class RecipeManager: ObservableObject {
         }
     }
     
+    /// Fallback to local recipes when LLM generation fails
+    private func fallbackToLocalRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) async {
+        logger.warning("Falling back to local recipes due to LLM failure")
+        
+        // Get local recipes from database
+        let localRecipes = await getLocalRecipes(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings
+        )
+        
+        await MainActor.run {
+            if !localRecipes.isEmpty {
+                self.popularRecipes = localRecipes
+                self.isUsingCachedData = true
+                logger.warning("Using \(localRecipes.count) local recipes as fallback")
+            } else {
+                self.popularRecipes = []
+                self.error = "Unable to generate recipes. Please check your internet connection and try again."
+                logger.error("No local recipes available as fallback")
+            }
+        }
+    }
+    
+    /// Gets local recipes from the database with filtering
+    private func getLocalRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) async -> [Recipe] {
+        // This would integrate with your local recipe database
+        // For now, return empty array - you can implement this based on your database structure
+        logger.warning("Local recipe fallback not yet implemented")
+        return []
+    }
+    
     // MARK: - Smart Caching Logic
     
 
@@ -1221,6 +1326,60 @@ class RecipeManager: ObservableObject {
         return matchingRecipes
     }
     
+    /// Checks if we have sufficient cached recipes for a specific filter combination
+    /// - Parameters: All the recipe generation parameters
+    /// - Returns: True if we have enough cached recipes, false otherwise
+    private func hasSufficientCachedRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) -> Bool {
+        let cachedRecipes = findCachedPopularRecipes(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings
+        )
+        
+        // We consider it sufficient if we have at least 3 recipes
+        let hasEnough = cachedRecipes.count >= 3
+        logger.cache("Cache sufficiency check: \(cachedRecipes.count) recipes for filters - sufficient: \(hasEnough)")
+        return hasEnough
+    }
+    
+    /// Gets cache statistics for specific filters
+    /// - Parameters: All the recipe generation parameters
+    /// - Returns: Dictionary with cache statistics for the specific filters
+    func getCacheStatisticsForFilters(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int
+    ) -> [String: Any] {
+        let cachedRecipes = findCachedPopularRecipes(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings
+        )
+        
+        let filterKey = generateFilterKey(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
+        
+        return [
+            "filterKey": filterKey,
+            "cachedCount": cachedRecipes.count,
+            "isSufficient": cachedRecipes.count >= 3,
+            "lastLLMCall": lastLLMGenerationTime,
+            "timeSinceLastCall": Date().timeIntervalSince(lastLLMGenerationTime),
+            "shouldUseCache": shouldUseCachedData(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
+        ]
+    }
+    
     // MARK: - Dietary Restrictions Change Detection
     
     /// Checks if dietary restrictions have changed significantly from the last request
@@ -1332,6 +1491,13 @@ class RecipeManager: ObservableObject {
         servings: Int
     ) async {
         do {
+            // Update filter tracking and LLM call time
+            let filterKey = generateFilterKey(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
+            lastUsedFilters["last_key"] = filterKey
+            lastLLMGenerationTime = Date()
+            
+            logger.warning("Connecting to LLM for recipe generation - filter key: \(filterKey)")
+            
             var recipes = try await openAIClient.generatePopularRecipes(
                 cuisine: cuisine,
                 difficulty: difficulty,
@@ -1340,55 +1506,150 @@ class RecipeManager: ObservableObject {
                 servings: servings
             )
             
-            // Final validation: ensure all recipes meet time constraint if specified
-            if let maxTime = maxTime {
-                let invalidRecipes = recipes.filter { recipe in
-                    (recipe.prepTime + recipe.cookTime) > maxTime
+            // CRITICAL: Apply strict filtering to ensure LLM-generated recipes meet all criteria
+            logger.warning("Applying STRICT filtering to LLM-generated recipes")
+            recipes = recipes.filter { recipe in
+                // Cuisine must match exactly
+                guard recipe.cuisine == cuisine else {
+                    logger.warning("Recipe \(recipe.name) cuisine mismatch: \(recipe.cuisine.rawValue) != \(cuisine.rawValue)")
+                    return false
                 }
                 
-                if !invalidRecipes.isEmpty {
-                    logger.error("CRITICAL: LLM generated \(invalidRecipes.count) recipes that violate time constraint:")
-                    for recipe in invalidRecipes {
-                        logger.error("  - '\(recipe.title)': \(recipe.prepTime) + \(recipe.cookTime) = \(recipe.prepTime + recipe.cookTime) min > \(maxTime) min")
-                    }
-                    
-                    // Remove invalid recipes
-                    recipes = recipes.filter { recipe in
-                        (recipe.prepTime + recipe.cookTime) <= maxTime
-                    }
-                    logger.warning("Removed \(invalidRecipes.count) invalid recipes, remaining: \(recipes.count)")
+                // Difficulty must match exactly
+                guard recipe.difficulty == difficulty else {
+                    logger.warning("Recipe \(recipe.name) difficulty mismatch: \(recipe.difficulty.rawValue) != \(difficulty.rawValue)")
+                    return false
                 }
+                
+                // Servings should be close (within 2)
+                guard abs(recipe.servings - servings) <= 2 else {
+                    logger.warning("Recipe \(recipe.name) servings mismatch: \(recipe.servings) vs \(servings)")
+                    return false
+                }
+                
+                // Cooking time must be within limit if specified
+                if let maxTime = maxTime {
+                    let totalTime = recipe.prepTime + recipe.cookTime
+                    guard totalTime <= maxTime else {
+                        logger.warning("Recipe \(recipe.name) time mismatch: \(totalTime)min > \(maxTime)min")
+                        return false
+                    }
+                }
+                
+                // Dietary restrictions must be strictly enforced
+                if !dietaryRestrictions.isEmpty {
+                    let recipeDietaryNotes = Set(recipe.dietaryNotes)
+                    let requestedDietaryNotes = Set(dietaryRestrictions)
+                    guard recipeDietaryNotes.isSuperset(of: requestedDietaryNotes) else {
+                        logger.warning("Recipe \(recipe.name) dietary mismatch: \(recipe.dietaryNotes) doesn't contain \(dietaryRestrictions)")
+                        return false
+                    }
+                }
+                
+                return true
             }
             
+            logger.warning("After strict filtering: \(recipes.count) recipes meet all criteria")
+            
+            // Cache all generated recipes for future offline use
+            for recipe in recipes {
+                cacheManager.cacheRecipe(recipe)
+                logger.cache("Cached LLM-generated recipe: \(recipe.name)")
+            }
+            
+            // Update the published recipes
             await MainActor.run {
                 self.popularRecipes = recipes
-                self.incrementGenerationCount()
                 self.isUsingCachedData = false
-                
-                // Update dietary restrictions tracking
-                self.updateLastUsedDietaryRestrictions(dietaryRestrictions)
-                
-                // Cache all generated recipes
-                logger.cache("RecipeManager: Caching \(recipes.count) generated recipes")
-                self.cacheManager.cacheRecipes(recipes)
-                self.updateCachedData()
-                logger.cache("RecipeManager: All recipes cached successfully")
+                logger.info("Successfully generated \(recipes.count) recipes from LLM")
             }
+            
+            // Update cached data
+            updateCachedData()
+            
         } catch {
-            // Check if it's an API key error and fall back to local recipes
-            if let geminiError = error as? GeminiError, case .noAPIKey = geminiError {
-                logger.warning("No API key available, falling back to local recipe database for popular recipes")
-                await fallbackToLocalPopularRecipes(
+            logger.error("LLM generation failed: \(error)")
+            await MainActor.run {
+                self.error = "Failed to generate recipes: \(error.localizedDescription)"
+            }
+            
+            // Fallback to local recipes
+            await fallbackToLocalPopularRecipes(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions
+            )
+        }
+    }
+    
+    /// Generates additional recipes with strict filtering when initial generation doesn't provide enough
+    private func generateAdditionalStrictRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int?,
+        servings: Int,
+        targetCount: Int
+    ) async throws -> [Recipe] {
+        logger.warning("Generating \(targetCount) additional recipes with STRICT filtering")
+        
+        var additionalRecipes: [Recipe] = []
+        var attempts = 0
+        let maxAttempts = 3
+        
+        while additionalRecipes.count < targetCount && attempts < maxAttempts {
+            attempts += 1
+            logger.warning("Attempt \(attempts) to generate additional recipes")
+            
+            do {
+                let newRecipes = try await openAIClient.generatePopularRecipes(
                     cuisine: cuisine,
                     difficulty: difficulty,
-                    dietaryRestrictions: dietaryRestrictions
+                    dietaryRestrictions: dietaryRestrictions,
+                    maxTime: maxTime,
+                    servings: servings
                 )
-            } else {
-                await MainActor.run {
-                    self.error = error.localizedDescription
-                    logger.error("Error generating popular recipes: \(error)")
+                
+                // Apply strict filtering to new recipes
+                let filteredRecipes = newRecipes.filter { recipe in
+                    // Check dietary restrictions
+                    let dietaryCompliant = dietaryRestrictions.isEmpty || validateRecipeCompliance(recipe, against: dietaryRestrictions)
+                    
+                    // Check time constraints
+                    let timeCompliant = maxTime == nil || (recipe.prepTime + recipe.cookTime) <= maxTime!
+                    
+                    return dietaryCompliant && timeCompliant
                 }
+                
+                // Add unique recipes that we don't already have
+                for recipe in filteredRecipes {
+                    if !additionalRecipes.contains(where: { $0.name == recipe.name }) {
+                        additionalRecipes.append(recipe)
+                        if additionalRecipes.count >= targetCount {
+                            break
+                        }
+                    }
+                }
+                
+                logger.warning("Generated \(filteredRecipes.count) filtered recipes, total additional: \(additionalRecipes.count)")
+                
+            } catch {
+                logger.error("Error in attempt \(attempts): \(error)")
             }
         }
+        
+        logger.warning("Generated \(additionalRecipes.count) additional recipes after \(attempts) attempts")
+        return additionalRecipes
+    }
+    
+    /// Validates if a recipe complies with the given dietary restrictions.
+    /// - Parameters:
+    ///   - recipe: The recipe to validate.
+    ///   - dietaryRestrictions: The dietary restrictions to check against.
+    /// - Returns: True if the recipe complies, false otherwise.
+    private func validateRecipeCompliance(_ recipe: Recipe, against dietaryRestrictions: [DietaryNote]) -> Bool {
+        let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+        let userDietaryNotes = Set(dietaryRestrictions.map { $0.rawValue })
+        return !recipeDietaryNotes.isDisjoint(with: userDietaryNotes)
     }
 } 

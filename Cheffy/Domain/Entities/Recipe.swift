@@ -97,20 +97,29 @@ enum Difficulty: String, CaseIterable, Codable {
 
 enum CookingTimeFilter: String, CaseIterable, Codable {
     case any = "Any Time"
-    case under5min = "Under 5 min"
-    case under10min = "Under 10 min"
-    case under20min = "Under 20 min"
+    case under15min = "Under 15 min"
+    case under30min = "Under 30 min"
+    case under45min = "Under 45 min"
+    case under60min = "Under 1 hour"
+    case under90min = "Under 1.5 hours"
+    case under120min = "Under 2 hours"
     
     var maxTotalTime: Int {
         switch self {
         case .any:
             return Int.max
-        case .under5min:
-            return 5
-        case .under10min:
-            return 10
-        case .under20min:
-            return 20
+        case .under15min:
+            return 15
+        case .under30min:
+            return 30
+        case .under45min:
+            return 45
+        case .under60min:
+            return 60
+        case .under90min:
+            return 90
+        case .under120min:
+            return 120
         }
     }
 }

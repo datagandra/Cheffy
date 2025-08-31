@@ -639,16 +639,16 @@ struct RecipeGeneratorView: View {
             return false
         }
         
-        // Validate cooking time selection
-        if selectedCookingTime == .under5min && selectedServings > 4 {
+        // Validate cooking time constraints
+        if selectedCookingTime == .under15min && selectedServings > 4 {
             showValidationError = true
-            validationMessage = "Under 5 min recipes are limited to 4 servings or less"
+            validationMessage = "Quick recipes (under 15 min) are limited to 4 servings or less for quality"
             return false
         }
         
-        if selectedCookingTime == .under10min && selectedServings > 6 {
+        if selectedCookingTime == .under30min && selectedServings > 6 {
             showValidationError = true
-            validationMessage = "Under 10 min recipes are limited to 6 servings or less"
+            validationMessage = "Quick recipes (under 30 min) are limited to 6 servings or less for quality"
             return false
         }
         

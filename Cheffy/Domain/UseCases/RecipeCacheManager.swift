@@ -31,6 +31,12 @@ class RecipeCacheManager: ObservableObject {
             cachedRecipes[existingIndex] = recipe
             logger.cache("Updated existing recipe in cache: \(recipe.name)")
         } else {
+            // Check for similar recipes to prevent duplicates
+            if let similarRecipe = findSimilarRecipe(recipe) {
+                logger.cache("Similar recipe already exists: \(similarRecipe.name) - skipping duplicate")
+                return
+            }
+            
             // Add new recipe to cache
             cachedRecipes.append(recipe)
             logger.cache("Added new recipe to cache: \(recipe.name)")
@@ -239,5 +245,60 @@ class RecipeCacheManager: ObservableObject {
             logger.error("Error loading recently viewed recipes: \(error)")
             recentlyViewedRecipes = []
         }
+    }
+    
+    /// Finds similar recipes to prevent duplicates
+    /// - Parameter recipe: The recipe to check for similarity
+    /// - Returns: A similar recipe if found, nil otherwise
+    private func findSimilarRecipe(_ recipe: Recipe) -> Recipe? {
+        return cachedRecipes.first { existingRecipe in
+            // Check for exact name match (case-insensitive)
+            if existingRecipe.name.lowercased() == recipe.name.lowercased() {
+                return true
+            }
+            
+            // Check for very similar names (90% similarity)
+            let similarity = calculateNameSimilarity(existingRecipe.name, recipe.name)
+            if similarity > 0.9 {
+                return true
+            }
+            
+            // Check for same cuisine, difficulty, and similar ingredients
+            if existingRecipe.cuisine == recipe.cuisine &&
+               existingRecipe.difficulty == recipe.difficulty {
+                let ingredientSimilarity = calculateIngredientSimilarity(existingRecipe.ingredients, recipe.ingredients)
+                if ingredientSimilarity > 0.8 {
+                    return true
+                }
+            }
+            
+            return false
+        }
+    }
+    
+    /// Calculates name similarity between two recipe names
+    /// - Parameters: Two recipe names to compare
+    /// - Returns: Similarity score between 0 and 1
+    private func calculateNameSimilarity(_ name1: String, _ name2: String) -> Double {
+        let words1 = Set(name1.lowercased().split(separator: " ").map(String.init))
+        let words2 = Set(name2.lowercased().split(separator: " ").map(String.init))
+        
+        let intersection = words1.intersection(words2).count
+        let union = words1.union(words2).count
+        
+        return union > 0 ? Double(intersection) / Double(union) : 0.0
+    }
+    
+    /// Calculates ingredient similarity between two ingredient lists
+    /// - Parameters: Two ingredient lists to compare
+    /// - Returns: Similarity score between 0 and 1
+    private func calculateIngredientSimilarity(_ ingredients1: [Ingredient], _ ingredients2: [Ingredient]) -> Double {
+        let names1 = Set(ingredients1.map { $0.name.lowercased() })
+        let names2 = Set(ingredients2.map { $0.name.lowercased() })
+        
+        let intersection = names1.intersection(names2).count
+        let union = names1.union(names2).count
+        
+        return union > 0 ? Double(intersection) / Double(union) : 0.0
     }
 } 
