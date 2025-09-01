@@ -384,6 +384,49 @@ class RecipeManager: ObservableObject {
         logger.warning("Recipe cache cleared - next generation will use fresh LLM data")
     }
     
+    /// Clears all cached data including offline recipes
+    func clearAllCache() {
+        cachedRecipes.removeAll()
+        // Clear any other cached data if needed
+        logger.warning("All recipe cache cleared - forcing fresh data load")
+    }
+    
+    /// Parses ingredient string to Ingredient object
+    private func parseIngredient(from ingredientString: String) -> Ingredient {
+        // Try to parse amount and unit from ingredient string
+        let components = ingredientString.components(separatedBy: ",")
+        let mainPart = components.first ?? ingredientString
+        
+        // Look for common measurement patterns
+        let measurementPattern = "([0-9]+(?:\\.[0-9]+)?)\\s*(cup|tbsp|tsp|oz|lb|g|kg|ml|clove|inch|large|medium|small|piece|slice|can|packet|head|bunch|stalk|tablespoon|teaspoon|pound|gram|kilogram|milliliter|ounce)"
+        
+        if let regex = try? NSRegularExpression(pattern: measurementPattern, options: [.caseInsensitive]),
+           let match = regex.firstMatch(in: mainPart, options: [], range: NSRange(mainPart.startIndex..., in: mainPart)) {
+            
+            let amountString = String(mainPart[Range(match.range(at: 1), in: mainPart)!])
+            let unit = String(mainPart[Range(match.range(at: 2), in: mainPart)!])
+            
+            // Extract the ingredient name (everything after the measurement)
+            let measurementEnd = mainPart.index(mainPart.startIndex, offsetBy: match.range.upperBound)
+            let ingredientName = String(mainPart[measurementEnd...]).trimmingCharacters(in: .whitespaces)
+            
+            return Ingredient(
+                name: ingredientName.isEmpty ? mainPart : ingredientName,
+                amount: Double(amountString) ?? 1.0,
+                unit: unit,
+                notes: components.count > 1 ? components.dropFirst().joined(separator: ",").trimmingCharacters(in: .whitespaces) : nil
+            )
+        }
+        
+        // Fallback: treat as simple ingredient
+        return Ingredient(
+            name: mainPart,
+            amount: 1.0,
+            unit: "piece",
+            notes: components.count > 1 ? components.dropFirst().joined(separator: ",").trimmingCharacters(in: .whitespaces) : nil
+        )
+    }
+    
     /// Generates diverse recipes using a hybrid approach: database recipes + LLM generation
     /// This ensures guaranteed diversity when no dietary restrictions are selected
     private func generateHybridDiverseRecipes(
@@ -534,7 +577,7 @@ class RecipeManager: ObservableObject {
                     prepTime: max(5, cookingTime / 3),
                     cookTime: max(10, cookingTime * 2 / 3),
                     servings: servings,
-                    ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                    ingredients: ingredients.map { parseIngredient(from: $0) },
                     steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
                     winePairings: [],
                     dietaryNotes: [], // Will be inferred from ingredients
@@ -639,7 +682,7 @@ class RecipeManager: ObservableObject {
                     prepTime: max(5, cookingTime / 3),
                     cookTime: max(10, cookingTime * 2 / 3),
                     servings: servings,
-                    ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                    ingredients: ingredients.map { parseIngredient(from: $0) },
                     steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
                     winePairings: [],
                     dietaryNotes: [.vegetarian],

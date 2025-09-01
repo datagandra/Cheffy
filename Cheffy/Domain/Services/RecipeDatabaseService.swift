@@ -166,7 +166,7 @@ class RecipeDatabaseService: ObservableObject {
             for localRecipeData in cuisineRecipes {
                 // Parse ingredients from strings to Ingredient objects
                 let ingredients = localRecipeData.ingredients.map { ingredientString in
-                    Ingredient(name: ingredientString, amount: 1.0, unit: "piece")
+                    parseIngredient(from: ingredientString)
                 }
                 
                 // Parse instructions into cooking steps

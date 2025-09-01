@@ -1177,7 +1177,7 @@
 				20C0D6EA16B7E412EF5DF140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		5381B7CF245227F90CA1F6D4 /* Build configuration list for PBXProject "Cheffy" */ = {
 			isa = XCConfigurationList;
@@ -1186,7 +1186,7 @@
 				6EEF60CA6D1CA516BC30CF90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		9F29693D678D834CE32DBA60 /* Build configuration list for PBXNativeTarget "CheffyTests" */ = {
 			isa = XCConfigurationList;
@@ -1195,7 +1195,7 @@
 				49C63248AC11A4711E454C2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		9FD66B903050F8A6F7B21030 /* Build configuration list for PBXNativeTarget "CheffyUITests" */ = {
 			isa = XCConfigurationList;
@@ -1204,7 +1204,7 @@
 				86A00D16622DB014DB2DC490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
