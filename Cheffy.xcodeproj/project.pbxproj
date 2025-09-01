@@ -145,7 +145,7 @@
 		0133C53DF58B6946410A3965 /* te */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = te; path = te.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1035FCACBE44EC3C3A9BAF9D /* LLMDiagnosticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMDiagnosticService.swift; sourceTree = "<group>"; };
 		104300AC7FE6BA8A7AFBE1D3 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
-		12448378F424FB8F05D3706A /* CheffyUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CheffyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12448378F424FB8F05D3706A /* CheffyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheffyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		126334324BFC05241C84E03E /* indian_cuisines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = indian_cuisines.json; sourceTree = "<group>"; };
 		152E7FEFAE6593262F4AD351 /* RecipeLandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeLandingPageView.swift; sourceTree = "<group>"; };
 		1551CDA016D459C63121CCD8 /* DetailedCookingInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCookingInstructionsView.swift; sourceTree = "<group>"; };
@@ -220,6 +220,7 @@
 		A6C39203233EEAAC85D18D05 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizer.swift; sourceTree = "<group>"; };
 		A8BB250F977E3569BC18E58E /* UserAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsService.swift; sourceTree = "<group>"; };
 		A8EBE85F884FA643344BFCE8 /* TestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuite.swift; sourceTree = "<group>"; };
+		A9DF15D62E65311A00A9FB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AAD153ACE862ECD2DFEBDA76 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
 		AEE20557647DB569164951DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B602A4403986FC8A07CFA196 /* VoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceManager.swift; sourceTree = "<group>"; };
@@ -249,7 +250,7 @@
 		EBEE33B4963AC4D19814DD4D /* AppIcon-180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-180x180.png"; sourceTree = "<group>"; };
 		ECB4B1B0E89860F5AD54E75A /* CheffyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheffyApp.swift; sourceTree = "<group>"; };
 		EDA812FAEC0905F531F0BDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EE54C3E677C8DC72A8AEFA6A /* CheffyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CheffyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE54C3E677C8DC72A8AEFA6A /* CheffyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheffyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBF841BBB7CCC73506C41FD /* PerformanceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMonitor.swift; sourceTree = "<group>"; };
 		F0D185BF53A53F5F08ADDA86 /* DietaryRestrictionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaryRestrictionManager.swift; sourceTree = "<group>"; };
 		F245D74DFFB0224A98208DA3 /* SettingsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTests.swift; sourceTree = "<group>"; };
@@ -424,6 +425,7 @@
 		76867F9439A9615F6CAF918B /* Cheffy */ = {
 			isa = PBXGroup;
 			children = (
+				A9DF15D62E65311A00A9FB35 /* Info.plist */,
 				F3C4CBBB7B89100B36D8A91D /* Assets.xcassets */,
 				2FAD866B2DB8133868B87E21 /* Cheffy.xcdatamodeld */,
 				ECB4B1B0E89860F5AD54E75A /* CheffyApp.swift */,
@@ -898,6 +900,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -918,6 +921,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cheffy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleShortVersionString = 1.0.0;
@@ -954,6 +958,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1090,6 +1095,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1107,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1127,6 +1134,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cheffy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleShortVersionString = 1.0.0;

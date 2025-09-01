@@ -1,0 +1,43 @@
+{
+  "app_store_connect": {
+    "issuer_id": "1fe78bc1-c522-4611-94d9-5e49639f876e",
+    "key_id": "PZZU8CMTA6",
+    "private_key_path": "AuthKey_PZZU8CMTA6.p8",
+    "app_id": "6751781514"
+  },
+  "workflows": {
+    "production": {
+      "id": "YOUR_PRODUCTION_WORKFLOW_ID",
+      "name": "Production Build",
+      "branch": "main",
+      "auto_trigger": true
+    },
+    "development": {
+      "id": "YOUR_DEVELOPMENT_WORKFLOW_ID", 
+      "name": "Development Build",
+      "branch": "develop",
+      "auto_trigger": false
+    },
+    "testing": {
+      "id": "YOUR_TESTING_WORKFLOW_ID",
+      "name": "Testing Build", 
+      "branch": "feature/*",
+      "auto_trigger": true
+    }
+  },
+  "notifications": {
+    "slack_webhook": "YOUR_SLACK_WEBHOOK_URL",
+    "email": "your-email@example.com",
+    "build_status": ["SUCCEEDED", "FAILED", "CANCELED"]
+  },
+  "artifacts": {
+    "download_path": "./builds",
+    "retention_days": 30,
+    "auto_download": true
+  },
+  "monitoring": {
+    "check_interval_minutes": 5,
+    "max_build_duration_minutes": 60,
+    "alert_on_timeout": true
+  }
+}
