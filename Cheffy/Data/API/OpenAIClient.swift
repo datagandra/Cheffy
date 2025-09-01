@@ -2124,7 +2124,7 @@ class OpenAIClient: OpenAIClientProtocol {
                 ingredients.append(Ingredient(name: "Basmati Rice", amount: 2.0, unit: "cups", notes: "aged, rinsed and soaked"))
                 ingredients.append(Ingredient(name: "Saffron Threads", amount: 0.25, unit: "tsp", notes: dietaryRestrictions.contains(.dairyFree) ? "soaked in 2 tbsp warm water" : "soaked in 2 tbsp warm milk"))
                 ingredients.append(Ingredient(name: "Green Cardamom", amount: 8.0, unit: "pods", notes: "whole, lightly crushed"))
-                ingredients.append(Ingredient(name: "Cinnamon Stick", amount: 1.0, unit: "piece", notes: "2-inch piece"))
+                ingredients.append(Ingredient(name: "Cinnamon Stick", amount: 1.0, unit: "stick", notes: "2-inch piece"))
                 ingredients.append(Ingredient(name: "Bay Leaves", amount: 2.0, unit: "leaves", notes: "dried, whole"))
                 ingredients.append(Ingredient(name: "Cloves", amount: 4.0, unit: "whole", notes: "dried"))
                 ingredients.append(Ingredient(name: "Fresh Mint", amount: 0.25, unit: "cup", notes: "fresh, chopped"))

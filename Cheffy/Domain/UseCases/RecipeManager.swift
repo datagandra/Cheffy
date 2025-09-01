@@ -751,7 +751,7 @@ class RecipeManager: ObservableObject {
                 prepTime: max(5, cookingTime / 3),
                 cookTime: max(10, cookingTime * 2 / 3),
                 servings: servings,
-                ingredients: ingredients.map { Ingredient(name: $0, amount: 1.0, unit: "piece") },
+                ingredients: ingredients.map { parseIngredient(from: $0) },
                 steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
                 winePairings: [],
                 dietaryNotes: [], // Will be inferred from ingredients

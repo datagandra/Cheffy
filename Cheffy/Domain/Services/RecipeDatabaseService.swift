@@ -57,7 +57,7 @@ class RecipeDatabaseService: ObservableObject {
                     Ingredient(name: "chicken breast", amount: 500, unit: "g"),
                     Ingredient(name: "yogurt", amount: 200, unit: "ml"),
                     Ingredient(name: "tomato sauce", amount: 400, unit: "ml"),
-                    Ingredient(name: "onion", amount: 1, unit: "piece"),
+                    Ingredient(name: "onion", amount: 1, unit: "medium"),
                     Ingredient(name: "garlic", amount: 4, unit: "cloves"),
                     Ingredient(name: "ginger", amount: 2, unit: "tbsp"),
                     Ingredient(name: "turmeric", amount: 1, unit: "tsp"),
@@ -89,7 +89,7 @@ class RecipeDatabaseService: ObservableObject {
                 cookTime: 15,
                 servings: 4,
                 ingredients: [
-                    Ingredient(name: "pizza dough", amount: 1, unit: "piece"),
+                    Ingredient(name: "pizza dough", amount: 1, unit: "ball"),
                     Ingredient(name: "tomato sauce", amount: 200, unit: "ml"),
                     Ingredient(name: "mozzarella cheese", amount: 200, unit: "g"),
                     Ingredient(name: "basil leaves", amount: 10, unit: "pieces"),
@@ -126,7 +126,7 @@ class RecipeDatabaseService: ObservableObject {
                     Ingredient(name: "tortillas", amount: 8, unit: "pieces"),
                     Ingredient(name: "lettuce", amount: 1, unit: "head"),
                     Ingredient(name: "tomato", amount: 2, unit: "pieces"),
-                    Ingredient(name: "onion", amount: 1, unit: "piece"),
+                    Ingredient(name: "onion", amount: 1, unit: "medium"),
                     Ingredient(name: "cheese", amount: 200, unit: "g"),
                     Ingredient(name: "sour cream", amount: 200, unit: "ml")
                 ],
