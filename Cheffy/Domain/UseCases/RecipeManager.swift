@@ -182,6 +182,60 @@ class RecipeManager: ObservableObject {
         }
     }
     
+    /// Generates quick recipes from LLM with user persona awareness
+    func generateQuickRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int,
+        userPersona: UserPersona
+    ) async -> [Recipe]? {
+        logger.info("Generating quick recipes for \(userPersona.rawValue)")
+        logger.debug("Cuisine: \(cuisine.rawValue), Difficulty: \(difficulty.rawValue), Max Time: \(maxTime) min")
+        
+        // Check cache first for quick recipes
+        let cachedQuickRecipes = findCachedQuickRecipes(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings,
+            userPersona: userPersona
+        )
+        
+        if !cachedQuickRecipes.isEmpty {
+            logger.info("Found \(cachedQuickRecipes.count) cached quick recipes")
+            return cachedQuickRecipes
+        }
+        
+        // Generate from LLM
+        do {
+            let generatedRecipes = try await openAIClient.generateQuickRecipes(
+                cuisine: cuisine,
+                difficulty: difficulty,
+                dietaryRestrictions: dietaryRestrictions,
+                maxTime: maxTime,
+                servings: servings,
+                userPersona: userPersona
+            )
+            
+            if let recipes = generatedRecipes {
+                // Cache the generated recipes
+                for recipe in recipes {
+                    cacheManager.cacheRecipe(recipe)
+                }
+                
+                logger.info("Generated \(recipes.count) quick recipes from LLM")
+                return recipes
+            }
+        } catch {
+            logger.error("Error generating quick recipes: \(error)")
+        }
+        
+        return nil
+    }
+    
     func generatePopularRecipes(
         cuisine: Cuisine,
         difficulty: Difficulty,
@@ -213,10 +267,13 @@ class RecipeManager: ObservableObject {
             return
         }
         
-        // Check if dietary restrictions have changed significantly
+        // CRITICAL FIX: Always call LLM when specific dietary restrictions are selected
+        // This ensures recipes are properly filtered and generated according to restrictions
+        let shouldCallLLM = !dietaryRestrictions.isEmpty && !dietaryRestrictions.contains(.nonVegetarian)
+        
         let cachedRecipes: [Recipe]
-        if hasDietaryRestrictionsChanged(dietaryRestrictions) {
-            logger.warning("Dietary restrictions changed for popular recipes - will connect to LLM for fresh recipes")
+        if shouldCallLLM || hasDietaryRestrictionsChanged(dietaryRestrictions) {
+            logger.warning("Specific dietary restrictions selected - will connect to LLM for properly filtered recipes")
             // Force LLM generation by setting cached recipes to empty
             cachedRecipes = []
         } else {
@@ -1323,6 +1380,82 @@ class RecipeManager: ObservableObject {
                     }
                 }
             }
+        }
+        
+        return matchingRecipes
+    }
+    
+    /// Finds cached recipes that match the quick recipes criteria with user persona
+    /// - Parameters: All the recipe generation parameters plus user persona
+    /// - Returns: Array of matching cached quick recipes
+    private func findCachedQuickRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int,
+        userPersona: UserPersona
+    ) -> [Recipe] {
+        logger.debug("Searching for cached quick recipes matching criteria...")
+        logger.debug("   - Cuisine: \(cuisine.rawValue)")
+        logger.debug("   - Difficulty: \(difficulty.rawValue)")
+        logger.debug("   - Max Time: \(maxTime) minutes")
+        logger.debug("   - User Persona: \(userPersona.rawValue)")
+        logger.debug("   - Dietary restrictions: \(dietaryRestrictions.count)")
+        
+        // Filter cached recipes by basic criteria
+        var matchingRecipes = cachedRecipes.filter { recipe in
+            let cuisineMatches = cuisine == .any || recipe.cuisine == cuisine
+            let difficultyMatches = recipe.difficulty == difficulty
+            let servingsMatches = abs(recipe.servings - servings) <= 2 || recipe.servings == servings
+            
+            return cuisineMatches && difficultyMatches && servingsMatches
+        }
+        
+        logger.debug("Found \(matchingRecipes.count) recipes matching basic criteria")
+        
+        // Filter by dietary restrictions if specified
+        if !dietaryRestrictions.isEmpty {
+            matchingRecipes = matchingRecipes.filter { recipe in
+                let recipeDietaryNotes = Set(recipe.dietaryNotes)
+                let requestedDietaryNotes = Set(dietaryRestrictions)
+                return recipeDietaryNotes.isSuperset(of: requestedDietaryNotes)
+            }
+            logger.debug("After dietary filter: \(matchingRecipes.count) recipes")
+        }
+        
+        // STRICT time filtering for quick recipes
+        matchingRecipes = matchingRecipes.filter { recipe in
+            let totalTime = recipe.prepTime + recipe.cookTime
+            let isQuick = totalTime <= maxTime
+            
+            if !isQuick {
+                logger.warning("Quick recipe '\(recipe.title)' filtered out: total time \(totalTime) min > max time \(maxTime) min")
+            }
+            
+            return isQuick
+        }
+        logger.debug("After quick recipe time filter: \(matchingRecipes.count) recipes")
+        
+        // Sort by cooking time (fastest first) then by most recently cached
+        matchingRecipes.sort { recipe1, recipe2 in
+            let time1 = recipe1.prepTime + recipe1.cookTime
+            let time2 = recipe2.prepTime + recipe2.cookTime
+            
+            if time1 != time2 {
+                return time1 < time2
+            } else {
+                return recipe1.createdAt > recipe2.createdAt
+            }
+        }
+        
+        // Remove duplicate recipes based on title
+        let originalCount = matchingRecipes.count
+        matchingRecipes = removeDuplicateCachedRecipes(matchingRecipes)
+        let uniqueCount = matchingRecipes.count
+        
+        if originalCount != uniqueCount {
+            logger.debug("Removed \(originalCount - uniqueCount) duplicate cached quick recipes")
         }
         
         return matchingRecipes

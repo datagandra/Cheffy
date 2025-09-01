@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -199,11 +199,11 @@
 		6E8B3F2ED9B18AA565212DFD /* CrashReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReport.swift; sourceTree = "<group>"; };
 		6FAFE00A68D1C83724D32DB1 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
 		7034C100B1E76EA6B9D611DB /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
-		77D31AEE82C0723DB61DDADE /* Cheffy.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Cheffy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77D31AEE82C0723DB61DDADE /* Cheffy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheffy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7927815840AAFC41B2E58F8D /* AppIcon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-76x76.png"; sourceTree = "<group>"; };
 		79DC7AFA43C124419CB0390B /* AppIcon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-1024x1024.png"; sourceTree = "<group>"; };
 		7A93A3CA8D5F317F61B9B44E /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
-		7BE7217C8D6571CBD32D1D38 /* AppIcon.svg */ = {isa = PBXFileReference; path = AppIcon.svg; sourceTree = "<group>"; };
+		7BE7217C8D6571CBD32D1D38 /* AppIcon.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppIcon.svg; sourceTree = "<group>"; };
 		7E14620BFE6E22405C1E0252 /* LLMCloudKitIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMCloudKitIntegrationTests.swift; sourceTree = "<group>"; };
 		7E75FC41035BD9E0636195A2 /* SecureConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = SecureConfig.plist; sourceTree = "<group>"; };
 		80EA5C48B7D2B66B31CDB463 /* RecipeCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCacheManager.swift; sourceTree = "<group>"; };
@@ -707,7 +707,6 @@
 				20373029F0C72813C0B3C779 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				A642580862A9AC87BBCB0AD2 /* XCRemoteSwiftPackageReference "stripe-ios" */,
 			);
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -917,6 +916,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
@@ -931,8 +931,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app accesses your photo library to save recipe images and cooking photos.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to convert your voice to text for recipe generation and cooking instructions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationShortcutItems = (
-				);
+				INFOPLIST_KEY_UIApplicationShortcutItems = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIBackgroundModes = audio;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1126,6 +1125,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
@@ -1140,8 +1140,7 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app accesses your photo library to save recipe images and cooking photos.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app uses speech recognition to convert your voice to text for recipe generation and cooking instructions.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationShortcutItems = (
-				);
+				INFOPLIST_KEY_UIApplicationShortcutItems = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIBackgroundModes = audio;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

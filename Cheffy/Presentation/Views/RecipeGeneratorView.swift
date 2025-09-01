@@ -410,7 +410,12 @@ struct RecipeGeneratorView: View {
             }
             
             if !recipeManager.popularRecipes.isEmpty {
-                PopularRecipesView(recipes: recipeManager.popularRecipes)
+                let filteredRecipes = filterRecipesByDietaryRestrictions(recipeManager.popularRecipes)
+                if !filteredRecipes.isEmpty {
+                    PopularRecipesView(recipes: filteredRecipes)
+                } else {
+                    emptyStateView
+                }
                 
                 // Analysis button
                 Button(action: {
@@ -515,6 +520,11 @@ struct RecipeGeneratorView: View {
         
         impactFeedback.impactOccurred()
         
+        // Debug logging for dietary restrictions
+        print("🔍 DEBUG: Generating recipes with dietary restrictions: \(selectedDietaryRestrictions.map { $0.rawValue })")
+        print("🔍 DEBUG: Selected cuisine: \(selectedCuisine.rawValue)")
+        print("🔍 DEBUG: Selected cooking time: \(selectedCookingTime.rawValue)")
+        
         Task {
             await recipeManager.generatePopularRecipes(
                 cuisine: selectedCuisine,
@@ -534,7 +544,7 @@ struct RecipeGeneratorView: View {
         }
         
         // Validate cooking time constraints
-        if selectedCookingTime == .under15min && selectedServings > 4 {
+        if selectedCookingTime == .under10min && selectedServings > 4 {
             showValidationError = true
             validationMessage = "Quick recipes (under 15 min) are limited to 4 servings or less for quality"
             return false
@@ -551,6 +561,119 @@ struct RecipeGeneratorView: View {
     
     private func refreshData() async {
         // Refresh data if needed
+    }
+    
+    // MARK: - Dietary Restriction Filtering
+    
+    private func filterRecipesByDietaryRestrictions(_ recipes: [Recipe]) -> [Recipe] {
+        guard !selectedDietaryRestrictions.isEmpty else {
+            return recipes // No restrictions, show all recipes
+        }
+        
+        return recipes.filter { recipe in
+            // Check if recipe matches ALL selected dietary restrictions
+            for restriction in selectedDietaryRestrictions {
+                switch restriction {
+                case .vegetarian:
+                    // Recipe must NOT contain meat, fish, or eggs
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("chicken") || name.contains("beef") || name.contains("pork") || 
+                               name.contains("lamb") || name.contains("fish") || name.contains("shrimp") || 
+                               name.contains("egg") || name.contains("meat")
+                    }) {
+                        return false
+                    }
+                case .vegan:
+                    // Recipe must NOT contain any animal products
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("chicken") || name.contains("beef") || name.contains("pork") || 
+                               name.contains("lamb") || name.contains("fish") || name.contains("shrimp") || 
+                               name.contains("egg") || name.contains("milk") || name.contains("cheese") || 
+                               name.contains("butter") || name.contains("yogurt") || name.contains("honey") ||
+                               name.contains("meat")
+                    }) {
+                        return false
+                    }
+                case .nonVegetarian:
+                    // Recipe must contain meat, fish, or eggs
+                    let hasAnimalProduct = recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("chicken") || name.contains("beef") || name.contains("pork") || 
+                               name.contains("lamb") || name.contains("fish") || name.contains("shrimp") || 
+                               name.contains("egg") || name.contains("meat")
+                    })
+                    if !hasAnimalProduct {
+                        return false
+                    }
+                case .glutenFree:
+                    // Recipe must NOT contain gluten
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("wheat") || name.contains("flour") || name.contains("bread") || 
+                               name.contains("pasta") || name.contains("barley") || name.contains("rye")
+                    }) {
+                        return false
+                    }
+                case .dairyFree:
+                    // Recipe must NOT contain dairy
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("milk") || name.contains("cheese") || name.contains("butter") || 
+                               name.contains("yogurt") || name.contains("cream")
+                    }) {
+                        return false
+                    }
+                case .nutFree:
+                    // Recipe must NOT contain nuts
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("nut") || name.contains("almond") || name.contains("peanut") || 
+                               name.contains("cashew") || name.contains("walnut") || name.contains("pecan")
+                    }) {
+                        return false
+                    }
+                case .lowCarb:
+                    // Recipe must be low in carbohydrates
+                    // This is a simplified check - in a real app, you'd check nutritional info
+                    return true // For now, allow all recipes
+                case .keto:
+                    // Recipe must be keto-friendly (very low carb, high fat)
+                    // This is a simplified check - in a real app, you'd check nutritional info
+                    return true // For now, allow all recipes
+                case .paleo:
+                    // Recipe must be paleo-friendly (no grains, legumes, dairy)
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("wheat") || name.contains("rice") || name.contains("corn") || 
+                               name.contains("bean") || name.contains("lentil") || name.contains("milk") || 
+                               name.contains("cheese") || name.contains("yogurt")
+                    }) {
+                        return false
+                    }
+                case .halal:
+                    // Recipe must be halal (no pork, alcohol)
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("pork") || name.contains("bacon") || name.contains("ham") || 
+                               name.contains("alcohol") || name.contains("wine") || name.contains("beer")
+                    }) {
+                        return false
+                    }
+                case .kosher:
+                    // Recipe must be kosher (no pork, shellfish, mixing meat and dairy)
+                    if recipe.ingredients.contains(where: { ingredient in
+                        let name = ingredient.name.lowercased()
+                        return name.contains("pork") || name.contains("bacon") || name.contains("ham") || 
+                               name.contains("shrimp") || name.contains("crab") || name.contains("lobster")
+                    }) {
+                        return false
+                    }
+                }
+            }
+            return true // Recipe passed all dietary restriction checks
+        }
     }
 }
 

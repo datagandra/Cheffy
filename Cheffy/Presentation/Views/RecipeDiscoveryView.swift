@@ -12,12 +12,15 @@ struct RecipeDiscoveryView: View {
     @State private var selectedCookingTime: CookingTimeFilter = .any
     @State private var selectedProtein: String = ""
     @State private var searchQuery: String = ""
+    @State private var selectedUserPersona: UserPersona = .general
     @State private var showingFilters = false
+    @State private var showingQuickRecipeFilters = false
     @State private var isLoading = false
     @State private var selectedRecipe: Recipe?
     @State private var showingRecipeDetail = false
     @State private var showingLLMGeneration = false
     @State private var llmGeneratedRecipes: [Recipe] = []
+    @State private var quickRecipes: [Recipe] = []
     
     // MARK: - Computed Properties
     private var filteredRecipes: [Recipe] {
@@ -57,6 +60,18 @@ struct RecipeDiscoveryView: View {
         return recipes
     }
     
+    private var hasQuickRecipes: Bool {
+        selectedCookingTime.isQuickRecipe
+    }
+    
+    private var shouldGenerateQuickRecipes: Bool {
+        selectedCookingTime.isQuickRecipe && quickRecipes.isEmpty
+    }
+    
+    private var quickRecipeBadge: String {
+        selectedCookingTime.quickRecipeBadge
+    }
+    
     private var availableProteins: [String] {
         recipeDatabase.getAvailableProteins()
     }
@@ -68,14 +83,14 @@ struct RecipeDiscoveryView: View {
                 searchAndFilterHeader
                 
                 // Cache Status Indicator
-                if !isLoading && (!filteredRecipes.isEmpty || !llmGeneratedRecipes.isEmpty) {
+                if !isLoading && (!filteredRecipes.isEmpty || !llmGeneratedRecipes.isEmpty || !quickRecipes.isEmpty) {
                     cacheStatusIndicator
                 }
                 
                 // Recipe Grid
                 if isLoading {
                     loadingView
-                } else if filteredRecipes.isEmpty && llmGeneratedRecipes.isEmpty {
+                } else if filteredRecipes.isEmpty && llmGeneratedRecipes.isEmpty && quickRecipes.isEmpty {
                     emptyStateView
                 } else {
                     recipeGridView
@@ -90,6 +105,34 @@ struct RecipeDiscoveryView: View {
                 initializeUserPreferences()
                 Task {
                     await loadRecipes()
+                }
+            }
+            .onChange(of: selectedCookingTime) { _, newValue in
+                if newValue.isQuickRecipe && quickRecipes.isEmpty {
+                    Task {
+                        await generateQuickRecipesFromLLM()
+                    }
+                }
+            }
+            .onChange(of: selectedUserPersona) { _, newValue in
+                if selectedCookingTime.isQuickRecipe && quickRecipes.isEmpty {
+                    Task {
+                        await generateQuickRecipesFromLLM()
+                    }
+                }
+            }
+            .onChange(of: selectedCuisine) { _, newValue in
+                if selectedCookingTime.isQuickRecipe && quickRecipes.isEmpty {
+                    Task {
+                        await generateQuickRecipesFromLLM()
+                    }
+                }
+            }
+            .onChange(of: selectedDietaryRestrictions) { _, newValue in
+                if selectedCookingTime.isQuickRecipe && quickRecipes.isEmpty {
+                    Task {
+                        await generateQuickRecipesFromLLM()
+                    }
                 }
             }
         }
@@ -119,63 +162,82 @@ struct RecipeDiscoveryView: View {
             .background(Color(.systemGray6))
             .cornerRadius(10)
             
-            // Filter Chips
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    // Cuisine Filter
-                    FilterChip(
-                        title: selectedCuisine.rawValue,
-                        isSelected: true,
-                        action: { showingFilters = true }
-                    )
-                    
-                    // Difficulty Filter
-                    FilterChip(
-                        title: selectedDifficulty.rawValue,
-                        isSelected: true,
-                        action: { showingFilters = true }
-                    )
-                    
-                    // Cooking Time Filter
-                    if selectedCookingTime != .any {
+                            // Filter Chips
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        // Cuisine Filter
                         FilterChip(
-                            title: selectedCookingTime.rawValue,
+                            title: selectedCuisine.rawValue,
                             isSelected: true,
                             action: { showingFilters = true }
                         )
-                    }
-                    
-                    // Dietary Restrictions
-                    ForEach(Array(selectedDietaryRestrictions), id: \.self) { restriction in
+                        
+                        // Difficulty Filter
                         FilterChip(
-                            title: restriction.rawValue,
+                            title: selectedDifficulty.rawValue,
                             isSelected: true,
-                            action: { selectedDietaryRestrictions.remove(restriction) }
+                            action: { showingFilters = true }
                         )
-                    }
-                    
-                    // Protein Filter
-                    if !selectedProtein.isEmpty {
-                        FilterChip(
-                            title: selectedProtein,
-                            isSelected: true,
-                            action: { selectedProtein = "" }
-                        )
-                    }
-                    
-                    // Clear All Button
-                    if !selectedDietaryRestrictions.isEmpty || !selectedProtein.isEmpty || selectedCookingTime != .any {
-                        Button("Clear All") {
-                            selectedDietaryRestrictions.removeAll()
-                            selectedProtein = ""
-                            selectedCookingTime = .any
+                        
+                        // Cooking Time Filter
+                        if selectedCookingTime != .any {
+                            FilterChip(
+                                title: selectedCookingTime.rawValue,
+                                isSelected: true,
+                                action: { showingFilters = true }
+                            )
                         }
-                        .font(.caption)
-                        .foregroundColor(.red)
+                        
+                        // Quick Recipe Badge
+                        if hasQuickRecipes {
+                            FilterChip(
+                                title: quickRecipeBadge,
+                                isSelected: true,
+                                action: { showingQuickRecipeFilters = true }
+                            )
+                        }
+                        
+                        // User Persona Filter
+                        if selectedUserPersona != .general {
+                            FilterChip(
+                                title: selectedUserPersona.rawValue,
+                                isSelected: true,
+                                action: { showingQuickRecipeFilters = true }
+                            )
+                        }
+                        
+                        // Dietary Restrictions
+                        ForEach(Array(selectedDietaryRestrictions), id: \.self) { restriction in
+                            FilterChip(
+                                title: restriction.rawValue,
+                                isSelected: true,
+                                action: { selectedDietaryRestrictions.remove(restriction) }
+                            )
+                        }
+                        
+                        // Protein Filter
+                        if !selectedProtein.isEmpty {
+                            FilterChip(
+                                title: selectedProtein,
+                                isSelected: true,
+                                action: { selectedProtein = "" }
+                            )
+                        }
+                        
+                        // Clear All Button
+                        if !selectedDietaryRestrictions.isEmpty || !selectedProtein.isEmpty || selectedCookingTime != .any || selectedUserPersona != .general {
+                            Button("Clear All") {
+                                selectedDietaryRestrictions.removeAll()
+                                selectedProtein = ""
+                                selectedCookingTime = .any
+                                selectedUserPersona = .general
+                            }
+                            .font(.caption)
+                            .foregroundColor(.red)
+                        }
                     }
+                    .padding(.horizontal, 16)
                 }
-                .padding(.horizontal, 16)
-            }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
@@ -188,6 +250,14 @@ struct RecipeDiscoveryView: View {
                 selectedCookingTime: $selectedCookingTime,
                 selectedProtein: $selectedProtein,
                 availableProteins: availableProteins
+            )
+        }
+        .sheet(isPresented: $showingQuickRecipeFilters) {
+            QuickRecipeFilterView(
+                selectedCookingTime: $selectedCookingTime,
+                selectedUserPersona: $selectedUserPersona,
+                selectedCuisine: $selectedCuisine,
+                selectedDietaryRestrictions: $selectedDietaryRestrictions
             )
         }
         .sheet(isPresented: $showingRecipeDetail) {
@@ -210,43 +280,134 @@ struct RecipeDiscoveryView: View {
     // MARK: - Recipe Grid View
     private var recipeGridView: some View {
         ScrollView {
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
-                // Show local recipes first
-                ForEach(filteredRecipes) { recipe in
-                    RecipeCard(recipe: recipe)
-                        .onTapGesture {
-                            selectedRecipe = recipe
-                            showingRecipeDetail = true
-                        }
+            LazyVStack(spacing: 20) {
+                // Quick Recipe Section Header
+                if hasQuickRecipes {
+                    quickRecipeSectionHeader
                 }
                 
-                // Show LLM generated recipes if any
-                ForEach(llmGeneratedRecipes) { recipe in
-                    RecipeCard(recipe: recipe)
-                        .overlay(
-                            VStack {
-                                HStack {
+                // Recipe Grid
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
+                    // Show quick recipes first if available
+                    ForEach(quickRecipes) { recipe in
+                        RecipeCard(recipe: recipe, showQuickBadge: true)
+                            .overlay(
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        Text("⚡")
+                                            .font(.caption)
+                                            .padding(4)
+                                            .background(Color.orange.opacity(0.9))
+                                            .foregroundColor(.white)
+                                            .clipShape(Circle())
+                                    }
                                     Spacer()
-                                    Image(systemName: "sparkles")
-                                        .foregroundColor(.orange)
-                                        .font(.caption)
-                                        .padding(4)
-                                        .background(Color.white.opacity(0.9))
-                                        .clipShape(Circle())
                                 }
-                                Spacer()
+                                .padding(4)
+                            )
+                            .onTapGesture {
+                                selectedRecipe = recipe
+                                showingRecipeDetail = true
                             }
-                            .padding(4)
-                        )
-                        .onTapGesture {
-                            selectedRecipe = recipe
-                            showingRecipeDetail = true
-                        }
+                    }
+                    
+                    // Show local recipes
+                    ForEach(filteredRecipes) { recipe in
+                        RecipeCard(recipe: recipe, showQuickBadge: hasQuickRecipes)
+                            .onTapGesture {
+                                selectedRecipe = recipe
+                                showingRecipeDetail = true
+                            }
+                    }
+                    
+                    // Show LLM generated recipes if any
+                    ForEach(llmGeneratedRecipes) { recipe in
+                        RecipeCard(recipe: recipe, showQuickBadge: hasQuickRecipes)
+                            .overlay(
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: "sparkles")
+                                            .foregroundColor(.orange)
+                                            .font(.caption)
+                                            .padding(4)
+                                            .background(Color.white.opacity(0.9))
+                                            .clipShape(Circle())
+                                    }
+                                    Spacer()
+                                }
+                                .padding(4)
+                            )
+                            .onTapGesture {
+                                selectedRecipe = recipe
+                                showingRecipeDetail = true
+                            }
+                    }
                 }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
         }
+    }
+    
+    // MARK: - Quick Recipe Section Header
+    private var quickRecipeSectionHeader: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Image(systemName: "bolt.fill")
+                    .foregroundColor(.orange)
+                    .font(.title2)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(quickRecipeBadge)
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.orange)
+                    
+                    Text("Perfect for \(selectedUserPersona.rawValue)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                
+                Spacer()
+                
+                Button("Generate More") {
+                    Task {
+                        await generateQuickRecipesFromLLM()
+                    }
+                }
+                
+                Button("Debug: Force Quick Recipes") {
+                    Task {
+                        print("🔍 DEBUG: Manual trigger for quick recipes")
+                        await generateQuickRecipesFromLLM()
+                    }
+                }
+                .font(.caption)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Color.red.opacity(0.8))
+                .foregroundColor(.white)
+                .cornerRadius(6)
+                .font(.caption)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.orange)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+            }
+            
+            Text("These recipes are optimized for speed and nutrition, perfect for busy schedules!")
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .padding(.horizontal, 16)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(Color.orange.opacity(0.1))
+        .cornerRadius(12)
+        .padding(.horizontal, 16)
     }
     
     // MARK: - Loading View
@@ -415,31 +576,102 @@ struct RecipeDiscoveryView: View {
             }
         }
     }
+    
+    private func generateQuickRecipesFromLLM() async {
+        await MainActor.run {
+            isLoading = true
+        }
+        
+        // Debug logging
+        print("🔍 DEBUG: Starting quick recipe generation")
+        print("🔍 DEBUG: selectedCookingTime = \(selectedCookingTime.rawValue)")
+        print("🔍 DEBUG: selectedCookingTime.isQuickRecipe = \(selectedCookingTime.isQuickRecipe)")
+        print("🔍 DEBUG: selectedCuisine = \(selectedCuisine.rawValue)")
+        print("🔍 DEBUG: selectedUserPersona = \(selectedUserPersona.rawValue)")
+        print("🔍 DEBUG: selectedDietaryRestrictions = \(selectedDietaryRestrictions)")
+        
+        // Ensure we have a quick recipe time filter
+        guard selectedCookingTime.isQuickRecipe else {
+            print("🔍 DEBUG: Not a quick recipe filter, returning")
+            await MainActor.run {
+                isLoading = false
+            }
+            return
+        }
+        
+        let maxTime = selectedCookingTime.maxTotalTime
+        print("🔍 DEBUG: maxTime = \(maxTime)")
+        
+        // Generate quick recipes using RecipeManager with user persona
+        if let quickRecipes = await recipeManager.generateQuickRecipes(
+            cuisine: selectedCuisine,
+            difficulty: selectedDifficulty,
+            dietaryRestrictions: Array(selectedDietaryRestrictions),
+            maxTime: maxTime,
+            servings: 4,
+            userPersona: selectedUserPersona
+        ) {
+            print("🔍 DEBUG: Generated \(quickRecipes.count) quick recipes")
+            for (index, recipe) in quickRecipes.enumerated() {
+                print("🔍 DEBUG: Recipe \(index + 1): \(recipe.title) - Total time: \(recipe.prepTime + recipe.cookTime) min")
+            }
+            
+            await MainActor.run {
+                self.quickRecipes = quickRecipes
+                self.isLoading = false
+            }
+        } else {
+            print("🔍 DEBUG: No quick recipes generated")
+            await MainActor.run {
+                self.isLoading = false
+            }
+        }
+    }
 }
 
 // MARK: - Recipe Card
 struct RecipeCard: View {
     let recipe: Recipe
+    let showQuickBadge: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Recipe Image
-            AsyncImage(url: recipe.imageURL) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                Rectangle()
-                    .fill(Color(.systemGray5))
-                    .overlay(
-                        Image(systemName: "fork.knife")
-                            .font(.title2)
-                            .foregroundColor(.secondary)
-                    )
+            // Recipe Image with Quick Badge
+            ZStack(alignment: .topTrailing) {
+                AsyncImage(url: recipe.imageURL) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    Rectangle()
+                        .fill(Color(.systemGray5))
+                        .overlay(
+                            Image(systemName: "fork.knife")
+                                .font(.title2)
+                                .foregroundColor(.secondary)
+                        )
+                }
+                .frame(height: 120)
+                .clipped()
+                .cornerRadius(8)
+                
+                // Quick Recipe Badge
+                if showQuickBadge && (recipe.prepTime + recipe.cookTime) <= 30 {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Text("⚡")
+                                .font(.caption)
+                                .padding(4)
+                                .background(Color.orange.opacity(0.9))
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                        }
+                        Spacer()
+                    }
+                    .padding(4)
+                }
             }
-            .frame(height: 120)
-            .clipped()
-            .cornerRadius(8)
             
             // Recipe Info
             VStack(alignment: .leading, spacing: 4) {
@@ -491,6 +723,127 @@ struct FilterChip: View {
                         .fill(isSelected ? Color.orange : Color(.systemGray5))
                 )
                 .foregroundColor(isSelected ? .white : .primary)
+        }
+    }
+}
+
+// MARK: - Quick Recipe Filter View
+struct QuickRecipeFilterView: View {
+    @Binding var selectedCookingTime: CookingTimeFilter
+    @Binding var selectedUserPersona: UserPersona
+    @Binding var selectedCuisine: Cuisine
+    @Binding var selectedDietaryRestrictions: Set<DietaryNote>
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                // Quick Recipe Time Selection
+                Section("Quick Recipe Time") {
+                    ForEach([CookingTimeFilter.under10min, .under20min, .under30min], id: \.self) { timeFilter in
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(timeFilter.rawValue)
+                                    .font(.headline)
+                                
+                                Text("Perfect for busy schedules")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            Spacer()
+                            
+                            if selectedCookingTime == timeFilter {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.orange)
+                                    .font(.title2)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedCookingTime = timeFilter
+                        }
+                    }
+                }
+                
+                // User Persona Selection
+                Section("Who's Cooking?") {
+                    ForEach(UserPersona.allCases, id: \.self) { persona in
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(persona.rawValue)
+                                    .font(.headline)
+                                
+                                Text(persona.description)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            Spacer()
+                            
+                            if selectedUserPersona == persona {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.orange)
+                                    .font(.title2)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedUserPersona = persona
+                        }
+                    }
+                }
+                
+                // Cuisine Selection
+                Section("Preferred Cuisine") {
+                    ForEach(Cuisine.allCases.filter { $0 != .any }, id: \.self) { cuisine in
+                        HStack {
+                            Text(cuisine.rawValue)
+                            Spacer()
+                            if selectedCuisine == cuisine {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.orange)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedCuisine = cuisine
+                        }
+                    }
+                }
+                
+                // Dietary Restrictions
+                Section("Dietary Preferences") {
+                    ForEach(DietaryNote.allCases, id: \.self) { restriction in
+                        HStack {
+                            Text(restriction.rawValue)
+                            Spacer()
+                            if selectedDietaryRestrictions.contains(restriction) {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.orange)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if selectedDietaryRestrictions.contains(restriction) {
+                                selectedDietaryRestrictions.remove(restriction)
+                            } else {
+                                selectedDietaryRestrictions.insert(restriction)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Quick Recipe Filters")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                }
+            }
         }
     }
 }

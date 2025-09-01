@@ -97,7 +97,8 @@ enum Difficulty: String, CaseIterable, Codable {
 
 enum CookingTimeFilter: String, CaseIterable, Codable {
     case any = "Any Time"
-    case under15min = "Under 15 min"
+    case under10min = "Under 10 min"
+    case under20min = "Under 20 min"
     case under30min = "Under 30 min"
     case under45min = "Under 45 min"
     case under60min = "Under 1 hour"
@@ -108,8 +109,10 @@ enum CookingTimeFilter: String, CaseIterable, Codable {
         switch self {
         case .any:
             return Int.max
-        case .under15min:
-            return 15
+        case .under10min:
+            return 10
+        case .under20min:
+            return 20
         case .under30min:
             return 30
         case .under45min:
@@ -120,6 +123,67 @@ enum CookingTimeFilter: String, CaseIterable, Codable {
             return 90
         case .under120min:
             return 120
+        }
+    }
+    
+    var isQuickRecipe: Bool {
+        switch self {
+        case .under10min, .under20min, .under30min:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var quickRecipeBadge: String {
+        switch self {
+        case .under10min:
+            return "⚡ Super Quick"
+        case .under20min:
+            return "⚡ Quick"
+        case .under30min:
+            return "⚡ Fast"
+        default:
+            return ""
+        }
+    }
+}
+
+enum UserPersona: String, CaseIterable, Codable {
+    case schoolKid = "School-going Kid"
+    case officeAdult = "Office-going Adult"
+    case general = "General"
+    
+    var description: String {
+        switch self {
+        case .schoolKid:
+            return "Healthy, simple, fun, and fast recipes suitable for children"
+        case .officeAdult:
+            return "Energy-packed, balanced, and quick-to-prepare meals for busy professionals"
+        case .general:
+            return "General recipes for all users"
+        }
+    }
+    
+    var nutritionFocus: String {
+        switch self {
+        case .schoolKid:
+            return "Focus on healthy, nutritious ingredients that are appealing to children"
+        case .officeAdult:
+            return "Emphasize balanced nutrition with energy-sustaining ingredients"
+        case .general:
+            return "Balanced nutrition for general health"
+        }
+    }
+    
+    var safetyNotes: String {
+        switch self {
+        case .schoolKid:
+            return "Ensure all recipes are child-safe with appropriate cooking methods"
+        case .officeAdult:
+            return "Include quick preparation tips for busy schedules"
+        case .general:
+            return "Standard safety guidelines apply"
         }
     }
 }

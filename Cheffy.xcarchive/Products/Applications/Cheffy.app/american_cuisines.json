@@ -1,0 +1,106 @@
+{
+  "cuisines": {
+    "American": [
+      {
+        "title": "Classic Cheeseburger",
+        "cuisine": "American",
+        "ingredients": ["1.25 lbs ground beef (80/20 chuck)", "4 brioche hamburger buns", "4 slices thick-cut American cheese", "1 large yellow onion, sliced into rings", "1 large ripe tomato, sliced thick", "4 butter lettuce leaves", "1/3 cup mayonnaise", "1/4 cup ketchup", "2 tbsp yellow mustard", "1 tbsp Dijon mustard", "3 tbsp unsalted butter", "1 tsp kosher salt", "1/2 tsp freshly ground black pepper", "1/2 tsp garlic powder", "1/4 tsp smoked paprika", "2 tbsp vegetable oil", "4 dill pickle slices", "1 avocado, sliced (optional)"],
+        "instructions": "Divide ground beef into 4 equal portions and form into patties. Season both sides with salt and pepper. Heat a large skillet or grill over medium-high heat. Cook patties for 4-5 minutes per side for medium-rare, or until desired doneness. Add cheese slices during the last minute of cooking. Toast hamburger buns with butter until golden. Spread mayonnaise, ketchup, and mustard on buns. Place cooked patties on bottom buns, top with onion, tomato, and lettuce. Cover with top buns and serve hot with fries.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": ["contains_dairy", "contains_gluten"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Southern Fried Chicken",
+        "cuisine": "American",
+        "ingredients": ["2.5 lbs chicken pieces (thighs, drumsticks, breasts)", "2.5 cups all-purpose flour", "1.5 cups buttermilk", "3 large eggs", "1.5 tbsp sweet paprika", "1 tbsp garlic powder", "1 tbsp onion powder", "1 tsp cayenne pepper", "1 tsp freshly ground black pepper", "1 tbsp kosher salt", "1/2 tsp white pepper", "1/2 tsp dried thyme", "1/4 tsp ground sage", "4 cups peanut oil for frying", "1/4 cup hot sauce (Louisiana style)", "2 tbsp pickle juice", "1 tsp baking powder"],
+        "instructions": "Mix buttermilk, eggs, and hot sauce in a bowl. Combine flour, paprika, garlic powder, onion powder, cayenne pepper, black pepper, and salt in another bowl. Dip chicken pieces in buttermilk mixture, then coat with flour mixture. Heat vegetable oil to 350°F in a large Dutch oven. Fry chicken pieces in batches for 12-15 minutes until golden brown and cooked through. Drain on paper towels and serve hot with mashed potatoes and gravy.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": ["contains_dairy", "contains_gluten"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Mac and Cheese",
+        "cuisine": "American",
+        "ingredients": ["1 lb elbow macaroni pasta", "6 tbsp unsalted butter", "1/3 cup all-purpose flour", "2.5 cups whole milk, warmed", "1/2 cup heavy cream", "2.5 cups sharp cheddar cheese, freshly grated", "1 cup Gruyere cheese, grated", "1/2 cup cream cheese, softened", "3/4 cup panko breadcrumbs", "3 tbsp butter, melted", "1/2 cup Parmesan cheese, grated", "1 tsp kosher salt", "1/2 tsp freshly ground black pepper", "1/4 tsp ground nutmeg", "1/2 tsp dry mustard powder", "1/4 tsp smoked paprika", "2 tbsp fresh chives, chopped"],
+        "instructions": "Cook macaroni according to package directions until al dente. Drain and set aside. Melt butter in a large saucepan over medium heat. Whisk in flour and cook for 1 minute. Gradually whisk in milk and cook until thickened. Add cheddar and mozzarella cheese, stirring until melted. Season with salt and pepper. Mix cheese sauce with cooked macaroni. Transfer to a baking dish. Mix breadcrumbs with melted butter and Parmesan cheese. Sprinkle over macaroni. Bake at 350°F for 20 minutes until golden and bubbly.",
+        "proteins": ["cheddar cheese", "mozzarella cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_gluten"],
+        "cooking_time": 40,
+        "difficulty": "easy"
+      },
+      {
+        "title": "BBQ Ribs",
+        "cuisine": "American",
+        "ingredients": ["2 racks pork ribs", "1/4 cup brown sugar", "2 tbsp paprika", "2 tbsp garlic powder", "2 tbsp onion powder", "1 tbsp black pepper", "1 tbsp salt", "1 tbsp cayenne pepper", "1 cup BBQ sauce", "1/4 cup apple cider vinegar", "1/4 cup honey", "2 tbsp Worcestershire sauce"],
+        "instructions": "Remove membrane from back of ribs. Mix brown sugar, paprika, garlic powder, onion powder, black pepper, salt, and cayenne pepper for dry rub. Generously coat ribs with dry rub and refrigerate for 4 hours. Preheat oven to 275°F. Wrap ribs in aluminum foil and bake for 2.5 hours. Mix BBQ sauce, apple cider vinegar, honey, and Worcestershire sauce. Remove ribs from foil and brush with BBQ sauce. Grill over medium heat for 10 minutes, basting with sauce. Serve hot with coleslaw and cornbread.",
+        "proteins": ["pork ribs"],
+        "dietary_restrictions": [],
+        "cooking_time": 180,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Chicken Pot Pie",
+        "cuisine": "American",
+        "ingredients": ["2 lbs chicken breast, cubed", "2 pie crusts", "1 large onion, diced", "2 carrots, diced", "2 celery stalks, diced", "1 cup frozen peas", "1 cup frozen corn", "1/4 cup butter", "1/4 cup all-purpose flour", "2 cups chicken stock", "1 cup heavy cream", "1 tsp thyme", "1 tsp rosemary", "Salt and pepper to taste"],
+        "instructions": "Cook chicken breast cubes in a large skillet until done. Remove and set aside. Melt butter in the same skillet and sauté diced onion, carrots, and celery until softened. Add flour and cook for 1 minute. Gradually whisk in chicken stock and heavy cream. Add thyme, rosemary, salt, and pepper. Simmer until thickened. Add cooked chicken, peas, and corn. Line a pie dish with one pie crust. Fill with chicken mixture. Cover with second pie crust and crimp edges. Cut slits in top crust. Bake at 375°F for 45 minutes until golden brown.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": ["contains_dairy", "contains_gluten"],
+        "cooking_time": 90,
+        "difficulty": "medium"
+      },
+      {
+        "title": "New England Clam Chowder",
+        "cuisine": "American",
+        "ingredients": ["2 lbs clams, shucked", "1/2 lb bacon, diced", "2 large onions, diced", "3 celery stalks, diced", "2 carrots, diced", "4 potatoes, cubed", "1/4 cup all-purpose flour", "2 cups whole milk", "1 cup heavy cream", "2 cups clam juice", "2 tbsp butter", "1/4 cup fresh parsley", "Salt and pepper to taste"],
+        "instructions": "Cook diced bacon in a large pot until crispy. Remove bacon and set aside. Sauté diced onions, celery, and carrots in bacon fat until softened. Add cubed potatoes and clam juice. Simmer for 15 minutes until potatoes are tender. Add shucked clams and cook for 5 minutes. Whisk flour with milk and add to pot. Add heavy cream and simmer until thickened. Stir in butter and fresh parsley. Season with salt and pepper. Serve hot with oyster crackers.",
+        "proteins": ["clams", "bacon"],
+        "dietary_restrictions": ["contains_dairy", "contains_gluten"],
+        "cooking_time": 60,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Apple Pie",
+        "cuisine": "American",
+        "ingredients": ["2 pie crusts", "6 large apples, peeled and sliced", "1 cup sugar", "1/4 cup all-purpose flour", "1 tsp cinnamon", "1/2 tsp nutmeg", "1/4 tsp salt", "2 tbsp butter", "1 egg, beaten", "1 tbsp sugar"],
+        "instructions": "Preheat oven to 375°F. Mix sliced apples with sugar, flour, cinnamon, nutmeg, and salt. Line a pie dish with one pie crust. Fill with apple mixture and dot with butter. Cover with second pie crust and crimp edges. Cut slits in top crust. Brush with beaten egg and sprinkle with sugar. Bake for 45-50 minutes until crust is golden and filling is bubbling. Let cool for 2 hours before serving.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_gluten"],
+        "cooking_time": 90,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Chili Con Carne",
+        "cuisine": "American",
+        "ingredients": ["2 lbs ground beef", "1 large onion, diced", "3 cloves garlic, minced", "2 bell peppers, diced", "2 cans kidney beans", "2 cans diced tomatoes", "1 can tomato paste", "2 tbsp chili powder", "1 tbsp cumin", "1 tbsp paprika", "1 tsp oregano", "1/2 tsp cayenne pepper", "2 cups beef stock", "1/4 cup masa harina", "Salt and pepper to taste"],
+        "instructions": "Brown ground beef in a large pot over medium heat. Drain excess fat. Add diced onion, minced garlic, and diced bell peppers. Cook until vegetables are softened. Add kidney beans, diced tomatoes, tomato paste, chili powder, cumin, paprika, oregano, cayenne pepper, and beef stock. Simmer for 1 hour, stirring occasionally. Mix masa harina with water and add to chili to thicken. Season with salt and pepper. Serve hot with cornbread and sour cream.",
+        "proteins": ["ground beef", "kidney beans"],
+        "dietary_restrictions": ["contains_gluten"],
+        "cooking_time": 90,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Buffalo Wings",
+        "cuisine": "American",
+        "ingredients": ["2 lbs chicken wings", "1/2 cup hot sauce", "1/4 cup butter", "1 tbsp white vinegar", "1 tsp garlic powder", "1 tsp Worcestershire sauce", "1/2 cup all-purpose flour", "1/2 cup cornstarch", "1 tsp paprika", "1 tsp salt", "1/2 tsp black pepper", "Vegetable oil for frying", "Blue cheese dressing for serving"],
+        "instructions": "Mix flour, cornstarch, paprika, salt, and black pepper. Coat chicken wings with flour mixture. Heat vegetable oil to 375°F in a large pot. Fry wings in batches for 12-15 minutes until golden and crispy. Drain on paper towels. Melt butter in a saucepan and add hot sauce, white vinegar, garlic powder, and Worcestershire sauce. Toss fried wings in sauce mixture. Serve hot with blue cheese dressing and celery sticks.",
+        "proteins": ["chicken wings"],
+        "dietary_restrictions": ["contains_dairy", "contains_gluten"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Chocolate Chip Cookies",
+        "cuisine": "American",
+        "ingredients": ["2 1/4 cups all-purpose flour", "1 tsp baking soda", "1 tsp salt", "1 cup butter, softened", "3/4 cup granulated sugar", "3/4 cup brown sugar", "2 eggs", "1 tsp vanilla extract", "2 cups chocolate chips", "1 cup walnuts, chopped"],
+        "instructions": "Preheat oven to 375°F. Mix flour, baking soda, and salt in a bowl. Cream butter, granulated sugar, and brown sugar until fluffy. Beat in eggs and vanilla extract. Gradually mix in flour mixture. Stir in chocolate chips and chopped walnuts. Drop rounded tablespoons of dough onto ungreased baking sheets. Bake for 9-11 minutes until golden brown. Let cool on baking sheets for 2 minutes before transferring to wire racks.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_gluten", "contains_nuts"],
+        "cooking_time": 30,
+        "difficulty": "easy"
+      }
+    ]
+  }
+} 

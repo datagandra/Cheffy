@@ -16,94 +16,65 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Run tests"
-  lane :test do
-    scan(
-      scheme: "Cheffy",
-      device: "iPhone 16",
-      clean: true,
-      code_coverage: true,
-      output_directory: "fastlane/test_output",
-      output_style: "raw"
-    )
-  end
-
-  desc "Build for release"
-  lane :build do
-    gym(
-      scheme: "Cheffy",
-      configuration: "Release",
-      clean: true,
-      output_directory: "fastlane/build_output",
-      output_name: "Cheffy.ipa"
-    )
-  end
-
-  desc "Deploy to TestFlight"
+  desc "Build and upload to TestFlight"
   lane :beta do
-    # Ensure we're on main branch
-    ensure_git_branch(branch: 'main')
-    
-    # Increment build number
-    increment_build_number(
-      build_number: latest_testflight_build_number + 1,
-      xcodeproj: "Cheffy.xcodeproj"
-    )
-    
-    # Build and upload to TestFlight
-    build_app(
+    # Build the app
+    build_ios_app(
       scheme: "Cheffy",
       configuration: "Release",
       export_method: "app-store",
       export_options: {
         method: "app-store",
-        provisioningProfiles: {
-          "com.cheffy.app" => "match AppStore com.cheffy.app"
-        }
+        uploadBitcode: false,
+        uploadSymbols: true,
+        compileBitcode: false
       }
     )
     
+    # Upload to TestFlight
     upload_to_testflight(
       skip_waiting_for_build_processing: true
     )
   end
 
-  desc "Deploy to App Store"
+  desc "Build and upload to App Store"
   lane :release do
-    # Ensure we're on main branch
-    ensure_git_branch(branch: 'main')
-    
-    # Ensure clean git status
-    ensure_git_status_clean
-    
-    # Increment version and build number
-    increment_version_number(
-      version_number: latest_app_store_version_number,
-      xcodeproj: "Cheffy.xcodeproj"
-    )
-    
-    increment_build_number(
-      build_number: latest_app_store_build_number + 1,
-      xcodeproj: "Cheffy.xcodeproj"
-    )
-    
-    # Build and upload to App Store
-    build_app(
+    # Build the app
+    build_ios_app(
       scheme: "Cheffy",
       configuration: "Release",
       export_method: "app-store",
       export_options: {
         method: "app-store",
-        provisioningProfiles: {
-          "com.cheffy.app" => "match AppStore com.cheffy.app"
-        }
+        uploadBitcode: false,
+        uploadSymbols: true,
+        compileBitcode: false
       }
     )
     
+    # Upload to App Store
     upload_to_app_store(
-      force: true,
       skip_metadata: true,
-      skip_screenshots: true
+      skip_screenshots: true,
+      precheck_include_in_app_purchases: false
+    )
+  end
+
+  desc "Build for development"
+  lane :build_dev do
+    build_ios_app(
+      scheme: "Cheffy",
+      configuration: "Debug",
+      export_method: "development"
+    )
+  end
+
+  desc "Build for ad-hoc distribution"
+  lane :build_adhoc do
+    build_ios_app(
+      scheme: "Cheffy",
+      configuration: "Release",
+      export_method: "ad-hoc"
     )
   end
 

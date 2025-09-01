@@ -15,6 +15,9 @@ struct UserProfile: Identifiable, Codable {
     let deviceType: String
     var preferredCuisines: [String]
     var dietaryPreferences: [String]
+    var userPersona: UserPersona
+    var quickRecipePreferences: [CookingTimeFilter]
+    var favoriteQuickRecipes: [String]
     let appVersion: String
     let createdAt: Date
     var lastUpdatedAt: Date
@@ -26,6 +29,9 @@ struct UserProfile: Identifiable, Codable {
         deviceType: String = UIDevice.current.model,
         preferredCuisines: [String] = [],
         dietaryPreferences: [String] = [],
+        userPersona: UserPersona = .general,
+        quickRecipePreferences: [CookingTimeFilter] = [.under30min, .under20min],
+        favoriteQuickRecipes: [String] = [],
         appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown",
         createdAt: Date = Date(),
         lastUpdatedAt: Date = Date(),
@@ -36,6 +42,9 @@ struct UserProfile: Identifiable, Codable {
         self.deviceType = deviceType
         self.preferredCuisines = preferredCuisines
         self.dietaryPreferences = dietaryPreferences
+        self.userPersona = userPersona
+        self.quickRecipePreferences = quickRecipePreferences
+        self.favoriteQuickRecipes = favoriteQuickRecipes
         self.appVersion = appVersion
         self.createdAt = createdAt
         self.lastUpdatedAt = lastUpdatedAt
@@ -60,6 +69,22 @@ extension UserProfile {
         self.deviceType = deviceType
         self.preferredCuisines = record["preferredCuisines"] as? [String] ?? []
         self.dietaryPreferences = record["dietaryPreferences"] as? [String] ?? []
+        
+        // Handle new fields with defaults for backward compatibility
+        if let personaString = record["userPersona"] as? String,
+           let persona = UserPersona(rawValue: personaString) {
+            self.userPersona = persona
+        } else {
+            self.userPersona = .general
+        }
+        
+        if let quickRecipeStrings = record["quickRecipePreferences"] as? [String] {
+            self.quickRecipePreferences = quickRecipeStrings.compactMap { CookingTimeFilter(rawValue: $0) }
+        } else {
+            self.quickRecipePreferences = [.under30min, .under20min]
+        }
+        
+        self.favoriteQuickRecipes = record["favoriteQuickRecipes"] as? [String] ?? []
         self.appVersion = appVersion
         self.createdAt = createdAt
         self.lastUpdatedAt = lastUpdatedAt
@@ -72,6 +97,9 @@ extension UserProfile {
         record["deviceType"] = deviceType
         record["preferredCuisines"] = preferredCuisines
         record["dietaryPreferences"] = dietaryPreferences
+        record["userPersona"] = userPersona.rawValue
+        record["quickRecipePreferences"] = quickRecipePreferences.map { $0.rawValue }
+        record["favoriteQuickRecipes"] = favoriteQuickRecipes
         record["appVersion"] = appVersion
         record["createdAt"] = createdAt
         record["lastUpdatedAt"] = lastUpdatedAt

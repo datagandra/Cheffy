@@ -1,0 +1,52 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="512" cy="512" r="512" fill="#FFFFFF"/>
+  
+  <!-- Skillet/Pan -->
+  <ellipse cx="512" cy="720" rx="180" ry="60" fill="#2C2C2C"/>
+  <ellipse cx="512" cy="720" rx="160" ry="50" fill="#4A4A4A"/>
+  
+  <!-- Skillet Handle -->
+  <rect x="692" y="700" width="80" height="12" rx="6" fill="#2C2C2C"/>
+  <rect x="692" y="700" width="80" height="8" rx="4" fill="#4A4A4A"/>
+  
+  <!-- Food in Skillet (simplified) -->
+  <ellipse cx="512" cy="720" rx="120" ry="35" fill="#FF6B35"/>
+  <ellipse cx="512" cy="720" rx="100" ry="25" fill="#FFB627"/>
+  
+  <!-- Chef's Hat -->
+  <ellipse cx="512" cy="580" rx="120" ry="40" fill="#FF6B35"/>
+  <path d="M 392 580 
+           Q 392 480 440 440
+           Q 480 420 512 420
+           Q 544 420 584 440
+           Q 632 480 632 580
+           Z" fill="#FF6B35"/>
+  
+  <!-- Hat Highlights -->
+  <ellipse cx="512" cy="580" rx="100" ry="30" fill="#FFB627" opacity="0.3"/>
+  
+  <!-- AI Spark Element on Hat -->
+  <polygon points="512,400 525,430 555,430 535,445 540,465 512,450 484,465 489,445 469,430 499,430" 
+           fill="#FFB627"/>
+  
+  <!-- Cooking Fumes/Smoke -->
+  <!-- Main smoke cloud -->
+  <ellipse cx="512" cy="480" rx="80" ry="40" fill="#E8E8E8" opacity="0.7"/>
+  <ellipse cx="512" cy="450" rx="60" ry="30" fill="#E8E8E8" opacity="0.6"/>
+  <ellipse cx="512" cy="420" rx="40" ry="20" fill="#E8E8E8" opacity="0.5"/>
+  
+  <!-- Individual smoke wisps -->
+  <ellipse cx="480" cy="460" rx="15" ry="25" fill="#E8E8E8" opacity="0.4"/>
+  <ellipse cx="520" cy="470" rx="12" ry="20" fill="#E8E8E8" opacity="0.4"/>
+  <ellipse cx="500" cy="440" rx="10" ry="15" fill="#E8E8E8" opacity="0.4"/>
+  <ellipse cx="530" cy="450" rx="8" ry="12" fill="#E8E8E8" opacity="0.4"/>
+  
+  <!-- Heat waves from skillet -->
+  <ellipse cx="512" cy="680" rx="140" ry="20" fill="#FF6B35" opacity="0.3"/>
+  <ellipse cx="512" cy="670" rx="120" ry="15" fill="#FFB627" opacity="0.2"/>
+  
+  <!-- Spoon in hand (simplified) -->
+  <ellipse cx="450" cy="650" rx="6" ry="25" fill="#FFB627" opacity="0.8"/>
+  <ellipse cx="450" cy="650" rx="4" ry="20" fill="#FF6B35" opacity="0.6"/>
+</svg> 

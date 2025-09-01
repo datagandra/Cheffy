@@ -81,6 +81,14 @@ protocol OpenAIClientProtocol: ObservableObject {
         maxTime: Int?,
         servings: Int
     ) async throws -> [Recipe]?
+    func generateQuickRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int,
+        userPersona: UserPersona
+    ) async throws -> [Recipe]?
     func extractAllIngredientsAsText(from recipes: [Recipe]) -> String
     func analyzeFilterCriteriaViolations(in recipes: [Recipe]) -> String
     func parseRecipesFromJSONToText(_ jsonData: Data) -> String
@@ -349,6 +357,98 @@ class OpenAIClient: OpenAIClientProtocol {
     }
     
 
+    
+    func generateQuickRecipes(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int,
+        userPersona: UserPersona
+    ) async throws -> [Recipe]? {
+        guard let apiKey = apiKey else {
+            logger.warning("No API key found")
+            throw GeminiError.noAPIKey
+        }
+        
+        logger.api("API key found, starting quick recipes generation...")
+        logger.debug("Cuisine: \(cuisine.rawValue)")
+        logger.debug("Difficulty: \(difficulty.rawValue)")
+        logger.debug("Max Time: \(maxTime) minutes")
+        logger.debug("User Persona: \(userPersona.rawValue)")
+        logger.debug("Dietary Restrictions: \(dietaryRestrictions.map { $0.rawValue })")
+        
+        let prompt = createQuickRecipesPrompt(
+            cuisine: cuisine,
+            difficulty: difficulty,
+            dietaryRestrictions: dietaryRestrictions,
+            maxTime: maxTime,
+            servings: servings,
+            userPersona: userPersona
+        )
+        
+        logger.api("Making API request to Gemini for quick recipes...")
+        
+        let request = GeminiRequest(
+            contents: [
+                GeminiContent(
+                    parts: [
+                        GeminiPart(text: prompt)
+                    ]
+                )
+            ],
+            generationConfig: GeminiGenerationConfig(
+                temperature: 0.05, // Lower temperature for more consistent time adherence
+                maxOutputTokens: 2000
+            )
+        )
+        
+        let url = URL(string: "\(baseURL)/gemini-1.5-flash:generateContent?key=\(apiKey)")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonData = try JSONEncoder().encode(request)
+            urlRequest.httpBody = jsonData
+            
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                throw GeminiError.apiError("HTTP \(httpResponse.statusCode)")
+            }
+            
+            let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
+            
+            if let content = geminiResponse.candidates.first?.content.parts.first?.text {
+                var recipes = try parsePopularRecipesFromResponse(content, cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, servings: servings)
+                
+                // Apply strict filtering for quick recipes
+                recipes = filterRecipesByDietaryRestrictions(recipes, restrictions: dietaryRestrictions)
+                recipes = filterRecipesByCookingTime(recipes, maxTime: maxTime)
+                
+                // Validate that all recipes are truly quick
+                recipes = recipes.filter { recipe in
+                    let totalTime = recipe.prepTime + recipe.cookTime
+                    let isQuick = totalTime <= maxTime
+                    
+                    if !isQuick {
+                        logger.warning("Recipe '\(recipe.title)' filtered out: total time \(totalTime) min > max time \(maxTime) min")
+                    }
+                    
+                    return isQuick
+                }
+                
+                logger.api("Quick recipes generation successful: \(recipes.count) recipes meet \(maxTime) min requirement")
+                return recipes
+            } else {
+                throw GeminiError.noContent
+            }
+        } catch {
+            logger.error("Error generating quick recipes: \(error)")
+            throw error
+        }
+    }
     
     func generatePopularRecipes(
         cuisine: Cuisine,
@@ -1279,6 +1379,123 @@ class OpenAIClient: OpenAIClientProtocol {
                 ],
                 "platingTips": "Detailed plating instructions with presentation tips, garnishing suggestions, and visual appeal techniques",
                 "chefNotes": "Chef's special notes about technique, timing, ingredient substitutions, and professional secrets for achieving restaurant-quality results"
+            }
+        ]
+        """
+        
+        return prompt
+    }
+    
+    private func createQuickRecipesPrompt(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        dietaryRestrictions: [DietaryNote],
+        maxTime: Int,
+        servings: Int,
+        userPersona: UserPersona
+    ) -> String {
+        var prompt = """
+        Create \(userPersona.rawValue) QUICK RECIPES for \(cuisine.rawValue) cuisine with \(difficulty.rawValue) difficulty level.
+        
+        🚨 CRITICAL TIME CONSTRAINT: ALL recipes MUST be completed within \(maxTime) minutes TOTAL (prep + cook time)
+        🚨 USER PERSONA REQUIREMENTS: \(userPersona.description)
+        🚨 NUTRITION FOCUS: \(userPersona.nutritionFocus)
+        🚨 SAFETY NOTES: \(userPersona.safetyNotes)
+        
+        CRITICAL DIETARY RESTRICTIONS - MUST BE STRICTLY FOLLOWED:
+        """
+        
+        if dietaryRestrictions.isEmpty {
+            prompt += "\n- No specific dietary restrictions"
+        } else {
+            for restriction in dietaryRestrictions {
+                prompt += "\n- \(restriction.rawValue): \(getDietaryDescription(restriction))"
+            }
+        }
+        
+        prompt += """
+
+        🚨 QUICK RECIPE REQUIREMENTS:
+        1. EVERY recipe MUST be completed within \(maxTime) minutes TOTAL
+        2. Prep time should be 5-10 minutes maximum
+        3. Cook time should be 10-\(maxTime - 10) minutes maximum
+        4. Use simple, quick cooking methods (stir-fry, quick bake, microwave, etc.)
+        5. Minimize complex techniques and multi-step processes
+        6. Focus on one-pot or minimal-dish recipes
+        7. Use pre-cut or quick-prep ingredients where possible
+        8. Include quick cooking tips and time-saving techniques
+        
+        🚨 USER PERSONA SPECIFIC REQUIREMENTS:
+        - \(userPersona.rawValue): \(userPersona.description)
+        - Nutrition: \(userPersona.nutritionFocus)
+        - Safety: \(userPersona.safetyNotes)
+        - Recipe complexity: Keep steps simple and easy to follow
+        - Ingredient accessibility: Use common, easily available ingredients
+        - Time efficiency: Every step should save time
+        
+        Recipe Requirements:
+        - Cuisine: \(cuisine.rawValue)
+        - Difficulty: \(difficulty.rawValue) (but simplified for quick preparation)
+        - Maximum total time: \(maxTime) minutes (strictly enforced)
+        - Servings: \(servings)
+        
+        IMPORTANT: You must respond with ONLY valid JSON in the exact format specified below. Do not include any additional text, explanations, or markdown formatting.
+
+        CRITICAL DIETARY REQUIREMENTS - MUST BE STRICTLY ENFORCED:
+        - ALL ingredients MUST be 100% compliant with the dietary restrictions listed above
+        - NO EXCEPTIONS - if a restriction is listed, it applies to ALL ingredients
+        - Multiple restrictions use AND logic - ALL must be satisfied simultaneously
+        
+        🚨 QUICK RECIPE INGREDIENT REQUIREMENTS:
+        - Use simple, quick-prep ingredients
+        - Minimize chopping and complex preparation
+        - Include pre-cut or quick-prep options where possible
+        - Focus on ingredients that cook quickly
+        - Avoid ingredients requiring long marination or soaking
+        - Include quick cooking oils and seasonings
+        
+        🚨 CRITICAL TIME VALIDATION:
+        - Prep time: 5-10 minutes maximum
+        - Cook time: 10-\(maxTime - 10) minutes maximum
+        - Total time: MUST NOT exceed \(maxTime) minutes
+        - Every step must be optimized for speed
+        - Include time-saving tips and shortcuts
+        
+        Create MICHELIN-LEVEL detailed, step-by-step cooking instructions optimized for speed:
+        - Extremely detailed, specific instructions with exact measurements and techniques
+        - Precise timing information (how long each step takes)
+        - Time-saving tips and shortcuts for each step
+        - Quick cooking methods and techniques
+        - Visual cues and doneness indicators
+        - Safety precautions for quick cooking
+        - Equipment recommendations for fast preparation
+        
+        IMPORTANT: The "description" field in each step must contain ONLY plain English cooking instructions, NOT JSON format or code. Write natural, conversational cooking instructions that a home cook can easily follow.
+
+        Return an array of quick recipes in this exact JSON format (aim for 8-12 recipes):
+
+        [
+            {
+                "name": "Quick Recipe Name (e.g., 'Quick Stir-Fry', 'Fast Pasta', 'Quick Quesadilla')",
+                "prepTime": 5,
+                "cookTime": 15,
+                "ingredients": [
+                    {"name": "Ingredient Name", "amount": 2.0, "unit": "cups", "notes": "Quick prep notes (pre-cut, quick-chop, etc.) and quality specifications"}
+                ],
+                "steps": [
+                    {
+                        "stepNumber": 1,
+                        "description": "Quick, detailed step description with time-saving techniques, specific instructions, exact measurements, and quick cooking methods. Include timing, temperature, equipment needed, and time-saving tips.",
+                        "duration": 5,
+                        "temperature": 180,
+                        "tips": "Time-saving tip: specific technique or shortcut for faster preparation"
+                    }
+                ],
+                "winePairings": [
+                    {"name": "Wine Name", "type": "Red", "region": "Bordeaux", "description": "Quick wine pairing suggestion"}
+                ],
+                "platingTips": "Quick plating instructions with simple presentation tips",
+                "chefNotes": "Chef's quick cooking secrets and time-saving techniques for achieving restaurant-quality results in minimal time"
             }
         ]
         """
