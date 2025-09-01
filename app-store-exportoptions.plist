@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>method</key>
-    <string>ad-hoc</string>
+    <string>app-store</string>
     <key>teamID</key>
     <string>7KXZ82TP32</string>
     <key>uploadBitcode</key>
@@ -23,7 +23,7 @@
     <key>provisioningProfiles</key>
     <dict>
         <key>com.cheffy.app</key>
-        <string>Cheffy Ad Hoc Distribution</string>
+        <string>Cheffy App Store Distribution</string>
     </dict>
 </dict>
 </plist>
