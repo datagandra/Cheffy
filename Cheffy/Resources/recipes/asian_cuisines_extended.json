@@ -459,6 +459,142 @@
         "cooking_time": 30,
         "difficulty": "easy"
       }
+    ],
+    "Vietnamese": [
+      {
+        "title": "Pho Bo (Beef Noodle Soup)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "2 lbs beef bones (marrow bones)",
+          "1 lb beef brisket",
+          "1 large onion, halved",
+          "4-inch piece ginger, sliced",
+          "6 star anise pods",
+          "1 cinnamon stick",
+          "4 cloves",
+          "1 tsp coriander seeds",
+          "1 tsp fennel seeds",
+          "2 tbsp fish sauce",
+          "1 tbsp sugar",
+          "1 lb rice noodles (banh pho)",
+          "1/2 lb beef sirloin, thinly sliced",
+          "1 bunch cilantro, chopped",
+          "1 bunch Thai basil",
+          "2 limes, cut into wedges",
+          "2 jalapeños, sliced",
+          "Bean sprouts for serving"
+        ],
+        "instructions": "Roast beef bones in oven at 400°F for 30 minutes. In a large pot, add bones, brisket, onion, ginger, and cover with water. Bring to boil, skim foam, then simmer for 3-4 hours. Toast spices in a dry pan until fragrant. Add to broth with fish sauce and sugar. Strain broth and return to pot. Cook rice noodles according to package directions. Slice brisket thinly. Divide noodles among bowls, top with brisket and raw sirloin. Pour hot broth over meat to cook it. Serve with herbs, lime, jalapeños, and bean sprouts.",
+        "proteins": ["beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 240,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Banh Mi (Vietnamese Sandwich)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "4 Vietnamese baguettes",
+          "1 lb pork belly or pork shoulder",
+          "2 tbsp fish sauce",
+          "1 tbsp soy sauce",
+          "1 tbsp sugar",
+          "2 cloves garlic, minced",
+          "1 tsp five-spice powder",
+          "1 cup pickled carrots and daikon",
+          "1 cucumber, julienned",
+          "1 bunch cilantro",
+          "2 jalapeños, sliced",
+          "Mayonnaise",
+          "Sriracha sauce",
+          "2 tbsp vegetable oil"
+        ],
+        "instructions": "Marinate pork with fish sauce, soy sauce, sugar, garlic, and five-spice powder for 2 hours. Heat oil in a pan and cook pork until golden and cooked through, about 15 minutes. Slice pork thinly. Cut baguettes lengthwise, leaving one edge intact. Spread mayonnaise on both sides. Add pork, pickled vegetables, cucumber, cilantro, and jalapeños. Drizzle with sriracha. Serve immediately.",
+        "proteins": ["pork"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Goi Cuon (Fresh Spring Rolls)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "12 rice paper wrappers",
+          "1 lb shrimp, cooked and peeled",
+          "1 lb pork belly, cooked and sliced",
+          "1 package rice vermicelli noodles",
+          "1 head lettuce, leaves separated",
+          "1 bunch mint",
+          "1 bunch cilantro",
+          "1 bunch Thai basil",
+          "1 cucumber, julienned",
+          "1 cup bean sprouts",
+          "1/2 cup hoisin sauce",
+          "2 tbsp peanut butter",
+          "2 tbsp water",
+          "1 clove garlic, minced",
+          "1 tbsp lime juice",
+          "1 tsp sriracha"
+        ],
+        "instructions": "Cook rice vermicelli according to package directions. Mix hoisin sauce, peanut butter, water, garlic, lime juice, and sriracha for dipping sauce. Soak rice paper wrappers in warm water for 30 seconds until pliable. Place on damp towel. Add lettuce, herbs, noodles, shrimp, pork, cucumber, and bean sprouts. Roll tightly, tucking in sides. Serve with dipping sauce.",
+        "proteins": ["shrimp", "pork"],
+        "dietary_restrictions": [],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Bun Cha (Grilled Pork with Noodles)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "1 lb ground pork",
+          "1 lb pork shoulder, sliced thin",
+          "2 tbsp fish sauce",
+          "1 tbsp sugar",
+          "2 cloves garlic, minced",
+          "1 shallot, minced",
+          "1 tsp black pepper",
+          "1 lb rice vermicelli noodles",
+          "1 head lettuce, shredded",
+          "1 bunch mint",
+          "1 bunch cilantro",
+          "1 cucumber, julienned",
+          "1 cup bean sprouts",
+          "1/4 cup fish sauce",
+          "1/4 cup lime juice",
+          "2 tbsp sugar",
+          "2 cloves garlic, minced",
+          "1 chili pepper, minced",
+          "1/2 cup water"
+        ],
+        "instructions": "Mix ground pork with fish sauce, sugar, garlic, shallot, and black pepper. Form into small patties. Marinate sliced pork with same mixture. Grill pork patties and sliced pork until cooked through. Cook rice vermicelli according to package directions. Make dipping sauce with fish sauce, lime juice, sugar, garlic, chili, and water. Serve noodles with lettuce, herbs, cucumber, bean sprouts, and grilled pork. Serve with dipping sauce.",
+        "proteins": ["pork"],
+        "dietary_restrictions": [],
+        "cooking_time": 40,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Ca Kho To (Caramelized Fish)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "2 lbs catfish or cod fillets",
+          "1/4 cup fish sauce",
+          "1/4 cup sugar",
+          "2 tbsp vegetable oil",
+          "4 cloves garlic, minced",
+          "2 shallots, sliced",
+          "1 inch ginger, julienned",
+          "2 red chilies, sliced",
+          "1/2 cup coconut water",
+          "2 green onions, chopped",
+          "1 tsp black pepper",
+          "1 tbsp lime juice"
+        ],
+        "instructions": "Cut fish into 2-inch pieces. Heat oil in a clay pot or heavy-bottomed pan. Add garlic, shallots, and ginger, cook until fragrant. Add sugar and cook until caramelized. Add fish sauce and coconut water. Add fish pieces and chilies. Simmer for 15-20 minutes until fish is cooked and sauce is reduced. Add green onions, black pepper, and lime juice. Serve hot with steamed rice.",
+        "proteins": ["fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 35,
+        "difficulty": "medium"
+      }
     ]
   }
 } 

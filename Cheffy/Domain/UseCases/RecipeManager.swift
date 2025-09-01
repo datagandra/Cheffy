@@ -806,9 +806,9 @@ class RecipeManager: ObservableObject {
         case .american:
             return "american_cuisines"
         case .thai:
-            return "asian_cuisines"
+            return "asian_cuisines_extended"
         case .japanese:
-            return "asian_cuisines"
+            return "asian_cuisines_extended"
         case .french:
             return "european_cuisines"
         case .greek:
@@ -820,9 +820,9 @@ class RecipeManager: ObservableObject {
         case .moroccan:
             return "middle_eastern_african_cuisines"
         case .vietnamese:
-            return "asian_cuisines"
+            return "asian_cuisines_extended"
         case .korean:
-            return "asian_cuisines"
+            return "asian_cuisines_extended"
         case .turkish:
             return "middle_eastern_african_cuisines"
         case .persian:

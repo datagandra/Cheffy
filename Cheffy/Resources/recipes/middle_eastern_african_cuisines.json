@@ -455,6 +455,244 @@
         "cooking_time": 180,
         "difficulty": "hard"
       }
+    ],
+    "Turkish": [
+      {
+        "title": "Kebab (Grilled Meat)",
+        "cuisine": "Turkish",
+        "ingredients": [
+          "2 lbs lamb or beef, cut into cubes",
+          "1 large onion, grated",
+          "2 tbsp olive oil",
+          "2 tbsp lemon juice",
+          "2 cloves garlic, minced",
+          "1 tsp ground cumin",
+          "1 tsp paprika",
+          "1 tsp oregano",
+          "1/2 tsp black pepper",
+          "1 tsp salt",
+          "4 pita breads",
+          "1 cup yogurt",
+          "1 cucumber, grated",
+          "2 cloves garlic, minced",
+          "1 tbsp fresh dill",
+          "1 tomato, sliced",
+          "1 red onion, sliced"
+        ],
+        "instructions": "Mix meat with grated onion, olive oil, lemon juice, garlic, cumin, paprika, oregano, black pepper, and salt. Marinate for 2 hours. Thread meat onto skewers. Grill over medium-high heat for 8-10 minutes, turning occasionally. Mix yogurt with cucumber, garlic, and dill for sauce. Warm pita breads. Remove meat from skewers and serve in pita with yogurt sauce, tomato, and onion.",
+        "proteins": ["lamb", "beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Baklava",
+        "cuisine": "Turkish",
+        "ingredients": [
+          "1 lb phyllo dough",
+          "2 cups walnuts, chopped",
+          "1 cup pistachios, chopped",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "1 cup butter, melted",
+          "1 cup sugar",
+          "1/2 cup water",
+          "1/4 cup honey",
+          "1 tsp lemon juice",
+          "1 tsp vanilla extract"
+        ],
+        "instructions": "Preheat oven to 350°F. Mix walnuts, pistachios, sugar, and cinnamon. Brush a 9x13 inch pan with butter. Layer 8 sheets of phyllo, brushing each with butter. Spread half the nut mixture. Layer 4 more phyllo sheets with butter. Spread remaining nuts. Top with 8 more phyllo sheets, brushing each with butter. Cut into diamonds. Bake for 50 minutes until golden. Make syrup with sugar, water, honey, lemon juice, and vanilla. Boil for 10 minutes. Pour hot syrup over cooled baklava. Let cool completely before serving.",
+        "proteins": ["nuts"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 90,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Manti (Turkish Dumplings)",
+        "cuisine": "Turkish",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1 egg",
+          "1/2 tsp salt",
+          "1/2 cup water",
+          "1/2 lb ground lamb",
+          "1 small onion, grated",
+          "2 tbsp parsley, chopped",
+          "1/2 tsp black pepper",
+          "1 tsp salt",
+          "1 cup yogurt",
+          "2 cloves garlic, minced",
+          "2 tbsp butter",
+          "1 tsp paprika",
+          "1 tsp dried mint"
+        ],
+        "instructions": "Make dough with flour, egg, salt, and water. Knead for 10 minutes, rest for 30 minutes. Mix lamb, onion, parsley, black pepper, and salt for filling. Roll dough thin and cut into squares. Place filling in center of each square. Fold corners to center and pinch to seal. Boil manti for 8-10 minutes until cooked. Mix yogurt with garlic. Melt butter with paprika and mint. Serve manti with yogurt sauce and spiced butter.",
+        "proteins": ["lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 60,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Lahmacun (Turkish Pizza)",
+        "cuisine": "Turkish",
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "1 tsp salt",
+          "1 tsp sugar",
+          "1 tsp active dry yeast",
+          "3/4 cup warm water",
+          "2 tbsp olive oil",
+          "1/2 lb ground lamb",
+          "1 small onion, grated",
+          "2 tomatoes, grated",
+          "2 tbsp tomato paste",
+          "2 cloves garlic, minced",
+          "1 tsp paprika",
+          "1 tsp cumin",
+          "1/2 tsp black pepper",
+          "1 tsp salt",
+          "2 tbsp parsley, chopped",
+          "Lemon wedges for serving"
+        ],
+        "instructions": "Make dough with flour, salt, sugar, yeast, water, and olive oil. Knead and let rise for 1 hour. Mix lamb, onion, tomatoes, tomato paste, garlic, paprika, cumin, black pepper, salt, and parsley. Preheat oven to 500°F. Roll dough into thin circles. Spread meat mixture thinly on each circle. Bake for 8-10 minutes until edges are crispy. Serve with lemon wedges.",
+        "proteins": ["lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Turkish Delight (Lokum)",
+        "cuisine": "Turkish",
+        "ingredients": [
+          "2 cups sugar",
+          "1/2 cup water",
+          "1/4 cup lemon juice",
+          "1/2 cup cornstarch",
+          "1 cup water",
+          "1 tsp rose water",
+          "1/2 cup powdered sugar",
+          "1/4 cup cornstarch",
+          "Red food coloring (optional)"
+        ],
+        "instructions": "Combine sugar, water, and lemon juice in a saucepan. Bring to boil and cook to 240°F. Mix cornstarch with water in another pan. Cook over low heat, stirring constantly, until thick. Add sugar syrup gradually, stirring constantly. Cook for 1 hour until very thick. Add rose water and food coloring. Pour into greased pan. Let cool for 24 hours. Mix powdered sugar and cornstarch. Cut into squares and coat with sugar mixture.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 90,
+        "difficulty": "hard"
+      }
+    ],
+    "Persian": [
+      {
+        "title": "Chelo Kebab (Persian Rice with Kebab)",
+        "cuisine": "Persian",
+        "ingredients": [
+          "2 cups basmati rice",
+          "1 lb ground lamb",
+          "1 large onion, grated",
+          "2 tbsp sumac",
+          "1 tsp turmeric",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/4 cup butter",
+          "1/2 cup yogurt",
+          "1 egg yolk",
+          "1 tbsp saffron, soaked in hot water",
+          "1/2 cup barberries (optional)",
+          "1/4 cup slivered almonds",
+          "1/4 cup pistachios"
+        ],
+        "instructions": "Wash rice until water runs clear. Soak for 30 minutes. Mix lamb with onion, sumac, turmeric, salt, and black pepper. Form into long kebab shapes. Cook rice in salted water for 6 minutes. Drain and rinse. Melt butter in a pot, add yogurt and egg yolk. Layer half the rice, then kebab, then remaining rice. Cover and cook on low for 45 minutes. Grill kebabs for 8-10 minutes. Mix saffron with some rice. Serve rice with kebabs, barberries, almonds, and pistachios.",
+        "proteins": ["lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 90,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Ghormeh Sabzi (Herb Stew)",
+        "cuisine": "Persian",
+        "ingredients": [
+          "1 lb lamb or beef, cubed",
+          "1 cup parsley, chopped",
+          "1 cup cilantro, chopped",
+          "1/2 cup dill, chopped",
+          "1/2 cup fenugreek leaves, chopped",
+          "1 large onion, diced",
+          "1/2 cup dried kidney beans, soaked overnight",
+          "3 dried limes",
+          "1 tsp turmeric",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/4 cup vegetable oil",
+          "4 cups water"
+        ],
+        "instructions": "Heat oil in a large pot. Brown meat on all sides. Add onion and cook until golden. Add turmeric, salt, and black pepper. Add water and bring to boil. Simmer for 1 hour. Add kidney beans and dried limes. Simmer for another hour. In a separate pan, sauté herbs until dark green and fragrant. Add herbs to stew and simmer for 30 minutes. Adjust seasoning. Serve with basmati rice.",
+        "proteins": ["lamb", "beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 180,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Tahdig (Crispy Rice)",
+        "cuisine": "Persian",
+        "ingredients": [
+          "2 cups basmati rice",
+          "1/4 cup vegetable oil",
+          "1/4 cup butter",
+          "1 tsp salt",
+          "1 tbsp saffron, soaked in hot water",
+          "1/2 cup yogurt",
+          "1 egg yolk"
+        ],
+        "instructions": "Wash rice until water runs clear. Soak for 30 minutes. Boil rice in salted water for 6 minutes. Drain and rinse. Heat oil and butter in a non-stick pot. Mix yogurt and egg yolk with some rice. Press this mixture into the bottom of the pot. Add remaining rice in layers. Cover and cook on high for 5 minutes, then low for 45 minutes. Mix saffron with some rice for color. Serve with crispy bottom layer (tahdig) on top.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 90,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Fesenjan (Pomegranate Walnut Stew)",
+        "cuisine": "Persian",
+        "ingredients": [
+          "1 lb chicken, cut into pieces",
+          "2 cups walnuts, ground",
+          "1 cup pomegranate molasses",
+          "1 large onion, diced",
+          "2 tbsp sugar",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/4 cup vegetable oil",
+          "3 cups water",
+          "1/4 cup pomegranate seeds for garnish"
+        ],
+        "instructions": "Heat oil in a large pot. Brown chicken pieces on all sides. Remove and set aside. Add onion and cook until golden. Add ground walnuts and cook for 5 minutes, stirring constantly. Add pomegranate molasses, sugar, salt, and black pepper. Add water and bring to boil. Return chicken to pot. Simmer for 1 hour until chicken is tender and sauce is thick. Adjust sweetness with sugar. Garnish with pomegranate seeds. Serve with basmati rice.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 90,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Zereshk Polo (Barberry Rice)",
+        "cuisine": "Persian",
+        "ingredients": [
+          "2 cups basmati rice",
+          "1 lb chicken breast, sliced",
+          "1/2 cup barberries",
+          "1 large onion, sliced",
+          "1 tsp turmeric",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/4 cup vegetable oil",
+          "1/4 cup butter",
+          "1 tbsp saffron, soaked in hot water",
+          "1/4 cup sugar",
+          "1/4 cup slivered almonds"
+        ],
+        "instructions": "Wash rice until water runs clear. Soak for 30 minutes. Heat oil in a pan. Cook chicken with turmeric, salt, and black pepper until golden. Remove and set aside. Cook onion until golden. Add barberries and sugar, cook for 2 minutes. Boil rice in salted water for 6 minutes. Drain and rinse. Melt butter in a pot. Layer rice, chicken, and barberry mixture. Cover and cook on low for 45 minutes. Mix saffron with some rice. Garnish with almonds. Serve with crispy bottom layer.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 90,
+        "difficulty": "medium"
+      }
     ]
   }
 } 
