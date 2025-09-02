@@ -332,6 +332,106 @@
         "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 30,
         "difficulty": "medium"
+      },
+      {
+        "title": "Quick Greek Salad",
+        "cuisine": "Greek",
+        "ingredients": ["2 large tomatoes, chopped", "1 cucumber, chopped", "1/2 red onion, sliced", "1/2 cup Kalamata olives", "4 oz feta cheese, cubed", "2 tbsp olive oil", "1 tbsp red wine vinegar", "1 tsp oregano", "Salt and pepper to taste"],
+        "instructions": "Combine tomatoes, cucumber, onion, and olives in bowl. Top with feta cheese. Whisk olive oil, vinegar, oregano, salt, and pepper. Drizzle over salad. Toss gently and serve immediately.",
+        "proteins": ["feta cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Hummus",
+        "cuisine": "Middle Eastern",
+        "ingredients": ["1 can chickpeas, drained", "2 tbsp tahini", "2 tbsp lemon juice", "2 cloves garlic", "2 tbsp olive oil", "1/2 tsp cumin", "Salt to taste", "Pita bread for serving"],
+        "instructions": "Blend chickpeas, tahini, lemon juice, garlic, olive oil, cumin, and salt until smooth. Add water if needed for consistency. Serve with pita bread and vegetables.",
+        "proteins": ["chickpeas"],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Caprese Salad",
+        "cuisine": "Italian",
+        "ingredients": ["2 large tomatoes, sliced", "8 oz fresh mozzarella, sliced", "1/4 cup fresh basil leaves", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper to taste"],
+        "instructions": "Arrange tomato and mozzarella slices on plate. Tuck basil leaves between slices. Drizzle with olive oil and balsamic vinegar. Season with salt and pepper. Serve immediately.",
+        "proteins": ["mozzarella"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Pasta Aglio e Olio",
+        "cuisine": "Italian",
+        "ingredients": ["8 oz spaghetti", "1/4 cup olive oil", "6 cloves garlic, sliced", "1/2 tsp red pepper flakes", "1/4 cup parsley, chopped", "1/4 cup grated Parmesan cheese", "Salt to taste"],
+        "instructions": "Cook pasta according to package directions. Heat olive oil and cook garlic until golden. Add red pepper flakes. Toss pasta with oil mixture. Add parsley and Parmesan. Season with salt. Serve immediately.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Bruschetta",
+        "cuisine": "Italian",
+        "ingredients": ["4 slices crusty bread", "2 large tomatoes, diced", "2 cloves garlic, minced", "1/4 cup fresh basil, chopped", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper to taste"],
+        "instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Gazpacho",
+        "cuisine": "Spanish",
+        "ingredients": ["4 large tomatoes", "1 cucumber", "1 bell pepper", "1/2 red onion", "2 cloves garlic", "1/4 cup olive oil", "2 tbsp red wine vinegar", "Salt and pepper to taste", "Fresh herbs for garnish"],
+        "instructions": "Blend all vegetables until smooth. Add olive oil and vinegar. Season with salt and pepper. Chill for 10 minutes. Serve cold with fresh herbs.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mediterranean Wrap",
+        "cuisine": "Mediterranean",
+        "ingredients": ["2 large tortillas", "1/2 cup hummus", "1/2 cup mixed greens", "1/2 cup cucumber, sliced", "1/2 cup tomatoes, sliced", "1/4 cup feta cheese", "1/4 cup olives", "2 tbsp olive oil"],
+        "instructions": "Spread hummus on tortillas. Layer with greens, cucumber, tomatoes, feta, and olives. Drizzle with olive oil. Roll tightly and slice in half. Serve immediately.",
+        "proteins": ["feta cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 7,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Ratatouille",
+        "cuisine": "French",
+        "ingredients": ["1 eggplant, diced", "2 zucchini, diced", "1 bell pepper, diced", "2 tomatoes, diced", "1 onion, diced", "3 cloves garlic, minced", "2 tbsp olive oil", "1 tsp herbs de Provence", "Salt and pepper to taste"],
+        "instructions": "Heat olive oil and cook onion until soft. Add garlic and cook for 1 minute. Add eggplant, zucchini, and bell pepper. Cook for 5 minutes. Add tomatoes and herbs. Simmer for 5 minutes. Season with salt and pepper.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Tabbouleh",
+        "cuisine": "Middle Eastern",
+        "ingredients": ["1 cup bulgur wheat", "2 cups boiling water", "2 tomatoes, diced", "1 cucumber, diced", "1/2 cup parsley, chopped", "1/4 cup mint, chopped", "3 tbsp olive oil", "2 tbsp lemon juice", "Salt to taste"],
+        "instructions": "Soak bulgur in boiling water for 10 minutes. Drain and cool. Mix with tomatoes, cucumber, parsley, and mint. Whisk olive oil, lemon juice, and salt. Toss with salad. Chill for 10 minutes before serving.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanakopita",
+        "cuisine": "Greek",
+        "ingredients": ["1 lb frozen spinach, thawed", "1/2 cup feta cheese, crumbled", "2 eggs", "1/4 cup dill, chopped", "1/4 cup parsley, chopped", "1/4 cup olive oil", "8 sheets phyllo dough", "Salt and pepper to taste"],
+        "instructions": "Squeeze spinach dry. Mix with feta, eggs, herbs, salt, and pepper. Brush phyllo with olive oil. Layer 4 sheets, add filling, top with 4 more sheets. Bake at 375°F for 20 minutes until golden.",
+        "proteins": ["feta cheese", "eggs"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 25,
+        "difficulty": "medium"
       }
     ]
   }

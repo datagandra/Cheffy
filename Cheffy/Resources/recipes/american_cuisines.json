@@ -200,6 +200,166 @@
         "dietary_restrictions": ["contains_dairy"],
         "cooking_time": 45,
         "difficulty": "medium"
+      },
+      {
+        "title": "Quick Scrambled Eggs",
+        "cuisine": "American",
+        "ingredients": ["4 eggs", "2 tbsp butter", "2 tbsp milk", "Salt and pepper to taste", "Fresh chives for garnish"],
+        "instructions": "Beat eggs with milk, salt, and pepper. Heat butter in pan over medium heat. Add eggs and scramble gently for 2-3 minutes until set. Garnish with chives and serve immediately.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Microwave Oatmeal",
+        "cuisine": "American",
+        "ingredients": ["1/2 cup rolled oats", "1 cup milk", "1 tbsp honey", "1/2 tsp cinnamon", "1/4 cup fresh berries", "1 tbsp chopped nuts"],
+        "instructions": "Combine oats and milk in microwave-safe bowl. Microwave on high for 2 minutes. Stir in honey and cinnamon. Top with berries and nuts. Serve hot.",
+        "proteins": ["milk"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 3,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Avocado Toast",
+        "cuisine": "American",
+        "ingredients": ["2 slices whole grain bread", "1 ripe avocado", "1 tbsp lemon juice", "Salt and pepper to taste", "Red pepper flakes", "1 tbsp olive oil"],
+        "instructions": "Toast bread slices. Mash avocado with lemon juice, salt, and pepper. Spread on toast. Drizzle with olive oil and sprinkle with red pepper flakes. Serve immediately.",
+        "proteins": ["avocado"],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Smoothie Bowl",
+        "cuisine": "American",
+        "ingredients": ["1 frozen banana", "1/2 cup frozen berries", "1/2 cup Greek yogurt", "1/4 cup milk", "1 tbsp honey", "Granola for topping", "Fresh fruit for garnish"],
+        "instructions": "Blend banana, berries, yogurt, milk, and honey until smooth. Pour into bowl. Top with granola and fresh fruit. Serve immediately.",
+        "proteins": ["greek yogurt", "milk"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Ramen Upgrade",
+        "cuisine": "American",
+        "ingredients": ["1 package instant ramen", "1 egg", "2 tbsp soy sauce", "1 tsp sesame oil", "1 green onion, sliced", "1/2 cup spinach", "Sriracha to taste"],
+        "instructions": "Cook ramen according to package directions. Add spinach in last minute. Poach egg in broth. Top with soy sauce, sesame oil, green onion, and sriracha. Serve hot.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 7,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Quesadilla",
+        "cuisine": "American",
+        "ingredients": ["2 flour tortillas", "1 cup shredded cheese", "1/4 cup black beans", "1/4 cup corn", "1 tbsp butter", "Salsa and sour cream for serving"],
+        "instructions": "Heat butter in pan. Place one tortilla, add cheese, beans, and corn. Top with second tortilla. Cook for 2-3 minutes per side until golden and cheese melts. Cut into wedges and serve with salsa and sour cream.",
+        "proteins": ["cheese", "black beans"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Microwave Mug Cake",
+        "cuisine": "American",
+        "ingredients": ["4 tbsp all-purpose flour", "2 tbsp sugar", "2 tbsp cocoa powder", "1/4 tsp baking powder", "3 tbsp milk", "2 tbsp vegetable oil", "1/4 tsp vanilla extract", "Chocolate chips for topping"],
+        "instructions": "Mix dry ingredients in microwave-safe mug. Add wet ingredients and stir until smooth. Add chocolate chips. Microwave on high for 1-2 minutes until cake rises. Let cool slightly and enjoy.",
+        "proteins": ["milk"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick BLT Sandwich",
+        "cuisine": "American",
+        "ingredients": ["4 slices bacon", "2 slices bread", "2 tbsp mayonnaise", "2 lettuce leaves", "2 tomato slices", "Salt and pepper to taste"],
+        "instructions": "Cook bacon until crispy. Toast bread slices. Spread mayonnaise on bread. Layer lettuce, tomato, and bacon. Season with salt and pepper. Close sandwich and serve immediately.",
+        "proteins": ["bacon"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Grilled Cheese Sandwich",
+        "cuisine": "American",
+        "ingredients": ["2 slices bread", "2 slices cheddar cheese", "2 tbsp butter", "1 tsp garlic powder", "Tomato soup for serving"],
+        "instructions": "Butter one side of each bread slice. Place cheese between bread slices. Cook in pan over medium heat for 3-4 minutes per side until golden and cheese melts. Serve with tomato soup.",
+        "proteins": ["cheddar cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chicken Salad",
+        "cuisine": "American",
+        "ingredients": ["2 cups cooked chicken, diced", "1/2 cup mayonnaise", "1/4 cup celery, diced", "1/4 cup red grapes, halved", "1 tbsp lemon juice", "Salt and pepper to taste", "Lettuce leaves for serving"],
+        "instructions": "Mix chicken with mayonnaise, celery, grapes, and lemon juice. Season with salt and pepper. Chill for 10 minutes. Serve on lettuce leaves or in sandwiches.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Pasta with Marinara",
+        "cuisine": "American",
+        "ingredients": ["8 oz spaghetti", "2 cups marinara sauce", "2 tbsp olive oil", "2 cloves garlic, minced", "1/4 cup grated Parmesan cheese", "Fresh basil leaves", "Salt and pepper to taste"],
+        "instructions": "Cook pasta according to package directions. Heat olive oil and sauté garlic for 1 minute. Add marinara sauce and simmer for 5 minutes. Toss with cooked pasta. Top with Parmesan and basil. Season with salt and pepper.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Stir-Fry",
+        "cuisine": "American",
+        "ingredients": ["1 lb chicken breast, sliced", "2 cups mixed vegetables", "2 tbsp soy sauce", "1 tbsp sesame oil", "2 cloves garlic, minced", "1 tsp ginger, grated", "2 tbsp vegetable oil", "Cooked rice for serving"],
+        "instructions": "Heat oil in wok or large pan. Stir-fry chicken for 5 minutes. Add vegetables and cook for 3 minutes. Add garlic, ginger, soy sauce, and sesame oil. Cook for 2 minutes. Serve over rice.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Fish Tacos",
+        "cuisine": "American",
+        "ingredients": ["1 lb white fish fillets", "8 small tortillas", "1 cup cabbage, shredded", "1/2 cup sour cream", "1 lime, juiced", "1 tsp cumin", "1 tsp chili powder", "Salt and pepper to taste", "Cilantro for garnish"],
+        "instructions": "Season fish with cumin, chili powder, salt, and pepper. Cook fish for 3-4 minutes per side. Warm tortillas. Mix sour cream with lime juice. Assemble tacos with fish, cabbage, and sour cream mixture. Garnish with cilantro.",
+        "proteins": ["white fish"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 18,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Beef Stir-Fry",
+        "cuisine": "American",
+        "ingredients": ["1 lb beef sirloin, sliced", "2 cups broccoli florets", "1 bell pepper, sliced", "2 tbsp soy sauce", "1 tbsp oyster sauce", "2 cloves garlic, minced", "2 tbsp vegetable oil", "Cooked rice for serving"],
+        "instructions": "Heat oil in wok. Stir-fry beef for 4 minutes. Add vegetables and cook for 3 minutes. Add garlic, soy sauce, and oyster sauce. Cook for 2 minutes. Serve over rice.",
+        "proteins": ["beef sirloin"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Shrimp Scampi",
+        "cuisine": "American",
+        "ingredients": ["1 lb shrimp, peeled", "8 oz linguine", "4 tbsp butter", "4 cloves garlic, minced", "1/4 cup white wine", "2 tbsp lemon juice", "1/4 cup parsley, chopped", "Salt and pepper to taste"],
+        "instructions": "Cook pasta according to package directions. Melt butter and sauté garlic for 1 minute. Add shrimp and cook for 3 minutes. Add wine and lemon juice. Simmer for 2 minutes. Toss with pasta and parsley. Season with salt and pepper.",
+        "proteins": ["shrimp"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chicken Quesadillas",
+        "cuisine": "American",
+        "ingredients": ["2 cups cooked chicken, shredded", "4 flour tortillas", "2 cups shredded cheese", "1/2 cup salsa", "1/4 cup sour cream", "2 tbsp butter", "Cilantro for garnish"],
+        "instructions": "Heat butter in pan. Place tortilla, add chicken, cheese, and salsa. Top with second tortilla. Cook for 3-4 minutes per side until golden. Cut into wedges. Serve with sour cream and cilantro.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
       }
     ]
   }

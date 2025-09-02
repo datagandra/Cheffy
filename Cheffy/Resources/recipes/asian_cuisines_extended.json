@@ -766,6 +766,106 @@
         "dietary_restrictions": [],
         "cooking_time": 35,
         "difficulty": "medium"
+      },
+      {
+        "title": "Quick Egg Fried Rice",
+        "cuisine": "Chinese",
+        "ingredients": ["2 cups cooked rice", "3 eggs", "2 tbsp vegetable oil", "2 cloves garlic, minced", "1/2 cup frozen peas", "2 tbsp soy sauce", "1 tsp sesame oil", "2 green onions, sliced", "Salt and pepper to taste"],
+        "instructions": "Heat oil in wok. Scramble eggs and set aside. Add garlic and stir-fry for 30 seconds. Add rice and stir-fry for 2 minutes. Add peas and cook for 1 minute. Add eggs, soy sauce, and sesame oil. Stir-fry for 1 minute. Garnish with green onions. Season with salt and pepper.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chicken Teriyaki",
+        "cuisine": "Japanese",
+        "ingredients": ["1 lb chicken breast, sliced", "1/4 cup soy sauce", "2 tbsp honey", "1 tbsp rice vinegar", "1 tsp ginger, grated", "2 cloves garlic, minced", "2 tbsp vegetable oil", "Sesame seeds for garnish", "Cooked rice for serving"],
+        "instructions": "Mix soy sauce, honey, rice vinegar, ginger, and garlic. Heat oil in pan. Cook chicken for 4 minutes per side. Add sauce and simmer for 2 minutes. Garnish with sesame seeds. Serve over rice.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Miso Soup",
+        "cuisine": "Japanese",
+        "ingredients": ["4 cups dashi stock", "3 tbsp miso paste", "1/2 cup tofu, cubed", "2 green onions, sliced", "1 sheet nori, cut into strips", "1 tsp soy sauce"],
+        "instructions": "Heat dashi stock to simmer. Dissolve miso paste in small amount of hot stock. Add to pot with tofu. Simmer for 2 minutes. Add green onions and nori. Season with soy sauce. Serve hot.",
+        "proteins": ["tofu"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 7,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Pad Thai",
+        "cuisine": "Thai",
+        "ingredients": ["8 oz rice noodles", "2 tbsp vegetable oil", "2 cloves garlic, minced", "1/2 lb shrimp", "2 eggs", "2 tbsp fish sauce", "2 tbsp brown sugar", "1 tbsp lime juice", "1/4 cup peanuts, chopped", "Bean sprouts and lime wedges for serving"],
+        "instructions": "Soak noodles in hot water for 5 minutes. Heat oil and cook garlic for 30 seconds. Add shrimp and cook for 2 minutes. Push aside, add eggs and scramble. Add noodles, fish sauce, brown sugar, and lime juice. Toss for 2 minutes. Top with peanuts, bean sprouts, and lime wedges.",
+        "proteins": ["shrimp", "eggs"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Korean Beef Bowl",
+        "cuisine": "Korean",
+        "ingredients": ["1 lb ground beef", "3 tbsp soy sauce", "2 tbsp brown sugar", "1 tbsp sesame oil", "2 cloves garlic, minced", "1 tsp ginger, grated", "2 green onions, sliced", "1 tbsp sesame seeds", "Cooked rice for serving"],
+        "instructions": "Cook ground beef until browned. Add soy sauce, brown sugar, sesame oil, garlic, and ginger. Simmer for 3 minutes. Garnish with green onions and sesame seeds. Serve over rice.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Vietnamese Pho",
+        "cuisine": "Vietnamese",
+        "ingredients": ["4 cups beef broth", "8 oz rice noodles", "1/2 lb beef sirloin, sliced thin", "2 green onions, sliced", "1/4 cup cilantro", "1/4 cup basil", "1 lime, juiced", "2 tbsp fish sauce", "Sriracha and hoisin sauce for serving"],
+        "instructions": "Heat broth to simmer. Cook noodles according to package directions. Add beef to hot broth for 1 minute. Divide noodles among bowls. Top with beef and broth. Garnish with green onions, cilantro, and basil. Add lime juice and fish sauce. Serve with sriracha and hoisin.",
+        "proteins": ["beef sirloin"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Stir-Fried Noodles",
+        "cuisine": "Chinese",
+        "ingredients": ["8 oz fresh noodles", "2 tbsp vegetable oil", "2 cloves garlic, minced", "1 cup mixed vegetables", "2 tbsp soy sauce", "1 tbsp oyster sauce", "1 tsp sesame oil", "2 green onions, sliced"],
+        "instructions": "Cook noodles according to package directions. Heat oil and stir-fry garlic for 30 seconds. Add vegetables and cook for 2 minutes. Add noodles, soy sauce, and oyster sauce. Toss for 2 minutes. Drizzle with sesame oil and garnish with green onions.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Sushi Bowl",
+        "cuisine": "Japanese",
+        "ingredients": ["2 cups cooked sushi rice", "1/2 lb salmon, cubed", "1 avocado, sliced", "1 cucumber, sliced", "2 tbsp soy sauce", "1 tbsp rice vinegar", "1 tsp sesame oil", "Nori strips and sesame seeds for garnish"],
+        "instructions": "Mix rice with rice vinegar. Top with salmon, avocado, and cucumber. Drizzle with soy sauce and sesame oil. Garnish with nori strips and sesame seeds. Serve immediately.",
+        "proteins": ["salmon"],
+        "dietary_restrictions": [],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Thai Basil Chicken",
+        "cuisine": "Thai",
+        "ingredients": ["1 lb ground chicken", "2 tbsp vegetable oil", "4 cloves garlic, minced", "2 Thai chilies, sliced", "1/4 cup Thai basil leaves", "2 tbsp fish sauce", "1 tbsp soy sauce", "1 tbsp brown sugar", "1 tbsp lime juice", "Cooked rice for serving"],
+        "instructions": "Heat oil and cook garlic and chilies for 30 seconds. Add ground chicken and cook for 4 minutes. Add fish sauce, soy sauce, brown sugar, and lime juice. Stir-fry for 2 minutes. Add basil leaves and toss. Serve over rice.",
+        "proteins": ["ground chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Korean Kimchi Fried Rice",
+        "cuisine": "Korean",
+        "ingredients": ["2 cups cooked rice", "1/2 cup kimchi, chopped", "3 eggs", "2 tbsp vegetable oil", "2 cloves garlic, minced", "2 tbsp soy sauce", "1 tsp sesame oil", "2 green onions, sliced", "Sesame seeds for garnish"],
+        "instructions": "Heat oil and scramble eggs. Set aside. Add garlic and stir-fry for 30 seconds. Add rice and stir-fry for 2 minutes. Add kimchi and cook for 1 minute. Add eggs, soy sauce, and sesame oil. Toss for 1 minute. Garnish with green onions and sesame seeds.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 10,
+        "difficulty": "easy"
       }
     ]
   }
