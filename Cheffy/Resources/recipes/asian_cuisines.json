@@ -154,6 +154,1385 @@
         "cuisine": "Japanese",
         "ingredients": ["3 cups sushi rice", "1/4 cup rice vinegar", "1 tbsp sugar", "1 tsp salt", "1/2 cup salmon, cooked and flaked", "1/2 cup tuna, cooked and flaked", "1/4 cup pickled plum", "Nori sheets, cut into strips", "Sesame seeds"],
         "instructions": "Cook sushi rice and mix with rice vinegar, sugar, and salt. Let cool to room temperature. Wet hands with water and salt. Take a handful of rice and form into a triangle shape. Make a small indentation and add filling (salmon, tuna, or pickled plum). Wrap with nori strip and sprinkle with sesame seeds. Serve immediately."
+      },
+      {
+        "recipe_name": "Tamagoyaki (Japanese Omelet)",
+        "cuisine": "Japanese",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 10 min",
+        "servings": 4,
+        "calories_per_serving": 180,
+        "difficulty": "Medium",
+        "ingredients": [
+          "6 large eggs",
+          "2 tbsp mirin (30ml)",
+          "1 tbsp soy sauce (15ml)",
+          "1 tbsp sugar (12g)",
+          "1/4 tsp salt",
+          "2 tbsp vegetable oil (30ml)",
+          "1 tbsp dashi stock (15ml)",
+          "Scallions for garnish"
+        ],
+        "utensils_required": [
+          "Tamagoyaki pan or small rectangular skillet",
+          "Whisk",
+          "Measuring spoons",
+          "Chopsticks",
+          "Spatula",
+          "Small bowl"
+        ],
+        "cooking_instructions": [
+          "Whisk eggs with mirin, soy sauce, sugar, salt, and dashi in bowl until well combined.",
+          "Heat tamagoyaki pan over medium heat. Add 1 tsp oil and spread evenly.",
+          "Pour 1/4 of egg mixture into pan. When bottom sets, roll from one end to the other using chopsticks.",
+          "Add another 1 tsp oil and pour more egg mixture. Lift rolled egg and pour mixture underneath. Roll again.",
+          "Repeat process until all egg mixture is used. Cook for 2 more minutes until golden. Slice and serve with scallions."
+        ],
+        "chef_tips": "The key is rolling the egg while it's still slightly runny on top. Use a proper tamagoyaki pan for best results. The layers should be thin and even for the characteristic texture."
+      },
+      {
+        "recipe_name": "Chawanmushi (Savory Egg Custard)",
+        "cuisine": "Japanese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 120,
+        "difficulty": "Medium",
+        "ingredients": [
+          "4 large eggs",
+          "2 cups dashi stock (480ml)",
+          "2 tbsp soy sauce (30ml)",
+          "1 tbsp mirin (15ml)",
+          "1/2 tsp salt",
+          "4 shrimp, peeled and deveined",
+          "4 shiitake mushrooms, sliced",
+          "4 ginkgo nuts",
+          "4 small pieces chicken breast",
+          "Mitsuba leaves for garnish"
+        ],
+        "utensils_required": [
+          "4 chawanmushi cups or small ramekins",
+          "Steamer or large pot with steamer insert",
+          "Fine mesh strainer",
+          "Whisk",
+          "Measuring cups and spoons",
+          "Chef's knife",
+          "Cutting board"
+        ],
+        "cooking_instructions": [
+          "Whisk eggs with dashi, soy sauce, mirin, and salt. Strain through fine mesh strainer.",
+          "Divide shrimp, mushrooms, ginkgo nuts, and chicken among 4 cups.",
+          "Pour egg mixture over ingredients, filling cups 3/4 full. Cover with foil.",
+          "Steam over medium heat for 12-15 minutes until set. Test with toothpick - it should come out clean.",
+          "Garnish with mitsuba leaves and serve immediately."
+        ],
+        "chef_tips": "The custard should be silky smooth with no bubbles. Steaming temperature is crucial - too hot and it will be rubbery. The ingredients should be arranged beautifully in the cups."
+      },
+      {
+        "recipe_name": "Yakitori (Grilled Chicken Skewers)",
+        "cuisine": "Japanese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 280,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1.5 lbs chicken thighs, cut into 1-inch pieces (680g)",
+          "1/2 cup soy sauce (120ml)",
+          "1/4 cup mirin (60ml)",
+          "1/4 cup sake (60ml)",
+          "2 tbsp sugar (25g)",
+          "2 cloves garlic, minced",
+          "1 inch ginger, grated",
+          "8 scallions, cut into 1-inch pieces",
+          "Bamboo skewers, soaked in water",
+          "Sesame seeds for garnish"
+        ],
+        "utensils_required": [
+          "Grill or grill pan",
+          "Bamboo skewers",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Small saucepan",
+          "Brush for basting"
+        ],
+        "cooking_instructions": [
+          "Thread chicken pieces and scallions alternately on skewers.",
+          "Make yakitori sauce: combine soy sauce, mirin, sake, sugar, garlic, and ginger in saucepan. Simmer for 5 minutes until thickened.",
+          "Grill skewers over medium-high heat for 8-10 minutes, turning frequently and basting with sauce.",
+          "Continue basting and turning until chicken is cooked through and glazed.",
+          "Serve immediately with remaining sauce and sesame seeds."
+        ],
+        "chef_tips": "The key is frequent turning and basting to build up layers of flavor. Don't overcook the chicken - it should be juicy inside. The sauce should be glossy and slightly sticky."
+      },
+      {
+        "recipe_name": "Tonkatsu (Japanese Pork Cutlet)",
+        "cuisine": "Japanese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 520,
+        "difficulty": "Medium",
+        "ingredients": [
+          "4 pork cutlets, 1/2 inch thick (600g)",
+          "1 cup all-purpose flour (128g)",
+          "2 large eggs, beaten",
+          "2 cups panko breadcrumbs (200g)",
+          "Vegetable oil for frying",
+          "Salt and freshly ground black pepper to taste",
+          "Tonkatsu sauce for serving",
+          "Shredded cabbage for serving",
+          "Lemon wedges for serving"
+        ],
+        "utensils_required": [
+          "Large skillet or deep fryer",
+          "Meat mallet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups",
+          "Three shallow bowls",
+          "Paper towels",
+          "Tongs"
+        ],
+        "cooking_instructions": [
+          "Pound pork cutlets to 1/4 inch thickness. Season with salt and pepper.",
+          "Set up breading station: flour in first bowl, beaten eggs in second, panko in third.",
+          "Dredge cutlets in flour, then egg, then panko, pressing to adhere.",
+          "Heat oil to 350°F. Fry cutlets for 4-5 minutes per side until golden and cooked through.",
+          "Drain on paper towels. Slice and serve with tonkatsu sauce, cabbage, and lemon wedges."
+        ],
+        "chef_tips": "The panko creates the characteristic light, crispy coating. Don't overcrowd the pan when frying. The cutlets should be golden brown and the pork just cooked through."
+      },
+      {
+        "recipe_name": "Oyakodon (Chicken and Egg Rice Bowl)",
+        "cuisine": "Japanese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 4,
+        "calories_per_serving": 420,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1 lb chicken thighs, cut into bite-sized pieces (450g)",
+          "1 large onion, sliced (150g)",
+          "4 large eggs",
+          "1 cup dashi stock (240ml)",
+          "1/4 cup soy sauce (60ml)",
+          "2 tbsp mirin (30ml)",
+          "1 tbsp sugar (12g)",
+          "4 cups cooked short-grain rice",
+          "2 scallions, sliced",
+          "Mitsuba leaves for garnish"
+        ],
+        "utensils_required": [
+          "Large skillet with lid",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk",
+          "Rice cooker or pot for rice"
+        ],
+        "cooking_instructions": [
+          "Combine dashi, soy sauce, mirin, and sugar in bowl. Set aside.",
+          "Heat large skillet over medium heat. Add chicken and cook for 3 minutes until starting to brown.",
+          "Add onion and cook for 2 minutes. Add dashi mixture and simmer for 5 minutes.",
+          "Beat eggs lightly and pour over chicken mixture. Cover and cook for 2 minutes until eggs are set but still slightly runny.",
+          "Divide rice among 4 bowls. Top with chicken and egg mixture. Garnish with scallions and mitsuba."
+        ],
+        "chef_tips": "The eggs should be creamy, not fully set. The name 'oyakodon' means 'parent and child' - chicken and egg. Don't overcook the eggs for the best texture."
+      },
+      {
+        "recipe_name": "Kaiseki Ryori (Traditional Multi-Course Meal)",
+        "cuisine": "Japanese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Any Time",
+        "servings": 8,
+        "calories_per_serving": 350,
+        "difficulty": "Hard",
+        "ingredients": [
+          "For sashimi: 1 lb fresh sashimi-grade fish (450g)",
+          "For tempura: 1 lb mixed vegetables and shrimp (450g)",
+          "For chawanmushi: 6 eggs, dashi, soy sauce, mirin",
+          "For grilled fish: 2 lbs seasonal fish (900g)",
+          "For rice: 3 cups short-grain rice (600g)",
+          "For miso soup: 4 cups dashi, 1/2 cup miso paste",
+          "For pickles: assorted Japanese pickles",
+          "For dessert: seasonal fruits and wagashi",
+          "Various seasonal vegetables and herbs",
+          "Soy sauce, mirin, sake, dashi for seasoning"
+        ],
+        "utensils_required": [
+          "Multiple serving dishes and bowls",
+          "Chef's knife",
+          "Cutting board",
+          "Steamer",
+          "Grill or grill pan",
+          "Tempura pot and strainer",
+          "Rice cooker",
+          "Fine mesh strainer",
+          "Various cooking utensils"
+        ],
+        "cooking_instructions": [
+          "Prepare each course following traditional kaiseki principles: sakizuke (appetizer), suimono (soup), mukozuke (sashimi), takiawase (simmered dish), yakimono (grilled dish), shiizakana (main dish), gohan (rice), ko no mono (pickles), and mizumono (dessert).",
+          "Each dish should reflect the season and use the finest ingredients available.",
+          "Presentation is crucial - each dish should be a work of art.",
+          "Serve courses in proper sequence, allowing time to appreciate each dish.",
+          "The meal should tell a story and create a complete sensory experience."
+        ],
+        "chef_tips": "Kaiseki is the pinnacle of Japanese cuisine - it's about balance, seasonality, and perfection in every detail. Each course should complement the others and create a harmonious whole. The presentation should be as beautiful as the taste."
+      },
+      {
+        "recipe_name": "Wagyu Beef Sukiyaki",
+        "cuisine": "Japanese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 580,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb wagyu beef, thinly sliced (450g)",
+          "1 package shirataki noodles (200g)",
+          "1 napa cabbage, cut into pieces (400g)",
+          "1 package enoki mushrooms (100g)",
+          "1 package shiitake mushrooms (100g)",
+          "1 bunch green onions, cut into 2-inch pieces",
+          "1 block firm tofu, cut into cubes (300g)",
+          "1/2 cup soy sauce (120ml)",
+          "1/4 cup mirin (60ml)",
+          "1/4 cup sake (60ml)",
+          "2 tbsp sugar (25g)",
+          "4 large eggs for dipping",
+          "Vegetable oil for cooking"
+        ],
+        "utensils_required": [
+          "Large shallow pot or sukiyaki pan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Small bowls for eggs",
+          "Chopsticks",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": [
+          "Make sukiyaki sauce: combine soy sauce, mirin, sake, and sugar. Set aside.",
+          "Heat oil in sukiyaki pan over medium heat. Add beef and cook for 1 minute per side.",
+          "Add sauce and bring to simmer. Add vegetables, mushrooms, and tofu around the pan.",
+          "Cook for 8-10 minutes, turning ingredients occasionally, until vegetables are tender.",
+          "Serve with raw eggs for dipping. Each person cooks their own ingredients at the table."
+        ],
+        "chef_tips": "Sukiyaki is a communal dish meant to be shared. The wagyu should be the star - don't overcook it. The raw egg dip is traditional and adds richness to the dish."
+      },
+      {
+        "recipe_name": "Matcha Green Tea Ice Cream",
+        "cuisine": "Japanese",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 6,
+        "calories_per_serving": 280,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 cups heavy cream (480ml)",
+          "1 cup whole milk (240ml)",
+          "3/4 cup granulated sugar (150g)",
+          "4 large egg yolks",
+          "3 tbsp high-quality matcha powder (20g)",
+          "1 tsp vanilla extract",
+          "Pinch of salt"
+        ],
+        "utensils_required": [
+          "Ice cream maker",
+          "Medium saucepan",
+          "Whisk",
+          "Fine mesh strainer",
+          "Measuring cups and spoons",
+          "Mixing bowl",
+          "Thermometer"
+        ],
+        "cooking_instructions": [
+          "Heat cream and milk with half the sugar in saucepan until steaming. Remove from heat.",
+          "Whisk egg yolks with remaining sugar until pale and thick. Temper with hot cream mixture.",
+          "Return to saucepan and cook over low heat, stirring constantly, until thickened (170°F).",
+          "Strain custard and whisk in matcha powder, vanilla, and salt. Chill completely.",
+          "Churn in ice cream maker according to manufacturer's instructions. Freeze until firm."
+        ],
+        "chef_tips": "Use high-quality ceremonial grade matcha for the best flavor and color. The custard should be smooth and silky. Don't over-churn or the ice cream will become grainy."
+      },
+      {
+        "recipe_name": "Kung Pao Chicken",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1.5 lbs chicken breast, diced (680g)",
+          "1/2 cup roasted peanuts (75g)",
+          "8-10 dried red chilies",
+          "3 cloves garlic, minced",
+          "1 inch ginger, minced",
+          "4 scallions, cut into 1-inch pieces",
+          "1 bell pepper, diced (150g)",
+          "2 tbsp soy sauce (30ml)",
+          "1 tbsp dark soy sauce (15ml)",
+          "1 tbsp rice wine (15ml)",
+          "1 tbsp sugar (12g)",
+          "1 tbsp cornstarch (8g)",
+          "2 tbsp vegetable oil (30ml)",
+          "1 tsp Sichuan peppercorns",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Wok or large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring spoons",
+          "Small bowl for sauce",
+          "Wooden spoon",
+          "Strainer"
+        ],
+        "cooking_instructions": [
+          "Marinate chicken with soy sauce, rice wine, and cornstarch for 10 minutes.",
+          "Make sauce: combine soy sauces, sugar, and 2 tbsp water in small bowl.",
+          "Heat wok over high heat. Add oil and stir-fry chicken for 4 minutes until cooked. Remove and set aside.",
+          "Add chilies and Sichuan peppercorns to wok. Cook for 30 seconds until fragrant. Add garlic and ginger.",
+          "Add bell pepper and scallions. Stir-fry for 2 minutes. Return chicken and add sauce. Toss for 1 minute. Add peanuts and serve."
+        ],
+        "chef_tips": "The key is high heat and quick cooking. Don't overcook the chicken or it will be tough. The Sichuan peppercorns add the characteristic numbing sensation."
+      },
+      {
+        "recipe_name": "Peking Duck",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Any Time",
+        "servings": 6,
+        "calories_per_serving": 520,
+        "difficulty": "Hard",
+        "ingredients": [
+          "1 whole duck, 5-6 lbs (2.3-2.7kg)",
+          "1/4 cup honey (60ml)",
+          "1/4 cup soy sauce (60ml)",
+          "2 tbsp rice wine (30ml)",
+          "1 tbsp five-spice powder (8g)",
+          "1 inch ginger, sliced",
+          "4 scallions, cut into 2-inch pieces",
+          "2 cucumbers, julienned",
+          "12 Mandarin pancakes",
+          "Hoisin sauce for serving",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large roasting pan with rack",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Basting brush",
+          "Kitchen twine",
+          "Steamer for pancakes"
+        ],
+        "cooking_instructions": [
+          "Rinse duck and pat dry. Season cavity with salt, ginger, and scallions. Tie legs together with twine.",
+          "Mix honey, soy sauce, rice wine, and five-spice powder. Brush over duck. Let air-dry in refrigerator for 4 hours.",
+          "Preheat oven to 350°F. Place duck on rack in roasting pan. Roast for 2 hours, basting every 30 minutes.",
+          "Increase heat to 400°F and roast for 30 minutes until skin is crispy and golden.",
+          "Let rest for 15 minutes. Carve and serve with pancakes, cucumber, and hoisin sauce."
+        ],
+        "chef_tips": "The air-drying step is crucial for crispy skin. The duck should be golden and the skin should crackle when cut. This is a ceremonial dish that requires patience and precision."
+      },
+      {
+        "recipe_name": "Mapo Tofu",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 280,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb soft tofu, cut into cubes (450g)",
+          "1/2 lb ground pork (225g)",
+          "2 tbsp doubanjiang (fermented bean paste) (30g)",
+          "2 cloves garlic, minced",
+          "1 inch ginger, minced",
+          "2 scallions, chopped",
+          "1 tbsp soy sauce (15ml)",
+          "1 tbsp rice wine (15ml)",
+          "1 tsp sugar (5g)",
+          "1/2 cup chicken stock (120ml)",
+          "1 tbsp cornstarch mixed with 2 tbsp water",
+          "2 tbsp vegetable oil (30ml)",
+          "1 tsp Sichuan peppercorns, ground",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Wok or large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring spoons",
+          "Wooden spoon",
+          "Small bowl for cornstarch slurry"
+        ],
+        "cooking_instructions": [
+          "Heat oil in wok over medium-high heat. Add ground pork and cook for 3 minutes until browned.",
+          "Add doubanjiang, garlic, and ginger. Cook for 1 minute until fragrant.",
+          "Add soy sauce, rice wine, sugar, and stock. Bring to simmer.",
+          "Gently add tofu cubes. Simmer for 5 minutes, stirring carefully.",
+          "Add cornstarch slurry and cook for 1 minute until thickened. Garnish with scallions and Sichuan peppercorns."
+        ],
+        "chef_tips": "Handle the tofu gently to avoid breaking it. The doubanjiang is the key ingredient - it provides the characteristic spicy, fermented flavor. The dish should be slightly saucy."
+      },
+      {
+        "recipe_name": "Xiaolongbao (Soup Dumplings)",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 6,
+        "calories_per_serving": 320,
+        "difficulty": "Hard",
+        "ingredients": [
+          "For dough: 2 cups all-purpose flour (256g)",
+          "3/4 cup warm water (180ml)",
+          "1/2 tsp salt",
+          "For filling: 1 lb ground pork (450g)",
+          "1/2 cup pork skin, cooked and chopped (100g)",
+          "2 tbsp soy sauce (30ml)",
+          "1 tbsp rice wine (15ml)",
+          "1 tbsp sesame oil (15ml)",
+          "1 tsp sugar (5g)",
+          "2 cloves garlic, minced",
+          "1 inch ginger, minced",
+          "2 scallions, chopped",
+          "1/2 cup chicken stock (120ml)",
+          "Salt and white pepper to taste"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Rolling pin",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Steamer",
+          "Parchment paper",
+          "Small bowl for stock"
+        ],
+        "cooking_instructions": [
+          "Make dough: mix flour, water, and salt. Knead for 10 minutes until smooth. Cover and rest for 30 minutes.",
+          "Make filling: mix pork, pork skin, soy sauce, rice wine, sesame oil, sugar, garlic, ginger, and scallions.",
+          "Add cold chicken stock to filling and mix well. Refrigerate for 30 minutes.",
+          "Roll dough into thin circles. Place filling in center and pleat edges to seal.",
+          "Steam over high heat for 8-10 minutes until cooked through. Serve immediately with dipping sauce."
+        ],
+        "chef_tips": "The key is the gelatinous stock that becomes soup when steamed. The pleating technique takes practice. Don't overfill the dumplings or they'll burst during steaming."
+      },
+      {
+        "recipe_name": "Sweet and Sour Pork",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 25 min",
+        "servings": 4,
+        "calories_per_serving": 420,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1.5 lbs pork tenderloin, cut into cubes (680g)",
+          "1 bell pepper, diced (150g)",
+          "1 onion, diced (150g)",
+          "1/2 cup pineapple chunks (100g)",
+          "1/4 cup cornstarch (32g)",
+          "2 eggs, beaten",
+          "1/2 cup all-purpose flour (64g)",
+          "For sauce: 1/4 cup ketchup (60ml)",
+          "2 tbsp rice vinegar (30ml)",
+          "2 tbsp soy sauce (30ml)",
+          "2 tbsp sugar (25g)",
+          "1 tbsp cornstarch (8g)",
+          "1/2 cup chicken stock (120ml)",
+          "Vegetable oil for frying",
+          "Salt and pepper to taste"
+        ],
+        "utensils_required": [
+          "Large skillet or wok",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Three shallow bowls",
+          "Whisk",
+          "Tongs",
+          "Paper towels"
+        ],
+        "cooking_instructions": [
+          "Season pork with salt and pepper. Dredge in flour, then egg, then cornstarch.",
+          "Heat oil to 350°F. Fry pork in batches for 4-5 minutes until golden. Drain on paper towels.",
+          "Make sauce: whisk ketchup, vinegar, soy sauce, sugar, cornstarch, and stock in bowl.",
+          "Heat 2 tbsp oil in wok. Stir-fry bell pepper and onion for 3 minutes. Add pineapple.",
+          "Add sauce and bring to boil. Add pork and toss to coat. Serve immediately."
+        ],
+        "chef_tips": "The pork should be crispy on the outside and tender inside. Don't overcook the vegetables - they should retain some crunch. The sauce should be glossy and well-balanced."
+      },
+      {
+        "recipe_name": "Hot and Sour Soup",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 4,
+        "calories_per_serving": 180,
+        "difficulty": "Easy",
+        "ingredients": [
+          "4 cups chicken stock (960ml)",
+          "1/2 cup bamboo shoots, julienned (75g)",
+          "1/2 cup wood ear mushrooms, sliced (75g)",
+          "1/2 cup firm tofu, cut into strips (100g)",
+          "2 eggs, beaten",
+          "2 tbsp soy sauce (30ml)",
+          "2 tbsp rice vinegar (30ml)",
+          "1 tbsp chili oil (15ml)",
+          "1 tbsp cornstarch mixed with 2 tbsp water",
+          "2 scallions, chopped",
+          "1 tsp white pepper",
+          "1 tsp sesame oil (5ml)",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk",
+          "Ladle",
+          "Small bowl for cornstarch slurry"
+        ],
+        "cooking_instructions": [
+          "Bring stock to boil in large pot. Add bamboo shoots, mushrooms, and tofu.",
+          "Simmer for 5 minutes. Add soy sauce, vinegar, chili oil, and white pepper.",
+          "Add cornstarch slurry and stir until thickened.",
+          "Slowly pour beaten eggs in thin stream while stirring to create ribbons.",
+          "Garnish with scallions and sesame oil. Serve immediately."
+        ],
+        "chef_tips": "The soup should be both hot (spicy) and sour. The egg ribbons should be thin and delicate. Adjust the heat and sour levels to your preference."
+      },
+      {
+        "recipe_name": "Char Siu (Chinese BBQ Pork)",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 6,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 lbs pork shoulder, cut into strips (900g)",
+          "1/4 cup hoisin sauce (60ml)",
+          "2 tbsp soy sauce (30ml)",
+          "2 tbsp honey (30ml)",
+          "2 tbsp rice wine (30ml)",
+          "2 tbsp sugar (25g)",
+          "2 cloves garlic, minced",
+          "1 inch ginger, minced",
+          "1 tsp five-spice powder (3g)",
+          "1/2 tsp red food coloring (optional)",
+          "2 tbsp vegetable oil (30ml)",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large bowl for marinating",
+          "Roasting pan with rack",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Basting brush",
+          "Aluminum foil"
+        ],
+        "cooking_instructions": [
+          "Mix hoisin sauce, soy sauce, honey, rice wine, sugar, garlic, ginger, five-spice powder, and food coloring in bowl.",
+          "Marinate pork strips in sauce for at least 2 hours, preferably overnight.",
+          "Preheat oven to 400°F. Place pork on rack in roasting pan. Reserve marinade.",
+          "Roast for 20 minutes. Baste with marinade and continue roasting for 15-20 minutes until caramelized.",
+          "Let rest for 10 minutes. Slice and serve with remaining sauce."
+        ],
+        "chef_tips": "The pork should be slightly charred on the edges and glazed with the sweet sauce. The red food coloring gives it the traditional appearance. Don't overcook or it will be dry."
+      },
+      {
+        "recipe_name": "Dan Dan Noodles",
+        "cuisine": "Chinese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 4,
+        "calories_per_serving": 450,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb fresh wheat noodles (450g)",
+          "1/2 lb ground pork (225g)",
+          "2 tbsp doubanjiang (30g)",
+          "2 tbsp tahini (30g)",
+          "2 tbsp soy sauce (30ml)",
+          "2 tbsp rice vinegar (30ml)",
+          "1 tbsp chili oil (15ml)",
+          "1 tbsp sugar (12g)",
+          "2 cloves garlic, minced",
+          "1 inch ginger, minced",
+          "2 scallions, chopped",
+          "1/2 cup chicken stock (120ml)",
+          "2 tbsp vegetable oil (30ml)",
+          "Sichuan peppercorns for garnish",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large pot for noodles",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Colander"
+        ],
+        "cooking_instructions": [
+          "Cook noodles according to package directions. Drain and set aside.",
+          "Heat oil in skillet over medium-high heat. Add ground pork and cook for 4 minutes until browned.",
+          "Add doubanjiang, garlic, and ginger. Cook for 1 minute until fragrant.",
+          "Make sauce: mix tahini, soy sauce, vinegar, chili oil, sugar, and stock in bowl.",
+          "Add sauce to pork mixture. Simmer for 2 minutes. Toss with noodles and garnish with scallions and Sichuan peppercorns."
+        ],
+        "chef_tips": "The noodles should be slightly chewy. The sauce should be creamy from the tahini and spicy from the doubanjiang. The Sichuan peppercorns add the characteristic numbing sensation."
+      },
+      {
+        "recipe_name": "Pad Thai",
+        "cuisine": "Thai",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 420,
+        "difficulty": "Medium",
+        "ingredients": [
+          "8 oz rice noodles (225g)",
+          "1/2 lb shrimp, peeled and deveined (225g)",
+          "2 eggs, beaten",
+          "1/4 cup tamarind paste (60ml)",
+          "3 tbsp fish sauce (45ml)",
+          "2 tbsp palm sugar (25g)",
+          "2 tbsp vegetable oil (30ml)",
+          "3 cloves garlic, minced",
+          "1 shallot, sliced",
+          "2 cups bean sprouts (200g)",
+          "4 scallions, cut into 2-inch pieces",
+          "1/4 cup roasted peanuts, chopped (35g)",
+          "2 limes, cut into wedges",
+          "Red chili flakes to taste",
+          "Cilantro for garnish"
+        ],
+        "utensils_required": [
+          "Large wok or skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Small bowl for sauce",
+          "Tongs"
+        ],
+        "cooking_instructions": [
+          "Soak rice noodles in warm water for 15 minutes until pliable. Drain and set aside.",
+          "Make sauce: mix tamarind paste, fish sauce, and palm sugar in small bowl until sugar dissolves.",
+          "Heat wok over high heat. Add 1 tbsp oil and scramble eggs. Remove and set aside.",
+          "Add remaining oil, garlic, and shallot. Stir-fry for 30 seconds. Add shrimp and cook for 2 minutes.",
+          "Add noodles and sauce. Toss for 3 minutes. Add bean sprouts, scallions, and eggs. Toss for 1 minute. Serve with peanuts, lime, and cilantro."
+        ],
+        "chef_tips": "The key is high heat and quick cooking. Don't overcook the noodles or they'll become mushy. The balance of sweet, sour, salty, and spicy is crucial for authentic pad Thai."
+      },
+      {
+        "recipe_name": "Tom Yum Goong (Spicy Shrimp Soup)",
+        "cuisine": "Thai",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 4,
+        "calories_per_serving": 180,
+        "difficulty": "Easy",
+        "ingredients": [
+          "4 cups chicken stock (960ml)",
+          "1 lb large shrimp, peeled and deveined (450g)",
+          "2 stalks lemongrass, bruised and cut into 2-inch pieces",
+          "4 kaffir lime leaves",
+          "3 slices galangal",
+          "3 Thai chilies, bruised",
+          "1/4 cup lime juice (60ml)",
+          "3 tbsp fish sauce (45ml)",
+          "1 tbsp palm sugar (12g)",
+          "1 cup straw mushrooms (150g)",
+          "2 tomatoes, quartered",
+          "1/4 cup cilantro leaves",
+          "Red chili oil for garnish"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Mortar and pestle (optional)"
+        ],
+        "cooking_instructions": [
+          "Bring stock to boil in large pot. Add lemongrass, lime leaves, galangal, and chilies.",
+          "Simmer for 5 minutes to infuse flavors. Add mushrooms and tomatoes.",
+          "Add shrimp and cook for 3 minutes until pink and cooked through.",
+          "Season with lime juice, fish sauce, and palm sugar. Taste and adjust seasoning.",
+          "Garnish with cilantro and drizzle with chili oil. Serve immediately."
+        ],
+        "chef_tips": "The soup should be hot, sour, and aromatic. Don't overcook the shrimp or they'll become rubbery. The balance of flavors is key - it should be spicy, sour, and slightly sweet."
+      },
+      {
+        "recipe_name": "Green Curry (Gaeng Keow Wan)",
+        "cuisine": "Thai",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb chicken breast, cut into bite-sized pieces (450g)",
+          "1 can coconut milk (400ml)",
+          "3 tbsp green curry paste (45g)",
+          "1 cup Thai eggplant, quartered (150g)",
+          "1 cup bamboo shoots, sliced (150g)",
+          "4 kaffir lime leaves",
+          "2 tbsp fish sauce (30ml)",
+          "1 tbsp palm sugar (12g)",
+          "1/2 cup Thai basil leaves",
+          "2 Thai chilies, sliced",
+          "1 tbsp vegetable oil (15ml)",
+          "Jasmine rice for serving"
+        ],
+        "utensils_required": [
+          "Large pot or wok",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Rice cooker or pot for rice"
+        ],
+        "cooking_instructions": [
+          "Heat oil in large pot over medium heat. Add curry paste and cook for 2 minutes until fragrant.",
+          "Add half the coconut milk and simmer for 5 minutes until oil separates.",
+          "Add chicken and cook for 5 minutes until partially cooked.",
+          "Add remaining coconut milk, eggplant, bamboo shoots, and lime leaves. Simmer for 10 minutes.",
+          "Season with fish sauce and palm sugar. Add basil and chilies. Serve with jasmine rice."
+        ],
+        "chef_tips": "The curry should be creamy and aromatic. Don't boil the coconut milk or it will separate. The green curry paste is the foundation - use a good quality one for best results."
+      },
+      {
+        "recipe_name": "Som Tam (Green Papaya Salad)",
+        "cuisine": "Thai",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 10 min",
+        "servings": 4,
+        "calories_per_serving": 120,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1 large green papaya, shredded (400g)",
+          "2 tomatoes, cut into wedges",
+          "1/2 cup green beans, cut into 2-inch pieces (75g)",
+          "2 cloves garlic",
+          "2 Thai chilies",
+          "2 tbsp palm sugar (25g)",
+          "3 tbsp lime juice (45ml)",
+          "2 tbsp fish sauce (30ml)",
+          "1 tbsp tamarind paste (15ml)",
+          "1/4 cup roasted peanuts, chopped (35g)",
+          "2 tbsp dried shrimp (optional)",
+          "Cilantro for garnish"
+        ],
+        "utensils_required": [
+          "Large mortar and pestle",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring spoons",
+          "Large mixing bowl",
+          "Grater or julienne peeler"
+        ],
+        "cooking_instructions": [
+          "Pound garlic and chilies in mortar until crushed. Add palm sugar and pound until dissolved.",
+          "Add lime juice, fish sauce, and tamarind paste. Mix well.",
+          "Add green beans and pound lightly to bruise. Add tomatoes and pound gently.",
+          "Add shredded papaya and toss with dressing. Add peanuts and dried shrimp if using.",
+          "Taste and adjust seasoning. Garnish with cilantro and serve immediately."
+        ],
+        "chef_tips": "The salad should be spicy, sour, and slightly sweet. Don't over-pound the vegetables or they'll become mushy. The papaya should be crisp and fresh."
+      },
+      {
+        "recipe_name": "Massaman Curry",
+        "cuisine": "Thai",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 6,
+        "calories_per_serving": 450,
+        "difficulty": "Hard",
+        "ingredients": [
+          "2 lbs beef chuck, cut into cubes (900g)",
+          "2 cans coconut milk (800ml)",
+          "4 tbsp massaman curry paste (60g)",
+          "2 large potatoes, cut into chunks (400g)",
+          "1 large onion, quartered (200g)",
+          "1/2 cup roasted peanuts (75g)",
+          "4 cardamom pods",
+          "2 cinnamon sticks",
+          "4 kaffir lime leaves",
+          "3 tbsp fish sauce (45ml)",
+          "2 tbsp palm sugar (25g)",
+          "2 tbsp tamarind paste (30ml)",
+          "1 tbsp vegetable oil (15ml)",
+          "Jasmine rice for serving"
+        ],
+        "utensils_required": [
+          "Large Dutch oven or heavy pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Rice cooker or pot for rice"
+        ],
+        "cooking_instructions": [
+          "Heat oil in large pot over medium heat. Add curry paste and cook for 2 minutes until fragrant.",
+          "Add half the coconut milk and simmer for 5 minutes until oil separates.",
+          "Add beef and cook for 10 minutes until browned. Add remaining coconut milk, spices, and lime leaves.",
+          "Simmer for 1 hour until beef is tender. Add potatoes and onion. Simmer for 20 minutes.",
+          "Season with fish sauce, palm sugar, and tamarind paste. Add peanuts. Serve with jasmine rice."
+        ],
+        "chef_tips": "This is a rich, complex curry that benefits from long, slow cooking. The beef should be fall-apart tender. The spices should be whole for authentic flavor."
+      },
+      {
+        "recipe_name": "Mango Sticky Rice (Khao Niew Mamuang)",
+        "cuisine": "Thai",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 320,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 cup glutinous rice (200g)",
+          "1 can coconut milk (400ml)",
+          "1/4 cup palm sugar (50g)",
+          "1/2 tsp salt",
+          "2 ripe mangoes, sliced",
+          "1 tbsp sesame seeds, toasted",
+          "Pandan leaves (optional)"
+        ],
+        "utensils_required": [
+          "Rice cooker or steamer",
+          "Medium saucepan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Small bowl"
+        ],
+        "cooking_instructions": [
+          "Soak glutinous rice in water for 30 minutes. Drain and steam for 20 minutes until tender.",
+          "Heat half the coconut milk with palm sugar and salt in saucepan until sugar dissolves.",
+          "Pour hot coconut milk over cooked rice. Let stand for 10 minutes until absorbed.",
+          "Heat remaining coconut milk until thickened. Serve rice with mango slices and drizzle with coconut cream.",
+          "Garnish with sesame seeds and serve immediately."
+        ],
+        "chef_tips": "The rice should be sticky but not mushy. Use ripe, sweet mangoes for the best results. The coconut cream should be thick and rich."
+      },
+      {
+        "recipe_name": "Vietnamese Pho Bo (Beef Noodle Soup)",
+        "cuisine": "Vietnamese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 2 hours",
+        "servings": 6,
+        "calories_per_serving": 420,
+        "difficulty": "Hard",
+        "ingredients": [
+          "2 lbs beef bones (900g)",
+          "1 lb beef brisket (450g)",
+          "1 lb rice noodles (450g)",
+          "1 large onion, halved (200g)",
+          "4-inch piece ginger, sliced",
+          "6 star anise pods",
+          "2 cinnamon sticks",
+          "4 cloves",
+          "1 tsp coriander seeds",
+          "1 tsp fennel seeds",
+          "4 cardamom pods",
+          "1/4 cup fish sauce (60ml)",
+          "2 tbsp rock sugar (25g)",
+          "Salt to taste",
+          "Bean sprouts, Thai basil, lime wedges, jalapeños for serving"
+        ],
+        "utensils_required": [
+          "Large stockpot",
+          "Fine mesh strainer",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Large pot for noodles",
+          "Tongs",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": [
+          "Roast beef bones in oven at 400°F (200°C) for 30 minutes. Char onion and ginger over open flame or in broiler.",
+          "Place bones, brisket, charred aromatics, and spices in large pot. Cover with water and bring to boil.",
+          "Reduce heat and simmer for 1.5 hours, skimming foam regularly. Remove brisket, slice thinly, and set aside.",
+          "Strain broth, return to pot. Season with fish sauce, rock sugar, and salt. Keep hot.",
+          "Cook rice noodles according to package directions. Divide among bowls, top with sliced brisket, pour hot broth over. Serve with garnishes."
+        ],
+        "chef_tips": "The key is a clear, aromatic broth. Don't skip the bone roasting and charring aromatics - this creates the deep, complex flavor that makes pho special."
+      },
+      {
+        "recipe_name": "Vietnamese Banh Mi",
+        "cuisine": "Vietnamese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 380,
+        "difficulty": "Easy",
+        "ingredients": [
+          "4 Vietnamese baguettes or French rolls",
+          "1 lb pork belly or Vietnamese ham (450g)",
+          "1/2 cup mayonnaise (120ml)",
+          "2 tbsp Sriracha sauce (30ml)",
+          "1 cup pickled carrots and daikon (150g)",
+          "1 cucumber, julienned (200g)",
+          "1/2 cup cilantro leaves (15g)",
+          "2 jalapeños, sliced",
+          "2 tbsp soy sauce (30ml)",
+          "1 tbsp fish sauce (15ml)",
+          "1 tbsp sugar (12g)",
+          "1 clove garlic, minced",
+          "Black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Small bowl for sauce",
+          "Tongs",
+          "Julienne peeler or mandoline"
+        ],
+        "cooking_instructions": [
+          "Slice pork belly thinly. Mix soy sauce, fish sauce, sugar, garlic, and black pepper. Marinate pork for 10 minutes.",
+          "Cook pork in large skillet over medium-high heat for 8-10 minutes until crispy and cooked through.",
+          "Mix mayonnaise with Sriracha sauce. Slice baguettes lengthwise, leaving one side attached.",
+          "Spread spicy mayonnaise on both sides of bread. Layer with pork, pickled vegetables, cucumber, cilantro, and jalapeños.",
+          "Press sandwich gently and serve immediately."
+        ],
+        "chef_tips": "The perfect banh mi balances sweet, sour, salty, and spicy flavors. The bread should be crispy outside, soft inside. Don't skimp on the pickled vegetables - they're essential."
+      },
+      {
+        "recipe_name": "Vietnamese Spring Rolls (Goi Cuon)",
+        "cuisine": "Vietnamese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 6,
+        "calories_per_serving": 180,
+        "difficulty": "Medium",
+        "ingredients": [
+          "12 rice paper wrappers",
+          "1/2 lb shrimp, cooked and sliced (225g)",
+          "1/2 lb pork belly, cooked and sliced (225g)",
+          "1 cup rice vermicelli noodles, cooked (100g)",
+          "1 cup lettuce leaves, shredded (50g)",
+          "1 cup bean sprouts (100g)",
+          "1/2 cup mint leaves (15g)",
+          "1/2 cup cilantro leaves (15g)",
+          "1/2 cup Thai basil leaves (15g)",
+          "1 cucumber, julienned (200g)",
+          "For dipping sauce: 1/4 cup fish sauce (60ml)",
+          "2 tbsp lime juice (30ml)",
+          "2 tbsp sugar (25g)",
+          "1 clove garlic, minced",
+          "1 Thai chili, minced",
+          "2 tbsp water (30ml)"
+        ],
+        "utensils_required": [
+          "Large shallow bowl for water",
+          "Clean kitchen towel",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Small bowl for sauce",
+          "Plastic wrap"
+        ],
+        "cooking_instructions": [
+          "Soak rice paper wrapper in warm water for 10-15 seconds until pliable. Place on clean towel.",
+          "Layer shrimp, pork, noodles, lettuce, bean sprouts, herbs, and cucumber in center of wrapper.",
+          "Fold bottom edge over filling, then fold in sides. Roll tightly from bottom to top.",
+          "Repeat with remaining wrappers and filling. Cover with damp towel to prevent drying.",
+          "Make dipping sauce: mix fish sauce, lime juice, sugar, garlic, chili, and water until sugar dissolves. Serve spring rolls with sauce."
+        ],
+        "chef_tips": "The key is not over-soaking the rice paper and rolling tightly. Keep finished rolls covered to prevent drying. The sauce should be balanced - sweet, sour, and salty."
+      },
+      {
+        "recipe_name": "Vietnamese Bun Cha",
+        "cuisine": "Vietnamese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 450,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb ground pork (450g)",
+          "1 lb pork belly, sliced (450g)",
+          "1 lb rice vermicelli noodles (450g)",
+          "1/2 cup fish sauce (120ml)",
+          "1/4 cup sugar (50g)",
+          "1/4 cup lime juice (60ml)",
+          "2 cloves garlic, minced",
+          "1 Thai chili, minced",
+          "1/2 cup water (120ml)",
+          "1 cup lettuce, shredded (50g)",
+          "1 cup bean sprouts (100g)",
+          "1/2 cup mint leaves (15g)",
+          "1/2 cup cilantro leaves (15g)",
+          "1/2 cup Thai basil leaves (15g)",
+          "1 cucumber, julienned (200g)",
+          "1/4 cup roasted peanuts, chopped (35g)"
+        ],
+        "utensils_required": [
+          "Large pot for noodles",
+          "Grill or grill pan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Large mixing bowl",
+          "Small bowl for sauce",
+          "Tongs"
+        ],
+        "cooking_instructions": [
+          "Mix ground pork with 2 tbsp fish sauce, 1 tbsp sugar, and 1 clove minced garlic. Form into small patties.",
+          "Grill pork patties and sliced pork belly over medium-high heat for 8-10 minutes until cooked through.",
+          "Cook rice noodles according to package directions. Drain and rinse with cold water.",
+          "Make nuoc cham sauce: mix remaining fish sauce, sugar, lime juice, garlic, chili, and water until sugar dissolves.",
+          "Divide noodles among bowls. Top with grilled pork, lettuce, bean sprouts, herbs, and cucumber. Drizzle with sauce and sprinkle with peanuts."
+        ],
+        "chef_tips": "The pork should be slightly charred for authentic flavor. The nuoc cham sauce is the soul of this dish - it should be perfectly balanced between sweet, sour, and salty."
+      },
+      {
+        "recipe_name": "Vietnamese Ca Kho To (Caramelized Fish)",
+        "cuisine": "Vietnamese",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 320,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 lbs catfish or cod fillets, cut into pieces (900g)",
+          "1/4 cup fish sauce (60ml)",
+          "3 tbsp sugar (37g)",
+          "2 tbsp vegetable oil (30ml)",
+          "4 cloves garlic, minced",
+          "2 shallots, sliced",
+          "1 inch ginger, julienned",
+          "2 Thai chilies, sliced",
+          "1/2 cup coconut water (120ml)",
+          "2 tbsp lime juice (30ml)",
+          "1/4 cup cilantro leaves (7g)",
+          "2 scallions, cut into 2-inch pieces",
+          "Black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large skillet with lid",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Tongs",
+          "Small bowl"
+        ],
+        "cooking_instructions": [
+          "Heat oil in large skillet over medium heat. Add sugar and cook until caramelized and golden brown, about 3 minutes.",
+          "Add garlic, shallots, ginger, and chilies. Cook for 2 minutes until fragrant.",
+          "Add fish sauce and coconut water. Bring to simmer and add fish pieces.",
+          "Cover and simmer for 15 minutes, turning fish once. Add lime juice and black pepper.",
+          "Garnish with cilantro and scallions. Serve with steamed rice."
+        ],
+        "chef_tips": "The key is the caramelization - don't rush it. The fish should be tender and the sauce should be rich and slightly sweet. This dish is all about the balance of flavors."
+      },
+      {
+        "recipe_name": "Vietnamese Che Ba Mau (Three Color Dessert)",
+        "cuisine": "Vietnamese",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 6,
+        "calories_per_serving": 280,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1/2 cup mung beans (100g)",
+          "1/2 cup red beans (100g)",
+          "1/2 cup black-eyed peas (100g)",
+          "1/2 cup coconut milk (120ml)",
+          "1/4 cup sugar (50g)",
+          "1/4 tsp salt",
+          "1/2 cup crushed ice",
+          "1/4 cup roasted peanuts, chopped (35g)",
+          "1/4 cup toasted sesame seeds (35g)",
+          "1/4 cup coconut flakes (20g)",
+          "Pandan leaves for flavoring (optional)"
+        ],
+        "utensils_required": [
+          "3 medium saucepans",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Fine mesh strainer",
+          "Small bowls for serving"
+        ],
+        "cooking_instructions": [
+          "Soak all beans separately in water for 2 hours. Drain and rinse.",
+          "Cook each type of bean separately in water until tender, about 20 minutes. Drain and set aside.",
+          "Heat coconut milk with sugar and salt until sugar dissolves. Let cool.",
+          "Layer beans in serving bowls: mung beans, red beans, then black-eyed peas.",
+          "Top with coconut milk, crushed ice, peanuts, sesame seeds, and coconut flakes. Serve immediately."
+        ],
+        "chef_tips": "This refreshing dessert represents the three colors of the Vietnamese flag. The beans should be tender but not mushy. The coconut milk should be sweet and creamy."
+      },
+      {
+        "recipe_name": "Korean Bibimbap",
+        "cuisine": "Korean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 480,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 cups short-grain rice (400g)",
+          "1 lb beef sirloin, sliced thin (450g)",
+          "2 cups spinach, blanched (100g)",
+          "1 cup bean sprouts, blanched (100g)",
+          "1 cup carrots, julienned (150g)",
+          "1 cup zucchini, julienned (150g)",
+          "1 cup shiitake mushrooms, sliced (100g)",
+          "4 eggs",
+          "1/4 cup gochujang (Korean chili paste) (60ml)",
+          "2 tbsp sesame oil (30ml)",
+          "2 tbsp soy sauce (30ml)",
+          "1 tbsp sugar (12g)",
+          "2 cloves garlic, minced",
+          "1 tbsp sesame seeds",
+          "Vegetable oil for cooking",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Rice cooker or pot",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Small bowls for vegetables",
+          "Wooden spoon",
+          "Julienne peeler"
+        ],
+        "cooking_instructions": [
+          "Cook rice according to package directions. Keep warm. Marinate beef with soy sauce, sugar, garlic, and 1 tbsp sesame oil for 15 minutes.",
+          "Cook each vegetable separately in skillet with a little oil: carrots for 3 minutes, zucchini for 2 minutes, mushrooms for 4 minutes. Season with salt.",
+          "Cook marinated beef in skillet over high heat for 3-4 minutes until cooked through. Set aside.",
+          "Fry eggs sunny-side up. Divide rice among bowls. Arrange vegetables and beef on top of rice.",
+          "Top with fried egg, drizzle with remaining sesame oil, and serve with gochujang on the side. Sprinkle with sesame seeds."
+        ],
+        "chef_tips": "The key is cooking each component separately to maintain distinct flavors and textures. Mix everything together with gochujang just before eating for the authentic bibimbap experience."
+      },
+      {
+        "recipe_name": "Korean Kimchi Jjigae (Kimchi Stew)",
+        "cuisine": "Korean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 320,
+        "difficulty": "Easy",
+        "ingredients": [
+          "2 cups aged kimchi, chopped (300g)",
+          "1/2 lb pork belly, sliced (225g)",
+          "1/2 lb firm tofu, cubed (225g)",
+          "1/2 cup kimchi juice (120ml)",
+          "4 cups water or stock (960ml)",
+          "2 tbsp gochujang (30ml)",
+          "1 tbsp gochugaru (Korean chili flakes) (7g)",
+          "2 cloves garlic, minced",
+          "1 tbsp soy sauce (15ml)",
+          "1 tsp sugar (4g)",
+          "2 scallions, cut into 2-inch pieces",
+          "1 tsp sesame oil (5ml)",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large pot or Korean stone pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Small bowl for sauce"
+        ],
+        "cooking_instructions": [
+          "Heat large pot over medium heat. Add pork belly and cook for 5 minutes until browned and fat renders.",
+          "Add kimchi and cook for 3 minutes until slightly caramelized. Add garlic and cook for 1 minute.",
+          "Add water, kimchi juice, gochujang, gochugaru, soy sauce, and sugar. Bring to boil.",
+          "Reduce heat and simmer for 10 minutes. Add tofu and scallions. Simmer for 5 minutes.",
+          "Drizzle with sesame oil and serve immediately with steamed rice."
+        ],
+        "chef_tips": "Use well-fermented kimchi for the best flavor. The stew should be spicy, sour, and slightly sweet. The pork belly adds richness to balance the kimchi's acidity."
+      },
+      {
+        "recipe_name": "Korean Bulgogi (Marinated Beef)",
+        "cuisine": "Korean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 380,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1.5 lbs beef sirloin, sliced thin (680g)",
+          "1/2 cup soy sauce (120ml)",
+          "1/4 cup brown sugar (50g)",
+          "2 tbsp sesame oil (30ml)",
+          "2 tbsp rice wine or mirin (30ml)",
+          "4 cloves garlic, minced",
+          "1 inch ginger, grated",
+          "1 Asian pear, grated (200g)",
+          "1/2 onion, grated (100g)",
+          "2 scallions, chopped",
+          "1 tbsp sesame seeds",
+          "Black pepper to taste",
+          "Vegetable oil for cooking"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Large skillet or grill pan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Grater",
+          "Tongs"
+        ],
+        "cooking_instructions": [
+          "Combine soy sauce, brown sugar, sesame oil, rice wine, garlic, ginger, pear, and onion in large bowl.",
+          "Add beef slices and toss to coat. Marinate for 30 minutes at room temperature or 2 hours in refrigerator.",
+          "Heat large skillet over high heat. Add a little oil and cook beef in batches for 2-3 minutes per side.",
+          "Don't overcrowd the pan. Cook until beef is caramelized and cooked through.",
+          "Garnish with scallions and sesame seeds. Serve with steamed rice and lettuce leaves for wrapping."
+        ],
+        "chef_tips": "The Asian pear helps tenderize the meat and adds natural sweetness. Don't overcook the beef - it should be tender and slightly pink inside. The marinade creates a beautiful caramelization."
+      },
+      {
+        "recipe_name": "Korean Japchae (Stir-Fried Noodles)",
+        "cuisine": "Korean",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 6,
+        "calories_per_serving": 350,
+        "difficulty": "Medium",
+        "ingredients": [
+          "8 oz sweet potato noodles (dangmyeon) (225g)",
+          "1/2 lb spinach, blanched (225g)",
+          "1 cup carrots, julienned (150g)",
+          "1 cup bell peppers, julienned (150g)",
+          "1 cup shiitake mushrooms, sliced (100g)",
+          "1/2 cup onions, sliced (75g)",
+          "4 cloves garlic, minced",
+          "1/4 cup soy sauce (60ml)",
+          "2 tbsp sesame oil (30ml)",
+          "2 tbsp brown sugar (25g)",
+          "1 tbsp rice wine (15ml)",
+          "2 tbsp sesame seeds",
+          "2 scallions, chopped",
+          "Vegetable oil for cooking",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large pot for noodles",
+          "Large wok or skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Tongs",
+          "Julienne peeler",
+          "Small bowl for sauce"
+        ],
+        "cooking_instructions": [
+          "Cook sweet potato noodles according to package directions. Drain and rinse with cold water. Toss with 1 tbsp sesame oil to prevent sticking.",
+          "Make sauce: mix soy sauce, brown sugar, rice wine, and remaining sesame oil in small bowl.",
+          "Heat wok over high heat. Add oil and cook each vegetable separately: carrots for 2 minutes, bell peppers for 2 minutes, mushrooms for 3 minutes, onions for 2 minutes.",
+          "Add garlic and cook for 30 seconds. Add noodles and sauce. Toss everything together for 3-4 minutes until well combined.",
+          "Add spinach, scallions, and sesame seeds. Toss for 1 minute. Season with salt and pepper. Serve warm or at room temperature."
+        ],
+        "chef_tips": "The key is cooking each vegetable separately to maintain their individual textures and colors. The noodles should be chewy, not mushy. This dish is perfect served warm or cold."
+      },
+      {
+        "recipe_name": "Korean Tteokbokki (Spicy Rice Cakes)",
+        "cuisine": "Korean",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 4,
+        "calories_per_serving": 280,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1 lb cylindrical rice cakes (450g)",
+          "2 cups fish cakes, sliced (200g)",
+          "1/2 cup gochujang (120ml)",
+          "2 tbsp gochugaru (14g)",
+          "2 tbsp soy sauce (30ml)",
+          "2 tbsp sugar (25g)",
+          "2 cloves garlic, minced",
+          "1 inch ginger, grated",
+          "2 cups water (480ml)",
+          "2 scallions, cut into 2-inch pieces",
+          "1 tbsp sesame oil (15ml)",
+          "1 tsp sesame seeds",
+          "Hard-boiled eggs (optional)",
+          "Seaweed sheets for garnish"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Small bowl for sauce",
+          "Grater"
+        ],
+        "cooking_instructions": [
+          "Soak rice cakes in warm water for 10 minutes if they're hard. Drain and set aside.",
+          "Make sauce: mix gochujang, gochugaru, soy sauce, sugar, garlic, and ginger in small bowl.",
+          "Heat large pot over medium heat. Add sauce and water. Bring to boil.",
+          "Add rice cakes and fish cakes. Simmer for 8-10 minutes until rice cakes are soft and sauce thickens.",
+          "Add scallions and sesame oil. Simmer for 2 minutes. Garnish with sesame seeds and seaweed. Serve with hard-boiled eggs if desired."
+        ],
+        "chef_tips": "This is Korea's ultimate street food. The rice cakes should be chewy, not mushy. The sauce should be thick and cling to the rice cakes. Adjust the spice level to your preference."
+      },
+      {
+        "recipe_name": "Korean Samgyeopsal (Grilled Pork Belly)",
+        "cuisine": "Korean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 520,
+        "difficulty": "Easy",
+        "ingredients": [
+          "2 lbs pork belly, sliced thick (900g)",
+          "1/2 cup ssamjang (Korean dipping sauce) (120ml)",
+          "1 head lettuce, leaves separated",
+          "1/2 cup perilla leaves (optional)",
+          "1/2 cup green onions, chopped",
+          "1/4 cup garlic, sliced",
+          "1/4 cup jalapeños, sliced",
+          "1/2 cup kimchi (100g)",
+          "2 tbsp sesame oil (30ml)",
+          "1 tbsp salt",
+          "1 tsp black pepper",
+          "Sesame seeds for garnish"
+        ],
+        "utensils_required": [
+          "Grill pan or Korean tabletop grill",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Tongs",
+          "Small bowls for condiments",
+          "Kitchen scissors"
+        ],
+        "cooking_instructions": [
+          "Season pork belly with salt and black pepper. Let sit at room temperature for 15 minutes.",
+          "Heat grill pan over medium-high heat. Grill pork belly for 4-5 minutes per side until golden brown and crispy.",
+          "Cut grilled pork belly into bite-sized pieces using kitchen scissors.",
+          "Serve with lettuce leaves, perilla leaves, ssamjang, green onions, garlic, jalapeños, and kimchi.",
+          "To eat: wrap pork belly and condiments in lettuce leaf, dip in ssamjang, and enjoy."
+        ],
+        "chef_tips": "This is Korean BBQ at its finest. The pork belly should be crispy outside, tender inside. The ssamjang adds the perfect spicy, savory flavor. Don't skip the lettuce wraps - they're essential for the full experience."
       }
     ]
   }

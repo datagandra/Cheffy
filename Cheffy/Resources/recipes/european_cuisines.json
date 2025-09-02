@@ -404,6 +404,590 @@
         "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 30,
         "difficulty": "medium"
+      },
+      {
+        "recipe_name": "French Onion Soup Gratinée",
+        "cuisine": "French",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 320,
+        "difficulty": "Medium",
+        "ingredients": [
+          "4 large yellow onions, thinly sliced (1.2kg)",
+          "4 tbsp unsalted butter (60g)",
+          "1 tbsp olive oil (15ml)",
+          "1 tsp granulated sugar (5g)",
+          "1/2 tsp salt (2.5g)",
+          "4 cups beef stock (1L)",
+          "1/2 cup dry white wine (120ml)",
+          "2 tbsp all-purpose flour (16g)",
+          "1 bay leaf",
+          "1/2 tsp dried thyme",
+          "Salt and freshly ground black pepper to taste",
+          "4 thick slices French bread",
+          "1 1/2 cups Gruyère cheese, grated (150g)",
+          "1/2 cup Parmesan cheese, grated (50g)"
+        ],
+        "utensils_required": [
+          "Large heavy-bottomed pot",
+          "Wooden spoon",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Oven-safe soup bowls",
+          "Baking sheet",
+          "Grater"
+        ],
+        "cooking_instructions": [
+          "Melt butter with olive oil in large pot over medium-low heat. Add onions, sugar, and salt. Cook slowly for 25 minutes, stirring occasionally, until onions are deep golden brown and caramelized.",
+          "Sprinkle flour over onions and stir for 1 minute. Add wine and cook for 2 minutes, scraping up browned bits.",
+          "Add beef stock, bay leaf, and thyme. Bring to boil, then reduce heat and simmer for 15 minutes. Season with salt and pepper.",
+          "Preheat broiler. Toast bread slices until golden. Ladle soup into oven-safe bowls, top with bread and cheeses. Broil for 3-4 minutes until cheese is bubbly and golden."
+        ],
+        "chef_tips": "The key to perfect French onion soup is patience - let the onions caramelize slowly for maximum flavor. Use a good quality beef stock and don't skip the wine deglazing step."
+      },
+      {
+        "recipe_name": "Coq au Vin Blanc",
+        "cuisine": "French",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 6,
+        "calories_per_serving": 485,
+        "difficulty": "Hard",
+        "ingredients": [
+          "3 lbs chicken pieces (1.4kg)",
+          "8 oz bacon, diced (225g)",
+          "2 cups dry white wine (480ml)",
+          "2 cups chicken stock (480ml)",
+          "1 lb button mushrooms, quartered (450g)",
+          "2 large onions, diced (300g)",
+          "4 cloves garlic, minced",
+          "3 carrots, sliced (200g)",
+          "2 tbsp all-purpose flour (16g)",
+          "3 tbsp unsalted butter (45g)",
+          "2 tbsp olive oil (30ml)",
+          "1 bouquet garni (thyme, parsley, bay leaf)",
+          "Salt and freshly ground black pepper to taste",
+          "Fresh parsley for garnish"
+        ],
+        "utensils_required": [
+          "Large Dutch oven or heavy pot",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Wooden spoon",
+          "Measuring cups and spoons",
+          "Kitchen twine",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": [
+          "Season chicken pieces with salt and pepper. In large pot, cook bacon until crispy. Remove and set aside.",
+          "Brown chicken pieces in bacon fat for 5 minutes per side until golden. Remove and set aside.",
+          "Add onions, carrots, and garlic to pot. Cook for 5 minutes until softened. Add flour and cook for 1 minute.",
+          "Add wine and stock, scraping up browned bits. Return chicken and bacon to pot. Add bouquet garni. Simmer for 35 minutes.",
+          "In separate skillet, sauté mushrooms in butter for 8 minutes until golden. Add to pot and cook for 5 more minutes. Garnish with parsley."
+        ],
+        "chef_tips": "Use a good quality white wine - you should be happy to drink it. The bouquet garni adds essential herbal notes, and don't rush the browning process as it builds the foundation of flavor."
+      },
+      {
+        "recipe_name": "Ratatouille Provençale",
+        "cuisine": "French",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 45 min",
+        "servings": 6,
+        "calories_per_serving": 180,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 large eggplants, diced (800g)",
+          "3 medium zucchinis, diced (600g)",
+          "2 large bell peppers, diced (400g)",
+          "4 large tomatoes, diced (600g)",
+          "2 large onions, diced (300g)",
+          "6 cloves garlic, minced",
+          "1/2 cup olive oil (120ml)",
+          "2 tbsp fresh basil, chopped",
+          "1 tbsp fresh thyme",
+          "1 tsp herbes de Provence",
+          "Salt and freshly ground black pepper to taste",
+          "Fresh parsley for garnish"
+        ],
+        "utensils_required": [
+          "Large heavy-bottomed pot",
+          "Chef's knife",
+          "Cutting board",
+          "Wooden spoon",
+          "Measuring cups and spoons",
+          "Colander"
+        ],
+        "cooking_instructions": [
+          "Salt eggplant cubes and let drain in colander for 15 minutes. Rinse and pat dry.",
+          "Heat 1/4 cup olive oil in large pot over medium heat. Sauté onions for 5 minutes until translucent. Add garlic and cook for 1 minute.",
+          "Add bell peppers and cook for 5 minutes. Add eggplant and cook for 8 minutes, stirring frequently.",
+          "Add zucchinis and cook for 5 minutes. Add tomatoes, herbs, and remaining oil. Simmer for 15 minutes until vegetables are tender.",
+          "Season with salt and pepper. Garnish with fresh parsley and serve warm or at room temperature."
+        ],
+        "chef_tips": "The secret to perfect ratatouille is cooking each vegetable separately first to develop individual flavors, then combining them. Don't overcook - vegetables should retain some texture."
+      },
+      {
+        "recipe_name": "Sole Meunière",
+        "cuisine": "French",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 285,
+        "difficulty": "Medium",
+        "ingredients": [
+          "4 sole fillets, 6-8 oz each (680g)",
+          "1/2 cup all-purpose flour (64g)",
+          "6 tbsp unsalted butter (90g)",
+          "1/4 cup olive oil (60ml)",
+          "1/4 cup fresh lemon juice (60ml)",
+          "2 tbsp fresh parsley, chopped",
+          "Salt and freshly ground black pepper to taste",
+          "Lemon wedges for serving"
+        ],
+        "utensils_required": [
+          "Large non-stick skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Fish spatula",
+          "Small saucepan"
+        ],
+        "cooking_instructions": [
+          "Season sole fillets with salt and pepper. Dredge lightly in flour, shaking off excess.",
+          "Heat 2 tbsp butter and olive oil in large skillet over medium-high heat. Cook fillets for 3 minutes per side until golden and cooked through.",
+          "Remove fish to warm plates. Add remaining butter to skillet and cook until nutty brown, about 2 minutes.",
+          "Remove from heat and add lemon juice carefully. Spoon sauce over fish and garnish with parsley. Serve immediately with lemon wedges."
+        ],
+        "chef_tips": "The key is the brown butter sauce - cook it until it's a beautiful nutty brown color. Be careful when adding lemon juice to hot butter as it will splatter. Serve immediately for best texture."
+      },
+      {
+        "recipe_name": "Crêpes Suzette",
+        "cuisine": "French",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 6,
+        "calories_per_serving": 320,
+        "difficulty": "Hard",
+        "ingredients": [
+          "1 cup all-purpose flour (128g)",
+          "2 large eggs",
+          "1 1/4 cups whole milk (300ml)",
+          "2 tbsp unsalted butter, melted (30g)",
+          "1/4 tsp salt",
+          "1 tbsp granulated sugar (12g)",
+          "1/2 cup unsalted butter (115g)",
+          "1/2 cup granulated sugar (100g)",
+          "1/4 cup orange juice (60ml)",
+          "2 tbsp orange zest",
+          "1/4 cup Grand Marnier or Cointreau (60ml)",
+          "Powdered sugar for dusting"
+        ],
+        "utensils_required": [
+          "Large non-stick skillet",
+          "Whisk",
+          "Measuring cups and spoons",
+          "Rubber spatula",
+          "Zester",
+          "Citrus juicer",
+          "Matches or lighter for flambéing"
+        ],
+        "cooking_instructions": [
+          "Make crêpe batter: whisk flour, eggs, milk, melted butter, salt, and sugar until smooth. Let rest for 30 minutes.",
+          "Heat skillet over medium heat. Pour 1/4 cup batter, swirl to coat pan. Cook for 1-2 minutes until golden, flip and cook 30 seconds. Repeat for all crêpes.",
+          "Make sauce: melt butter in large skillet. Add sugar and cook until caramelized, about 3 minutes. Add orange juice and zest, cook for 2 minutes.",
+          "Add Grand Marnier and carefully ignite with match. Let flames subside. Fold crêpes into quarters and add to sauce. Toss gently to coat. Serve immediately dusted with powdered sugar."
+        ],
+        "chef_tips": "The flambéing is the show-stopping moment - make sure to use a long match and stand back. The crêpes should be thin and delicate. Practice the flipping technique for perfect results."
+      },
+      {
+        "recipe_name": "Bouillabaisse Marseillaise",
+        "cuisine": "French",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 8,
+        "calories_per_serving": 420,
+        "difficulty": "Hard",
+        "ingredients": [
+          "2 lbs mixed fish fillets (cod, halibut, snapper) (900g)",
+          "1 lb mussels, scrubbed (450g)",
+          "1 lb clams, scrubbed (450g)",
+          "1 lb shrimp, peeled (450g)",
+          "2 large onions, diced (300g)",
+          "4 cloves garlic, minced",
+          "2 fennel bulbs, sliced (400g)",
+          "4 large tomatoes, diced (600g)",
+          "1 orange peel, julienned",
+          "1/4 cup olive oil (60ml)",
+          "6 cups fish stock (1.4L)",
+          "1 cup dry white wine (240ml)",
+          "1 tsp saffron threads",
+          "1 tsp fennel seeds",
+          "2 bay leaves",
+          "Salt and freshly ground black pepper to taste",
+          "Fresh parsley and fennel fronds for garnish",
+          "Rouille sauce for serving"
+        ],
+        "utensils_required": [
+          "Large heavy-bottomed pot",
+          "Chef's knife",
+          "Cutting board",
+          "Wooden spoon",
+          "Measuring cups and spoons",
+          "Slotted spoon",
+          "Fine mesh strainer"
+        ],
+        "cooking_instructions": [
+          "Heat olive oil in large pot over medium heat. Add onions, garlic, and fennel. Cook for 8 minutes until softened.",
+          "Add tomatoes, orange peel, fennel seeds, bay leaves, and saffron. Cook for 5 minutes until tomatoes break down.",
+          "Add fish stock and wine. Bring to boil, then reduce heat and simmer for 20 minutes. Season with salt and pepper.",
+          "Add fish fillets and cook for 5 minutes. Add shellfish and cook for 3-4 minutes until shells open. Discard any unopened shells.",
+          "Ladle into bowls, garnish with parsley and fennel fronds. Serve with rouille sauce and crusty bread."
+        ],
+        "chef_tips": "The key is using the freshest seafood possible and building layers of flavor with the aromatic base. The saffron is essential for authentic bouillabaisse. Serve with traditional rouille for the complete experience."
+      },
+      {
+        "recipe_name": "Tarte Tatin",
+        "cuisine": "French",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 8,
+        "calories_per_serving": 380,
+        "difficulty": "Hard",
+        "ingredients": [
+          "8-10 medium apples, peeled and cored (1.2kg)",
+          "1 1/4 cups granulated sugar (250g)",
+          "6 tbsp unsalted butter (90g)",
+          "1 sheet puff pastry, thawed",
+          "1/2 tsp vanilla extract",
+          "1/4 tsp salt",
+          "Crème fraîche or vanilla ice cream for serving"
+        ],
+        "utensils_required": [
+          "10-inch oven-safe skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Rolling pin",
+          "Pastry brush",
+          "Large plate for flipping"
+        ],
+        "cooking_instructions": [
+          "Preheat oven to 400°F. Melt butter in skillet over medium heat. Add 1 cup sugar and cook, stirring, until golden caramel forms, about 8 minutes.",
+          "Remove from heat and arrange apple halves in concentric circles, cut side up. Sprinkle with remaining sugar and vanilla.",
+          "Roll puff pastry to fit skillet. Place over apples, tucking edges down. Bake for 25-30 minutes until pastry is golden and puffed.",
+          "Let cool for 5 minutes. Place large plate over skillet and carefully flip. Remove skillet. Serve warm with crème fraîche or ice cream."
+        ],
+        "chef_tips": "The caramel must be the right color - golden, not dark. Use firm apples that won't turn to mush. The flipping is the dramatic moment - be confident and quick. Practice makes perfect with this classic French dessert."
+      },
+      {
+        "recipe_name": "Spaghetti Carbonara Classica",
+        "cuisine": "Italian",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 520,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb spaghetti (450g)",
+          "6 large eggs, room temperature",
+          "1 1/2 cups Pecorino Romano cheese, grated (150g)",
+          "8 oz guanciale or pancetta, diced (225g)",
+          "4 cloves garlic, minced",
+          "1/2 cup dry white wine (120ml)",
+          "Freshly ground black pepper to taste",
+          "Salt for pasta water",
+          "Fresh parsley for garnish"
+        ],
+        "utensils_required": [
+          "Large pot for pasta",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk",
+          "Tongs",
+          "Grater"
+        ],
+        "cooking_instructions": [
+          "Bring large pot of salted water to boil. Cook spaghetti according to package directions until al dente.",
+          "Meanwhile, whisk eggs with 1 cup Pecorino Romano and generous black pepper in large bowl.",
+          "Cook guanciale in large skillet over medium heat for 8 minutes until crispy. Add garlic and cook for 1 minute. Add wine and cook for 2 minutes.",
+          "Drain pasta, reserving 1 cup pasta water. Add hot pasta to skillet with guanciale. Remove from heat.",
+          "Quickly add egg mixture, tossing constantly. Add pasta water gradually until creamy. Serve immediately with remaining cheese and parsley."
+        ],
+        "chef_tips": "The key is removing the pan from heat before adding eggs to prevent scrambling. Use the pasta water to create the perfect creamy consistency. Work quickly and confidently for authentic carbonara."
+      },
+      {
+        "recipe_name": "Osso Buco alla Milanese",
+        "cuisine": "Italian",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 2 hours",
+        "servings": 6,
+        "calories_per_serving": 580,
+        "difficulty": "Hard",
+        "ingredients": [
+          "6 veal shanks, 2 inches thick (1.8kg)",
+          "1/2 cup all-purpose flour (64g)",
+          "1/4 cup olive oil (60ml)",
+          "2 large onions, diced (300g)",
+          "2 carrots, diced (200g)",
+          "2 celery stalks, diced (150g)",
+          "4 cloves garlic, minced",
+          "1 cup dry white wine (240ml)",
+          "2 cups beef stock (480ml)",
+          "1 can diced tomatoes (400g)",
+          "2 tbsp tomato paste (30g)",
+          "1 bouquet garni (rosemary, thyme, bay leaf)",
+          "Salt and freshly ground black pepper to taste",
+          "Gremolata: 1/4 cup parsley, 2 tbsp lemon zest, 2 cloves garlic, minced"
+        ],
+        "utensils_required": [
+          "Large Dutch oven",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Kitchen twine",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": [
+          "Season veal shanks with salt and pepper. Dredge in flour, shaking off excess.",
+          "Heat olive oil in Dutch oven over medium-high heat. Brown shanks for 4 minutes per side until golden. Remove and set aside.",
+          "Add onions, carrots, celery, and garlic. Cook for 8 minutes until softened. Add wine and cook for 3 minutes, scraping up browned bits.",
+          "Return shanks to pot. Add stock, tomatoes, tomato paste, and bouquet garni. Bring to boil, then reduce heat and simmer for 1.5 hours until tender.",
+          "Make gremolata by combining parsley, lemon zest, and garlic. Serve shanks with sauce and gremolata."
+        ],
+        "chef_tips": "The marrow in the bone is the treasure - don't overcook or it will disappear. The gremolata adds essential brightness. Serve with risotto alla Milanese for the complete experience."
+      },
+      {
+        "recipe_name": "Risotto ai Funghi Porcini",
+        "cuisine": "Italian",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 420,
+        "difficulty": "Hard",
+        "ingredients": [
+          "1 1/2 cups Arborio rice (300g)",
+          "1 oz dried porcini mushrooms (30g)",
+          "1/2 lb fresh mixed mushrooms, sliced (225g)",
+          "1 large onion, finely diced (150g)",
+          "4 cloves garlic, minced",
+          "1/2 cup dry white wine (120ml)",
+          "6 cups hot chicken or vegetable stock (1.4L)",
+          "1/2 cup Parmigiano-Reggiano cheese, grated (50g)",
+          "3 tbsp unsalted butter (45g)",
+          "1/4 cup olive oil (60ml)",
+          "2 tbsp fresh thyme",
+          "Salt and freshly ground black pepper to taste",
+          "Fresh parsley for garnish"
+        ],
+        "utensils_required": [
+          "Large heavy-bottomed pot",
+          "Medium saucepan for stock",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Grater"
+        ],
+        "cooking_instructions": [
+          "Soak dried porcini in 1 cup hot water for 20 minutes. Strain, reserving liquid. Chop porcini.",
+          "Heat stock in saucepan and keep warm. Heat olive oil in large pot over medium heat. Add onion and cook for 5 minutes until translucent.",
+          "Add rice and cook for 2 minutes, stirring constantly. Add wine and cook until absorbed. Add porcini soaking liquid.",
+          "Add stock 1/2 cup at a time, stirring constantly until absorbed. After 15 minutes, add mushrooms and thyme. Continue cooking until rice is creamy and al dente.",
+          "Remove from heat. Stir in butter and cheese. Season with salt and pepper. Serve immediately garnished with parsley."
+        ],
+        "chef_tips": "Constant stirring is essential for creamy risotto. The rice should be al dente with a slight bite. Don't rush the process - risotto demands patience and attention."
+      },
+      {
+        "recipe_name": "Saltimbocca alla Romana",
+        "cuisine": "Italian",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "ingredients": [
+          "8 veal cutlets, pounded thin (600g)",
+          "8 slices prosciutto di Parma",
+          "8 fresh sage leaves",
+          "1/2 cup all-purpose flour (64g)",
+          "1/4 cup olive oil (60ml)",
+          "1/2 cup dry white wine (120ml)",
+          "2 tbsp unsalted butter (30g)",
+          "1/4 cup chicken stock (60ml)",
+          "Salt and freshly ground black pepper to taste",
+          "Toothpicks for securing"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Meat mallet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Tongs",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": [
+          "Season veal cutlets with salt and pepper. Top each with prosciutto slice and sage leaf. Secure with toothpicks.",
+          "Dredge cutlets in flour, shaking off excess. Heat olive oil in large skillet over medium-high heat.",
+          "Cook cutlets for 2 minutes per side until golden. Remove and set aside.",
+          "Add wine to skillet and cook for 2 minutes, scraping up browned bits. Add stock and butter, cook for 1 minute.",
+          "Return cutlets to skillet and cook for 1 minute. Remove toothpicks and serve immediately with sauce."
+        ],
+        "chef_tips": "The name 'saltimbocca' means 'jumps in the mouth' - it should be incredibly tender and flavorful. Don't overcook the veal or it will become tough."
+      },
+      {
+        "recipe_name": "Penne all'Arrabbiata",
+        "cuisine": "Italian",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 4,
+        "calories_per_serving": 380,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1 lb penne pasta (450g)",
+          "1 can crushed tomatoes (400g)",
+          "4 cloves garlic, minced",
+          "3-4 red chili peppers, chopped",
+          "1/4 cup olive oil (60ml)",
+          "1/2 cup dry white wine (120ml)",
+          "2 tbsp fresh parsley, chopped",
+          "Salt to taste",
+          "Parmigiano-Reggiano cheese for serving"
+        ],
+        "utensils_required": [
+          "Large pot for pasta",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": [
+          "Bring large pot of salted water to boil. Cook penne according to package directions until al dente.",
+          "Meanwhile, heat olive oil in large skillet over medium heat. Add garlic and chilies, cook for 2 minutes until fragrant.",
+          "Add wine and cook for 2 minutes until reduced. Add tomatoes and simmer for 10 minutes until thickened.",
+          "Drain pasta and add to skillet. Toss with sauce and parsley. Season with salt.",
+          "Serve immediately with grated Parmigiano-Reggiano cheese."
+        ],
+        "chef_tips": "Arrabbiata means 'angry' - this sauce should have a good kick from the chilies. Adjust heat level to your preference. The sauce should be simple but bold."
+      },
+      {
+        "recipe_name": "Tiramisu Classico",
+        "cuisine": "Italian",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 8,
+        "calories_per_serving": 450,
+        "difficulty": "Medium",
+        "ingredients": [
+          "6 large egg yolks",
+          "3/4 cup granulated sugar (150g)",
+          "1 lb mascarpone cheese (450g)",
+          "1 1/4 cups heavy cream (300ml)",
+          "2 cups strong espresso, cooled (480ml)",
+          "1/4 cup coffee liqueur (60ml)",
+          "24 ladyfinger cookies",
+          "1/4 cup cocoa powder (25g)",
+          "2 tbsp dark rum (30ml)",
+          "1 tsp vanilla extract"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Electric mixer",
+          "Measuring cups and spoons",
+          "Rubber spatula",
+          "9x13 inch baking dish",
+          "Fine mesh sieve"
+        ],
+        "cooking_instructions": [
+          "Beat egg yolks with sugar in large bowl until thick and pale, about 5 minutes. Add mascarpone and mix until smooth.",
+          "In separate bowl, whip cream until stiff peaks form. Fold into mascarpone mixture.",
+          "Mix espresso with coffee liqueur and rum. Quickly dip ladyfingers in coffee mixture, don't oversoak.",
+          "Layer half the ladyfingers in baking dish. Spread half the mascarpone mixture over top. Repeat layers.",
+          "Cover and refrigerate for 4 hours. Dust with cocoa powder before serving."
+        ],
+        "chef_tips": "Don't oversoak the ladyfingers or they'll become mushy. The tiramisu needs time to set - overnight is even better. Use good quality mascarpone for the best results."
+      },
+      {
+        "recipe_name": "Cacio e Pepe",
+        "cuisine": "Italian",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 4,
+        "calories_per_serving": 420,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 lb spaghetti (450g)",
+          "2 cups Pecorino Romano cheese, grated (200g)",
+          "2 tbsp freshly ground black pepper (15g)",
+          "1/2 cup pasta cooking water (120ml)",
+          "2 tbsp olive oil (30ml)",
+          "Salt for pasta water"
+        ],
+        "utensils_required": [
+          "Large pot for pasta",
+          "Large skillet",
+          "Measuring cups and spoons",
+          "Tongs",
+          "Grater",
+          "Pepper mill"
+        ],
+        "cooking_instructions": [
+          "Bring large pot of salted water to boil. Cook spaghetti according to package directions until al dente.",
+          "Meanwhile, toast black pepper in large skillet over medium heat for 2 minutes until fragrant.",
+          "Reserve 1/2 cup pasta water before draining. Add hot pasta to skillet with pepper.",
+          "Add pasta water gradually while tossing constantly. Remove from heat and add cheese, tossing until creamy.",
+          "Serve immediately with extra cheese and pepper."
+        ],
+        "chef_tips": "This is one of Rome's most famous dishes - simple but requires technique. The pasta water is crucial for creating the creamy sauce. Work quickly and confidently."
+      },
+      {
+        "recipe_name": "Vitello Tonnato",
+        "cuisine": "Italian",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 6,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 lbs veal roast (900g)",
+          "1 carrot, chopped",
+          "1 celery stalk, chopped",
+          "1 onion, chopped",
+          "2 bay leaves",
+          "1 cup dry white wine (240ml)",
+          "4 cups chicken stock (960ml)",
+          "For sauce: 1 can tuna in oil (150g)",
+          "4 anchovy fillets",
+          "2 egg yolks",
+          "1/2 cup olive oil (120ml)",
+          "2 tbsp capers",
+          "2 tbsp lemon juice",
+          "Salt and freshly ground black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Food processor",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": [
+          "Place veal in large pot with vegetables, bay leaves, wine, and stock. Bring to boil, then simmer for 45 minutes until tender.",
+          "Remove veal and let cool. Strain cooking liquid and reserve.",
+          "Make sauce: blend tuna, anchovies, egg yolks, and capers in food processor. Gradually add olive oil while processing.",
+          "Add lemon juice and enough cooking liquid to make smooth sauce. Season with salt and pepper.",
+          "Slice veal thinly and arrange on platter. Spoon sauce over top. Serve chilled."
+        ],
+        "chef_tips": "This classic Piedmontese dish is perfect for summer. The veal should be very tender and the sauce smooth and creamy. Serve with capers and lemon wedges."
       }
     ]
   }
