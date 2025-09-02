@@ -5,7 +5,101 @@
         "title": "Sushi Roll California",
         "cuisine": "Japanese",
         "ingredients": ["2 cups sushi rice", "1/4 cup rice vinegar", "1 tbsp sugar", "1 tsp salt", "Nori sheets", "1 avocado, sliced", "1 cucumber, julienned", "1/2 cup imitation crab", "1 tbsp mayonnaise", "1 tsp sriracha", "Soy sauce for serving"],
-        "instructions": "Cook sushi rice and mix with rice vinegar, sugar, and salt. Let cool to room temperature. Mix crab with mayonnaise and sriracha. Place nori sheet on bamboo mat. Spread rice evenly over nori, leaving 1 inch at top. Place avocado, cucumber, and crab mixture in center. Roll tightly using bamboo mat. Slice into 8 pieces and serve with soy sauce."
+        "instructions": "Cook sushi rice and mix with rice vinegar, sugar, and salt. Let cool to room temperature. Mix crab with mayonnaise and sriracha. Place nori sheet on bamboo mat. Spread rice evenly over nori, leaving 1 inch at top. Place avocado, cucumber, and crab mixture in center. Roll tightly using bamboo mat. Slice into 8 pieces and serve with soy sauce.",
+        "proteins": ["imitation crab"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Chicken Teriyaki",
+        "cuisine": "Japanese",
+        "ingredients": ["1 lb chicken breast, sliced", "1/4 cup soy sauce", "2 tbsp mirin", "2 tbsp sake", "1 tbsp sugar", "1 tsp ginger, grated", "1 clove garlic, minced", "2 tbsp oil", "Sesame seeds for garnish"],
+        "instructions": "Mix soy sauce, mirin, sake, sugar, ginger, and garlic for sauce. Heat oil and cook chicken for 5 minutes. Add sauce and cook for 3 minutes. Garnish with sesame seeds.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": [],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Miso Soup",
+        "cuisine": "Japanese",
+        "ingredients": ["2 cups dashi stock", "2 tbsp miso paste", "1/2 cup silken tofu, cubed", "2 green onions, sliced", "1 sheet nori, torn"],
+        "instructions": "Heat dashi stock. Dissolve miso paste in hot stock. Add tofu and simmer for 2 minutes. Garnish with green onions and nori.",
+        "proteins": ["tofu"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Beef Stir Fry",
+        "cuisine": "Japanese",
+        "ingredients": ["1 lb beef, thinly sliced", "1 bell pepper, sliced", "1 onion, sliced", "2 cloves garlic, minced", "2 tbsp soy sauce", "1 tbsp mirin", "1 tbsp oil", "Sesame seeds for garnish"],
+        "instructions": "Heat oil and cook beef for 3 minutes. Add vegetables and garlic, cook for 4 minutes. Add soy sauce and mirin, cook for 2 minutes. Garnish with sesame seeds.",
+        "proteins": ["beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Salmon Teriyaki",
+        "cuisine": "Japanese",
+        "ingredients": ["4 salmon fillets", "1/4 cup soy sauce", "2 tbsp mirin", "1 tbsp sugar", "1 tsp ginger, grated", "2 tbsp oil", "Sesame seeds for garnish"],
+        "instructions": "Mix soy sauce, mirin, sugar, and ginger for sauce. Heat oil and cook salmon for 4 minutes per side. Add sauce and cook for 2 minutes. Garnish with sesame seeds.",
+        "proteins": ["salmon"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Vegetable Tempura",
+        "cuisine": "Japanese",
+        "ingredients": ["1 cup mixed vegetables", "1/2 cup tempura flour", "1/2 cup ice water", "Oil for frying", "Tempura sauce for dipping"],
+        "instructions": "Mix tempura flour with ice water. Heat oil to 350°F. Dip vegetables in batter and fry for 3 minutes until golden. Serve with tempura sauce.",
+        "proteins": ["vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Chicken Katsu",
+        "cuisine": "Japanese",
+        "ingredients": ["4 chicken cutlets", "1 cup panko breadcrumbs", "2 eggs, beaten", "1/2 cup flour", "Oil for frying", "Tonkatsu sauce"],
+        "instructions": "Dredge chicken in flour, dip in eggs, then coat with panko. Heat oil and fry for 4 minutes per side. Serve with tonkatsu sauce.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Gyoza",
+        "cuisine": "Japanese",
+        "ingredients": ["1 lb ground pork", "1/2 cup cabbage, chopped", "2 green onions, minced", "1 tbsp soy sauce", "Gyoza wrappers", "2 tbsp oil", "1/4 cup water"],
+        "instructions": "Mix pork, cabbage, green onions, and soy sauce. Fill gyoza wrappers and seal. Heat oil and cook gyoza for 3 minutes. Add water and steam for 2 minutes.",
+        "proteins": ["ground pork"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Speedy Beef Sukiyaki",
+        "cuisine": "Japanese",
+        "ingredients": ["1 lb beef, thinly sliced", "1 package shirataki noodles", "1 cup mushrooms", "1 cup napa cabbage", "1/4 cup soy sauce", "2 tbsp mirin", "1 tbsp sugar"],
+        "instructions": "Mix soy sauce, mirin, and sugar for sauce. Heat pan and add sauce. Add beef and cook for 3 minutes. Add vegetables and noodles, cook for 5 minutes.",
+        "proteins": ["beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Onigiri",
+        "cuisine": "Japanese",
+        "ingredients": ["2 cups cooked sushi rice", "1/4 cup rice vinegar", "1 tbsp sugar", "1 tsp salt", "1/2 cup salmon, cooked", "Nori sheets", "Sesame seeds"],
+        "instructions": "Mix rice with vinegar, sugar, and salt. Wet hands and form rice into triangles. Add salmon filling and wrap with nori. Sprinkle with sesame seeds.",
+        "proteins": ["salmon", "rice"],
+        "dietary_restrictions": [],
+        "cooking_time": 8,
+        "difficulty": "easy"
       },
       {
         "title": "Ramen Tonkotsu",

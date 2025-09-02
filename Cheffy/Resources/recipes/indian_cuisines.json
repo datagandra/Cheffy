@@ -310,6 +310,196 @@
         "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 15,
         "difficulty": "easy"
+      },
+      {
+        "title": "Instant Dal Tadka",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup red lentils", "2 cups water", "1 onion, chopped", "2 tomatoes, chopped", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Boil lentils in water for 8 minutes until soft. Heat oil and add cumin seeds. Add onion and garlic, cook for 2 minutes. Add tomatoes and spices, cook for 3 minutes. Add cooked dal and simmer for 2 minutes. Garnish with cilantro.",
+        "proteins": ["lentils"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Aloo Gobi",
+        "cuisine": "Indian",
+        "ingredients": ["2 potatoes, cubed", "1 small cauliflower, florets", "1 onion, sliced", "2 green chilies", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and green chilies, cook for 2 minutes. Add potatoes and cauliflower, cook for 8 minutes. Add spices and salt, cook for 3 minutes. Garnish with cilantro.",
+        "proteins": ["potatoes", "cauliflower"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Chicken Curry",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb chicken breast, cubed", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 inch ginger, grated", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion, garlic, and ginger, cook for 3 minutes. Add chicken and cook for 5 minutes. Add tomato puree and spices, cook for 7 minutes. Garnish with cilantro.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": [],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Jeera Rice",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups cooked basmati rice", "2 tbsp ghee", "1 tsp cumin seeds", "1 tsp salt", "Fresh cilantro for garnish"],
+        "instructions": "Heat ghee and add cumin seeds. Add cooked rice and salt, mix gently for 3 minutes. Garnish with cilantro and serve hot.",
+        "proteins": ["rice"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Raita",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup yogurt", "1 cucumber, grated", "1 tsp cumin powder", "1 tsp salt", "Fresh mint leaves", "Pinch of red chili powder"],
+        "instructions": "Mix yogurt with grated cucumber, cumin powder, and salt. Garnish with mint leaves and red chili powder. Serve chilled.",
+        "proteins": ["yogurt"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chana Masala",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups cooked chickpeas", "1 onion, chopped", "2 tomatoes, chopped", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add tomatoes and spices, cook for 4 minutes. Add chickpeas and cook for 5 minutes. Garnish with cilantro.",
+        "proteins": ["chickpeas"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Egg Curry",
+        "cuisine": "Indian",
+        "ingredients": ["6 hard-boiled eggs", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add tomato puree and spices, cook for 5 minutes. Add halved eggs and cook for 3 minutes. Garnish with cilantro.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Vegetable Pulao",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups basmati rice", "1 cup mixed vegetables", "1 onion, sliced", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp garam masala", "1 tsp turmeric", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 2 minutes. Add rice and vegetables, cook for 3 minutes. Add water, spices, and salt. Cook for 12 minutes. Garnish with cilantro.",
+        "proteins": ["rice", "vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Sambar",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup toor dal", "2 cups water", "1 cup mixed vegetables", "2 tbsp sambar powder", "1 tsp turmeric", "1 tsp mustard seeds", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Boil dal and vegetables in water for 10 minutes. Heat oil and add mustard seeds. Add sambar powder and turmeric, cook for 1 minute. Add to dal mixture and simmer for 5 minutes. Garnish with cilantro.",
+        "proteins": ["toor dal", "vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Fish Curry",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb fish fillets", "1 onion, chopped", "2 tomatoes, chopped", "2 cloves garlic, minced", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add onion and garlic, cook for 3 minutes. Add tomatoes and spices, cook for 4 minutes. Add fish and cook for 8 minutes. Garnish with cilantro.",
+        "proteins": ["fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Rajma Curry",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups cooked kidney beans", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add tomato puree and spices, cook for 4 minutes. Add kidney beans and cook for 5 minutes. Garnish with cilantro.",
+        "proteins": ["kidney beans"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Matar Paneer",
+        "cuisine": "Indian",
+        "ingredients": ["8 oz paneer, cubed", "1 cup green peas", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add tomato puree and spices, cook for 4 minutes. Add paneer and peas, cook for 5 minutes. Garnish with cilantro.",
+        "proteins": ["paneer", "green peas"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Upma",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup semolina", "2 cups water", "1 onion, chopped", "2 green chilies", "1 tsp mustard seeds", "1 tsp turmeric", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add mustard seeds. Add onion and green chilies, cook for 2 minutes. Add semolina and cook for 3 minutes. Add water, turmeric, and salt. Cook for 5 minutes. Garnish with cilantro.",
+        "proteins": ["semolina"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Baingan Bharta",
+        "cuisine": "Indian",
+        "ingredients": ["2 large eggplants, roasted", "1 onion, chopped", "2 tomatoes, chopped", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Mash roasted eggplant. Heat oil and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add tomatoes and spices, cook for 4 minutes. Add mashed eggplant and cook for 5 minutes. Garnish with cilantro.",
+        "proteins": ["eggplant"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Mutton Curry",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb mutton, cubed", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 inch ginger, grated", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion, garlic, and ginger, cook for 3 minutes. Add mutton and cook for 8 minutes. Add tomato puree and spices, cook for 10 minutes. Garnish with cilantro.",
+        "proteins": ["mutton"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Dal Makhani",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup black lentils", "1/2 cup kidney beans", "2 cups water", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "2 tbsp butter", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Boil lentils and beans in water for 15 minutes. Heat butter and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add tomato puree and spices, cook for 4 minutes. Add cooked dal and simmer for 5 minutes. Garnish with cilantro.",
+        "proteins": ["black lentils", "kidney beans"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 30,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Instant Vegetable Biryani",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups basmati rice", "1 cup mixed vegetables", "1 onion, sliced", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp garam masala", "1 tsp turmeric", "1 tsp red chili powder", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 2 minutes. Add rice and vegetables, cook for 3 minutes. Add water, spices, and salt. Cook for 15 minutes. Garnish with cilantro.",
+        "proteins": ["rice", "vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Chicken Tikka Masala",
+        "cuisine": "Indian",
+        "ingredients": ["1 lb chicken breast, cubed", "1 onion, chopped", "2 tomatoes, pureed", "2 cloves garlic, minced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "1 tsp garam masala", "1/2 cup cream", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onion and garlic, cook for 3 minutes. Add chicken and cook for 5 minutes. Add tomato puree and spices, cook for 7 minutes. Add cream and simmer for 3 minutes. Garnish with cilantro.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Speedy Aloo Paratha",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups whole wheat flour", "2 potatoes, boiled and mashed", "1 onion, chopped", "2 green chilies", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp red chili powder", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Make dough with flour and water. Mix mashed potatoes with onion, green chilies, and spices. Roll dough, add filling, and seal. Cook on griddle with oil for 4 minutes per side. Serve hot.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 20,
+        "difficulty": "medium"
       }
     ]
   }
