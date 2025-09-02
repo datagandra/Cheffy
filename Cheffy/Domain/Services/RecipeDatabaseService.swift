@@ -21,13 +21,35 @@ class RecipeDatabaseService: ObservableObject {
             error = nil
         }
         
-        // For now, create sample recipes to test the functionality
-        let sampleRecipes = createSampleRecipes()
+        var allRecipes: [Recipe] = []
+        
+        // Load recipes from all cuisine JSON files
+        let cuisineFiles = [
+            "american_cuisines",
+            "asian_cuisines_extended", 
+            "asian_cuisines",
+            "european_cuisines",
+            "indian_cuisines",
+            "latin_american_cuisines",
+            "mediterranean_cuisines",
+            "mexican_cuisines",
+            "middle_eastern_african_cuisines"
+        ]
+        
+        for fileName in cuisineFiles {
+            if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+                let recipes = loadRecipesFromURL(url)
+                allRecipes.append(contentsOf: recipes)
+                logger.info("Loaded \(recipes.count) recipes from \(fileName).json")
+            } else {
+                logger.warning("Could not find \(fileName).json")
+            }
+        }
         
         await MainActor.run {
-            self.recipes = sampleRecipes
+            self.recipes = allRecipes
             self.isLoading = false
-            logger.info("Loaded \(sampleRecipes.count) sample recipes for testing")
+            logger.info("Loaded \(allRecipes.count) total recipes from JSON files")
         }
     }
     
@@ -377,6 +399,80 @@ class RecipeDatabaseService: ObservableObject {
             averageCookTime: recipes.map { $0.cookTime }.reduce(0, +) / max(recipes.count, 1)
         )
     }
+    
+    /// Loads recipes from a specific JSON file URL
+    private func loadRecipesFromURL(_ url: URL) -> [Recipe] {
+        var recipes: [Recipe] = []
+        
+        guard let data = try? Data(contentsOf: url) else {
+            logger.error("Could not read data from: \(url)")
+            return recipes
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            logger.error("Could not parse JSON from: \(url)")
+            return recipes
+        }
+        
+        guard let cuisines = json["cuisines"] as? [String: Any] else {
+            logger.error("Could not find 'cuisines' key in JSON")
+            return recipes
+        }
+        
+        for (cuisineName, cuisineData) in cuisines {
+            guard let cuisineRecipes = cuisineData as? [[String: Any]] else {
+                continue
+            }
+            
+            guard let cuisine = Cuisine(rawValue: cuisineName) else {
+                logger.warning("Unknown cuisine: \(cuisineName)")
+                continue
+            }
+            
+            for (index, recipeData) in cuisineRecipes.enumerated() {
+                guard let title = recipeData["title"] as? String,
+                      let ingredients = recipeData["ingredients"] as? [String],
+                      let instructions = recipeData["instructions"] as? String,
+                      let cookingTime = recipeData["cooking_time"] as? Int,
+                      let difficultyString = recipeData["difficulty"] as? String else {
+                    logger.warning("Skipping recipe \(index) in \(cuisineName) - missing required fields")
+                    continue
+                }
+                
+                let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+                
+                // Parse dietary restrictions
+                var dietaryNotes: [DietaryNote] = []
+                if let dietaryRestrictions = recipeData["dietary_restrictions"] as? [String] {
+                    for restriction in dietaryRestrictions {
+                        if let note = DietaryNote(rawValue: restriction) {
+                            dietaryNotes.append(note)
+                        }
+                    }
+                }
+                
+                let recipe = Recipe(
+                    title: title,
+                    cuisine: cuisine,
+                    difficulty: difficulty,
+                    prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
+                    cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
+                    servings: 4, // Default servings
+                    ingredients: ingredients.map { parseIngredient(from: $0) },
+                    steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
+                    winePairings: [],
+                    dietaryNotes: dietaryNotes,
+                    platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
+                    chefNotes: "Traditional \(cuisine.rawValue) recipe from our database"
+                )
+                recipes.append(recipe)
+            }
+        }
+        
+        return recipes
+    }
+    
+
 }
 
 // MARK: - Data Models

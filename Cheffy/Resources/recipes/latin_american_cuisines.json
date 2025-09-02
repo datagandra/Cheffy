@@ -431,6 +431,106 @@
         "dietary_restrictions": ["contains_dairy"],
         "cooking_time": 120,
         "difficulty": "medium"
+      },
+      {
+        "title": "Quick Brazilian Açaí Bowl",
+        "cuisine": "Brazilian",
+        "ingredients": ["2 cups frozen açaí puree", "1 banana", "1/2 cup granola", "1/4 cup fresh berries", "1 tbsp honey", "1 tbsp coconut flakes", "1 tbsp chia seeds"],
+        "instructions": "Blend açaí puree with banana until smooth. Pour into bowl. Top with granola, berries, coconut flakes, and chia seeds. Drizzle with honey. Serve immediately.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Brazilian Cheese Bread",
+        "cuisine": "Brazilian",
+        "ingredients": ["1 cup tapioca flour", "1/2 cup milk", "1/4 cup oil", "1 egg", "1/2 cup Parmesan cheese, grated", "1 tsp salt", "1/2 tsp baking powder"],
+        "instructions": "Blend all ingredients until smooth. Pour into mini muffin tins. Bake at 400°F for 15-20 minutes until golden. Serve warm.",
+        "proteins": ["eggs", "parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Argentine Empanadas",
+        "cuisine": "Argentine",
+        "ingredients": ["1 lb ground beef", "1 onion, chopped", "2 cloves garlic, minced", "1 tsp cumin", "1 tsp paprika", "1 package empanada dough", "2 tbsp oil", "Salt and pepper to taste"],
+        "instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal edges and bake at 375°F for 20 minutes until golden.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Peruvian Ceviche",
+        "cuisine": "Peruvian",
+        "ingredients": ["1 lb white fish, cubed", "1 red onion, sliced", "2 jalapeños, sliced", "1/2 cup lime juice", "1/4 cup cilantro, chopped", "1 tsp salt", "Sweet potato and corn for serving"],
+        "instructions": "Marinate fish in lime juice for 10 minutes. Add onion, jalapeños, cilantro, and salt. Mix well. Serve with sweet potato and corn.",
+        "proteins": ["white fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Colombian Arepas",
+        "cuisine": "Colombian",
+        "ingredients": ["2 cups masarepa flour", "2 cups warm water", "1 tsp salt", "2 tbsp butter", "Cheese for filling"],
+        "instructions": "Mix flour with water and salt. Knead until smooth. Form into patties. Cook in butter for 5 minutes per side. Fill with cheese and serve hot.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chilean Completo",
+        "cuisine": "Chilean",
+        "ingredients": ["4 hot dog buns", "4 hot dogs", "1 avocado, mashed", "2 tomatoes, diced", "1/4 cup mayonnaise", "Sauerkraut", "Mustard"],
+        "instructions": "Cook hot dogs. Toast buns. Spread mashed avocado on buns. Add hot dogs, tomatoes, sauerkraut, mayonnaise, and mustard. Serve immediately.",
+        "proteins": ["hot dogs"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Venezuelan Arepas",
+        "cuisine": "Venezuelan",
+        "ingredients": ["2 cups pre-cooked cornmeal", "2 cups warm water", "1 tsp salt", "2 tbsp oil", "Shredded chicken and cheese for filling"],
+        "instructions": "Mix cornmeal with water and salt. Let rest for 5 minutes. Form into patties. Cook in oil for 5 minutes per side. Split and fill with chicken and cheese.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Street Corn",
+        "cuisine": "Mexican",
+        "ingredients": ["4 ears corn", "1/4 cup mayonnaise", "1/4 cup sour cream", "1/2 cup cotija cheese, crumbled", "1 tsp chili powder", "1 lime, juiced", "Cilantro for garnish"],
+        "instructions": "Grill corn until charred. Mix mayonnaise and sour cream. Brush corn with mixture. Sprinkle with cheese, chili powder, and lime juice. Garnish with cilantro.",
+        "proteins": ["cotija cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Cuban Sandwich",
+        "cuisine": "Cuban",
+        "ingredients": ["4 Cuban bread rolls", "1 lb roast pork, sliced", "8 slices ham", "8 slices Swiss cheese", "Dill pickles", "Mustard", "Butter"],
+        "instructions": "Spread mustard on bread. Layer pork, ham, cheese, and pickles. Butter outside of bread. Press in panini press for 5 minutes until golden and cheese melts.",
+        "proteins": ["roast pork", "ham", "swiss cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Puerto Rican Mofongo",
+        "cuisine": "Puerto Rican",
+        "ingredients": ["4 green plantains", "4 cloves garlic, minced", "1/4 cup olive oil", "1/4 cup pork cracklings", "Salt to taste"],
+        "instructions": "Fry plantains until golden. Mash with garlic, olive oil, and cracklings. Season with salt. Form into balls and serve hot.",
+        "proteins": ["pork cracklings"],
+        "dietary_restrictions": [],
+        "cooking_time": 18,
+        "difficulty": "easy"
       }
     ]
   }

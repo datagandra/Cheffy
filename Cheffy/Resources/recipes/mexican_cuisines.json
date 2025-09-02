@@ -200,6 +200,106 @@
         "dietary_restrictions": ["vegetarian", "vegan"],
         "cooking_time": 15,
         "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Quesadillas",
+        "cuisine": "Mexican",
+        "ingredients": ["4 flour tortillas", "2 cups shredded cheese", "1/2 cup cooked chicken, shredded", "1/4 cup salsa", "2 tbsp butter", "Sour cream and guacamole for serving"],
+        "instructions": "Heat butter in pan. Place tortilla, add cheese, chicken, and salsa. Top with second tortilla. Cook for 2-3 minutes per side until golden and cheese melts. Cut into wedges. Serve with sour cream and guacamole.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Guacamole",
+        "cuisine": "Mexican",
+        "ingredients": ["3 ripe avocados", "1 lime, juiced", "1/2 red onion, diced", "2 tomatoes, diced", "1 jalapeño, minced", "1/4 cup cilantro, chopped", "1 tsp salt", "Tortilla chips for serving"],
+        "instructions": "Mash avocados with lime juice. Mix in onion, tomatoes, jalapeño, cilantro, and salt. Serve immediately with tortilla chips.",
+        "proteins": ["avocados"],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Rice",
+        "cuisine": "Mexican",
+        "ingredients": ["2 cups white rice", "4 cups chicken broth", "1 onion, chopped", "2 cloves garlic, minced", "1 can diced tomatoes", "1 tsp cumin", "1 tsp chili powder", "2 tbsp oil", "Salt to taste"],
+        "instructions": "Heat oil and cook onion until soft. Add garlic and rice. Cook for 2 minutes. Add tomatoes, broth, and spices. Bring to boil, then simmer for 15 minutes. Season with salt.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Fish Tacos",
+        "cuisine": "Mexican",
+        "ingredients": ["1 lb white fish fillets", "8 corn tortillas", "1 cup cabbage, shredded", "1/2 cup sour cream", "1 lime, juiced", "1 tsp cumin", "1 tsp chili powder", "Salt and pepper to taste", "Cilantro for garnish"],
+        "instructions": "Season fish with cumin, chili powder, salt, and pepper. Cook fish for 3-4 minutes per side. Warm tortillas. Mix sour cream with lime juice. Assemble tacos with fish, cabbage, and sour cream mixture. Garnish with cilantro.",
+        "proteins": ["white fish"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Street Corn",
+        "cuisine": "Mexican",
+        "ingredients": ["4 ears corn", "1/4 cup mayonnaise", "1/4 cup sour cream", "1/2 cup cotija cheese, crumbled", "1 tsp chili powder", "1 lime, juiced", "Cilantro for garnish"],
+        "instructions": "Grill corn until charred. Mix mayonnaise and sour cream. Brush corn with mixture. Sprinkle with cheese, chili powder, and lime juice. Garnish with cilantro.",
+        "proteins": ["cotija cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chicken Tacos",
+        "cuisine": "Mexican",
+        "ingredients": ["1 lb chicken breast, sliced", "8 corn tortillas", "1 onion, sliced", "2 cloves garlic, minced", "1 tsp cumin", "1 tsp chili powder", "1 lime, juiced", "Salt and pepper to taste", "Toppings: lettuce, tomato, cheese, sour cream"],
+        "instructions": "Season chicken with cumin, chili powder, salt, and pepper. Cook chicken with onion and garlic for 5 minutes. Add lime juice. Warm tortillas. Serve chicken with desired toppings.",
+        "proteins": ["chicken breast"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Bean Dip",
+        "cuisine": "Mexican",
+        "ingredients": ["1 can refried beans", "1/2 cup sour cream", "1/2 cup salsa", "1 cup shredded cheese", "1/4 cup green onions, sliced", "Tortilla chips for serving"],
+        "instructions": "Heat refried beans. Layer in dish with sour cream, salsa, and cheese. Microwave until cheese melts. Top with green onions. Serve with tortilla chips.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Ceviche",
+        "cuisine": "Mexican",
+        "ingredients": ["1 lb white fish, cubed", "1 red onion, sliced", "2 jalapeños, sliced", "1/2 cup lime juice", "1/4 cup cilantro, chopped", "1 tsp salt", "Tortilla chips for serving"],
+        "instructions": "Marinate fish in lime juice for 10 minutes. Add onion, jalapeños, cilantro, and salt. Mix well. Serve with tortilla chips.",
+        "proteins": ["white fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Breakfast Burrito",
+        "cuisine": "Mexican",
+        "ingredients": ["4 large flour tortillas", "6 eggs", "1/2 lb chorizo", "1 cup hash browns", "1 cup shredded cheese", "1/4 cup salsa", "Salt and pepper to taste"],
+        "instructions": "Cook chorizo until browned. Add hash browns and cook until crispy. Scramble eggs with salt and pepper. Warm tortillas. Fill with chorizo mixture, eggs, cheese, and salsa. Roll and serve.",
+        "proteins": ["eggs", "chorizo", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Salsa Verde",
+        "cuisine": "Mexican",
+        "ingredients": ["1 lb tomatillos, husked", "2 jalapeños", "1/2 onion, chopped", "2 cloves garlic", "1/4 cup cilantro", "1 tsp salt", "1 lime, juiced"],
+        "instructions": "Boil tomatillos and jalapeños for 5 minutes. Blend with onion, garlic, cilantro, salt, and lime juice. Serve immediately or store in refrigerator.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
       }
     ]
   }

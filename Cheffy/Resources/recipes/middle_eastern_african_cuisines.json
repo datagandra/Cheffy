@@ -442,6 +442,106 @@
         "dietary_restrictions": ["vegetarian", "vegan"],
         "cooking_time": 10,
         "difficulty": "easy"
+      },
+      {
+        "title": "Quick Turkish Delight",
+        "cuisine": "Turkish",
+        "ingredients": ["1 cup sugar", "1/2 cup water", "1/4 cup cornstarch", "1/4 cup rose water", "1/4 cup pistachios, chopped", "Powdered sugar for dusting"],
+        "instructions": "Heat sugar and water until dissolved. Mix cornstarch with rose water. Add to sugar mixture and cook until thick. Add pistachios. Pour into pan and cool. Cut into squares and dust with powdered sugar.",
+        "proteins": ["pistachios"],
+        "dietary_restrictions": ["vegetarian", "vegan", "contains_nuts"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Turkish Tea",
+        "cuisine": "Turkish",
+        "ingredients": ["4 cups water", "2 tbsp black tea leaves", "2 tbsp sugar", "Turkish tea glasses"],
+        "instructions": "Boil water in teapot. Add tea leaves and steep for 3 minutes. Add sugar to taste. Serve in traditional Turkish tea glasses.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Persian Rice",
+        "cuisine": "Persian",
+        "ingredients": ["2 cups basmati rice", "4 cups water", "2 tbsp butter", "1 tsp saffron", "1/4 cup barberries", "Salt to taste"],
+        "instructions": "Wash and soak rice for 10 minutes. Boil rice until 70% done. Drain. Heat butter and add saffron. Layer rice in pot. Add barberries. Cover and cook on low for 15 minutes. Serve with crispy bottom layer.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Lebanese Tabbouleh",
+        "cuisine": "Lebanese",
+        "ingredients": ["1 cup bulgur wheat", "2 cups boiling water", "2 tomatoes, diced", "1 cucumber, diced", "1/2 cup parsley, chopped", "1/4 cup mint, chopped", "3 tbsp olive oil", "2 tbsp lemon juice", "Salt to taste"],
+        "instructions": "Soak bulgur in boiling water for 10 minutes. Drain and cool. Mix with tomatoes, cucumber, parsley, and mint. Whisk olive oil, lemon juice, and salt. Toss with salad. Chill for 10 minutes before serving.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Moroccan Tagine",
+        "cuisine": "Moroccan",
+        "ingredients": ["1 lb chicken, cubed", "1 onion, chopped", "2 cloves garlic, minced", "1 tsp ginger", "1 tsp cumin", "1 tsp cinnamon", "1 can chickpeas", "1/4 cup dried apricots", "2 cups chicken broth", "Salt and pepper to taste"],
+        "instructions": "Brown chicken with onion and garlic. Add spices and cook for 1 minute. Add chickpeas, apricots, and broth. Simmer for 15 minutes until chicken is cooked. Season with salt and pepper.",
+        "proteins": ["chicken", "chickpeas"],
+        "dietary_restrictions": [],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Egyptian Ful Medames",
+        "cuisine": "Egyptian",
+        "ingredients": ["2 cans fava beans", "2 cloves garlic, minced", "1/4 cup olive oil", "1 lemon, juiced", "1 tsp cumin", "Salt and pepper to taste", "Pita bread for serving"],
+        "instructions": "Mash fava beans with garlic. Add olive oil, lemon juice, cumin, salt, and pepper. Mix well. Serve with pita bread.",
+        "proteins": ["fava beans"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Israeli Shakshuka",
+        "cuisine": "Israeli",
+        "ingredients": ["4 eggs", "1 can diced tomatoes", "1 onion, chopped", "2 cloves garlic, minced", "1 bell pepper, chopped", "1 tsp cumin", "1 tsp paprika", "2 tbsp olive oil", "Salt and pepper to taste", "Fresh herbs for garnish"],
+        "instructions": "Heat oil and cook onion and bell pepper until soft. Add garlic and spices. Add tomatoes and simmer for 5 minutes. Make wells and crack eggs into them. Cover and cook for 5 minutes until eggs are set. Garnish with herbs.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Ethiopian Injera",
+        "cuisine": "Ethiopian",
+        "ingredients": ["2 cups teff flour", "2 cups water", "1 tsp salt", "1 tsp baking powder", "Oil for cooking"],
+        "instructions": "Mix teff flour with water and salt. Let ferment for 2 hours. Add baking powder. Heat oil in pan. Pour batter and cook until bubbles form. Flip and cook other side. Serve with stews.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick South African Bobotie",
+        "cuisine": "South African",
+        "ingredients": ["1 lb ground beef", "1 onion, chopped", "2 cloves garlic, minced", "1 apple, grated", "1/4 cup raisins", "1 tsp curry powder", "1 tsp turmeric", "2 eggs", "1 cup milk", "Salt and pepper to taste"],
+        "instructions": "Cook beef with onion and garlic until browned. Add apple, raisins, and spices. Season with salt and pepper. Place in baking dish. Beat eggs with milk and pour over meat. Bake at 350°F for 20 minutes until set.",
+        "proteins": ["ground beef", "eggs"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 25,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Nigerian Jollof Rice",
+        "cuisine": "Nigerian",
+        "ingredients": ["2 cups rice", "1 can diced tomatoes", "1 onion, chopped", "2 cloves garlic, minced", "1 bell pepper, chopped", "1 tsp thyme", "1 tsp curry powder", "2 cups chicken broth", "2 tbsp oil", "Salt and pepper to taste"],
+        "instructions": "Heat oil and cook onion until soft. Add garlic, bell pepper, and spices. Add tomatoes and cook for 5 minutes. Add rice and broth. Bring to boil, then simmer for 15 minutes. Season with salt and pepper.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 20,
+        "difficulty": "easy"
       }
     ]
   }

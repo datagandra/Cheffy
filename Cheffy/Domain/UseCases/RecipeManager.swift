@@ -616,8 +616,8 @@ class RecipeManager: ObservableObject {
                     title: title,
                     cuisine: cuisine,
                     difficulty: difficulty,
-                    prepTime: max(5, cookingTime / 3),
-                    cookTime: max(10, cookingTime * 2 / 3),
+                    prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
+                    cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
                     servings: servings,
                     ingredients: ingredients.map { parseIngredient(from: $0) },
                     steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
@@ -721,8 +721,8 @@ class RecipeManager: ObservableObject {
                     title: title,
                     cuisine: cuisine,
                     difficulty: difficulty,
-                    prepTime: max(5, cookingTime / 3),
-                    cookTime: max(10, cookingTime * 2 / 3),
+                    prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
+                    cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
                     servings: servings,
                     ingredients: ingredients.map { parseIngredient(from: $0) },
                     steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
@@ -790,8 +790,8 @@ class RecipeManager: ObservableObject {
                 title: title,
                 cuisine: cuisine,
                 difficulty: difficulty,
-                prepTime: max(5, cookingTime / 3),
-                cookTime: max(10, cookingTime * 2 / 3),
+                prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
+                cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
                 servings: servings,
                 ingredients: ingredients.map { parseIngredient(from: $0) },
                 steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],

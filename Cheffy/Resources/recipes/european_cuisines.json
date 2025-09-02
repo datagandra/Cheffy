@@ -154,6 +154,106 @@
         "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 30,
         "difficulty": "medium"
+      },
+      {
+        "title": "Quick French Onion Soup",
+        "cuisine": "French",
+        "ingredients": ["2 large onions, sliced", "2 tbsp butter", "4 cups beef broth", "1/4 cup white wine", "1 tsp thyme", "Salt and pepper to taste", "4 slices French bread", "1 cup Gruyère cheese, grated"],
+        "instructions": "Melt butter and cook onions until caramelized. Add broth, wine, and thyme. Simmer for 10 minutes. Season with salt and pepper. Top with bread and cheese. Broil until cheese melts. Serve hot.",
+        "proteins": ["gruyère cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Croque Monsieur",
+        "cuisine": "French",
+        "ingredients": ["4 slices bread", "4 slices ham", "4 slices Gruyère cheese", "2 tbsp butter", "2 tbsp flour", "1 cup milk", "1/4 tsp nutmeg", "Salt and pepper to taste"],
+        "instructions": "Make béchamel sauce with butter, flour, milk, nutmeg, salt, and pepper. Layer ham and cheese between bread slices. Top with béchamel sauce. Broil until golden. Serve hot.",
+        "proteins": ["ham", "gruyère cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Italian Bruschetta",
+        "cuisine": "Italian",
+        "ingredients": ["4 slices ciabatta bread", "2 large tomatoes, diced", "2 cloves garlic, minced", "1/4 cup fresh basil, chopped", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper to taste"],
+        "instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Carbonara",
+        "cuisine": "Italian",
+        "ingredients": ["8 oz spaghetti", "4 eggs", "1/2 cup Parmesan cheese, grated", "4 slices bacon, diced", "2 cloves garlic, minced", "Black pepper to taste", "Salt to taste"],
+        "instructions": "Cook pasta according to package directions. Cook bacon until crispy. Beat eggs with Parmesan and black pepper. Toss hot pasta with bacon and garlic. Remove from heat and add egg mixture. Toss quickly until creamy. Serve immediately.",
+        "proteins": ["eggs", "bacon", "parmesan cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanish Tortilla",
+        "cuisine": "Spanish",
+        "ingredients": ["4 eggs", "2 potatoes, sliced thin", "1 onion, sliced", "3 tbsp olive oil", "Salt and pepper to taste"],
+        "instructions": "Cook potatoes and onion in olive oil until tender. Beat eggs with salt and pepper. Add potato mixture to eggs. Cook in pan until set. Flip and cook other side. Serve warm or cold.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 18,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick German Schnitzel",
+        "cuisine": "German",
+        "ingredients": ["4 pork cutlets", "1/2 cup flour", "2 eggs, beaten", "1 cup breadcrumbs", "2 tbsp butter", "2 tbsp oil", "Salt and pepper to taste", "Lemon wedges for serving"],
+        "instructions": "Season cutlets with salt and pepper. Dredge in flour, then egg, then breadcrumbs. Heat butter and oil. Cook cutlets for 3-4 minutes per side until golden. Serve with lemon wedges.",
+        "proteins": ["pork cutlets", "eggs"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick British Fish and Chips",
+        "cuisine": "British",
+        "ingredients": ["4 white fish fillets", "1 cup flour", "1 tsp baking powder", "1 cup beer", "4 large potatoes, cut into fries", "Oil for frying", "Salt and pepper to taste", "Malt vinegar for serving"],
+        "instructions": "Cut potatoes into fries and fry until golden. Mix flour, baking powder, and beer for batter. Season fish with salt and pepper. Dip fish in batter and fry until golden. Serve with fries and malt vinegar.",
+        "proteins": ["white fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Irish Stew",
+        "cuisine": "Irish",
+        "ingredients": ["1 lb lamb, cubed", "4 potatoes, cubed", "2 carrots, sliced", "1 onion, chopped", "2 cups beef broth", "1 tsp thyme", "Salt and pepper to taste", "Fresh parsley for garnish"],
+        "instructions": "Brown lamb in pot. Add vegetables and cook for 5 minutes. Add broth and thyme. Simmer for 15 minutes until vegetables are tender. Season with salt and pepper. Garnish with parsley.",
+        "proteins": ["lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Swiss Fondue",
+        "cuisine": "Swiss",
+        "ingredients": ["1 cup Gruyère cheese, grated", "1 cup Emmental cheese, grated", "1 cup white wine", "2 tbsp cornstarch", "1 clove garlic", "1/4 tsp nutmeg", "Bread cubes for dipping"],
+        "instructions": "Rub fondue pot with garlic. Heat wine until simmering. Mix cheeses with cornstarch. Add cheese gradually, stirring until melted. Add nutmeg. Serve with bread cubes for dipping.",
+        "proteins": ["gruyère cheese", "emmental cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Austrian Wiener Schnitzel",
+        "cuisine": "Austrian",
+        "ingredients": ["4 veal cutlets", "1/2 cup flour", "2 eggs, beaten", "1 cup breadcrumbs", "4 tbsp butter", "Salt and pepper to taste", "Lemon wedges for serving"],
+        "instructions": "Pound cutlets thin. Season with salt and pepper. Dredge in flour, then egg, then breadcrumbs. Heat butter and cook cutlets for 2-3 minutes per side until golden. Serve with lemon wedges.",
+        "proteins": ["veal", "eggs"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
       }
     ]
   }
