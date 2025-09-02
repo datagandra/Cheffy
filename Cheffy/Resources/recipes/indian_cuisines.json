@@ -24,83 +24,193 @@
       {
         "title": "Palak Paneer",
         "cuisine": "Indian",
-        "ingredients": ["1.5 lbs fresh baby spinach, washed and chopped", "8 oz paneer, cut into 1-inch cubes", "1 large yellow onion, finely diced", "6 cloves garlic, minced", "2-inch piece fresh ginger, grated", "2 medium tomatoes, finely diced", "1 green chili, slit lengthwise", "1 tsp cumin seeds", "1 tbsp garam masala", "1/2 tsp turmeric powder", "1/2 tsp red chili powder", "1/4 tsp ground nutmeg", "1/3 cup heavy cream", "3 tbsp ghee", "1/4 cup raw cashews", "1/2 cup water", "1 tsp kosher salt", "1/2 tsp freshly ground black pepper", "1 tbsp butter", "1 tsp dried fenugreek leaves", "Fresh cream for garnish"],
-        "instructions": "Blanch spinach in boiling water for 2 minutes, then blend to a smooth paste. Heat ghee in a pan and add cumin seeds. Add diced onion and cook until translucent. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add spinach paste, turmeric, chili powder, and garam masala. Cook for 5 minutes. Add paneer cubes and heavy cream. Simmer for 5 minutes until paneer is heated through. Garnish with cashews and serve hot with naan or rice.",
+        "ingredients": ["1 lb fresh spinach leaves", "8 oz paneer (Indian cottage cheese), cubed", "2 medium onions, chopped", "4 cloves garlic, minced", "1-inch piece ginger, grated", "2 green chilies, chopped", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric powder", "1 tsp red chili powder", "1 tsp coriander powder", "1/2 cup heavy cream", "2 tbsp ghee", "1 tsp salt", "1/2 tsp sugar", "1 tbsp lemon juice", "Fresh cilantro for garnish"],
+        "instructions": "Blanch spinach leaves in boiling water for 2 minutes, then blend to smooth paste. Heat ghee in a pan and add cumin seeds. Add chopped onions and cook until golden. Add garlic, ginger, and green chilies. Add spices and cook for 1 minute. Add spinach paste and cook for 5 minutes. Add cream, salt, and sugar. Gently add paneer cubes and simmer for 5 minutes. Add lemon juice and garnish with cilantro. Serve hot with naan or rice.",
         "proteins": ["paneer"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 30,
-        "difficulty": "easy"
+        "difficulty": "medium"
       },
       {
         "title": "Rogan Josh",
         "cuisine": "Indian",
-        "ingredients": ["1 lb lamb shoulder, cubed", "2 large onions, diced", "4 cloves garlic, minced", "1 inch ginger, grated", "2 tbsp Kashmiri chili powder", "1 tsp turmeric", "1 tsp garam masala", "1/2 cup yogurt", "1/4 cup ghee", "4 green cardamom pods", "4 cloves", "2 cinnamon sticks", "1 bay leaf", "1 cup water", "1/4 cup fresh cilantro", "Salt to taste"],
-        "instructions": "Heat ghee in a large pot and add whole spices (cardamom, cloves, cinnamon, bay leaf). Add diced onions and cook until golden brown. Add minced garlic and grated ginger, cook for 2 minutes. Add lamb cubes and brown on all sides. Add Kashmiri chili powder, turmeric, and garam masala. Cook for 2 minutes until spices are fragrant. Add yogurt and water. Cover and simmer for 1.5 hours until lamb is tender. Garnish with fresh cilantro and serve hot with naan bread.",
-        "proteins": ["lamb shoulder"],
+        "ingredients": ["2 lbs lamb shoulder, cut into 2-inch pieces", "2 large onions, sliced", "6 cloves garlic, minced", "2-inch piece ginger, grated", "1 cup plain yogurt", "2 tbsp Kashmiri red chili powder", "1 tsp turmeric powder", "2 tsp fennel seeds", "1 tsp cumin seeds", "1 tsp coriander seeds", "4 green cardamom pods", "4 cloves", "2 cinnamon sticks", "2 bay leaves", "1/2 cup ghee", "1 tsp salt", "1/2 cup water", "Fresh cilantro for garnish"],
+        "instructions": "Heat ghee in a large pot and add whole spices. Add sliced onions and cook until golden brown. Add garlic and ginger, cook for 2 minutes. Add lamb pieces and brown on all sides. Add yogurt, chili powder, and turmeric. Cook for 5 minutes. Add water, cover, and simmer for 1.5 hours until lamb is tender. Garnish with cilantro and serve with rice or naan.",
+        "proteins": ["lamb"],
         "dietary_restrictions": ["contains_dairy"],
         "cooking_time": 120,
-        "difficulty": "medium"
+        "difficulty": "hard"
       },
       {
         "title": "Masala Dosa",
         "cuisine": "Indian",
-        "ingredients": ["2 cups rice", "1 cup urad dal", "1/2 cup poha", "1/4 cup fenugreek seeds", "1 large potato, boiled and mashed", "1 large onion, diced", "2 green chilies, minced", "1 tsp mustard seeds", "1 tsp turmeric", "1/2 cup coconut chutney", "1/2 cup sambar", "1/4 cup oil", "Salt to taste"],
-        "instructions": "Soak rice, urad dal, and fenugreek seeds separately for 6 hours. Grind rice and dal separately to smooth batter. Mix both batters and add salt. Ferment overnight. For potato filling, heat oil and add mustard seeds. Add diced onion and green chilies. Add mashed potato and turmeric. Cook for 5 minutes. Heat a dosa tawa and spread batter in circular motion. Cook until golden. Add potato filling and fold. Serve hot with coconut chutney and sambar.",
-        "proteins": ["urad dal"],
-        "dietary_restrictions": ["vegetarian", "vegan", "gluten_free"],
-        "cooking_time": 60,
+        "ingredients": ["2 cups rice", "1/2 cup urad dal (black gram)", "1/4 cup chana dal", "1 tsp fenugreek seeds", "Salt to taste", "Oil for cooking", "For filling: 4 medium potatoes, boiled and mashed", "1 large onion, sliced", "2 green chilies, chopped", "1 tsp mustard seeds", "1 tsp cumin seeds", "1/2 tsp turmeric powder", "1 tsp red chili powder", "1/2 tsp garam masala", "2 tbsp oil", "Salt to taste", "Fresh cilantro for garnish"],
+        "instructions": "Soak rice and dals separately for 6 hours. Grind to smooth batter and ferment overnight. For filling, heat oil and add mustard and cumin seeds. Add onions and green chilies, cook until soft. Add spices and mashed potatoes. Mix well and set aside. Heat a griddle and pour batter to make thin crepes. Cook until golden, add filling, and fold. Serve hot with coconut chutney and sambar.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 45,
         "difficulty": "hard"
       },
       {
         "title": "Tandoori Chicken",
         "cuisine": "Indian",
-        "ingredients": ["2 lbs chicken pieces", "1 cup yogurt", "2 tbsp tandoori masala", "1 tbsp ginger paste", "1 tbsp garlic paste", "1 tsp red chili powder", "1 tsp turmeric", "1/2 tsp garam masala", "2 tbsp mustard oil", "1 lemon, juiced", "1/4 cup fresh cilantro", "Salt to taste"],
-        "instructions": "Make deep cuts in chicken pieces. Mix yogurt, tandoori masala, ginger paste, garlic paste, red chili powder, turmeric, garam masala, mustard oil, lemon juice, and salt. Marinate chicken in this mixture for 4 hours. Preheat oven to 400°F. Place marinated chicken on a baking sheet and bake for 30-35 minutes until cooked through and slightly charred. Garnish with fresh cilantro and serve hot with mint chutney and onion salad.",
+        "ingredients": ["2 lbs chicken pieces (legs and thighs)", "1 cup plain yogurt", "2 tbsp tandoori masala", "1 tbsp red chili powder", "1 tsp turmeric powder", "1 tsp garam masala", "2 tbsp lemon juice", "4 cloves garlic, minced", "2-inch piece ginger, grated", "1 tsp salt", "2 tbsp oil", "Red food coloring (optional)", "Fresh cilantro and lemon wedges for garnish"],
+        "instructions": "Make deep cuts in chicken pieces. Mix yogurt with all spices, garlic, ginger, lemon juice, and salt. Marinate chicken for at least 4 hours or overnight. Preheat oven to 400°F. Place chicken on a rack and bake for 25-30 minutes, turning once. Brush with oil and broil for 5 minutes until charred. Garnish with cilantro and serve with lemon wedges.",
         "proteins": ["chicken"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 75,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Dal Makhani",
-        "cuisine": "Indian",
-        "ingredients": ["1 cup black lentils", "1/4 cup kidney beans", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric", "1/2 cup heavy cream", "2 tbsp butter", "1/4 cup fresh cilantro", "1 cup water", "Salt to taste"],
-        "instructions": "Soak black lentils and kidney beans overnight. Pressure cook for 3 whistles or boil until soft. Heat butter in a pan and add cumin seeds. Add diced onion and cook until golden. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add cooked lentils and beans. Add turmeric, garam masala, and salt. Simmer for 20 minutes until thick. Add heavy cream and simmer for 5 minutes. Garnish with fresh cilantro and serve hot with rice or naan.",
-        "proteins": ["black lentils", "kidney beans"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Chicken Tikka Masala",
-        "cuisine": "Indian",
-        "ingredients": ["1 lb chicken breast, cubed", "1 cup yogurt", "2 tbsp tikka masala", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1/2 cup heavy cream", "1/4 cup butter", "1 tsp garam masala", "1 tsp turmeric", "1/2 tsp chili powder", "1/4 cup fresh cilantro", "2 tbsp vegetable oil", "1 cup chicken stock"],
-        "instructions": "Marinate chicken breast cubes in yogurt and tikka masala for 30 minutes. Heat vegetable oil in a large pan and sauté diced onion until golden. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add marinated chicken and cook for 8-10 minutes until chicken is done. Add chicken stock and simmer for 10 minutes. Add heavy cream, butter, garam masala, turmeric, and chili powder. Simmer for 5 minutes until sauce thickens. Garnish with fresh cilantro and serve hot with naan bread.",
-        "proteins": ["chicken breast"],
         "dietary_restrictions": ["contains_dairy"],
         "cooking_time": 50,
         "difficulty": "medium"
       },
       {
+        "title": "Dal Makhani",
+        "cuisine": "Indian",
+        "ingredients": ["1 cup whole black urad dal", "1/4 cup kidney beans", "1 large onion, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 cup tomato puree", "1/2 cup heavy cream", "2 tbsp butter", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric powder", "1 tsp red chili powder", "1 tsp salt", "Fresh cilantro for garnish"],
+        "instructions": "Soak dals overnight and pressure cook until soft. Heat butter and add cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add tomato puree and spices. Add cooked dals and simmer for 30 minutes. Add cream and cook for 10 minutes. Garnish with cilantro and serve with rice or naan.",
+        "proteins": ["lentils", "beans"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 60,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Chicken Tikka Masala",
+        "cuisine": "Indian",
+        "ingredients": ["1.5 lbs boneless chicken, cubed", "1 cup plain yogurt", "2 tbsp tandoori masala", "1 large onion, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "1 cup tomato puree", "1/2 cup heavy cream", "2 tbsp butter", "1 tsp garam masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "1 tsp salt", "1 tsp sugar", "Fresh cilantro for garnish"],
+        "instructions": "Marinate chicken in yogurt and tandoori masala for 1 hour. Heat butter and cook onions until golden. Add garlic and ginger. Add tomato puree and spices. Add marinated chicken and cook for 15 minutes. Add cream and simmer for 10 minutes. Garnish with cilantro and serve with rice or naan.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
         "title": "Aloo Gobi",
         "cuisine": "Indian",
-        "ingredients": ["1 lb potatoes, cubed", "1 lb cauliflower, florets", "1 large onion, diced", "3 cloves garlic, minced", "1 inch ginger, grated", "2 tomatoes, diced", "1 tsp cumin seeds", "1 tsp turmeric", "1 tsp garam masala", "1/2 tsp chili powder", "1/4 cup fresh cilantro", "2 tbsp vegetable oil", "Salt to taste"],
-        "instructions": "Heat vegetable oil in a large pan and add cumin seeds. Add diced onion and cook until translucent. Add minced garlic and grated ginger, cook for 2 minutes. Add diced tomatoes and cook until soft. Add potato cubes and cook for 5 minutes. Add cauliflower florets, turmeric, garam masala, chili powder, and salt. Cook for 15-20 minutes until vegetables are tender. Garnish with fresh cilantro and serve hot with rice or roti.",
+        "ingredients": ["1 medium cauliflower, cut into florets", "3 medium potatoes, cubed", "1 large onion, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 tsp cumin seeds", "1 tsp turmeric powder", "1 tsp red chili powder", "1 tsp coriander powder", "1/2 tsp garam masala", "2 tbsp oil", "1 tsp salt", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add spices and cook for 1 minute. Add potatoes and cook for 5 minutes. Add cauliflower and cook for 10-15 minutes until tender. Garnish with cilantro and serve hot.",
         "proteins": ["potatoes"],
-        "dietary_restrictions": ["vegetarian", "vegan", "gluten_free"],
-        "cooking_time": 40,
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 30,
         "difficulty": "easy"
       },
       {
         "title": "Gulab Jamun",
         "cuisine": "Indian",
-        "ingredients": ["1 cup milk powder", "1/4 cup all-purpose flour", "1/4 tsp baking soda", "2 tbsp ghee", "1/4 cup milk", "1 cup sugar", "1 cup water", "4 green cardamom pods", "1/4 tsp rose water", "1/4 cup pistachios, chopped"],
-        "instructions": "Mix milk powder, all-purpose flour, and baking soda. Add ghee and milk to form a soft dough. Shape into small balls. Heat oil and deep fry balls until golden brown. For syrup, boil sugar and water with cardamom pods for 10 minutes. Add rose water. Soak fried balls in warm syrup for 30 minutes. Garnish with chopped pistachios and serve warm or cold.",
+        "ingredients": ["1 cup milk powder", "1/4 cup all-purpose flour", "1/4 tsp baking soda", "2 tbsp ghee", "3-4 tbsp milk", "Oil for deep frying", "For syrup: 1.5 cups sugar", "1 cup water", "4 green cardamom pods", "1 tsp rose water", "Few saffron strands"],
+        "instructions": "Mix milk powder, flour, and baking soda. Add ghee and enough milk to make soft dough. Make small balls and deep fry until golden brown. For syrup, boil sugar and water with cardamom. Add rose water and saffron. Soak fried balls in warm syrup for 30 minutes. Serve warm or cold.",
         "proteins": ["milk powder"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Chole Bhature",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups chickpeas, soaked overnight", "2 large onions, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 cup tomato puree", "1 tsp cumin seeds", "1 tsp garam masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "1 tsp coriander powder", "2 tbsp oil", "Salt to taste", "For bhature: 2 cups all-purpose flour", "1/2 cup yogurt", "1 tsp salt", "1 tsp sugar", "Oil for deep frying"],
+        "instructions": "Pressure cook chickpeas until soft. Heat oil and add cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add tomato puree and spices. Add cooked chickpeas and simmer for 20 minutes. For bhature, mix flour with yogurt, salt, and sugar. Knead into soft dough and rest for 2 hours. Roll into circles and deep fry until puffed. Serve hot with chole.",
+        "proteins": ["chickpeas"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 60,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Rajma Masala",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups kidney beans, soaked overnight", "2 large onions, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 cup tomato puree", "1 tsp cumin seeds", "1 tsp garam masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "1 tsp coriander powder", "2 tbsp oil", "1 tsp salt", "Fresh cilantro for garnish"],
+        "instructions": "Pressure cook kidney beans until soft. Heat oil and add cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add tomato puree and spices. Add cooked beans and simmer for 30 minutes. Garnish with cilantro and serve with rice.",
+        "proteins": ["kidney beans"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 60,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Fish Curry",
+        "cuisine": "Indian",
+        "ingredients": ["1.5 lbs fish fillets (any white fish)", "1 large onion, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 cup coconut milk", "1 tsp mustard seeds", "1 tsp cumin seeds", "1 tsp turmeric powder", "1 tsp red chili powder", "1 tsp coriander powder", "2 tbsp oil", "1 tsp salt", "Fresh curry leaves", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add mustard and cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add spices and cook for 1 minute. Add coconut milk and bring to boil. Add fish pieces and cook for 10-15 minutes until done. Add curry leaves and garnish with cilantro. Serve with rice.",
+        "proteins": ["fish"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 35,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Samosa",
+        "cuisine": "Indian",
+        "ingredients": ["For dough: 2 cups all-purpose flour", "1/4 cup oil", "1/2 tsp salt", "Water as needed", "For filling: 3 medium potatoes, boiled and mashed", "1/2 cup green peas", "1 large onion, chopped", "2 green chilies, chopped", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric powder", "1 tsp red chili powder", "2 tbsp oil", "Salt to taste", "Oil for deep frying"],
+        "instructions": "Make dough with flour, oil, and salt. For filling, heat oil and add cumin seeds. Add onions and chilies. Add spices and mashed potatoes with peas. Mix well and cool. Roll dough into circles, add filling, and seal into triangles. Deep fry until golden brown. Serve hot with chutney.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Rasgulla",
+        "cuisine": "Indian",
+        "ingredients": ["1 liter full-fat milk", "2 tbsp lemon juice", "1 cup sugar", "3 cups water", "2 green cardamom pods", "1 tsp rose water"],
+        "instructions": "Boil milk and add lemon juice to curdle. Strain through muslin cloth and rinse. Knead the paneer until smooth. Make small balls and set aside. Boil sugar and water with cardamom. Add paneer balls and cook for 15 minutes. Add rose water and cool. Serve chilled.",
+        "proteins": ["milk"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 40,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Kadai Paneer",
+        "cuisine": "Indian",
+        "ingredients": ["8 oz paneer, cubed", "2 large onions, sliced", "2 bell peppers, sliced", "4 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 cup tomato puree", "1 tsp cumin seeds", "1 tsp garam masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "1 tsp coriander powder", "2 tbsp oil", "1 tsp salt", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add tomato puree and spices. Add bell peppers and cook for 5 minutes. Add paneer cubes and cook for 5 minutes. Garnish with cilantro and serve hot.",
+        "proteins": ["paneer"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 30,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Mutton Curry",
+        "cuisine": "Indian",
+        "ingredients": ["2 lbs mutton, cut into pieces", "2 large onions, chopped", "6 cloves garlic, minced", "2-inch piece ginger, grated", "2 green chilies, chopped", "1 cup tomato puree", "1 tsp cumin seeds", "1 tsp garam masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "1 tsp coriander powder", "2 tbsp oil", "1 tsp salt", "Fresh cilantro for garnish"],
+        "instructions": "Heat oil and add cumin seeds. Add onions and cook until golden. Add garlic, ginger, and chilies. Add mutton and brown on all sides. Add tomato puree and spices. Cover and cook for 1.5 hours until tender. Garnish with cilantro and serve with rice or naan.",
+        "proteins": ["mutton"],
+        "dietary_restrictions": [],
+        "cooking_time": 120,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Malai Kofta",
+        "cuisine": "Indian",
+        "ingredients": ["For koftas: 3 medium potatoes, boiled and mashed", "1/2 cup paneer, grated", "2 tbsp cornflour", "1 tsp garam masala", "Salt to taste", "Oil for deep frying", "For gravy: 2 large onions, chopped", "4 cloves garlic, minced", "2-inch piece ginger, grated", "1 cup tomato puree", "1/2 cup heavy cream", "1 tsp garam masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "2 tbsp oil", "Salt to taste"],
+        "instructions": "Mix mashed potatoes with paneer, cornflour, and spices. Make balls and deep fry until golden. For gravy, heat oil and cook onions until golden. Add garlic and ginger. Add tomato puree and spices. Add cream and simmer. Add koftas and cook for 5 minutes. Serve hot with naan or rice.",
+        "proteins": ["paneer", "potatoes"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 50,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Chicken Biryani",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups basmati rice", "1.5 lbs chicken, cut into pieces", "1 large onion, sliced", "6 cloves garlic, minced", "2-inch piece ginger, grated", "1 cup plain yogurt", "2 tbsp biryani masala", "1 tsp red chili powder", "1/2 tsp turmeric powder", "1 tsp salt", "4 green cardamom pods", "4 cloves", "2 cinnamon sticks", "2 bay leaves", "1/2 cup ghee", "1/2 cup crispy fried onions", "1/3 cup cashews", "1/3 cup raisins", "Pinch of saffron", "1/2 cup warm milk"],
+        "instructions": "Soak rice for 30 minutes. Marinate chicken in yogurt and spices for 1 hour. Heat ghee and add whole spices. Add onions and cook until golden. Add garlic and ginger. Add marinated chicken and cook for 10 minutes. Layer half the rice over chicken. Add fried onions, cashews, and raisins. Layer remaining rice. Soak saffron in milk and drizzle over rice. Cover and cook on low heat for 25 minutes. Let rest for 10 minutes before serving.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": ["contains_dairy", "contains_nuts"],
+        "cooking_time": 90,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Aloo Paratha",
+        "cuisine": "Indian",
+        "ingredients": ["2 cups whole wheat flour", "1/2 tsp salt", "Water as needed", "For filling: 3 medium potatoes, boiled and mashed", "1 large onion, chopped", "2 green chilies, chopped", "1 tsp cumin seeds", "1 tsp garam masala", "1/2 tsp turmeric powder", "1 tsp red chili powder", "2 tbsp oil", "Salt to taste", "Ghee for cooking"],
+        "instructions": "Make dough with flour and salt. For filling, heat oil and add cumin seeds. Add onions and chilies. Add spices and mashed potatoes. Mix well and cool. Roll dough into circles, add filling, and seal. Roll again into paratha. Cook on griddle with ghee until golden on both sides. Serve hot with yogurt and pickle.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 40,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Kheer",
+        "cuisine": "Indian",
+        "ingredients": ["1/2 cup basmati rice", "1 liter full-fat milk", "1/2 cup sugar", "1/4 cup chopped nuts (almonds, cashews, pistachios)", "1/4 cup raisins", "1 tsp cardamom powder", "1 tsp rose water", "Saffron strands for garnish"],
+        "instructions": "Wash and soak rice for 30 minutes. Boil milk in a heavy-bottomed pan. Add rice and cook on low heat for 30 minutes, stirring frequently. Add sugar and cook for 10 minutes. Add nuts, raisins, and cardamom powder. Add rose water and saffron. Cook for 5 minutes. Serve hot or cold.",
+        "proteins": ["milk", "nuts"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
+        "cooking_time": 50,
         "difficulty": "medium"
       }
     ]
   }
-} 
+}

@@ -1,128 +1,338 @@
 {
   "cuisines": {
-    "Italian": [
-      {
-        "title": "Spaghetti Carbonara",
-        "cuisine": "Italian",
-        "ingredients": ["1 lb high-quality spaghetti", "4 large egg yolks", "2 whole large eggs", "3/4 cup freshly grated Pecorino Romano", "1/2 cup freshly grated Parmigiano-Reggiano", "6 oz pancetta or guanciale, diced", "4 cloves garlic, thinly sliced", "1 tsp freshly cracked black pepper", "1/2 cup reserved pasta cooking water", "1 tbsp kosher salt for pasta water", "2 tbsp extra virgin olive oil", "Fresh parsley for garnish"],
-        "instructions": "Cook spaghetti in salted water until al dente, reserving 1/4 cup pasta water. In a large pan, cook pancetta until crispy. Add garlic and cook for 1 minute. In a bowl, whisk eggs, cheeses, and black pepper. Drain pasta and add to pan with pancetta. Remove from heat and quickly stir in egg mixture and pasta water. The heat from the pasta will cook the eggs into a creamy sauce. Serve immediately with extra cheese."
-      },
-      {
-        "title": "Margherita Pizza",
-        "cuisine": "Italian",
-        "ingredients": ["2.5 cups 00 flour (or bread flour)", "1 tsp active dry yeast", "1.5 tsp kosher salt", "3/4 cup warm water (110°F)", "2 tbsp extra virgin olive oil", "1/2 cup San Marzano tomato sauce", "2 cloves garlic, minced", "8 oz fresh mozzarella di bufala, torn", "1/3 cup fresh basil leaves", "3 tbsp extra virgin olive oil", "1/2 tsp sea salt", "1/4 tsp freshly ground black pepper", "Semolina flour for dusting"],
-        "instructions": "Mix flour, yeast, and salt. Add warm water and olive oil, knead for 10 minutes. Let rise for 1 hour. Preheat oven to 500°F with pizza stone. Roll out dough and place on stone. Spread tomato sauce, add mozzarella slices, and drizzle with olive oil. Bake for 12-15 minutes until crust is golden. Remove from oven and add fresh basil leaves. Slice and serve hot."
-      },
-      {
-        "title": "Risotto ai Funghi",
-        "cuisine": "Italian",
-        "ingredients": ["1.5 cups Arborio rice", "5 cups warm chicken stock", "8 oz mixed wild mushrooms (porcini, shiitake, cremini), sliced", "1/2 cup dry white wine", "3/4 cup freshly grated Parmigiano-Reggiano", "4 tbsp unsalted butter", "1 small yellow onion, finely diced", "3 cloves garlic, minced", "3 tbsp extra virgin olive oil", "1/4 cup fresh Italian parsley, chopped", "1 tsp kosher salt", "1/2 tsp freshly ground black pepper", "2 tbsp dried porcini mushrooms, soaked and chopped", "1/4 cup heavy cream (optional)"],
-        "instructions": "Heat olive oil in a large pan and sauté onion and garlic until translucent. Add mushrooms and cook until they release moisture. Add Arborio rice and stir for 2 minutes. Pour in white wine and stir until absorbed. Gradually add hot chicken stock, one ladle at a time, stirring constantly. Continue for 18-20 minutes until rice is creamy and al dente. Remove from heat and stir in butter and Parmesan. Garnish with parsley and serve immediately."
-      },
-      {
-        "title": "Osso Buco",
-        "cuisine": "Italian",
-        "ingredients": ["4 large veal shanks (2-inch thick)", "3/4 cup all-purpose flour", "1/3 cup extra virgin olive oil", "1 large yellow onion, diced", "2 large carrots, diced", "2 celery stalks, diced", "6 cloves garlic, minced", "1.5 cups dry white wine", "2.5 cups beef stock", "1 can (14 oz) San Marzano diced tomatoes", "2 tbsp tomato paste", "1 tsp fresh thyme leaves", "2 bay leaves", "1 tsp kosher salt", "1/2 tsp freshly ground black pepper", "2 tbsp fresh sage leaves", "Gremolata: 2 tbsp lemon zest, 3 cloves garlic minced, 1/4 cup parsley"],
-        "instructions": "Dredge veal shanks in flour and brown in olive oil. Remove and set aside. Sauté onion, carrots, celery, and garlic until softened. Add white wine and deglaze pan. Return veal to pan and add beef stock, tomatoes, thyme, and bay leaf. Cover and simmer for 2 hours until meat is tender. Serve with gremolata (lemon zest, garlic, and parsley) and risotto alla Milanese."
-      },
-      {
-        "title": "Tiramisu",
-        "cuisine": "Italian",
-        "ingredients": ["6 egg yolks", "1/2 cup sugar", "1 cup mascarpone cheese", "1 cup heavy cream", "1 package ladyfinger cookies", "1 cup strong espresso, cooled", "2 tbsp coffee liqueur", "1/4 cup cocoa powder", "Dark chocolate for garnish"],
-        "instructions": "Beat egg yolks and sugar until pale and thick. Fold in mascarpone cheese. Whip heavy cream to stiff peaks and fold into mascarpone mixture. Mix espresso and coffee liqueur. Dip ladyfingers in coffee mixture and layer in a dish. Spread half the mascarpone mixture over cookies. Repeat layers. Dust with cocoa powder and refrigerate for 4 hours. Garnish with dark chocolate shavings before serving."
-      },
-      {
-        "title": "Bruschetta",
-        "cuisine": "Italian",
-        "ingredients": ["1 baguette, sliced", "4 ripe tomatoes, diced", "1/4 cup fresh basil, chopped", "2 cloves garlic, minced", "1/4 cup olive oil", "2 tbsp balsamic vinegar", "Salt and pepper to taste", "1/4 cup grated Parmesan cheese"],
-        "instructions": "Toast baguette slices until golden and crispy. In a bowl, combine tomatoes, basil, garlic, olive oil, and balsamic vinegar. Season with salt and pepper. Let mixture sit for 10 minutes to allow flavors to meld. Top each toast slice with tomato mixture and sprinkle with Parmesan cheese. Serve immediately as an appetizer."
-      },
-      {
-        "title": "Chicken Marsala",
-        "cuisine": "Italian",
-        "ingredients": ["4 chicken breasts", "1/2 cup all-purpose flour", "1/4 cup olive oil", "1/2 lb mushrooms, sliced", "1/2 cup Marsala wine", "1 cup chicken stock", "2 tbsp butter", "2 cloves garlic, minced", "1/4 cup fresh parsley, chopped", "Salt and pepper to taste"],
-        "instructions": "Pound chicken breasts to even thickness and season with salt and pepper. Dredge in flour and brown in olive oil. Remove and set aside. Sauté mushrooms and garlic until golden. Add Marsala wine and deglaze pan. Add chicken stock and return chicken to pan. Simmer for 10 minutes until sauce thickens. Stir in butter and parsley. Serve with pasta or mashed potatoes."
-      },
-      {
-        "title": "Minestrone Soup",
-        "cuisine": "Italian",
-        "ingredients": ["2 tbsp olive oil", "1 onion, diced", "2 carrots, diced", "2 celery stalks, diced", "2 cloves garlic, minced", "1 can diced tomatoes", "6 cups vegetable stock", "1 cup cannellini beans", "1 cup small pasta", "1 zucchini, diced", "1 cup spinach", "1/4 cup fresh basil", "1/4 cup grated Parmesan cheese"],
-        "instructions": "Heat olive oil in a large pot and sauté onion, carrots, celery, and garlic until softened. Add tomatoes and vegetable stock. Bring to a boil and add beans and pasta. Simmer for 10 minutes. Add zucchini and cook for 5 minutes. Stir in spinach and basil. Season with salt and pepper. Serve hot with grated Parmesan cheese."
-      },
-      {
-        "title": "Gnocchi alla Sorrentina",
-        "cuisine": "Italian",
-        "ingredients": ["2 lbs potatoes", "2 cups all-purpose flour", "1 egg", "1/2 cup tomato sauce", "1/2 cup fresh mozzarella, diced", "1/4 cup grated Parmesan cheese", "1/4 cup fresh basil", "2 tbsp olive oil", "Salt and pepper to taste"],
-        "instructions": "Boil potatoes until tender, then mash while hot. Mix with flour, egg, and salt to form a dough. Roll into ropes and cut into 1-inch pieces. Press with a fork to create ridges. Boil gnocchi until they float to the surface. Drain and toss with olive oil. Layer with tomato sauce, mozzarella, and Parmesan in a baking dish. Bake at 400°F for 15 minutes until bubbly. Garnish with fresh basil."
-      },
-      {
-        "title": "Panna Cotta",
-        "cuisine": "Italian",
-        "ingredients": ["2 cups heavy cream", "1/4 cup sugar", "1 vanilla bean, split", "2 1/4 tsp gelatin", "3 tbsp cold water", "1/2 cup fresh berries", "1/4 cup berry sauce", "Fresh mint for garnish"],
-        "instructions": "Sprinkle gelatin over cold water and let stand for 5 minutes. Heat cream, sugar, and vanilla bean until steaming. Remove vanilla bean and stir in gelatin until dissolved. Pour into ramekins and refrigerate for 4 hours. To serve, run a knife around edges and invert onto plates. Top with fresh berries, berry sauce, and fresh mint."
-      }
-    ],
     "Greek": [
       {
         "title": "Moussaka",
         "cuisine": "Greek",
-        "ingredients": ["2 large eggplants, sliced", "1 lb ground lamb", "1 large onion, diced", "3 cloves garlic, minced", "1/4 cup red wine", "2 tbsp tomato paste", "1 tsp cinnamon", "1/2 tsp nutmeg", "1/4 cup breadcrumbs", "1/4 cup grated kefalotyri cheese", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "2 egg yolks"],
-        "instructions": "Salt eggplant slices and let drain for 30 minutes. Rinse and pat dry, then fry in olive oil until golden. Brown ground lamb with onion and garlic. Add red wine, tomato paste, cinnamon, and nutmeg. Simmer for 20 minutes. For béchamel sauce, melt butter, add flour and cook for 1 minute. Gradually add milk, whisking until thickened. Remove from heat and stir in egg yolks. Layer half the eggplant in a baking dish, top with meat mixture, then remaining eggplant. Pour béchamel over the top and sprinkle with cheese and breadcrumbs. Bake at 375°F for 45 minutes until golden and bubbly."
-      },
-      {
-        "title": "Souvlaki",
-        "cuisine": "Greek",
-        "ingredients": ["2 lbs pork shoulder, cubed", "1/4 cup olive oil", "1/4 cup lemon juice", "4 cloves garlic, minced", "1 tsp oregano", "1 tsp thyme", "1/2 tsp rosemary", "Salt and pepper to taste", "Pita bread", "Tzatziki sauce", "Sliced tomatoes and onions"],
-        "instructions": "Marinate pork cubes with olive oil, lemon juice, garlic, oregano, thyme, rosemary, salt, and pepper for 4 hours. Thread onto skewers and grill over medium-high heat for 8-10 minutes, turning occasionally, until cooked through and slightly charred. Serve hot with warm pita bread, tzatziki sauce, and sliced tomatoes and onions."
-      },
-      {
-        "title": "Spanakopita",
-        "cuisine": "Greek",
-        "ingredients": ["1 lb fresh spinach, chopped", "1/2 lb feta cheese, crumbled", "1 onion, diced", "4 green onions, sliced", "1/4 cup fresh dill, chopped", "1/4 cup fresh parsley, chopped", "3 eggs", "1/2 cup olive oil", "1 package phyllo dough", "Salt and pepper to taste"],
-        "instructions": "Sauté onion and green onions in olive oil until softened. Add spinach and cook until wilted. Drain excess liquid and let cool. Mix with feta cheese, dill, parsley, eggs, salt, and pepper. Layer 6 sheets of phyllo dough in a baking dish, brushing each with olive oil. Spread spinach mixture over phyllo. Top with 6 more sheets of phyllo, brushing each with oil. Score top layer and bake at 350°F for 45 minutes until golden and crispy."
-      },
-      {
-        "title": "Pastitsio",
-        "cuisine": "Greek",
-        "ingredients": ["1 lb ground beef", "1 onion, diced", "2 cloves garlic, minced", "1 can diced tomatoes", "1 tsp cinnamon", "1/2 tsp nutmeg", "1 lb tubular pasta", "1/2 cup grated kefalotyri cheese", "3 tbsp butter", "3 tbsp flour", "2 cups milk", "2 egg yolks"],
-        "instructions": "Brown ground beef with onion and garlic. Add tomatoes, cinnamon, and nutmeg. Simmer for 20 minutes. Cook pasta until al dente and drain. For béchamel sauce, melt butter, add flour and cook for 1 minute. Gradually add milk, whisking until thickened. Remove from heat and stir in egg yolks. Layer half the pasta in a baking dish, top with meat mixture, then remaining pasta. Pour béchamel over the top and sprinkle with cheese. Bake at 375°F for 30 minutes until golden and bubbly."
-      },
-      {
-        "title": "Greek Salad",
-        "cuisine": "Greek",
-        "ingredients": ["2 large tomatoes, diced", "1 cucumber, diced", "1 red onion, thinly sliced", "1/2 cup kalamata olives", "1/2 cup feta cheese, crumbled", "1/4 cup olive oil", "2 tbsp red wine vinegar", "1 tsp oregano", "Salt and pepper to taste"],
-        "instructions": "Combine tomatoes, cucumber, red onion, olives, and feta cheese in a large bowl. In a small bowl, whisk together olive oil, red wine vinegar, oregano, salt, and pepper. Pour dressing over salad and toss gently to combine. Let sit for 10 minutes to allow flavors to meld. Serve chilled as a refreshing side dish or light meal."
-      },
-      {
-        "title": "Dolmades",
-        "cuisine": "Greek",
-        "ingredients": ["1 jar grape leaves", "1 cup rice", "1 onion, diced", "1/4 cup fresh dill, chopped", "1/4 cup fresh parsley, chopped", "1/4 cup pine nuts", "1/4 cup currants", "1/4 cup olive oil", "1 lemon, juiced", "Salt and pepper to taste"],
-        "instructions": "Rinse grape leaves and pat dry. Cook rice until partially done. Sauté onion in olive oil until softened. Mix rice with onion, dill, parsley, pine nuts, currants, lemon juice, salt, and pepper. Place a grape leaf on a flat surface, vein side up. Put 1 tablespoon of rice mixture in the center. Fold sides over filling and roll tightly. Repeat with remaining leaves and filling. Arrange dolmades in a pot, seam side down. Add water to cover and simmer for 30 minutes. Serve hot or chilled with lemon wedges."
+        "ingredients": [
+          "2 large eggplants, sliced",
+          "1 lb ground lamb",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1 can crushed tomatoes",
+          "2 tbsp tomato paste",
+          "1 tsp cinnamon",
+          "1 tsp oregano",
+          "1/2 tsp nutmeg",
+          "Salt and pepper to taste",
+          "For béchamel: 4 tbsp butter",
+          "1/4 cup all-purpose flour",
+          "2 cups milk",
+          "2 eggs",
+          "1/2 cup grated Parmesan cheese",
+          "1/4 tsp nutmeg"
+        ],
+        "instructions": "Salt eggplant slices and let sit for 30 minutes. Rinse and pat dry. Brown ground lamb with onion and garlic. Add tomatoes, paste, and seasonings. Simmer for 20 minutes. Make béchamel sauce with butter, flour, milk, eggs, cheese, and nutmeg. Layer eggplant, meat sauce, and béchamel in baking dish. Bake at 375°F for 45 minutes until golden.",
+        "proteins": ["ground lamb", "eggs", "parmesan cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 90,
+        "difficulty": "hard"
       },
       {
         "title": "Greek Baklava",
         "cuisine": "Greek",
-        "ingredients": ["1 package phyllo dough", "1 lb walnuts, finely chopped", "1/2 cup sugar", "1 tsp cinnamon", "1/2 tsp ground cloves", "1 cup butter, melted", "1 cup honey", "1/2 cup water", "1/2 cup sugar", "1 cinnamon stick", "1 lemon, juiced"],
-        "instructions": "Mix walnuts with sugar, cinnamon, and cloves. Layer 10 sheets of phyllo dough in a baking dish, brushing each with melted butter. Spread half the walnut mixture over phyllo. Layer 5 more sheets of phyllo, brushing each with butter. Spread remaining walnut mixture. Top with 10 more sheets of phyllo, brushing each with butter. Score top layer into diamond shapes. Bake at 350°F for 50 minutes until golden. Meanwhile, make syrup by combining honey, water, sugar, cinnamon stick, and lemon juice. Simmer for 10 minutes. Pour hot syrup over hot baklava and let cool completely before serving."
+        "ingredients": [
+          "1 lb phyllo dough",
+          "2 cups walnuts, chopped",
+          "1 cup pistachios, chopped",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "1/2 tsp ground cloves",
+          "1 cup butter, melted",
+          "For syrup: 1 cup sugar",
+          "1/2 cup water",
+          "1/4 cup honey",
+          "1 cinnamon stick",
+          "1 lemon, juiced"
+        ],
+        "instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
+        "proteins": ["walnuts", "pistachios"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
+        "cooking_time": 75,
+        "difficulty": "hard"
       },
       {
-        "title": "Avgolemono Soup",
+        "title": "Spanakopita",
         "cuisine": "Greek",
-        "ingredients": ["6 cups chicken stock", "1/2 cup orzo pasta", "3 eggs", "2 lemons, juiced", "1/4 cup fresh dill, chopped", "Salt and pepper to taste"],
-        "instructions": "Bring chicken stock to a boil and add orzo pasta. Cook for 8 minutes until pasta is tender. In a bowl, whisk eggs and lemon juice until frothy. Gradually add 1 cup of hot stock to egg mixture, whisking constantly. Return egg mixture to pot and stir gently over low heat for 2 minutes until soup thickens slightly. Do not boil. Season with salt and pepper. Garnish with fresh dill and serve hot."
+        "ingredients": [
+          "1 lb phyllo dough",
+          "2 lbs fresh spinach",
+          "1 large onion, chopped",
+          "4 green onions, chopped",
+          "1/2 cup fresh dill",
+          "1/2 cup fresh parsley",
+          "1 lb feta cheese, crumbled",
+          "4 eggs",
+          "1/2 cup olive oil",
+          "Salt and pepper to taste"
+        ],
+        "instructions": "Sauté onion and green onions until soft. Add spinach and cook until wilted. Cool and squeeze out excess water. Mix with herbs, feta, eggs, and seasonings. Layer phyllo sheets with olive oil and spinach mixture. Bake at 375°F for 45 minutes until golden.",
+        "proteins": ["feta cheese", "eggs"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 75,
+        "difficulty": "medium"
       },
       {
-        "title": "Saganaki",
+        "title": "Pastitsio",
         "cuisine": "Greek",
-        "ingredients": ["1/2 lb kasseri cheese, sliced", "1/4 cup all-purpose flour", "2 tbsp olive oil", "1 lemon, juiced", "1/4 cup brandy", "1/4 cup fresh parsley, chopped", "Crusty bread for serving"],
-        "instructions": "Dredge cheese slices in flour. Heat olive oil in a skillet over medium-high heat. Add cheese slices and cook for 2-3 minutes until golden and slightly melted. Carefully pour brandy over cheese and ignite with a long match. Let flames die down naturally. Squeeze lemon juice over cheese and sprinkle with parsley. Serve immediately with crusty bread for dipping."
+        "ingredients": [
+          "1 lb penne pasta",
+          "1 lb ground beef",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1 can crushed tomatoes",
+          "2 tbsp tomato paste",
+          "1 tsp cinnamon",
+          "1 tsp oregano",
+          "Salt and pepper to taste",
+          "For béchamel: 4 tbsp butter",
+          "1/4 cup all-purpose flour",
+          "2 cups milk",
+          "2 eggs",
+          "1/2 cup grated Parmesan cheese",
+          "1/4 tsp nutmeg"
+        ],
+        "instructions": "Cook pasta according to package directions. Brown ground beef with onion and garlic. Add tomatoes, paste, and seasonings. Simmer for 20 minutes. Make béchamel sauce. Layer pasta, meat sauce, and béchamel in baking dish. Bake at 375°F for 45 minutes until golden.",
+        "proteins": ["ground beef", "eggs", "parmesan cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 90,
+        "difficulty": "hard"
       },
       {
-        "title": "Galaktoboureko",
+        "title": "Greek Salad",
         "cuisine": "Greek",
-        "ingredients": ["1 package phyllo dough", "1 cup semolina", "4 cups milk", "1 cup sugar", "4 eggs", "1 tsp vanilla extract", "1 cup butter, melted", "1 cup sugar", "1 cup water", "1 cinnamon stick", "1 lemon, juiced"],
-        "instructions": "Bring milk and sugar to a boil. Gradually whisk in semolina and cook for 5 minutes until thickened. Remove from heat and whisk in eggs and vanilla. Layer 10 sheets of phyllo dough in a baking dish, brushing each with melted butter. Spread semolina mixture over phyllo. Top with 10 more sheets of phyllo, brushing each with butter. Score top layer and bake at 350°F for 45 minutes until golden. Make syrup by combining sugar, water, cinnamon stick, and lemon juice. Simmer for 10 minutes. Pour hot syrup over hot galaktoboureko and let cool completely before serving."
+        "ingredients": [
+          "4 large tomatoes, cut into wedges",
+          "1 large cucumber, sliced",
+          "1 red onion, sliced",
+          "1 green bell pepper, sliced",
+          "1/2 cup Kalamata olives",
+          "8 oz feta cheese, cubed",
+          "1/4 cup olive oil",
+          "2 tbsp red wine vinegar",
+          "1 tsp dried oregano",
+          "Salt and pepper to taste"
+        ],
+        "instructions": "Combine all vegetables in a large bowl. Add olives and feta cheese. Whisk together olive oil, vinegar, oregano, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
+        "proteins": ["feta cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      }
+    ],
+    "Italian": [
+      {
+        "title": "Osso Buco alla Milanese",
+        "cuisine": "Italian",
+        "ingredients": [
+          "4 veal shanks",
+          "1 large onion, chopped",
+          "2 carrots, chopped",
+          "2 celery stalks, chopped",
+          "4 cloves garlic, minced",
+          "1 cup white wine",
+          "2 cups beef stock",
+          "1 can diced tomatoes",
+          "2 tbsp tomato paste",
+          "1/4 cup olive oil",
+          "2 tbsp butter",
+          "Fresh rosemary",
+          "Fresh thyme",
+          "Salt and pepper to taste",
+          "Gremolata for garnish"
+        ],
+        "instructions": "Season veal shanks with salt and pepper. Brown in oil and butter. Add vegetables and cook until soft. Add wine, stock, tomatoes, and seasonings. Simmer for 2 hours until tender. Serve with risotto and gremolata.",
+        "proteins": ["veal"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 150,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Risotto ai Porcini",
+        "cuisine": "Italian",
+        "ingredients": [
+          "2 cups Arborio rice",
+          "1 oz dried porcini mushrooms",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1/2 cup white wine",
+          "6 cups hot chicken stock",
+          "1/2 cup grated Parmesan cheese",
+          "2 tbsp butter",
+          "1/4 cup olive oil",
+          "Fresh parsley",
+          "Salt and pepper to taste"
+        ],
+        "instructions": "Soak mushrooms in hot water. Sauté onion and garlic in oil. Add rice and cook for 2 minutes. Add wine and cook until absorbed. Add stock gradually, stirring constantly. Add mushrooms and cook until rice is creamy. Stir in cheese and butter. Garnish with parsley.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 45,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Saltimbocca alla Romana",
+        "cuisine": "Italian",
+        "ingredients": [
+          "8 veal cutlets",
+          "8 slices prosciutto",
+          "8 fresh sage leaves",
+          "1/2 cup all-purpose flour",
+          "1/4 cup olive oil",
+          "1/2 cup white wine",
+          "2 tbsp butter",
+          "1/4 cup chicken stock",
+          "Salt and pepper to taste"
+        ],
+        "instructions": "Pound veal cutlets thin. Top each with prosciutto and sage leaf. Secure with toothpicks. Dredge in flour. Cook in oil for 2 minutes per side. Add wine and stock. Simmer for 5 minutes. Remove toothpicks and serve hot.",
+        "proteins": ["veal", "prosciutto"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Penne all'Arrabbiata",
+        "cuisine": "Italian",
+        "ingredients": [
+          "1 lb penne pasta",
+          "1 can crushed tomatoes",
+          "4 cloves garlic, minced",
+          "2-3 red chili peppers, chopped",
+          "1/4 cup olive oil",
+          "1/2 cup white wine",
+          "Fresh parsley",
+          "Salt to taste",
+          "Grated Parmesan cheese for serving"
+        ],
+        "instructions": "Cook pasta according to package directions. Heat oil and cook garlic and chilies. Add wine and cook until reduced. Add tomatoes and simmer for 15 minutes. Toss with pasta. Garnish with parsley and serve with Parmesan.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 25,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Tiramisu",
+        "cuisine": "Italian",
+        "ingredients": [
+          "6 egg yolks",
+          "3/4 cup sugar",
+          "1 lb mascarpone cheese",
+          "1 1/4 cups heavy cream",
+          "2 cups strong coffee, cooled",
+          "1/4 cup coffee liqueur",
+          "24 ladyfinger cookies",
+          "1/4 cup cocoa powder"
+        ],
+        "instructions": "Beat egg yolks with sugar until thick. Add mascarpone and mix well. Whip cream and fold into mixture. Mix coffee with liqueur. Dip ladyfingers in coffee mixture. Layer in dish with cream mixture. Chill for 4 hours. Dust with cocoa powder before serving.",
+        "proteins": ["eggs", "mascarpone"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 30,
+        "difficulty": "medium"
+      }
+    ],
+    "Spanish": [
+      {
+        "title": "Paella Valenciana",
+        "cuisine": "Spanish",
+        "ingredients": [
+          "2 cups short-grain rice",
+          "1 lb chicken thighs, cut into pieces",
+          "1 lb rabbit, cut into pieces",
+          "1 lb green beans",
+          "1 lb lima beans",
+          "2 large tomatoes, grated",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1/2 cup olive oil",
+          "6 cups chicken stock",
+          "1 tsp saffron",
+          "1 tsp paprika",
+          "Salt to taste",
+          "Lemon wedges for serving"
+        ],
+        "instructions": "Heat oil in large paella pan. Brown chicken and rabbit. Add vegetables and cook until soft. Add rice and cook for 2 minutes. Add stock, saffron, and seasonings. Simmer for 20 minutes without stirring. Let rest for 5 minutes. Serve with lemon wedges.",
+        "proteins": ["chicken", "rabbit"],
+        "dietary_restrictions": [],
+        "cooking_time": 60,
+        "difficulty": "hard"
+      },
+      {
+        "title": "Gazpacho Andaluz",
+        "cuisine": "Spanish",
+        "ingredients": [
+          "2 lbs ripe tomatoes",
+          "1 large cucumber",
+          "1 large red bell pepper",
+          "1 small red onion",
+          "4 cloves garlic",
+          "1/4 cup olive oil",
+          "2 tbsp red wine vinegar",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp cumin",
+          "1 cup water",
+          "Fresh basil for garnish"
+        ],
+        "instructions": "Chop all vegetables. Blend with oil, vinegar, and seasonings. Add water gradually until smooth. Chill for 2 hours. Serve cold with basil garnish.",
+        "proteins": ["vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Tortilla Española",
+        "cuisine": "Spanish",
+        "ingredients": [
+          "6 large potatoes, sliced",
+          "1 large onion, sliced",
+          "8 eggs",
+          "1/2 cup olive oil",
+          "Salt to taste"
+        ],
+        "instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt. Add potato mixture to eggs. Cook in large skillet until set. Flip and cook other side. Serve warm or cold.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Pulpo a la Gallega",
+        "cuisine": "Spanish",
+        "ingredients": [
+          "2 lbs octopus",
+          "4 large potatoes",
+          "1/4 cup olive oil",
+          "2 tbsp paprika",
+          "1 tsp salt",
+          "Fresh parsley for garnish"
+        ],
+        "instructions": "Boil octopus for 45 minutes until tender. Boil potatoes until done. Slice octopus and potatoes. Drizzle with oil and sprinkle with paprika and salt. Garnish with parsley and serve.",
+        "proteins": ["octopus"],
+        "dietary_restrictions": [],
+        "cooking_time": 60,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Churros con Chocolate",
+        "cuisine": "Spanish",
+        "ingredients": [
+          "1 cup water",
+          "1/2 cup butter",
+          "1/4 tsp salt",
+          "1 cup all-purpose flour",
+          "3 eggs",
+          "Oil for frying",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "For chocolate: 1 cup heavy cream",
+          "8 oz dark chocolate, chopped",
+          "1 tbsp sugar"
+        ],
+        "instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. For chocolate, heat cream and add chocolate and sugar. Stir until smooth. Serve churros with chocolate sauce.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 30,
+        "difficulty": "medium"
       }
     ]
   }
-} 
+}
