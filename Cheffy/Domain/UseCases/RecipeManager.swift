@@ -298,10 +298,14 @@ class RecipeManager: ObservableObject {
             )
             
             if !filteredCachedRecipes.isEmpty {
+                // CRITICAL FIX - Remove duplicates from cached recipes
+                let uniqueCachedRecipes = removeDuplicateRecipes(filteredCachedRecipes)
+                logger.cache("Removed \(filteredCachedRecipes.count - uniqueCachedRecipes.count) duplicate cached recipes")
+                
                 await MainActor.run {
-                    self.popularRecipes = filteredCachedRecipes
+                    self.popularRecipes = uniqueCachedRecipes
                     self.isUsingCachedData = true
-                    logger.cache("Using \(self.popularRecipes.count) filtered cached recipes")
+                    logger.cache("Using \(self.popularRecipes.count) unique filtered cached recipes")
                     logger.cache("Recipes loaded from cache - no LLM connection needed")
                 }
             } else {
@@ -391,6 +395,40 @@ class RecipeManager: ObservableObject {
         logger.warning("All recipe cache cleared - forcing fresh data load")
     }
     
+    // MARK: - Recipe Deduplication
+    
+    /// Removes duplicate recipes based on name similarity
+    private func removeDuplicateRecipes(_ recipes: [Recipe]) -> [Recipe] {
+        var uniqueRecipes: [Recipe] = []
+        var seenNames: Set<String> = []
+        
+        for recipe in recipes {
+            // Clean the recipe name by removing common prefixes and suffixes
+            let cleanName = cleanRecipeName(recipe.title)
+            
+            if !seenNames.contains(cleanName) {
+                seenNames.insert(cleanName)
+                uniqueRecipes.append(recipe)
+            } else {
+                logger.debug("Removing duplicate recipe: \(recipe.title)")
+            }
+        }
+        
+        return uniqueRecipes
+    }
+    
+    /// Cleans recipe names for better duplicate detection
+    private func cleanRecipeName(_ name: String) -> String {
+        return name.lowercased()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "traditional", with: "")
+            .replacingOccurrences(of: "classic", with: "")
+            .replacingOccurrences(of: "authentic", with: "")
+            .replacingOccurrences(of: "homemade", with: "")
+            .replacingOccurrences(of: "  ", with: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
     /// Parses ingredient string to Ingredient object
     private func parseIngredient(from ingredientString: String) -> Ingredient {
         // Try to parse amount and unit from ingredient string
@@ -467,13 +505,17 @@ class RecipeManager: ObservableObject {
             logger.warning("Generated \(additionalRecipes.count) additional recipes to reach minimum count")
         }
         
-        // Step 4: Shuffle and limit to 20 recipes
-        allRecipes.shuffle()
-        let finalRecipes = Array(allRecipes.prefix(20))
+        // Step 4: CRITICAL FIX - Remove duplicates before shuffling
+        let uniqueRecipes = removeDuplicateRecipes(allRecipes)
+        logger.warning("Removed \(allRecipes.count - uniqueRecipes.count) duplicate recipes")
+        
+        // Step 5: Shuffle and limit to 20 recipes
+        let shuffledRecipes = uniqueRecipes.shuffled()
+        let finalRecipes = Array(shuffledRecipes.prefix(20))
         
         await MainActor.run {
             self.popularRecipes = finalRecipes
-            logger.warning("HYBRID generation complete: \(finalRecipes.count) diverse recipes (meat + vegetarian)")
+            logger.warning("HYBRID generation complete: \(finalRecipes.count) unique diverse recipes (meat + vegetarian)")
         }
     }
     
@@ -1734,17 +1776,21 @@ class RecipeManager: ObservableObject {
             
             logger.warning("After strict filtering: \(recipes.count) recipes meet all criteria")
             
+            // CRITICAL FIX - Remove duplicates from LLM-generated recipes
+            let uniqueRecipes = removeDuplicateRecipes(recipes)
+            logger.warning("Removed \(recipes.count - uniqueRecipes.count) duplicate LLM-generated recipes")
+            
             // Cache all generated recipes for future offline use
-            for recipe in recipes {
+            for recipe in uniqueRecipes {
                 cacheManager.cacheRecipe(recipe)
                 logger.cache("Cached LLM-generated recipe: \(recipe.title)")
             }
             
             // Update the published recipes
             await MainActor.run {
-                self.popularRecipes = recipes
+                self.popularRecipes = uniqueRecipes
                 self.isUsingCachedData = false
-                logger.info("Successfully generated \(recipes.count) recipes from LLM")
+                logger.info("Successfully generated \(uniqueRecipes.count) unique recipes from LLM")
             }
             
             // Update cached data
