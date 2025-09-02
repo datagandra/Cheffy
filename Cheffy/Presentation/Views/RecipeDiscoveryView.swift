@@ -36,25 +36,40 @@ struct RecipeDiscoveryView: View {
         
         // Filter by dietary restrictions
         if !selectedDietaryRestrictions.isEmpty {
-            recipes = recipeDatabase.getRecipes(for: Array(selectedDietaryRestrictions))
+            recipes = recipes.filter { recipe in
+                // Check if recipe has any of the selected dietary restrictions
+                let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+                let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
+                return !recipeDietaryNotes.isDisjoint(with: selectedDietaryNotes)
+            }
         }
         
         // Filter by cooking time
         if selectedCookingTime != .any {
             let maxTime = selectedCookingTime.maxTotalTime
             recipes = recipes.filter { recipe in
-                (recipe.prepTime + recipe.cookTime) <= maxTime
+                let totalTime = recipe.prepTime + recipe.cookTime
+                return totalTime <= maxTime
             }
         }
         
         // Filter by protein
         if !selectedProtein.isEmpty {
-            recipes = recipeDatabase.getRecipes(by: selectedProtein)
+            recipes = recipes.filter { recipe in
+                recipe.ingredients.contains { ingredient in
+                    ingredient.name.lowercased().contains(selectedProtein.lowercased())
+                }
+            }
         }
         
         // Filter by search query
         if !searchQuery.isEmpty {
-            recipes = recipeDatabase.searchRecipes(query: searchQuery)
+            recipes = recipes.filter { recipe in
+                recipe.title.lowercased().contains(searchQuery.lowercased()) ||
+                recipe.ingredients.contains { ingredient in
+                    ingredient.name.lowercased().contains(searchQuery.lowercased())
+                }
+            }
         }
         
         return recipes
@@ -62,6 +77,100 @@ struct RecipeDiscoveryView: View {
     
     private var hasQuickRecipes: Bool {
         selectedCookingTime.isQuickRecipe
+    }
+    
+    // Filtered quick recipes that respect current filter settings
+    private var filteredQuickRecipes: [Recipe] {
+        var recipes = quickRecipes
+        
+        // Apply same filters as filteredRecipes
+        if selectedCuisine != .any {
+            recipes = recipes.filter { $0.cuisine == selectedCuisine }
+        }
+        
+        recipes = recipes.filter { $0.difficulty == selectedDifficulty }
+        
+        if !selectedDietaryRestrictions.isEmpty {
+            recipes = recipes.filter { recipe in
+                let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+                let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
+                return !recipeDietaryNotes.isDisjoint(with: selectedDietaryNotes)
+            }
+        }
+        
+        if selectedCookingTime != .any {
+            let maxTime = selectedCookingTime.maxTotalTime
+            recipes = recipes.filter { recipe in
+                let totalTime = recipe.prepTime + recipe.cookTime
+                return totalTime <= maxTime
+            }
+        }
+        
+        if !selectedProtein.isEmpty {
+            recipes = recipes.filter { recipe in
+                recipe.ingredients.contains { ingredient in
+                    ingredient.name.lowercased().contains(selectedProtein.lowercased())
+                }
+            }
+        }
+        
+        if !searchQuery.isEmpty {
+            recipes = recipes.filter { recipe in
+                recipe.title.lowercased().contains(searchQuery.lowercased()) ||
+                recipe.ingredients.contains { ingredient in
+                    ingredient.name.lowercased().contains(searchQuery.lowercased())
+                }
+            }
+        }
+        
+        return recipes
+    }
+    
+    // Filtered LLM generated recipes that respect current filter settings
+    private var filteredLLMGeneratedRecipes: [Recipe] {
+        var recipes = llmGeneratedRecipes
+        
+        // Apply same filters as filteredRecipes
+        if selectedCuisine != .any {
+            recipes = recipes.filter { $0.cuisine == selectedCuisine }
+        }
+        
+        recipes = recipes.filter { $0.difficulty == selectedDifficulty }
+        
+        if !selectedDietaryRestrictions.isEmpty {
+            recipes = recipes.filter { recipe in
+                let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+                let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
+                return !recipeDietaryNotes.isDisjoint(with: selectedDietaryNotes)
+            }
+        }
+        
+        if selectedCookingTime != .any {
+            let maxTime = selectedCookingTime.maxTotalTime
+            recipes = recipes.filter { recipe in
+                let totalTime = recipe.prepTime + recipe.cookTime
+                return totalTime <= maxTime
+            }
+        }
+        
+        if !selectedProtein.isEmpty {
+            recipes = recipes.filter { recipe in
+                recipe.ingredients.contains { ingredient in
+                    ingredient.name.lowercased().contains(selectedProtein.lowercased())
+                }
+            }
+        }
+        
+        if !searchQuery.isEmpty {
+            recipes = recipes.filter { recipe in
+                recipe.title.lowercased().contains(searchQuery.lowercased()) ||
+                recipe.ingredients.contains { ingredient in
+                    ingredient.name.lowercased().contains(searchQuery.lowercased())
+                }
+            }
+        }
+        
+        return recipes
     }
     
     private var shouldGenerateQuickRecipes: Bool {
@@ -83,14 +192,14 @@ struct RecipeDiscoveryView: View {
                 searchAndFilterHeader
                 
                 // Cache Status Indicator
-                if !isLoading && (!filteredRecipes.isEmpty || !llmGeneratedRecipes.isEmpty || !quickRecipes.isEmpty) {
+                if !isLoading && (!filteredRecipes.isEmpty || !filteredLLMGeneratedRecipes.isEmpty || !filteredQuickRecipes.isEmpty) {
                     cacheStatusIndicator
                 }
                 
                 // Recipe Grid
                 if isLoading {
                     loadingView
-                } else if filteredRecipes.isEmpty && llmGeneratedRecipes.isEmpty && quickRecipes.isEmpty {
+                } else if filteredRecipes.isEmpty && filteredLLMGeneratedRecipes.isEmpty && filteredQuickRecipes.isEmpty {
                     emptyStateView
                 } else {
                     recipeGridView
@@ -289,7 +398,7 @@ struct RecipeDiscoveryView: View {
                 // Recipe Grid
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 2), spacing: 16) {
                     // Show quick recipes first if available
-                    ForEach(quickRecipes) { recipe in
+                    ForEach(filteredQuickRecipes) { recipe in
                         RecipeCard(recipe: recipe, showQuickBadge: true)
                             .overlay(
                                 VStack {
@@ -322,7 +431,7 @@ struct RecipeDiscoveryView: View {
                     }
                     
                     // Show LLM generated recipes if any
-                    ForEach(llmGeneratedRecipes) { recipe in
+                    ForEach(filteredLLMGeneratedRecipes) { recipe in
                         RecipeCard(recipe: recipe, showQuickBadge: hasQuickRecipes)
                             .overlay(
                                 VStack {
