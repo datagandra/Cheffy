@@ -473,50 +473,181 @@ class RecipeManager: ObservableObject {
         maxTime: Int?,
         servings: Int
     ) async {
-        logger.warning("Starting HYBRID recipe generation for guaranteed diversity")
+        logger.warning("Starting SMART HYBRID recipe generation - checking local JSON first")
         
         var allRecipes: [Recipe] = []
         
-        // Step 1: Load meat-based recipes from our database
-        let meatRecipes = loadMeatBasedRecipesFromDatabase(cuisine: cuisine, servings: servings)
-        allRecipes.append(contentsOf: meatRecipes)
-        logger.warning("Loaded \(meatRecipes.count) meat-based recipes from database")
-        
-        // Step 2: Generate vegetarian recipes from LLM (since LLM is good at those)
-        let vegetarianRecipes = await generateVegetarianRecipesFromLLM(
+        // Step 1: Load ALL recipes from local JSON files (both meat and vegetarian)
+        let localRecipes = loadAllRecipesFromLocalDatabase(
             cuisine: cuisine,
             difficulty: difficulty,
             maxTime: maxTime,
             servings: servings
         )
-        allRecipes.append(contentsOf: vegetarianRecipes)
-        logger.warning("Generated \(vegetarianRecipes.count) vegetarian recipes from LLM")
+        allRecipes.append(contentsOf: localRecipes)
+        logger.warning("✅ Loaded \(localRecipes.count) recipes from local JSON database")
         
-        // Step 3: Ensure we have at least 10 recipes total
-        if allRecipes.count < 10 {
+        // Step 2: Check if we have enough recipes locally
+        let targetCount = 10
+        if allRecipes.count >= targetCount {
+            logger.warning("🎉 Sufficient recipes found locally (\(allRecipes.count) >= \(targetCount)) - BYPASSING LLM")
+        } else {
+            let neededCount = targetCount - allRecipes.count
+            logger.warning("⚠️ Need \(neededCount) more recipes - calling LLM for additional recipes")
+            
+            // Step 3: Generate additional recipes from LLM only if needed
             let additionalRecipes = await generateAdditionalRecipesFromLLM(
                 cuisine: cuisine,
                 difficulty: difficulty,
                 maxTime: maxTime,
                 servings: servings,
-                targetCount: 10 - allRecipes.count
+                targetCount: neededCount
             )
             allRecipes.append(contentsOf: additionalRecipes)
-            logger.warning("Generated \(additionalRecipes.count) additional recipes to reach minimum count")
+            logger.warning("🤖 Generated \(additionalRecipes.count) additional recipes from LLM")
         }
         
-        // Step 4: CRITICAL FIX - Remove duplicates before shuffling
+        // Step 4: Remove duplicates and filter by criteria
         let uniqueRecipes = removeDuplicateRecipes(allRecipes)
-        logger.warning("Removed \(allRecipes.count - uniqueRecipes.count) duplicate recipes")
+        logger.warning("🧹 Removed \(allRecipes.count - uniqueRecipes.count) duplicate recipes")
         
-        // Step 5: Shuffle and limit to 20 recipes
-        let shuffledRecipes = uniqueRecipes.shuffled()
+        // Step 5: Apply final filtering and shuffle
+        let filteredRecipes = uniqueRecipes.filter { recipe in
+            let difficultyMatches = recipe.difficulty == difficulty
+            let timeMatches = maxTime == nil || (recipe.prepTime + recipe.cookTime) <= maxTime!
+            return difficultyMatches && timeMatches
+        }
+        
+        let shuffledRecipes = filteredRecipes.shuffled()
         let finalRecipes = Array(shuffledRecipes.prefix(20))
         
         await MainActor.run {
             self.popularRecipes = finalRecipes
-            logger.warning("HYBRID generation complete: \(finalRecipes.count) unique diverse recipes (meat + vegetarian)")
+            let localCount = localRecipes.count
+            let llmCount = finalRecipes.count - localCount
+            logger.warning("✅ SMART HYBRID complete: \(finalRecipes.count) recipes (\(localCount) local, \(llmCount) LLM)")
         }
+    }
+    
+    /// Loads ALL recipes (both meat and vegetarian) from local JSON database
+    private func loadAllRecipesFromLocalDatabase(
+        cuisine: Cuisine,
+        difficulty: Difficulty,
+        maxTime: Int?,
+        servings: Int
+    ) -> [Recipe] {
+        var allRecipes: [Recipe] = []
+        
+        // Load recipes from JSON files based on cuisine
+        let cuisineFileName = getCuisineFileName(cuisine)
+        logger.warning("🔍 Loading ALL recipes from: \(cuisineFileName).json")
+        
+        guard let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json") else {
+            logger.error("❌ Could not find JSON file: \(cuisineFileName).json")
+            return allRecipes
+        }
+        
+        return loadAllRecipesFromURL(url, cuisine: cuisine, difficulty: difficulty, maxTime: maxTime, servings: servings)
+    }
+    
+    /// Helper function to load ALL recipes from a specific URL (both meat and vegetarian)
+    private func loadAllRecipesFromURL(_ url: URL, cuisine: Cuisine, difficulty: Difficulty, maxTime: Int?, servings: Int) -> [Recipe] {
+        var allRecipes: [Recipe] = []
+        
+        logger.warning("📖 Reading ALL recipes from URL: \(url)")
+        
+        guard let data = try? Data(contentsOf: url) else {
+            logger.error("❌ Could not read data from: \(url)")
+            return allRecipes
+        }
+        
+        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+            logger.error("❌ Could not parse JSON from: \(url)")
+            return allRecipes
+        }
+        
+        guard let cuisines = json["cuisines"] as? [String: Any] else {
+            logger.error("❌ Could not find 'cuisines' key in JSON")
+            return allRecipes
+        }
+        
+        guard let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] else {
+            logger.error("❌ Could not find recipes for cuisine: \(cuisine.rawValue)")
+            return allRecipes
+        }
+        
+        logger.warning("✅ Found \(recipes.count) total recipes in \(url.lastPathComponent) for \(cuisine.rawValue)")
+        
+        for (index, recipeData) in recipes.enumerated() {
+            guard let title = recipeData["title"] as? String,
+                  let ingredients = recipeData["ingredients"] as? [String],
+                  let instructions = recipeData["instructions"] as? String,
+                  let cookingTime = recipeData["cooking_time"] as? Int,
+                  let difficultyString = recipeData["difficulty"] as? String else {
+                logger.warning("⚠️ Skipping recipe \(index) - missing required fields")
+                continue
+            }
+            
+            let recipeDifficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+            
+            // Filter by difficulty if specified
+            if recipeDifficulty != difficulty {
+                continue
+            }
+            
+            // Filter by cooking time if specified
+            if let maxTime = maxTime, cookingTime > maxTime {
+                continue
+            }
+            
+            // Parse dietary restrictions
+            var dietaryNotes: [DietaryNote] = []
+            if let dietaryRestrictions = recipeData["dietary_restrictions"] as? [String] {
+                for restriction in dietaryRestrictions {
+                    if let note = DietaryNote(rawValue: restriction) {
+                        dietaryNotes.append(note)
+                    }
+                }
+            }
+            
+            // If no dietary restrictions specified in JSON, infer from ingredients
+            if dietaryNotes.isEmpty {
+                let hasMeat = ingredients.contains { ingredient in
+                    let lowercased = ingredient.lowercased()
+                    return lowercased.contains("chicken") || lowercased.contains("beef") || 
+                           lowercased.contains("lamb") || lowercased.contains("pork") ||
+                           lowercased.contains("fish") || lowercased.contains("shrimp") ||
+                           lowercased.contains("goat") || lowercased.contains("turkey") ||
+                           lowercased.contains("mutton") || lowercased.contains("prawn")
+                }
+                
+                if hasMeat {
+                    dietaryNotes.append(.nonVegetarian)
+                } else {
+                    dietaryNotes.append(.vegetarian)
+                }
+            }
+            
+            let recipe = Recipe(
+                title: title,
+                cuisine: cuisine,
+                difficulty: recipeDifficulty,
+                prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
+                cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
+                servings: servings,
+                ingredients: ingredients.map { parseIngredient(from: $0) },
+                steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
+                winePairings: [],
+                dietaryNotes: dietaryNotes,
+                platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
+                chefNotes: "Traditional \(cuisine.rawValue) recipe from our local database"
+            )
+            
+            allRecipes.append(recipe)
+        }
+        
+        logger.warning("✅ Loaded \(allRecipes.count) recipes from local JSON (filtered by difficulty and time)")
+        return allRecipes
     }
     
     /// Loads meat-based recipes from our local recipe database
