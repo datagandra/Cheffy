@@ -300,6 +300,146 @@
         "dietary_restrictions": ["vegan"],
         "cooking_time": 10,
         "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Nachos",
+        "cuisine": "Mexican",
+        "ingredients": ["1 bag tortilla chips", "1 cup refried beans", "1 cup shredded cheese", "1/2 cup jalapeños", "1/4 cup sour cream", "1/4 cup guacamole", "1/4 cup salsa", "Cilantro for garnish"],
+        "instructions": "Layer chips with beans and cheese. Microwave until cheese melts. Top with jalapeños, sour cream, guacamole, and salsa. Garnish with cilantro. Serve immediately.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Enchiladas",
+        "cuisine": "Mexican",
+        "ingredients": ["8 corn tortillas", "2 cups shredded chicken", "1 cup enchilada sauce", "1 cup shredded cheese", "1/4 cup sour cream", "Cilantro for garnish"],
+        "instructions": "Warm tortillas. Fill with chicken and roll. Place in baking dish. Cover with sauce and cheese. Bake at 375°F for 15 minutes. Top with sour cream and cilantro.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Tostadas",
+        "cuisine": "Mexican",
+        "ingredients": ["8 tostada shells", "1 cup refried beans", "1 cup shredded chicken", "1 cup lettuce, shredded", "1 tomato, diced", "1/2 cup cheese", "1/4 cup sour cream", "Cilantro for garnish"],
+        "instructions": "Spread beans on tostada shells. Top with chicken, lettuce, tomato, and cheese. Add sour cream and cilantro. Serve immediately.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Churros",
+        "cuisine": "Mexican",
+        "ingredients": ["1 cup water", "1/2 cup butter", "1/4 tsp salt", "1 cup flour", "2 eggs", "Oil for frying", "1/2 cup sugar", "1 tsp cinnamon"],
+        "instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. Serve hot.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Mexican Pozole",
+        "cuisine": "Mexican",
+        "ingredients": ["2 cups hominy", "1 lb pork, cubed", "4 cups chicken broth", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "1 tsp oregano", "Salt and pepper", "Toppings: cabbage, radishes, lime"],
+        "instructions": "Cook pork in broth for 15 minutes. Add hominy, onion, garlic, and spices. Simmer for 10 minutes. Season with salt and pepper. Serve with toppings.",
+        "proteins": ["pork"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Flautas",
+        "cuisine": "Mexican",
+        "ingredients": ["8 flour tortillas", "2 cups shredded chicken", "1 cup cheese", "Oil for frying", "Sour cream and salsa for serving"],
+        "instructions": "Fill tortillas with chicken and cheese. Roll tightly. Fry until golden and crispy. Serve with sour cream and salsa.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Sopes",
+        "cuisine": "Mexican",
+        "ingredients": ["8 sope shells", "1 cup refried beans", "1 cup shredded chicken", "1 cup lettuce", "1 tomato, diced", "1/2 cup cheese", "1/4 cup sour cream"],
+        "instructions": "Warm sope shells. Spread with beans. Top with chicken, lettuce, tomato, and cheese. Add sour cream. Serve immediately.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Molletes",
+        "cuisine": "Mexican",
+        "ingredients": ["4 bolillo rolls", "1 cup refried beans", "1 cup shredded cheese", "1/4 cup pico de gallo", "Cilantro for garnish"],
+        "instructions": "Split rolls and toast. Spread with beans. Top with cheese. Broil until cheese melts. Add pico de gallo and cilantro. Serve hot.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Chilaquiles",
+        "cuisine": "Mexican",
+        "ingredients": ["4 cups tortilla chips", "2 cups salsa verde", "1 cup shredded chicken", "1/2 cup cheese", "1/4 cup sour cream", "Cilantro for garnish"],
+        "instructions": "Heat salsa verde. Add tortilla chips and chicken. Cook for 3 minutes. Top with cheese, sour cream, and cilantro. Serve immediately.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Gorditas",
+        "cuisine": "Mexican",
+        "ingredients": ["8 gordita shells", "1 cup refried beans", "1 cup shredded beef", "1 cup lettuce", "1 tomato, diced", "1/2 cup cheese", "1/4 cup sour cream"],
+        "instructions": "Warm gordita shells. Fill with beans, beef, lettuce, tomato, and cheese. Top with sour cream. Serve immediately.",
+        "proteins": ["beef", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Tamales",
+        "cuisine": "Mexican",
+        "ingredients": ["8 tamale wrappers", "2 cups masa", "1 cup shredded chicken", "1/2 cup red sauce", "1/4 cup cheese"],
+        "instructions": "Spread masa on wrappers. Add chicken and sauce. Wrap tightly. Steam for 15 minutes. Top with cheese and serve.",
+        "proteins": ["chicken", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Mexican Menudo",
+        "cuisine": "Mexican",
+        "ingredients": ["2 cups hominy", "1 lb beef tripe", "4 cups beef broth", "1 onion, diced", "2 cloves garlic", "1 tsp oregano", "Salt and pepper", "Lime wedges"],
+        "instructions": "Cook tripe in broth for 20 minutes. Add hominy, onion, garlic, and oregano. Simmer for 10 minutes. Season with salt and pepper. Serve with lime wedges.",
+        "proteins": ["beef tripe"],
+        "dietary_restrictions": [],
+        "cooking_time": 35,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Mexican Agua Fresca",
+        "cuisine": "Mexican",
+        "ingredients": ["2 cups fresh fruit", "2 cups water", "1/4 cup sugar", "1 lime, juiced", "Ice cubes"],
+        "instructions": "Blend fruit with water, sugar, and lime juice. Strain and chill. Serve over ice.",
+        "proteins": ["fruit"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mexican Paletas",
+        "cuisine": "Mexican",
+        "ingredients": ["2 cups fresh fruit", "1 cup water", "1/4 cup sugar", "1 lime, juiced", "Popsicle molds"],
+        "instructions": "Blend fruit with water, sugar, and lime juice. Pour into molds. Freeze for 4 hours. Serve frozen.",
+        "proteins": ["fruit"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
       }
     ]
   }

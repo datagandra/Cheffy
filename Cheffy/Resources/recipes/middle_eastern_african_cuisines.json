@@ -542,6 +542,156 @@
         "dietary_restrictions": ["vegetarian"],
         "cooking_time": 20,
         "difficulty": "easy"
+      },
+      {
+        "title": "Quick Turkish Kebab",
+        "cuisine": "Turkish",
+        "ingredients": ["1 lb lamb, cubed", "1 onion, grated", "2 cloves garlic", "1/4 cup olive oil", "1 tsp cumin", "1 tsp paprika", "Salt and pepper", "Pita bread"],
+        "instructions": "Marinate lamb with onion, garlic, oil, and spices for 30 minutes. Thread onto skewers. Grill for 8 minutes, turning occasionally. Serve with pita bread.",
+        "proteins": ["lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Persian Kebab",
+        "cuisine": "Persian",
+        "ingredients": ["1 lb ground lamb", "1 onion, grated", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika", "Salt and pepper", "Basmati rice"],
+        "instructions": "Mix lamb with onion, garlic, and spices. Form into patties. Grill for 6 minutes per side. Serve with basmati rice.",
+        "proteins": ["ground lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Lebanese Hummus",
+        "cuisine": "Lebanese",
+        "ingredients": ["1 can chickpeas", "2 tbsp tahini", "2 tbsp lemon juice", "2 cloves garlic", "2 tbsp olive oil", "1 tsp cumin", "Salt to taste", "Pita bread"],
+        "instructions": "Blend chickpeas, tahini, lemon juice, garlic, oil, cumin, and salt until smooth. Serve with pita bread.",
+        "proteins": ["chickpeas"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Moroccan Couscous",
+        "cuisine": "Moroccan",
+        "ingredients": ["2 cups couscous", "2 cups chicken broth", "1/4 cup olive oil", "1 tsp cumin", "1 tsp cinnamon", "1/4 cup raisins", "1/4 cup almonds", "Salt to taste"],
+        "instructions": "Heat broth with oil and spices. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add raisins and almonds. Season with salt.",
+        "proteins": ["almonds"],
+        "dietary_restrictions": ["vegetarian", "vegan", "contains_nuts"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Egyptian Koshari",
+        "cuisine": "Egyptian",
+        "ingredients": ["2 cups rice", "1 cup lentils", "1 cup macaroni", "1 onion, sliced", "2 cloves garlic", "1 can tomato sauce", "1 tsp cumin", "2 tbsp oil", "Salt and pepper"],
+        "instructions": "Cook rice, lentils, and macaroni separately. Fry onion until crispy. Cook garlic with tomato sauce and cumin. Combine all ingredients. Season with salt and pepper.",
+        "proteins": ["lentils"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 25,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Israeli Falafel",
+        "cuisine": "Israeli",
+        "ingredients": ["1 can chickpeas", "1 onion, chopped", "2 cloves garlic", "1/4 cup parsley", "1 tsp cumin", "1 tsp coriander", "2 tbsp flour", "Oil for frying", "Pita bread"],
+        "instructions": "Blend chickpeas, onion, garlic, parsley, and spices. Add flour. Form into balls. Fry until golden. Serve in pita bread.",
+        "proteins": ["chickpeas"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Ethiopian Doro Wat",
+        "cuisine": "Ethiopian",
+        "ingredients": ["1 lb chicken, cubed", "1 onion, chopped", "2 cloves garlic", "1 tbsp berbere spice", "1 can tomatoes", "2 cups chicken broth", "Salt and pepper"],
+        "instructions": "Cook chicken until browned. Add onion and garlic. Cook for 3 minutes. Add berbere, tomatoes, and broth. Simmer for 15 minutes. Season with salt and pepper.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick South African Biltong",
+        "cuisine": "South African",
+        "ingredients": ["1 lb beef strips", "1/4 cup vinegar", "2 tbsp salt", "1 tbsp coriander", "1 tbsp black pepper", "1 tsp brown sugar"],
+        "instructions": "Marinate beef with vinegar, salt, coriander, pepper, and sugar for 2 hours. Dry in oven at 150°F for 4 hours. Slice and serve.",
+        "proteins": ["beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 240,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Kenyan Ugali",
+        "cuisine": "Kenyan",
+        "ingredients": ["2 cups cornmeal", "4 cups water", "1 tsp salt", "2 tbsp butter"],
+        "instructions": "Bring water to boil. Add salt and cornmeal gradually. Stir constantly until thick. Add butter. Serve with stews.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Ghanaian Banku",
+        "cuisine": "Ghanaian",
+        "ingredients": ["2 cups cornmeal", "1 cup cassava flour", "4 cups water", "1 tsp salt"],
+        "instructions": "Mix cornmeal and cassava flour. Bring water to boil. Add flour mixture gradually. Stir until thick. Serve with fish stew.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Senegalese Thieboudienne",
+        "cuisine": "Senegalese",
+        "ingredients": ["1 lb fish fillets", "2 cups rice", "1 onion, chopped", "2 cloves garlic", "1 can tomatoes", "1 tsp thyme", "1 tsp paprika", "2 cups fish broth", "Salt and pepper"],
+        "instructions": "Season fish with salt and pepper. Cook until done. Sauté onion and garlic. Add tomatoes and spices. Add rice and broth. Simmer for 15 minutes. Serve with fish.",
+        "proteins": ["fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Tunisian Couscous",
+        "cuisine": "Tunisian",
+        "ingredients": ["2 cups couscous", "2 cups vegetable broth", "1/4 cup olive oil", "1 tsp harissa", "1 tsp cumin", "1/4 cup chickpeas", "Salt to taste"],
+        "instructions": "Heat broth with oil, harissa, and cumin. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add chickpeas. Season with salt.",
+        "proteins": ["chickpeas"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Algerian Chakchouka",
+        "cuisine": "Algerian",
+        "ingredients": ["4 eggs", "1 can diced tomatoes", "1 onion, chopped", "2 cloves garlic", "1 bell pepper", "1 tsp cumin", "1 tsp paprika", "2 tbsp oil", "Salt and pepper"],
+        "instructions": "Heat oil and cook onion and bell pepper until soft. Add garlic and spices. Add tomatoes and simmer for 5 minutes. Make wells and crack eggs. Cover and cook for 5 minutes.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Libyan Bazeen",
+        "cuisine": "Libyan",
+        "ingredients": ["2 cups barley flour", "4 cups water", "1 tsp salt", "2 tbsp oil"],
+        "instructions": "Bring water to boil. Add salt and barley flour gradually. Stir until thick. Add oil. Serve with meat stew.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Sudanese Ful Medames",
+        "cuisine": "Sudanese",
+        "ingredients": ["2 cans fava beans", "2 cloves garlic", "1/4 cup olive oil", "1 lemon, juiced", "1 tsp cumin", "Salt and pepper", "Bread"],
+        "instructions": "Mash fava beans with garlic. Add oil, lemon juice, cumin, salt, and pepper. Mix well. Serve with bread.",
+        "proteins": ["fava beans"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 8,
+        "difficulty": "easy"
       }
     ]
   }

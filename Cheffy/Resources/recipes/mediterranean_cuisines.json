@@ -432,6 +432,156 @@
         "dietary_restrictions": ["vegetarian", "contains_dairy"],
         "cooking_time": 25,
         "difficulty": "medium"
+      },
+      {
+        "title": "Quick Greek Gyros",
+        "cuisine": "Greek",
+        "ingredients": ["1 lb lamb, sliced thin", "4 pita breads", "1 onion, sliced", "2 tomatoes, sliced", "1 cucumber, sliced", "1/2 cup tzatziki sauce", "1 tsp oregano", "2 tbsp olive oil", "Salt and pepper"],
+        "instructions": "Season lamb with oregano, salt, and pepper. Heat oil and cook lamb for 8 minutes. Warm pita breads. Fill with lamb, onion, tomatoes, cucumber, and tzatziki. Roll and serve hot.",
+        "proteins": ["lamb"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Italian Pasta Primavera",
+        "cuisine": "Italian",
+        "ingredients": ["8 oz penne pasta", "1 cup mixed vegetables", "2 cloves garlic", "1/4 cup olive oil", "1/4 cup Parmesan cheese", "1/4 cup fresh basil", "Salt and pepper"],
+        "instructions": "Cook pasta according to package. Heat oil and cook garlic for 1 minute. Add vegetables and cook for 5 minutes. Toss with pasta, Parmesan, and basil. Season with salt and pepper.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanish Tortilla",
+        "cuisine": "Spanish",
+        "ingredients": ["4 eggs", "2 potatoes, sliced", "1 onion, sliced", "3 tbsp olive oil", "Salt and pepper"],
+        "instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt and pepper. Add potato mixture to eggs. Cook in pan until set. Flip and cook other side. Serve warm.",
+        "proteins": ["eggs"],
+        "dietary_restrictions": ["vegetarian"],
+        "cooking_time": 18,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mediterranean Quinoa Bowl",
+        "cuisine": "Mediterranean",
+        "ingredients": ["1 cup quinoa", "2 cups water", "1 cucumber, diced", "1 tomato, diced", "1/2 cup olives", "1/4 cup feta cheese", "2 tbsp olive oil", "1 tbsp lemon juice", "Salt and pepper"],
+        "instructions": "Cook quinoa in water for 15 minutes. Mix with cucumber, tomato, olives, and feta. Whisk olive oil, lemon juice, salt, and pepper. Toss with quinoa mixture. Serve at room temperature.",
+        "proteins": ["feta cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Greek Lemon Chicken",
+        "cuisine": "Greek",
+        "ingredients": ["4 chicken breasts", "1/4 cup olive oil", "2 lemons, juiced", "4 cloves garlic", "1 tsp oregano", "Salt and pepper"],
+        "instructions": "Season chicken with oregano, salt, and pepper. Heat oil and cook chicken for 6 minutes per side. Add garlic and lemon juice. Cook for 2 more minutes. Serve hot.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 16,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Italian Bruschetta",
+        "cuisine": "Italian",
+        "ingredients": ["4 slices bread", "2 tomatoes, diced", "2 cloves garlic", "1/4 cup basil", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper"],
+        "instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "proteins": [],
+        "dietary_restrictions": ["vegan"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanish Patatas Bravas",
+        "cuisine": "Spanish",
+        "ingredients": ["4 potatoes, cubed", "3 tbsp olive oil", "1 tsp paprika", "1 tsp cayenne", "Salt to taste", "Aioli for serving"],
+        "instructions": "Heat oil in pan. Add potatoes and cook for 12 minutes until golden and crispy. Season with paprika, cayenne, and salt. Serve with aioli sauce.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mediterranean Fish",
+        "cuisine": "Mediterranean",
+        "ingredients": ["4 fish fillets", "2 tbsp olive oil", "2 cloves garlic", "1 lemon, juiced", "1 tsp oregano", "1/4 cup olives", "Salt and pepper"],
+        "instructions": "Season fish with oregano, salt, and pepper. Heat oil and cook fish for 4 minutes per side. Add garlic, lemon juice, and olives. Cook for 2 more minutes. Serve hot.",
+        "proteins": ["fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Greek Tzatziki",
+        "cuisine": "Greek",
+        "ingredients": ["1 cup Greek yogurt", "1 cucumber, grated", "2 cloves garlic", "2 tbsp olive oil", "1 tbsp lemon juice", "1 tsp dill", "Salt to taste"],
+        "instructions": "Squeeze cucumber dry. Mix with yogurt, garlic, olive oil, lemon juice, and dill. Season with salt. Chill for 10 minutes. Serve with pita bread.",
+        "proteins": ["greek yogurt"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Italian Risotto",
+        "cuisine": "Italian",
+        "ingredients": ["1 cup Arborio rice", "3 cups chicken broth", "1 onion, diced", "2 cloves garlic", "1/4 cup Parmesan cheese", "2 tbsp butter", "Salt and pepper"],
+        "instructions": "Sauté onion and garlic until soft. Add rice and cook for 2 minutes. Add broth gradually, stirring constantly. Cook for 18 minutes until creamy. Stir in Parmesan and butter. Season with salt and pepper.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Spanish Gazpacho",
+        "cuisine": "Spanish",
+        "ingredients": ["4 tomatoes", "1 cucumber", "1 bell pepper", "1 onion", "2 cloves garlic", "3 tbsp olive oil", "2 tbsp vinegar", "Salt and pepper"],
+        "instructions": "Blend all vegetables until smooth. Add olive oil and vinegar. Season with salt and pepper. Chill for 10 minutes. Serve cold with croutons.",
+        "proteins": ["vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Mediterranean Pasta",
+        "cuisine": "Mediterranean",
+        "ingredients": ["8 oz spaghetti", "1/4 cup olive oil", "2 cloves garlic", "1/2 cup olives", "1/4 cup sun-dried tomatoes", "1/4 cup feta cheese", "1/4 cup basil", "Salt and pepper"],
+        "instructions": "Cook pasta according to package. Heat oil and cook garlic for 1 minute. Add olives and sun-dried tomatoes. Toss with pasta, feta, and basil. Season with salt and pepper.",
+        "proteins": ["feta cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Greek Moussaka",
+        "cuisine": "Greek",
+        "ingredients": ["1 eggplant, sliced", "1 lb ground lamb", "1 onion, diced", "2 cloves garlic", "1 can tomatoes", "1 tsp cinnamon", "1/4 cup Parmesan cheese", "Salt and pepper"],
+        "instructions": "Cook eggplant slices for 5 minutes. Brown lamb with onion and garlic. Add tomatoes and cinnamon. Simmer for 10 minutes. Layer eggplant and lamb mixture. Top with Parmesan. Bake at 375°F for 20 minutes.",
+        "proteins": ["ground lamb", "parmesan cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 40,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Italian Carbonara",
+        "cuisine": "Italian",
+        "ingredients": ["8 oz spaghetti", "4 eggs", "1/2 cup Parmesan cheese", "4 slices bacon", "2 cloves garlic", "Black pepper", "Salt"],
+        "instructions": "Cook pasta according to package. Cook bacon until crispy. Beat eggs with Parmesan and black pepper. Toss hot pasta with bacon and garlic. Remove from heat and add egg mixture. Toss quickly until creamy.",
+        "proteins": ["eggs", "bacon", "parmesan cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanish Paella",
+        "cuisine": "Spanish",
+        "ingredients": ["1 cup rice", "2 cups chicken broth", "1 lb chicken, cubed", "1/2 cup peas", "1/2 cup bell peppers", "1 onion, diced", "2 cloves garlic", "1 tsp saffron", "Salt and pepper"],
+        "instructions": "Brown chicken in pan for 5 minutes. Add onion and garlic. Cook for 2 minutes. Add rice and cook for 2 minutes. Add broth, peas, bell peppers, and saffron. Simmer for 18 minutes. Season with salt and pepper.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "medium"
       }
     ]
   }

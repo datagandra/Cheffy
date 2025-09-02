@@ -360,6 +360,186 @@
         "dietary_restrictions": ["contains_dairy"],
         "cooking_time": 15,
         "difficulty": "easy"
+      },
+      {
+        "title": "Instant Grilled Cheese",
+        "cuisine": "American",
+        "ingredients": ["4 slices bread", "4 slices American cheese", "2 tbsp butter", "1 tsp garlic powder", "Salt to taste"],
+        "instructions": "Butter bread slices. Place cheese between bread. Heat pan and cook sandwich for 3 minutes per side until golden and cheese melts. Serve hot.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick BLT Sandwich",
+        "cuisine": "American",
+        "ingredients": ["4 slices bread", "8 strips bacon", "2 tomatoes, sliced", "Lettuce leaves", "Mayonnaise", "Salt and pepper"],
+        "instructions": "Cook bacon in pan for 4 minutes per side until crispy. Toast bread. Spread mayonnaise on bread. Layer bacon, tomato, and lettuce. Season with salt and pepper. Serve immediately.",
+        "proteins": ["bacon"],
+        "dietary_restrictions": [],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Pancakes",
+        "cuisine": "American",
+        "ingredients": ["1 cup flour", "1 tbsp sugar", "1 tsp baking powder", "1/2 tsp salt", "1 egg", "1 cup milk", "2 tbsp butter, melted", "Maple syrup"],
+        "instructions": "Mix dry ingredients. Beat egg with milk and butter. Combine wet and dry ingredients. Heat griddle and cook pancakes for 2 minutes per side. Serve with maple syrup.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Beef Tacos",
+        "cuisine": "American",
+        "ingredients": ["1 lb ground beef", "8 taco shells", "1 packet taco seasoning", "1 cup shredded cheese", "1 tomato, diced", "Lettuce, shredded", "Sour cream"],
+        "instructions": "Cook ground beef in pan for 5 minutes. Add taco seasoning and cook for 2 minutes. Heat taco shells. Fill with beef, cheese, tomato, and lettuce. Top with sour cream.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant French Toast",
+        "cuisine": "American",
+        "ingredients": ["4 slices bread", "2 eggs", "1/2 cup milk", "1 tsp vanilla", "1/2 tsp cinnamon", "2 tbsp butter", "Maple syrup"],
+        "instructions": "Beat eggs with milk, vanilla, and cinnamon. Dip bread in mixture. Heat butter in pan and cook bread for 3 minutes per side until golden. Serve with maple syrup.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Meatloaf",
+        "cuisine": "American",
+        "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup ketchup", "1 tsp Worcestershire sauce", "1 tsp garlic powder", "Salt and pepper"],
+        "instructions": "Mix all ingredients in bowl. Form into loaf. Bake at 375°F for 25 minutes. Brush with ketchup and bake 5 more minutes. Let rest 5 minutes before slicing.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 35,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Speedy Scrambled Eggs",
+        "cuisine": "American",
+        "ingredients": ["6 eggs", "2 tbsp butter", "1/4 cup milk", "Salt and pepper", "Chives for garnish"],
+        "instructions": "Beat eggs with milk, salt, and pepper. Heat butter in pan. Add eggs and cook, stirring constantly, for 3 minutes until set. Garnish with chives and serve hot.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chicken Noodle Soup",
+        "cuisine": "American",
+        "ingredients": ["2 cups cooked chicken, diced", "4 cups chicken broth", "1 cup egg noodles", "1 carrot, diced", "1 celery stalk, diced", "1 tsp thyme", "Salt and pepper"],
+        "instructions": "Bring broth to boil. Add noodles and cook for 8 minutes. Add chicken, carrot, and celery. Cook for 5 minutes. Season with thyme, salt, and pepper. Serve hot.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Instant Hash Browns",
+        "cuisine": "American",
+        "ingredients": ["2 cups shredded potatoes", "2 tbsp butter", "1/2 tsp salt", "1/4 tsp black pepper", "1/4 tsp paprika"],
+        "instructions": "Heat butter in pan. Add potatoes and press down. Cook for 5 minutes without stirring. Flip and cook for 5 more minutes until golden. Season with salt, pepper, and paprika.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick BBQ Chicken",
+        "cuisine": "American",
+        "ingredients": ["4 chicken breasts", "1/2 cup BBQ sauce", "1 tbsp olive oil", "1 tsp garlic powder", "Salt and pepper"],
+        "instructions": "Season chicken with garlic powder, salt, and pepper. Heat oil in pan and cook chicken for 6 minutes per side. Brush with BBQ sauce and cook for 2 more minutes. Serve hot.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 16,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Corn on the Cob",
+        "cuisine": "American",
+        "ingredients": ["4 ears corn", "2 tbsp butter", "Salt and pepper", "Paprika"],
+        "instructions": "Boil corn in water for 8 minutes. Drain and brush with butter. Season with salt, pepper, and paprika. Serve immediately.",
+        "proteins": ["corn"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Apple Pie",
+        "cuisine": "American",
+        "ingredients": ["2 pie crusts", "4 apples, sliced", "1/2 cup sugar", "1 tsp cinnamon", "2 tbsp butter", "1 egg, beaten"],
+        "instructions": "Mix apples with sugar and cinnamon. Place in pie crust. Dot with butter. Cover with second crust and seal edges. Brush with egg. Bake at 425°F for 15 minutes, then 350°F for 25 minutes.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 45,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Instant Chocolate Chip Cookies",
+        "cuisine": "American",
+        "ingredients": ["1 cup flour", "1/2 cup butter, softened", "1/2 cup brown sugar", "1/4 cup white sugar", "1 egg", "1 tsp vanilla", "1/2 tsp baking soda", "1 cup chocolate chips"],
+        "instructions": "Cream butter and sugars. Beat in egg and vanilla. Mix in flour and baking soda. Fold in chocolate chips. Drop onto baking sheet. Bake at 375°F for 10 minutes. Cool on wire rack.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Caesar Salad",
+        "cuisine": "American",
+        "ingredients": ["1 head romaine lettuce", "1/2 cup Caesar dressing", "1/4 cup Parmesan cheese", "1/2 cup croutons", "Black pepper"],
+        "instructions": "Chop lettuce and place in bowl. Add dressing and toss. Top with Parmesan cheese and croutons. Season with black pepper. Serve immediately.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Speedy Beef Stew",
+        "cuisine": "American",
+        "ingredients": ["1 lb beef stew meat", "2 cups beef broth", "1 cup potatoes, diced", "1 cup carrots, diced", "1 onion, diced", "1 tsp thyme", "Salt and pepper"],
+        "instructions": "Brown beef in pot for 5 minutes. Add broth and bring to boil. Add vegetables and thyme. Simmer for 20 minutes until tender. Season with salt and pepper. Serve hot.",
+        "proteins": ["beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Fish and Chips",
+        "cuisine": "American",
+        "ingredients": ["4 fish fillets", "1 cup flour", "1 egg", "1 cup breadcrumbs", "Oil for frying", "4 potatoes, cut into fries", "Salt and pepper"],
+        "instructions": "Dredge fish in flour, dip in egg, then coat with breadcrumbs. Heat oil and fry fish for 4 minutes per side. Fry potatoes for 8 minutes until golden. Season with salt and pepper.",
+        "proteins": ["fish"],
+        "dietary_restrictions": [],
+        "cooking_time": 20,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Instant Mac and Cheese",
+        "cuisine": "American",
+        "ingredients": ["2 cups elbow macaroni", "2 cups milk", "2 cups shredded cheddar cheese", "2 tbsp butter", "1/4 cup flour", "Salt and pepper"],
+        "instructions": "Cook macaroni according to package. Make roux with butter and flour. Add milk and cook until thickened. Add cheese and stir until melted. Mix with macaroni. Season with salt and pepper.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Pulled Pork",
+        "cuisine": "American",
+        "ingredients": ["2 lbs pork shoulder", "1 cup BBQ sauce", "1/2 cup apple cider vinegar", "1 tbsp brown sugar", "1 tsp garlic powder", "Salt and pepper"],
+        "instructions": "Season pork with garlic powder, salt, and pepper. Place in slow cooker with BBQ sauce and vinegar. Cook on high for 4 hours. Shred pork and mix with sauce. Serve on buns.",
+        "proteins": ["pork"],
+        "dietary_restrictions": [],
+        "cooking_time": 240,
+        "difficulty": "medium"
       }
     ]
   }

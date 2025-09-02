@@ -531,6 +531,156 @@
         "dietary_restrictions": [],
         "cooking_time": 18,
         "difficulty": "easy"
+      },
+      {
+        "title": "Quick Brazilian Pão de Queijo",
+        "cuisine": "Brazilian",
+        "ingredients": ["1 cup tapioca flour", "1/2 cup milk", "1/4 cup oil", "1 egg", "1/2 cup cheese, grated", "1 tsp salt"],
+        "instructions": "Blend all ingredients until smooth. Pour into mini muffin tins. Bake at 400°F for 15 minutes until golden. Serve warm.",
+        "proteins": ["eggs", "cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 18,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Argentine Chimichurri",
+        "cuisine": "Argentine",
+        "ingredients": ["1 cup parsley", "1/2 cup cilantro", "4 cloves garlic", "1/4 cup vinegar", "1/2 cup olive oil", "1 tsp salt", "1/2 tsp pepper"],
+        "instructions": "Chop herbs and garlic finely. Mix with vinegar, oil, salt, and pepper. Let sit for 10 minutes. Serve with grilled meats.",
+        "proteins": ["herbs"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 5,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Peruvian Lomo Saltado",
+        "cuisine": "Peruvian",
+        "ingredients": ["1 lb beef, sliced", "1 onion, sliced", "2 tomatoes, sliced", "2 cloves garlic", "1/4 cup soy sauce", "2 tbsp vinegar", "1 tsp cumin", "Salt and pepper"],
+        "instructions": "Cook beef until browned. Add onion, tomatoes, and garlic. Cook for 5 minutes. Add soy sauce, vinegar, and cumin. Season with salt and pepper. Serve with rice.",
+        "proteins": ["beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Colombian Sancocho",
+        "cuisine": "Colombian",
+        "ingredients": ["1 lb chicken, cubed", "1 lb beef, cubed", "2 potatoes, cubed", "2 yams, cubed", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "Salt and pepper"],
+        "instructions": "Brown meats in pot. Add onion and garlic. Cook for 3 minutes. Add potatoes, yams, and spices. Simmer for 20 minutes. Season with salt and pepper.",
+        "proteins": ["chicken", "beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Chilean Empanadas",
+        "cuisine": "Chilean",
+        "ingredients": ["1 lb ground beef", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika", "1 package empanada dough", "2 tbsp oil", "Salt and pepper"],
+        "instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal and bake at 375°F for 20 minutes.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Venezuelan Cachapas",
+        "cuisine": "Venezuelan",
+        "ingredients": ["2 cups fresh corn kernels", "1/4 cup milk", "1 egg", "1/4 cup cheese, grated", "1 tsp salt", "2 tbsp oil"],
+        "instructions": "Blend corn with milk, egg, and salt. Heat oil in pan. Pour batter and cook for 3 minutes per side. Top with cheese and serve hot.",
+        "proteins": ["eggs", "cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Ecuadorian Ceviche",
+        "cuisine": "Ecuadorian",
+        "ingredients": ["1 lb shrimp, cooked", "1 red onion, sliced", "2 tomatoes, diced", "1/2 cup lime juice", "1/4 cup cilantro", "1 tsp salt", "Tortilla chips"],
+        "instructions": "Mix shrimp with onion, tomatoes, lime juice, cilantro, and salt. Let sit for 10 minutes. Serve with tortilla chips.",
+        "proteins": ["shrimp"],
+        "dietary_restrictions": [],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Bolivian Salteñas",
+        "cuisine": "Bolivian",
+        "ingredients": ["1 lb ground beef", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika", "1 package empanada dough", "2 tbsp oil", "Salt and pepper"],
+        "instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal and bake at 375°F for 20 minutes.",
+        "proteins": ["ground beef"],
+        "dietary_restrictions": [],
+        "cooking_time": 25,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Paraguayan Chipa",
+        "cuisine": "Paraguayan",
+        "ingredients": ["2 cups cassava flour", "1/2 cup milk", "1/4 cup oil", "1 egg", "1/2 cup cheese, grated", "1 tsp salt"],
+        "instructions": "Mix flour with milk, oil, egg, and salt. Add cheese. Form into balls. Bake at 400°F for 15 minutes until golden. Serve warm.",
+        "proteins": ["eggs", "cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 18,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Uruguayan Chivito",
+        "cuisine": "Uruguayan",
+        "ingredients": ["4 beef steaks", "4 hamburger buns", "4 slices ham", "4 slices cheese", "2 tomatoes, sliced", "Lettuce", "Mayonnaise", "Salt and pepper"],
+        "instructions": "Season steaks with salt and pepper. Cook for 4 minutes per side. Toast buns. Layer steak, ham, cheese, tomato, and lettuce. Spread mayonnaise. Serve hot.",
+        "proteins": ["beef steaks", "ham", "cheese"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Guatemalan Pepián",
+        "cuisine": "Guatemalan",
+        "ingredients": ["1 lb chicken, cubed", "2 tomatoes", "1 onion", "2 cloves garlic", "1 tsp cumin", "1 tsp oregano", "Salt and pepper"],
+        "instructions": "Blend tomatoes, onion, and garlic. Cook chicken until browned. Add blended mixture and spices. Simmer for 15 minutes. Season with salt and pepper.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Honduran Baleadas",
+        "cuisine": "Honduran",
+        "ingredients": ["4 flour tortillas", "1 cup refried beans", "1 cup cheese, grated", "1/2 cup sour cream", "1/2 cup avocado, sliced"],
+        "instructions": "Warm tortillas. Spread with beans. Top with cheese, sour cream, and avocado. Fold in half and serve hot.",
+        "proteins": ["cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Nicaraguan Gallo Pinto",
+        "cuisine": "Nicaraguan",
+        "ingredients": ["2 cups cooked rice", "1 cup cooked black beans", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "2 tbsp oil", "Salt and pepper"],
+        "instructions": "Heat oil and cook onion and garlic until soft. Add rice, beans, and cumin. Cook for 5 minutes. Season with salt and pepper. Serve hot.",
+        "proteins": ["black beans"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Costa Rican Casado",
+        "cuisine": "Costa Rican",
+        "ingredients": ["1 lb chicken, cubed", "2 cups cooked rice", "1 cup black beans", "1 plantain, sliced", "2 tbsp oil", "Salt and pepper"],
+        "instructions": "Season chicken with salt and pepper. Cook in oil for 8 minutes. Fry plantain until golden. Serve chicken with rice, beans, and plantain.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Panamanian Sancocho",
+        "cuisine": "Panamanian",
+        "ingredients": ["1 lb chicken, cubed", "2 potatoes, cubed", "1 yam, cubed", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "Salt and pepper"],
+        "instructions": "Brown chicken in pot. Add onion and garlic. Cook for 3 minutes. Add potatoes, yam, and cumin. Simmer for 20 minutes. Season with salt and pepper.",
+        "proteins": ["chicken"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "easy"
       }
     ]
   }

@@ -254,6 +254,156 @@
         "dietary_restrictions": ["contains_dairy"],
         "cooking_time": 12,
         "difficulty": "easy"
+      },
+      {
+        "title": "Quick French Crepes",
+        "cuisine": "French",
+        "ingredients": ["1 cup flour", "2 eggs", "1 1/2 cups milk", "2 tbsp butter, melted", "1/4 tsp salt", "2 tbsp sugar", "Jam or Nutella for filling"],
+        "instructions": "Mix all ingredients until smooth. Heat pan and pour batter. Cook for 2 minutes per side until golden. Fill with jam or Nutella. Roll and serve hot.",
+        "proteins": ["egg"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 8,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Italian Margherita Pizza",
+        "cuisine": "Italian",
+        "ingredients": ["1 pizza dough", "1/2 cup tomato sauce", "1 cup mozzarella cheese", "Fresh basil leaves", "2 tbsp olive oil", "Salt to taste"],
+        "instructions": "Preheat oven to 450°F. Roll out dough. Spread tomato sauce. Top with mozzarella. Bake for 12 minutes until golden. Top with basil and drizzle with olive oil. Serve hot.",
+        "proteins": ["mozzarella cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanish Gazpacho",
+        "cuisine": "Spanish",
+        "ingredients": ["4 tomatoes", "1 cucumber", "1 bell pepper", "1 onion", "2 cloves garlic", "3 tbsp olive oil", "2 tbsp vinegar", "Salt and pepper"],
+        "instructions": "Chop all vegetables. Blend with oil, vinegar, salt, and pepper until smooth. Chill for 30 minutes. Serve cold with croutons.",
+        "proteins": ["vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick German Bratwurst",
+        "cuisine": "German",
+        "ingredients": ["4 bratwurst sausages", "1 onion, sliced", "1 bell pepper, sliced", "2 tbsp oil", "Mustard for serving", "Sauerkraut for serving"],
+        "instructions": "Heat oil in pan. Cook sausages for 8 minutes, turning occasionally. Add onion and bell pepper. Cook for 5 minutes until soft. Serve with mustard and sauerkraut.",
+        "proteins": ["bratwurst"],
+        "dietary_restrictions": [],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick British Shepherd's Pie",
+        "cuisine": "British",
+        "ingredients": ["1 lb ground lamb", "2 cups mashed potatoes", "1 onion, diced", "1 carrot, diced", "1 cup peas", "1 cup beef broth", "2 tbsp Worcestershire sauce", "Salt and pepper"],
+        "instructions": "Cook lamb with onion and carrot for 8 minutes. Add peas, broth, and Worcestershire sauce. Simmer for 5 minutes. Top with mashed potatoes. Bake at 400°F for 15 minutes until golden.",
+        "proteins": ["ground lamb"],
+        "dietary_restrictions": [],
+        "cooking_time": 30,
+        "difficulty": "medium"
+      },
+      {
+        "title": "Quick Irish Soda Bread",
+        "cuisine": "Irish",
+        "ingredients": ["3 cups flour", "1 tsp baking soda", "1 tsp salt", "1 1/2 cups buttermilk", "2 tbsp butter, melted"],
+        "instructions": "Mix dry ingredients. Add buttermilk and butter. Knead briefly. Shape into round loaf. Bake at 425°F for 30 minutes until golden. Cool on wire rack.",
+        "proteins": [],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 35,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Swiss Rösti",
+        "cuisine": "Swiss",
+        "ingredients": ["4 potatoes, grated", "2 tbsp butter", "1 onion, diced", "Salt and pepper", "Fresh herbs for garnish"],
+        "instructions": "Squeeze excess water from potatoes. Heat butter in pan. Add potatoes and onion. Press down and cook for 8 minutes. Flip and cook for 8 more minutes until golden. Season with salt and pepper.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 18,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick French Ratatouille",
+        "cuisine": "French",
+        "ingredients": ["1 eggplant, diced", "1 zucchini, diced", "1 bell pepper, diced", "2 tomatoes, diced", "1 onion, diced", "3 tbsp olive oil", "2 cloves garlic", "Herbs de Provence", "Salt and pepper"],
+        "instructions": "Heat oil in pan. Cook onion and garlic for 3 minutes. Add eggplant, zucchini, and bell pepper. Cook for 8 minutes. Add tomatoes and herbs. Simmer for 5 minutes. Season with salt and pepper.",
+        "proteins": ["vegetables"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Italian Fettuccine Alfredo",
+        "cuisine": "Italian",
+        "ingredients": ["8 oz fettuccine", "1/2 cup butter", "1 cup heavy cream", "1 cup Parmesan cheese", "2 cloves garlic", "Salt and pepper", "Fresh parsley"],
+        "instructions": "Cook pasta according to package. Melt butter with garlic. Add cream and simmer for 3 minutes. Add cheese and stir until melted. Toss with pasta. Season with salt and pepper. Garnish with parsley.",
+        "proteins": ["parmesan cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Spanish Patatas Bravas",
+        "cuisine": "Spanish",
+        "ingredients": ["4 potatoes, cubed", "3 tbsp olive oil", "1 tsp paprika", "1 tsp cayenne", "Salt to taste", "Aioli for serving"],
+        "instructions": "Heat oil in pan. Add potatoes and cook for 12 minutes until golden and crispy. Season with paprika, cayenne, and salt. Serve with aioli sauce.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick German Sauerkraut",
+        "cuisine": "German",
+        "ingredients": ["2 cups sauerkraut", "1 onion, sliced", "2 tbsp butter", "1 tsp caraway seeds", "1/2 cup white wine", "Salt and pepper"],
+        "instructions": "Melt butter in pan. Cook onion for 3 minutes. Add sauerkraut and caraway seeds. Cook for 5 minutes. Add wine and simmer for 3 minutes. Season with salt and pepper.",
+        "proteins": ["sauerkraut"],
+        "dietary_restrictions": ["vegetarian", "vegan"],
+        "cooking_time": 12,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick British Bangers and Mash",
+        "cuisine": "British",
+        "ingredients": ["4 pork sausages", "4 potatoes, cubed", "2 tbsp butter", "1/4 cup milk", "1 onion, sliced", "2 cups beef gravy", "Salt and pepper"],
+        "instructions": "Cook sausages in pan for 10 minutes. Boil potatoes until tender. Mash with butter and milk. Cook onion until caramelized. Serve sausages over mashed potatoes with gravy and onions.",
+        "proteins": ["pork sausages"],
+        "dietary_restrictions": ["contains_dairy"],
+        "cooking_time": 20,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Irish Colcannon",
+        "cuisine": "Irish",
+        "ingredients": ["4 potatoes, cubed", "1 cup cabbage, shredded", "2 tbsp butter", "1/4 cup milk", "2 green onions", "Salt and pepper"],
+        "instructions": "Boil potatoes until tender. Cook cabbage for 5 minutes. Mash potatoes with butter and milk. Mix in cabbage and green onions. Season with salt and pepper. Serve hot.",
+        "proteins": ["potatoes"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 15,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Swiss Cheese Fondue",
+        "cuisine": "Swiss",
+        "ingredients": ["1 cup Gruyère cheese", "1 cup Emmental cheese", "1 cup white wine", "2 tbsp cornstarch", "1 clove garlic", "Bread cubes for dipping"],
+        "instructions": "Rub pot with garlic. Heat wine until simmering. Mix cheeses with cornstarch. Add cheese gradually, stirring until melted. Serve with bread cubes for dipping.",
+        "proteins": ["gruyère cheese", "emmental cheese"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 10,
+        "difficulty": "easy"
+      },
+      {
+        "title": "Quick Austrian Apfelstrudel",
+        "cuisine": "Austrian",
+        "ingredients": ["4 apples, sliced", "1/2 cup sugar", "1 tsp cinnamon", "1/4 cup raisins", "6 sheets phyllo dough", "4 tbsp butter, melted", "Powdered sugar"],
+        "instructions": "Mix apples with sugar, cinnamon, and raisins. Layer phyllo sheets with butter. Add apple mixture. Roll and seal. Brush with butter. Bake at 375°F for 25 minutes. Dust with powdered sugar.",
+        "proteins": ["apples"],
+        "dietary_restrictions": ["vegetarian", "contains_dairy"],
+        "cooking_time": 30,
+        "difficulty": "medium"
       }
     ]
   }
