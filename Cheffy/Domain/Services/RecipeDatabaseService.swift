@@ -430,11 +430,70 @@ class RecipeDatabaseService: ObservableObject {
             }
             
             for (index, recipeData) in cuisineRecipes.enumerated() {
-                guard let title = recipeData["title"] as? String,
-                      let ingredients = recipeData["ingredients"] as? [String],
-                      let instructions = recipeData["instructions"] as? String,
-                      let cookingTime = recipeData["cooking_time"] as? Int,
-                      let difficultyString = recipeData["difficulty"] as? String else {
+                // Handle both old and new JSON formats
+                let title: String
+                let ingredients: [String]
+                let instructions: String
+                let cookingTime: Int
+                let difficultyString: String
+                
+                // Check for new format first (with recipe_name and cooking_time_category)
+                if let recipeName = recipeData["recipe_name"] as? String,
+                   let recipeIngredients = recipeData["ingredients"] as? [String],
+                   let cookingInstructions = recipeData["cooking_instructions"] as? [String],
+                   let cookingTimeCategory = recipeData["cooking_time_category"] as? String,
+                   let recipeDifficulty = recipeData["difficulty"] as? String {
+                    
+                    title = recipeName
+                    ingredients = recipeIngredients
+                    instructions = cookingInstructions.joined(separator: " ")
+                    difficultyString = recipeDifficulty
+                    
+                    // Convert cooking_time_category to numeric cooking time
+                    switch cookingTimeCategory.lowercased() {
+                    case "under 5 min":
+                        cookingTime = 5
+                    case "under 10 min":
+                        cookingTime = 10
+                    case "under 15 min":
+                        cookingTime = 15
+                    case "under 20 min":
+                        cookingTime = 20
+                    case "under 25 min":
+                        cookingTime = 25
+                    case "under 30 min":
+                        cookingTime = 30
+                    case "under 40 min":
+                        cookingTime = 40
+                    case "under 45 min":
+                        cookingTime = 45
+                    case "under 50 min":
+                        cookingTime = 50
+                    case "under 1 hour":
+                        cookingTime = 60
+                    case "under 1.5 hours":
+                        cookingTime = 90
+                    case "under 2 hours":
+                        cookingTime = 120
+                    case "any time":
+                        cookingTime = 180 // Set to 3 hours for "Any Time" recipes
+                    default:
+                        cookingTime = 45 // Default fallback
+                    }
+                }
+                // Handle old format (with title and cooking_time)
+                else if let recipeTitle = recipeData["title"] as? String,
+                        let recipeIngredients = recipeData["ingredients"] as? [String],
+                        let recipeInstructions = recipeData["instructions"] as? String,
+                        let recipeCookingTime = recipeData["cooking_time"] as? Int,
+                        let recipeDifficulty = recipeData["difficulty"] as? String {
+                    
+                    title = recipeTitle
+                    ingredients = recipeIngredients
+                    instructions = recipeInstructions
+                    cookingTime = recipeCookingTime
+                    difficultyString = recipeDifficulty
+                } else {
                     logger.warning("Skipping recipe \(index) in \(cuisineName) - missing required fields")
                     continue
                 }

@@ -584,7 +584,7 @@
         "difficulty": "medium"
       },
       {
-        "recipe_name": "Mediterranean Seafood Paella",
+        "title": "Mediterranean Seafood Paella",
         "cuisine": "Mediterranean",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Any Time",
@@ -619,7 +619,7 @@
           "Ladle",
           "Tongs"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Heat olive oil in paella pan over medium-high heat. Season chicken with salt and pepper. Brown chicken pieces for 5 minutes per side. Remove and set aside.",
           "Add chorizo and cook for 3 minutes until browned. Add onion and garlic, cook for 5 minutes until softened.",
           "Add tomatoes, bell pepper, and rice. Cook for 2 minutes, stirring constantly. Add wine and cook until absorbed.",
@@ -629,7 +629,7 @@
         "chef_tips": "The key to perfect paella is not stirring after adding the stock. The socarrat (crispy bottom layer) is the prize. Use the widest pan possible for even cooking and authentic presentation."
       },
       {
-        "recipe_name": "Mediterranean Stuffed Eggplant",
+        "title": "Mediterranean Stuffed Eggplant",
         "cuisine": "Mediterranean",
         "diet_type": "vegetarian",
         "cooking_time_category": "Under 1 hour",
@@ -661,7 +661,7 @@
           "Wooden spoon",
           "Spoon for scooping"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Preheat oven to 400°F. Cut eggplants in half lengthwise. Score flesh and brush with 1/4 cup olive oil. Bake for 30 minutes until tender.",
           "Scoop out eggplant flesh, leaving shells intact. Chop flesh and set aside.",
           "Heat remaining oil in large skillet. Add onion and garlic, cook for 5 minutes until softened. Add tomatoes and cook for 3 minutes.",
@@ -671,7 +671,7 @@
         "chef_tips": "The eggplant should be tender but not mushy. The combination of sweet raisins, savory pine nuts, and aromatic spices creates the perfect Mediterranean flavor profile."
       },
       {
-        "recipe_name": "Mediterranean Grilled Octopus",
+        "title": "Mediterranean Grilled Octopus",
         "cuisine": "Mediterranean",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Under 1 hour",
@@ -701,7 +701,7 @@
           "Tongs",
           "Large bowl for marinating"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Bring large pot of salted water to boil. Add bay leaves and onion. Add octopus and simmer for 45 minutes until tender.",
           "Drain octopus and let cool. Cut into serving pieces.",
           "Make marinade: whisk olive oil, vinegar, garlic, oregano, paprika, and lemon juice. Season with salt and pepper.",
@@ -711,7 +711,7 @@
         "chef_tips": "The key is slow poaching followed by high-heat grilling. The octopus should be tender inside and crispy outside. Don't overcook during the poaching stage."
       },
       {
-        "recipe_name": "Mediterranean Lamb Tagine",
+        "title": "Mediterranean Lamb Tagine",
         "cuisine": "Mediterranean",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Under 2 hours",
@@ -744,7 +744,7 @@
           "Wooden spoon",
           "Couscous pot"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Season lamb with salt and pepper. Heat olive oil in tagine over medium-high heat. Brown lamb in batches for 5 minutes per side. Remove and set aside.",
           "Add onions and garlic to tagine. Cook for 8 minutes until softened. Add spices and cook for 1 minute until fragrant.",
           "Return lamb to tagine. Add tomatoes, dried fruits, and stock. Bring to boil, then reduce heat to low.",
@@ -754,7 +754,7 @@
         "chef_tips": "The slow, gentle cooking in a tagine creates incredibly tender meat. The combination of sweet dried fruits and savory lamb is quintessentially Mediterranean."
       },
       {
-        "recipe_name": "Mediterranean Stuffed Grape Leaves (Dolmas)",
+        "title": "Mediterranean Stuffed Grape Leaves (Dolmas)",
         "cuisine": "Mediterranean",
         "diet_type": "vegetarian",
         "cooking_time_category": "Under 1 hour",
@@ -787,7 +787,7 @@
           "Wooden spoon",
           "Kitchen twine"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "If using fresh grape leaves, blanch in boiling water for 2 minutes. Drain and set aside.",
           "Make filling: mix rice, onion, garlic, pine nuts, currants, herbs, olive oil, lemon juice, and spices. Season with salt and pepper.",
           "Place grape leaves vein-side up. Add 1 tbsp filling to center of each leaf. Fold sides over filling and roll tightly.",
@@ -797,7 +797,7 @@
         "chef_tips": "The rolling technique takes practice - the dolmas should be tight but not overstuffed. The combination of herbs and spices creates the authentic Mediterranean flavor."
       },
       {
-        "recipe_name": "Mediterranean Seafood Stew (Bouillabaisse)",
+        "title": "Mediterranean Seafood Stew (Bouillabaisse)",
         "cuisine": "Mediterranean",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Under 45 min",
@@ -833,7 +833,7 @@
           "Slotted spoon",
           "Fine mesh strainer"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Heat olive oil in large pot over medium heat. Add onions, garlic, and fennel. Cook for 8 minutes until softened.",
           "Add tomatoes, orange peel, fennel seeds, bay leaves, and saffron. Cook for 5 minutes until tomatoes break down.",
           "Add fish stock and wine. Bring to boil, then reduce heat and simmer for 20 minutes. Season with salt and pepper.",
@@ -843,7 +843,7 @@
         "chef_tips": "The key is using the freshest seafood possible and building layers of flavor with the aromatic base. The saffron is essential for authentic bouillabaisse."
       },
       {
-        "recipe_name": "Greek Spanakopita (Spinach Pie)",
+        "title": "Greek Spanakopita (Spinach Pie)",
         "cuisine": "Greek",
         "diet_type": "vegetarian",
         "cooking_time_category": "Under 45 min",
@@ -875,7 +875,7 @@
           "Measuring cups and spoons",
           "Wooden spoon"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Preheat oven to 375°F (190°C). Heat 2 tbsp olive oil in large skillet over medium heat. Add onion and garlic, cook for 5 minutes until softened.",
           "Add spinach in batches, cooking until wilted and excess moisture evaporates, about 8 minutes. Season with salt, pepper, and nutmeg.",
           "Transfer spinach to large bowl. Let cool slightly, then add feta, ricotta, eggs, dill, and parsley. Mix well.",
@@ -885,7 +885,7 @@
         "chef_tips": "Ensure spinach is completely dry before mixing with cheese to prevent soggy phyllo. The key is layering phyllo properly and brushing each sheet with butter for crispiness."
       },
       {
-        "recipe_name": "Greek Souvlaki with Tzatziki",
+        "title": "Greek Souvlaki with Tzatziki",
         "cuisine": "Greek",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Under 30 min",
@@ -921,7 +921,7 @@
           "Fine grater",
           "Kitchen towel"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Combine pork with olive oil, lemon juice, garlic, oregano, thyme, salt, and pepper. Marinate for 30 minutes at room temperature.",
           "For tzatziki: Grate cucumber, salt lightly, and let drain in towel for 10 minutes. Mix with yogurt, garlic, olive oil, lemon juice, and dill.",
           "Thread pork onto skewers. Grill over medium-high heat for 12-15 minutes, turning occasionally, until cooked through.",
@@ -930,7 +930,7 @@
         "chef_tips": "Don't overcook the pork - it should be juicy and slightly pink inside. The tzatziki needs time for flavors to meld, so make it ahead if possible."
       },
       {
-        "recipe_name": "Greek Avgolemono Soup",
+        "title": "Greek Avgolemono Soup",
         "cuisine": "Greek",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Under 30 min",
@@ -957,7 +957,7 @@
           "Measuring cups and spoons",
           "Slotted spoon"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Place chicken in large pot with stock. Bring to boil, reduce heat, and simmer for 20 minutes until chicken is cooked through.",
           "Remove chicken and strain stock. Return stock to pot, add rice, and simmer for 15 minutes until rice is tender.",
           "Whisk egg whites until frothy. Gradually whisk in egg yolks, then lemon juice. Temper with hot stock, whisking constantly.",
@@ -966,7 +966,7 @@
         "chef_tips": "The key is tempering the eggs slowly to prevent curdling. The soup should be silky smooth with a perfect balance of lemon and chicken flavors."
       },
       {
-        "recipe_name": "Greek Pastitsio",
+        "title": "Greek Pastitsio",
         "cuisine": "Greek",
         "diet_type": "non-vegetarian",
         "cooking_time_category": "Under 1.5 hours",
@@ -1003,7 +1003,7 @@
           "Wooden spoon",
           "Colander"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Cook pasta according to package directions until al dente. Drain and set aside. Preheat oven to 375°F (190°C).",
           "Brown ground meats with onion and garlic in large skillet over medium heat for 8 minutes. Add tomatoes, paste, wine, and spices. Simmer for 20 minutes.",
           "Make béchamel: Melt butter, whisk in flour, cook for 2 minutes. Gradually whisk in milk, cook until thickened. Remove from heat, whisk in eggs and half the cheese.",
@@ -1013,7 +1013,7 @@
         "chef_tips": "This is Greece's answer to lasagna. The key is the perfect béchamel sauce and letting it rest before cutting to maintain layers."
       },
       {
-        "recipe_name": "Greek Dolmades (Stuffed Grape Leaves)",
+        "title": "Greek Dolmades (Stuffed Grape Leaves)",
         "cuisine": "Greek",
         "diet_type": "vegetarian",
         "cooking_time_category": "Under 1 hour",
@@ -1045,7 +1045,7 @@
           "Plate for weighing down",
           "Fine mesh strainer"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Rinse grape leaves and blanch in boiling water for 2 minutes. Drain and set aside. Rinse rice until water runs clear.",
           "Heat olive oil in skillet over medium heat. Add onion and cook for 5 minutes until softened. Add rice, dill, mint, parsley, lemon juice, salt, and pepper. Cook for 3 minutes.",
           "Place grape leaf vein-side up. Add 1 tbsp rice mixture near stem end. Fold sides over, then roll tightly from stem to tip.",
@@ -1055,7 +1055,7 @@
         "chef_tips": "The key is not overstuffing the leaves and rolling them tightly. The plate on top prevents them from unraveling during cooking."
       },
       {
-        "recipe_name": "Greek Loukoumades (Honey Puffs)",
+        "title": "Greek Loukoumades (Honey Puffs)",
         "cuisine": "Greek",
         "diet_type": "vegetarian",
         "cooking_time_category": "Under 30 min",
@@ -1084,13 +1084,233 @@
           "Thermometer",
           "Small saucepan"
         ],
-        "cooking_instructions": [
+        "instructions": [
           "Dissolve yeast and sugar in warm water. Let stand for 5 minutes until foamy. Mix flour and salt in large bowl.",
           "Add yeast mixture to flour. Mix until smooth dough forms. Cover and let rise for 1 hour until doubled.",
           "Heat oil to 375°F (190°C) in deep fryer. Drop small spoonfuls of dough into hot oil. Fry for 3-4 minutes until golden brown.",
           "Drain on paper towels. Warm honey in small saucepan. Drizzle over puffs, sprinkle with walnuts and cinnamon, dust with powdered sugar."
         ],
         "chef_tips": "These are Greece's answer to donuts. The key is maintaining consistent oil temperature and not overcrowding the fryer."
+      }
+    ],
+    "Mediterranean": [
+      {
+        "title": "Mediterranean Seafood Paella",
+        "cuisine": "Mediterranean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 6,
+        "calories_per_serving": 450,
+        "difficulty": "Medium",
+        "cooking_time": 60,
+        "ingredients": [
+          "2 cups short-grain rice (400g)",
+          "1 lb mixed seafood (shrimp, mussels, squid) (450g)",
+          "1/2 lb chicken thighs, diced (225g)",
+          "1 large onion, diced (200g)",
+          "4 cloves garlic, minced",
+          "1 red bell pepper, sliced (150g)",
+          "1 can diced tomatoes (400g)",
+          "4 cups chicken stock (1L)",
+          "1/2 cup white wine (120ml)",
+          "1 tsp saffron threads",
+          "1 tsp smoked paprika",
+          "1/2 tsp turmeric",
+          "1/4 cup olive oil (60ml)",
+          "Salt and pepper to taste",
+          "Lemon wedges for serving",
+          "Fresh parsley for garnish"
+        ],
+        "utensils_required": [
+          "Large paella pan or wide skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Lid or aluminum foil"
+        ],
+        "instructions": "Heat olive oil in large paella pan over medium-high heat. Season chicken with salt and pepper, cook until golden, about 5 minutes. Add onion, garlic, and bell pepper. Cook until softened, about 4 minutes. Add rice and stir to coat with oil. Add tomatoes, wine, saffron, paprika, and turmeric. Stir well and cook for 2 minutes until wine is absorbed. Add hot stock, bring to boil. Reduce heat to medium-low, simmer uncovered for 15 minutes without stirring. Arrange seafood on top of rice. Cover and cook for 8-10 minutes until seafood is cooked and rice is tender. Serve with lemon wedges and parsley.",
+        "chef_tips": "The key to perfect paella is not stirring the rice after adding stock. The socarrat (crispy bottom layer) is the signature of a great paella."
+      },
+      {
+        "title": "Mediterranean Stuffed Eggplant",
+        "cuisine": "Mediterranean",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 45 min",
+        "servings": 4,
+        "calories_per_serving": 320,
+        "difficulty": "Medium",
+        "cooking_time": 45,
+        "ingredients": [
+          "2 large eggplants (800g)",
+          "1/2 cup olive oil (120ml)",
+          "1 large onion, diced (200g)",
+          "4 cloves garlic, minced",
+          "1 can diced tomatoes (400g)",
+          "1/2 cup pine nuts (60g)",
+          "1/2 cup golden raisins (75g)",
+          "1/4 cup fresh mint, chopped (15g)",
+          "1/4 cup fresh parsley, chopped (15g)",
+          "1 tsp ground cinnamon",
+          "1/2 tsp ground allspice",
+          "Salt and pepper to taste",
+          "1/2 cup feta cheese, crumbled (75g)"
+        ],
+        "utensils_required": [
+          "Baking sheet",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Spoon for scooping"
+        ],
+        "instructions": "Preheat oven to 400°F (200°C). Cut eggplants in half lengthwise, score flesh in crosshatch pattern. Brush with 2 tbsp olive oil, season with salt. Bake eggplants for 25 minutes until tender. Let cool, scoop out flesh leaving shells intact. Chop flesh and set aside. Heat remaining oil in large skillet. Add onion and garlic, cook until softened, about 5 minutes. Add chopped eggplant flesh, tomatoes, pine nuts, raisins, mint, parsley, cinnamon, and allspice. Cook for 8 minutes until flavors meld. Fill eggplant shells with mixture, top with feta. Bake for 15 minutes until heated through and feta is golden.",
+        "chef_tips": "The key is properly roasting the eggplants to develop deep, smoky flavor. Don't skip the crosshatch scoring - it helps the oil penetrate and creates better texture."
+      },
+      {
+        "title": "Mediterranean Grilled Octopus",
+        "cuisine": "Mediterranean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 4,
+        "calories_per_serving": 280,
+        "difficulty": "Hard",
+        "cooking_time": 30,
+        "ingredients": [
+          "2 lbs octopus tentacles (900g)",
+          "1/4 cup olive oil (60ml)",
+          "3 cloves garlic, minced",
+          "2 tbsp fresh oregano, chopped (8g)",
+          "1 tbsp lemon zest",
+          "1/4 cup lemon juice (60ml)",
+          "1 tsp smoked paprika",
+          "Salt and pepper to taste",
+          "1/4 cup fresh parsley, chopped (15g)",
+          "Lemon wedges for serving"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Grill or grill pan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Tongs",
+          "Small bowl for marinade"
+        ],
+        "instructions": "Bring large pot of salted water to boil. Add octopus, reduce heat to simmer. Cook for 45 minutes until tender when pierced with fork. Drain octopus, let cool. Cut into 2-inch pieces. Combine olive oil, garlic, oregano, lemon zest, paprika, salt, and pepper. Marinate octopus pieces in mixture for 30 minutes at room temperature. Heat grill to high. Grill octopus for 3-4 minutes per side until charred and heated through. Transfer to serving platter, drizzle with lemon juice, sprinkle with parsley. Serve with lemon wedges.",
+        "chef_tips": "The key is proper tenderizing through slow simmering. Octopus should be tender but not mushy. The char from grilling adds essential smoky flavor."
+      },
+      {
+        "title": "Mediterranean Lamb Tagine",
+        "cuisine": "Mediterranean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 2 hours",
+        "servings": 6,
+        "calories_per_serving": 520,
+        "difficulty": "Medium",
+        "cooking_time": 120,
+        "ingredients": [
+          "2 lbs lamb shoulder, cut into 2-inch pieces (900g)",
+          "2 large onions, sliced (400g)",
+          "4 cloves garlic, minced",
+          "1 can diced tomatoes (400g)",
+          "1/2 cup dried apricots, halved (75g)",
+          "1/2 cup pitted green olives (75g)",
+          "2 tbsp honey (30ml)",
+          "1 tbsp ground cumin (7g)",
+          "1 tbsp ground coriander (7g)",
+          "1 tsp ground cinnamon (2g)",
+          "1/2 tsp ground ginger (1g)",
+          "1/4 cup olive oil (60ml)",
+          "Salt and pepper to taste",
+          "Fresh cilantro for garnish",
+          "Couscous for serving"
+        ],
+        "utensils_required": [
+          "Large Dutch oven or tagine",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Lid"
+        ],
+        "instructions": "Heat olive oil in large Dutch oven over medium-high heat. Season lamb with salt and pepper, brown on all sides, about 8 minutes. Add onions and garlic, cook until softened, about 5 minutes. Add cumin, coriander, cinnamon, and ginger, cook for 1 minute until fragrant. Add tomatoes, apricots, olives, and honey. Bring to boil, reduce heat to low, cover and simmer for 1.5 hours until lamb is tender. Uncover and simmer for 15 minutes to reduce sauce. Season with salt and pepper. Garnish with cilantro and serve over couscous.",
+        "chef_tips": "The key is slow, gentle cooking to develop the complex flavors. The combination of sweet apricots and briny olives creates the signature Mediterranean balance."
+      },
+      {
+        "title": "Mediterranean Stuffed Grape Leaves (Dolmas)",
+        "cuisine": "Mediterranean",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 8,
+        "calories_per_serving": 180,
+        "difficulty": "Medium",
+        "cooking_time": 60,
+        "ingredients": [
+          "1 jar grape leaves (about 40 leaves)",
+          "1 cup short-grain rice (200g)",
+          "1 large onion, finely diced (200g)",
+          "4 cloves garlic, minced",
+          "1/4 cup pine nuts (30g)",
+          "1/4 cup currants (40g)",
+          "1/4 cup fresh dill, chopped (15g)",
+          "1/4 cup fresh mint, chopped (15g)",
+          "1/4 cup fresh parsley, chopped (15g)",
+          "1/4 cup olive oil (60ml)",
+          "1/4 cup lemon juice (60ml)",
+          "1 tsp ground allspice (2g)",
+          "Salt and pepper to taste",
+          "2 cups vegetable stock (500ml)"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Large plate for weighing down"
+        ],
+        "instructions": "Rinse grape leaves, blanch in boiling water for 2 minutes. Drain and set aside. Rinse rice until water runs clear. Heat 2 tbsp olive oil in large pot. Add onion and garlic, cook until softened, about 5 minutes. Add rice, pine nuts, currants, herbs, allspice, salt, and pepper. Cook for 3 minutes until rice is lightly toasted. Place grape leaf vein-side up, add 1 tbsp filling near stem end. Fold sides over filling, roll tightly from stem to tip. Arrange dolmas seam-side down in pot, add stock and remaining olive oil. Cover with plate, simmer for 45 minutes until rice is tender.",
+        "chef_tips": "The key is rolling the dolmas tightly but not too tight. The plate on top keeps them from unraveling during cooking. Fresh herbs are essential for authentic flavor."
+      },
+      {
+        "title": "Mediterranean Seafood Stew (Bouillabaisse)",
+        "cuisine": "Mediterranean",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 6,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "cooking_time": 60,
+        "ingredients": [
+          "1 lb mixed fish fillets (cod, halibut) (450g)",
+          "1 lb mussels, scrubbed (450g)",
+          "1 lb shrimp, peeled (450g)",
+          "1 large onion, diced (200g)",
+          "4 cloves garlic, minced",
+          "1 fennel bulb, sliced (200g)",
+          "1 can diced tomatoes (400g)",
+          "4 cups fish stock (1L)",
+          "1/2 cup white wine (120ml)",
+          "1/4 cup olive oil (60ml)",
+          "1 tsp saffron threads",
+          "1 tsp fennel seeds",
+          "1 bay leaf",
+          "Salt and pepper to taste",
+          "Fresh parsley for garnish",
+          "Rouille for serving"
+        ],
+        "utensils_required": [
+          "Large Dutch oven",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon",
+          "Slotted spoon"
+        ],
+        "instructions": "Heat olive oil in large Dutch oven over medium heat. Add onion, garlic, and fennel, cook until softened, about 8 minutes. Add tomatoes, wine, saffron, fennel seeds, and bay leaf. Cook for 5 minutes until wine is reduced by half. Add fish stock, bring to boil. Reduce heat and simmer for 15 minutes to develop flavors. Add fish fillets, cook for 5 minutes. Add mussels and shrimp, cook for 3-4 minutes until mussels open and shrimp are pink. Discard any unopened mussels. Season with salt and pepper, garnish with parsley. Serve with rouille.",
+        "chef_tips": "The key is building layers of flavor with the sofrito base. Don't overcook the seafood - add it in stages based on cooking time. The saffron is essential for authentic bouillabaisse."
       }
     ]
   }
