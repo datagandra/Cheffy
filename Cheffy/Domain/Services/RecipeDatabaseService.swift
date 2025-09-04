@@ -41,6 +41,15 @@ class RecipeDatabaseService: ObservableObject {
                 let recipes = loadRecipesFromURL(url)
                 allRecipes.append(contentsOf: recipes)
                 logger.info("Loaded \(recipes.count) recipes from \(fileName).json")
+                
+                // Debug: Check for Chinese recipes specifically
+                if fileName == "asian_cuisines_extended" {
+                    let chineseRecipes = recipes.filter { $0.cuisine == .chinese }
+                    logger.info("Chinese recipes found in \(fileName): \(chineseRecipes.count)")
+                    for recipe in chineseRecipes {
+                        logger.info("Chinese recipe: \(recipe.title)")
+                    }
+                }
             } else {
                 logger.warning("Could not find \(fileName).json")
             }
@@ -429,6 +438,11 @@ class RecipeDatabaseService: ObservableObject {
                 continue
             }
             
+            // Debug: Log cuisine processing
+            if cuisineName == "Chinese" {
+                logger.info("Processing Chinese cuisine with \(cuisineRecipes.count) recipes")
+            }
+            
             for (index, recipeData) in cuisineRecipes.enumerated() {
                 // Handle both old and new JSON formats
                 let title: String
@@ -507,6 +521,25 @@ class RecipeDatabaseService: ObservableObject {
                         if let note = DietaryNote(rawValue: restriction) {
                             dietaryNotes.append(note)
                         }
+                    }
+                }
+                
+                // If no dietary restrictions specified in JSON, infer from ingredients
+                if dietaryNotes.isEmpty {
+                    let hasMeat = ingredients.contains { ingredient in
+                        let lowercased = ingredient.lowercased()
+                        return lowercased.contains("chicken") || lowercased.contains("beef") || 
+                               lowercased.contains("lamb") || lowercased.contains("pork") ||
+                               lowercased.contains("fish") || lowercased.contains("shrimp") ||
+                               lowercased.contains("goat") || lowercased.contains("turkey") ||
+                               lowercased.contains("mutton") || lowercased.contains("prawn") ||
+                               lowercased.contains("duck") || lowercased.contains("meat")
+                    }
+                    
+                    if hasMeat {
+                        dietaryNotes.append(.nonVegetarian)
+                    } else {
+                        dietaryNotes.append(.vegetarian)
                     }
                 }
                 

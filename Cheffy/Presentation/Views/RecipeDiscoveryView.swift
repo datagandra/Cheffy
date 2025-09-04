@@ -37,10 +37,10 @@ struct RecipeDiscoveryView: View {
         // Filter by dietary restrictions
         if !selectedDietaryRestrictions.isEmpty {
             recipes = recipes.filter { recipe in
-                // Check if recipe has any of the selected dietary restrictions
+                // Recipe must have ALL selected dietary restrictions
                 let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
                 let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
-                return !recipeDietaryNotes.isDisjoint(with: selectedDietaryNotes)
+                return selectedDietaryNotes.isSubset(of: recipeDietaryNotes)
             }
         }
         
@@ -94,7 +94,7 @@ struct RecipeDiscoveryView: View {
             recipes = recipes.filter { recipe in
                 let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
                 let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
-                return !recipeDietaryNotes.isDisjoint(with: selectedDietaryNotes)
+                return selectedDietaryNotes.isSubset(of: recipeDietaryNotes)
             }
         }
         
@@ -141,7 +141,7 @@ struct RecipeDiscoveryView: View {
             recipes = recipes.filter { recipe in
                 let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
                 let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
-                return !recipeDietaryNotes.isDisjoint(with: selectedDietaryNotes)
+                return selectedDietaryNotes.isSubset(of: recipeDietaryNotes)
             }
         }
         

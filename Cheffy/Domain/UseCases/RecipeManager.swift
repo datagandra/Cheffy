@@ -618,7 +618,8 @@ class RecipeManager: ObservableObject {
                            lowercased.contains("lamb") || lowercased.contains("pork") ||
                            lowercased.contains("fish") || lowercased.contains("shrimp") ||
                            lowercased.contains("goat") || lowercased.contains("turkey") ||
-                           lowercased.contains("mutton") || lowercased.contains("prawn")
+                           lowercased.contains("mutton") || lowercased.contains("prawn") ||
+                           lowercased.contains("duck") || lowercased.contains("meat")
                 }
                 
                 if hasMeat {
@@ -971,7 +972,7 @@ class RecipeManager: ObservableObject {
         case .italian:
             return "european_cuisines" // Italian recipes are in european_cuisines.json
         case .chinese:
-            return "asian_cuisines"
+            return "asian_cuisines_extended"
         case .mexican:
             return "mexican_cuisines"
         case .mediterranean:
