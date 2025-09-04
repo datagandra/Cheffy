@@ -22,14 +22,6 @@ final class QuickRecipeTests: XCTestCase {
     
     // MARK: - Cooking Time Filter Tests
     
-    func testCookingTimeFilterUnder10Minutes() {
-        let filter = CookingTimeFilter.under10min
-        
-        XCTAssertEqual(filter.maxTotalTime, 10)
-        XCTAssertTrue(filter.isQuickRecipe)
-        XCTAssertEqual(filter.quickRecipeBadge, "⚡ Super Quick")
-    }
-    
     func testCookingTimeFilterUnder20Minutes() {
         let filter = CookingTimeFilter.under20min
         

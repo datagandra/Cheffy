@@ -519,7 +519,7 @@ class RecipeManager: ObservableObject {
         }
         
         let shuffledRecipes = filteredRecipes.shuffled()
-        let finalRecipes = Array(shuffledRecipes.prefix(20))
+        let finalRecipes = shuffledRecipes // Remove the 20 recipe limit
         
         await MainActor.run {
             self.popularRecipes = finalRecipes
@@ -1302,7 +1302,7 @@ class RecipeManager: ObservableObject {
         }
         
         // Take up to 20 recipes for better variety
-        let selectedRecipes = Array(filteredRecipes.prefix(20))
+        let selectedRecipes = filteredRecipes // Remove the 20 recipe limit
         
         await MainActor.run {
             if !selectedRecipes.isEmpty {

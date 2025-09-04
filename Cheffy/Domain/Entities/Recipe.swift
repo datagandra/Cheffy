@@ -97,7 +97,6 @@ enum Difficulty: String, CaseIterable, Codable {
 
 enum CookingTimeFilter: String, CaseIterable, Codable {
     case any = "Any Time"
-    case under10min = "Under 10 min"
     case under20min = "Under 20 min"
     case under30min = "Under 30 min"
     case under45min = "Under 45 min"
@@ -109,8 +108,6 @@ enum CookingTimeFilter: String, CaseIterable, Codable {
         switch self {
         case .any:
             return Int.max
-        case .under10min:
-            return 10
         case .under20min:
             return 20
         case .under30min:
@@ -128,7 +125,7 @@ enum CookingTimeFilter: String, CaseIterable, Codable {
     
     var isQuickRecipe: Bool {
         switch self {
-        case .under10min, .under20min, .under30min:
+        case .under20min, .under30min:
             return true
         default:
             return false
@@ -137,8 +134,6 @@ enum CookingTimeFilter: String, CaseIterable, Codable {
     
     var quickRecipeBadge: String {
         switch self {
-        case .under10min:
-            return "⚡ Super Quick"
         case .under20min:
             return "⚡ Quick"
         case .under30min:

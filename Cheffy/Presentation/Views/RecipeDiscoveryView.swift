@@ -850,7 +850,7 @@ struct QuickRecipeFilterView: View {
             Form {
                 // Quick Recipe Time Selection
                 Section("Quick Recipe Time") {
-                    ForEach([CookingTimeFilter.under10min, .under20min, .under30min], id: \.self) { timeFilter in
+                    ForEach([CookingTimeFilter.under20min, .under30min], id: \.self) { timeFilter in
                         HStack {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(timeFilter.rawValue)
