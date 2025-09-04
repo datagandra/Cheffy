@@ -538,16 +538,44 @@ class RecipeManager: ObservableObject {
     ) -> [Recipe] {
         var allRecipes: [Recipe] = []
         
-        // Load recipes from JSON files based on cuisine
-        let cuisineFileName = getCuisineFileName(cuisine)
-        logger.warning("🔍 Loading ALL recipes from: \(cuisineFileName).json")
-        
-        guard let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json") else {
-            logger.error("❌ Could not find JSON file: \(cuisineFileName).json")
-            return allRecipes
+        if cuisine == .any {
+            // Load recipes from ALL JSON files for "Any Cuisine"
+            let allCuisineFiles = [
+                "american_cuisines",
+                "asian_cuisines_extended", 
+                "asian_cuisines",
+                "european_cuisines",
+                "indian_cuisines",
+                "latin_american_cuisines",
+                "mediterranean_cuisines",
+                "mexican_cuisines",
+                "middle_eastern_african_cuisines"
+            ]
+            
+            for fileName in allCuisineFiles {
+                guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+                    logger.warning("⚠️ Could not find JSON file: \(fileName).json")
+                    continue
+                }
+                
+                let recipes = loadAllRecipesFromURL(url, cuisine: cuisine, difficulty: difficulty, maxTime: maxTime, servings: servings)
+                allRecipes.append(contentsOf: recipes)
+                logger.warning("✅ Loaded \(recipes.count) recipes from \(fileName).json")
+            }
+        } else {
+            // Load recipes from specific JSON file
+            let cuisineFileName = getCuisineFileName(cuisine)
+            logger.warning("🔍 Loading ALL recipes from: \(cuisineFileName).json")
+            
+            guard let url = Bundle.main.url(forResource: cuisineFileName, withExtension: "json") else {
+                logger.error("❌ Could not find JSON file: \(cuisineFileName).json")
+                return allRecipes
+            }
+            
+            allRecipes = loadAllRecipesFromURL(url, cuisine: cuisine, difficulty: difficulty, maxTime: maxTime, servings: servings)
         }
         
-        return loadAllRecipesFromURL(url, cuisine: cuisine, difficulty: difficulty, maxTime: maxTime, servings: servings)
+        return allRecipes
     }
     
     /// Helper function to load ALL recipes from a specific URL (both meat and vegetarian)
@@ -571,9 +599,23 @@ class RecipeManager: ObservableObject {
             return allRecipes
         }
         
-        guard let recipes = cuisines[cuisine.rawValue] as? [[String: Any]] else {
-            logger.error("❌ Could not find recipes for cuisine: \(cuisine.rawValue)")
-            return allRecipes
+        // Handle "Any Cuisine" case - load recipes from all cuisines in the file
+        var recipes: [[String: Any]] = []
+        if cuisine == .any {
+            // Load recipes from all cuisines in this file
+            for (cuisineName, cuisineRecipes) in cuisines {
+                if let cuisineRecipesArray = cuisineRecipes as? [[String: Any]] {
+                    recipes.append(contentsOf: cuisineRecipesArray)
+                    logger.warning("✅ Found \(cuisineRecipesArray.count) recipes for \(cuisineName)")
+                }
+            }
+        } else {
+            // Load recipes from specific cuisine
+            guard let specificRecipes = cuisines[cuisine.rawValue] as? [[String: Any]] else {
+                logger.error("❌ Could not find recipes for cuisine: \(cuisine.rawValue)")
+                return allRecipes
+            }
+            recipes = specificRecipes
         }
         
         logger.warning("✅ Found \(recipes.count) total recipes in \(url.lastPathComponent) for \(cuisine.rawValue)")
