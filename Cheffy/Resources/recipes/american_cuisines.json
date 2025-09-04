@@ -540,6 +540,163 @@
         "dietary_restrictions": [],
         "cooking_time": 240,
         "difficulty": "medium"
+      },
+      {
+        "recipe_name": "American BBQ Ribs",
+        "cuisine": "American",
+        "regional_origin": "Kansas City",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 2 hours",
+        "servings": 1,
+        "calories_per_serving": 580,
+        "difficulty": "Hard",
+        "ingredients": [
+          "1 rack baby back ribs",
+          "2 tbsp brown sugar",
+          "1 tbsp paprika",
+          "1 tbsp chili powder",
+          "1 tsp garlic powder",
+          "1 tsp onion powder",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp cayenne pepper",
+          "1 cup BBQ sauce",
+          "2 tbsp apple cider vinegar",
+          "1 tbsp Worcestershire sauce"
+        ],
+        "utensils_required": [
+          "Grill or oven",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Basting brush"
+        ],
+        "cooking_instructions": "Preheat grill to 250°F (120°C). Mix all dry ingredients for rub. Rub ribs with mixture. Wrap in foil. Cook 1.5 hours. Mix BBQ sauce with vinegar and Worcestershire. Unwrap ribs. Brush with sauce. Cook 30 minutes, basting every 10 minutes. Serve hot.",
+        "chef_tips": "The ribs should be tender and falling off the bone. The sauce should be thick and sticky. Don't overcook. Let them rest before serving."
+      },
+      {
+        "recipe_name": "American Mac and Cheese",
+        "cuisine": "American",
+        "regional_origin": "New York",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 520,
+        "difficulty": "Medium",
+        "ingredients": [
+          "200g (7 oz) elbow macaroni",
+          "2 tbsp butter",
+          "2 tbsp all-purpose flour",
+          "300ml (10 fl oz) milk",
+          "100g (3.5 oz) cheddar cheese, grated",
+          "50g (1.8 oz) mozzarella cheese, grated",
+          "1/2 tsp mustard powder",
+          "1/4 tsp cayenne pepper",
+          "Salt and black pepper to taste",
+          "Breadcrumbs for topping"
+        ],
+        "utensils_required": [
+          "Large pot for pasta",
+          "Large saucepan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Cook pasta according to package directions. Drain and set aside. Melt butter in saucepan. Add flour, cook 2 minutes. Add milk gradually, whisk until smooth. Add cheeses, mustard, and cayenne. Cook until melted. Add pasta. Season with salt and pepper. Top with breadcrumbs. Broil until golden. Serve hot.",
+        "chef_tips": "The cheese sauce should be smooth and creamy. Don't overcook the pasta. The top should be golden and crispy. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "American Buffalo Wings",
+        "cuisine": "American",
+        "regional_origin": "Buffalo",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 420,
+        "difficulty": "Medium",
+        "ingredients": [
+          "12 chicken wings",
+          "1/2 cup hot sauce",
+          "2 tbsp butter",
+          "1 tbsp white vinegar",
+          "1/2 tsp garlic powder",
+          "1/2 tsp cayenne pepper",
+          "Salt to taste",
+          "Blue cheese dressing for serving"
+        ],
+        "utensils_required": [
+          "Large bowl",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Tongs"
+        ],
+        "cooking_instructions": "Season wings with salt. Bake at 425°F (220°C) for 25 minutes until crispy. Mix hot sauce, butter, vinegar, garlic powder, and cayenne. Toss wings with sauce. Serve hot with blue cheese dressing.",
+        "chef_tips": "The wings should be crispy and golden. The sauce should be spicy and tangy. Don't overcook. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "American Apple Pie",
+        "cuisine": "American",
+        "regional_origin": "New England",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 380,
+        "difficulty": "Hard",
+        "ingredients": [
+          "200g (7 oz) all-purpose flour",
+          "100g (3.5 oz) butter, cold",
+          "2 tbsp sugar",
+          "1/2 tsp salt",
+          "4-6 tbsp ice water",
+          "4 apples, peeled and sliced",
+          "50g (1.8 oz) sugar",
+          "1 tsp cinnamon",
+          "1/4 tsp nutmeg",
+          "2 tbsp flour",
+          "1 egg, beaten"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "9-inch pie pan",
+          "Chef's knife",
+          "Cutting board",
+          "Pastry cutter",
+          "Measuring cups and spoons"
+        ],
+        "cooking_instructions": "Make pastry: mix flour, sugar, and salt. Cut in butter until crumbly. Add water gradually until dough forms. Chill 30 minutes. Mix apples with sugar, cinnamon, nutmeg, and flour. Roll out pastry. Line pie pan. Add filling. Cover with top crust. Seal edges. Brush with egg. Bake at 425°F (220°C) for 15 minutes, then 350°F (175°C) for 35 minutes. Cool before serving.",
+        "chef_tips": "The pastry should be flaky and golden. Don't overfill the pie. The apples should be tender but not mushy. Let it cool before slicing."
+      },
+      {
+        "recipe_name": "American Pancakes",
+        "cuisine": "American",
+        "regional_origin": "New England",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 1,
+        "calories_per_serving": 320,
+        "difficulty": "Easy",
+        "ingredients": [
+          "150g (5.3 oz) all-purpose flour",
+          "2 tbsp sugar",
+          "1 tsp baking powder",
+          "1/2 tsp salt",
+          "1 large egg",
+          "200ml (6.8 fl oz) milk",
+          "2 tbsp butter, melted",
+          "Maple syrup for serving"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Mix dry ingredients. Beat egg with milk and butter. Add to dry ingredients. Mix until just combined. Heat skillet over medium heat. Pour 1/4 cup batter per pancake. Cook until bubbles form. Flip and cook until golden. Serve hot with maple syrup.",
+        "chef_tips": "Don't overmix the batter. The pancakes should be golden and fluffy. Cook over medium heat. Serve immediately while hot."
       }
     ]
   }

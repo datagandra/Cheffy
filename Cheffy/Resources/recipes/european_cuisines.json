@@ -988,6 +988,424 @@
           "Slice veal thinly and arrange on platter. Spoon sauce over top. Serve chilled."
         ],
         "chef_tips": "This classic Piedmontese dish is perfect for summer. The veal should be very tender and the sauce smooth and creamy. Serve with capers and lemon wedges."
+      },
+      {
+        "recipe_name": "French Coq au Vin",
+        "cuisine": "French",
+        "regional_origin": "Burgundy",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 2 hours",
+        "servings": 1,
+        "calories_per_serving": 520,
+        "difficulty": "Hard",
+        "ingredients": [
+          "1 whole chicken, cut into pieces",
+          "200ml (6.8 fl oz) red wine",
+          "100g (3.5 oz) bacon, diced",
+          "200g (7 oz) mushrooms, quartered",
+          "1 small onion, diced",
+          "2 cloves garlic, minced",
+          "2 carrots, diced",
+          "2 tbsp tomato paste",
+          "1 bay leaf",
+          "2 sprigs fresh thyme",
+          "2 tbsp butter",
+          "2 tbsp flour",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large Dutch oven",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Season chicken with salt and pepper. Heat butter in Dutch oven over medium-high heat. Brown chicken on all sides. Remove and set aside. Add bacon, cook until crispy. Add onion, garlic, and carrots. Cook until soft. Add tomato paste, cook 1 minute. Add wine, bring to boil. Return chicken to pot. Add herbs. Cover and simmer 1 hour. Add mushrooms, cook 15 minutes. Thicken with flour if needed. Serve hot.",
+        "chef_tips": "The chicken should be well-browned. The wine should be reduced and flavorful. The sauce should be thick and rich. Let it rest before serving."
+      },
+      {
+        "recipe_name": "French Ratatouille",
+        "cuisine": "French",
+        "regional_origin": "Provence",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 180,
+        "difficulty": "Medium",
+        "ingredients": [
+          "1 eggplant, cubed",
+          "2 zucchini, cubed",
+          "2 bell peppers, cubed",
+          "4 tomatoes, diced",
+          "1 onion, diced",
+          "4 cloves garlic, minced",
+          "3 tbsp olive oil",
+          "2 tbsp fresh basil, chopped",
+          "1 tbsp fresh thyme",
+          "1 bay leaf",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Heat olive oil in pot over medium heat. Add onion and garlic, cook until soft. Add eggplant, cook 10 minutes. Add zucchini and bell peppers, cook 10 minutes. Add tomatoes, herbs, and bay leaf. Simmer 30 minutes until vegetables are tender. Season with salt and pepper. Remove bay leaf. Serve hot or at room temperature.",
+        "chef_tips": "The vegetables should be tender but not mushy. The dish should be well-seasoned. Let it cool slightly before serving. The flavors develop over time."
+      },
+      {
+        "recipe_name": "French Sole Meunière",
+        "cuisine": "French",
+        "regional_origin": "Normandy",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 1,
+        "calories_per_serving": 320,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 sole fillets",
+          "1/2 cup all-purpose flour",
+          "4 tbsp butter",
+          "2 tbsp olive oil",
+          "2 tbsp lemon juice",
+          "2 tbsp fresh parsley, chopped",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Fish spatula"
+        ],
+        "cooking_instructions": "Season fish with salt and pepper. Dredge in flour. Heat butter and oil in skillet over medium-high heat. Cook fish 3-4 minutes per side until golden. Remove and set aside. Add lemon juice to pan. Add parsley. Pour sauce over fish. Serve immediately.",
+        "chef_tips": "The fish should be golden and crispy. Don't overcook. The sauce should be buttery and lemony. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "French Crêpes Suzette",
+        "cuisine": "French",
+        "regional_origin": "Paris",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 280,
+        "difficulty": "Hard",
+        "ingredients": [
+          "100g (3.5 oz) all-purpose flour",
+          "2 large eggs",
+          "250ml (8.5 fl oz) milk",
+          "2 tbsp butter, melted",
+          "1 tbsp sugar",
+          "1/2 tsp salt",
+          "2 tbsp butter",
+          "2 tbsp sugar",
+          "2 tbsp orange juice",
+          "2 tbsp Grand Marnier",
+          "1 tsp orange zest"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Make crêpe batter: whisk flour, eggs, milk, melted butter, sugar, and salt. Let rest 30 minutes. Heat skillet over medium heat. Pour 1/4 cup batter, swirl to coat. Cook 1-2 minutes, flip, cook 30 seconds. Repeat. Make sauce: melt butter, add sugar, cook until caramelized. Add orange juice and zest. Add Grand Marnier, carefully ignite. Fold crêpes, add to sauce. Toss to coat. Serve immediately.",
+        "chef_tips": "The crêpes should be thin and delicate. The flambéing is dramatic - stand back. The sauce should be hot and glossy. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "German Bratwurst",
+        "cuisine": "German",
+        "regional_origin": "Bavaria",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 420,
+        "difficulty": "Easy",
+        "ingredients": [
+          "4 bratwurst sausages",
+          "1 small onion, sliced",
+          "1 bell pepper, sliced",
+          "2 tbsp vegetable oil",
+          "1 tsp caraway seeds",
+          "1 tsp paprika",
+          "Salt and black pepper to taste",
+          "Mustard and sauerkraut for serving"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Tongs"
+        ],
+        "cooking_instructions": "Heat oil in skillet over medium heat. Add sausages, cook 15 minutes, turning occasionally, until golden and cooked through. Remove and set aside. Add onion and bell pepper to same pan. Cook until soft. Add caraway seeds and paprika. Season with salt and pepper. Return sausages to pan. Serve hot with mustard and sauerkraut.",
+        "chef_tips": "The sausages should be golden and crispy. Don't overcook. The vegetables should be tender. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "German Sauerkraut",
+        "cuisine": "German",
+        "regional_origin": "Bavaria",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 1,
+        "calories_per_serving": 80,
+        "difficulty": "Easy",
+        "ingredients": [
+          "500g (17.6 oz) sauerkraut",
+          "1 small onion, diced",
+          "2 cloves garlic, minced",
+          "2 tbsp butter",
+          "1 tsp caraway seeds",
+          "1 bay leaf",
+          "1/2 cup white wine",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Rinse sauerkraut and drain. Heat butter in pot over medium heat. Add onion and garlic, cook until soft. Add sauerkraut, caraway seeds, and bay leaf. Add wine. Simmer 30 minutes until tender. Season with salt and pepper. Remove bay leaf. Serve hot.",
+        "chef_tips": "The sauerkraut should be tender but not mushy. The wine adds depth of flavor. Let it simmer gently. Serve hot."
+      },
+      {
+        "recipe_name": "German Apple Strudel",
+        "cuisine": "German",
+        "regional_origin": "Bavaria",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 320,
+        "difficulty": "Hard",
+        "ingredients": [
+          "200g (7 oz) phyllo pastry",
+          "4 apples, peeled and sliced",
+          "50g (1.8 oz) breadcrumbs",
+          "50g (1.8 oz) sugar",
+          "1 tsp cinnamon",
+          "1/2 tsp nutmeg",
+          "50g (1.8 oz) raisins",
+          "50g (1.8 oz) butter, melted",
+          "Powdered sugar for dusting"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Baking sheet",
+          "Chef's knife",
+          "Cutting board",
+          "Pastry brush",
+          "Measuring cups and spoons"
+        ],
+        "cooking_instructions": "Preheat oven to 375°F (190°C). Mix apples with breadcrumbs, sugar, cinnamon, nutmeg, and raisins. Brush phyllo with butter. Layer 6 sheets, brushing each with butter. Add apple mixture. Roll tightly. Place on baking sheet. Brush with remaining butter. Bake 30-35 minutes until golden. Cool slightly. Dust with powdered sugar. Serve warm.",
+        "chef_tips": "The phyllo should be well-brushed with butter. Don't overfill. The strudel should be golden and crispy. Let it cool slightly before cutting."
+      },
+      {
+        "recipe_name": "British Fish and Chips",
+        "cuisine": "British",
+        "regional_origin": "London",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 580,
+        "difficulty": "Medium",
+        "ingredients": [
+          "2 cod fillets",
+          "200g (7 oz) potatoes, cut into chips",
+          "100g (3.5 oz) all-purpose flour",
+          "1 tsp baking powder",
+          "150ml (5 fl oz) cold beer",
+          "Vegetable oil for frying",
+          "Salt and black pepper to taste",
+          "Malt vinegar and mushy peas for serving"
+        ],
+        "utensils_required": [
+          "Deep fryer or large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": "Cut potatoes into chips. Fry chips in hot oil until golden and crispy. Drain on paper towels. Season with salt. Make batter: mix flour, baking powder, and beer. Season fish with salt and pepper. Dip in batter. Fry in hot oil until golden and crispy. Drain on paper towels. Serve hot with chips, vinegar, and mushy peas.",
+        "chef_tips": "The fish should be crispy on the outside, tender inside. The chips should be golden and crispy. Don't overcook. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "British Shepherd's Pie",
+        "cuisine": "British",
+        "regional_origin": "England",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 480,
+        "difficulty": "Medium",
+        "ingredients": [
+          "200g (7 oz) ground lamb",
+          "1 small onion, diced",
+          "1 carrot, diced",
+          "1 celery stalk, diced",
+          "2 cloves garlic, minced",
+          "200g (7 oz) potatoes, boiled and mashed",
+          "2 tbsp butter",
+          "2 tbsp flour",
+          "200ml (6.8 fl oz) beef stock",
+          "1 tsp Worcestershire sauce",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Baking dish",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Preheat oven to 375°F (190°C). Brown lamb in skillet. Add onion, carrot, celery, and garlic. Cook until soft. Add flour, cook 1 minute. Add stock and Worcestershire sauce. Simmer 15 minutes. Season with salt and pepper. Place in baking dish. Top with mashed potatoes. Bake 25 minutes until golden. Serve hot.",
+        "chef_tips": "The lamb should be well-browned. The potatoes should be smooth and creamy. The top should be golden. Let it rest before serving."
+      },
+      {
+        "recipe_name": "British Yorkshire Pudding",
+        "cuisine": "British",
+        "regional_origin": "Yorkshire",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 180,
+        "difficulty": "Medium",
+        "ingredients": [
+          "100g (3.5 oz) all-purpose flour",
+          "2 large eggs",
+          "150ml (5 fl oz) milk",
+          "2 tbsp beef drippings",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Muffin tin",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Preheat oven to 425°F (220°C). Mix flour, eggs, milk, and salt. Let rest 30 minutes. Heat beef drippings in muffin tin in oven. Pour batter into hot tin. Bake 20-25 minutes until puffed and golden. Serve immediately.",
+        "chef_tips": "The tin should be very hot. Don't open the oven door. The puddings should be puffed and golden. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Irish Soda Bread",
+        "cuisine": "Irish",
+        "regional_origin": "Dublin",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1 hour",
+        "servings": 1,
+        "calories_per_serving": 220,
+        "difficulty": "Easy",
+        "ingredients": [
+          "300g (10.6 oz) all-purpose flour",
+          "1 tsp baking soda",
+          "1 tsp salt",
+          "300ml (10 fl oz) buttermilk",
+          "2 tbsp butter, melted"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Baking sheet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Preheat oven to 425°F (220°C). Mix flour, baking soda, and salt. Add buttermilk and butter. Mix until just combined. Shape into round loaf. Place on baking sheet. Cut cross on top. Bake 25-30 minutes until golden. Cool on wire rack. Serve warm.",
+        "chef_tips": "Don't overmix the dough. The bread should be golden and crusty. Let it cool slightly before slicing. Serve warm with butter."
+      },
+      {
+        "recipe_name": "Swiss Rösti",
+        "cuisine": "Swiss",
+        "regional_origin": "Zurich",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 280,
+        "difficulty": "Medium",
+        "ingredients": [
+          "400g (14 oz) potatoes, grated",
+          "2 tbsp butter",
+          "1 small onion, diced",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Spatula"
+        ],
+        "cooking_instructions": "Squeeze excess water from potatoes. Heat butter in skillet over medium heat. Add onion, cook until soft. Add potatoes, press down. Cook 10 minutes until golden. Flip carefully. Cook 10 minutes until golden. Season with salt and pepper. Serve hot.",
+        "chef_tips": "The potatoes should be well-drained. The rösti should be golden and crispy. Don't stir. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Swiss Cheese Fondue",
+        "cuisine": "Swiss",
+        "regional_origin": "Geneva",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 420,
+        "difficulty": "Medium",
+        "ingredients": [
+          "200g (7 oz) Gruyère cheese, grated",
+          "100g (3.5 oz) Emmental cheese, grated",
+          "1 clove garlic, halved",
+          "200ml (6.8 fl oz) dry white wine",
+          "1 tbsp cornstarch",
+          "1 tbsp kirsch",
+          "1/2 tsp nutmeg",
+          "Salt and black pepper to taste",
+          "Crusty bread for dipping"
+        ],
+        "utensils_required": [
+          "Fondue pot or heavy saucepan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Rub fondue pot with garlic. Heat wine over medium heat. Mix cornstarch with kirsch. Add cheeses gradually, whisking constantly. Add cornstarch mixture. Cook until smooth and creamy. Add nutmeg, salt, and pepper. Serve hot with bread for dipping.",
+        "chef_tips": "The cheese should be smooth and creamy. Don't let it boil. Stir constantly. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Austrian Apfelstrudel",
+        "cuisine": "Austrian",
+        "regional_origin": "Vienna",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 350,
+        "difficulty": "Hard",
+        "ingredients": [
+          "200g (7 oz) phyllo pastry",
+          "4 apples, peeled and sliced",
+          "50g (1.8 oz) breadcrumbs",
+          "50g (1.8 oz) sugar",
+          "1 tsp cinnamon",
+          "1/2 tsp nutmeg",
+          "50g (1.8 oz) raisins",
+          "50g (1.8 oz) butter, melted",
+          "Powdered sugar for dusting"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Baking sheet",
+          "Chef's knife",
+          "Cutting board",
+          "Pastry brush",
+          "Measuring cups and spoons"
+        ],
+        "cooking_instructions": "Preheat oven to 375°F (190°C). Mix apples with breadcrumbs, sugar, cinnamon, nutmeg, and raisins. Brush phyllo with butter. Layer 6 sheets, brushing each with butter. Add apple mixture. Roll tightly. Place on baking sheet. Brush with remaining butter. Bake 30-35 minutes until golden. Cool slightly. Dust with powdered sugar. Serve warm.",
+        "chef_tips": "The phyllo should be well-brushed with butter. Don't overfill. The strudel should be golden and crispy. Let it cool slightly before cutting."
       }
     ]
   }

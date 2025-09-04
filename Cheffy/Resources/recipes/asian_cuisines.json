@@ -1533,6 +1533,382 @@
           "To eat: wrap pork belly and condiments in lettuce leaf, dip in ssamjang, and enjoy."
         ],
         "chef_tips": "This is Korean BBQ at its finest. The pork belly should be crispy outside, tender inside. The ssamjang adds the perfect spicy, savory flavor. Don't skip the lettuce wraps - they're essential for the full experience."
+      },
+      {
+        "recipe_name": "Japanese Ramen",
+        "cuisine": "Japanese",
+        "regional_origin": "Tokyo",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 520,
+        "difficulty": "Hard",
+        "ingredients": [
+          "200g (7 oz) fresh ramen noodles",
+          "500ml (16.9 fl oz) chicken stock",
+          "2 tbsp miso paste",
+          "1 tbsp soy sauce",
+          "1 tsp sesame oil",
+          "100g (3.5 oz) pork belly, sliced",
+          "1 soft-boiled egg",
+          "2 green onions, chopped",
+          "1 sheet nori",
+          "50g (1.8 oz) bean sprouts",
+          "1 clove garlic, minced",
+          "1 inch ginger, minced",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Small saucepan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": "Cook noodles according to package directions. Drain and set aside. Heat stock in pot. Add miso paste, soy sauce, and sesame oil. Simmer 10 minutes. Season with salt. Cook pork belly in small pan until crispy. Soft-boil egg for 6 minutes. Place noodles in bowl. Add hot broth. Top with pork belly, egg, green onions, nori, and bean sprouts. Serve immediately.",
+        "chef_tips": "The broth should be rich and flavorful. The noodles should be al dente. The egg should be soft-boiled. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Japanese Tempura",
+        "cuisine": "Japanese",
+        "regional_origin": "Tokyo",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 320,
+        "difficulty": "Medium",
+        "ingredients": [
+          "100g (3.5 oz) all-purpose flour",
+          "1 large egg",
+          "150ml (5 fl oz) ice-cold water",
+          "200g (7 oz) mixed vegetables (sweet potato, eggplant, bell pepper)",
+          "Vegetable oil for frying",
+          "Tentsuyu dipping sauce: 1/2 cup dashi, 2 tbsp soy sauce, 2 tbsp mirin",
+          "Salt to taste"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Deep fryer or large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Slotted spoon"
+        ],
+        "cooking_instructions": "Cut vegetables into bite-sized pieces. Mix flour, egg, and ice-cold water until just combined. Don't overmix. Heat oil to 350°F (175°C). Dip vegetables in batter. Fry until golden and crispy, about 2-3 minutes. Drain on paper towels. Make tentsuyu: mix dashi, soy sauce, and mirin. Serve tempura hot with dipping sauce.",
+        "chef_tips": "The batter should be lumpy. Use ice-cold water. Don't overmix the batter. The oil should be at the right temperature."
+      },
+      {
+        "recipe_name": "Japanese Miso Soup",
+        "cuisine": "Japanese",
+        "regional_origin": "Tokyo",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 15 min",
+        "servings": 1,
+        "calories_per_serving": 80,
+        "difficulty": "Easy",
+        "ingredients": [
+          "300ml (10 fl oz) dashi stock",
+          "2 tbsp miso paste",
+          "50g (1.8 oz) tofu, cubed",
+          "2 green onions, chopped",
+          "1 sheet nori, cut into strips",
+          "1 tsp wakame seaweed",
+          "1 tsp soy sauce"
+        ],
+        "utensils_required": [
+          "Small saucepan",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Whisk"
+        ],
+        "cooking_instructions": "Heat dashi in saucepan over medium heat. Add tofu and wakame. Simmer 2 minutes. Remove from heat. Add miso paste, whisk until dissolved. Add green onions and nori. Add soy sauce. Serve hot.",
+        "chef_tips": "Don't boil the miso paste. The soup should be hot but not boiling. The miso should be well-dissolved. Serve immediately."
+      },
+      {
+        "recipe_name": "Japanese Teriyaki Chicken",
+        "cuisine": "Japanese",
+        "regional_origin": "Tokyo",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 380,
+        "difficulty": "Easy",
+        "ingredients": [
+          "200g (7 oz) chicken breast, sliced",
+          "3 tbsp soy sauce",
+          "2 tbsp mirin",
+          "2 tbsp sake",
+          "1 tbsp sugar",
+          "1 tsp cornstarch",
+          "2 tbsp vegetable oil",
+          "1 clove garlic, minced",
+          "1 inch ginger, minced",
+          "Sesame seeds for garnish"
+        ],
+        "utensils_required": [
+          "Large skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Mix soy sauce, mirin, sake, sugar, and cornstarch. Heat oil in skillet over medium-high heat. Add chicken and cook until golden. Add garlic and ginger. Cook 1 minute. Add sauce mixture. Cook until thickened and glossy. Garnish with sesame seeds. Serve hot over rice.",
+        "chef_tips": "The chicken should be golden and crispy. The sauce should be thick and glossy. Don't overcook the chicken. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Japanese Onigiri",
+        "cuisine": "Japanese",
+        "regional_origin": "Tokyo",
+        "diet_type": "vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 1,
+        "calories_per_serving": 200,
+        "difficulty": "Easy",
+        "ingredients": [
+          "200g (7 oz) cooked sushi rice",
+          "1 sheet nori",
+          "2 tbsp furikake seasoning",
+          "1 tsp rice vinegar",
+          "1/2 tsp salt",
+          "Water for wetting hands"
+        ],
+        "utensils_required": [
+          "Large mixing bowl",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Plastic wrap"
+        ],
+        "cooking_instructions": "Mix rice with vinegar and salt. Wet hands with water. Take 1/3 of rice, shape into triangle. Sprinkle with furikake. Wrap with nori. Repeat with remaining rice. Serve immediately or wrap in plastic wrap.",
+        "chef_tips": "Wet hands to prevent sticking. The rice should be warm. Don't overpack the rice. The nori should be crisp."
+      },
+      {
+        "recipe_name": "Thai Pad Thai",
+        "cuisine": "Thai",
+        "regional_origin": "Bangkok",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 1,
+        "calories_per_serving": 420,
+        "difficulty": "Medium",
+        "ingredients": [
+          "100g (3.5 oz) rice noodles",
+          "100g (3.5 oz) shrimp, peeled",
+          "2 large eggs",
+          "2 tbsp fish sauce",
+          "2 tbsp tamarind paste",
+          "1 tbsp palm sugar",
+          "1 tsp chili powder",
+          "2 cloves garlic, minced",
+          "2 green onions, chopped",
+          "50g (1.8 oz) bean sprouts",
+          "2 tbsp vegetable oil",
+          "Lime wedges and crushed peanuts for garnish"
+        ],
+        "utensils_required": [
+          "Large wok or skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Soak noodles in warm water 10 minutes. Drain. Mix fish sauce, tamarind paste, sugar, and chili powder. Heat oil in wok over medium-high heat. Add garlic, cook 30 seconds. Add shrimp, cook 2 minutes. Push to side, add eggs, scramble. Add noodles and sauce. Toss 2 minutes. Add green onions and bean sprouts. Toss 1 minute. Serve with lime and peanuts.",
+        "chef_tips": "The noodles should be al dente. Don't overcook the shrimp. The sauce should be well-balanced. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Thai Tom Yum Goong",
+        "cuisine": "Thai",
+        "regional_origin": "Bangkok",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 1,
+        "calories_per_serving": 180,
+        "difficulty": "Easy",
+        "ingredients": [
+          "500ml (16.9 fl oz) chicken stock",
+          "200g (7 oz) shrimp, peeled",
+          "2 stalks lemongrass, bruised",
+          "3 kaffir lime leaves",
+          "2 tbsp fish sauce",
+          "2 tbsp lime juice",
+          "1 tbsp palm sugar",
+          "1 tsp chili paste",
+          "100g (3.5 oz) mushrooms, sliced",
+          "2 green onions, chopped",
+          "Fresh cilantro for garnish"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Bring stock to boil. Add lemongrass and lime leaves. Simmer 5 minutes. Add mushrooms, cook 2 minutes. Add shrimp, cook 2 minutes. Add fish sauce, lime juice, sugar, and chili paste. Simmer 2 minutes. Add green onions. Garnish with cilantro. Serve hot.",
+        "chef_tips": "The soup should be hot and sour. Don't overcook the shrimp. The lemongrass should be bruised. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Thai Green Curry",
+        "cuisine": "Thai",
+        "regional_origin": "Bangkok",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 380,
+        "difficulty": "Medium",
+        "ingredients": [
+          "200g (7 oz) chicken breast, cubed",
+          "2 tbsp green curry paste",
+          "400ml (13.5 fl oz) coconut milk",
+          "1 bell pepper, sliced",
+          "100g (3.5 oz) eggplant, cubed",
+          "2 tbsp fish sauce",
+          "1 tbsp palm sugar",
+          "5 kaffir lime leaves",
+          "1/2 cup Thai basil leaves",
+          "2 tbsp vegetable oil",
+          "Jasmine rice for serving"
+        ],
+        "utensils_required": [
+          "Large wok or skillet",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Heat oil in wok over medium heat. Add curry paste, cook 1 minute until fragrant. Add half the coconut milk, simmer 5 minutes. Add chicken, cook 5 minutes. Add remaining coconut milk, bell pepper, and eggplant. Simmer 10 minutes. Add fish sauce, sugar, and lime leaves. Simmer 5 minutes. Add basil leaves. Serve hot over rice.",
+        "chef_tips": "The curry should be thick and creamy. Don't overcook the vegetables. The paste should be well-cooked. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Korean Bibimbap",
+        "cuisine": "Korean",
+        "regional_origin": "Seoul",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 450,
+        "difficulty": "Medium",
+        "ingredients": [
+          "200g (7 oz) cooked rice",
+          "100g (3.5 oz) beef, sliced",
+          "1 carrot, julienned",
+          "1 zucchini, julienned",
+          "100g (3.5 oz) spinach",
+          "100g (3.5 oz) bean sprouts",
+          "1 egg",
+          "2 tbsp gochujang",
+          "1 tbsp sesame oil",
+          "1 tbsp soy sauce",
+          "1 tsp sugar",
+          "Sesame seeds for garnish"
+        ],
+        "utensils_required": [
+          "Large bowl",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Cook rice. Season beef with soy sauce and sugar. Cook vegetables separately until tender. Season each with sesame oil and salt. Fry egg sunny-side up. Place rice in bowl. Arrange vegetables and beef on top. Add egg. Mix gochujang with sesame oil. Serve with gochujang sauce. Mix everything together before eating.",
+        "chef_tips": "The vegetables should be well-seasoned. The egg should be runny. The gochujang should be well-mixed. Mix everything together before eating."
+      },
+      {
+        "recipe_name": "Korean Kimchi Jjigae",
+        "cuisine": "Korean",
+        "regional_origin": "Seoul",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 30 min",
+        "servings": 1,
+        "calories_per_serving": 280,
+        "difficulty": "Easy",
+        "ingredients": [
+          "200g (7 oz) kimchi, chopped",
+          "100g (3.5 oz) pork belly, sliced",
+          "200g (7 oz) tofu, cubed",
+          "1 small onion, sliced",
+          "2 cloves garlic, minced",
+          "1 tbsp gochujang",
+          "1 tbsp soy sauce",
+          "1 tsp sugar",
+          "500ml (16.9 fl oz) water",
+          "2 green onions, chopped",
+          "1 tsp sesame oil"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Wooden spoon"
+        ],
+        "cooking_instructions": "Heat pot over medium heat. Add pork belly, cook until browned. Add kimchi, cook 5 minutes. Add onion and garlic, cook 2 minutes. Add water, gochujang, soy sauce, and sugar. Bring to boil. Add tofu, simmer 10 minutes. Add green onions and sesame oil. Serve hot.",
+        "chef_tips": "The kimchi should be well-cooked. The soup should be hot and spicy. Don't overcook the tofu. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Vietnamese Pho",
+        "cuisine": "Vietnamese",
+        "regional_origin": "Hanoi",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 1.5 hours",
+        "servings": 1,
+        "calories_per_serving": 420,
+        "difficulty": "Hard",
+        "ingredients": [
+          "200g (7 oz) rice noodles",
+          "300g (10.6 oz) beef sirloin, sliced thin",
+          "1 liter (33.8 fl oz) beef stock",
+          "2 star anise",
+          "1 cinnamon stick",
+          "3 cloves",
+          "1 cardamom pod",
+          "1 inch ginger, sliced",
+          "1 onion, quartered",
+          "2 tbsp fish sauce",
+          "1 tbsp sugar",
+          "Bean sprouts, Thai basil, lime, jalapeños for garnish"
+        ],
+        "utensils_required": [
+          "Large pot",
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Strainer"
+        ],
+        "cooking_instructions": "Char ginger and onion in dry pan. Add to stock with spices. Simmer 1 hour. Strain. Add fish sauce and sugar. Cook noodles according to package directions. Place noodles in bowl. Top with raw beef. Pour hot broth over. Garnish with bean sprouts, basil, lime, and jalapeños. Serve immediately.",
+        "chef_tips": "The broth should be clear and flavorful. The beef should be very thin. The noodles should be al dente. Serve immediately while hot."
+      },
+      {
+        "recipe_name": "Vietnamese Banh Mi",
+        "cuisine": "Vietnamese",
+        "regional_origin": "Ho Chi Minh City",
+        "diet_type": "non-vegetarian",
+        "cooking_time_category": "Under 20 min",
+        "servings": 1,
+        "calories_per_serving": 380,
+        "difficulty": "Easy",
+        "ingredients": [
+          "1 Vietnamese baguette",
+          "100g (3.5 oz) pork pate",
+          "100g (3.5 oz) pork belly, sliced",
+          "50g (1.8 oz) pickled carrots",
+          "50g (1.8 oz) pickled daikon",
+          "2 green onions, chopped",
+          "1 jalapeño, sliced",
+          "Fresh cilantro",
+          "Mayonnaise",
+          "Soy sauce",
+          "Salt and black pepper to taste"
+        ],
+        "utensils_required": [
+          "Chef's knife",
+          "Cutting board",
+          "Measuring cups and spoons",
+          "Toaster or oven"
+        ],
+        "cooking_instructions": "Slice baguette lengthwise. Toast lightly. Spread mayonnaise on both sides. Add pate, pork belly, pickled vegetables, green onions, jalapeño, and cilantro. Drizzle with soy sauce. Season with salt and pepper. Close sandwich. Serve immediately.",
+        "chef_tips": "The baguette should be crispy. Don't overstuff the sandwich. The pickled vegetables should be tangy. Serve immediately while fresh."
       }
     ]
   }
