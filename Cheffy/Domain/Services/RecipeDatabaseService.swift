@@ -464,13 +464,21 @@ class RecipeDatabaseService: ObservableObject {
                 // Check for new format first (with recipe_name and cooking_time_category)
                 if let recipeName = recipeData["recipe_name"] as? String,
                    let recipeIngredients = recipeData["ingredients"] as? [String],
-                   let cookingInstructions = recipeData["cooking_instructions"] as? [String],
                    let cookingTimeCategory = recipeData["cooking_time_category"] as? String,
                    let recipeDifficulty = recipeData["difficulty"] as? String {
                     
                     title = recipeName
                     ingredients = recipeIngredients
-                    instructions = cookingInstructions.joined(separator: " ")
+                    
+                    // Handle cooking_instructions as either string or array
+                    if let cookingInstructionsString = recipeData["cooking_instructions"] as? String {
+                        instructions = cookingInstructionsString
+                    } else if let cookingInstructionsArray = recipeData["cooking_instructions"] as? [String] {
+                        instructions = cookingInstructionsArray.joined(separator: " ")
+                    } else {
+                        instructions = "No cooking instructions available"
+                    }
+                    
                     difficultyString = recipeDifficulty
                     
                     // Convert cooking_time_category to numeric cooking time
