@@ -59,6 +59,13 @@ class RecipeDatabaseService: ObservableObject {
             self.recipes = allRecipes
             self.isLoading = false
             logger.info("Loaded \(allRecipes.count) total recipes from JSON files")
+            
+            // Debug: Count recipes by cuisine
+            let indianRecipes = allRecipes.filter { $0.cuisine == .indian }
+            logger.info("Indian recipes loaded: \(indianRecipes.count)")
+            
+            let chineseRecipes = allRecipes.filter { $0.cuisine == .chinese }
+            logger.info("Chinese recipes loaded: \(chineseRecipes.count)")
         }
     }
     
@@ -438,10 +445,13 @@ class RecipeDatabaseService: ObservableObject {
                 continue
             }
             
-            // Debug: Log cuisine processing
-            if cuisineName == "Chinese" {
-                logger.info("Processing Chinese cuisine with \(cuisineRecipes.count) recipes")
-            }
+                            // Debug: Log cuisine processing
+                if cuisineName == "Chinese" {
+                    logger.info("Processing Chinese cuisine with \(cuisineRecipes.count) recipes")
+                }
+                if cuisineName == "Indian" {
+                    logger.info("Processing Indian cuisine with \(cuisineRecipes.count) recipes")
+                }
             
             for (index, recipeData) in cuisineRecipes.enumerated() {
                 // Handle both old and new JSON formats

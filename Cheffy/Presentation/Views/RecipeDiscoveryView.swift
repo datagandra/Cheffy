@@ -6,7 +6,7 @@ struct RecipeDiscoveryView: View {
     @StateObject private var recipeDatabase = RecipeDatabaseService.shared
     
     // MARK: - State Management
-    @State private var selectedCuisine: Cuisine = .italian
+    @State private var selectedCuisine: Cuisine = .any
     @State private var selectedDifficulty: Difficulty = .medium
     @State private var selectedDietaryRestrictions: Set<DietaryNote> = []
     @State private var selectedCookingTime: CookingTimeFilter = .any
@@ -554,7 +554,7 @@ struct RecipeDiscoveryView: View {
             .buttonStyle(.borderedProminent)
             
             Button("Clear Filters") {
-                selectedCuisine = .italian
+                selectedCuisine = .any
                 selectedDifficulty = .medium
                 selectedDietaryRestrictions.removeAll()
                 selectedCookingTime = .any
@@ -625,7 +625,7 @@ struct RecipeDiscoveryView: View {
                let cuisine = Cuisine.allCases.first(where: { $0.rawValue.lowercased() == firstCuisineString.lowercased() }) {
                 selectedCuisine = cuisine
             } else {
-                selectedCuisine = .italian
+                selectedCuisine = .any
             }
             
             // Convert string dietary preferences to DietaryNote enum values
