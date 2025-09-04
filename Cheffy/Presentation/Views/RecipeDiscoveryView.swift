@@ -643,11 +643,26 @@ struct RecipeDiscoveryView: View {
         
         await recipeDatabase.loadAllRecipes()
         
+        // Wait a moment for the @Published recipes to update
+        try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
+        
+        // Debug logging
+        print("🔍 DEBUG: Recipe loading completed")
+        print("🔍 DEBUG: Total recipes loaded: \(recipeDatabase.recipes.count)")
+        print("🔍 DEBUG: Filtered recipes count: \(filteredRecipes.count)")
+        print("🔍 DEBUG: Selected cuisine: \(selectedCuisine.rawValue)")
+        print("🔍 DEBUG: Selected cooking time: \(selectedCookingTime.rawValue)")
+        print("🔍 DEBUG: Selected difficulty: \(selectedDifficulty.rawValue)")
+        
         // Check if we need to generate recipes from LLM
-        if filteredRecipes.isEmpty {
+        // Only trigger LLM generation if we have no recipes at all AND user has specific filters
+        if recipeDatabase.recipes.isEmpty {
+            print("🔍 DEBUG: No recipes loaded, triggering LLM generation")
             await MainActor.run {
                 showingLLMGeneration = true
             }
+        } else {
+            print("🔍 DEBUG: Recipes loaded successfully, no LLM generation needed")
         }
         
         await MainActor.run {
