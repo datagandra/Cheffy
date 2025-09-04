@@ -278,6 +278,7 @@ struct DatabaseTestResultRow: View {
 // MARK: - Database Statistics View
 
 struct DatabaseStatisticsView: View {
+    @StateObject private var recipeDatabase = RecipeDatabaseService.shared
     @State private var recipeCount = 0
     @State private var cuisineCount = 0
     @State private var vegetarianCount = 0
@@ -323,14 +324,30 @@ struct DatabaseStatisticsView: View {
         .onAppear {
             loadDatabaseStatistics()
         }
+        .onReceive(recipeDatabase.$recipes) { _ in
+            loadDatabaseStatistics()
+        }
     }
     
     private func loadDatabaseStatistics() {
-        // Simulate loading database statistics
-        recipeCount = 42
-        cuisineCount = 8
-        vegetarianCount = 15
-        chickenCount = 12
+        // Load actual database statistics
+        recipeCount = recipeDatabase.recipes.count
+        
+        // Count unique cuisines
+        let cuisines = Set(recipeDatabase.recipes.map { $0.cuisine.rawValue })
+        cuisineCount = cuisines.count
+        
+        // Count vegetarian recipes
+        vegetarianCount = recipeDatabase.recipes.filter { recipe in
+            recipe.dietaryNotes.contains(.vegetarian)
+        }.count
+        
+        // Count chicken recipes
+        chickenCount = recipeDatabase.recipes.filter { recipe in
+            recipe.ingredients.contains { ingredient in
+                ingredient.name.lowercased().contains("chicken")
+            }
+        }.count
     }
 }
 
