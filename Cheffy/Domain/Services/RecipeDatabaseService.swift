@@ -561,19 +561,41 @@ class RecipeDatabaseService: ObservableObject {
                     }
                 }
                 
+                // Parse meal_type and lunchbox_presentation for new format
+                let mealType: MealType
+                let lunchboxPresentation: String?
+                
+                if let mealTypeString = recipeData["meal_type"] as? String {
+                    mealType = MealType(rawValue: mealTypeString) ?? .regular
+                } else {
+                    mealType = .regular // Default for old format recipes
+                }
+                
+                lunchboxPresentation = recipeData["lunchbox_presentation"] as? String
+                
+                // Parse servings from new format, default to 4 for old format
+                let servings: Int
+                if let servingsValue = recipeData["servings"] as? Int {
+                    servings = servingsValue
+                } else {
+                    servings = 4 // Default for old format
+                }
+                
                 let recipe = Recipe(
                     title: title,
                     cuisine: cuisine,
                     difficulty: difficulty,
                     prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
                     cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
-                    servings: 4, // Default servings
+                    servings: servings,
                     ingredients: ingredients.map { parseIngredient(from: $0) },
                     steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
                     winePairings: [],
                     dietaryNotes: dietaryNotes,
                     platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
-                    chefNotes: "Traditional \(cuisine.rawValue) recipe from our database"
+                    chefNotes: "Traditional \(cuisine.rawValue) recipe from our database",
+                    mealType: mealType,
+                    lunchboxPresentation: lunchboxPresentation
                 )
                 recipes.append(recipe)
             }

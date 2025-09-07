@@ -8,6 +8,7 @@ struct RecipeGeneratorView: View {
     // MARK: - State Management
     @State private var selectedCuisine: Cuisine = .any
     @State private var selectedDietaryRestrictions: Set<DietaryNote> = [.nonVegetarian] // Default: Non-Vegetarian to ensure meat recipes
+    @State private var selectedMealType: MealType = .regular
     @State private var selectedServings: Int = 4
     @State private var selectedCookingTime: CookingTimeFilter = .any
     @State private var showValidationError = false
@@ -124,6 +125,61 @@ struct RecipeGeneratorView: View {
         }
     }
     
+    // MARK: - Meal Type Section
+    
+    private var mealTypeSelection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Meal Type", systemImage: "fork.knife")
+                .font(.headline)
+                .foregroundColor(.primary)
+            
+            HStack(spacing: 16) {
+                ForEach(MealType.allCases, id: \.self) { mealType in
+                    Button(action: {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            selectedMealType = mealType
+                            // Update servings based on meal type
+                            selectedServings = mealType.defaultServings
+                        }
+                        impactFeedback.impactOccurred()
+                    }) {
+                        VStack(spacing: 8) {
+                            Image(systemName: mealType == .kids ? "child.fill" : "person.fill")
+                                .font(.title2)
+                                .foregroundColor(selectedMealType == mealType ? .white : .primary)
+                            
+                            Text(mealType.rawValue)
+                                .font(.subheadline)
+                                .fontWeight(.medium)
+                                .foregroundColor(selectedMealType == mealType ? .white : .primary)
+                            
+                            Text(mealType.description)
+                                .font(.caption)
+                                .foregroundColor(selectedMealType == mealType ? .white.opacity(0.8) : .secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(selectedMealType == mealType ? 
+                                      LinearGradient(colors: [.blue, .purple], startPoint: .topLeading, endPoint: .bottomTrailing) :
+                                      LinearGradient(colors: [Color(.systemGray6)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(selectedMealType == mealType ? Color.blue : Color(.systemGray4), lineWidth: selectedMealType == mealType ? 2 : 1)
+                        )
+                        .scaleEffect(selectedMealType == mealType ? 1.05 : 1.0)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
+    }
+    
     // MARK: - Servings Section
     
     private var servingsSelection: some View {
@@ -133,7 +189,8 @@ struct RecipeGeneratorView: View {
                 .foregroundColor(.primary)
             
             Menu {
-                ForEach(2...10, id: \.self) { serving in
+                let servingRange = selectedMealType == .kids ? 1...4 : 2...10
+                ForEach(servingRange, id: \.self) { serving in
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             selectedServings = serving
@@ -232,6 +289,9 @@ struct RecipeGeneratorView: View {
     
     private var optionsSection: some View {
         VStack(spacing: 24) {
+            // Meal Type Selection
+            mealTypeSelection
+            
             // Servings Selection
             servingsSelection
             
@@ -531,20 +591,31 @@ struct RecipeGeneratorView: View {
                 difficulty: .medium, // Default to medium difficulty
                 dietaryRestrictions: Array(selectedDietaryRestrictions),
                 maxTime: selectedCookingTime == .any ? nil : selectedCookingTime.maxTotalTime,
-                servings: selectedServings
+                servings: selectedServings,
+                mealType: selectedMealType
             )
         }
     }
     
     private func validateInput() -> Bool {
-        if selectedServings < 2 || selectedServings > 10 {
+        let minServings = selectedMealType == .kids ? 1 : 2
+        let maxServings = selectedMealType == .kids ? 4 : 10
+        
+        if selectedServings < minServings || selectedServings > maxServings {
             showValidationError = true
-            validationMessage = "Please select a valid number of servings (2-10)"
+            validationMessage = "Please select a valid number of servings (\(minServings)-\(maxServings))"
             return false
         }
         
-        // Validate cooking time constraints
-        if selectedCookingTime == .under30min && selectedServings > 6 {
+        // Validate cooking time constraints for kids meals
+        if selectedMealType == .kids && selectedCookingTime != .any && selectedCookingTime.maxTotalTime > 30 {
+            showValidationError = true
+            validationMessage = "Kids meals must be under 30 minutes for quick preparation"
+            return false
+        }
+        
+        // Validate cooking time constraints for regular meals
+        if selectedMealType == .regular && selectedCookingTime == .under30min && selectedServings > 6 {
             showValidationError = true
             validationMessage = "Quick recipes (under 30 min) are limited to 6 servings or less for quality"
             return false

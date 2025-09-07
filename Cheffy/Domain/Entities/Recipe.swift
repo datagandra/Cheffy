@@ -21,6 +21,8 @@ struct Recipe: Identifiable, Codable {
     let stepImages: [URL]
     let createdAt: Date
     var isFavorite: Bool
+    let mealType: MealType
+    let lunchboxPresentation: String? // Optional field for Kids meals
     
     init(
         id: UUID = UUID(),
@@ -40,7 +42,9 @@ struct Recipe: Identifiable, Codable {
         imageURL: URL? = nil,
         stepImages: [URL] = [],
         createdAt: Date = Date(),
-        isFavorite: Bool = false
+        isFavorite: Bool = false,
+        mealType: MealType = .regular,
+        lunchboxPresentation: String? = nil
     ) {
         self.id = id
         self.title = title
@@ -60,6 +64,8 @@ struct Recipe: Identifiable, Codable {
         self.stepImages = stepImages
         self.createdAt = createdAt
         self.isFavorite = isFavorite
+        self.mealType = mealType
+        self.lunchboxPresentation = lunchboxPresentation
     }
 }
 
@@ -140,6 +146,47 @@ enum CookingTimeFilter: String, CaseIterable, Codable {
             return "⚡ Fast"
         default:
             return ""
+        }
+    }
+}
+
+enum MealType: String, CaseIterable, Codable {
+    case kids = "Kids"
+    case regular = "Regular"
+    
+    var description: String {
+        switch self {
+        case .kids:
+            return "Healthy, fun, and quick recipes designed for children's lunch boxes"
+        case .regular:
+            return "Standard recipes for general use"
+        }
+    }
+    
+    var maxCookingTime: Int {
+        switch self {
+        case .kids:
+            return 30 // Kids meals must be under 30 minutes
+        case .regular:
+            return Int.max // No limit for regular meals
+        }
+    }
+    
+    var defaultServings: Int {
+        switch self {
+        case .kids:
+            return 1 // Smaller portions for kids
+        case .regular:
+            return 4 // Standard servings
+        }
+    }
+    
+    var nutritionFocus: String {
+        switch self {
+        case .kids:
+            return "Balanced nutrition with colorful, appealing ingredients that kids will love"
+        case .regular:
+            return "Balanced nutrition for general health"
         }
     }
 }
@@ -560,7 +607,9 @@ extension Recipe {
             imageURL: imageURL,
             stepImages: stepImages,
             createdAt: createdAt,
-            isFavorite: isFavorite
+            isFavorite: isFavorite,
+            mealType: mealType,
+            lunchboxPresentation: lunchboxPresentation
         )
     }
 } 

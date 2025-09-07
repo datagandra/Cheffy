@@ -241,7 +241,8 @@ class RecipeManager: ObservableObject {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int? = nil,
-        servings: Int = 2
+        servings: Int = 2,
+        mealType: MealType = .regular
     ) async {
         isLoading = true
         error = nil
@@ -316,7 +317,8 @@ class RecipeManager: ObservableObject {
                     difficulty: difficulty,
                     dietaryRestrictions: dietaryRestrictions,
                     maxTime: maxTime,
-                    servings: servings
+                    servings: servings,
+                    mealType: mealType
                 )
             }
         } else {
@@ -327,7 +329,8 @@ class RecipeManager: ObservableObject {
                 difficulty: difficulty,
                 dietaryRestrictions: dietaryRestrictions,
                 maxTime: maxTime,
-                servings: servings
+                servings: servings,
+                mealType: mealType
             )
         }
         
@@ -1882,7 +1885,8 @@ class RecipeManager: ObservableObject {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int?,
-        servings: Int
+        servings: Int,
+        mealType: MealType = .regular
     ) async {
         do {
             // Update filter tracking and LLM call time
