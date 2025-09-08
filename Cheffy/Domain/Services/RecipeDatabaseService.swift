@@ -196,6 +196,8 @@ class RecipeDatabaseService: ObservableObject {
         }
         
         let data = try Data(contentsOf: url)
+        
+        // Parse as RecipeDatabase (which contains both old and new format recipes)
         let recipeData = try JSONDecoder().decode(RecipeDatabase.self, from: data)
         
         var recipes: [Recipe] = []
@@ -231,13 +233,21 @@ class RecipeDatabaseService: ObservableObject {
                     DietaryNote(rawValue: restrictionString.replacingOccurrences(of: "contains_", with: ""))
                 }
                 
+                // Parse meal_type for new format recipes
+                let mealType: MealType
+                if let mealTypeString = localRecipeData.meal_type {
+                    mealType = MealType(rawValue: mealTypeString) ?? .regular
+                } else {
+                    mealType = .regular // Default for old format recipes
+                }
+                
                 let recipe = Recipe(
                     title: localRecipeData.title,
                     cuisine: cuisine,
                     difficulty: difficulty,
                     prepTime: 15, // Default prep time
                     cookTime: localRecipeData.cooking_time ?? 45, // Use provided cooking time or default
-                    servings: 4, // Default servings
+                    servings: localRecipeData.servings ?? 4, // Use provided servings or default
                     ingredients: ingredients,
                     steps: cookingSteps,
                     winePairings: [],
@@ -247,7 +257,9 @@ class RecipeDatabaseService: ObservableObject {
                     imageURL: nil,
                     stepImages: [],
                     createdAt: Date(),
-                    isFavorite: false
+                    isFavorite: false,
+                    mealType: mealType,
+                    lunchboxPresentation: localRecipeData.lunchbox_presentation
                 )
                 
                 recipes.append(recipe)
@@ -622,6 +634,9 @@ struct LocalRecipeData: Codable {
     let dietary_restrictions: [String]?
     let cooking_time: Int?
     let difficulty: String?
+    let meal_type: String?
+    let lunchbox_presentation: String?
+    let servings: Int?
 }
 
 struct RecipeStats {

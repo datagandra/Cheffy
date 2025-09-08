@@ -13,6 +13,7 @@ struct RecipeDiscoveryView: View {
     @State private var selectedProtein: String = ""
     @State private var searchQuery: String = ""
     @State private var selectedUserPersona: UserPersona = .general
+    @State private var selectedMealType: MealType = .regular
     @State private var showingFilters = false
     @State private var showingQuickRecipeFilters = false
     @State private var isLoading = false
@@ -25,6 +26,9 @@ struct RecipeDiscoveryView: View {
     // MARK: - Computed Properties
     private var filteredRecipes: [Recipe] {
         var recipes = recipeDatabase.recipes
+        
+        // Filter by meal type
+        recipes = recipes.filter { $0.mealType == selectedMealType }
         
         // Filter by cuisine
         if selectedCuisine != .any {
@@ -84,6 +88,9 @@ struct RecipeDiscoveryView: View {
         var recipes = quickRecipes
         
         // Apply same filters as filteredRecipes
+        // Filter by meal type
+        recipes = recipes.filter { $0.mealType == selectedMealType }
+        
         if selectedCuisine != .any {
             recipes = recipes.filter { $0.cuisine == selectedCuisine }
         }
@@ -131,6 +138,9 @@ struct RecipeDiscoveryView: View {
         var recipes = llmGeneratedRecipes
         
         // Apply same filters as filteredRecipes
+        // Filter by meal type
+        recipes = recipes.filter { $0.mealType == selectedMealType }
+        
         if selectedCuisine != .any {
             recipes = recipes.filter { $0.cuisine == selectedCuisine }
         }
@@ -281,6 +291,13 @@ struct RecipeDiscoveryView: View {
                             action: { showingFilters = true }
                         )
                         
+                        // Meal Type Filter
+                        FilterChip(
+                            title: selectedMealType.rawValue,
+                            isSelected: true,
+                            action: { showingFilters = true }
+                        )
+                        
                         // Difficulty Filter
                         FilterChip(
                             title: selectedDifficulty.rawValue,
@@ -334,12 +351,13 @@ struct RecipeDiscoveryView: View {
                         }
                         
                         // Clear All Button
-                        if !selectedDietaryRestrictions.isEmpty || !selectedProtein.isEmpty || selectedCookingTime != .any || selectedUserPersona != .general {
+                        if !selectedDietaryRestrictions.isEmpty || !selectedProtein.isEmpty || selectedCookingTime != .any || selectedUserPersona != .general || selectedMealType != .regular {
                             Button("Clear All") {
                                 selectedDietaryRestrictions.removeAll()
                                 selectedProtein = ""
                                 selectedCookingTime = .any
                                 selectedUserPersona = .general
+                                selectedMealType = .regular
                             }
                             .font(.caption)
                             .foregroundColor(.red)
@@ -358,6 +376,7 @@ struct RecipeDiscoveryView: View {
                 selectedDietaryRestrictions: $selectedDietaryRestrictions,
                 selectedCookingTime: $selectedCookingTime,
                 selectedProtein: $selectedProtein,
+                selectedMealType: $selectedMealType,
                 availableProteins: availableProteins
             )
         }
@@ -653,6 +672,19 @@ struct RecipeDiscoveryView: View {
         print("🔍 DEBUG: Selected cuisine: \(selectedCuisine.rawValue)")
         print("🔍 DEBUG: Selected cooking time: \(selectedCookingTime.rawValue)")
         print("🔍 DEBUG: Selected difficulty: \(selectedDifficulty.rawValue)")
+        print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
+        
+        // Debug meal type distribution
+        let kidsRecipes = recipeDatabase.recipes.filter { $0.mealType == .kids }
+        let regularRecipes = recipeDatabase.recipes.filter { $0.mealType == .regular }
+        print("🔍 DEBUG: Kids recipes count: \(kidsRecipes.count)")
+        print("🔍 DEBUG: Regular recipes count: \(regularRecipes.count)")
+        
+        // Debug filtered results
+        let filteredKids = filteredRecipes.filter { $0.mealType == .kids }
+        let filteredRegular = filteredRecipes.filter { $0.mealType == .regular }
+        print("🔍 DEBUG: Filtered kids recipes: \(filteredKids.count)")
+        print("🔍 DEBUG: Filtered regular recipes: \(filteredRegular.count)")
         
         // Check if we need to generate recipes from LLM
         // Only trigger LLM generation if we have no recipes at all AND user has specific filters
@@ -979,6 +1011,7 @@ struct RecipeFilterView: View {
     @Binding var selectedDietaryRestrictions: Set<DietaryNote>
     @Binding var selectedCookingTime: CookingTimeFilter
     @Binding var selectedProtein: String
+    @Binding var selectedMealType: MealType
     let availableProteins: [String]
     
     @Environment(\.dismiss) private var dismiss
@@ -1003,6 +1036,33 @@ struct RecipeFilterView: View {
                         .contentShape(Rectangle())
                         .onTapGesture {
                             selectedCuisine = cuisine
+                        }
+                    }
+                }
+                
+                // Meal Type Selection
+                Section("Meal Type") {
+                    ForEach(MealType.allCases, id: \.self) { mealType in
+                        HStack {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(mealType.rawValue)
+                                    .font(.headline)
+                                
+                                Text(mealType.description)
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            Spacer()
+                            
+                            if selectedMealType == mealType {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.orange)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            selectedMealType = mealType
                         }
                     }
                 }
