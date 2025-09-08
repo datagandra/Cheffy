@@ -2,7 +2,7 @@
   "cuisines": {
     "Turkish": [
       {
-        "title": "Turkish Baklava",
+        "recipe_name": "Turkish Baklava",
         "cuisine": "Turkish",
         "ingredients": [
           "1 lb phyllo dough",
@@ -18,14 +18,25 @@
           "1 cinnamon stick",
           "1 lemon, juiced"
         ],
-        "instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
-        "proteins": ["walnuts", "pistachios"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
-        "cooking_time": 75,
-        "difficulty": "hard"
+        "cooking_instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "walnuts",
+          "pistachios"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Kebab",
+        "recipe_name": "Kebab",
         "cuisine": "Turkish",
         "ingredients": [
           "2 lbs lamb, cut into cubes",
@@ -41,14 +52,22 @@
           "Pita bread for serving",
           "Tzatziki sauce for serving"
         ],
-        "instructions": "Marinate lamb with onion, garlic, oil, lemon juice, and seasonings for 2 hours. Thread onto skewers. Grill over medium heat, turning frequently, until cooked through. Serve with pita bread and tzatziki sauce.",
-        "proteins": ["lamb"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "cooking_instructions": "Marinate lamb with onion, garlic, oil, lemon juice, and seasonings for 2 hours. Thread onto skewers. Grill over medium heat, turning frequently, until cooked through. Serve with pita bread and tzatziki sauce.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 410
       },
       {
-        "title": "Turkish Delight",
+        "recipe_name": "Turkish Delight",
         "cuisine": "Turkish",
         "ingredients": [
           "2 cups sugar",
@@ -60,14 +79,23 @@
           "Red food coloring",
           "Powdered sugar for dusting"
         ],
-        "instructions": "Boil sugar, water, and lemon juice until sugar dissolves. Mix cornstarch with water and add to sugar mixture. Cook, stirring constantly, until thick. Add rose water and food coloring. Pour into greased pan and let cool. Cut into squares and dust with powdered sugar.",
-        "proteins": ["sugar"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "cooking_instructions": "Boil sugar, water, and lemon juice until sugar dissolves. Mix cornstarch with water and add to sugar mixture. Cook, stirring constantly, until thick. Add rose water and food coloring. Pour into greased pan and let cool. Cut into squares and dust with powdered sugar.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "sugar"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 370
       },
       {
-        "title": "Manti",
+        "recipe_name": "Manti",
         "cuisine": "Turkish",
         "ingredients": [
           "For dough: 2 cups all-purpose flour",
@@ -86,14 +114,23 @@
           "1 tbsp paprika",
           "2 tbsp butter"
         ],
-        "instructions": "Make dough with flour, water, egg, and salt. Let rest for 30 minutes. Mix filling ingredients. Roll dough thin and cut into squares. Add filling and seal. Boil until cooked. Mix yogurt with garlic and mint. Heat butter with paprika. Serve manti with yogurt sauce and paprika butter.",
-        "proteins": ["ground lamb", "eggs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "cooking_instructions": "Make dough with flour, water, egg, and salt. Let rest for 30 minutes. Mix filling ingredients. Roll dough thin and cut into squares. Add filling and seal. Boil until cooked. Mix yogurt with garlic and mint. Heat butter with paprika. Serve manti with yogurt sauce and paprika butter.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Turkish Tea",
+        "recipe_name": "Turkish Tea",
         "cuisine": "Turkish",
         "ingredients": [
           "4 cups water",
@@ -101,16 +138,25 @@
           "Sugar cubes",
           "Turkish tea glasses"
         ],
-        "instructions": "Boil water in bottom pot of Turkish tea set. Add tea leaves to top pot. Pour boiling water over tea leaves. Let steep for 5 minutes. Serve in Turkish tea glasses with sugar cubes.",
-        "proteins": ["tea leaves"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "cooking_instructions": "Boil water in bottom pot of Turkish tea set. Add tea leaves to top pot. Pour boiling water over tea leaves. Let steep for 5 minutes. Serve in Turkish tea glasses with sugar cubes.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "tea leaves"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 260
       }
     ],
     "Persian": [
       {
-        "title": "Persian Rice",
+        "recipe_name": "Persian Rice",
         "cuisine": "Persian",
         "ingredients": [
           "2 cups basmati rice",
@@ -123,14 +169,23 @@
           "2 eggs",
           "1/2 cup water"
         ],
-        "instructions": "Soak rice for 30 minutes. Boil rice with salt until half cooked. Drain and rinse. Mix saffron with warm water. Mix yogurt with eggs and water. Heat butter and oil in pot. Add yogurt mixture and half the rice. Add remaining rice and saffron. Cover and cook on low heat for 45 minutes. Serve with tahdig (crispy bottom).",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "cooking_instructions": "Soak rice for 30 minutes. Boil rice with salt until half cooked. Drain and rinse. Mix saffron with warm water. Mix yogurt with eggs and water. Heat butter and oil in pot. Add yogurt mixture and half the rice. Add remaining rice and saffron. Cover and cook on low heat for 45 minutes. Serve with tahdig (crispy bottom).",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Kebab Koobideh",
+        "recipe_name": "Kebab Koobideh",
         "cuisine": "Persian",
         "ingredients": [
           "2 lbs ground lamb",
@@ -146,14 +201,20 @@
           "Basmati rice for serving",
           "Grilled tomatoes for serving"
         ],
-        "instructions": "Mix ground lamb with onion, garlic, oil, lemon juice, and seasonings. Form into long, thin patties around skewers. Grill over medium heat, turning frequently, until cooked through. Serve with basmati rice and grilled tomatoes.",
-        "proteins": ["ground lamb"],
+        "cooking_instructions": "Mix ground lamb with onion, garlic, oil, lemon juice, and seasonings. Form into long, thin patties around skewers. Grill over medium heat, turning frequently, until cooked through. Serve with basmati rice and grilled tomatoes.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "calories_per_serving": 410
       },
       {
-        "title": "Ghormeh Sabzi",
+        "recipe_name": "Ghormeh Sabzi",
         "cuisine": "Persian",
         "ingredients": [
           "2 lbs lamb, cut into cubes",
@@ -169,14 +230,21 @@
           "4 cups water",
           "Basmati rice for serving"
         ],
-        "instructions": "Brown lamb in oil. Add onions and garlic, cook until soft. Add herbs and cook for 10 minutes. Add dried limes, beans, and seasonings. Add water and simmer for 2 hours until tender. Serve with basmati rice.",
-        "proteins": ["lamb", "kidney beans"],
+        "cooking_instructions": "Brown lamb in oil. Add onions and garlic, cook until soft. Add herbs and cook for 10 minutes. Add dried limes, beans, and seasonings. Add water and simmer for 2 hours until tender. Serve with basmati rice.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb",
+          "kidney beans"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 150,
-        "difficulty": "hard"
+        "calories_per_serving": 620
       },
       {
-        "title": "Tahdig",
+        "recipe_name": "Tahdig",
         "cuisine": "Persian",
         "ingredients": [
           "2 cups basmati rice",
@@ -189,14 +257,23 @@
           "2 eggs",
           "1/2 cup water"
         ],
-        "instructions": "Soak rice for 30 minutes. Boil rice with salt until half cooked. Drain and rinse. Mix saffron with warm water. Mix yogurt with eggs and water. Heat butter and oil in pot. Add yogurt mixture and half the rice. Add remaining rice and saffron. Cover and cook on low heat for 45 minutes. Serve with tahdig (crispy bottom).",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "cooking_instructions": "Soak rice for 30 minutes. Boil rice with salt until half cooked. Drain and rinse. Mix saffron with warm water. Mix yogurt with eggs and water. Heat butter and oil in pot. Add yogurt mixture and half the rice. Add remaining rice and saffron. Cover and cook on low heat for 45 minutes. Serve with tahdig (crispy bottom).",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Persian Ice Cream",
+        "recipe_name": "Persian Ice Cream",
         "cuisine": "Persian",
         "ingredients": [
           "2 cups heavy cream",
@@ -208,16 +285,26 @@
           "1/4 cup pistachios, chopped",
           "1/4 cup almonds, chopped"
         ],
-        "instructions": "Heat cream and milk with half the sugar. Beat egg yolks with remaining sugar. Temper egg yolks with hot cream mixture. Cook until thickened. Add vanilla and rose water. Chill completely. Churn in ice cream maker. Add nuts and freeze until firm.",
-        "proteins": ["egg yolks"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "cooking_instructions": "Heat cream and milk with half the sugar. Beat egg yolks with remaining sugar. Temper egg yolks with hot cream mixture. Cook until thickened. Add vanilla and rose water. Chill completely. Churn in ice cream maker. Add nuts and freeze until firm.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg yolks"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 400
       }
     ],
     "Lebanese": [
       {
-        "title": "Lebanese Baklava",
+        "recipe_name": "Lebanese Baklava",
         "cuisine": "Lebanese",
         "ingredients": [
           "1 lb phyllo dough",
@@ -233,14 +320,25 @@
           "1 cinnamon stick",
           "1 lemon, juiced"
         ],
-        "instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
-        "proteins": ["walnuts", "pistachios"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
-        "cooking_time": 75,
-        "difficulty": "hard"
+        "cooking_instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "walnuts",
+          "pistachios"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Hummus",
+        "recipe_name": "Hummus",
         "cuisine": "Lebanese",
         "ingredients": [
           "2 cups cooked chickpeas",
@@ -253,14 +351,23 @@
           "Paprika for garnish",
           "Fresh parsley for garnish"
         ],
-        "instructions": "Blend chickpeas, tahini, lemon juice, garlic, oil, salt, and cumin until smooth. Add water if needed for consistency. Garnish with paprika and parsley. Serve with pita bread.",
-        "proteins": ["chickpeas"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "cooking_instructions": "Blend chickpeas, tahini, lemon juice, garlic, oil, salt, and cumin until smooth. Add water if needed for consistency. Garnish with paprika and parsley. Serve with pita bread.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "chickpeas"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Fattoush",
+        "recipe_name": "Fattoush",
         "cuisine": "Lebanese",
         "ingredients": [
           "4 cups mixed greens",
@@ -276,14 +383,23 @@
           "1 tsp sumac",
           "Salt and pepper to taste"
         ],
-        "instructions": "Combine all vegetables and herbs in large bowl. Add pita pieces. Whisk together olive oil, lemon juice, sumac, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "cooking_instructions": "Combine all vegetables and herbs in large bowl. Add pita pieces. Whisk together olive oil, lemon juice, sumac, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "Kibbeh",
+        "recipe_name": "Kibbeh",
         "cuisine": "Lebanese",
         "ingredients": [
           "For shell: 2 cups bulgur wheat",
@@ -301,14 +417,23 @@
           "Salt and pepper to taste",
           "Oil for frying"
         ],
-        "instructions": "Soak bulgur for 30 minutes. Mix with ground lamb, onion, and seasonings. Knead until smooth. For filling, brown ground lamb with onion and garlic. Add pine nuts and seasonings. Form bulgur mixture into shells. Add filling and seal. Fry in hot oil until golden.",
-        "proteins": ["ground lamb", "pine nuts"],
-        "dietary_restrictions": ["contains_nuts"],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "cooking_instructions": "Soak bulgur for 30 minutes. Mix with ground lamb, onion, and seasonings. Knead until smooth. For filling, brown ground lamb with onion and garlic. Add pine nuts and seasonings. Form bulgur mixture into shells. Add filling and seal. Fry in hot oil until golden.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb",
+          "pine nuts"
+        ],
+        "dietary_restrictions": [
+          "contains_nuts"
+        ],
+        "calories_per_serving": 460
       },
       {
-        "title": "Tabbouleh",
+        "recipe_name": "Tabbouleh",
         "cuisine": "Lebanese",
         "ingredients": [
           "1 cup bulgur wheat",
@@ -322,16 +447,25 @@
           "1 tsp salt",
           "1/2 tsp black pepper"
         ],
-        "instructions": "Soak bulgur in warm water for 30 minutes. Drain and squeeze out excess water. Combine with vegetables and herbs. Whisk together olive oil, lemon juice, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
-        "proteins": ["bulgur wheat"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "cooking_instructions": "Soak bulgur in warm water for 30 minutes. Drain and squeeze out excess water. Combine with vegetables and herbs. Whisk together olive oil, lemon juice, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "bulgur wheat"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 360
       }
     ],
     "Moroccan": [
       {
-        "title": "Tagine",
+        "recipe_name": "Tagine",
         "cuisine": "Moroccan",
         "ingredients": [
           "2 lbs lamb, cut into cubes",
@@ -350,14 +484,23 @@
           "2 cups water",
           "Couscous for serving"
         ],
-        "instructions": "Brown lamb in oil. Add onions and garlic, cook until soft. Add tomatoes, dried fruits, nuts, and seasonings. Add water and simmer for 2 hours until tender. Serve with couscous.",
-        "proteins": ["lamb", "almonds"],
-        "dietary_restrictions": ["contains_nuts"],
-        "cooking_time": 150,
-        "difficulty": "hard"
+        "cooking_instructions": "Brown lamb in oil. Add onions and garlic, cook until soft. Add tomatoes, dried fruits, nuts, and seasonings. Add water and simmer for 2 hours until tender. Serve with couscous.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb",
+          "almonds"
+        ],
+        "dietary_restrictions": [
+          "contains_nuts"
+        ],
+        "calories_per_serving": 650
       },
       {
-        "title": "Couscous",
+        "recipe_name": "Couscous",
         "cuisine": "Moroccan",
         "ingredients": [
           "2 cups couscous",
@@ -371,14 +514,24 @@
           "1/4 cup almonds, chopped",
           "Fresh parsley for garnish"
         ],
-        "instructions": "Heat stock with oil and seasonings. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add raisins and almonds. Garnish with parsley and serve.",
-        "proteins": ["almonds"],
-        "dietary_restrictions": ["vegetarian", "vegan", "contains_nuts"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "cooking_instructions": "Heat stock with oil and seasonings. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add raisins and almonds. Garnish with parsley and serve.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "almonds"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Harira",
+        "recipe_name": "Harira",
         "cuisine": "Moroccan",
         "ingredients": [
           "1 lb lamb, cut into cubes",
@@ -397,14 +550,22 @@
           "6 cups water",
           "Fresh cilantro for garnish"
         ],
-        "instructions": "Brown lamb in oil. Add onions and garlic, cook until soft. Add tomatoes, chickpeas, lentils, rice, and seasonings. Add water and simmer for 1 hour until tender. Garnish with cilantro and serve hot.",
-        "proteins": ["lamb", "chickpeas", "lentils"],
+        "cooking_instructions": "Brown lamb in oil. Add onions and garlic, cook until soft. Add tomatoes, chickpeas, lentils, rice, and seasonings. Add water and simmer for 1 hour until tender. Garnish with cilantro and serve hot.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb",
+          "chickpeas",
+          "lentils"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 90,
-        "difficulty": "medium"
+        "calories_per_serving": 530
       },
       {
-        "title": "Pastilla",
+        "recipe_name": "Pastilla",
         "cuisine": "Moroccan",
         "ingredients": [
           "1 lb phyllo dough",
@@ -421,14 +582,23 @@
           "Salt and pepper to taste",
           "Powdered sugar for dusting"
         ],
-        "instructions": "Sauté onions and garlic in oil. Add chicken, almonds, raisins, and seasonings. Cook for 10 minutes. Layer phyllo sheets with chicken mixture. Bake at 375°F for 30 minutes. Dust with powdered sugar and serve.",
-        "proteins": ["chicken", "almonds"],
-        "dietary_restrictions": ["contains_nuts"],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "cooking_instructions": "Sauté onions and garlic in oil. Add chicken, almonds, raisins, and seasonings. Cook for 10 minutes. Layer phyllo sheets with chicken mixture. Bake at 375°F for 30 minutes. Dust with powdered sugar and serve.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "almonds"
+        ],
+        "dietary_restrictions": [
+          "contains_nuts"
+        ],
+        "calories_per_serving": 450
       },
       {
-        "title": "Mint Tea",
+        "recipe_name": "Mint Tea",
         "cuisine": "Moroccan",
         "ingredients": [
           "4 cups water",
@@ -437,261 +607,667 @@
           "1/4 cup sugar",
           "Moroccan tea glasses"
         ],
-        "instructions": "Boil water and add tea leaves. Let steep for 2 minutes. Add mint leaves and sugar. Let steep for 3 minutes. Strain and serve in Moroccan tea glasses.",
-        "proteins": ["tea leaves"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "cooking_instructions": "Boil water and add tea leaves. Let steep for 2 minutes. Add mint leaves and sugar. Let steep for 3 minutes. Strain and serve in Moroccan tea glasses.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "tea leaves"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Turkish Delight",
+        "recipe_name": "Quick Turkish Delight",
         "cuisine": "Turkish",
-        "ingredients": ["1 cup sugar", "1/2 cup water", "1/4 cup cornstarch", "1/4 cup rose water", "1/4 cup pistachios, chopped", "Powdered sugar for dusting"],
-        "instructions": "Heat sugar and water until dissolved. Mix cornstarch with rose water. Add to sugar mixture and cook until thick. Add pistachios. Pour into pan and cool. Cut into squares and dust with powdered sugar.",
-        "proteins": ["pistachios"],
-        "dietary_restrictions": ["vegetarian", "vegan", "contains_nuts"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup sugar",
+          "1/2 cup water",
+          "1/4 cup cornstarch",
+          "1/4 cup rose water",
+          "1/4 cup pistachios, chopped",
+          "Powdered sugar for dusting"
+        ],
+        "cooking_instructions": "Heat sugar and water until dissolved. Mix cornstarch with rose water. Add to sugar mixture and cook until thick. Add pistachios. Pour into pan and cool. Cut into squares and dust with powdered sugar.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "pistachios"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Turkish Tea",
+        "recipe_name": "Quick Turkish Tea",
         "cuisine": "Turkish",
-        "ingredients": ["4 cups water", "2 tbsp black tea leaves", "2 tbsp sugar", "Turkish tea glasses"],
-        "instructions": "Boil water in teapot. Add tea leaves and steep for 3 minutes. Add sugar to taste. Serve in traditional Turkish tea glasses.",
+        "ingredients": [
+          "4 cups water",
+          "2 tbsp black tea leaves",
+          "2 tbsp sugar",
+          "Turkish tea glasses"
+        ],
+        "cooking_instructions": "Boil water in teapot. Add tea leaves and steep for 3 minutes. Add sugar to taste. Serve in traditional Turkish tea glasses.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 250
       },
       {
-        "title": "Quick Persian Rice",
+        "recipe_name": "Quick Persian Rice",
         "cuisine": "Persian",
-        "ingredients": ["2 cups basmati rice", "4 cups water", "2 tbsp butter", "1 tsp saffron", "1/4 cup barberries", "Salt to taste"],
-        "instructions": "Wash and soak rice for 10 minutes. Boil rice until 70% done. Drain. Heat butter and add saffron. Layer rice in pot. Add barberries. Cover and cook on low for 15 minutes. Serve with crispy bottom layer.",
+        "ingredients": [
+          "2 cups basmati rice",
+          "4 cups water",
+          "2 tbsp butter",
+          "1 tsp saffron",
+          "1/4 cup barberries",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Wash and soak rice for 10 minutes. Boil rice until 70% done. Drain. Heat butter and add saffron. Layer rice in pot. Add barberries. Cover and cook on low for 15 minutes. Serve with crispy bottom layer.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Lebanese Tabbouleh",
+        "recipe_name": "Quick Lebanese Tabbouleh",
         "cuisine": "Lebanese",
-        "ingredients": ["1 cup bulgur wheat", "2 cups boiling water", "2 tomatoes, diced", "1 cucumber, diced", "1/2 cup parsley, chopped", "1/4 cup mint, chopped", "3 tbsp olive oil", "2 tbsp lemon juice", "Salt to taste"],
-        "instructions": "Soak bulgur in boiling water for 10 minutes. Drain and cool. Mix with tomatoes, cucumber, parsley, and mint. Whisk olive oil, lemon juice, and salt. Toss with salad. Chill for 10 minutes before serving.",
+        "ingredients": [
+          "1 cup bulgur wheat",
+          "2 cups boiling water",
+          "2 tomatoes, diced",
+          "1 cucumber, diced",
+          "1/2 cup parsley, chopped",
+          "1/4 cup mint, chopped",
+          "3 tbsp olive oil",
+          "2 tbsp lemon juice",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Soak bulgur in boiling water for 10 minutes. Drain and cool. Mix with tomatoes, cucumber, parsley, and mint. Whisk olive oil, lemon juice, and salt. Toss with salad. Chill for 10 minutes before serving.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Moroccan Tagine",
+        "recipe_name": "Quick Moroccan Tagine",
         "cuisine": "Moroccan",
-        "ingredients": ["1 lb chicken, cubed", "1 onion, chopped", "2 cloves garlic, minced", "1 tsp ginger", "1 tsp cumin", "1 tsp cinnamon", "1 can chickpeas", "1/4 cup dried apricots", "2 cups chicken broth", "Salt and pepper to taste"],
-        "instructions": "Brown chicken with onion and garlic. Add spices and cook for 1 minute. Add chickpeas, apricots, and broth. Simmer for 15 minutes until chicken is cooked. Season with salt and pepper.",
-        "proteins": ["chicken", "chickpeas"],
+        "ingredients": [
+          "1 lb chicken, cubed",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1 tsp ginger",
+          "1 tsp cumin",
+          "1 tsp cinnamon",
+          "1 can chickpeas",
+          "1/4 cup dried apricots",
+          "2 cups chicken broth",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Brown chicken with onion and garlic. Add spices and cook for 1 minute. Add chickpeas, apricots, and broth. Simmer for 15 minutes until chicken is cooked. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "chickpeas"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "calories_per_serving": 340
       },
       {
-        "title": "Quick Egyptian Ful Medames",
+        "recipe_name": "Quick Egyptian Ful Medames",
         "cuisine": "Egyptian",
-        "ingredients": ["2 cans fava beans", "2 cloves garlic, minced", "1/4 cup olive oil", "1 lemon, juiced", "1 tsp cumin", "Salt and pepper to taste", "Pita bread for serving"],
-        "instructions": "Mash fava beans with garlic. Add olive oil, lemon juice, cumin, salt, and pepper. Mix well. Serve with pita bread.",
-        "proteins": ["fava beans"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cans fava beans",
+          "2 cloves garlic, minced",
+          "1/4 cup olive oil",
+          "1 lemon, juiced",
+          "1 tsp cumin",
+          "Salt and pepper to taste",
+          "Pita bread for serving"
+        ],
+        "cooking_instructions": "Mash fava beans with garlic. Add olive oil, lemon juice, cumin, salt, and pepper. Mix well. Serve with pita bread.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "fava beans"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Israeli Shakshuka",
+        "recipe_name": "Quick Israeli Shakshuka",
         "cuisine": "Israeli",
-        "ingredients": ["4 eggs", "1 can diced tomatoes", "1 onion, chopped", "2 cloves garlic, minced", "1 bell pepper, chopped", "1 tsp cumin", "1 tsp paprika", "2 tbsp olive oil", "Salt and pepper to taste", "Fresh herbs for garnish"],
-        "instructions": "Heat oil and cook onion and bell pepper until soft. Add garlic and spices. Add tomatoes and simmer for 5 minutes. Make wells and crack eggs into them. Cover and cook for 5 minutes until eggs are set. Garnish with herbs.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 eggs",
+          "1 can diced tomatoes",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1 bell pepper, chopped",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "2 tbsp olive oil",
+          "Salt and pepper to taste",
+          "Fresh herbs for garnish"
+        ],
+        "cooking_instructions": "Heat oil and cook onion and bell pepper until soft. Add garlic and spices. Add tomatoes and simmer for 5 minutes. Make wells and crack eggs into them. Cover and cook for 5 minutes until eggs are set. Garnish with herbs.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Ethiopian Injera",
+        "recipe_name": "Quick Ethiopian Injera",
         "cuisine": "Ethiopian",
-        "ingredients": ["2 cups teff flour", "2 cups water", "1 tsp salt", "1 tsp baking powder", "Oil for cooking"],
-        "instructions": "Mix teff flour with water and salt. Let ferment for 2 hours. Add baking powder. Heat oil in pan. Pour batter and cook until bubbles form. Flip and cook other side. Serve with stews.",
+        "ingredients": [
+          "2 cups teff flour",
+          "2 cups water",
+          "1 tsp salt",
+          "1 tsp baking powder",
+          "Oil for cooking"
+        ],
+        "cooking_instructions": "Mix teff flour with water and salt. Let ferment for 2 hours. Add baking powder. Heat oil in pan. Pour batter and cook until bubbles form. Flip and cook other side. Serve with stews.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick South African Bobotie",
+        "recipe_name": "Quick South African Bobotie",
         "cuisine": "South African",
-        "ingredients": ["1 lb ground beef", "1 onion, chopped", "2 cloves garlic, minced", "1 apple, grated", "1/4 cup raisins", "1 tsp curry powder", "1 tsp turmeric", "2 eggs", "1 cup milk", "Salt and pepper to taste"],
-        "instructions": "Cook beef with onion and garlic until browned. Add apple, raisins, and spices. Season with salt and pepper. Place in baking dish. Beat eggs with milk and pour over meat. Bake at 350°F for 20 minutes until set.",
-        "proteins": ["ground beef", "eggs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb ground beef",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1 apple, grated",
+          "1/4 cup raisins",
+          "1 tsp curry powder",
+          "1 tsp turmeric",
+          "2 eggs",
+          "1 cup milk",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook beef with onion and garlic until browned. Add apple, raisins, and spices. Season with salt and pepper. Place in baking dish. Beat eggs with milk and pour over meat. Bake at 350°F for 20 minutes until set.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 350
       },
       {
-        "title": "Quick Nigerian Jollof Rice",
+        "recipe_name": "Quick Nigerian Jollof Rice",
         "cuisine": "Nigerian",
-        "ingredients": ["2 cups rice", "1 can diced tomatoes", "1 onion, chopped", "2 cloves garlic, minced", "1 bell pepper, chopped", "1 tsp thyme", "1 tsp curry powder", "2 cups chicken broth", "2 tbsp oil", "Salt and pepper to taste"],
-        "instructions": "Heat oil and cook onion until soft. Add garlic, bell pepper, and spices. Add tomatoes and cook for 5 minutes. Add rice and broth. Bring to boil, then simmer for 15 minutes. Season with salt and pepper.",
+        "ingredients": [
+          "2 cups rice",
+          "1 can diced tomatoes",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1 bell pepper, chopped",
+          "1 tsp thyme",
+          "1 tsp curry powder",
+          "2 cups chicken broth",
+          "2 tbsp oil",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Heat oil and cook onion until soft. Add garlic, bell pepper, and spices. Add tomatoes and cook for 5 minutes. Add rice and broth. Bring to boil, then simmer for 15 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Quick Turkish Kebab",
+        "recipe_name": "Quick Turkish Kebab",
         "cuisine": "Turkish",
-        "ingredients": ["1 lb lamb, cubed", "1 onion, grated", "2 cloves garlic", "1/4 cup olive oil", "1 tsp cumin", "1 tsp paprika", "Salt and pepper", "Pita bread"],
-        "instructions": "Marinate lamb with onion, garlic, oil, and spices for 30 minutes. Thread onto skewers. Grill for 8 minutes, turning occasionally. Serve with pita bread.",
-        "proteins": ["lamb"],
+        "ingredients": [
+          "1 lb lamb, cubed",
+          "1 onion, grated",
+          "2 cloves garlic",
+          "1/4 cup olive oil",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "Salt and pepper",
+          "Pita bread"
+        ],
+        "cooking_instructions": "Marinate lamb with onion, garlic, oil, and spices for 30 minutes. Thread onto skewers. Grill for 8 minutes, turning occasionally. Serve with pita bread.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 304
       },
       {
-        "title": "Quick Persian Kebab",
+        "recipe_name": "Quick Persian Kebab",
         "cuisine": "Persian",
-        "ingredients": ["1 lb ground lamb", "1 onion, grated", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika", "Salt and pepper", "Basmati rice"],
-        "instructions": "Mix lamb with onion, garlic, and spices. Form into patties. Grill for 6 minutes per side. Serve with basmati rice.",
-        "proteins": ["ground lamb"],
+        "ingredients": [
+          "1 lb ground lamb",
+          "1 onion, grated",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "Salt and pepper",
+          "Basmati rice"
+        ],
+        "cooking_instructions": "Mix lamb with onion, garlic, and spices. Form into patties. Grill for 6 minutes per side. Serve with basmati rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Lebanese Hummus",
+        "recipe_name": "Quick Lebanese Hummus",
         "cuisine": "Lebanese",
-        "ingredients": ["1 can chickpeas", "2 tbsp tahini", "2 tbsp lemon juice", "2 cloves garlic", "2 tbsp olive oil", "1 tsp cumin", "Salt to taste", "Pita bread"],
-        "instructions": "Blend chickpeas, tahini, lemon juice, garlic, oil, cumin, and salt until smooth. Serve with pita bread.",
-        "proteins": ["chickpeas"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 can chickpeas",
+          "2 tbsp tahini",
+          "2 tbsp lemon juice",
+          "2 cloves garlic",
+          "2 tbsp olive oil",
+          "1 tsp cumin",
+          "Salt to taste",
+          "Pita bread"
+        ],
+        "cooking_instructions": "Blend chickpeas, tahini, lemon juice, garlic, oil, cumin, and salt until smooth. Serve with pita bread.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "chickpeas"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Moroccan Couscous",
+        "recipe_name": "Quick Moroccan Couscous",
         "cuisine": "Moroccan",
-        "ingredients": ["2 cups couscous", "2 cups chicken broth", "1/4 cup olive oil", "1 tsp cumin", "1 tsp cinnamon", "1/4 cup raisins", "1/4 cup almonds", "Salt to taste"],
-        "instructions": "Heat broth with oil and spices. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add raisins and almonds. Season with salt.",
-        "proteins": ["almonds"],
-        "dietary_restrictions": ["vegetarian", "vegan", "contains_nuts"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups couscous",
+          "2 cups chicken broth",
+          "1/4 cup olive oil",
+          "1 tsp cumin",
+          "1 tsp cinnamon",
+          "1/4 cup raisins",
+          "1/4 cup almonds",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Heat broth with oil and spices. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add raisins and almonds. Season with salt.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "almonds"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Egyptian Koshari",
+        "recipe_name": "Quick Egyptian Koshari",
         "cuisine": "Egyptian",
-        "ingredients": ["2 cups rice", "1 cup lentils", "1 cup macaroni", "1 onion, sliced", "2 cloves garlic", "1 can tomato sauce", "1 tsp cumin", "2 tbsp oil", "Salt and pepper"],
-        "instructions": "Cook rice, lentils, and macaroni separately. Fry onion until crispy. Cook garlic with tomato sauce and cumin. Combine all ingredients. Season with salt and pepper.",
-        "proteins": ["lentils"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups rice",
+          "1 cup lentils",
+          "1 cup macaroni",
+          "1 onion, sliced",
+          "2 cloves garlic",
+          "1 can tomato sauce",
+          "1 tsp cumin",
+          "2 tbsp oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook rice, lentils, and macaroni separately. Fry onion until crispy. Cook garlic with tomato sauce and cumin. Combine all ingredients. Season with salt and pepper.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "lentils"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Quick Israeli Falafel",
+        "recipe_name": "Quick Israeli Falafel",
         "cuisine": "Israeli",
-        "ingredients": ["1 can chickpeas", "1 onion, chopped", "2 cloves garlic", "1/4 cup parsley", "1 tsp cumin", "1 tsp coriander", "2 tbsp flour", "Oil for frying", "Pita bread"],
-        "instructions": "Blend chickpeas, onion, garlic, parsley, and spices. Add flour. Form into balls. Fry until golden. Serve in pita bread.",
-        "proteins": ["chickpeas"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 can chickpeas",
+          "1 onion, chopped",
+          "2 cloves garlic",
+          "1/4 cup parsley",
+          "1 tsp cumin",
+          "1 tsp coriander",
+          "2 tbsp flour",
+          "Oil for frying",
+          "Pita bread"
+        ],
+        "cooking_instructions": "Blend chickpeas, onion, garlic, parsley, and spices. Add flour. Form into balls. Fry until golden. Serve in pita bread.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "chickpeas"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Ethiopian Doro Wat",
+        "recipe_name": "Quick Ethiopian Doro Wat",
         "cuisine": "Ethiopian",
-        "ingredients": ["1 lb chicken, cubed", "1 onion, chopped", "2 cloves garlic", "1 tbsp berbere spice", "1 can tomatoes", "2 cups chicken broth", "Salt and pepper"],
-        "instructions": "Cook chicken until browned. Add onion and garlic. Cook for 3 minutes. Add berbere, tomatoes, and broth. Simmer for 15 minutes. Season with salt and pepper.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "1 lb chicken, cubed",
+          "1 onion, chopped",
+          "2 cloves garlic",
+          "1 tbsp berbere spice",
+          "1 can tomatoes",
+          "2 cups chicken broth",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook chicken until browned. Add onion and garlic. Cook for 3 minutes. Add berbere, tomatoes, and broth. Simmer for 15 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick South African Biltong",
+        "recipe_name": "Quick South African Biltong",
         "cuisine": "South African",
-        "ingredients": ["1 lb beef strips", "1/4 cup vinegar", "2 tbsp salt", "1 tbsp coriander", "1 tbsp black pepper", "1 tsp brown sugar"],
-        "instructions": "Marinate beef with vinegar, salt, coriander, pepper, and sugar for 2 hours. Dry in oven at 150°F for 4 hours. Slice and serve.",
-        "proteins": ["beef"],
+        "ingredients": [
+          "1 lb beef strips",
+          "1/4 cup vinegar",
+          "2 tbsp salt",
+          "1 tbsp coriander",
+          "1 tbsp black pepper",
+          "1 tsp brown sugar"
+        ],
+        "cooking_instructions": "Marinate beef with vinegar, salt, coriander, pepper, and sugar for 2 hours. Dry in oven at 150°F for 4 hours. Slice and serve.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 240,
-        "difficulty": "medium"
+        "calories_per_serving": 740
       },
       {
-        "title": "Quick Kenyan Ugali",
+        "recipe_name": "Quick Kenyan Ugali",
         "cuisine": "Kenyan",
-        "ingredients": ["2 cups cornmeal", "4 cups water", "1 tsp salt", "2 tbsp butter"],
-        "instructions": "Bring water to boil. Add salt and cornmeal gradually. Stir constantly until thick. Add butter. Serve with stews.",
+        "ingredients": [
+          "2 cups cornmeal",
+          "4 cups water",
+          "1 tsp salt",
+          "2 tbsp butter"
+        ],
+        "cooking_instructions": "Bring water to boil. Add salt and cornmeal gradually. Stir constantly until thick. Add butter. Serve with stews.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Ghanaian Banku",
+        "recipe_name": "Quick Ghanaian Banku",
         "cuisine": "Ghanaian",
-        "ingredients": ["2 cups cornmeal", "1 cup cassava flour", "4 cups water", "1 tsp salt"],
-        "instructions": "Mix cornmeal and cassava flour. Bring water to boil. Add flour mixture gradually. Stir until thick. Serve with fish stew.",
+        "ingredients": [
+          "2 cups cornmeal",
+          "1 cup cassava flour",
+          "4 cups water",
+          "1 tsp salt"
+        ],
+        "cooking_instructions": "Mix cornmeal and cassava flour. Bring water to boil. Add flour mixture gradually. Stir until thick. Serve with fish stew.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Senegalese Thieboudienne",
+        "recipe_name": "Quick Senegalese Thieboudienne",
         "cuisine": "Senegalese",
-        "ingredients": ["1 lb fish fillets", "2 cups rice", "1 onion, chopped", "2 cloves garlic", "1 can tomatoes", "1 tsp thyme", "1 tsp paprika", "2 cups fish broth", "Salt and pepper"],
-        "instructions": "Season fish with salt and pepper. Cook until done. Sauté onion and garlic. Add tomatoes and spices. Add rice and broth. Simmer for 15 minutes. Serve with fish.",
-        "proteins": ["fish"],
+        "ingredients": [
+          "1 lb fish fillets",
+          "2 cups rice",
+          "1 onion, chopped",
+          "2 cloves garlic",
+          "1 can tomatoes",
+          "1 tsp thyme",
+          "1 tsp paprika",
+          "2 cups fish broth",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season fish with salt and pepper. Cook until done. Sauté onion and garlic. Add tomatoes and spices. Add rice and broth. Simmer for 15 minutes. Serve with fish.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "calories_per_serving": 340
       },
       {
-        "title": "Quick Tunisian Couscous",
+        "recipe_name": "Quick Tunisian Couscous",
         "cuisine": "Tunisian",
-        "ingredients": ["2 cups couscous", "2 cups vegetable broth", "1/4 cup olive oil", "1 tsp harissa", "1 tsp cumin", "1/4 cup chickpeas", "Salt to taste"],
-        "instructions": "Heat broth with oil, harissa, and cumin. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add chickpeas. Season with salt.",
-        "proteins": ["chickpeas"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups couscous",
+          "2 cups vegetable broth",
+          "1/4 cup olive oil",
+          "1 tsp harissa",
+          "1 tsp cumin",
+          "1/4 cup chickpeas",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Heat broth with oil, harissa, and cumin. Pour over couscous and let sit for 5 minutes. Fluff with fork. Add chickpeas. Season with salt.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "chickpeas"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Algerian Chakchouka",
+        "recipe_name": "Quick Algerian Chakchouka",
         "cuisine": "Algerian",
-        "ingredients": ["4 eggs", "1 can diced tomatoes", "1 onion, chopped", "2 cloves garlic", "1 bell pepper", "1 tsp cumin", "1 tsp paprika", "2 tbsp oil", "Salt and pepper"],
-        "instructions": "Heat oil and cook onion and bell pepper until soft. Add garlic and spices. Add tomatoes and simmer for 5 minutes. Make wells and crack eggs. Cover and cook for 5 minutes.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 eggs",
+          "1 can diced tomatoes",
+          "1 onion, chopped",
+          "2 cloves garlic",
+          "1 bell pepper",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "2 tbsp oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Heat oil and cook onion and bell pepper until soft. Add garlic and spices. Add tomatoes and simmer for 5 minutes. Make wells and crack eggs. Cover and cook for 5 minutes.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Libyan Bazeen",
+        "recipe_name": "Quick Libyan Bazeen",
         "cuisine": "Libyan",
-        "ingredients": ["2 cups barley flour", "4 cups water", "1 tsp salt", "2 tbsp oil"],
-        "instructions": "Bring water to boil. Add salt and barley flour gradually. Stir until thick. Add oil. Serve with meat stew.",
+        "ingredients": [
+          "2 cups barley flour",
+          "4 cups water",
+          "1 tsp salt",
+          "2 tbsp oil"
+        ],
+        "cooking_instructions": "Bring water to boil. Add salt and barley flour gradually. Stir until thick. Add oil. Serve with meat stew.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Sudanese Ful Medames",
+        "recipe_name": "Quick Sudanese Ful Medames",
         "cuisine": "Sudanese",
-        "ingredients": ["2 cans fava beans", "2 cloves garlic", "1/4 cup olive oil", "1 lemon, juiced", "1 tsp cumin", "Salt and pepper", "Bread"],
-        "instructions": "Mash fava beans with garlic. Add oil, lemon juice, cumin, salt, and pepper. Mix well. Serve with bread.",
-        "proteins": ["fava beans"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cans fava beans",
+          "2 cloves garlic",
+          "1/4 cup olive oil",
+          "1 lemon, juiced",
+          "1 tsp cumin",
+          "Salt and pepper",
+          "Bread"
+        ],
+        "cooking_instructions": "Mash fava beans with garlic. Add oil, lemon juice, cumin, salt, and pepper. Mix well. Serve with bread.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "fava beans"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 286
       },
       {
         "recipe_name": "Persian Jeweled Rice (Jeweled Polo)",
@@ -736,7 +1312,8 @@
           "Meanwhile, heat remaining butter in skillet. Add onion and cook for 10 minutes until golden. Add barberries, raisins, and spices. Cook for 3 minutes.",
           "Add nuts and apricots. Cook for 2 minutes. Mix with saffron water. Layer over rice. Cover and cook on low for 30 minutes. Serve with mint garnish."
         ],
-        "chef_tips": "This is the crown jewel of Persian cuisine - the rice should be fluffy and the jewels should be perfectly distributed. The tahdig (crispy bottom) is the prize everyone fights for."
+        "chef_tips": "This is the crown jewel of Persian cuisine - the rice should be fluffy and the jewels should be perfectly distributed. The tahdig (crispy bottom) is the prize everyone fights for.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Persian Fesenjan (Pomegranate Walnut Stew)",
@@ -778,7 +1355,8 @@
           "Add pomegranate molasses, spices, stock, and sugar. Bring to boil, then reduce heat and simmer for 45 minutes.",
           "Return chicken to pot and simmer for 30 minutes until tender. Serve with basmati rice and pomegranate seeds."
         ],
-        "chef_tips": "The walnuts must be ground very fine for the sauce to be smooth. The balance of sweet and sour is crucial - adjust with sugar or pomegranate molasses as needed."
+        "chef_tips": "The walnuts must be ground very fine for the sauce to be smooth. The balance of sweet and sour is crucial - adjust with sugar or pomegranate molasses as needed.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Persian Herb Rice (Sabzi Polo)",
@@ -819,7 +1397,8 @@
           "Add remaining rice and 3 cups water. Bring to boil, then reduce heat and simmer for 15 minutes.",
           "Mix herbs with saffron water. Layer over rice. Cover and cook on low for 30 minutes. Serve with fresh herb garnish."
         ],
-        "chef_tips": "The herbs should be fresh and vibrant. This rice is traditionally served with fish during Nowruz (Persian New Year). The layering technique is crucial for the final presentation."
+        "chef_tips": "The herbs should be fresh and vibrant. This rice is traditionally served with fish during Nowruz (Persian New Year). The layering technique is crucial for the final presentation.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Persian Cucumber Yogurt (Mast-o-Khiar)",
@@ -859,7 +1438,8 @@
           "Drizzle with olive oil and sprinkle with dried rose petals and dried mint.",
           "Chill for 30 minutes before serving. Serve with pita bread."
         ],
-        "chef_tips": "The cucumbers must be well-drained or the dip will be watery. The combination of fresh and dried herbs creates layers of flavor. This is a cooling accompaniment to spicy Persian dishes."
+        "chef_tips": "The cucumbers must be well-drained or the dip will be watery. The combination of fresh and dried herbs creates layers of flavor. This is a cooling accompaniment to spicy Persian dishes.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Persian Lamb Shank (Mahicheh)",
@@ -900,7 +1480,8 @@
           "Return lamb to pot. Add tomatoes, dried limes, and water. Bring to boil, then reduce heat and simmer for 1.5 hours until tender.",
           "Remove dried limes before serving. Garnish with fresh herbs and serve with basmati rice."
         ],
-        "chef_tips": "The dried limes are essential for authentic Persian flavor. The lamb should be fall-apart tender. This dish is often served at special occasions and celebrations."
+        "chef_tips": "The dried limes are essential for authentic Persian flavor. The lamb should be fall-apart tender. This dish is often served at special occasions and celebrations.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Persian Saffron Ice Cream (Bastani)",
@@ -939,7 +1520,8 @@
           "Strain custard and whisk in saffron water, vanilla, rose water, and salt. Chill completely.",
           "Churn in ice cream maker according to manufacturer's instructions. Add pistachios during last 5 minutes. Freeze until firm."
         ],
-        "chef_tips": "The saffron should be high quality for the best flavor and color. The rose water adds the characteristic Persian floral note. Don't over-churn or the ice cream will become grainy."
+        "chef_tips": "The saffron should be high quality for the best flavor and color. The rose water adds the characteristic Persian floral note. Don't over-churn or the ice cream will become grainy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Doner Kebab",
@@ -985,7 +1567,8 @@
           "Fill pita breads with lamb, lettuce, tomatoes, onions, and parsley.",
           "Drizzle with tahini sauce and serve immediately."
         ],
-        "chef_tips": "The key is slicing the lamb very thin for authentic doner texture. The marinade should be well-balanced with spices. Don't overcook the lamb or it will become tough."
+        "chef_tips": "The key is slicing the lamb very thin for authentic doner texture. The marinade should be well-balanced with spices. Don't overcook the lamb or it will become tough.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Manti (Dumplings)",
@@ -1031,7 +1614,8 @@
           "Fold squares into triangles and pinch edges to seal. Bring corners together to form dumplings.",
           "Boil manti in salted water for 8-10 minutes until cooked through. Mix yogurt with garlic and salt. Melt butter with paprika and mint. Serve manti with yogurt sauce and spiced butter."
         ],
-        "chef_tips": "The dough should be thin but not too thin to prevent tearing. The dumplings should be small and uniform. The combination of yogurt and spiced butter is essential for authentic flavor."
+        "chef_tips": "The dough should be thin but not too thin to prevent tearing. The dumplings should be small and uniform. The combination of yogurt and spiced butter is essential for authentic flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Lahmacun (Turkish Pizza)",
@@ -1077,7 +1661,8 @@
           "Spread topping evenly over each dough circle. Bake for 8-10 minutes until edges are golden.",
           "Serve hot with lemon wedges. Roll up and eat like a wrap."
         ],
-        "chef_tips": "The dough should be very thin for authentic lahmacun. The topping should be spread thinly and evenly. High oven temperature is crucial for the crispy texture."
+        "chef_tips": "The dough should be very thin for authentic lahmacun. The topping should be spread thinly and evenly. High oven temperature is crucial for the crispy texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Baklava",
@@ -1118,7 +1703,8 @@
           "Top with remaining phyllo sheets, brushing each with butter. Cut into diamonds with sharp knife.",
           "Bake for 45-50 minutes until golden brown. Make syrup: boil sugar, water, honey, and cinnamon stick for 10 minutes. Add lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving."
         ],
-        "chef_tips": "The phyllo should be kept covered to prevent drying. The syrup must be hot when poured over the cooled baklava. The combination of walnuts and pistachios creates the perfect texture and flavor."
+        "chef_tips": "The phyllo should be kept covered to prevent drying. The syrup must be hot when poured over the cooled baklava. The combination of walnuts and pistachios creates the perfect texture and flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Menemen (Scrambled Eggs)",
@@ -1159,7 +1745,8 @@
           "Whisk eggs in small bowl. Pour into skillet and stir gently with wooden spoon.",
           "Cook for 3-4 minutes, stirring occasionally, until eggs are set but still creamy. Garnish with parsley and feta cheese. Serve with bread."
         ],
-        "chef_tips": "The eggs should be creamy, not dry. The vegetables should be well-cooked before adding eggs. This is a perfect breakfast dish that's hearty and flavorful."
+        "chef_tips": "The eggs should be creamy, not dry. The vegetables should be well-cooked before adding eggs. This is a perfect breakfast dish that's hearty and flavorful.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Pide (Turkish Flatbread)",
@@ -1204,7 +1791,8 @@
           "Spread topping over each oval, leaving edges clear. Fold edges over to create boat shape.",
           "Brush edges with beaten egg. Bake for 15-18 minutes until golden brown. Drizzle with olive oil before serving."
         ],
-        "chef_tips": "The dough should be soft and pliable. The boat shape is traditional for pide. The edges should be crispy while the center remains soft with the topping."
+        "chef_tips": "The dough should be soft and pliable. The boat shape is traditional for pide. The edges should be crispy while the center remains soft with the topping.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Hummus",
@@ -1242,7 +1830,8 @@
           "With processor running, slowly drizzle in olive oil until well incorporated.",
           "Taste and adjust seasoning. Serve with drizzle of olive oil, paprika, parsley, and reserved chickpeas. Serve with pita bread."
         ],
-        "chef_tips": "The key is processing the hummus long enough to achieve a silky smooth texture. The tahini should be well-mixed before adding other ingredients. Don't skip the olive oil drizzle - it's essential for authentic flavor."
+        "chef_tips": "The key is processing the hummus long enough to achieve a silky smooth texture. The tahini should be well-mixed before adding other ingredients. Don't skip the olive oil drizzle - it's essential for authentic flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Tabbouleh",
@@ -1282,7 +1871,8 @@
           "Pour dressing over salad and toss well. Let stand for 15 minutes to allow flavors to meld.",
           "Taste and adjust seasoning. Serve with romaine lettuce leaves for scooping."
         ],
-        "chef_tips": "The parsley should be the star of this salad - use lots of it. The bulgur should be tender but not mushy. Let the salad rest before serving to allow the flavors to develop."
+        "chef_tips": "The parsley should be the star of this salad - use lots of it. The bulgur should be tender but not mushy. Let the salad rest before serving to allow the flavors to develop.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Kibbeh",
@@ -1326,7 +1916,8 @@
           "Form kibbeh: take small amount of shell mixture, form into ball, make hole in center, fill with meat mixture, seal and shape into oval.",
           "Heat oil to 350°F (175°C). Fry kibbeh in batches for 4-5 minutes until golden brown. Drain on paper towels and serve hot."
         ],
-        "chef_tips": "The shell mixture should be smooth and pliable. The key is getting the right consistency - not too wet, not too dry. The kibbeh should be crispy outside, tender inside."
+        "chef_tips": "The shell mixture should be smooth and pliable. The key is getting the right consistency - not too wet, not too dry. The kibbeh should be crispy outside, tender inside.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Fattoush",
@@ -1368,7 +1959,8 @@
           "Add crispy pita pieces and dressing. Toss gently to combine.",
           "Serve immediately while pita is still crispy."
         ],
-        "chef_tips": "The sumac is essential for authentic Lebanese flavor - it adds a tangy, lemony note. The pita should be crispy, not soggy. This salad is all about fresh, vibrant ingredients."
+        "chef_tips": "The sumac is essential for authentic Lebanese flavor - it adds a tangy, lemony note. The pita should be crispy, not soggy. This salad is all about fresh, vibrant ingredients.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Shawarma",
@@ -1414,7 +2006,8 @@
           "Fill pita breads with meat, tahini sauce, pickled turnips, tomatoes, onions, and parsley.",
           "Roll up and serve immediately."
         ],
-        "chef_tips": "The marinade is key to authentic shawarma flavor. The meat should be well-seasoned and slightly charred. The pickled turnips add the essential tangy crunch."
+        "chef_tips": "The marinade is key to authentic shawarma flavor. The meat should be well-seasoned and slightly charred. The pickled turnips add the essential tangy crunch.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Maamoul (Date Cookies)",
@@ -1457,7 +2050,8 @@
           "Shape into balls or use maamoul mold. Place on baking sheet and bake for 20-25 minutes until golden.",
           "Cool completely and dust with powdered sugar before serving."
         ],
-        "chef_tips": "These are traditional Lebanese cookies often made during holidays. The semolina gives them a unique texture. The filling should be smooth and not too sweet."
+        "chef_tips": "These are traditional Lebanese cookies often made during holidays. The semolina gives them a unique texture. The filling should be smooth and not too sweet.",
+        "meal_type": "Regular"
       }
     ]
   }

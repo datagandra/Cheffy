@@ -2,7 +2,7 @@
   "cuisines": {
     "Greek": [
       {
-        "title": "Moussaka",
+        "recipe_name": "Moussaka",
         "cuisine": "Greek",
         "ingredients": [
           "2 large eggplants, sliced",
@@ -22,14 +22,24 @@
           "1/2 cup grated Parmesan cheese",
           "1/4 tsp nutmeg"
         ],
-        "instructions": "Salt eggplant slices and let sit for 30 minutes. Rinse and pat dry. Brown ground lamb with onion and garlic. Add tomatoes, paste, and seasonings. Simmer for 20 minutes. Make béchamel sauce with butter, flour, milk, eggs, cheese, and nutmeg. Layer eggplant, meat sauce, and béchamel in baking dish. Bake at 375°F for 45 minutes until golden.",
-        "proteins": ["ground lamb", "eggs", "parmesan cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "cooking_instructions": "Salt eggplant slices and let sit for 30 minutes. Rinse and pat dry. Brown ground lamb with onion and garlic. Add tomatoes, paste, and seasonings. Simmer for 20 minutes. Make béchamel sauce with butter, flour, milk, eggs, cheese, and nutmeg. Layer eggplant, meat sauce, and béchamel in baking dish. Bake at 375°F for 45 minutes until golden.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb",
+          "eggs",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 540
       },
       {
-        "title": "Greek Baklava",
+        "recipe_name": "Greek Baklava",
         "cuisine": "Greek",
         "ingredients": [
           "1 lb phyllo dough",
@@ -45,14 +55,25 @@
           "1 cinnamon stick",
           "1 lemon, juiced"
         ],
-        "instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
-        "proteins": ["walnuts", "pistachios"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
-        "cooking_time": 75,
-        "difficulty": "hard"
+        "cooking_instructions": "Mix nuts with sugar and spices. Layer phyllo sheets with melted butter and nut mixture. Cut into diamonds. Bake at 350°F for 45 minutes. Make syrup with sugar, water, honey, cinnamon, and lemon juice. Pour hot syrup over cooled baklava. Let sit for 4 hours before serving.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "walnuts",
+          "pistachios"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Spanakopita",
+        "recipe_name": "Spanakopita",
         "cuisine": "Greek",
         "ingredients": [
           "1 lb phyllo dough",
@@ -66,14 +87,24 @@
           "1/2 cup olive oil",
           "Salt and pepper to taste"
         ],
-        "instructions": "Sauté onion and green onions until soft. Add spinach and cook until wilted. Cool and squeeze out excess water. Mix with herbs, feta, eggs, and seasonings. Layer phyllo sheets with olive oil and spinach mixture. Bake at 375°F for 45 minutes until golden.",
-        "proteins": ["feta cheese", "eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 75,
-        "difficulty": "medium"
+        "cooking_instructions": "Sauté onion and green onions until soft. Add spinach and cook until wilted. Cool and squeeze out excess water. Mix with herbs, feta, eggs, and seasonings. Layer phyllo sheets with olive oil and spinach mixture. Bake at 375°F for 45 minutes until golden.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 450
       },
       {
-        "title": "Pastitsio",
+        "recipe_name": "Pastitsio",
         "cuisine": "Greek",
         "ingredients": [
           "1 lb penne pasta",
@@ -92,14 +123,24 @@
           "1/2 cup grated Parmesan cheese",
           "1/4 tsp nutmeg"
         ],
-        "instructions": "Cook pasta according to package directions. Brown ground beef with onion and garlic. Add tomatoes, paste, and seasonings. Simmer for 20 minutes. Make béchamel sauce. Layer pasta, meat sauce, and béchamel in baking dish. Bake at 375°F for 45 minutes until golden.",
-        "proteins": ["ground beef", "eggs", "parmesan cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "cooking_instructions": "Cook pasta according to package directions. Brown ground beef with onion and garlic. Add tomatoes, paste, and seasonings. Simmer for 20 minutes. Make béchamel sauce. Layer pasta, meat sauce, and béchamel in baking dish. Bake at 375°F for 45 minutes until golden.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "eggs",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 530
       },
       {
-        "title": "Greek Salad",
+        "recipe_name": "Greek Salad",
         "cuisine": "Greek",
         "ingredients": [
           "4 large tomatoes, cut into wedges",
@@ -113,16 +154,25 @@
           "1 tsp dried oregano",
           "Salt and pepper to taste"
         ],
-        "instructions": "Combine all vegetables in a large bowl. Add olives and feta cheese. Whisk together olive oil, vinegar, oregano, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
-        "proteins": ["feta cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "cooking_instructions": "Combine all vegetables in a large bowl. Add olives and feta cheese. Whisk together olive oil, vinegar, oregano, salt, and pepper. Pour dressing over salad and toss gently. Serve immediately.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 330
       }
     ],
     "Italian": [
       {
-        "title": "Osso Buco alla Milanese",
+        "recipe_name": "Osso Buco alla Milanese",
         "cuisine": "Italian",
         "ingredients": [
           "4 veal shanks",
@@ -141,14 +191,22 @@
           "Salt and pepper to taste",
           "Gremolata for garnish"
         ],
-        "instructions": "Season veal shanks with salt and pepper. Brown in oil and butter. Add vegetables and cook until soft. Add wine, stock, tomatoes, and seasonings. Simmer for 2 hours until tender. Serve with risotto and gremolata.",
-        "proteins": ["veal"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 150,
-        "difficulty": "hard"
+        "cooking_instructions": "Season veal shanks with salt and pepper. Brown in oil and butter. Add vegetables and cook until soft. Add wine, stock, tomatoes, and seasonings. Simmer for 2 hours until tender. Serve with risotto and gremolata.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "veal"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 650
       },
       {
-        "title": "Risotto ai Porcini",
+        "recipe_name": "Risotto ai Porcini",
         "cuisine": "Italian",
         "ingredients": [
           "2 cups Arborio rice",
@@ -163,14 +221,23 @@
           "Fresh parsley",
           "Salt and pepper to taste"
         ],
-        "instructions": "Soak mushrooms in hot water. Sauté onion and garlic in oil. Add rice and cook for 2 minutes. Add wine and cook until absorbed. Add stock gradually, stirring constantly. Add mushrooms and cook until rice is creamy. Stir in cheese and butter. Garnish with parsley.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "hard"
+        "cooking_instructions": "Soak mushrooms in hot water. Sauté onion and garlic in oil. Add rice and cook for 2 minutes. Add wine and cook until absorbed. Add stock gradually, stirring constantly. Add mushrooms and cook until rice is creamy. Stir in cheese and butter. Garnish with parsley.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 400
       },
       {
-        "title": "Saltimbocca alla Romana",
+        "recipe_name": "Saltimbocca alla Romana",
         "cuisine": "Italian",
         "ingredients": [
           "8 veal cutlets",
@@ -183,14 +250,23 @@
           "1/4 cup chicken stock",
           "Salt and pepper to taste"
         ],
-        "instructions": "Pound veal cutlets thin. Top each with prosciutto and sage leaf. Secure with toothpicks. Dredge in flour. Cook in oil for 2 minutes per side. Add wine and stock. Simmer for 5 minutes. Remove toothpicks and serve hot.",
-        "proteins": ["veal", "prosciutto"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "cooking_instructions": "Pound veal cutlets thin. Top each with prosciutto and sage leaf. Secure with toothpicks. Dredge in flour. Cook in oil for 2 minutes per side. Add wine and stock. Simmer for 5 minutes. Remove toothpicks and serve hot.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "veal",
+          "prosciutto"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Penne all'Arrabbiata",
+        "recipe_name": "Penne all'Arrabbiata",
         "cuisine": "Italian",
         "ingredients": [
           "1 lb penne pasta",
@@ -203,14 +279,23 @@
           "Salt to taste",
           "Grated Parmesan cheese for serving"
         ],
-        "instructions": "Cook pasta according to package directions. Heat oil and cook garlic and chilies. Add wine and cook until reduced. Add tomatoes and simmer for 15 minutes. Toss with pasta. Garnish with parsley and serve with Parmesan.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "cooking_instructions": "Cook pasta according to package directions. Heat oil and cook garlic and chilies. Add wine and cook until reduced. Add tomatoes and simmer for 15 minutes. Toss with pasta. Garnish with parsley and serve with Parmesan.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Tiramisu",
+        "recipe_name": "Tiramisu",
         "cuisine": "Italian",
         "ingredients": [
           "6 egg yolks",
@@ -222,16 +307,26 @@
           "24 ladyfinger cookies",
           "1/4 cup cocoa powder"
         ],
-        "instructions": "Beat egg yolks with sugar until thick. Add mascarpone and mix well. Whip cream and fold into mixture. Mix coffee with liqueur. Dip ladyfingers in coffee mixture. Layer in dish with cream mixture. Chill for 4 hours. Dust with cocoa powder before serving.",
-        "proteins": ["eggs", "mascarpone"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "cooking_instructions": "Beat egg yolks with sugar until thick. Add mascarpone and mix well. Whip cream and fold into mixture. Mix coffee with liqueur. Dip ladyfingers in coffee mixture. Layer in dish with cream mixture. Chill for 4 hours. Dust with cocoa powder before serving.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs",
+          "mascarpone"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       }
     ],
     "Spanish": [
       {
-        "title": "Paella Valenciana",
+        "recipe_name": "Paella Valenciana",
         "cuisine": "Spanish",
         "ingredients": [
           "2 cups short-grain rice",
@@ -249,14 +344,21 @@
           "Salt to taste",
           "Lemon wedges for serving"
         ],
-        "instructions": "Heat oil in large paella pan. Brown chicken and rabbit. Add vegetables and cook until soft. Add rice and cook for 2 minutes. Add stock, saffron, and seasonings. Simmer for 20 minutes without stirring. Let rest for 5 minutes. Serve with lemon wedges.",
-        "proteins": ["chicken", "rabbit"],
+        "cooking_instructions": "Heat oil in large paella pan. Brown chicken and rabbit. Add vegetables and cook until soft. Add rice and cook for 2 minutes. Add stock, saffron, and seasonings. Simmer for 20 minutes without stirring. Let rest for 5 minutes. Serve with lemon wedges.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "rabbit"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "calories_per_serving": 460
       },
       {
-        "title": "Gazpacho Andaluz",
+        "recipe_name": "Gazpacho Andaluz",
         "cuisine": "Spanish",
         "ingredients": [
           "2 lbs ripe tomatoes",
@@ -272,14 +374,23 @@
           "1 cup water",
           "Fresh basil for garnish"
         ],
-        "instructions": "Chop all vegetables. Blend with oil, vinegar, and seasonings. Add water gradually until smooth. Chill for 2 hours. Serve cold with basil garnish.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "cooking_instructions": "Chop all vegetables. Blend with oil, vinegar, and seasonings. Add water gradually until smooth. Chill for 2 hours. Serve cold with basil garnish.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "Tortilla Española",
+        "recipe_name": "Tortilla Española",
         "cuisine": "Spanish",
         "ingredients": [
           "6 large potatoes, sliced",
@@ -288,14 +399,22 @@
           "1/2 cup olive oil",
           "Salt to taste"
         ],
-        "instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt. Add potato mixture to eggs. Cook in large skillet until set. Flip and cook other side. Serve warm or cold.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "cooking_instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt. Add potato mixture to eggs. Cook in large skillet until set. Flip and cook other side. Serve warm or cold.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Pulpo a la Gallega",
+        "recipe_name": "Pulpo a la Gallega",
         "cuisine": "Spanish",
         "ingredients": [
           "2 lbs octopus",
@@ -305,14 +424,20 @@
           "1 tsp salt",
           "Fresh parsley for garnish"
         ],
-        "instructions": "Boil octopus for 45 minutes until tender. Boil potatoes until done. Slice octopus and potatoes. Drizzle with oil and sprinkle with paprika and salt. Garnish with parsley and serve.",
-        "proteins": ["octopus"],
+        "cooking_instructions": "Boil octopus for 45 minutes until tender. Boil potatoes until done. Slice octopus and potatoes. Drizzle with oil and sprinkle with paprika and salt. Garnish with parsley and serve.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "octopus"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "calories_per_serving": 380
       },
       {
-        "title": "Churros con Chocolate",
+        "recipe_name": "Churros con Chocolate",
         "cuisine": "Spanish",
         "ingredients": [
           "1 cup water",
@@ -327,261 +452,685 @@
           "8 oz dark chocolate, chopped",
           "1 tbsp sugar"
         ],
-        "instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. For chocolate, heat cream and add chocolate and sugar. Stir until smooth. Serve churros with chocolate sauce.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "cooking_instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. For chocolate, heat cream and add chocolate and sugar. Stir until smooth. Serve churros with chocolate sauce.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 370
       },
       {
-        "title": "Quick Greek Salad",
+        "recipe_name": "Quick Greek Salad",
         "cuisine": "Greek",
-        "ingredients": ["2 large tomatoes, chopped", "1 cucumber, chopped", "1/2 red onion, sliced", "1/2 cup Kalamata olives", "4 oz feta cheese, cubed", "2 tbsp olive oil", "1 tbsp red wine vinegar", "1 tsp oregano", "Salt and pepper to taste"],
-        "instructions": "Combine tomatoes, cucumber, onion, and olives in bowl. Top with feta cheese. Whisk olive oil, vinegar, oregano, salt, and pepper. Drizzle over salad. Toss gently and serve immediately.",
-        "proteins": ["feta cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 large tomatoes, chopped",
+          "1 cucumber, chopped",
+          "1/2 red onion, sliced",
+          "1/2 cup Kalamata olives",
+          "4 oz feta cheese, cubed",
+          "2 tbsp olive oil",
+          "1 tbsp red wine vinegar",
+          "1 tsp oregano",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Combine tomatoes, cucumber, onion, and olives in bowl. Top with feta cheese. Whisk olive oil, vinegar, oregano, salt, and pepper. Drizzle over salad. Toss gently and serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 306
       },
       {
-        "title": "Quick Hummus",
+        "recipe_name": "Quick Hummus",
         "cuisine": "Middle Eastern",
-        "ingredients": ["1 can chickpeas, drained", "2 tbsp tahini", "2 tbsp lemon juice", "2 cloves garlic", "2 tbsp olive oil", "1/2 tsp cumin", "Salt to taste", "Pita bread for serving"],
-        "instructions": "Blend chickpeas, tahini, lemon juice, garlic, olive oil, cumin, and salt until smooth. Add water if needed for consistency. Serve with pita bread and vegetables.",
-        "proteins": ["chickpeas"],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 can chickpeas, drained",
+          "2 tbsp tahini",
+          "2 tbsp lemon juice",
+          "2 cloves garlic",
+          "2 tbsp olive oil",
+          "1/2 tsp cumin",
+          "Salt to taste",
+          "Pita bread for serving"
+        ],
+        "cooking_instructions": "Blend chickpeas, tahini, lemon juice, garlic, olive oil, cumin, and salt until smooth. Add water if needed for consistency. Serve with pita bread and vegetables.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "chickpeas"
+        ],
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Caprese Salad",
+        "recipe_name": "Quick Caprese Salad",
         "cuisine": "Italian",
-        "ingredients": ["2 large tomatoes, sliced", "8 oz fresh mozzarella, sliced", "1/4 cup fresh basil leaves", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper to taste"],
-        "instructions": "Arrange tomato and mozzarella slices on plate. Tuck basil leaves between slices. Drizzle with olive oil and balsamic vinegar. Season with salt and pepper. Serve immediately.",
-        "proteins": ["mozzarella"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 large tomatoes, sliced",
+          "8 oz fresh mozzarella, sliced",
+          "1/4 cup fresh basil leaves",
+          "2 tbsp olive oil",
+          "1 tbsp balsamic vinegar",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Arrange tomato and mozzarella slices on plate. Tuck basil leaves between slices. Drizzle with olive oil and balsamic vinegar. Season with salt and pepper. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "mozzarella"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Pasta Aglio e Olio",
+        "recipe_name": "Quick Pasta Aglio e Olio",
         "cuisine": "Italian",
-        "ingredients": ["8 oz spaghetti", "1/4 cup olive oil", "6 cloves garlic, sliced", "1/2 tsp red pepper flakes", "1/4 cup parsley, chopped", "1/4 cup grated Parmesan cheese", "Salt to taste"],
-        "instructions": "Cook pasta according to package directions. Heat olive oil and cook garlic until golden. Add red pepper flakes. Toss pasta with oil mixture. Add parsley and Parmesan. Season with salt. Serve immediately.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz spaghetti",
+          "1/4 cup olive oil",
+          "6 cloves garlic, sliced",
+          "1/2 tsp red pepper flakes",
+          "1/4 cup parsley, chopped",
+          "1/4 cup grated Parmesan cheese",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Cook pasta according to package directions. Heat olive oil and cook garlic until golden. Add red pepper flakes. Toss pasta with oil mixture. Add parsley and Parmesan. Season with salt. Serve immediately.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Bruschetta",
+        "recipe_name": "Quick Bruschetta",
         "cuisine": "Italian",
-        "ingredients": ["4 slices crusty bread", "2 large tomatoes, diced", "2 cloves garlic, minced", "1/4 cup fresh basil, chopped", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper to taste"],
-        "instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "ingredients": [
+          "4 slices crusty bread",
+          "2 large tomatoes, diced",
+          "2 cloves garlic, minced",
+          "1/4 cup fresh basil, chopped",
+          "2 tbsp olive oil",
+          "1 tbsp balsamic vinegar",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Gazpacho",
+        "recipe_name": "Quick Gazpacho",
         "cuisine": "Spanish",
-        "ingredients": ["4 large tomatoes", "1 cucumber", "1 bell pepper", "1/2 red onion", "2 cloves garlic", "1/4 cup olive oil", "2 tbsp red wine vinegar", "Salt and pepper to taste", "Fresh herbs for garnish"],
-        "instructions": "Blend all vegetables until smooth. Add olive oil and vinegar. Season with salt and pepper. Chill for 10 minutes. Serve cold with fresh herbs.",
+        "ingredients": [
+          "4 large tomatoes",
+          "1 cucumber",
+          "1 bell pepper",
+          "1/2 red onion",
+          "2 cloves garlic",
+          "1/4 cup olive oil",
+          "2 tbsp red wine vinegar",
+          "Salt and pepper to taste",
+          "Fresh herbs for garnish"
+        ],
+        "cooking_instructions": "Blend all vegetables until smooth. Add olive oil and vinegar. Season with salt and pepper. Chill for 10 minutes. Serve cold with fresh herbs.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Mediterranean Wrap",
+        "recipe_name": "Quick Mediterranean Wrap",
         "cuisine": "Mediterranean",
-        "ingredients": ["2 large tortillas", "1/2 cup hummus", "1/2 cup mixed greens", "1/2 cup cucumber, sliced", "1/2 cup tomatoes, sliced", "1/4 cup feta cheese", "1/4 cup olives", "2 tbsp olive oil"],
-        "instructions": "Spread hummus on tortillas. Layer with greens, cucumber, tomatoes, feta, and olives. Drizzle with olive oil. Roll tightly and slice in half. Serve immediately.",
-        "proteins": ["feta cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 7,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 large tortillas",
+          "1/2 cup hummus",
+          "1/2 cup mixed greens",
+          "1/2 cup cucumber, sliced",
+          "1/2 cup tomatoes, sliced",
+          "1/4 cup feta cheese",
+          "1/4 cup olives",
+          "2 tbsp olive oil"
+        ],
+        "cooking_instructions": "Spread hummus on tortillas. Layer with greens, cucumber, tomatoes, feta, and olives. Drizzle with olive oil. Roll tightly and slice in half. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Ratatouille",
+        "recipe_name": "Quick Ratatouille",
         "cuisine": "French",
-        "ingredients": ["1 eggplant, diced", "2 zucchini, diced", "1 bell pepper, diced", "2 tomatoes, diced", "1 onion, diced", "3 cloves garlic, minced", "2 tbsp olive oil", "1 tsp herbs de Provence", "Salt and pepper to taste"],
-        "instructions": "Heat olive oil and cook onion until soft. Add garlic and cook for 1 minute. Add eggplant, zucchini, and bell pepper. Cook for 5 minutes. Add tomatoes and herbs. Simmer for 5 minutes. Season with salt and pepper.",
+        "ingredients": [
+          "1 eggplant, diced",
+          "2 zucchini, diced",
+          "1 bell pepper, diced",
+          "2 tomatoes, diced",
+          "1 onion, diced",
+          "3 cloves garlic, minced",
+          "2 tbsp olive oil",
+          "1 tsp herbs de Provence",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Heat olive oil and cook onion until soft. Add garlic and cook for 1 minute. Add eggplant, zucchini, and bell pepper. Cook for 5 minutes. Add tomatoes and herbs. Simmer for 5 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Tabbouleh",
+        "recipe_name": "Quick Tabbouleh",
         "cuisine": "Middle Eastern",
-        "ingredients": ["1 cup bulgur wheat", "2 cups boiling water", "2 tomatoes, diced", "1 cucumber, diced", "1/2 cup parsley, chopped", "1/4 cup mint, chopped", "3 tbsp olive oil", "2 tbsp lemon juice", "Salt to taste"],
-        "instructions": "Soak bulgur in boiling water for 10 minutes. Drain and cool. Mix with tomatoes, cucumber, parsley, and mint. Whisk olive oil, lemon juice, and salt. Toss with salad. Chill for 10 minutes before serving.",
+        "ingredients": [
+          "1 cup bulgur wheat",
+          "2 cups boiling water",
+          "2 tomatoes, diced",
+          "1 cucumber, diced",
+          "1/2 cup parsley, chopped",
+          "1/4 cup mint, chopped",
+          "3 tbsp olive oil",
+          "2 tbsp lemon juice",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Soak bulgur in boiling water for 10 minutes. Drain and cool. Mix with tomatoes, cucumber, parsley, and mint. Whisk olive oil, lemon juice, and salt. Toss with salad. Chill for 10 minutes before serving.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Spanakopita",
+        "recipe_name": "Quick Spanakopita",
         "cuisine": "Greek",
-        "ingredients": ["1 lb frozen spinach, thawed", "1/2 cup feta cheese, crumbled", "2 eggs", "1/4 cup dill, chopped", "1/4 cup parsley, chopped", "1/4 cup olive oil", "8 sheets phyllo dough", "Salt and pepper to taste"],
-        "instructions": "Squeeze spinach dry. Mix with feta, eggs, herbs, salt, and pepper. Brush phyllo with olive oil. Layer 4 sheets, add filling, top with 4 more sheets. Bake at 375°F for 20 minutes until golden.",
-        "proteins": ["feta cheese", "eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 lb frozen spinach, thawed",
+          "1/2 cup feta cheese, crumbled",
+          "2 eggs",
+          "1/4 cup dill, chopped",
+          "1/4 cup parsley, chopped",
+          "1/4 cup olive oil",
+          "8 sheets phyllo dough",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Squeeze spinach dry. Mix with feta, eggs, herbs, salt, and pepper. Brush phyllo with olive oil. Layer 4 sheets, add filling, top with 4 more sheets. Bake at 375°F for 20 minutes until golden.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Greek Gyros",
+        "recipe_name": "Quick Greek Gyros",
         "cuisine": "Greek",
-        "ingredients": ["1 lb lamb, sliced thin", "4 pita breads", "1 onion, sliced", "2 tomatoes, sliced", "1 cucumber, sliced", "1/2 cup tzatziki sauce", "1 tsp oregano", "2 tbsp olive oil", "Salt and pepper"],
-        "instructions": "Season lamb with oregano, salt, and pepper. Heat oil and cook lamb for 8 minutes. Warm pita breads. Fill with lamb, onion, tomatoes, cucumber, and tzatziki. Roll and serve hot.",
-        "proteins": ["lamb"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb lamb, sliced thin",
+          "4 pita breads",
+          "1 onion, sliced",
+          "2 tomatoes, sliced",
+          "1 cucumber, sliced",
+          "1/2 cup tzatziki sauce",
+          "1 tsp oregano",
+          "2 tbsp olive oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season lamb with oregano, salt, and pepper. Heat oil and cook lamb for 8 minutes. Warm pita breads. Fill with lamb, onion, tomatoes, cucumber, and tzatziki. Roll and serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 314
       },
       {
-        "title": "Quick Italian Pasta Primavera",
+        "recipe_name": "Quick Italian Pasta Primavera",
         "cuisine": "Italian",
-        "ingredients": ["8 oz penne pasta", "1 cup mixed vegetables", "2 cloves garlic", "1/4 cup olive oil", "1/4 cup Parmesan cheese", "1/4 cup fresh basil", "Salt and pepper"],
-        "instructions": "Cook pasta according to package. Heat oil and cook garlic for 1 minute. Add vegetables and cook for 5 minutes. Toss with pasta, Parmesan, and basil. Season with salt and pepper.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz penne pasta",
+          "1 cup mixed vegetables",
+          "2 cloves garlic",
+          "1/4 cup olive oil",
+          "1/4 cup Parmesan cheese",
+          "1/4 cup fresh basil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook pasta according to package. Heat oil and cook garlic for 1 minute. Add vegetables and cook for 5 minutes. Toss with pasta, Parmesan, and basil. Season with salt and pepper.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Spanish Tortilla",
+        "recipe_name": "Quick Spanish Tortilla",
         "cuisine": "Spanish",
-        "ingredients": ["4 eggs", "2 potatoes, sliced", "1 onion, sliced", "3 tbsp olive oil", "Salt and pepper"],
-        "instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt and pepper. Add potato mixture to eggs. Cook in pan until set. Flip and cook other side. Serve warm.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 eggs",
+          "2 potatoes, sliced",
+          "1 onion, sliced",
+          "3 tbsp olive oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt and pepper. Add potato mixture to eggs. Cook in pan until set. Flip and cook other side. Serve warm.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Mediterranean Quinoa Bowl",
+        "recipe_name": "Quick Mediterranean Quinoa Bowl",
         "cuisine": "Mediterranean",
-        "ingredients": ["1 cup quinoa", "2 cups water", "1 cucumber, diced", "1 tomato, diced", "1/2 cup olives", "1/4 cup feta cheese", "2 tbsp olive oil", "1 tbsp lemon juice", "Salt and pepper"],
-        "instructions": "Cook quinoa in water for 15 minutes. Mix with cucumber, tomato, olives, and feta. Whisk olive oil, lemon juice, salt, and pepper. Toss with quinoa mixture. Serve at room temperature.",
-        "proteins": ["feta cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup quinoa",
+          "2 cups water",
+          "1 cucumber, diced",
+          "1 tomato, diced",
+          "1/2 cup olives",
+          "1/4 cup feta cheese",
+          "2 tbsp olive oil",
+          "1 tbsp lemon juice",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook quinoa in water for 15 minutes. Mix with cucumber, tomato, olives, and feta. Whisk olive oil, lemon juice, salt, and pepper. Toss with quinoa mixture. Serve at room temperature.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Greek Lemon Chicken",
+        "recipe_name": "Quick Greek Lemon Chicken",
         "cuisine": "Greek",
-        "ingredients": ["4 chicken breasts", "1/4 cup olive oil", "2 lemons, juiced", "4 cloves garlic", "1 tsp oregano", "Salt and pepper"],
-        "instructions": "Season chicken with oregano, salt, and pepper. Heat oil and cook chicken for 6 minutes per side. Add garlic and lemon juice. Cook for 2 more minutes. Serve hot.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "4 chicken breasts",
+          "1/4 cup olive oil",
+          "2 lemons, juiced",
+          "4 cloves garlic",
+          "1 tsp oregano",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season chicken with oregano, salt, and pepper. Heat oil and cook chicken for 6 minutes per side. Add garlic and lemon juice. Cook for 2 more minutes. Serve hot.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 16,
-        "difficulty": "easy"
+        "calories_per_serving": 292
       },
       {
-        "title": "Quick Italian Bruschetta",
+        "recipe_name": "Quick Italian Bruschetta",
         "cuisine": "Italian",
-        "ingredients": ["4 slices bread", "2 tomatoes, diced", "2 cloves garlic", "1/4 cup basil", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper"],
-        "instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "ingredients": [
+          "4 slices bread",
+          "2 tomatoes, diced",
+          "2 cloves garlic",
+          "1/4 cup basil",
+          "2 tbsp olive oil",
+          "1 tbsp balsamic vinegar",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Spanish Patatas Bravas",
+        "recipe_name": "Quick Spanish Patatas Bravas",
         "cuisine": "Spanish",
-        "ingredients": ["4 potatoes, cubed", "3 tbsp olive oil", "1 tsp paprika", "1 tsp cayenne", "Salt to taste", "Aioli for serving"],
-        "instructions": "Heat oil in pan. Add potatoes and cook for 12 minutes until golden and crispy. Season with paprika, cayenne, and salt. Serve with aioli sauce.",
-        "proteins": ["potatoes"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 potatoes, cubed",
+          "3 tbsp olive oil",
+          "1 tsp paprika",
+          "1 tsp cayenne",
+          "Salt to taste",
+          "Aioli for serving"
+        ],
+        "cooking_instructions": "Heat oil in pan. Add potatoes and cook for 12 minutes until golden and crispy. Season with paprika, cayenne, and salt. Serve with aioli sauce.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "potatoes"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Mediterranean Fish",
+        "recipe_name": "Quick Mediterranean Fish",
         "cuisine": "Mediterranean",
-        "ingredients": ["4 fish fillets", "2 tbsp olive oil", "2 cloves garlic", "1 lemon, juiced", "1 tsp oregano", "1/4 cup olives", "Salt and pepper"],
-        "instructions": "Season fish with oregano, salt, and pepper. Heat oil and cook fish for 4 minutes per side. Add garlic, lemon juice, and olives. Cook for 2 more minutes. Serve hot.",
-        "proteins": ["fish"],
+        "ingredients": [
+          "4 fish fillets",
+          "2 tbsp olive oil",
+          "2 cloves garlic",
+          "1 lemon, juiced",
+          "1 tsp oregano",
+          "1/4 cup olives",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season fish with oregano, salt, and pepper. Heat oil and cook fish for 4 minutes per side. Add garlic, lemon juice, and olives. Cook for 2 more minutes. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Greek Tzatziki",
+        "recipe_name": "Quick Greek Tzatziki",
         "cuisine": "Greek",
-        "ingredients": ["1 cup Greek yogurt", "1 cucumber, grated", "2 cloves garlic", "2 tbsp olive oil", "1 tbsp lemon juice", "1 tsp dill", "Salt to taste"],
-        "instructions": "Squeeze cucumber dry. Mix with yogurt, garlic, olive oil, lemon juice, and dill. Season with salt. Chill for 10 minutes. Serve with pita bread.",
-        "proteins": ["greek yogurt"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup Greek yogurt",
+          "1 cucumber, grated",
+          "2 cloves garlic",
+          "2 tbsp olive oil",
+          "1 tbsp lemon juice",
+          "1 tsp dill",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Squeeze cucumber dry. Mix with yogurt, garlic, olive oil, lemon juice, and dill. Season with salt. Chill for 10 minutes. Serve with pita bread.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "greek yogurt"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick Italian Risotto",
+        "recipe_name": "Quick Italian Risotto",
         "cuisine": "Italian",
-        "ingredients": ["1 cup Arborio rice", "3 cups chicken broth", "1 onion, diced", "2 cloves garlic", "1/4 cup Parmesan cheese", "2 tbsp butter", "Salt and pepper"],
-        "instructions": "Sauté onion and garlic until soft. Add rice and cook for 2 minutes. Add broth gradually, stirring constantly. Cook for 18 minutes until creamy. Stir in Parmesan and butter. Season with salt and pepper.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 cup Arborio rice",
+          "3 cups chicken broth",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1/4 cup Parmesan cheese",
+          "2 tbsp butter",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Sauté onion and garlic until soft. Add rice and cook for 2 minutes. Add broth gradually, stirring constantly. Cook for 18 minutes until creamy. Stir in Parmesan and butter. Season with salt and pepper.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Spanish Gazpacho",
+        "recipe_name": "Quick Spanish Gazpacho",
         "cuisine": "Spanish",
-        "ingredients": ["4 tomatoes", "1 cucumber", "1 bell pepper", "1 onion", "2 cloves garlic", "3 tbsp olive oil", "2 tbsp vinegar", "Salt and pepper"],
-        "instructions": "Blend all vegetables until smooth. Add olive oil and vinegar. Season with salt and pepper. Chill for 10 minutes. Serve cold with croutons.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 tomatoes",
+          "1 cucumber",
+          "1 bell pepper",
+          "1 onion",
+          "2 cloves garlic",
+          "3 tbsp olive oil",
+          "2 tbsp vinegar",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Blend all vegetables until smooth. Add olive oil and vinegar. Season with salt and pepper. Chill for 10 minutes. Serve cold with croutons.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Mediterranean Pasta",
+        "recipe_name": "Quick Mediterranean Pasta",
         "cuisine": "Mediterranean",
-        "ingredients": ["8 oz spaghetti", "1/4 cup olive oil", "2 cloves garlic", "1/2 cup olives", "1/4 cup sun-dried tomatoes", "1/4 cup feta cheese", "1/4 cup basil", "Salt and pepper"],
-        "instructions": "Cook pasta according to package. Heat oil and cook garlic for 1 minute. Add olives and sun-dried tomatoes. Toss with pasta, feta, and basil. Season with salt and pepper.",
-        "proteins": ["feta cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz spaghetti",
+          "1/4 cup olive oil",
+          "2 cloves garlic",
+          "1/2 cup olives",
+          "1/4 cup sun-dried tomatoes",
+          "1/4 cup feta cheese",
+          "1/4 cup basil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook pasta according to package. Heat oil and cook garlic for 1 minute. Add olives and sun-dried tomatoes. Toss with pasta, feta, and basil. Season with salt and pepper.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "feta cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Greek Moussaka",
+        "recipe_name": "Quick Greek Moussaka",
         "cuisine": "Greek",
-        "ingredients": ["1 eggplant, sliced", "1 lb ground lamb", "1 onion, diced", "2 cloves garlic", "1 can tomatoes", "1 tsp cinnamon", "1/4 cup Parmesan cheese", "Salt and pepper"],
-        "instructions": "Cook eggplant slices for 5 minutes. Brown lamb with onion and garlic. Add tomatoes and cinnamon. Simmer for 10 minutes. Layer eggplant and lamb mixture. Top with Parmesan. Bake at 375°F for 20 minutes.",
-        "proteins": ["ground lamb", "parmesan cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 40,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 eggplant, sliced",
+          "1 lb ground lamb",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 can tomatoes",
+          "1 tsp cinnamon",
+          "1/4 cup Parmesan cheese",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook eggplant slices for 5 minutes. Brown lamb with onion and garlic. Add tomatoes and cinnamon. Simmer for 10 minutes. Layer eggplant and lamb mixture. Top with Parmesan. Bake at 375°F for 20 minutes.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "Quick Italian Carbonara",
+        "recipe_name": "Quick Italian Carbonara",
         "cuisine": "Italian",
-        "ingredients": ["8 oz spaghetti", "4 eggs", "1/2 cup Parmesan cheese", "4 slices bacon", "2 cloves garlic", "Black pepper", "Salt"],
-        "instructions": "Cook pasta according to package. Cook bacon until crispy. Beat eggs with Parmesan and black pepper. Toss hot pasta with bacon and garlic. Remove from heat and add egg mixture. Toss quickly until creamy.",
-        "proteins": ["eggs", "bacon", "parmesan cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz spaghetti",
+          "4 eggs",
+          "1/2 cup Parmesan cheese",
+          "4 slices bacon",
+          "2 cloves garlic",
+          "Black pepper",
+          "Salt"
+        ],
+        "cooking_instructions": "Cook pasta according to package. Cook bacon until crispy. Beat eggs with Parmesan and black pepper. Toss hot pasta with bacon and garlic. Remove from heat and add egg mixture. Toss quickly until creamy.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "eggs",
+          "bacon",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Spanish Paella",
+        "recipe_name": "Quick Spanish Paella",
         "cuisine": "Spanish",
-        "ingredients": ["1 cup rice", "2 cups chicken broth", "1 lb chicken, cubed", "1/2 cup peas", "1/2 cup bell peppers", "1 onion, diced", "2 cloves garlic", "1 tsp saffron", "Salt and pepper"],
-        "instructions": "Brown chicken in pan for 5 minutes. Add onion and garlic. Cook for 2 minutes. Add rice and cook for 2 minutes. Add broth, peas, bell peppers, and saffron. Simmer for 18 minutes. Season with salt and pepper.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "1 cup rice",
+          "2 cups chicken broth",
+          "1 lb chicken, cubed",
+          "1/2 cup peas",
+          "1/2 cup bell peppers",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp saffron",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Brown chicken in pan for 5 minutes. Add onion and garlic. Cook for 2 minutes. Add rice and cook for 2 minutes. Add broth, peas, bell peppers, and saffron. Simmer for 18 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 350
       },
       {
         "title": "Mediterranean Seafood Paella",
@@ -1095,14 +1644,8 @@
     ],
     "Mediterranean": [
       {
-        "title": "Mediterranean Seafood Paella",
+        "recipe_name": "Mediterranean Seafood Paella",
         "cuisine": "Mediterranean",
-        "diet_type": "non-vegetarian",
-        "cooking_time_category": "Under 1 hour",
-        "servings": 6,
-        "calories_per_serving": 450,
-        "difficulty": "Medium",
-        "cooking_time": 60,
         "ingredients": [
           "2 cups short-grain rice (400g)",
           "1 lb mixed seafood (shrimp, mussels, squid) (450g)",
@@ -1121,26 +1664,17 @@
           "Lemon wedges for serving",
           "Fresh parsley for garnish"
         ],
-        "utensils_required": [
-          "Large paella pan or wide skillet",
-          "Chef's knife",
-          "Cutting board",
-          "Measuring cups and spoons",
-          "Wooden spoon",
-          "Lid or aluminum foil"
-        ],
-        "instructions": "Heat olive oil in large paella pan over medium-high heat. Season chicken with salt and pepper, cook until golden, about 5 minutes. Add onion, garlic, and bell pepper. Cook until softened, about 4 minutes. Add rice and stir to coat with oil. Add tomatoes, wine, saffron, paprika, and turmeric. Stir well and cook for 2 minutes until wine is absorbed. Add hot stock, bring to boil. Reduce heat to medium-low, simmer uncovered for 15 minutes without stirring. Arrange seafood on top of rice. Cover and cook for 8-10 minutes until seafood is cooked and rice is tender. Serve with lemon wedges and parsley.",
-        "chef_tips": "The key to perfect paella is not stirring the rice after adding stock. The socarrat (crispy bottom layer) is the signature of a great paella."
+        "cooking_instructions": "Heat olive oil in large paella pan over medium-high heat. Season chicken with salt and pepper, cook until golden, about 5 minutes. Add onion, garlic, and bell pepper. Cook until softened, about 4 minutes. Add rice and stir to coat with oil. Add tomatoes, wine, saffron, paprika, and turmeric. Stir well and cook for 2 minutes until wine is absorbed. Add hot stock, bring to boil. Reduce heat to medium-low, simmer uncovered for 15 minutes without stirring. Arrange seafood on top of rice. Cover and cook for 8-10 minutes until seafood is cooked and rice is tender. Serve with lemon wedges and parsley.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "calories_per_serving": 480
       },
       {
-        "title": "Mediterranean Stuffed Eggplant",
+        "recipe_name": "Mediterranean Stuffed Eggplant",
         "cuisine": "Mediterranean",
-        "diet_type": "vegetarian",
-        "cooking_time_category": "Under 45 min",
-        "servings": 4,
-        "calories_per_serving": 320,
-        "difficulty": "Medium",
-        "cooking_time": 45,
         "ingredients": [
           "2 large eggplants (800g)",
           "1/2 cup olive oil (120ml)",
@@ -1156,27 +1690,17 @@
           "Salt and pepper to taste",
           "1/2 cup feta cheese, crumbled (75g)"
         ],
-        "utensils_required": [
-          "Baking sheet",
-          "Large skillet",
-          "Chef's knife",
-          "Cutting board",
-          "Measuring cups and spoons",
-          "Wooden spoon",
-          "Spoon for scooping"
-        ],
-        "instructions": "Preheat oven to 400°F (200°C). Cut eggplants in half lengthwise, score flesh in crosshatch pattern. Brush with 2 tbsp olive oil, season with salt. Bake eggplants for 25 minutes until tender. Let cool, scoop out flesh leaving shells intact. Chop flesh and set aside. Heat remaining oil in large skillet. Add onion and garlic, cook until softened, about 5 minutes. Add chopped eggplant flesh, tomatoes, pine nuts, raisins, mint, parsley, cinnamon, and allspice. Cook for 8 minutes until flavors meld. Fill eggplant shells with mixture, top with feta. Bake for 15 minutes until heated through and feta is golden.",
-        "chef_tips": "The key is properly roasting the eggplants to develop deep, smoky flavor. Don't skip the crosshatch scoring - it helps the oil penetrate and creates better texture."
+        "cooking_instructions": "Preheat oven to 400°F (200°C). Cut eggplants in half lengthwise, score flesh in crosshatch pattern. Brush with 2 tbsp olive oil, season with salt. Bake eggplants for 25 minutes until tender. Let cool, scoop out flesh leaving shells intact. Chop flesh and set aside. Heat remaining oil in large skillet. Add onion and garlic, cook until softened, about 5 minutes. Add chopped eggplant flesh, tomatoes, pine nuts, raisins, mint, parsley, cinnamon, and allspice. Cook for 8 minutes until flavors meld. Fill eggplant shells with mixture, top with feta. Bake for 15 minutes until heated through and feta is golden.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "calories_per_serving": 420
       },
       {
-        "title": "Mediterranean Grilled Octopus",
+        "recipe_name": "Mediterranean Grilled Octopus",
         "cuisine": "Mediterranean",
-        "diet_type": "non-vegetarian",
-        "cooking_time_category": "Under 30 min",
-        "servings": 4,
-        "calories_per_serving": 280,
-        "difficulty": "Hard",
-        "cooking_time": 30,
         "ingredients": [
           "2 lbs octopus tentacles (900g)",
           "1/4 cup olive oil (60ml)",
@@ -1189,27 +1713,17 @@
           "1/4 cup fresh parsley, chopped (15g)",
           "Lemon wedges for serving"
         ],
-        "utensils_required": [
-          "Large pot",
-          "Grill or grill pan",
-          "Chef's knife",
-          "Cutting board",
-          "Measuring cups and spoons",
-          "Tongs",
-          "Small bowl for marinade"
-        ],
-        "instructions": "Bring large pot of salted water to boil. Add octopus, reduce heat to simmer. Cook for 45 minutes until tender when pierced with fork. Drain octopus, let cool. Cut into 2-inch pieces. Combine olive oil, garlic, oregano, lemon zest, paprika, salt, and pepper. Marinate octopus pieces in mixture for 30 minutes at room temperature. Heat grill to high. Grill octopus for 3-4 minutes per side until charred and heated through. Transfer to serving platter, drizzle with lemon juice, sprinkle with parsley. Serve with lemon wedges.",
-        "chef_tips": "The key is proper tenderizing through slow simmering. Octopus should be tender but not mushy. The char from grilling adds essential smoky flavor."
+        "cooking_instructions": "Bring large pot of salted water to boil. Add octopus, reduce heat to simmer. Cook for 45 minutes until tender when pierced with fork. Drain octopus, let cool. Cut into 2-inch pieces. Combine olive oil, garlic, oregano, lemon zest, paprika, salt, and pepper. Marinate octopus pieces in mixture for 30 minutes at room temperature. Heat grill to high. Grill octopus for 3-4 minutes per side until charred and heated through. Transfer to serving platter, drizzle with lemon juice, sprinkle with parsley. Serve with lemon wedges.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "calories_per_serving": 360
       },
       {
-        "title": "Mediterranean Lamb Tagine",
+        "recipe_name": "Mediterranean Lamb Tagine",
         "cuisine": "Mediterranean",
-        "diet_type": "non-vegetarian",
-        "cooking_time_category": "Under 2 hours",
-        "servings": 6,
-        "calories_per_serving": 520,
-        "difficulty": "Medium",
-        "cooking_time": 120,
         "ingredients": [
           "2 lbs lamb shoulder, cut into 2-inch pieces (900g)",
           "2 large onions, sliced (400g)",
@@ -1227,26 +1741,17 @@
           "Fresh cilantro for garnish",
           "Couscous for serving"
         ],
-        "utensils_required": [
-          "Large Dutch oven or tagine",
-          "Chef's knife",
-          "Cutting board",
-          "Measuring cups and spoons",
-          "Wooden spoon",
-          "Lid"
-        ],
-        "instructions": "Heat olive oil in large Dutch oven over medium-high heat. Season lamb with salt and pepper, brown on all sides, about 8 minutes. Add onions and garlic, cook until softened, about 5 minutes. Add cumin, coriander, cinnamon, and ginger, cook for 1 minute until fragrant. Add tomatoes, apricots, olives, and honey. Bring to boil, reduce heat to low, cover and simmer for 1.5 hours until lamb is tender. Uncover and simmer for 15 minutes to reduce sauce. Season with salt and pepper. Garnish with cilantro and serve over couscous.",
-        "chef_tips": "The key is slow, gentle cooking to develop the complex flavors. The combination of sweet apricots and briny olives creates the signature Mediterranean balance."
+        "cooking_instructions": "Heat olive oil in large Dutch oven over medium-high heat. Season lamb with salt and pepper, brown on all sides, about 8 minutes. Add onions and garlic, cook until softened, about 5 minutes. Add cumin, coriander, cinnamon, and ginger, cook for 1 minute until fragrant. Add tomatoes, apricots, olives, and honey. Bring to boil, reduce heat to low, cover and simmer for 1.5 hours until lamb is tender. Uncover and simmer for 15 minutes to reduce sauce. Season with salt and pepper. Garnish with cilantro and serve over couscous.",
+        "cooking_time_category": "Under 2 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "calories_per_serving": 590
       },
       {
-        "title": "Mediterranean Stuffed Grape Leaves (Dolmas)",
+        "recipe_name": "Mediterranean Stuffed Grape Leaves (Dolmas)",
         "cuisine": "Mediterranean",
-        "diet_type": "vegetarian",
-        "cooking_time_category": "Under 1 hour",
-        "servings": 8,
-        "calories_per_serving": 180,
-        "difficulty": "Medium",
-        "cooking_time": 60,
         "ingredients": [
           "1 jar grape leaves (about 40 leaves)",
           "1 cup short-grain rice (200g)",
@@ -1263,26 +1768,17 @@
           "Salt and pepper to taste",
           "2 cups vegetable stock (500ml)"
         ],
-        "utensils_required": [
-          "Large pot",
-          "Chef's knife",
-          "Cutting board",
-          "Measuring cups and spoons",
-          "Wooden spoon",
-          "Large plate for weighing down"
-        ],
-        "instructions": "Rinse grape leaves, blanch in boiling water for 2 minutes. Drain and set aside. Rinse rice until water runs clear. Heat 2 tbsp olive oil in large pot. Add onion and garlic, cook until softened, about 5 minutes. Add rice, pine nuts, currants, herbs, allspice, salt, and pepper. Cook for 3 minutes until rice is lightly toasted. Place grape leaf vein-side up, add 1 tbsp filling near stem end. Fold sides over filling, roll tightly from stem to tip. Arrange dolmas seam-side down in pot, add stock and remaining olive oil. Cover with plate, simmer for 45 minutes until rice is tender.",
-        "chef_tips": "The key is rolling the dolmas tightly but not too tight. The plate on top keeps them from unraveling during cooking. Fresh herbs are essential for authentic flavor."
+        "cooking_instructions": "Rinse grape leaves, blanch in boiling water for 2 minutes. Drain and set aside. Rinse rice until water runs clear. Heat 2 tbsp olive oil in large pot. Add onion and garlic, cook until softened, about 5 minutes. Add rice, pine nuts, currants, herbs, allspice, salt, and pepper. Cook for 3 minutes until rice is lightly toasted. Place grape leaf vein-side up, add 1 tbsp filling near stem end. Fold sides over filling, roll tightly from stem to tip. Arrange dolmas seam-side down in pot, add stock and remaining olive oil. Cover with plate, simmer for 45 minutes until rice is tender.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "calories_per_serving": 460
       },
       {
-        "title": "Mediterranean Seafood Stew (Bouillabaisse)",
+        "recipe_name": "Mediterranean Seafood Stew (Bouillabaisse)",
         "cuisine": "Mediterranean",
-        "diet_type": "non-vegetarian",
-        "cooking_time_category": "Under 1 hour",
-        "servings": 6,
-        "calories_per_serving": 380,
-        "difficulty": "Medium",
-        "cooking_time": 60,
         "ingredients": [
           "1 lb mixed fish fillets (cod, halibut) (450g)",
           "1 lb mussels, scrubbed (450g)",
@@ -1301,16 +1797,13 @@
           "Fresh parsley for garnish",
           "Rouille for serving"
         ],
-        "utensils_required": [
-          "Large Dutch oven",
-          "Chef's knife",
-          "Cutting board",
-          "Measuring cups and spoons",
-          "Wooden spoon",
-          "Slotted spoon"
-        ],
-        "instructions": "Heat olive oil in large Dutch oven over medium heat. Add onion, garlic, and fennel, cook until softened, about 8 minutes. Add tomatoes, wine, saffron, fennel seeds, and bay leaf. Cook for 5 minutes until wine is reduced by half. Add fish stock, bring to boil. Reduce heat and simmer for 15 minutes to develop flavors. Add fish fillets, cook for 5 minutes. Add mussels and shrimp, cook for 3-4 minutes until mussels open and shrimp are pink. Discard any unopened mussels. Season with salt and pepper, garnish with parsley. Serve with rouille.",
-        "chef_tips": "The key is building layers of flavor with the sofrito base. Don't overcook the seafood - add it in stages based on cooking time. The saffron is essential for authentic bouillabaisse."
+        "cooking_instructions": "Heat olive oil in large Dutch oven over medium heat. Add onion, garlic, and fennel, cook until softened, about 8 minutes. Add tomatoes, wine, saffron, fennel seeds, and bay leaf. Cook for 5 minutes until wine is reduced by half. Add fish stock, bring to boil. Reduce heat and simmer for 15 minutes to develop flavors. Add fish fillets, cook for 5 minutes. Add mussels and shrimp, cook for 3-4 minutes until mussels open and shrimp are pink. Discard any unopened mussels. Season with salt and pepper, garnish with parsley. Serve with rouille.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "calories_per_serving": 480
       },
       {
         "recipe_name": "Tuscan Ribollita",
@@ -1347,7 +1840,8 @@
           "Immersion blender (optional)"
         ],
         "cooking_instructions": "Heat olive oil in large pot over medium heat. Add onions, carrots, and celery. Cook for 10 minutes until softened. Add garlic and cook for 1 minute. Add tomatoes, tomato paste, bay leaves, and thyme. Cook for 5 minutes. Add half the beans and mash with wooden spoon. Add stock, bring to boil. Reduce heat and simmer for 20 minutes. Add cavolo nero and remaining beans. Simmer for 15 minutes. Add bread cubes and cook for 10 minutes until bread breaks down. Season with salt and pepper. Let rest for 10 minutes before serving.",
-        "chef_tips": "The bread should be very stale - this is key to authentic ribollita. Let it rest after cooking to allow flavors to meld. Serve with a drizzle of extra virgin olive oil and grated Parmesan."
+        "chef_tips": "The bread should be very stale - this is key to authentic ribollita. Let it rest after cooking to allow flavors to meld. Serve with a drizzle of extra virgin olive oil and grated Parmesan.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Sicilian Arancini",
@@ -1386,7 +1880,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make risotto: Heat butter in saucepan, add onion and garlic. Cook until soft. Add rice and stir for 2 minutes. Add wine and cook until absorbed. Add hot stock gradually, stirring constantly for 18-20 minutes until creamy. Add Parmesan and season. Cool completely. Mix in peas. Form into balls with mozzarella in center. Coat in flour, egg, then breadcrumbs. Heat oil to 180°C (356°F). Fry arancini for 3-4 minutes until golden. Drain on paper towels.",
-        "chef_tips": "The risotto must be completely cool before shaping. Wet your hands when forming balls to prevent sticking. Fry in small batches to maintain oil temperature. Serve immediately while hot and crispy."
+        "chef_tips": "The risotto must be completely cool before shaping. Wet your hands when forming balls to prevent sticking. Fry in small batches to maintain oil temperature. Serve immediately while hot and crispy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Venetian Cuttlefish in Black Ink",
@@ -1421,7 +1916,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Cut cuttlefish into rings. Heat olive oil in sauté pan over medium heat. Add onion and garlic, cook until soft. Add cuttlefish and cook for 5 minutes. Add wine and cook until reduced by half. Add tomato paste and bay leaf. Cook for 2 minutes. Add fish stock and simmer for 15 minutes. Add ink sacs and stir well. Season with salt and pepper. Meanwhile, cook polenta in remaining stock for 20 minutes, stirring constantly. Serve cuttlefish over polenta, garnished with parsley.",
-        "chef_tips": "Handle ink sacs carefully - they can stain. The ink adds a unique briny flavor. Don't overcook the cuttlefish or it becomes rubbery. Serve with crusty bread to mop up the sauce."
+        "chef_tips": "Handle ink sacs carefully - they can stain. The ink adds a unique briny flavor. Don't overcook the cuttlefish or it becomes rubbery. Serve with crusty bread to mop up the sauce.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Neapolitan Pizza Margherita",
@@ -1450,7 +1946,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Preheat oven to maximum temperature with pizza stone. Stretch dough by hand to 30cm circle. Dust peel with semolina. Place dough on peel. Spread tomato sauce thinly, leaving border. Tear mozzarella into pieces and distribute. Drizzle with olive oil. Slide onto hot stone. Bake for 60-90 seconds until crust is charred and cheese is bubbly. Remove and immediately add fresh basil. Drizzle with more olive oil and sea salt.",
-        "chef_tips": "The key is extreme heat - 500°C minimum. Stretch dough by hand, never roll. Less is more with toppings. The pizza should cook in under 90 seconds. Fresh basil goes on after baking to prevent wilting."
+        "chef_tips": "The key is extreme heat - 500°C minimum. Stretch dough by hand, never roll. Less is more with toppings. The pizza should cook in under 90 seconds. Fresh basil goes on after baking to prevent wilting.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Roman Cacio e Pepe",
@@ -1479,7 +1976,8 @@
           "Peppermill"
         ],
         "cooking_instructions": "Cook spaghetti in salted boiling water until al dente. Reserve 60ml cooking water. Heat olive oil in large sauté pan over medium heat. Add black pepper and toast for 1 minute until fragrant. Add drained pasta and half the cooking water. Toss vigorously. Remove from heat. Add grated cheese gradually while tossing continuously. Add more cooking water if needed to create creamy sauce. Serve immediately.",
-        "chef_tips": "The key is the starchy pasta water and constant tossing. Remove from heat before adding cheese to prevent clumping. Use freshly cracked pepper for best flavor. The sauce should be creamy, not watery."
+        "chef_tips": "The key is the starchy pasta water and constant tossing. Remove from heat before adding cheese to prevent clumping. Use freshly cracked pepper for best flavor. The sauce should be creamy, not watery.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Ligurian Pesto Genovese",
@@ -1509,7 +2007,8 @@
           "Tongs"
         ],
         "cooking_instructions": "Wash and dry basil leaves completely. In mortar, crush garlic with pinch of salt. Add pine nuts and crush to paste. Add basil leaves gradually, crushing to paste. Add cheeses and mix well. Slowly drizzle in olive oil while stirring. Season with salt. Cook pasta in salted water until al dente. Reserve 60ml cooking water. Toss pasta with pesto and cooking water. Serve immediately.",
-        "chef_tips": "Use a mortar and pestle for authentic texture. Never heat pesto - it turns black. Dry basil completely to prevent oxidation. Add pasta water to help the sauce cling to pasta. Serve immediately after mixing."
+        "chef_tips": "Use a mortar and pestle for authentic texture. Never heat pesto - it turns black. Dry basil completely to prevent oxidation. Add pasta water to help the sauce cling to pasta. Serve immediately after mixing.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Emilian Tagliatelle al Ragù",
@@ -1546,7 +2045,8 @@
           "Large pot for pasta"
         ],
         "cooking_instructions": "Heat olive oil in large pot over medium heat. Add pancetta and cook until crispy. Add onion, carrot, and celery. Cook for 10 minutes until soft. Add garlic and cook for 1 minute. Add ground meats and cook until browned. Add wine and cook until reduced by half. Add tomatoes, stock, and bay leaves. Simmer for 2 hours, stirring occasionally. Season with salt and pepper. Cook pasta until al dente. Toss with ragù and serve with grated cheese.",
-        "chef_tips": "The soffritto (onion, carrot, celery) is crucial - cook until very soft. Long, slow cooking develops deep flavors. Don't rush the process. The ragù should be thick and rich, not watery."
+        "chef_tips": "The soffritto (onion, carrot, celery) is crucial - cook until very soft. Long, slow cooking develops deep flavors. Don't rush the process. The ragù should be thick and rich, not watery.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Piedmontese Agnolotti del Plin",
@@ -1579,7 +2079,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make pasta dough and roll into thin sheets. Mix meat, spinach, cheese, egg yolk, nutmeg, salt, and pepper for filling. Place small mounds of filling on pasta sheet. Fold over and seal edges. Cut into small rectangles. Pinch edges to seal. Cook in salted boiling water for 3-4 minutes. Heat butter in sauté pan until foaming. Add sage leaves. Toss cooked agnolotti in butter. Serve with grated cheese.",
-        "chef_tips": "The 'plin' refers to the pinch that seals the pasta. Don't overfill - the pasta should be delicate. Cook sage in butter until crispy for best flavor. The pasta should be al dente when served."
+        "chef_tips": "The 'plin' refers to the pinch that seals the pasta. Don't overfill - the pasta should be delicate. Cook sage in butter until crispy for best flavor. The pasta should be al dente when served.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Sardinian Malloreddus",
@@ -1612,7 +2113,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Heat olive oil in sauté pan over medium heat. Add onion and garlic, cook until soft. Add lamb and cook until browned. Add fennel seeds and cook for 1 minute. Add wine and cook until reduced by half. Add tomatoes and saffron. Simmer for 30 minutes. Season with salt and pepper. Cook pasta until al dente. Toss with sauce and serve with grated Pecorino Sardo.",
-        "chef_tips": "Malloreddus are traditional Sardinian gnocchi-shaped pasta. The saffron gives the sauce its characteristic golden color. Don't skip the fennel seeds - they're essential for authentic flavor."
+        "chef_tips": "Malloreddus are traditional Sardinian gnocchi-shaped pasta. The saffron gives the sauce its characteristic golden color. Don't skip the fennel seeds - they're essential for authentic flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Calabrian 'Nduja Pasta",
@@ -1642,7 +2144,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Cook spaghetti in salted water until al dente. Reserve 60ml cooking water. Heat olive oil in sauté pan over medium heat. Add garlic and cook for 1 minute. Add 'nduja and cook until it melts and becomes fragrant. Add tomatoes and cook for 10 minutes. Add pasta and cooking water. Toss well. Add basil leaves and serve with grated cheese.",
-        "chef_tips": "'Nduja is a spicy, spreadable salami from Calabria. It melts beautifully into sauces. The heat level varies, so taste and adjust. Don't overcook - the 'nduja should remain slightly chunky."
+        "chef_tips": "'Nduja is a spicy, spreadable salami from Calabria. It melts beautifully into sauces. The heat level varies, so taste and adjust. Don't overcook - the 'nduja should remain slightly chunky.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Abruzzese Arrosticini",
@@ -1670,7 +2173,8 @@
           "Measuring spoons"
         ],
         "cooking_instructions": "Cut lamb into 2cm cubes. Mix with olive oil, garlic, oregano, rosemary, salt, and pepper. Marinate for 30 minutes. Thread onto skewers. Grill over high heat for 8-10 minutes, turning frequently, until charred and cooked through. Serve immediately.",
-        "chef_tips": "The key is high heat and frequent turning. Don't overcook - lamb should be slightly pink inside. Use wooden skewers soaked in water to prevent burning."
+        "chef_tips": "The key is high heat and frequent turning. Don't overcook - lamb should be slightly pink inside. Use wooden skewers soaked in water to prevent burning.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Pugliese Orecchiette con Cime di Rapa",
@@ -1700,7 +2204,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Cook pasta in salted water until al dente. Reserve 60ml cooking water. Heat olive oil in sauté pan over medium heat. Add garlic and anchovies, cook until anchovies dissolve. Add cime di rapa and cook for 5 minutes. Add pasta and cooking water. Toss well. Add breadcrumbs and red pepper flakes. Serve immediately.",
-        "chef_tips": "Cime di rapa (broccoli rabe) should be slightly bitter. The anchovies add umami without being fishy. Don't skip the breadcrumbs - they add texture and absorb the sauce."
+        "chef_tips": "Cime di rapa (broccoli rabe) should be slightly bitter. The anchovies add umami without being fishy. Don't skip the breadcrumbs - they add texture and absorb the sauce.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lombard Risotto alla Milanese",
@@ -1730,7 +2235,8 @@
           "Small bowl"
         ],
         "cooking_instructions": "Soak saffron in 2 tbsp hot stock for 10 minutes. Heat half the butter in pan over medium heat. Add onion and cook until translucent. Add rice and stir for 2 minutes. Add wine and cook until absorbed. Add hot stock gradually, stirring constantly for 18-20 minutes. Add saffron and remaining butter. Stir in cheese. Season with salt. Serve immediately.",
-        "chef_tips": "Constant stirring is essential for creamy risotto. The rice should be al dente, not mushy. Add stock gradually - about 1/2 cup at a time. The saffron should be soaked to release its color and flavor."
+        "chef_tips": "Constant stirring is essential for creamy risotto. The rice should be al dente, not mushy. Add stock gradually - about 1/2 cup at a time. The saffron should be soaked to release its color and flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Trentino Canederli",
@@ -1761,7 +2267,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Soak bread in milk for 10 minutes. Squeeze out excess milk. Mix with eggs, speck, cheese, onion, parsley, salt, and pepper. Form into 8 balls. Bring stock to boil. Add canederli and simmer for 15 minutes until cooked through. Serve in hot stock.",
-        "chef_tips": "The bread should be very stale. Don't overmix - the mixture should just hold together. The canederli should be firm but not dense. Serve immediately in hot stock."
+        "chef_tips": "The bread should be very stale. Don't overmix - the mixture should just hold together. The canederli should be firm but not dense. Serve immediately in hot stock.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Umbrian Strangozzi al Tartufo",
@@ -1790,7 +2297,8 @@
           "Tongs"
         ],
         "cooking_instructions": "Cook pasta in salted water until al dente. Reserve 60ml cooking water. Heat butter and olive oil in sauté pan over low heat. Add garlic and cook for 1 minute. Add pasta and cooking water. Toss well. Add half the truffle and toss. Serve immediately with remaining truffle shaved on top and grated cheese.",
-        "chef_tips": "Truffle should be added at the end to preserve its aroma. Don't heat truffle too much - it loses its flavor. Use a truffle shaver for thin slices. The pasta should be al dente to hold the sauce."
+        "chef_tips": "Truffle should be added at the end to preserve its aroma. Don't heat truffle too much - it loses its flavor. Use a truffle shaver for thin slices. The pasta should be al dente to hold the sauce.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Marche Vincisgrassi",
@@ -1829,7 +2337,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make ragù: Heat olive oil in pot over medium heat. Add onion and garlic, cook until soft. Add meats and cook until browned. Add wine and cook until reduced by half. Add tomatoes and stock. Simmer for 1.5 hours. Make béchamel: Melt butter, add flour, cook for 2 minutes. Add milk gradually, whisking constantly. Add nutmeg, salt, and pepper. Layer lasagna sheets, ragù, and béchamel in baking dish. Bake at 180°C (356°F) for 30 minutes until golden.",
-        "chef_tips": "This is the original lasagna from Marche. The chicken livers add richness. Don't skip the long simmering - it develops deep flavors. The béchamel should be smooth and creamy."
+        "chef_tips": "This is the original lasagna from Marche. The chicken livers add richness. Don't skip the long simmering - it develops deep flavors. The béchamel should be smooth and creamy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Molise Cavatelli con Broccoli",
@@ -1859,7 +2368,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Cook pasta in salted water until al dente. Reserve 60ml cooking water. Heat olive oil in sauté pan over medium heat. Add garlic and cook for 1 minute. Add broccoli and cook for 5 minutes. Add pasta and cooking water. Toss well. Add breadcrumbs and red pepper flakes. Serve with grated cheese.",
-        "chef_tips": "Cavatelli are traditional pasta from Molise. The broccoli should be tender but not mushy. The breadcrumbs add texture and absorb the sauce. Don't overcook the garlic - it should be fragrant, not bitter."
+        "chef_tips": "Cavatelli are traditional pasta from Molise. The broccoli should be tender but not mushy. The breadcrumbs add texture and absorb the sauce. Don't overcook the garlic - it should be fragrant, not bitter.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Basilicata Peperoni Cruschi",
@@ -1884,7 +2394,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Cut peppers into strips. Heat olive oil in sauté pan over medium heat. Add garlic and cook for 1 minute. Add peppers and cook for 15 minutes until soft and slightly charred. Season with salt. Garnish with basil leaves.",
-        "chef_tips": "The peppers should be soft but not mushy. The slight charring adds flavor. Don't overcook the garlic - it should be fragrant, not bitter. Serve as a side dish or antipasto."
+        "chef_tips": "The peppers should be soft but not mushy. The slight charring adds flavor. Don't overcook the garlic - it should be fragrant, not bitter. Serve as a side dish or antipasto.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Campanian Sfogliatelle",
@@ -1919,7 +2430,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make dough: Mix flour, butter, water, and salt. Knead until smooth. Roll very thin. Make filling: Heat milk, add semolina, cook until thick. Add sugar, egg yolks, vanilla, and ricotta. Cool. Cut dough into rectangles. Place filling on each, roll up. Bake at 180°C (356°F) for 25 minutes until golden.",
-        "chef_tips": "The dough must be very thin - almost transparent. The filling should be thick but not dry. Don't overfill - the pastry should be delicate. The sfogliatelle should be crispy on the outside, creamy inside."
+        "chef_tips": "The dough must be very thin - almost transparent. The filling should be thick but not dry. Don't overfill - the pastry should be delicate. The sfogliatelle should be crispy on the outside, creamy inside.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Valle d'Aosta Fonduta",
@@ -1948,7 +2460,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Soak Fontina in milk for 2 hours. Heat in double boiler over simmering water. Whisk constantly until melted. Mix cornstarch with 2 tbsp cold milk. Add to cheese mixture. Whisk in egg yolks and butter. Season with salt. Serve immediately with bread and truffle shavings.",
-        "chef_tips": "The key is constant whisking to prevent curdling. Don't let it boil - keep temperature low. The Fontina should be soaked to remove excess salt. Serve immediately while hot and creamy."
+        "chef_tips": "The key is constant whisking to prevent curdling. Don't let it boil - keep temperature low. The Fontina should be soaked to remove excess salt. Serve immediately while hot and creamy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Friuli-Venezia Giulia Frico",
@@ -1974,7 +2487,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Heat olive oil in large non-stick pan over medium heat. Add potatoes in single layer. Cook for 8 minutes until golden. Flip potatoes. Sprinkle cheese evenly over top. Cook for 5 minutes until cheese is crispy and golden. Season with salt and pepper. Garnish with herbs.",
-        "chef_tips": "The potatoes should be very thin for even cooking. Don't move the frico while cooking - let it form a crust. The cheese should be crispy, not burnt. Serve immediately while hot."
+        "chef_tips": "The potatoes should be very thin for even cooking. Don't move the frico while cooking - let it form a crust. The cheese should be crispy, not burnt. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Ligurian Focaccia di Recco",
@@ -2002,7 +2516,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make dough: Mix flour, water, 2 tbsp olive oil, and salt. Knead until smooth. Rest for 30 minutes. Divide into 2 pieces. Roll each very thin. Place one sheet on baking sheet. Crumble stracchino over top. Cover with second sheet. Pinch edges to seal. Drizzle with olive oil. Bake at 200°C (392°F) for 20 minutes until golden and crispy.",
-        "chef_tips": "The dough must be paper-thin - almost transparent. The stracchino should be fresh and soft. Don't overfill - the cheese should be evenly distributed. The focaccia should be crispy and golden."
+        "chef_tips": "The dough must be paper-thin - almost transparent. The stracchino should be fresh and soft. Don't overfill - the cheese should be evenly distributed. The focaccia should be crispy and golden.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Emilian Tortellini in Brodo",
@@ -2033,7 +2548,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make pasta dough and roll into thin sheets. Mix pork, prosciutto, cheese, egg yolk, nutmeg, salt, and pepper for filling. Cut dough into 3cm squares. Place small amount of filling in center of each square. Fold diagonally to form triangle. Pinch edges to seal. Bring corners together to form ring. Cook in boiling chicken stock for 3-4 minutes. Serve in hot stock with grated cheese.",
-        "chef_tips": "The tortellini should be small and delicate. Don't overfill - the pasta should be thin. The filling should be well-seasoned. Serve immediately in hot, clear broth."
+        "chef_tips": "The tortellini should be small and delicate. Don't overfill - the pasta should be thin. The filling should be well-seasoned. Serve immediately in hot, clear broth.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Tuscan Bistecca alla Fiorentina",
@@ -2060,7 +2576,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Season steak with salt and pepper. Heat grill to high. Brush with olive oil. Grill for 4-5 minutes per side for medium-rare. Add garlic and rosemary to grill for last 2 minutes. Rest for 5 minutes. Serve with lemon wedges.",
-        "chef_tips": "The steak must be very thick - at least 3cm. Don't overcook - it should be rare to medium-rare. The bone adds flavor. Let it rest before serving to redistribute juices."
+        "chef_tips": "The steak must be very thick - at least 3cm. Don't overcook - it should be rare to medium-rare. The bone adds flavor. Let it rest before serving to redistribute juices.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Sicilian Cannoli",
@@ -2096,7 +2613,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make dough: Mix flour, sugar, butter, egg yolk, Marsala, and salt. Knead until smooth. Rest for 30 minutes. Roll very thin. Cut into rectangles. Wrap around cannoli tubes. Fry in hot oil until golden. Cool. Make filling: Mix ricotta, sugar, vanilla, orange peel, and chocolate chips. Fill cannoli shells. Serve immediately.",
-        "chef_tips": "The dough must be very thin. Don't overfill the cannoli - they should be delicate. The ricotta should be well-drained. Fill just before serving to keep shells crispy."
+        "chef_tips": "The dough must be very thin. Don't overfill the cannoli - they should be delicate. The ricotta should be well-drained. Fill just before serving to keep shells crispy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Piedmontese Bagna Cauda",
@@ -2123,7 +2641,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Heat olive oil and butter in small saucepan over low heat. Add anchovies and cook until they dissolve. Add garlic and cook for 5 minutes. Season with salt. Keep warm. Serve with raw vegetables for dipping.",
-        "chef_tips": "The key is low heat - don't let it boil. The anchovies should dissolve completely. The garlic should be soft but not brown. Serve warm with fresh, crisp vegetables."
+        "chef_tips": "The key is low heat - don't let it boil. The anchovies should dissolve completely. The garlic should be soft but not brown. Serve warm with fresh, crisp vegetables.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lombard Osso Buco",
@@ -2156,7 +2675,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Season veal shanks with salt and pepper. Heat olive oil in pot over medium-high heat. Brown shanks on all sides. Remove and set aside. Add onion, carrots, and celery. Cook until soft. Add garlic and cook for 1 minute. Add wine and cook until reduced by half. Add tomatoes, stock, and bay leaves. Return shanks to pot. Simmer for 1.5 hours until tender. Serve with gremolata.",
-        "chef_tips": "The key is browning the shanks well for flavor. Don't skip the long simmering - it makes the meat tender. The gremolata adds brightness. Serve with risotto or polenta."
+        "chef_tips": "The key is browning the shanks well for flavor. Don't skip the long simmering - it makes the meat tender. The gremolata adds brightness. Serve with risotto or polenta.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Venetian Sarde in Saor",
@@ -2185,7 +2705,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Dust sardines with flour. Heat half the olive oil in sauté pan over medium heat. Fry sardines until golden. Remove and set aside. Add onions to same pan. Cook until soft and golden. Add vinegar and cook for 5 minutes. Add pine nuts and raisins. Season with salt and pepper. Layer sardines and onion mixture in dish. Refrigerate for 24 hours before serving.",
-        "chef_tips": "The sardines should be very fresh. The onions should be soft and sweet. The dish needs to marinate for at least 24 hours. Serve cold as an antipasto."
+        "chef_tips": "The sardines should be very fresh. The onions should be soft and sweet. The dish needs to marinate for at least 24 hours. Serve cold as an antipasto.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Neapolitan Pizza Margherita",
@@ -2214,7 +2735,8 @@
           "Measuring spoons"
         ],
         "cooking_instructions": "Preheat oven to 500°F (260°C) with pizza stone. Stretch dough to 12-inch circle. Spread tomato sauce leaving 1-inch border. Tear mozzarella into small pieces and distribute evenly. Drizzle with olive oil. Bake for 2-3 minutes until crust is golden and cheese bubbles. Remove from oven, add fresh basil leaves, and serve immediately.",
-        "chef_tips": "Use high-protein flour for better gluten development. Don't over-sauce the pizza. The mozzarella should be room temperature. Work quickly to prevent dough from sticking."
+        "chef_tips": "Use high-protein flour for better gluten development. Don't over-sauce the pizza. The mozzarella should be room temperature. Work quickly to prevent dough from sticking.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Spanakopita",
@@ -2247,7 +2769,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Preheat oven to 375°F (190°C). Sauté onion and garlic in 1 tbsp olive oil until soft. Mix spinach, feta, ricotta, eggs, herbs, and onion mixture. Season with salt and pepper. Brush baking dish with olive oil. Layer 3 phyllo sheets, brushing each with oil. Add filling. Top with remaining phyllo sheets, brushing each with oil. Bake for 35-40 minutes until golden brown. Let cool 10 minutes before serving.",
-        "chef_tips": "Squeeze excess water from spinach. Keep phyllo covered with damp towel. The filling should be well-seasoned. Let it rest before cutting to prevent crumbling."
+        "chef_tips": "Squeeze excess water from spinach. Keep phyllo covered with damp towel. The filling should be well-seasoned. Let it rest before cutting to prevent crumbling.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Paella Valenciana",
@@ -2282,7 +2805,8 @@
           "Gas burner or outdoor grill"
         ],
         "cooking_instructions": "Heat olive oil in paella pan over medium-high heat. Season and brown chicken and rabbit pieces. Add green beans and cook 2 minutes. Add tomato and garlic, cook until reduced. Add rice and stir to coat. Add hot stock, saffron, and paprika. Bring to boil, then reduce heat. Add shrimp and butter beans. Cook 15-18 minutes without stirring. Increase heat for final 2 minutes to create socarrat. Remove from heat and rest 5 minutes before serving.",
-        "chef_tips": "Use bomba rice for authentic texture. Don't stir after adding stock. The socarrat (crispy bottom) is essential. Cook over even heat source."
+        "chef_tips": "Use bomba rice for authentic texture. Don't stir after adding stock. The socarrat (crispy bottom) is essential. Cook over even heat source.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Manti",
@@ -2317,7 +2841,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make dough with flour, egg, water, and salt. Knead until smooth, rest 30 minutes. Mix lamb, onion, garlic, spices, salt, and pepper for filling. Roll dough thin and cut into 2-inch squares. Place 1 tsp filling in each square. Fold corners to center, pinch edges. Steam manti for 20-25 minutes until cooked through. Melt butter with mint. Mix yogurt with crushed garlic. Serve manti with yogurt sauce and melted butter.",
-        "chef_tips": "Dough should be thin but not tearing. Seal edges well to prevent filling from leaking. Steam until dumplings are firm. The yogurt sauce should be tangy and garlicky."
+        "chef_tips": "Dough should be thin but not tearing. Seal edges well to prevent filling from leaking. Steam until dumplings are firm. The yogurt sauce should be tangy and garlicky.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Moroccan Tagine",
@@ -2352,7 +2877,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Season lamb with salt and pepper. Heat olive oil in tagine over medium heat. Brown lamb on all sides. Add onion and garlic, cook until soft. Add all spices and cook 2 minutes until fragrant. Add stock, bring to boil, then reduce heat. Cover and simmer 1 hour. Add apricots and almonds, cook 30 minutes more until lamb is tender. Adjust seasoning and serve with couscous.",
-        "chef_tips": "Brown meat well for depth of flavor. Toast spices briefly to release aromas. The tagine should simmer gently. Let it rest before serving to develop flavors."
+        "chef_tips": "Brown meat well for depth of flavor. Toast spices briefly to release aromas. The tagine should simmer gently. Let it rest before serving to develop flavors.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Lebanese Kibbeh",
@@ -2386,7 +2912,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Soak bulgur in water 30 minutes, drain well. Mix bulgur with half the lamb, grated onion, and spices. Process until smooth paste. For filling, cook remaining lamb with diced onion, pine nuts, and cumin. Season well. Shape bulgur mixture into balls, hollow out center, fill with meat mixture, seal. Deep fry in hot oil until golden brown and crispy. Drain on paper towels and serve hot.",
-        "chef_tips": "Bulgur must be well-drained. The outer shell should be thin but sealed. Fry in batches to maintain oil temperature. Serve immediately for best texture."
+        "chef_tips": "Bulgur must be well-drained. The outer shell should be thin but sealed. Fry in batches to maintain oil temperature. Serve immediately for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Sicilian Cannoli",
@@ -2420,7 +2947,8 @@
           "Piping bag with star tip"
         ],
         "cooking_instructions": "Mix flour, sugar, and salt. Cut in butter until crumbly. Add egg yolk and Marsala, form into dough. Rest 30 minutes. Roll very thin, cut into 4-inch circles. Wrap around cannoli tubes, seal edges. Fry in hot oil until golden. Cool and remove tubes. Mix ricotta, powdered sugar, and vanilla. Fold in chocolate chips and orange peel. Pipe filling into shells. Dust with powdered sugar before serving.",
-        "chef_tips": "Dough must be very thin. Seal edges well to prevent opening during frying. Don't overfill shells. Fill just before serving to keep shells crisp."
+        "chef_tips": "Dough must be very thin. Seal edges well to prevent opening during frying. Don't overfill shells. Fill just before serving to keep shells crisp.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Moussaka",
@@ -2456,7 +2984,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Salt eggplant slices, let drain 30 minutes. Rinse and pat dry. Fry eggplant until golden. Brown lamb with onion and garlic. Add tomatoes and spices, simmer 20 minutes. Make béchamel: melt butter, add flour, cook 2 minutes. Add milk gradually, whisk until thick. Remove from heat, add eggs and half the cheese. Layer eggplant, meat sauce, repeat. Top with béchamel and remaining cheese. Bake at 375°F (190°C) for 45 minutes until golden.",
-        "chef_tips": "Salt eggplant to remove bitterness. Let moussaka rest 15 minutes before cutting. The béchamel should be thick but pourable. Use fresh spices for best flavor."
+        "chef_tips": "Salt eggplant to remove bitterness. Let moussaka rest 15 minutes before cutting. The béchamel should be thick but pourable. Use fresh spices for best flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Gazpacho",
@@ -2488,7 +3017,8 @@
           "Mixing bowl"
         ],
         "cooking_instructions": "Roughly chop all vegetables. Blend tomatoes, cucumber, bell pepper, onion, and garlic until smooth. Strain through fine sieve to remove seeds and skin. Whisk in olive oil, vinegar, salt, and cumin. Chill for at least 2 hours. Adjust seasoning. Serve cold with fresh basil garnish.",
-        "chef_tips": "Use very ripe tomatoes for best flavor. Strain well for smooth texture. Chill thoroughly before serving. The soup should be well-seasoned and refreshing."
+        "chef_tips": "Use very ripe tomatoes for best flavor. Strain well for smooth texture. Chill thoroughly before serving. The soup should be well-seasoned and refreshing.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Baklava",
@@ -2520,7 +3050,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix nuts with cinnamon and cloves. Brush baking dish with butter. Layer 8 sheets phyllo, brushing each with butter. Sprinkle with half the nut mixture. Layer 4 more sheets, brushing with butter. Add remaining nuts. Top with remaining phyllo sheets, brushing each with butter. Cut into diamonds. Bake at 350°F (175°C) for 45 minutes. Make syrup: boil sugar, water, lemon juice, and vanilla for 10 minutes. Pour hot syrup over hot baklava. Cool completely before serving.",
-        "chef_tips": "Keep phyllo covered with damp towel. Cut before baking for clean edges. Syrup should be hot when poured. Let cool completely for best texture."
+        "chef_tips": "Keep phyllo covered with damp towel. Cut before baking for clean edges. Syrup should be hot when poured. Let cool completely for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Osso Buco",
@@ -2557,7 +3088,8 @@
           "Fine grater for lemon zest"
         ],
         "cooking_instructions": "Season veal shanks with salt and pepper. Heat olive oil and butter in Dutch oven over medium-high heat. Brown shanks on all sides, remove and set aside. Add onion, carrot, and celery, cook until soft. Add garlic, cook 1 minute. Add wine, reduce by half. Add stock, tomatoes, tomato paste, thyme, and bay leaf. Return shanks to pot. Cover and simmer 1.5 hours until tender. Make gremolata: mix parsley, garlic, and lemon zest. Serve shanks with sauce and gremolata.",
-        "chef_tips": "Brown shanks well for deep flavor. The marrow should be soft and creamy. Don't skip the gremolata - it brightens the dish. Serve with risotto alla milanese."
+        "chef_tips": "Brown shanks well for deep flavor. The marrow should be soft and creamy. Don't skip the gremolata - it brightens the dish. Serve with risotto alla milanese.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Souvlaki",
@@ -2590,7 +3122,8 @@
           "Fine grater for cucumber"
         ],
         "cooking_instructions": "Mix pork with olive oil, garlic, oregano, cumin, coriander, cinnamon, lemon juice, salt, and pepper. Marinate 2 hours minimum. Thread meat onto skewers. Grill over medium-high heat, turning occasionally, until cooked through and charred, about 10-12 minutes. Make tzatziki: grate cucumber, squeeze out water, mix with yogurt, garlic, dill, and olive oil. Serve souvlaki with tzatziki and pita bread.",
-        "chef_tips": "Don't overcook the pork - it should be juicy. Let meat rest before serving. The tzatziki should be thick and tangy. Serve immediately while hot."
+        "chef_tips": "Don't overcook the pork - it should be juicy. Let meat rest before serving. The tzatziki should be thick and tangy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Tortilla Española",
@@ -2618,7 +3151,8 @@
           "Spatula"
         ],
         "cooking_instructions": "Heat olive oil in skillet over medium heat. Add potatoes and onion, season with salt. Cook gently, stirring occasionally, until potatoes are tender but not browned, about 15-20 minutes. Beat eggs with salt. Remove potatoes and onion with slotted spoon, mix with eggs. Heat 2 tbsp oil in same skillet. Add egg mixture, cook over medium heat until bottom is set. Flip using plate, cook other side until golden. Serve warm or at room temperature.",
-        "chef_tips": "Cook potatoes slowly for best texture. The tortilla should be slightly runny in the center. Use a plate to flip safely. Let it rest before cutting."
+        "chef_tips": "Cook potatoes slowly for best texture. The tortilla should be slightly runny in the center. Use a plate to flip safely. Let it rest before cutting.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Lahmacun",
@@ -2652,7 +3186,8 @@
           "Rolling pin"
         ],
         "cooking_instructions": "Mix lamb with onion, garlic, tomato, tomato paste, cumin, paprika, cinnamon, olive oil, salt, and pepper. Let rest 30 minutes. Preheat oven to 500°F (260°C). Roll dough thin into 8-inch circle. Spread meat mixture evenly, leaving small border. Bake 8-10 minutes until edges are golden and meat is cooked. Serve hot with parsley and lemon wedges.",
-        "chef_tips": "The meat mixture should be well-seasoned. Roll dough very thin for crispy base. Don't overbake - the meat should be just cooked. Serve immediately while hot."
+        "chef_tips": "The meat mixture should be well-seasoned. Roll dough very thin for crispy base. Don't overbake - the meat should be just cooked. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Moroccan Couscous",
@@ -2687,7 +3222,8 @@
           "Mixing bowl"
         ],
         "cooking_instructions": "Heat olive oil in saucepan over medium heat. Add onion, carrot, and zucchini, cook until soft. Add spices and saffron, cook 1 minute until fragrant. Add stock, bring to boil. Remove from heat, add couscous, cover and let stand 5 minutes. Fluff with fork, add chickpeas and parsley. Season with salt and pepper. Serve warm or at room temperature.",
-        "chef_tips": "Don't stir couscous while cooking - just fluff with fork. The vegetables should be tender but not mushy. Let it rest covered for best texture."
+        "chef_tips": "Don't stir couscous while cooking - just fluff with fork. The vegetables should be tender but not mushy. Let it rest covered for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Risotto ai Funghi",
@@ -2720,7 +3256,8 @@
           "Ladle"
         ],
         "cooking_instructions": "Heat stock and keep warm. Heat olive oil in skillet over medium heat. Add mushrooms, cook until golden and tender. Remove and set aside. Add shallot and garlic, cook until soft. Add rice, stir to coat. Add wine, stir until absorbed. Add warm stock 1/2 cup at a time, stirring constantly until absorbed. Continue until rice is creamy and al dente, about 18-20 minutes. Stir in mushrooms, butter, and Parmesan. Season with salt and pepper. Serve immediately with parsley.",
-        "chef_tips": "Keep stock warm throughout cooking. Stir constantly for creamy texture. The rice should be al dente, not mushy. Add butter and cheese off heat."
+        "chef_tips": "Keep stock warm throughout cooking. Stir constantly for creamy texture. The rice should be al dente, not mushy. Add butter and cheese off heat.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Dolmades",
@@ -2753,7 +3290,8 @@
           "Plate for weighing down"
         ],
         "cooking_instructions": "Mix rice with onion, herbs, olive oil, lemon juice, allspice, salt, and pepper. Place grape leaves vein-side up. Add 1 tbsp rice mixture to center of each leaf. Fold sides over filling, then roll from bottom to top. Place seam-side down in pot. Add stock to cover. Place plate on top to weigh down. Simmer 45 minutes until rice is tender. Let cool in liquid. Serve at room temperature.",
-        "chef_tips": "Don't overfill the leaves. Roll tightly but not too tight. The plate keeps them submerged. Let them cool in the cooking liquid for best flavor."
+        "chef_tips": "Don't overfill the leaves. Roll tightly but not too tight. The plate keeps them submerged. Let them cool in the cooking liquid for best flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Patatas Bravas",
@@ -2781,7 +3319,8 @@
           "Blender or food processor"
         ],
         "cooking_instructions": "Preheat oven to 425°F (220°C). Toss potatoes with olive oil, paprika, and salt. Roast 25 minutes until golden and crispy. For bravas sauce: sauté onion and garlic in olive oil until soft. Add tomatoes, paprika, cayenne, and sugar. Simmer 15 minutes, blend until smooth. For aioli: mix mayonnaise, garlic, and lemon juice. Serve potatoes with both sauces.",
-        "chef_tips": "Cut potatoes evenly for even cooking. The bravas sauce should be spicy and slightly sweet. The aioli should be garlicky and tangy. Serve immediately while hot."
+        "chef_tips": "Cut potatoes evenly for even cooking. The bravas sauce should be spicy and slightly sweet. The aioli should be garlicky and tangy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Menemen",
@@ -2814,7 +3353,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Heat olive oil in skillet over medium heat. Add onion and bell pepper, cook until soft. Add garlic, cook 1 minute. Add tomato, cumin, paprika, and red pepper flakes. Cook until tomatoes break down. Beat eggs with salt and pepper. Add to skillet, stir gently until eggs are just set. Don't overcook - eggs should be creamy. Serve hot with fresh parsley.",
-        "chef_tips": "Don't overcook the eggs - they should be soft and creamy. The vegetables should be tender but not mushy. Serve immediately while hot."
+        "chef_tips": "Don't overcook the eggs - they should be soft and creamy. The vegetables should be tender but not mushy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Carbonara",
@@ -2844,7 +3384,8 @@
           "Tongs"
         ],
         "cooking_instructions": "Cook pasta in salted boiling water until al dente. Meanwhile, cook guanciale in skillet over medium heat until crispy. Add garlic, cook 1 minute. Beat eggs with cheese and pepper. Drain pasta, reserving 1/2 cup pasta water. Add hot pasta to skillet with guanciale. Remove from heat, add egg mixture, tossing quickly. Add pasta water if needed for creaminess. Serve immediately with extra cheese.",
-        "chef_tips": "Never add cream to carbonara. The eggs should create the sauce. Work quickly to prevent scrambling. The pasta should be very hot when adding eggs."
+        "chef_tips": "Never add cream to carbonara. The eggs should create the sauce. Work quickly to prevent scrambling. The pasta should be very hot when adding eggs.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Avgolemono Soup",
@@ -2877,7 +3418,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Heat olive oil in pot over medium heat. Add onion, carrot, and celery, cook until soft. Add garlic, cook 1 minute. Add stock, bring to boil. Add orzo, cook until tender. Beat eggs with lemon juice. Slowly add 1 cup hot soup to egg mixture, whisking constantly. Return to pot, stirring constantly. Don't boil. Season with salt, pepper, and dill. Serve hot.",
-        "chef_tips": "Temper the eggs slowly to prevent curdling. Don't let the soup boil after adding eggs. The soup should be silky and smooth."
+        "chef_tips": "Temper the eggs slowly to prevent curdling. Don't let the soup boil after adding eggs. The soup should be silky and smooth.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Churros",
@@ -2908,7 +3450,8 @@
           "Small saucepan for chocolate"
         ],
         "cooking_instructions": "Heat water, butter, salt, and sugar to boil. Add flour all at once, stir until smooth ball forms. Cool slightly. Beat in eggs one at a time. Heat oil to 375°F (190°C). Pipe 6-inch strips into hot oil. Fry until golden, turning once. Drain on paper towels. Roll in cinnamon sugar. For chocolate sauce: heat cream, add chocolate and sugar, stir until smooth. Serve churros with chocolate sauce.",
-        "chef_tips": "The dough should be smooth and pipeable. Don't overmix after adding eggs. Fry in batches to maintain oil temperature. Serve immediately while hot."
+        "chef_tips": "The dough should be smooth and pipeable. Don't overmix after adding eggs. Fry in batches to maintain oil temperature. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Pide",
@@ -2945,7 +3488,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix yeast, sugar, and warm water. Let foam 5 minutes. Mix flour and salt. Add yeast mixture and olive oil. Knead until smooth. Rise 1 hour. For filling: cook lamb with onion, garlic, tomato, cumin, and paprika. Season well. Roll dough into oval. Add filling, leaving border. Fold edges over, pinch ends. Brush with egg, sprinkle sesame seeds. Bake at 425°F (220°C) for 20-25 minutes until golden.",
-        "chef_tips": "The dough should be soft but not sticky. Don't overfill the pide. The edges should be well-sealed. Bake until golden brown."
+        "chef_tips": "The dough should be soft but not sticky. Don't overfill the pide. The edges should be well-sealed. Bake until golden brown.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Moroccan Harira",
@@ -2984,7 +3528,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat olive oil in pot over medium heat. Brown lamb on all sides. Add onion, carrot, and celery, cook until soft. Add garlic, cook 1 minute. Add tomatoes, tomato paste, spices, and saffron. Cook 5 minutes. Add stock, bring to boil. Add chickpeas and lentils. Simmer 45 minutes until tender. Season with salt and pepper. Add fresh herbs. Serve hot.",
-        "chef_tips": "Brown the lamb well for depth of flavor. The soup should be thick and hearty. Add herbs at the end for freshness."
+        "chef_tips": "Brown the lamb well for depth of flavor. The soup should be thick and hearty. Add herbs at the end for freshness.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Tiramisu",
@@ -3013,7 +3558,8 @@
           "Sieve for cocoa"
         ],
         "cooking_instructions": "Beat egg yolks with sugar until pale and thick. Add mascarpone and vanilla, beat until smooth. Mix coffee with liqueur. Dip ladyfingers in coffee mixture, don't soak. Layer half the ladyfingers in dish. Spread half the mascarpone mixture. Repeat layers. Dust with cocoa powder. Refrigerate 4 hours or overnight. Serve chilled.",
-        "chef_tips": "Don't over-soak the ladyfingers. The mascarpone mixture should be smooth and creamy. Let it chill thoroughly before serving."
+        "chef_tips": "Don't over-soak the ladyfingers. The mascarpone mixture should be smooth and creamy. Let it chill thoroughly before serving.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Loukoumades",
@@ -3044,7 +3590,8 @@
           "Paper towels"
         ],
         "cooking_instructions": "Mix yeast, sugar, and warm water. Let foam 5 minutes. Mix flour and salt. Add yeast mixture and olive oil. Beat until smooth batter. Rise 30 minutes. Heat oil to 375°F (190°C). Drop batter by tablespoonfuls into hot oil. Fry until golden, turning once. Drain on paper towels. Drizzle with honey, dust with cinnamon, garnish with walnuts. Serve immediately.",
-        "chef_tips": "The batter should be thick but pourable. Don't overmix. Fry in batches to maintain oil temperature. Serve hot for best texture."
+        "chef_tips": "The batter should be thick but pourable. Don't overmix. Fry in batches to maintain oil temperature. Serve hot for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Flan",
@@ -3071,7 +3618,8 @@
           "Fine mesh sieve"
         ],
         "cooking_instructions": "Make caramel: heat sugar and water in saucepan until golden brown. Pour into ramekin, swirl to coat bottom. Beat eggs with milk, vanilla, and salt. Strain mixture into ramekin. Place in baking dish with hot water halfway up sides. Bake at 325°F (160°C) for 45 minutes until set. Cool, then refrigerate 4 hours. Run knife around edge, invert onto plate.",
-        "chef_tips": "Don't stir the caramel while cooking. The water bath prevents cracking. The flan should be set but still jiggly in center. Chill thoroughly before unmolding."
+        "chef_tips": "Don't stir the caramel while cooking. The water bath prevents cracking. The flan should be set but still jiggly in center. Chill thoroughly before unmolding.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Doner Kebab",
@@ -3106,7 +3654,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix lamb with onion, garlic, spices, olive oil, lemon juice, salt, and pepper. Marinate 2 hours. Thread meat onto skewers or arrange on doner spit. Grill over medium-high heat, turning occasionally, until cooked through and charred, about 15-20 minutes. Let rest 5 minutes. Slice thinly. Serve in pita with tzatziki and fresh vegetables.",
-        "chef_tips": "Slice meat very thin for best texture. Don't overcook - lamb should be juicy. Let it rest before slicing. Serve immediately while hot."
+        "chef_tips": "Slice meat very thin for best texture. Don't overcook - lamb should be juicy. Let it rest before slicing. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Focaccia",
@@ -3136,7 +3685,8 @@
           "Finger for dimpling"
         ],
         "cooking_instructions": "Mix yeast, sugar, and warm water. Let foam 5 minutes. Mix flour and salt. Add yeast mixture and 2 tbsp olive oil. Knead until smooth. Rise 1 hour. Oil baking pan. Press dough into pan. Cover, rise 30 minutes. Dimple surface with fingers. Drizzle with remaining olive oil. Sprinkle with rosemary and sea salt. Bake at 425°F (220°C) for 20-25 minutes until golden.",
-        "chef_tips": "The dough should be soft and sticky. Don't over-knead. The dimples help with even baking. The focaccia should be golden and crispy on top."
+        "chef_tips": "The dough should be soft and sticky. Don't over-knead. The dimples help with even baking. The focaccia should be golden and crispy on top.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Pastitsio",
@@ -3173,7 +3723,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Cook pasta until al dente, drain. Brown lamb with onion and garlic. Add tomatoes and spices, simmer 20 minutes. Make béchamel: melt butter, add flour, cook 2 minutes. Add milk gradually, whisk until thick. Remove from heat, add eggs and half the cheese. Layer half the pasta in dish. Add meat sauce. Top with remaining pasta. Pour béchamel over top. Sprinkle with remaining cheese. Bake at 375°F (190°C) for 45 minutes until golden.",
-        "chef_tips": "The meat sauce should be well-seasoned. The béchamel should be thick but pourable. Let it rest before cutting. The top should be golden brown."
+        "chef_tips": "The meat sauce should be well-seasoned. The béchamel should be thick but pourable. Let it rest before cutting. The top should be golden brown.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Albondigas",
@@ -3209,7 +3760,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Mix meats with grated onion, garlic, egg, breadcrumbs, cumin, paprika, salt, and pepper. Form into small balls. Heat olive oil in skillet over medium heat. Brown meatballs on all sides. Remove and set aside. Add diced onion, garlic, and carrot to same pan. Cook until soft. Add tomatoes, bring to boil. Return meatballs to pan. Simmer 20 minutes until cooked through. Season with salt and pepper. Serve hot.",
-        "chef_tips": "Don't overmix the meat mixture. Brown the meatballs well for flavor. The sauce should be thick and rich. Let them simmer gently."
+        "chef_tips": "Don't overmix the meat mixture. Brown the meatballs well for flavor. The sauce should be thick and rich. Let them simmer gently.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Imam Bayildi",
@@ -3242,7 +3794,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Cut eggplants in half lengthwise. Score flesh, salt, and let drain 30 minutes. Rinse and pat dry. Heat 2 tbsp olive oil in skillet. Add onions, cook until soft. Add garlic, cook 1 minute. Add tomatoes, herbs, and spices. Cook 10 minutes. Stuff eggplant halves with mixture. Place in baking dish. Drizzle with remaining olive oil. Bake at 375°F (190°C) for 45 minutes until tender. Serve warm or at room temperature.",
-        "chef_tips": "Salt the eggplants to remove bitterness. The filling should be well-seasoned. Don't overstuff the eggplants. Let them cool slightly before serving."
+        "chef_tips": "Salt the eggplants to remove bitterness. The filling should be well-seasoned. Don't overstuff the eggplants. Let them cool slightly before serving.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Saltimbocca",
@@ -3272,7 +3825,8 @@
           "Tongs"
         ],
         "cooking_instructions": "Season veal with salt and pepper. Top each cutlet with 2 slices prosciutto and 2 sage leaves. Secure with toothpicks. Heat olive oil and butter in skillet over medium-high heat. Cook cutlets 2-3 minutes per side until golden. Remove and set aside. Add shallot and garlic to same pan. Cook until soft. Add wine, reduce by half. Return cutlets to pan. Simmer 2 minutes. Remove toothpicks. Serve hot with sauce.",
-        "chef_tips": "Don't overcook the veal - it should be tender. The prosciutto should be crispy. The sauce should be reduced and flavorful. Serve immediately."
+        "chef_tips": "Don't overcook the veal - it should be tender. The prosciutto should be crispy. The sauce should be reduced and flavorful. Serve immediately.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Keftedes",
@@ -3305,7 +3859,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Mix lamb with onion, garlic, herbs, egg, breadcrumbs, cumin, coriander, salt, and pepper. Form into small balls. Heat olive oil in skillet over medium heat. Cook meatballs until golden and cooked through, about 8-10 minutes, turning occasionally. Drain on paper towels. Serve hot with tzatziki.",
-        "chef_tips": "Don't overmix the meat mixture. The meatballs should be golden brown. Don't overcook - they should be juicy. Serve immediately while hot."
+        "chef_tips": "Don't overmix the meat mixture. The meatballs should be golden brown. Don't overcook - they should be juicy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Croquetas",
@@ -3338,7 +3893,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make béchamel: melt butter, add flour, cook 2 minutes. Add milk gradually, whisk until thick. Add jamón, onion, garlic, nutmeg, salt, and pepper. Cook 5 minutes. Cool completely. Shape into small cylinders. Dip in egg, then breadcrumbs. Refrigerate 30 minutes. Heat oil to 375°F (190°C). Fry until golden brown. Drain on paper towels. Serve hot.",
-        "chef_tips": "The béchamel should be thick. Let it cool completely before shaping. The croquetas should be golden and crispy. Serve immediately while hot."
+        "chef_tips": "The béchamel should be thick. Let it cool completely before shaping. The croquetas should be golden and crispy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Börek",
@@ -3371,7 +3927,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix cheeses with eggs, onion, garlic, herbs, nutmeg, salt, and pepper. Brush baking dish with butter. Layer 6 sheets phyllo, brushing each with butter. Add half the cheese mixture. Layer 4 more sheets, brushing with butter. Add remaining cheese mixture. Top with remaining phyllo sheets, brushing each with butter. Cut into squares. Bake at 375°F (190°C) for 45 minutes until golden. Let cool 10 minutes before serving.",
-        "chef_tips": "Keep phyllo covered with damp towel. The filling should be well-seasoned. Don't overfill. Let it rest before cutting."
+        "chef_tips": "Keep phyllo covered with damp towel. The filling should be well-seasoned. Don't overfill. Let it rest before cutting.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Panna Cotta",
@@ -3399,7 +3956,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Soak gelatin in cold water 5 minutes. Heat cream with sugar and vanilla until hot but not boiling. Remove from heat. Add gelatin, stir until dissolved. Pour into ramekins. Refrigerate 4 hours or overnight until set. Run knife around edge, invert onto plate. Serve with fresh berries and mint.",
-        "chef_tips": "Don't boil the cream. The gelatin should be completely dissolved. Let it chill thoroughly. Serve cold for best texture."
+        "chef_tips": "Don't boil the cream. The gelatin should be completely dissolved. Let it chill thoroughly. Serve cold for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Galaktoboureko",
@@ -3431,7 +3989,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Heat milk with semolina, sugar, and cinnamon. Cook until thick. Beat eggs with vanilla. Add to milk mixture, cook 2 minutes. Cool. Brush baking dish with butter. Layer 8 sheets phyllo, brushing each with butter. Add filling. Top with remaining phyllo sheets, brushing each with butter. Cut into squares. Bake at 375°F (190°C) for 45 minutes until golden. Make syrup: boil sugar, water, and lemon juice for 10 minutes. Pour hot syrup over hot pastry. Cool completely. Dust with cinnamon before serving.",
-        "chef_tips": "The filling should be thick. Keep phyllo covered. The syrup should be hot when poured. Let it cool completely for best texture."
+        "chef_tips": "The filling should be thick. Keep phyllo covered. The syrup should be hot when poured. Let it cool completely for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Pulpo a la Gallega",
@@ -3459,7 +4018,8 @@
           "Serving plate"
         ],
         "cooking_instructions": "Bring large pot of water to boil. Add octopus, cook 30-40 minutes until tender. Remove and cool. Slice into rounds. Arrange potatoes on plate. Top with octopus. Drizzle with olive oil. Sprinkle with paprika, cumin, and sea salt. Garnish with parsley. Serve at room temperature.",
-        "chef_tips": "The octopus should be very tender. Don't overcook. The potatoes should be warm. The dish should be well-seasoned."
+        "chef_tips": "The octopus should be very tender. Don't overcook. The potatoes should be warm. The dish should be well-seasoned.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Künefe",
@@ -3487,7 +4047,8 @@
           "Small saucepan"
         ],
         "cooking_instructions": "Preheat oven to 375°F (190°C). Mix kadaif with melted butter. Press half into baking dish. Add mozzarella. Top with remaining kadaif. Press down firmly. Bake 25-30 minutes until golden. Make syrup: boil sugar, water, and lemon juice for 10 minutes. Pour hot syrup over hot pastry. Let cool 10 minutes. Garnish with pistachios and cinnamon. Serve warm.",
-        "chef_tips": "Press the kadaif firmly. The mozzarella should be fresh. The syrup should be hot when poured. Let it cool slightly before serving."
+        "chef_tips": "Press the kadaif firmly. The mozzarella should be fresh. The syrup should be hot when poured. Let it cool slightly before serving.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Arancini",
@@ -3520,7 +4081,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make risotto: sauté onion and garlic. Add rice, stir to coat. Add stock gradually, stirring constantly. Add mushrooms and peas. Cook until rice is tender and creamy. Add Parmesan. Cool completely. Form into balls. Dip in egg, then breadcrumbs. Refrigerate 30 minutes. Heat oil to 375°F (190°C). Fry until golden brown. Drain on paper towels. Serve hot.",
-        "chef_tips": "The risotto should be creamy but not too wet. Let it cool completely before shaping. The arancini should be golden and crispy. Serve immediately while hot."
+        "chef_tips": "The risotto should be creamy but not too wet. Let it cool completely before shaping. The arancini should be golden and crispy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Baklava",
@@ -3552,7 +4114,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix nuts with cinnamon and cloves. Brush baking dish with butter. Layer 8 sheets phyllo, brushing each with butter. Sprinkle with half the nut mixture. Layer 4 more sheets, brushing with butter. Add remaining nuts. Top with remaining phyllo sheets, brushing each with butter. Cut into diamonds. Bake at 350°F (175°C) for 45 minutes until golden. Make syrup: boil sugar, water, lemon juice, and vanilla for 10 minutes. Pour hot syrup over hot baklava. Cool completely before serving.",
-        "chef_tips": "Keep phyllo covered with damp towel. Cut before baking for clean edges. The syrup should be hot when poured. Let it cool completely for best texture."
+        "chef_tips": "Keep phyllo covered with damp towel. Cut before baking for clean edges. The syrup should be hot when poured. Let it cool completely for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spanish Patatas Alioli",
@@ -3578,7 +4141,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Preheat oven to 425°F (220°C). Toss potatoes with olive oil, paprika, and salt. Roast 25 minutes until golden and crispy. For alioli: process egg yolks and garlic until smooth. Slowly add olive oil while processing. Add lemon juice and salt. Serve potatoes with alioli.",
-        "chef_tips": "Cut potatoes evenly for even cooking. The alioli should be thick and garlicky. Don't overprocess. Serve immediately while hot."
+        "chef_tips": "Cut potatoes evenly for even cooking. The alioli should be thick and garlicky. Don't overprocess. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Turkish Revani",
@@ -3608,7 +4172,8 @@
           "Small saucepan"
         ],
         "cooking_instructions": "Preheat oven to 350°F (175°C). Beat eggs with sugar until pale and thick. Add flour, semolina, baking powder, and vanilla. Mix until smooth. Pour into greased baking dish. Bake 25-30 minutes until golden. Make syrup: boil sugar, water, and lemon juice for 10 minutes. Pour hot syrup over hot cake. Let cool completely. Garnish with pistachios. Cut into squares and serve.",
-        "chef_tips": "Beat the eggs well for light texture. The syrup should be hot when poured. Let it cool completely before cutting. The cake should be moist and sweet."
+        "chef_tips": "Beat the eggs well for light texture. The syrup should be hot when poured. Let it cool completely before cutting. The cake should be moist and sweet.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Italian Panna Cotta al Caffè",
@@ -3636,7 +4201,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Soak gelatin in cold water 5 minutes. Heat cream with sugar, coffee, and vanilla until hot but not boiling. Remove from heat. Add gelatin, stir until dissolved. Pour into ramekins. Refrigerate 4 hours or overnight until set. Run knife around edge, invert onto plate. Garnish with chocolate shavings. Serve cold.",
-        "chef_tips": "Don't boil the cream. The coffee should be well-dissolved. Let it chill thoroughly. The panna cotta should be smooth and creamy."
+        "chef_tips": "Don't boil the cream. The coffee should be well-dissolved. Let it chill thoroughly. The panna cotta should be smooth and creamy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Greek Kataifi",
@@ -3668,7 +4234,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix nuts with cinnamon and cloves. Brush baking dish with butter. Layer half the kataifi, brushing with butter. Sprinkle with half the nut mixture. Add remaining kataifi, brushing with butter. Sprinkle with remaining nuts. Top with remaining kataifi, brushing with butter. Cut into squares. Bake at 350°F (175°C) for 45 minutes until golden. Make syrup: boil sugar, water, lemon juice, and vanilla for 10 minutes. Pour hot syrup over hot pastry. Cool completely before serving.",
-        "chef_tips": "Keep kataifi covered with damp towel. The nuts should be well-distributed. The syrup should be hot when poured. Let it cool completely for best texture."
+        "chef_tips": "Keep kataifi covered with damp towel. The nuts should be well-distributed. The syrup should be hot when poured. Let it cool completely for best texture.",
+        "meal_type": "Regular"
       }
     ]
   }

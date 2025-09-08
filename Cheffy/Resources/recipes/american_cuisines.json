@@ -2,544 +2,1486 @@
   "cuisines": {
     "American": [
       {
-        "title": "Classic Cheeseburger",
+        "recipe_name": "Classic Cheeseburger",
         "cuisine": "American",
-        "ingredients": ["1 lb ground beef (80/20)", "4 hamburger buns", "4 slices American cheese", "1 large onion, sliced", "2 tomatoes, sliced", "Lettuce leaves", "Pickles", "Ketchup", "Mustard", "Mayonnaise", "Salt and pepper to taste", "2 tbsp butter"],
-        "instructions": "Form ground beef into 4 patties and season with salt and pepper. Cook on grill or skillet for 4-5 minutes per side. Toast buns with butter. Assemble burgers with cheese, onion, tomato, lettuce, and condiments. Serve hot with fries.",
-        "proteins": ["ground beef"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb ground beef (80/20)",
+          "4 hamburger buns",
+          "4 slices American cheese",
+          "1 large onion, sliced",
+          "2 tomatoes, sliced",
+          "Lettuce leaves",
+          "Pickles",
+          "Ketchup",
+          "Mustard",
+          "Mayonnaise",
+          "Salt and pepper to taste",
+          "2 tbsp butter"
+        ],
+        "cooking_instructions": "Form ground beef into 4 patties and season with salt and pepper. Cook on grill or skillet for 4-5 minutes per side. Toast buns with butter. Assemble burgers with cheese, onion, tomato, lettuce, and condiments. Serve hot with fries.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "BBQ Ribs",
+        "recipe_name": "BBQ Ribs",
         "cuisine": "American",
-        "ingredients": ["2 lbs pork baby back ribs", "1 cup BBQ sauce", "2 tbsp brown sugar", "1 tbsp paprika", "1 tbsp garlic powder", "1 tbsp onion powder", "1 tsp salt", "1 tsp black pepper", "1 tsp cayenne pepper", "1/2 cup apple cider vinegar", "1/4 cup Worcestershire sauce"],
-        "instructions": "Mix dry spices and rub on ribs. Let marinate for 2 hours. Preheat oven to 275°F. Wrap ribs in foil and bake for 2.5 hours. Remove foil, brush with BBQ sauce, and bake for 30 minutes. Serve with coleslaw and cornbread.",
-        "proteins": ["pork ribs"],
+        "ingredients": [
+          "2 lbs pork baby back ribs",
+          "1 cup BBQ sauce",
+          "2 tbsp brown sugar",
+          "1 tbsp paprika",
+          "1 tbsp garlic powder",
+          "1 tbsp onion powder",
+          "1 tsp salt",
+          "1 tsp black pepper",
+          "1 tsp cayenne pepper",
+          "1/2 cup apple cider vinegar",
+          "1/4 cup Worcestershire sauce"
+        ],
+        "cooking_instructions": "Mix dry spices and rub on ribs. Let marinate for 2 hours. Preheat oven to 275°F. Wrap ribs in foil and bake for 2.5 hours. Remove foil, brush with BBQ sauce, and bake for 30 minutes. Serve with coleslaw and cornbread.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork ribs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 180,
-        "difficulty": "medium"
+        "calories_per_serving": 670
       },
       {
-        "title": "Mac and Cheese",
+        "recipe_name": "Mac and Cheese",
         "cuisine": "American",
-        "ingredients": ["1 lb elbow macaroni", "4 tbsp butter", "1/4 cup all-purpose flour", "3 cups whole milk", "2 cups shredded cheddar cheese", "1 cup shredded mozzarella cheese", "1/2 cup grated Parmesan cheese", "1 tsp salt", "1/2 tsp black pepper", "1/2 tsp paprika", "1/2 cup breadcrumbs", "2 tbsp melted butter"],
-        "instructions": "Cook macaroni according to package directions. Make roux with butter and flour. Add milk gradually, stirring constantly. Add cheeses and seasonings. Mix with cooked pasta. Top with breadcrumbs and melted butter. Bake at 375°F for 25 minutes until golden.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 lb elbow macaroni",
+          "4 tbsp butter",
+          "1/4 cup all-purpose flour",
+          "3 cups whole milk",
+          "2 cups shredded cheddar cheese",
+          "1 cup shredded mozzarella cheese",
+          "1/2 cup grated Parmesan cheese",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp paprika",
+          "1/2 cup breadcrumbs",
+          "2 tbsp melted butter"
+        ],
+        "cooking_instructions": "Cook macaroni according to package directions. Make roux with butter and flour. Add milk gradually, stirring constantly. Add cheeses and seasonings. Mix with cooked pasta. Top with breadcrumbs and melted butter. Bake at 375°F for 25 minutes until golden.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 410
       },
       {
-        "title": "Fried Chicken",
+        "recipe_name": "Fried Chicken",
         "cuisine": "American",
-        "ingredients": ["3 lbs chicken pieces", "2 cups all-purpose flour", "1 tbsp paprika", "1 tbsp garlic powder", "1 tbsp onion powder", "1 tsp salt", "1 tsp black pepper", "1 tsp cayenne pepper", "2 eggs", "1/4 cup buttermilk", "Oil for deep frying"],
-        "instructions": "Mix flour with spices. Beat eggs with buttermilk. Dredge chicken in flour, dip in egg mixture, then flour again. Heat oil to 350°F and fry chicken for 12-15 minutes until golden and cooked through. Drain on paper towels and serve hot.",
-        "proteins": ["chicken"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "ingredients": [
+          "3 lbs chicken pieces",
+          "2 cups all-purpose flour",
+          "1 tbsp paprika",
+          "1 tbsp garlic powder",
+          "1 tbsp onion powder",
+          "1 tsp salt",
+          "1 tsp black pepper",
+          "1 tsp cayenne pepper",
+          "2 eggs",
+          "1/4 cup buttermilk",
+          "Oil for deep frying"
+        ],
+        "cooking_instructions": "Mix flour with spices. Beat eggs with buttermilk. Dredge chicken in flour, dip in egg mixture, then flour again. Heat oil to 350°F and fry chicken for 12-15 minutes until golden and cooked through. Drain on paper towels and serve hot.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 370
       },
       {
-        "title": "Buffalo Wings",
+        "recipe_name": "Buffalo Wings",
         "cuisine": "American",
-        "ingredients": ["2 lbs chicken wings", "1/2 cup hot sauce", "1/4 cup butter", "1 tbsp white vinegar", "1 tsp garlic powder", "1/2 tsp salt", "Blue cheese dressing", "Celery sticks", "Carrot sticks"],
-        "instructions": "Bake wings at 400°F for 45 minutes until crispy. Mix hot sauce, butter, vinegar, and spices. Toss wings in sauce. Serve with blue cheese dressing and celery/carrot sticks.",
-        "proteins": ["chicken"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 50,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 lbs chicken wings",
+          "1/2 cup hot sauce",
+          "1/4 cup butter",
+          "1 tbsp white vinegar",
+          "1 tsp garlic powder",
+          "1/2 tsp salt",
+          "Blue cheese dressing",
+          "Celery sticks",
+          "Carrot sticks"
+        ],
+        "cooking_instructions": "Bake wings at 400°F for 45 minutes until crispy. Mix hot sauce, butter, vinegar, and spices. Toss wings in sauce. Serve with blue cheese dressing and celery/carrot sticks.",
+        "cooking_time_category": "Under 50 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 390
       },
       {
-        "title": "Clam Chowder",
+        "recipe_name": "Clam Chowder",
         "cuisine": "American",
-        "ingredients": ["2 cans chopped clams", "4 slices bacon, diced", "1 large onion, chopped", "2 celery stalks, chopped", "3 medium potatoes, diced", "3 cups whole milk", "1 cup heavy cream", "2 tbsp butter", "2 tbsp all-purpose flour", "1 tsp salt", "1/2 tsp black pepper", "Fresh parsley for garnish"],
-        "instructions": "Cook bacon until crispy. Add onion and celery, cook until soft. Add potatoes and clam juice. Simmer until potatoes are tender. Make roux with butter and flour. Add milk and cream gradually. Add clams and seasonings. Simmer for 10 minutes. Garnish with parsley.",
-        "proteins": ["clams", "bacon"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 40,
-        "difficulty": "medium"
+        "ingredients": [
+          "2 cans chopped clams",
+          "4 slices bacon, diced",
+          "1 large onion, chopped",
+          "2 celery stalks, chopped",
+          "3 medium potatoes, diced",
+          "3 cups whole milk",
+          "1 cup heavy cream",
+          "2 tbsp butter",
+          "2 tbsp all-purpose flour",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "Fresh parsley for garnish"
+        ],
+        "cooking_instructions": "Cook bacon until crispy. Add onion and celery, cook until soft. Add potatoes and clam juice. Simmer until potatoes are tender. Make roux with butter and flour. Add milk and cream gradually. Add clams and seasonings. Simmer for 10 minutes. Garnish with parsley.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "clams",
+          "bacon"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 400
       },
       {
-        "title": "Meatloaf",
+        "recipe_name": "Meatloaf",
         "cuisine": "American",
-        "ingredients": ["2 lbs ground beef", "1 lb ground pork", "1 large onion, chopped", "2 cloves garlic, minced", "2 eggs", "1 cup breadcrumbs", "1/2 cup ketchup", "2 tbsp Worcestershire sauce", "1 tsp salt", "1/2 tsp black pepper", "1/2 cup brown sugar", "1/4 cup ketchup for glaze"],
-        "instructions": "Mix all ingredients except glaze. Form into loaf shape. Bake at 350°F for 1 hour. Mix brown sugar and ketchup for glaze. Brush over meatloaf and bake for 15 minutes more. Let rest for 10 minutes before slicing.",
-        "proteins": ["ground beef", "ground pork"],
+        "ingredients": [
+          "2 lbs ground beef",
+          "1 lb ground pork",
+          "1 large onion, chopped",
+          "2 cloves garlic, minced",
+          "2 eggs",
+          "1 cup breadcrumbs",
+          "1/2 cup ketchup",
+          "2 tbsp Worcestershire sauce",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 cup brown sugar",
+          "1/4 cup ketchup for glaze"
+        ],
+        "cooking_instructions": "Mix all ingredients except glaze. Form into loaf shape. Bake at 350°F for 1 hour. Mix brown sugar and ketchup for glaze. Brush over meatloaf and bake for 15 minutes more. Let rest for 10 minutes before slicing.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "ground pork"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 75,
-        "difficulty": "easy"
+        "calories_per_serving": 470
       },
       {
-        "title": "Apple Pie",
+        "recipe_name": "Apple Pie",
         "cuisine": "American",
-        "ingredients": ["2 pie crusts", "6 large apples, peeled and sliced", "3/4 cup sugar", "1/4 cup all-purpose flour", "1 tsp cinnamon", "1/4 tsp nutmeg", "1/4 tsp salt", "2 tbsp butter", "1 egg, beaten", "1 tbsp sugar for topping"],
-        "instructions": "Mix apples with sugar, flour, and spices. Line pie pan with one crust. Add apple mixture and dot with butter. Cover with second crust and seal edges. Brush with beaten egg and sprinkle with sugar. Bake at 425°F for 15 minutes, then 350°F for 35 minutes.",
-        "proteins": ["apples"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "ingredients": [
+          "2 pie crusts",
+          "6 large apples, peeled and sliced",
+          "3/4 cup sugar",
+          "1/4 cup all-purpose flour",
+          "1 tsp cinnamon",
+          "1/4 tsp nutmeg",
+          "1/4 tsp salt",
+          "2 tbsp butter",
+          "1 egg, beaten",
+          "1 tbsp sugar for topping"
+        ],
+        "cooking_instructions": "Mix apples with sugar, flour, and spices. Line pie pan with one crust. Add apple mixture and dot with butter. Cover with second crust and seal edges. Brush with beaten egg and sprinkle with sugar. Bake at 425°F for 15 minutes, then 350°F for 35 minutes.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "apples"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 420
       },
       {
-        "title": "Pancakes",
+        "recipe_name": "Pancakes",
         "cuisine": "American",
-        "ingredients": ["2 cups all-purpose flour", "2 tbsp sugar", "2 tsp baking powder", "1 tsp salt", "2 eggs", "1 3/4 cups milk", "1/4 cup melted butter", "1 tsp vanilla extract", "Butter for cooking", "Maple syrup"],
-        "instructions": "Mix dry ingredients. Beat eggs with milk, butter, and vanilla. Combine wet and dry ingredients. Cook on griddle with butter until bubbles form. Flip and cook until golden. Serve with maple syrup and butter.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups all-purpose flour",
+          "2 tbsp sugar",
+          "2 tsp baking powder",
+          "1 tsp salt",
+          "2 eggs",
+          "1 3/4 cups milk",
+          "1/4 cup melted butter",
+          "1 tsp vanilla extract",
+          "Butter for cooking",
+          "Maple syrup"
+        ],
+        "cooking_instructions": "Mix dry ingredients. Beat eggs with milk, butter, and vanilla. Combine wet and dry ingredients. Cook on griddle with butter until bubbles form. Flip and cook until golden. Serve with maple syrup and butter.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Chicken and Waffles",
+        "recipe_name": "Chicken and Waffles",
         "cuisine": "American",
-        "ingredients": ["4 chicken breasts", "2 cups buttermilk", "2 cups all-purpose flour", "1 tbsp paprika", "1 tbsp garlic powder", "1 tsp salt", "1 tsp black pepper", "Oil for frying", "For waffles: 2 cups all-purpose flour", "2 tbsp sugar", "1 tbsp baking powder", "1/2 tsp salt", "2 eggs", "1 3/4 cups milk", "1/2 cup melted butter", "Maple syrup"],
-        "instructions": "Marinate chicken in buttermilk for 2 hours. Mix flour with spices. Dredge chicken and fry until golden. For waffles, mix dry ingredients. Beat eggs with milk and butter. Combine and cook in waffle iron. Serve chicken over waffles with maple syrup.",
-        "proteins": ["chicken", "eggs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "4 chicken breasts",
+          "2 cups buttermilk",
+          "2 cups all-purpose flour",
+          "1 tbsp paprika",
+          "1 tbsp garlic powder",
+          "1 tsp salt",
+          "1 tsp black pepper",
+          "Oil for frying",
+          "For waffles: 2 cups all-purpose flour",
+          "2 tbsp sugar",
+          "1 tbsp baking powder",
+          "1/2 tsp salt",
+          "2 eggs",
+          "1 3/4 cups milk",
+          "1/2 cup melted butter",
+          "Maple syrup"
+        ],
+        "cooking_instructions": "Marinate chicken in buttermilk for 2 hours. Mix flour with spices. Dredge chicken and fry until golden. For waffles, mix dry ingredients. Beat eggs with milk and butter. Combine and cook in waffle iron. Serve chicken over waffles with maple syrup.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 450
       },
       {
-        "title": "Caesar Salad",
+        "recipe_name": "Caesar Salad",
         "cuisine": "American",
-        "ingredients": ["1 large head romaine lettuce", "1/2 cup grated Parmesan cheese", "1/2 cup croutons", "For dressing: 1/2 cup mayonnaise", "2 cloves garlic, minced", "2 tbsp lemon juice", "1 tbsp Dijon mustard", "1 tsp Worcestershire sauce", "1/2 cup grated Parmesan cheese", "1/4 tsp salt", "1/4 tsp black pepper"],
-        "instructions": "Wash and chop lettuce. Mix all dressing ingredients. Toss lettuce with dressing. Add croutons and Parmesan cheese. Serve immediately.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 large head romaine lettuce",
+          "1/2 cup grated Parmesan cheese",
+          "1/2 cup croutons",
+          "For dressing: 1/2 cup mayonnaise",
+          "2 cloves garlic, minced",
+          "2 tbsp lemon juice",
+          "1 tbsp Dijon mustard",
+          "1 tsp Worcestershire sauce",
+          "1/2 cup grated Parmesan cheese",
+          "1/4 tsp salt",
+          "1/4 tsp black pepper"
+        ],
+        "cooking_instructions": "Wash and chop lettuce. Mix all dressing ingredients. Toss lettuce with dressing. Add croutons and Parmesan cheese. Serve immediately.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Chili Con Carne",
+        "recipe_name": "Chili Con Carne",
         "cuisine": "American",
-        "ingredients": ["2 lbs ground beef", "1 large onion, chopped", "4 cloves garlic, minced", "2 cans kidney beans", "2 cans diced tomatoes", "1 can tomato paste", "2 tbsp chili powder", "1 tbsp cumin", "1 tsp oregano", "1 tsp salt", "1/2 tsp black pepper", "1/2 tsp cayenne pepper", "2 cups beef broth", "Shredded cheese and sour cream for serving"],
-        "instructions": "Brown ground beef with onion and garlic. Add tomatoes, beans, and seasonings. Add broth and simmer for 1 hour. Serve with cheese and sour cream.",
-        "proteins": ["ground beef", "kidney beans"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 75,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 lbs ground beef",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "2 cans kidney beans",
+          "2 cans diced tomatoes",
+          "1 can tomato paste",
+          "2 tbsp chili powder",
+          "1 tbsp cumin",
+          "1 tsp oregano",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp cayenne pepper",
+          "2 cups beef broth",
+          "Shredded cheese and sour cream for serving"
+        ],
+        "cooking_instructions": "Brown ground beef with onion and garlic. Add tomatoes, beans, and seasonings. Add broth and simmer for 1 hour. Serve with cheese and sour cream.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "kidney beans"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 490
       },
       {
-        "title": "Pot Roast",
+        "recipe_name": "Pot Roast",
         "cuisine": "American",
-        "ingredients": ["3 lbs chuck roast", "4 large carrots, cut into chunks", "4 medium potatoes, cut into chunks", "2 large onions, quartered", "4 cloves garlic, minced", "2 cups beef broth", "1/4 cup red wine", "2 tbsp Worcestershire sauce", "1 tsp salt", "1/2 tsp black pepper", "2 tbsp olive oil", "Fresh thyme"],
-        "instructions": "Season roast with salt and pepper. Brown in oil on all sides. Add vegetables, broth, wine, and Worcestershire sauce. Cover and cook at 325°F for 3 hours until tender. Serve with pan juices.",
-        "proteins": ["chuck roast"],
+        "ingredients": [
+          "3 lbs chuck roast",
+          "4 large carrots, cut into chunks",
+          "4 medium potatoes, cut into chunks",
+          "2 large onions, quartered",
+          "4 cloves garlic, minced",
+          "2 cups beef broth",
+          "1/4 cup red wine",
+          "2 tbsp Worcestershire sauce",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "2 tbsp olive oil",
+          "Fresh thyme"
+        ],
+        "cooking_instructions": "Season roast with salt and pepper. Brown in oil on all sides. Add vegetables, broth, wine, and Worcestershire sauce. Cover and cook at 325°F for 3 hours until tender. Serve with pan juices.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chuck roast"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 180,
-        "difficulty": "easy"
+        "calories_per_serving": 680
       },
       {
-        "title": "Cobb Salad",
+        "recipe_name": "Cobb Salad",
         "cuisine": "American",
-        "ingredients": ["1 large head romaine lettuce", "2 chicken breasts, cooked and diced", "6 strips bacon, cooked and crumbled", "4 hard-boiled eggs, chopped", "2 avocados, diced", "2 tomatoes, diced", "1/2 cup blue cheese, crumbled", "1/2 cup red wine vinaigrette", "Salt and pepper to taste"],
-        "instructions": "Arrange lettuce on platter. Arrange chicken, bacon, eggs, avocado, tomatoes, and blue cheese in rows. Drizzle with vinaigrette and season with salt and pepper. Serve immediately.",
-        "proteins": ["chicken", "bacon", "eggs", "blue cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 large head romaine lettuce",
+          "2 chicken breasts, cooked and diced",
+          "6 strips bacon, cooked and crumbled",
+          "4 hard-boiled eggs, chopped",
+          "2 avocados, diced",
+          "2 tomatoes, diced",
+          "1/2 cup blue cheese, crumbled",
+          "1/2 cup red wine vinaigrette",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Arrange lettuce on platter. Arrange chicken, bacon, eggs, avocado, tomatoes, and blue cheese in rows. Drizzle with vinaigrette and season with salt and pepper. Serve immediately.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "bacon",
+          "eggs",
+          "blue cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Key Lime Pie",
+        "recipe_name": "Key Lime Pie",
         "cuisine": "American",
-        "ingredients": ["1 1/2 cups graham cracker crumbs", "1/3 cup sugar", "6 tbsp melted butter", "4 egg yolks", "1 can sweetened condensed milk", "1/2 cup key lime juice", "1 tsp lime zest", "1 cup heavy cream", "2 tbsp powdered sugar", "Lime slices for garnish"],
-        "instructions": "Mix crumbs with sugar and butter. Press into pie pan and bake at 350°F for 10 minutes. Beat egg yolks with condensed milk, lime juice, and zest. Pour into crust and bake for 15 minutes. Cool and chill. Whip cream with powdered sugar and top pie. Garnish with lime slices.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 1/2 cups graham cracker crumbs",
+          "1/3 cup sugar",
+          "6 tbsp melted butter",
+          "4 egg yolks",
+          "1 can sweetened condensed milk",
+          "1/2 cup key lime juice",
+          "1 tsp lime zest",
+          "1 cup heavy cream",
+          "2 tbsp powdered sugar",
+          "Lime slices for garnish"
+        ],
+        "cooking_instructions": "Mix crumbs with sugar and butter. Press into pie pan and bake at 350°F for 10 minutes. Beat egg yolks with condensed milk, lime juice, and zest. Pour into crust and bake for 15 minutes. Cool and chill. Whip cream with powdered sugar and top pie. Garnish with lime slices.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 390
       },
       {
-        "title": "Cornbread",
+        "recipe_name": "Cornbread",
         "cuisine": "American",
-        "ingredients": ["1 cup yellow cornmeal", "1 cup all-purpose flour", "1/4 cup sugar", "1 tbsp baking powder", "1 tsp salt", "1 cup milk", "1/3 cup melted butter", "1 egg", "1/4 cup honey"],
-        "instructions": "Mix dry ingredients. Beat egg with milk, butter, and honey. Combine wet and dry ingredients. Pour into greased 9-inch pan. Bake at 400°F for 20-25 minutes until golden. Serve warm with butter.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup yellow cornmeal",
+          "1 cup all-purpose flour",
+          "1/4 cup sugar",
+          "1 tbsp baking powder",
+          "1 tsp salt",
+          "1 cup milk",
+          "1/3 cup melted butter",
+          "1 egg",
+          "1/4 cup honey"
+        ],
+        "cooking_instructions": "Mix dry ingredients. Beat egg with milk, butter, and honey. Combine wet and dry ingredients. Pour into greased 9-inch pan. Bake at 400°F for 20-25 minutes until golden. Serve warm with butter.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 350
       },
       {
-        "title": "Pulled Pork",
+        "recipe_name": "Pulled Pork",
         "cuisine": "American",
-        "ingredients": ["4 lbs pork shoulder", "1 large onion, sliced", "4 cloves garlic, minced", "1 cup BBQ sauce", "1/4 cup brown sugar", "2 tbsp paprika", "1 tbsp garlic powder", "1 tbsp onion powder", "1 tsp salt", "1 tsp black pepper", "1/2 cup apple cider vinegar", "Hamburger buns for serving"],
-        "instructions": "Season pork with spices. Place in slow cooker with onion and garlic. Mix BBQ sauce, brown sugar, and vinegar. Pour over pork. Cook on low for 8 hours. Shred pork and mix with sauce. Serve on buns.",
-        "proteins": ["pork shoulder"],
+        "ingredients": [
+          "4 lbs pork shoulder",
+          "1 large onion, sliced",
+          "4 cloves garlic, minced",
+          "1 cup BBQ sauce",
+          "1/4 cup brown sugar",
+          "2 tbsp paprika",
+          "1 tbsp garlic powder",
+          "1 tbsp onion powder",
+          "1 tsp salt",
+          "1 tsp black pepper",
+          "1/2 cup apple cider vinegar",
+          "Hamburger buns for serving"
+        ],
+        "cooking_instructions": "Season pork with spices. Place in slow cooker with onion and garlic. Mix BBQ sauce, brown sugar, and vinegar. Pour over pork. Cook on low for 8 hours. Shred pork and mix with sauce. Serve on buns.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork shoulder"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 480,
-        "difficulty": "easy"
+        "calories_per_serving": 1280
       },
       {
-        "title": "Chocolate Chip Cookies",
+        "recipe_name": "Chocolate Chip Cookies",
         "cuisine": "American",
-        "ingredients": ["2 1/4 cups all-purpose flour", "1 tsp baking soda", "1 tsp salt", "1 cup butter, softened", "3/4 cup brown sugar", "1/4 cup white sugar", "2 eggs", "2 tsp vanilla extract", "2 cups chocolate chips", "1 cup chopped nuts (optional)"],
-        "instructions": "Mix flour, baking soda, and salt. Cream butter with sugars. Beat in eggs and vanilla. Gradually add flour mixture. Stir in chocolate chips and nuts. Drop onto baking sheets. Bake at 375°F for 9-11 minutes until golden.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 1/4 cups all-purpose flour",
+          "1 tsp baking soda",
+          "1 tsp salt",
+          "1 cup butter, softened",
+          "3/4 cup brown sugar",
+          "1/4 cup white sugar",
+          "2 eggs",
+          "2 tsp vanilla extract",
+          "2 cups chocolate chips",
+          "1 cup chopped nuts (optional)"
+        ],
+        "cooking_instructions": "Mix flour, baking soda, and salt. Cream butter with sugars. Beat in eggs and vanilla. Gradually add flour mixture. Stir in chocolate chips and nuts. Drop onto baking sheets. Bake at 375°F for 9-11 minutes until golden.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 350
       },
       {
-        "title": "New York Cheesecake",
+        "recipe_name": "New York Cheesecake",
         "cuisine": "American",
-        "ingredients": ["2 cups graham cracker crumbs", "1/4 cup sugar", "6 tbsp melted butter", "4 packages cream cheese, softened", "1 1/4 cups sugar", "1/2 cup sour cream", "2 tsp vanilla extract", "3 eggs", "1/4 cup all-purpose flour", "Fresh berries for garnish"],
-        "instructions": "Mix crumbs with sugar and butter. Press into springform pan. Beat cream cheese with sugar. Add sour cream and vanilla. Beat in eggs one at a time. Add flour. Pour into crust. Bake at 325°F for 1 hour. Cool and chill overnight. Garnish with berries.",
-        "proteins": ["cream cheese", "eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "ingredients": [
+          "2 cups graham cracker crumbs",
+          "1/4 cup sugar",
+          "6 tbsp melted butter",
+          "4 packages cream cheese, softened",
+          "1 1/4 cups sugar",
+          "1/2 cup sour cream",
+          "2 tsp vanilla extract",
+          "3 eggs",
+          "1/4 cup all-purpose flour",
+          "Fresh berries for garnish"
+        ],
+        "cooking_instructions": "Mix crumbs with sugar and butter. Press into springform pan. Beat cream cheese with sugar. Add sour cream and vanilla. Beat in eggs one at a time. Add flour. Pour into crust. Bake at 325°F for 1 hour. Cool and chill overnight. Garnish with berries.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cream cheese",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 480
       },
       {
-        "title": "Crab Cakes",
+        "recipe_name": "Crab Cakes",
         "cuisine": "American",
-        "ingredients": ["1 lb lump crabmeat", "1/2 cup breadcrumbs", "1/4 cup mayonnaise", "1 egg", "2 tbsp Dijon mustard", "1 tbsp Worcestershire sauce", "1 tbsp lemon juice", "1 tsp Old Bay seasoning", "1/4 tsp salt", "1/4 tsp black pepper", "2 tbsp butter", "Lemon wedges for serving"],
-        "instructions": "Mix crabmeat with breadcrumbs, mayonnaise, egg, mustard, Worcestershire, lemon juice, and seasonings. Form into patties. Chill for 30 minutes. Cook in butter for 4-5 minutes per side until golden. Serve with lemon wedges.",
-        "proteins": ["crabmeat", "eggs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 lb lump crabmeat",
+          "1/2 cup breadcrumbs",
+          "1/4 cup mayonnaise",
+          "1 egg",
+          "2 tbsp Dijon mustard",
+          "1 tbsp Worcestershire sauce",
+          "1 tbsp lemon juice",
+          "1 tsp Old Bay seasoning",
+          "1/4 tsp salt",
+          "1/4 tsp black pepper",
+          "2 tbsp butter",
+          "Lemon wedges for serving"
+        ],
+        "cooking_instructions": "Mix crabmeat with breadcrumbs, mayonnaise, egg, mustard, Worcestershire, lemon juice, and seasonings. Form into patties. Chill for 30 minutes. Cook in butter for 4-5 minutes per side until golden. Serve with lemon wedges.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "crabmeat",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 410
       },
       {
-        "title": "Quick Scrambled Eggs",
+        "recipe_name": "Quick Scrambled Eggs",
         "cuisine": "American",
-        "ingredients": ["4 eggs", "2 tbsp butter", "2 tbsp milk", "Salt and pepper to taste", "Fresh chives for garnish"],
-        "instructions": "Beat eggs with milk, salt, and pepper. Heat butter in pan over medium heat. Add eggs and scramble gently for 2-3 minutes until set. Garnish with chives and serve immediately.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 eggs",
+          "2 tbsp butter",
+          "2 tbsp milk",
+          "Salt and pepper to taste",
+          "Fresh chives for garnish"
+        ],
+        "cooking_instructions": "Beat eggs with milk, salt, and pepper. Heat butter in pan over medium heat. Add eggs and scramble gently for 2-3 minutes until set. Garnish with chives and serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 260
       },
       {
-        "title": "Microwave Oatmeal",
+        "recipe_name": "Microwave Oatmeal",
         "cuisine": "American",
-        "ingredients": ["1/2 cup rolled oats", "1 cup milk", "1 tbsp honey", "1/2 tsp cinnamon", "1/4 cup fresh berries", "1 tbsp chopped nuts"],
-        "instructions": "Combine oats and milk in microwave-safe bowl. Microwave on high for 2 minutes. Stir in honey and cinnamon. Top with berries and nuts. Serve hot.",
-        "proteins": ["milk"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 3,
-        "difficulty": "easy"
+        "ingredients": [
+          "1/2 cup rolled oats",
+          "1 cup milk",
+          "1 tbsp honey",
+          "1/2 tsp cinnamon",
+          "1/4 cup fresh berries",
+          "1 tbsp chopped nuts"
+        ],
+        "cooking_instructions": "Combine oats and milk in microwave-safe bowl. Microwave on high for 2 minutes. Stir in honey and cinnamon. Top with berries and nuts. Serve hot.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "milk"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 266
       },
       {
-        "title": "Avocado Toast",
+        "recipe_name": "Avocado Toast",
         "cuisine": "American",
-        "ingredients": ["2 slices whole grain bread", "1 ripe avocado", "1 tbsp lemon juice", "Salt and pepper to taste", "Red pepper flakes", "1 tbsp olive oil"],
-        "instructions": "Toast bread slices. Mash avocado with lemon juice, salt, and pepper. Spread on toast. Drizzle with olive oil and sprinkle with red pepper flakes. Serve immediately.",
-        "proteins": ["avocado"],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 slices whole grain bread",
+          "1 ripe avocado",
+          "1 tbsp lemon juice",
+          "Salt and pepper to taste",
+          "Red pepper flakes",
+          "1 tbsp olive oil"
+        ],
+        "cooking_instructions": "Toast bread slices. Mash avocado with lemon juice, salt, and pepper. Spread on toast. Drizzle with olive oil and sprinkle with red pepper flakes. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "avocado"
+        ],
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Smoothie Bowl",
+        "recipe_name": "Quick Smoothie Bowl",
         "cuisine": "American",
-        "ingredients": ["1 frozen banana", "1/2 cup frozen berries", "1/2 cup Greek yogurt", "1/4 cup milk", "1 tbsp honey", "Granola for topping", "Fresh fruit for garnish"],
-        "instructions": "Blend banana, berries, yogurt, milk, and honey until smooth. Pour into bowl. Top with granola and fresh fruit. Serve immediately.",
-        "proteins": ["greek yogurt", "milk"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 frozen banana",
+          "1/2 cup frozen berries",
+          "1/2 cup Greek yogurt",
+          "1/4 cup milk",
+          "1 tbsp honey",
+          "Granola for topping",
+          "Fresh fruit for garnish"
+        ],
+        "cooking_instructions": "Blend banana, berries, yogurt, milk, and honey until smooth. Pour into bowl. Top with granola and fresh fruit. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "greek yogurt",
+          "milk"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Instant Ramen Upgrade",
+        "recipe_name": "Instant Ramen Upgrade",
         "cuisine": "American",
-        "ingredients": ["1 package instant ramen", "1 egg", "2 tbsp soy sauce", "1 tsp sesame oil", "1 green onion, sliced", "1/2 cup spinach", "Sriracha to taste"],
-        "instructions": "Cook ramen according to package directions. Add spinach in last minute. Poach egg in broth. Top with soy sauce, sesame oil, green onion, and sriracha. Serve hot.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 7,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 package instant ramen",
+          "1 egg",
+          "2 tbsp soy sauce",
+          "1 tsp sesame oil",
+          "1 green onion, sliced",
+          "1/2 cup spinach",
+          "Sriracha to taste"
+        ],
+        "cooking_instructions": "Cook ramen according to package directions. Add spinach in last minute. Poach egg in broth. Top with soy sauce, sesame oil, green onion, and sriracha. Serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 284
       },
       {
-        "title": "Quick Quesadilla",
+        "recipe_name": "Quick Quesadilla",
         "cuisine": "American",
-        "ingredients": ["2 flour tortillas", "1 cup shredded cheese", "1/4 cup black beans", "1/4 cup corn", "1 tbsp butter", "Salsa and sour cream for serving"],
-        "instructions": "Heat butter in pan. Place one tortilla, add cheese, beans, and corn. Top with second tortilla. Cook for 2-3 minutes per side until golden and cheese melts. Cut into wedges and serve with salsa and sour cream.",
-        "proteins": ["cheese", "black beans"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 flour tortillas",
+          "1 cup shredded cheese",
+          "1/4 cup black beans",
+          "1/4 cup corn",
+          "1 tbsp butter",
+          "Salsa and sour cream for serving"
+        ],
+        "cooking_instructions": "Heat butter in pan. Place one tortilla, add cheese, beans, and corn. Top with second tortilla. Cook for 2-3 minutes per side until golden and cheese melts. Cut into wedges and serve with salsa and sour cream.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese",
+          "black beans"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 276
       },
       {
-        "title": "Microwave Mug Cake",
+        "recipe_name": "Microwave Mug Cake",
         "cuisine": "American",
-        "ingredients": ["4 tbsp all-purpose flour", "2 tbsp sugar", "2 tbsp cocoa powder", "1/4 tsp baking powder", "3 tbsp milk", "2 tbsp vegetable oil", "1/4 tsp vanilla extract", "Chocolate chips for topping"],
-        "instructions": "Mix dry ingredients in microwave-safe mug. Add wet ingredients and stir until smooth. Add chocolate chips. Microwave on high for 1-2 minutes until cake rises. Let cool slightly and enjoy.",
-        "proteins": ["milk"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 tbsp all-purpose flour",
+          "2 tbsp sugar",
+          "2 tbsp cocoa powder",
+          "1/4 tsp baking powder",
+          "3 tbsp milk",
+          "2 tbsp vegetable oil",
+          "1/4 tsp vanilla extract",
+          "Chocolate chips for topping"
+        ],
+        "cooking_instructions": "Mix dry ingredients in microwave-safe mug. Add wet ingredients and stir until smooth. Add chocolate chips. Microwave on high for 1-2 minutes until cake rises. Let cool slightly and enjoy.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "milk"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick BLT Sandwich",
+        "recipe_name": "Quick BLT Sandwich",
         "cuisine": "American",
-        "ingredients": ["4 slices bacon", "2 slices bread", "2 tbsp mayonnaise", "2 lettuce leaves", "2 tomato slices", "Salt and pepper to taste"],
-        "instructions": "Cook bacon until crispy. Toast bread slices. Spread mayonnaise on bread. Layer lettuce, tomato, and bacon. Season with salt and pepper. Close sandwich and serve immediately.",
-        "proteins": ["bacon"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 slices bacon",
+          "2 slices bread",
+          "2 tbsp mayonnaise",
+          "2 lettuce leaves",
+          "2 tomato slices",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook bacon until crispy. Toast bread slices. Spread mayonnaise on bread. Layer lettuce, tomato, and bacon. Season with salt and pepper. Close sandwich and serve immediately.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "bacon"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 284
       },
       {
-        "title": "Grilled Cheese Sandwich",
+        "recipe_name": "Grilled Cheese Sandwich",
         "cuisine": "American",
-        "ingredients": ["2 slices bread", "2 slices cheddar cheese", "2 tbsp butter", "1 tsp garlic powder", "Tomato soup for serving"],
-        "instructions": "Butter one side of each bread slice. Place cheese between bread slices. Cook in pan over medium heat for 3-4 minutes per side until golden and cheese melts. Serve with tomato soup.",
-        "proteins": ["cheddar cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 slices bread",
+          "2 slices cheddar cheese",
+          "2 tbsp butter",
+          "1 tsp garlic powder",
+          "Tomato soup for serving"
+        ],
+        "cooking_instructions": "Butter one side of each bread slice. Place cheese between bread slices. Cook in pan over medium heat for 3-4 minutes per side until golden and cheese melts. Serve with tomato soup.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheddar cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Chicken Salad",
+        "recipe_name": "Quick Chicken Salad",
         "cuisine": "American",
-        "ingredients": ["2 cups cooked chicken, diced", "1/2 cup mayonnaise", "1/4 cup celery, diced", "1/4 cup red grapes, halved", "1 tbsp lemon juice", "Salt and pepper to taste", "Lettuce leaves for serving"],
-        "instructions": "Mix chicken with mayonnaise, celery, grapes, and lemon juice. Season with salt and pepper. Chill for 10 minutes. Serve on lettuce leaves or in sandwiches.",
-        "proteins": ["chicken"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups cooked chicken, diced",
+          "1/2 cup mayonnaise",
+          "1/4 cup celery, diced",
+          "1/4 cup red grapes, halved",
+          "1 tbsp lemon juice",
+          "Salt and pepper to taste",
+          "Lettuce leaves for serving"
+        ],
+        "cooking_instructions": "Mix chicken with mayonnaise, celery, grapes, and lemon juice. Season with salt and pepper. Chill for 10 minutes. Serve on lettuce leaves or in sandwiches.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Pasta with Marinara",
+        "recipe_name": "Quick Pasta with Marinara",
         "cuisine": "American",
-        "ingredients": ["8 oz spaghetti", "2 cups marinara sauce", "2 tbsp olive oil", "2 cloves garlic, minced", "1/4 cup grated Parmesan cheese", "Fresh basil leaves", "Salt and pepper to taste"],
-        "instructions": "Cook pasta according to package directions. Heat olive oil and sauté garlic for 1 minute. Add marinara sauce and simmer for 5 minutes. Toss with cooked pasta. Top with Parmesan and basil. Season with salt and pepper.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz spaghetti",
+          "2 cups marinara sauce",
+          "2 tbsp olive oil",
+          "2 cloves garlic, minced",
+          "1/4 cup grated Parmesan cheese",
+          "Fresh basil leaves",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook pasta according to package directions. Heat olive oil and sauté garlic for 1 minute. Add marinara sauce and simmer for 5 minutes. Toss with cooked pasta. Top with Parmesan and basil. Season with salt and pepper.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Stir-Fry",
+        "recipe_name": "Quick Stir-Fry",
         "cuisine": "American",
-        "ingredients": ["1 lb chicken breast, sliced", "2 cups mixed vegetables", "2 tbsp soy sauce", "1 tbsp sesame oil", "2 cloves garlic, minced", "1 tsp ginger, grated", "2 tbsp vegetable oil", "Cooked rice for serving"],
-        "instructions": "Heat oil in wok or large pan. Stir-fry chicken for 5 minutes. Add vegetables and cook for 3 minutes. Add garlic, ginger, soy sauce, and sesame oil. Cook for 2 minutes. Serve over rice.",
-        "proteins": ["chicken breast"],
+        "ingredients": [
+          "1 lb chicken breast, sliced",
+          "2 cups mixed vegetables",
+          "2 tbsp soy sauce",
+          "1 tbsp sesame oil",
+          "2 cloves garlic, minced",
+          "1 tsp ginger, grated",
+          "2 tbsp vegetable oil",
+          "Cooked rice for serving"
+        ],
+        "cooking_instructions": "Heat oil in wok or large pan. Stir-fry chicken for 5 minutes. Add vegetables and cook for 3 minutes. Add garlic, ginger, soy sauce, and sesame oil. Cook for 2 minutes. Serve over rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken breast"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Fish Tacos",
+        "recipe_name": "Quick Fish Tacos",
         "cuisine": "American",
-        "ingredients": ["1 lb white fish fillets", "8 small tortillas", "1 cup cabbage, shredded", "1/2 cup sour cream", "1 lime, juiced", "1 tsp cumin", "1 tsp chili powder", "Salt and pepper to taste", "Cilantro for garnish"],
-        "instructions": "Season fish with cumin, chili powder, salt, and pepper. Cook fish for 3-4 minutes per side. Warm tortillas. Mix sour cream with lime juice. Assemble tacos with fish, cabbage, and sour cream mixture. Garnish with cilantro.",
-        "proteins": ["white fish"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb white fish fillets",
+          "8 small tortillas",
+          "1 cup cabbage, shredded",
+          "1/2 cup sour cream",
+          "1 lime, juiced",
+          "1 tsp cumin",
+          "1 tsp chili powder",
+          "Salt and pepper to taste",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Season fish with cumin, chili powder, salt, and pepper. Cook fish for 3-4 minutes per side. Warm tortillas. Mix sour cream with lime juice. Assemble tacos with fish, cabbage, and sour cream mixture. Garnish with cilantro.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 326
       },
       {
-        "title": "Quick Beef Stir-Fry",
+        "recipe_name": "Quick Beef Stir-Fry",
         "cuisine": "American",
-        "ingredients": ["1 lb beef sirloin, sliced", "2 cups broccoli florets", "1 bell pepper, sliced", "2 tbsp soy sauce", "1 tbsp oyster sauce", "2 cloves garlic, minced", "2 tbsp vegetable oil", "Cooked rice for serving"],
-        "instructions": "Heat oil in wok. Stir-fry beef for 4 minutes. Add vegetables and cook for 3 minutes. Add garlic, soy sauce, and oyster sauce. Cook for 2 minutes. Serve over rice.",
-        "proteins": ["beef sirloin"],
+        "ingredients": [
+          "1 lb beef sirloin, sliced",
+          "2 cups broccoli florets",
+          "1 bell pepper, sliced",
+          "2 tbsp soy sauce",
+          "1 tbsp oyster sauce",
+          "2 cloves garlic, minced",
+          "2 tbsp vegetable oil",
+          "Cooked rice for serving"
+        ],
+        "cooking_instructions": "Heat oil in wok. Stir-fry beef for 4 minutes. Add vegetables and cook for 3 minutes. Add garlic, soy sauce, and oyster sauce. Cook for 2 minutes. Serve over rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef sirloin"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Shrimp Scampi",
+        "recipe_name": "Quick Shrimp Scampi",
         "cuisine": "American",
-        "ingredients": ["1 lb shrimp, peeled", "8 oz linguine", "4 tbsp butter", "4 cloves garlic, minced", "1/4 cup white wine", "2 tbsp lemon juice", "1/4 cup parsley, chopped", "Salt and pepper to taste"],
-        "instructions": "Cook pasta according to package directions. Melt butter and sauté garlic for 1 minute. Add shrimp and cook for 3 minutes. Add wine and lemon juice. Simmer for 2 minutes. Toss with pasta and parsley. Season with salt and pepper.",
-        "proteins": ["shrimp"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb shrimp, peeled",
+          "8 oz linguine",
+          "4 tbsp butter",
+          "4 cloves garlic, minced",
+          "1/4 cup white wine",
+          "2 tbsp lemon juice",
+          "1/4 cup parsley, chopped",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook pasta according to package directions. Melt butter and sauté garlic for 1 minute. Add shrimp and cook for 3 minutes. Add wine and lemon juice. Simmer for 2 minutes. Toss with pasta and parsley. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Chicken Quesadillas",
+        "recipe_name": "Quick Chicken Quesadillas",
         "cuisine": "American",
-        "ingredients": ["2 cups cooked chicken, shredded", "4 flour tortillas", "2 cups shredded cheese", "1/2 cup salsa", "1/4 cup sour cream", "2 tbsp butter", "Cilantro for garnish"],
-        "instructions": "Heat butter in pan. Place tortilla, add chicken, cheese, and salsa. Top with second tortilla. Cook for 3-4 minutes per side until golden. Cut into wedges. Serve with sour cream and cilantro.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups cooked chicken, shredded",
+          "4 flour tortillas",
+          "2 cups shredded cheese",
+          "1/2 cup salsa",
+          "1/4 cup sour cream",
+          "2 tbsp butter",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Heat butter in pan. Place tortilla, add chicken, cheese, and salsa. Top with second tortilla. Cook for 3-4 minutes per side until golden. Cut into wedges. Serve with sour cream and cilantro.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Instant Grilled Cheese",
+        "recipe_name": "Instant Grilled Cheese",
         "cuisine": "American",
-        "ingredients": ["4 slices bread", "4 slices American cheese", "2 tbsp butter", "1 tsp garlic powder", "Salt to taste"],
-        "instructions": "Butter bread slices. Place cheese between bread. Heat pan and cook sandwich for 3 minutes per side until golden and cheese melts. Serve hot.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 slices bread",
+          "4 slices American cheese",
+          "2 tbsp butter",
+          "1 tsp garlic powder",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Butter bread slices. Place cheese between bread. Heat pan and cook sandwich for 3 minutes per side until golden and cheese melts. Serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 266
       },
       {
-        "title": "Quick BLT Sandwich",
+        "recipe_name": "Quick BLT Sandwich",
         "cuisine": "American",
-        "ingredients": ["4 slices bread", "8 strips bacon", "2 tomatoes, sliced", "Lettuce leaves", "Mayonnaise", "Salt and pepper"],
-        "instructions": "Cook bacon in pan for 4 minutes per side until crispy. Toast bread. Spread mayonnaise on bread. Layer bacon, tomato, and lettuce. Season with salt and pepper. Serve immediately.",
-        "proteins": ["bacon"],
+        "ingredients": [
+          "4 slices bread",
+          "8 strips bacon",
+          "2 tomatoes, sliced",
+          "Lettuce leaves",
+          "Mayonnaise",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook bacon in pan for 4 minutes per side until crispy. Toast bread. Spread mayonnaise on bread. Layer bacon, tomato, and lettuce. Season with salt and pepper. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "bacon"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "calories_per_serving": 280
       },
       {
-        "title": "Speedy Pancakes",
+        "recipe_name": "Speedy Pancakes",
         "cuisine": "American",
-        "ingredients": ["1 cup flour", "1 tbsp sugar", "1 tsp baking powder", "1/2 tsp salt", "1 egg", "1 cup milk", "2 tbsp butter, melted", "Maple syrup"],
-        "instructions": "Mix dry ingredients. Beat egg with milk and butter. Combine wet and dry ingredients. Heat griddle and cook pancakes for 2 minutes per side. Serve with maple syrup.",
-        "proteins": ["egg"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup flour",
+          "1 tbsp sugar",
+          "1 tsp baking powder",
+          "1/2 tsp salt",
+          "1 egg",
+          "1 cup milk",
+          "2 tbsp butter, melted",
+          "Maple syrup"
+        ],
+        "cooking_instructions": "Mix dry ingredients. Beat egg with milk and butter. Combine wet and dry ingredients. Heat griddle and cook pancakes for 2 minutes per side. Serve with maple syrup.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 304
       },
       {
-        "title": "Quick Beef Tacos",
+        "recipe_name": "Quick Beef Tacos",
         "cuisine": "American",
-        "ingredients": ["1 lb ground beef", "8 taco shells", "1 packet taco seasoning", "1 cup shredded cheese", "1 tomato, diced", "Lettuce, shredded", "Sour cream"],
-        "instructions": "Cook ground beef in pan for 5 minutes. Add taco seasoning and cook for 2 minutes. Heat taco shells. Fill with beef, cheese, tomato, and lettuce. Top with sour cream.",
-        "proteins": ["ground beef"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb ground beef",
+          "8 taco shells",
+          "1 packet taco seasoning",
+          "1 cup shredded cheese",
+          "1 tomato, diced",
+          "Lettuce, shredded",
+          "Sour cream"
+        ],
+        "cooking_instructions": "Cook ground beef in pan for 5 minutes. Add taco seasoning and cook for 2 minutes. Heat taco shells. Fill with beef, cheese, tomato, and lettuce. Top with sour cream.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Instant French Toast",
+        "recipe_name": "Instant French Toast",
         "cuisine": "American",
-        "ingredients": ["4 slices bread", "2 eggs", "1/2 cup milk", "1 tsp vanilla", "1/2 tsp cinnamon", "2 tbsp butter", "Maple syrup"],
-        "instructions": "Beat eggs with milk, vanilla, and cinnamon. Dip bread in mixture. Heat butter in pan and cook bread for 3 minutes per side until golden. Serve with maple syrup.",
-        "proteins": ["egg"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 slices bread",
+          "2 eggs",
+          "1/2 cup milk",
+          "1 tsp vanilla",
+          "1/2 tsp cinnamon",
+          "2 tbsp butter",
+          "Maple syrup"
+        ],
+        "cooking_instructions": "Beat eggs with milk, vanilla, and cinnamon. Dip bread in mixture. Heat butter in pan and cook bread for 3 minutes per side until golden. Serve with maple syrup.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Meatloaf",
+        "recipe_name": "Quick Meatloaf",
         "cuisine": "American",
-        "ingredients": ["1 lb ground beef", "1/2 cup breadcrumbs", "1 egg", "1/4 cup ketchup", "1 tsp Worcestershire sauce", "1 tsp garlic powder", "Salt and pepper"],
-        "instructions": "Mix all ingredients in bowl. Form into loaf. Bake at 375°F for 25 minutes. Brush with ketchup and bake 5 more minutes. Let rest 5 minutes before slicing.",
-        "proteins": ["ground beef"],
+        "ingredients": [
+          "1 lb ground beef",
+          "1/2 cup breadcrumbs",
+          "1 egg",
+          "1/4 cup ketchup",
+          "1 tsp Worcestershire sauce",
+          "1 tsp garlic powder",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Mix all ingredients in bowl. Form into loaf. Bake at 375°F for 25 minutes. Brush with ketchup and bake 5 more minutes. Let rest 5 minutes before slicing.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 35,
-        "difficulty": "medium"
+        "calories_per_serving": 340
       },
       {
-        "title": "Speedy Scrambled Eggs",
+        "recipe_name": "Speedy Scrambled Eggs",
         "cuisine": "American",
-        "ingredients": ["6 eggs", "2 tbsp butter", "1/4 cup milk", "Salt and pepper", "Chives for garnish"],
-        "instructions": "Beat eggs with milk, salt, and pepper. Heat butter in pan. Add eggs and cook, stirring constantly, for 3 minutes until set. Garnish with chives and serve hot.",
-        "proteins": ["egg"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "6 eggs",
+          "2 tbsp butter",
+          "1/4 cup milk",
+          "Salt and pepper",
+          "Chives for garnish"
+        ],
+        "cooking_instructions": "Beat eggs with milk, salt, and pepper. Heat butter in pan. Add eggs and cook, stirring constantly, for 3 minutes until set. Garnish with chives and serve hot.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 260
       },
       {
-        "title": "Quick Chicken Noodle Soup",
+        "recipe_name": "Quick Chicken Noodle Soup",
         "cuisine": "American",
-        "ingredients": ["2 cups cooked chicken, diced", "4 cups chicken broth", "1 cup egg noodles", "1 carrot, diced", "1 celery stalk, diced", "1 tsp thyme", "Salt and pepper"],
-        "instructions": "Bring broth to boil. Add noodles and cook for 8 minutes. Add chicken, carrot, and celery. Cook for 5 minutes. Season with thyme, salt, and pepper. Serve hot.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "2 cups cooked chicken, diced",
+          "4 cups chicken broth",
+          "1 cup egg noodles",
+          "1 carrot, diced",
+          "1 celery stalk, diced",
+          "1 tsp thyme",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Bring broth to boil. Add noodles and cook for 8 minutes. Add chicken, carrot, and celery. Cook for 5 minutes. Season with thyme, salt, and pepper. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 300
       },
       {
-        "title": "Instant Hash Browns",
+        "recipe_name": "Instant Hash Browns",
         "cuisine": "American",
-        "ingredients": ["2 cups shredded potatoes", "2 tbsp butter", "1/2 tsp salt", "1/4 tsp black pepper", "1/4 tsp paprika"],
-        "instructions": "Heat butter in pan. Add potatoes and press down. Cook for 5 minutes without stirring. Flip and cook for 5 more minutes until golden. Season with salt, pepper, and paprika.",
-        "proteins": ["potatoes"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups shredded potatoes",
+          "2 tbsp butter",
+          "1/2 tsp salt",
+          "1/4 tsp black pepper",
+          "1/4 tsp paprika"
+        ],
+        "cooking_instructions": "Heat butter in pan. Add potatoes and press down. Cook for 5 minutes without stirring. Flip and cook for 5 more minutes until golden. Season with salt, pepper, and paprika.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "potatoes"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 274
       },
       {
-        "title": "Quick BBQ Chicken",
+        "recipe_name": "Quick BBQ Chicken",
         "cuisine": "American",
-        "ingredients": ["4 chicken breasts", "1/2 cup BBQ sauce", "1 tbsp olive oil", "1 tsp garlic powder", "Salt and pepper"],
-        "instructions": "Season chicken with garlic powder, salt, and pepper. Heat oil in pan and cook chicken for 6 minutes per side. Brush with BBQ sauce and cook for 2 more minutes. Serve hot.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "4 chicken breasts",
+          "1/2 cup BBQ sauce",
+          "1 tbsp olive oil",
+          "1 tsp garlic powder",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season chicken with garlic powder, salt, and pepper. Heat oil in pan and cook chicken for 6 minutes per side. Brush with BBQ sauce and cook for 2 more minutes. Serve hot.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 16,
-        "difficulty": "easy"
+        "calories_per_serving": 282
       },
       {
-        "title": "Speedy Corn on the Cob",
+        "recipe_name": "Speedy Corn on the Cob",
         "cuisine": "American",
-        "ingredients": ["4 ears corn", "2 tbsp butter", "Salt and pepper", "Paprika"],
-        "instructions": "Boil corn in water for 8 minutes. Drain and brush with butter. Season with salt, pepper, and paprika. Serve immediately.",
-        "proteins": ["corn"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 ears corn",
+          "2 tbsp butter",
+          "Salt and pepper",
+          "Paprika"
+        ],
+        "cooking_instructions": "Boil corn in water for 8 minutes. Drain and brush with butter. Season with salt, pepper, and paprika. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "corn"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 260
       },
       {
-        "title": "Quick Apple Pie",
+        "recipe_name": "Quick Apple Pie",
         "cuisine": "American",
-        "ingredients": ["2 pie crusts", "4 apples, sliced", "1/2 cup sugar", "1 tsp cinnamon", "2 tbsp butter", "1 egg, beaten"],
-        "instructions": "Mix apples with sugar and cinnamon. Place in pie crust. Dot with butter. Cover with second crust and seal edges. Brush with egg. Bake at 425°F for 15 minutes, then 350°F for 25 minutes.",
-        "proteins": ["egg"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "2 pie crusts",
+          "4 apples, sliced",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "2 tbsp butter",
+          "1 egg, beaten"
+        ],
+        "cooking_instructions": "Mix apples with sugar and cinnamon. Place in pie crust. Dot with butter. Cover with second crust and seal edges. Brush with egg. Bake at 425°F for 15 minutes, then 350°F for 25 minutes.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 350
       },
       {
-        "title": "Instant Chocolate Chip Cookies",
+        "recipe_name": "Instant Chocolate Chip Cookies",
         "cuisine": "American",
-        "ingredients": ["1 cup flour", "1/2 cup butter, softened", "1/2 cup brown sugar", "1/4 cup white sugar", "1 egg", "1 tsp vanilla", "1/2 tsp baking soda", "1 cup chocolate chips"],
-        "instructions": "Cream butter and sugars. Beat in egg and vanilla. Mix in flour and baking soda. Fold in chocolate chips. Drop onto baking sheet. Bake at 375°F for 10 minutes. Cool on wire rack.",
-        "proteins": ["egg"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup flour",
+          "1/2 cup butter, softened",
+          "1/2 cup brown sugar",
+          "1/4 cup white sugar",
+          "1 egg",
+          "1 tsp vanilla",
+          "1/2 tsp baking soda",
+          "1 cup chocolate chips"
+        ],
+        "cooking_instructions": "Cream butter and sugars. Beat in egg and vanilla. Mix in flour and baking soda. Fold in chocolate chips. Drop onto baking sheet. Bake at 375°F for 10 minutes. Cool on wire rack.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Caesar Salad",
+        "recipe_name": "Quick Caesar Salad",
         "cuisine": "American",
-        "ingredients": ["1 head romaine lettuce", "1/2 cup Caesar dressing", "1/4 cup Parmesan cheese", "1/2 cup croutons", "Black pepper"],
-        "instructions": "Chop lettuce and place in bowl. Add dressing and toss. Top with Parmesan cheese and croutons. Season with black pepper. Serve immediately.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 head romaine lettuce",
+          "1/2 cup Caesar dressing",
+          "1/4 cup Parmesan cheese",
+          "1/2 cup croutons",
+          "Black pepper"
+        ],
+        "cooking_instructions": "Chop lettuce and place in bowl. Add dressing and toss. Top with Parmesan cheese and croutons. Season with black pepper. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 260
       },
       {
-        "title": "Speedy Beef Stew",
+        "recipe_name": "Speedy Beef Stew",
         "cuisine": "American",
-        "ingredients": ["1 lb beef stew meat", "2 cups beef broth", "1 cup potatoes, diced", "1 cup carrots, diced", "1 onion, diced", "1 tsp thyme", "Salt and pepper"],
-        "instructions": "Brown beef in pot for 5 minutes. Add broth and bring to boil. Add vegetables and thyme. Simmer for 20 minutes until tender. Season with salt and pepper. Serve hot.",
-        "proteins": ["beef"],
+        "ingredients": [
+          "1 lb beef stew meat",
+          "2 cups beef broth",
+          "1 cup potatoes, diced",
+          "1 cup carrots, diced",
+          "1 onion, diced",
+          "1 tsp thyme",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Brown beef in pot for 5 minutes. Add broth and bring to boil. Add vegetables and thyme. Simmer for 20 minutes until tender. Season with salt and pepper. Serve hot.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Fish and Chips",
+        "recipe_name": "Quick Fish and Chips",
         "cuisine": "American",
-        "ingredients": ["4 fish fillets", "1 cup flour", "1 egg", "1 cup breadcrumbs", "Oil for frying", "4 potatoes, cut into fries", "Salt and pepper"],
-        "instructions": "Dredge fish in flour, dip in egg, then coat with breadcrumbs. Heat oil and fry fish for 4 minutes per side. Fry potatoes for 8 minutes until golden. Season with salt and pepper.",
-        "proteins": ["fish"],
+        "ingredients": [
+          "4 fish fillets",
+          "1 cup flour",
+          "1 egg",
+          "1 cup breadcrumbs",
+          "Oil for frying",
+          "4 potatoes, cut into fries",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Dredge fish in flour, dip in egg, then coat with breadcrumbs. Heat oil and fry fish for 4 minutes per side. Fry potatoes for 8 minutes until golden. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 20,
-        "difficulty": "medium"
+        "calories_per_serving": 310
       },
       {
-        "title": "Instant Mac and Cheese",
+        "recipe_name": "Instant Mac and Cheese",
         "cuisine": "American",
-        "ingredients": ["2 cups elbow macaroni", "2 cups milk", "2 cups shredded cheddar cheese", "2 tbsp butter", "1/4 cup flour", "Salt and pepper"],
-        "instructions": "Cook macaroni according to package. Make roux with butter and flour. Add milk and cook until thickened. Add cheese and stir until melted. Mix with macaroni. Season with salt and pepper.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups elbow macaroni",
+          "2 cups milk",
+          "2 cups shredded cheddar cheese",
+          "2 tbsp butter",
+          "1/4 cup flour",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook macaroni according to package. Make roux with butter and flour. Add milk and cook until thickened. Add cheese and stir until melted. Mix with macaroni. Season with salt and pepper.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Pulled Pork",
+        "recipe_name": "Quick Pulled Pork",
         "cuisine": "American",
-        "ingredients": ["2 lbs pork shoulder", "1 cup BBQ sauce", "1/2 cup apple cider vinegar", "1 tbsp brown sugar", "1 tsp garlic powder", "Salt and pepper"],
-        "instructions": "Season pork with garlic powder, salt, and pepper. Place in slow cooker with BBQ sauce and vinegar. Cook on high for 4 hours. Shred pork and mix with sauce. Serve on buns.",
-        "proteins": ["pork"],
+        "ingredients": [
+          "2 lbs pork shoulder",
+          "1 cup BBQ sauce",
+          "1/2 cup apple cider vinegar",
+          "1 tbsp brown sugar",
+          "1 tsp garlic powder",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season pork with garlic powder, salt, and pepper. Place in slow cooker with BBQ sauce and vinegar. Cook on high for 4 hours. Shred pork and mix with sauce. Serve on buns.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 240,
-        "difficulty": "medium"
+        "calories_per_serving": 740
       },
       {
         "recipe_name": "American BBQ Ribs",
@@ -572,7 +1514,8 @@
           "Basting brush"
         ],
         "cooking_instructions": "Preheat grill to 250°F (120°C). Mix all dry ingredients for rub. Rub ribs with mixture. Wrap in foil. Cook 1.5 hours. Mix BBQ sauce with vinegar and Worcestershire. Unwrap ribs. Brush with sauce. Cook 30 minutes, basting every 10 minutes. Serve hot.",
-        "chef_tips": "The ribs should be tender and falling off the bone. The sauce should be thick and sticky. Don't overcook. Let them rest before serving."
+        "chef_tips": "The ribs should be tender and falling off the bone. The sauce should be thick and sticky. Don't overcook. Let them rest before serving.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "American Mac and Cheese",
@@ -604,7 +1547,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Cook pasta according to package directions. Drain and set aside. Melt butter in saucepan. Add flour, cook 2 minutes. Add milk gradually, whisk until smooth. Add cheeses, mustard, and cayenne. Cook until melted. Add pasta. Season with salt and pepper. Top with breadcrumbs. Broil until golden. Serve hot.",
-        "chef_tips": "The cheese sauce should be smooth and creamy. Don't overcook the pasta. The top should be golden and crispy. Serve immediately while hot."
+        "chef_tips": "The cheese sauce should be smooth and creamy. Don't overcook the pasta. The top should be golden and crispy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "American Buffalo Wings",
@@ -633,7 +1577,8 @@
           "Tongs"
         ],
         "cooking_instructions": "Season wings with salt. Bake at 425°F (220°C) for 25 minutes until crispy. Mix hot sauce, butter, vinegar, garlic powder, and cayenne. Toss wings with sauce. Serve hot with blue cheese dressing.",
-        "chef_tips": "The wings should be crispy and golden. The sauce should be spicy and tangy. Don't overcook. Serve immediately while hot."
+        "chef_tips": "The wings should be crispy and golden. The sauce should be spicy and tangy. Don't overcook. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "American Apple Pie",
@@ -666,7 +1611,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make pastry: mix flour, sugar, and salt. Cut in butter until crumbly. Add water gradually until dough forms. Chill 30 minutes. Mix apples with sugar, cinnamon, nutmeg, and flour. Roll out pastry. Line pie pan. Add filling. Cover with top crust. Seal edges. Brush with egg. Bake at 425°F (220°C) for 15 minutes, then 350°F (175°C) for 35 minutes. Cool before serving.",
-        "chef_tips": "The pastry should be flaky and golden. Don't overfill the pie. The apples should be tender but not mushy. Let it cool before slicing."
+        "chef_tips": "The pastry should be flaky and golden. Don't overfill the pie. The apples should be tender but not mushy. Let it cool before slicing.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "American Pancakes",
@@ -696,7 +1642,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Mix dry ingredients. Beat egg with milk and butter. Add to dry ingredients. Mix until just combined. Heat skillet over medium heat. Pour 1/4 cup batter per pancake. Cook until bubbles form. Flip and cook until golden. Serve hot with maple syrup.",
-        "chef_tips": "Don't overmix the batter. The pancakes should be golden and fluffy. Cook over medium heat. Serve immediately while hot."
+        "chef_tips": "Don't overmix the batter. The pancakes should be golden and fluffy. Cook over medium heat. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Rainbow Veggie Wraps",
@@ -720,7 +1667,11 @@
           "1/4 cup shredded cheese (30g)",
           "Salt and pepper to taste"
         ],
-        "utensils_required": ["cutting board", "knife", "lunchbox"],
+        "utensils_required": [
+          "cutting board",
+          "knife",
+          "lunchbox"
+        ],
         "cooking_instructions": "Spread hummus on tortillas. Layer vegetables in colorful rows. Add cheese and drizzle with ranch. Roll tightly and cut into pinwheels. Secure with toothpicks if needed.",
         "chef_tips": "Colorful wraps are fun for kids. Use fresh, crisp vegetables. Cut into bite-sized pieces for easy eating.",
         "lunchbox_presentation": "Arrange pinwheels in bento box. Add cherry tomatoes on the side. Use colorful silicone dividers."
@@ -746,7 +1697,12 @@
           "1 tbsp breadcrumbs (8g)",
           "1 tsp olive oil (5ml)"
         ],
-        "utensils_required": ["saucepan", "muffin tin", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "saucepan",
+          "muffin tin",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Cook macaroni according to package directions. Melt butter, add flour and cook for 1 minute. Add milk and whisk until smooth. Add cheese and stir until melted. Mix with macaroni. Spoon into greased muffin cups. Top with breadcrumbs and oil. Bake at 350°F for 15 minutes.",
         "chef_tips": "Kids love individual portions. Use mild cheese. Add vegetables for extra nutrition.",
         "lunchbox_presentation": "Arrange mini cups in bento box. Add steamed broccoli on the side. Decorate with cherry tomatoes."
@@ -768,7 +1724,11 @@
           "1/2 tsp vanilla extract",
           "Wooden skewers"
         ],
-        "utensils_required": ["skewers", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "skewers",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Cut fruits into bite-sized pieces. Thread onto skewers in colorful patterns. Mix yogurt with honey and vanilla. Serve kabobs with yogurt dip.",
         "chef_tips": "Colorful fruit kabobs are fun and healthy. Use seasonal fruits. Easy to eat and handle.",
         "lunchbox_presentation": "Arrange kabobs in bento box. Add yogurt dip in small container. Decorate with mint leaves."
@@ -796,7 +1756,11 @@
           "1/4 cup chopped bell peppers (30g)",
           "1 tbsp chopped basil"
         ],
-        "utensils_required": ["muffin tin", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "muffin tin",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix dry ingredients. Beat egg with milk and oil. Add to dry ingredients. Spoon into greased muffin cups. Top with sauce, cheese, and vegetables. Bake at 375°F for 15-18 minutes.",
         "chef_tips": "Mini pizzas are perfect for kids. Use mild cheese and vegetables. Let cool before packing.",
         "lunchbox_presentation": "Arrange mini muffins in bento box. Add marinara sauce in small container. Decorate with fresh basil."
@@ -822,7 +1786,11 @@
           "2 tbsp olive oil (30ml)",
           "1/4 cup ketchup (60ml)"
         ],
-        "utensils_required": ["mixing bowl", "frying pan", "lunchbox"],
+        "utensils_required": [
+          "mixing bowl",
+          "frying pan",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix breadcrumbs with spices. Dredge chicken in flour, then egg, then breadcrumbs. Heat oil in pan and cook until golden brown. Drain on paper towel. Serve with ketchup.",
         "chef_tips": "Make small bite-sized pieces. Use mild spices. Cook until golden and crispy.",
         "lunchbox_presentation": "Arrange nuggets in bento box. Add ketchup in small container. Decorate with cherry tomatoes."
@@ -846,7 +1814,11 @@
           "1 tbsp olive oil (15ml)",
           "1/4 cup salsa (60ml)"
         ],
-        "utensils_required": ["frying pan", "spatula", "lunchbox"],
+        "utensils_required": [
+          "frying pan",
+          "spatula",
+          "lunchbox"
+        ],
         "cooking_instructions": "Place cheese and vegetables on one tortilla. Top with second tortilla. Heat oil in pan and cook until golden. Flip and cook other side. Cut into triangles. Serve with salsa.",
         "chef_tips": "Kids love triangle shapes. Use mild cheese and vegetables. Cook until crispy.",
         "lunchbox_presentation": "Arrange triangles in bento box. Add salsa in small container. Decorate with cilantro leaves."
@@ -868,7 +1840,10 @@
           "1 tbsp cream cheese (15g)",
           "1 tsp honey (7g)"
         ],
-        "utensils_required": ["knife", "lunchbox"],
+        "utensils_required": [
+          "knife",
+          "lunchbox"
+        ],
         "cooking_instructions": "Cut celery into 3-inch sticks. Fill groove with peanut butter. Top with raisins. Mix cream cheese with honey for dip. Serve immediately.",
         "chef_tips": "Classic kids snack. Use natural peanut butter. Make sure celery is fresh and crisp.",
         "lunchbox_presentation": "Arrange celery sticks in bento box. Add cream cheese dip in small container. Decorate with extra raisins."
@@ -892,7 +1867,11 @@
           "1 tbsp maple syrup (15ml)",
           "1 tbsp whipped cream (15ml)"
         ],
-        "utensils_required": ["mixing bowl", "frying pan", "lunchbox"],
+        "utensils_required": [
+          "mixing bowl",
+          "frying pan",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix pancake mix with milk, egg, and butter. Cook small pancakes in pan. Stack with berries between layers. Top with syrup and whipped cream.",
         "chef_tips": "Make small pancakes for easy eating. Use fresh berries. Stack for fun presentation.",
         "lunchbox_presentation": "Arrange mini stacks in bento box. Add extra berries on the side. Decorate with mint leaves."
@@ -914,7 +1893,11 @@
           "1/4 cup grapes (40g)",
           "1/4 cup cherry tomatoes (40g)"
         ],
-        "utensils_required": ["cutting board", "knife", "lunchbox"],
+        "utensils_required": [
+          "cutting board",
+          "knife",
+          "lunchbox"
+        ],
         "cooking_instructions": "Cut cheese into small cubes. Arrange crackers with cheese cubes. Add grapes and tomatoes. Serve immediately.",
         "chef_tips": "Simple and healthy snack. Use mild cheese. Cut everything into bite-sized pieces.",
         "lunchbox_presentation": "Arrange crackers and cheese in bento box. Add fruits in separate compartments. Decorate with edible flowers."

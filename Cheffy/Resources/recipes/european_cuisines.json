@@ -2,408 +2,1125 @@
   "cuisines": {
     "French": [
       {
-        "title": "Coq au Vin",
+        "recipe_name": "Coq au Vin",
         "cuisine": "French",
-        "ingredients": ["1 whole chicken, cut into pieces", "1 bottle red wine", "4 slices bacon, diced", "1 large onion, chopped", "2 carrots, chopped", "2 celery stalks, chopped", "4 cloves garlic, minced", "1 lb mushrooms, sliced", "2 tbsp tomato paste", "2 cups chicken stock", "1/4 cup brandy", "2 tbsp butter", "2 tbsp all-purpose flour", "Fresh thyme", "Salt and pepper to taste"],
-        "instructions": "Marinate chicken in wine for 2 hours. Cook bacon until crispy. Brown chicken pieces. Add vegetables and cook until soft. Add wine, stock, and seasonings. Simmer for 1 hour. Make roux with butter and flour. Add to sauce and simmer until thickened. Serve hot.",
-        "proteins": ["chicken", "bacon"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 120,
-        "difficulty": "hard"
+        "ingredients": [
+          "1 whole chicken, cut into pieces",
+          "1 bottle red wine",
+          "4 slices bacon, diced",
+          "1 large onion, chopped",
+          "2 carrots, chopped",
+          "2 celery stalks, chopped",
+          "4 cloves garlic, minced",
+          "1 lb mushrooms, sliced",
+          "2 tbsp tomato paste",
+          "2 cups chicken stock",
+          "1/4 cup brandy",
+          "2 tbsp butter",
+          "2 tbsp all-purpose flour",
+          "Fresh thyme",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Marinate chicken in wine for 2 hours. Cook bacon until crispy. Brown chicken pieces. Add vegetables and cook until soft. Add wine, stock, and seasonings. Simmer for 1 hour. Make roux with butter and flour. Add to sauce and simmer until thickened. Serve hot.",
+        "cooking_time_category": "Under 2 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "bacon"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 590
       },
       {
-        "title": "Bouillabaisse",
+        "recipe_name": "Bouillabaisse",
         "cuisine": "French",
-        "ingredients": ["2 lbs mixed fish fillets", "1 lb mussels", "1 lb clams", "1 lb shrimp", "2 large onions, chopped", "4 cloves garlic, minced", "2 fennel bulbs, sliced", "2 tomatoes, chopped", "1 orange peel", "1/4 cup olive oil", "2 cups fish stock", "1 cup white wine", "1 tsp saffron", "1 tsp fennel seeds", "Salt and pepper to taste", "Fresh parsley for garnish"],
-        "instructions": "Heat oil and cook onions, garlic, and fennel. Add tomatoes, orange peel, and seasonings. Add stock and wine. Simmer for 30 minutes. Add fish and shellfish. Cook until done. Garnish with parsley and serve with rouille.",
-        "proteins": ["fish", "mussels", "clams", "shrimp"],
+        "ingredients": [
+          "2 lbs mixed fish fillets",
+          "1 lb mussels",
+          "1 lb clams",
+          "1 lb shrimp",
+          "2 large onions, chopped",
+          "4 cloves garlic, minced",
+          "2 fennel bulbs, sliced",
+          "2 tomatoes, chopped",
+          "1 orange peel",
+          "1/4 cup olive oil",
+          "2 cups fish stock",
+          "1 cup white wine",
+          "1 tsp saffron",
+          "1 tsp fennel seeds",
+          "Salt and pepper to taste",
+          "Fresh parsley for garnish"
+        ],
+        "cooking_instructions": "Heat oil and cook onions, garlic, and fennel. Add tomatoes, orange peel, and seasonings. Add stock and wine. Simmer for 30 minutes. Add fish and shellfish. Cook until done. Garnish with parsley and serve with rouille.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "fish",
+          "mussels",
+          "clams",
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "calories_per_serving": 480
       },
       {
-        "title": "Ratatouille Niçoise",
+        "recipe_name": "Ratatouille Niçoise",
         "cuisine": "French",
-        "ingredients": ["2 large eggplants, diced", "2 large zucchinis, diced", "2 large bell peppers, diced", "4 large tomatoes, chopped", "2 large onions, chopped", "4 cloves garlic, minced", "1/4 cup olive oil", "2 tbsp fresh basil", "1 tbsp fresh thyme", "1 tsp salt", "1/2 tsp black pepper", "1 tsp sugar"],
-        "instructions": "Sauté each vegetable separately in olive oil. Combine all vegetables in large pot. Add garlic, herbs, and seasonings. Simmer for 45 minutes until vegetables are tender. Serve hot or cold.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "ingredients": [
+          "2 large eggplants, diced",
+          "2 large zucchinis, diced",
+          "2 large bell peppers, diced",
+          "4 large tomatoes, chopped",
+          "2 large onions, chopped",
+          "4 cloves garlic, minced",
+          "1/4 cup olive oil",
+          "2 tbsp fresh basil",
+          "1 tbsp fresh thyme",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1 tsp sugar"
+        ],
+        "cooking_instructions": "Sauté each vegetable separately in olive oil. Combine all vegetables in large pot. Add garlic, herbs, and seasonings. Simmer for 45 minutes until vegetables are tender. Serve hot or cold.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 440
       },
       {
-        "title": "Beef Bourguignon",
+        "recipe_name": "Beef Bourguignon",
         "cuisine": "French",
-        "ingredients": ["3 lbs beef chuck, cut into cubes", "1 bottle red wine", "4 slices bacon, diced", "2 large onions, chopped", "2 carrots, chopped", "4 cloves garlic, minced", "1 lb mushrooms, sliced", "2 tbsp tomato paste", "2 cups beef stock", "1/4 cup brandy", "2 tbsp butter", "2 tbsp all-purpose flour", "Fresh thyme", "Salt and pepper to taste"],
-        "instructions": "Marinate beef in wine for 2 hours. Cook bacon until crispy. Brown beef pieces. Add vegetables and cook until soft. Add wine, stock, and seasonings. Simmer for 2 hours. Make roux with butter and flour. Add to sauce and simmer until thickened. Serve hot.",
-        "proteins": ["beef", "bacon"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 180,
-        "difficulty": "hard"
+        "ingredients": [
+          "3 lbs beef chuck, cut into cubes",
+          "1 bottle red wine",
+          "4 slices bacon, diced",
+          "2 large onions, chopped",
+          "2 carrots, chopped",
+          "4 cloves garlic, minced",
+          "1 lb mushrooms, sliced",
+          "2 tbsp tomato paste",
+          "2 cups beef stock",
+          "1/4 cup brandy",
+          "2 tbsp butter",
+          "2 tbsp all-purpose flour",
+          "Fresh thyme",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Marinate beef in wine for 2 hours. Cook bacon until crispy. Brown beef pieces. Add vegetables and cook until soft. Add wine, stock, and seasonings. Simmer for 2 hours. Make roux with butter and flour. Add to sauce and simmer until thickened. Serve hot.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef",
+          "bacon"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 700
       },
       {
-        "title": "Quiche Lorraine",
+        "recipe_name": "Quiche Lorraine",
         "cuisine": "French",
-        "ingredients": ["1 pie crust", "6 slices bacon, diced", "1 large onion, chopped", "4 eggs", "1 1/2 cups heavy cream", "1/2 cup milk", "1 cup grated Gruyère cheese", "1/4 tsp nutmeg", "Salt and pepper to taste"],
-        "instructions": "Prebake pie crust. Cook bacon until crispy. Sauté onion until soft. Beat eggs with cream, milk, and seasonings. Add bacon, onion, and cheese. Pour into crust. Bake at 375°F for 35-40 minutes until set. Let cool before slicing.",
-        "proteins": ["bacon", "eggs", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 pie crust",
+          "6 slices bacon, diced",
+          "1 large onion, chopped",
+          "4 eggs",
+          "1 1/2 cups heavy cream",
+          "1/2 cup milk",
+          "1 cup grated Gruyère cheese",
+          "1/4 tsp nutmeg",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Prebake pie crust. Cook bacon until crispy. Sauté onion until soft. Beat eggs with cream, milk, and seasonings. Add bacon, onion, and cheese. Pour into crust. Bake at 375°F for 35-40 minutes until set. Let cool before slicing.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "bacon",
+          "eggs",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 410
       }
     ],
     "Italian": [
       {
-        "title": "Osso Buco alla Milanese",
+        "recipe_name": "Osso Buco alla Milanese",
         "cuisine": "Italian",
-        "ingredients": ["4 veal shanks", "1 large onion, chopped", "2 carrots, chopped", "2 celery stalks, chopped", "4 cloves garlic, minced", "1 cup white wine", "2 cups beef stock", "1 can diced tomatoes", "2 tbsp tomato paste", "1/4 cup olive oil", "2 tbsp butter", "Fresh rosemary", "Fresh thyme", "Salt and pepper to taste", "Gremolata for garnish"],
-        "instructions": "Season veal shanks with salt and pepper. Brown in oil and butter. Add vegetables and cook until soft. Add wine, stock, tomatoes, and seasonings. Simmer for 2 hours until tender. Serve with risotto and gremolata.",
-        "proteins": ["veal"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 150,
-        "difficulty": "hard"
+        "ingredients": [
+          "4 veal shanks",
+          "1 large onion, chopped",
+          "2 carrots, chopped",
+          "2 celery stalks, chopped",
+          "4 cloves garlic, minced",
+          "1 cup white wine",
+          "2 cups beef stock",
+          "1 can diced tomatoes",
+          "2 tbsp tomato paste",
+          "1/4 cup olive oil",
+          "2 tbsp butter",
+          "Fresh rosemary",
+          "Fresh thyme",
+          "Salt and pepper to taste",
+          "Gremolata for garnish"
+        ],
+        "cooking_instructions": "Season veal shanks with salt and pepper. Brown in oil and butter. Add vegetables and cook until soft. Add wine, stock, tomatoes, and seasonings. Simmer for 2 hours until tender. Serve with risotto and gremolata.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "veal"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 650
       },
       {
-        "title": "Risotto ai Porcini",
+        "recipe_name": "Risotto ai Porcini",
         "cuisine": "Italian",
-        "ingredients": ["2 cups Arborio rice", "1 oz dried porcini mushrooms", "1 large onion, chopped", "4 cloves garlic, minced", "1/2 cup white wine", "6 cups hot chicken stock", "1/2 cup grated Parmesan cheese", "2 tbsp butter", "1/4 cup olive oil", "Fresh parsley", "Salt and pepper to taste"],
-        "instructions": "Soak mushrooms in hot water. Sauté onion and garlic in oil. Add rice and cook for 2 minutes. Add wine and cook until absorbed. Add stock gradually, stirring constantly. Add mushrooms and cook until rice is creamy. Stir in cheese and butter. Garnish with parsley.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "hard"
+        "ingredients": [
+          "2 cups Arborio rice",
+          "1 oz dried porcini mushrooms",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1/2 cup white wine",
+          "6 cups hot chicken stock",
+          "1/2 cup grated Parmesan cheese",
+          "2 tbsp butter",
+          "1/4 cup olive oil",
+          "Fresh parsley",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Soak mushrooms in hot water. Sauté onion and garlic in oil. Add rice and cook for 2 minutes. Add wine and cook until absorbed. Add stock gradually, stirring constantly. Add mushrooms and cook until rice is creamy. Stir in cheese and butter. Garnish with parsley.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 400
       },
       {
-        "title": "Saltimbocca alla Romana",
+        "recipe_name": "Saltimbocca alla Romana",
         "cuisine": "Italian",
-        "ingredients": ["8 veal cutlets", "8 slices prosciutto", "8 fresh sage leaves", "1/2 cup all-purpose flour", "1/4 cup olive oil", "1/2 cup white wine", "2 tbsp butter", "1/4 cup chicken stock", "Salt and pepper to taste"],
-        "instructions": "Pound veal cutlets thin. Top each with prosciutto and sage leaf. Secure with toothpicks. Dredge in flour. Cook in oil for 2 minutes per side. Add wine and stock. Simmer for 5 minutes. Remove toothpicks and serve hot.",
-        "proteins": ["veal", "prosciutto"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "ingredients": [
+          "8 veal cutlets",
+          "8 slices prosciutto",
+          "8 fresh sage leaves",
+          "1/2 cup all-purpose flour",
+          "1/4 cup olive oil",
+          "1/2 cup white wine",
+          "2 tbsp butter",
+          "1/4 cup chicken stock",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Pound veal cutlets thin. Top each with prosciutto and sage leaf. Secure with toothpicks. Dredge in flour. Cook in oil for 2 minutes per side. Add wine and stock. Simmer for 5 minutes. Remove toothpicks and serve hot.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "veal",
+          "prosciutto"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Penne all'Arrabbiata",
+        "recipe_name": "Penne all'Arrabbiata",
         "cuisine": "Italian",
-        "ingredients": ["1 lb penne pasta", "1 can crushed tomatoes", "4 cloves garlic, minced", "2-3 red chili peppers, chopped", "1/4 cup olive oil", "1/2 cup white wine", "Fresh parsley", "Salt to taste", "Grated Parmesan cheese for serving"],
-        "instructions": "Cook pasta according to package directions. Heat oil and cook garlic and chilies. Add wine and cook until reduced. Add tomatoes and simmer for 15 minutes. Toss with pasta. Garnish with parsley and serve with Parmesan.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb penne pasta",
+          "1 can crushed tomatoes",
+          "4 cloves garlic, minced",
+          "2-3 red chili peppers, chopped",
+          "1/4 cup olive oil",
+          "1/2 cup white wine",
+          "Fresh parsley",
+          "Salt to taste",
+          "Grated Parmesan cheese for serving"
+        ],
+        "cooking_instructions": "Cook pasta according to package directions. Heat oil and cook garlic and chilies. Add wine and cook until reduced. Add tomatoes and simmer for 15 minutes. Toss with pasta. Garnish with parsley and serve with Parmesan.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Tiramisu",
+        "recipe_name": "Tiramisu",
         "cuisine": "Italian",
-        "ingredients": ["6 egg yolks", "3/4 cup sugar", "1 lb mascarpone cheese", "1 1/4 cups heavy cream", "2 cups strong coffee, cooled", "1/4 cup coffee liqueur", "24 ladyfinger cookies", "1/4 cup cocoa powder"],
-        "instructions": "Beat egg yolks with sugar until thick. Add mascarpone and mix well. Whip cream and fold into mixture. Mix coffee with liqueur. Dip ladyfingers in coffee mixture. Layer in dish with cream mixture. Chill for 4 hours. Dust with cocoa powder before serving.",
-        "proteins": ["eggs", "mascarpone"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "ingredients": [
+          "6 egg yolks",
+          "3/4 cup sugar",
+          "1 lb mascarpone cheese",
+          "1 1/4 cups heavy cream",
+          "2 cups strong coffee, cooled",
+          "1/4 cup coffee liqueur",
+          "24 ladyfinger cookies",
+          "1/4 cup cocoa powder"
+        ],
+        "cooking_instructions": "Beat egg yolks with sugar until thick. Add mascarpone and mix well. Whip cream and fold into mixture. Mix coffee with liqueur. Dip ladyfingers in coffee mixture. Layer in dish with cream mixture. Chill for 4 hours. Dust with cocoa powder before serving.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs",
+          "mascarpone"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       }
     ],
     "Spanish": [
       {
-        "title": "Paella Valenciana",
+        "recipe_name": "Paella Valenciana",
         "cuisine": "Spanish",
-        "ingredients": ["2 cups short-grain rice", "1 lb chicken thighs, cut into pieces", "1 lb rabbit, cut into pieces", "1 lb green beans", "1 lb lima beans", "2 large tomatoes, grated", "1 large onion, chopped", "4 cloves garlic, minced", "1/2 cup olive oil", "6 cups chicken stock", "1 tsp saffron", "1 tsp paprika", "Salt to taste", "Lemon wedges for serving"],
-        "instructions": "Heat oil in large paella pan. Brown chicken and rabbit. Add vegetables and cook until soft. Add rice and cook for 2 minutes. Add stock, saffron, and seasonings. Simmer for 20 minutes without stirring. Let rest for 5 minutes. Serve with lemon wedges.",
-        "proteins": ["chicken", "rabbit"],
+        "ingredients": [
+          "2 cups short-grain rice",
+          "1 lb chicken thighs, cut into pieces",
+          "1 lb rabbit, cut into pieces",
+          "1 lb green beans",
+          "1 lb lima beans",
+          "2 large tomatoes, grated",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1/2 cup olive oil",
+          "6 cups chicken stock",
+          "1 tsp saffron",
+          "1 tsp paprika",
+          "Salt to taste",
+          "Lemon wedges for serving"
+        ],
+        "cooking_instructions": "Heat oil in large paella pan. Brown chicken and rabbit. Add vegetables and cook until soft. Add rice and cook for 2 minutes. Add stock, saffron, and seasonings. Simmer for 20 minutes without stirring. Let rest for 5 minutes. Serve with lemon wedges.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "rabbit"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "calories_per_serving": 460
       },
       {
-        "title": "Gazpacho Andaluz",
+        "recipe_name": "Gazpacho Andaluz",
         "cuisine": "Spanish",
-        "ingredients": ["2 lbs ripe tomatoes", "1 large cucumber", "1 large red bell pepper", "1 small red onion", "4 cloves garlic", "1/4 cup olive oil", "2 tbsp red wine vinegar", "1 tsp salt", "1/2 tsp black pepper", "1/2 tsp cumin", "1 cup water", "Fresh basil for garnish"],
-        "instructions": "Chop all vegetables. Blend with oil, vinegar, and seasonings. Add water gradually until smooth. Chill for 2 hours. Serve cold with basil garnish.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 lbs ripe tomatoes",
+          "1 large cucumber",
+          "1 large red bell pepper",
+          "1 small red onion",
+          "4 cloves garlic",
+          "1/4 cup olive oil",
+          "2 tbsp red wine vinegar",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp cumin",
+          "1 cup water",
+          "Fresh basil for garnish"
+        ],
+        "cooking_instructions": "Chop all vegetables. Blend with oil, vinegar, and seasonings. Add water gradually until smooth. Chill for 2 hours. Serve cold with basil garnish.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "Tortilla Española",
+        "recipe_name": "Tortilla Española",
         "cuisine": "Spanish",
-        "ingredients": ["6 large potatoes, sliced", "1 large onion, sliced", "8 eggs", "1/2 cup olive oil", "Salt to taste"],
-        "instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt. Add potato mixture to eggs. Cook in large skillet until set. Flip and cook other side. Serve warm or cold.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "6 large potatoes, sliced",
+          "1 large onion, sliced",
+          "8 eggs",
+          "1/2 cup olive oil",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Cook potatoes and onion in oil until tender. Beat eggs with salt. Add potato mixture to eggs. Cook in large skillet until set. Flip and cook other side. Serve warm or cold.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Pulpo a la Gallega",
+        "recipe_name": "Pulpo a la Gallega",
         "cuisine": "Spanish",
-        "ingredients": ["2 lbs octopus", "4 large potatoes", "1/4 cup olive oil", "2 tbsp paprika", "1 tsp salt", "Fresh parsley for garnish"],
-        "instructions": "Boil octopus for 45 minutes until tender. Boil potatoes until done. Slice octopus and potatoes. Drizzle with oil and sprinkle with paprika and salt. Garnish with parsley and serve.",
-        "proteins": ["octopus"],
+        "ingredients": [
+          "2 lbs octopus",
+          "4 large potatoes",
+          "1/4 cup olive oil",
+          "2 tbsp paprika",
+          "1 tsp salt",
+          "Fresh parsley for garnish"
+        ],
+        "cooking_instructions": "Boil octopus for 45 minutes until tender. Boil potatoes until done. Slice octopus and potatoes. Drizzle with oil and sprinkle with paprika and salt. Garnish with parsley and serve.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "octopus"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "calories_per_serving": 380
       },
       {
-        "title": "Churros con Chocolate",
+        "recipe_name": "Churros con Chocolate",
         "cuisine": "Spanish",
-        "ingredients": ["1 cup water", "1/2 cup butter", "1/4 tsp salt", "1 cup all-purpose flour", "3 eggs", "Oil for frying", "1/2 cup sugar", "1 tsp cinnamon", "For chocolate: 1 cup heavy cream", "8 oz dark chocolate, chopped", "1 tbsp sugar"],
-        "instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. For chocolate, heat cream and add chocolate and sugar. Stir until smooth. Serve churros with chocolate sauce.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 cup water",
+          "1/2 cup butter",
+          "1/4 tsp salt",
+          "1 cup all-purpose flour",
+          "3 eggs",
+          "Oil for frying",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "For chocolate: 1 cup heavy cream",
+          "8 oz dark chocolate, chopped",
+          "1 tbsp sugar"
+        ],
+        "cooking_instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. For chocolate, heat cream and add chocolate and sugar. Stir until smooth. Serve churros with chocolate sauce.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 370
       },
       {
-        "title": "Quick French Onion Soup",
+        "recipe_name": "Quick French Onion Soup",
         "cuisine": "French",
-        "ingredients": ["2 large onions, sliced", "2 tbsp butter", "4 cups beef broth", "1/4 cup white wine", "1 tsp thyme", "Salt and pepper to taste", "4 slices French bread", "1 cup Gruyère cheese, grated"],
-        "instructions": "Melt butter and cook onions until caramelized. Add broth, wine, and thyme. Simmer for 10 minutes. Season with salt and pepper. Top with bread and cheese. Broil until cheese melts. Serve hot.",
-        "proteins": ["gruyère cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 large onions, sliced",
+          "2 tbsp butter",
+          "4 cups beef broth",
+          "1/4 cup white wine",
+          "1 tsp thyme",
+          "Salt and pepper to taste",
+          "4 slices French bread",
+          "1 cup Gruyère cheese, grated"
+        ],
+        "cooking_instructions": "Melt butter and cook onions until caramelized. Add broth, wine, and thyme. Simmer for 10 minutes. Season with salt and pepper. Top with bread and cheese. Broil until cheese melts. Serve hot.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "gruyère cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Croque Monsieur",
+        "recipe_name": "Quick Croque Monsieur",
         "cuisine": "French",
-        "ingredients": ["4 slices bread", "4 slices ham", "4 slices Gruyère cheese", "2 tbsp butter", "2 tbsp flour", "1 cup milk", "1/4 tsp nutmeg", "Salt and pepper to taste"],
-        "instructions": "Make béchamel sauce with butter, flour, milk, nutmeg, salt, and pepper. Layer ham and cheese between bread slices. Top with béchamel sauce. Broil until golden. Serve hot.",
-        "proteins": ["ham", "gruyère cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 slices bread",
+          "4 slices ham",
+          "4 slices Gruyère cheese",
+          "2 tbsp butter",
+          "2 tbsp flour",
+          "1 cup milk",
+          "1/4 tsp nutmeg",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Make béchamel sauce with butter, flour, milk, nutmeg, salt, and pepper. Layer ham and cheese between bread slices. Top with béchamel sauce. Broil until golden. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ham",
+          "gruyère cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Italian Bruschetta",
+        "recipe_name": "Quick Italian Bruschetta",
         "cuisine": "Italian",
-        "ingredients": ["4 slices ciabatta bread", "2 large tomatoes, diced", "2 cloves garlic, minced", "1/4 cup fresh basil, chopped", "2 tbsp olive oil", "1 tbsp balsamic vinegar", "Salt and pepper to taste"],
-        "instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "ingredients": [
+          "4 slices ciabatta bread",
+          "2 large tomatoes, diced",
+          "2 cloves garlic, minced",
+          "1/4 cup fresh basil, chopped",
+          "2 tbsp olive oil",
+          "1 tbsp balsamic vinegar",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Toast bread slices. Mix tomatoes, garlic, basil, olive oil, and balsamic vinegar. Season with salt and pepper. Top bread with tomato mixture. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Carbonara",
+        "recipe_name": "Quick Carbonara",
         "cuisine": "Italian",
-        "ingredients": ["8 oz spaghetti", "4 eggs", "1/2 cup Parmesan cheese, grated", "4 slices bacon, diced", "2 cloves garlic, minced", "Black pepper to taste", "Salt to taste"],
-        "instructions": "Cook pasta according to package directions. Cook bacon until crispy. Beat eggs with Parmesan and black pepper. Toss hot pasta with bacon and garlic. Remove from heat and add egg mixture. Toss quickly until creamy. Serve immediately.",
-        "proteins": ["eggs", "bacon", "parmesan cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz spaghetti",
+          "4 eggs",
+          "1/2 cup Parmesan cheese, grated",
+          "4 slices bacon, diced",
+          "2 cloves garlic, minced",
+          "Black pepper to taste",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Cook pasta according to package directions. Cook bacon until crispy. Beat eggs with Parmesan and black pepper. Toss hot pasta with bacon and garlic. Remove from heat and add egg mixture. Toss quickly until creamy. Serve immediately.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "eggs",
+          "bacon",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Spanish Tortilla",
+        "recipe_name": "Quick Spanish Tortilla",
         "cuisine": "Spanish",
-        "ingredients": ["4 eggs", "2 potatoes, sliced thin", "1 onion, sliced", "3 tbsp olive oil", "Salt and pepper to taste"],
-        "instructions": "Cook potatoes and onion in olive oil until tender. Beat eggs with salt and pepper. Add potato mixture to eggs. Cook in pan until set. Flip and cook other side. Serve warm or cold.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 eggs",
+          "2 potatoes, sliced thin",
+          "1 onion, sliced",
+          "3 tbsp olive oil",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook potatoes and onion in olive oil until tender. Beat eggs with salt and pepper. Add potato mixture to eggs. Cook in pan until set. Flip and cook other side. Serve warm or cold.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick German Schnitzel",
+        "recipe_name": "Quick German Schnitzel",
         "cuisine": "German",
-        "ingredients": ["4 pork cutlets", "1/2 cup flour", "2 eggs, beaten", "1 cup breadcrumbs", "2 tbsp butter", "2 tbsp oil", "Salt and pepper to taste", "Lemon wedges for serving"],
-        "instructions": "Season cutlets with salt and pepper. Dredge in flour, then egg, then breadcrumbs. Heat butter and oil. Cook cutlets for 3-4 minutes per side until golden. Serve with lemon wedges.",
-        "proteins": ["pork cutlets", "eggs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 pork cutlets",
+          "1/2 cup flour",
+          "2 eggs, beaten",
+          "1 cup breadcrumbs",
+          "2 tbsp butter",
+          "2 tbsp oil",
+          "Salt and pepper to taste",
+          "Lemon wedges for serving"
+        ],
+        "cooking_instructions": "Season cutlets with salt and pepper. Dredge in flour, then egg, then breadcrumbs. Heat butter and oil. Cook cutlets for 3-4 minutes per side until golden. Serve with lemon wedges.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork cutlets",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick British Fish and Chips",
+        "recipe_name": "Quick British Fish and Chips",
         "cuisine": "British",
-        "ingredients": ["4 white fish fillets", "1 cup flour", "1 tsp baking powder", "1 cup beer", "4 large potatoes, cut into fries", "Oil for frying", "Salt and pepper to taste", "Malt vinegar for serving"],
-        "instructions": "Cut potatoes into fries and fry until golden. Mix flour, baking powder, and beer for batter. Season fish with salt and pepper. Dip fish in batter and fry until golden. Serve with fries and malt vinegar.",
-        "proteins": ["white fish"],
+        "ingredients": [
+          "4 white fish fillets",
+          "1 cup flour",
+          "1 tsp baking powder",
+          "1 cup beer",
+          "4 large potatoes, cut into fries",
+          "Oil for frying",
+          "Salt and pepper to taste",
+          "Malt vinegar for serving"
+        ],
+        "cooking_instructions": "Cut potatoes into fries and fry until golden. Mix flour, baking powder, and beer for batter. Season fish with salt and pepper. Dip fish in batter and fry until golden. Serve with fries and malt vinegar.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Irish Stew",
+        "recipe_name": "Quick Irish Stew",
         "cuisine": "Irish",
-        "ingredients": ["1 lb lamb, cubed", "4 potatoes, cubed", "2 carrots, sliced", "1 onion, chopped", "2 cups beef broth", "1 tsp thyme", "Salt and pepper to taste", "Fresh parsley for garnish"],
-        "instructions": "Brown lamb in pot. Add vegetables and cook for 5 minutes. Add broth and thyme. Simmer for 15 minutes until vegetables are tender. Season with salt and pepper. Garnish with parsley.",
-        "proteins": ["lamb"],
+        "ingredients": [
+          "1 lb lamb, cubed",
+          "4 potatoes, cubed",
+          "2 carrots, sliced",
+          "1 onion, chopped",
+          "2 cups beef broth",
+          "1 tsp thyme",
+          "Salt and pepper to taste",
+          "Fresh parsley for garnish"
+        ],
+        "cooking_instructions": "Brown lamb in pot. Add vegetables and cook for 5 minutes. Add broth and thyme. Simmer for 15 minutes until vegetables are tender. Season with salt and pepper. Garnish with parsley.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "lamb"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Swiss Fondue",
+        "recipe_name": "Quick Swiss Fondue",
         "cuisine": "Swiss",
-        "ingredients": ["1 cup Gruyère cheese, grated", "1 cup Emmental cheese, grated", "1 cup white wine", "2 tbsp cornstarch", "1 clove garlic", "1/4 tsp nutmeg", "Bread cubes for dipping"],
-        "instructions": "Rub fondue pot with garlic. Heat wine until simmering. Mix cheeses with cornstarch. Add cheese gradually, stirring until melted. Add nutmeg. Serve with bread cubes for dipping.",
-        "proteins": ["gruyère cheese", "emmental cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup Gruyère cheese, grated",
+          "1 cup Emmental cheese, grated",
+          "1 cup white wine",
+          "2 tbsp cornstarch",
+          "1 clove garlic",
+          "1/4 tsp nutmeg",
+          "Bread cubes for dipping"
+        ],
+        "cooking_instructions": "Rub fondue pot with garlic. Heat wine until simmering. Mix cheeses with cornstarch. Add cheese gradually, stirring until melted. Add nutmeg. Serve with bread cubes for dipping.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "gruyère cheese",
+          "emmental cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Austrian Wiener Schnitzel",
+        "recipe_name": "Quick Austrian Wiener Schnitzel",
         "cuisine": "Austrian",
-        "ingredients": ["4 veal cutlets", "1/2 cup flour", "2 eggs, beaten", "1 cup breadcrumbs", "4 tbsp butter", "Salt and pepper to taste", "Lemon wedges for serving"],
-        "instructions": "Pound cutlets thin. Season with salt and pepper. Dredge in flour, then egg, then breadcrumbs. Heat butter and cook cutlets for 2-3 minutes per side until golden. Serve with lemon wedges.",
-        "proteins": ["veal", "eggs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 veal cutlets",
+          "1/2 cup flour",
+          "2 eggs, beaten",
+          "1 cup breadcrumbs",
+          "4 tbsp butter",
+          "Salt and pepper to taste",
+          "Lemon wedges for serving"
+        ],
+        "cooking_instructions": "Pound cutlets thin. Season with salt and pepper. Dredge in flour, then egg, then breadcrumbs. Heat butter and cook cutlets for 2-3 minutes per side until golden. Serve with lemon wedges.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "veal",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick French Crepes",
+        "recipe_name": "Quick French Crepes",
         "cuisine": "French",
-        "ingredients": ["1 cup flour", "2 eggs", "1 1/2 cups milk", "2 tbsp butter, melted", "1/4 tsp salt", "2 tbsp sugar", "Jam or Nutella for filling"],
-        "instructions": "Mix all ingredients until smooth. Heat pan and pour batter. Cook for 2 minutes per side until golden. Fill with jam or Nutella. Roll and serve hot.",
-        "proteins": ["egg"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup flour",
+          "2 eggs",
+          "1 1/2 cups milk",
+          "2 tbsp butter, melted",
+          "1/4 tsp salt",
+          "2 tbsp sugar",
+          "Jam or Nutella for filling"
+        ],
+        "cooking_instructions": "Mix all ingredients until smooth. Heat pan and pour batter. Cook for 2 minutes per side until golden. Fill with jam or Nutella. Roll and serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Italian Margherita Pizza",
+        "recipe_name": "Quick Italian Margherita Pizza",
         "cuisine": "Italian",
-        "ingredients": ["1 pizza dough", "1/2 cup tomato sauce", "1 cup mozzarella cheese", "Fresh basil leaves", "2 tbsp olive oil", "Salt to taste"],
-        "instructions": "Preheat oven to 450°F. Roll out dough. Spread tomato sauce. Top with mozzarella. Bake for 12 minutes until golden. Top with basil and drizzle with olive oil. Serve hot.",
-        "proteins": ["mozzarella cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 pizza dough",
+          "1/2 cup tomato sauce",
+          "1 cup mozzarella cheese",
+          "Fresh basil leaves",
+          "2 tbsp olive oil",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Preheat oven to 450°F. Roll out dough. Spread tomato sauce. Top with mozzarella. Bake for 12 minutes until golden. Top with basil and drizzle with olive oil. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "mozzarella cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Spanish Gazpacho",
+        "recipe_name": "Quick Spanish Gazpacho",
         "cuisine": "Spanish",
-        "ingredients": ["4 tomatoes", "1 cucumber", "1 bell pepper", "1 onion", "2 cloves garlic", "3 tbsp olive oil", "2 tbsp vinegar", "Salt and pepper"],
-        "instructions": "Chop all vegetables. Blend with oil, vinegar, salt, and pepper until smooth. Chill for 30 minutes. Serve cold with croutons.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 tomatoes",
+          "1 cucumber",
+          "1 bell pepper",
+          "1 onion",
+          "2 cloves garlic",
+          "3 tbsp olive oil",
+          "2 tbsp vinegar",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Chop all vegetables. Blend with oil, vinegar, salt, and pepper until smooth. Chill for 30 minutes. Serve cold with croutons.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick German Bratwurst",
+        "recipe_name": "Quick German Bratwurst",
         "cuisine": "German",
-        "ingredients": ["4 bratwurst sausages", "1 onion, sliced", "1 bell pepper, sliced", "2 tbsp oil", "Mustard for serving", "Sauerkraut for serving"],
-        "instructions": "Heat oil in pan. Cook sausages for 8 minutes, turning occasionally. Add onion and bell pepper. Cook for 5 minutes until soft. Serve with mustard and sauerkraut.",
-        "proteins": ["bratwurst"],
+        "ingredients": [
+          "4 bratwurst sausages",
+          "1 onion, sliced",
+          "1 bell pepper, sliced",
+          "2 tbsp oil",
+          "Mustard for serving",
+          "Sauerkraut for serving"
+        ],
+        "cooking_instructions": "Heat oil in pan. Cook sausages for 8 minutes, turning occasionally. Add onion and bell pepper. Cook for 5 minutes until soft. Serve with mustard and sauerkraut.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "bratwurst"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick British Shepherd's Pie",
+        "recipe_name": "Quick British Shepherd's Pie",
         "cuisine": "British",
-        "ingredients": ["1 lb ground lamb", "2 cups mashed potatoes", "1 onion, diced", "1 carrot, diced", "1 cup peas", "1 cup beef broth", "2 tbsp Worcestershire sauce", "Salt and pepper"],
-        "instructions": "Cook lamb with onion and carrot for 8 minutes. Add peas, broth, and Worcestershire sauce. Simmer for 5 minutes. Top with mashed potatoes. Bake at 400°F for 15 minutes until golden.",
-        "proteins": ["ground lamb"],
+        "ingredients": [
+          "1 lb ground lamb",
+          "2 cups mashed potatoes",
+          "1 onion, diced",
+          "1 carrot, diced",
+          "1 cup peas",
+          "1 cup beef broth",
+          "2 tbsp Worcestershire sauce",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook lamb with onion and carrot for 8 minutes. Add peas, broth, and Worcestershire sauce. Simmer for 5 minutes. Top with mashed potatoes. Bake at 400°F for 15 minutes until golden.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground lamb"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 340
       },
       {
-        "title": "Quick Irish Soda Bread",
+        "recipe_name": "Quick Irish Soda Bread",
         "cuisine": "Irish",
-        "ingredients": ["3 cups flour", "1 tsp baking soda", "1 tsp salt", "1 1/2 cups buttermilk", "2 tbsp butter, melted"],
-        "instructions": "Mix dry ingredients. Add buttermilk and butter. Knead briefly. Shape into round loaf. Bake at 425°F for 30 minutes until golden. Cool on wire rack.",
+        "ingredients": [
+          "3 cups flour",
+          "1 tsp baking soda",
+          "1 tsp salt",
+          "1 1/2 cups buttermilk",
+          "2 tbsp butter, melted"
+        ],
+        "cooking_instructions": "Mix dry ingredients. Add buttermilk and butter. Knead briefly. Shape into round loaf. Bake at 425°F for 30 minutes until golden. Cool on wire rack.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 35,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Swiss Rösti",
+        "recipe_name": "Quick Swiss Rösti",
         "cuisine": "Swiss",
-        "ingredients": ["4 potatoes, grated", "2 tbsp butter", "1 onion, diced", "Salt and pepper", "Fresh herbs for garnish"],
-        "instructions": "Squeeze excess water from potatoes. Heat butter in pan. Add potatoes and onion. Press down and cook for 8 minutes. Flip and cook for 8 more minutes until golden. Season with salt and pepper.",
-        "proteins": ["potatoes"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 potatoes, grated",
+          "2 tbsp butter",
+          "1 onion, diced",
+          "Salt and pepper",
+          "Fresh herbs for garnish"
+        ],
+        "cooking_instructions": "Squeeze excess water from potatoes. Heat butter in pan. Add potatoes and onion. Press down and cook for 8 minutes. Flip and cook for 8 more minutes until golden. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "potatoes"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick French Ratatouille",
+        "recipe_name": "Quick French Ratatouille",
         "cuisine": "French",
-        "ingredients": ["1 eggplant, diced", "1 zucchini, diced", "1 bell pepper, diced", "2 tomatoes, diced", "1 onion, diced", "3 tbsp olive oil", "2 cloves garlic", "Herbs de Provence", "Salt and pepper"],
-        "instructions": "Heat oil in pan. Cook onion and garlic for 3 minutes. Add eggplant, zucchini, and bell pepper. Cook for 8 minutes. Add tomatoes and herbs. Simmer for 5 minutes. Season with salt and pepper.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 eggplant, diced",
+          "1 zucchini, diced",
+          "1 bell pepper, diced",
+          "2 tomatoes, diced",
+          "1 onion, diced",
+          "3 tbsp olive oil",
+          "2 cloves garlic",
+          "Herbs de Provence",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Heat oil in pan. Cook onion and garlic for 3 minutes. Add eggplant, zucchini, and bell pepper. Cook for 8 minutes. Add tomatoes and herbs. Simmer for 5 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Italian Fettuccine Alfredo",
+        "recipe_name": "Quick Italian Fettuccine Alfredo",
         "cuisine": "Italian",
-        "ingredients": ["8 oz fettuccine", "1/2 cup butter", "1 cup heavy cream", "1 cup Parmesan cheese", "2 cloves garlic", "Salt and pepper", "Fresh parsley"],
-        "instructions": "Cook pasta according to package. Melt butter with garlic. Add cream and simmer for 3 minutes. Add cheese and stir until melted. Toss with pasta. Season with salt and pepper. Garnish with parsley.",
-        "proteins": ["parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 oz fettuccine",
+          "1/2 cup butter",
+          "1 cup heavy cream",
+          "1 cup Parmesan cheese",
+          "2 cloves garlic",
+          "Salt and pepper",
+          "Fresh parsley"
+        ],
+        "cooking_instructions": "Cook pasta according to package. Melt butter with garlic. Add cream and simmer for 3 minutes. Add cheese and stir until melted. Toss with pasta. Season with salt and pepper. Garnish with parsley.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Spanish Patatas Bravas",
+        "recipe_name": "Quick Spanish Patatas Bravas",
         "cuisine": "Spanish",
-        "ingredients": ["4 potatoes, cubed", "3 tbsp olive oil", "1 tsp paprika", "1 tsp cayenne", "Salt to taste", "Aioli for serving"],
-        "instructions": "Heat oil in pan. Add potatoes and cook for 12 minutes until golden and crispy. Season with paprika, cayenne, and salt. Serve with aioli sauce.",
-        "proteins": ["potatoes"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 potatoes, cubed",
+          "3 tbsp olive oil",
+          "1 tsp paprika",
+          "1 tsp cayenne",
+          "Salt to taste",
+          "Aioli for serving"
+        ],
+        "cooking_instructions": "Heat oil in pan. Add potatoes and cook for 12 minutes until golden and crispy. Season with paprika, cayenne, and salt. Serve with aioli sauce.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "potatoes"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick German Sauerkraut",
+        "recipe_name": "Quick German Sauerkraut",
         "cuisine": "German",
-        "ingredients": ["2 cups sauerkraut", "1 onion, sliced", "2 tbsp butter", "1 tsp caraway seeds", "1/2 cup white wine", "Salt and pepper"],
-        "instructions": "Melt butter in pan. Cook onion for 3 minutes. Add sauerkraut and caraway seeds. Cook for 5 minutes. Add wine and simmer for 3 minutes. Season with salt and pepper.",
-        "proteins": ["sauerkraut"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups sauerkraut",
+          "1 onion, sliced",
+          "2 tbsp butter",
+          "1 tsp caraway seeds",
+          "1/2 cup white wine",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Melt butter in pan. Cook onion for 3 minutes. Add sauerkraut and caraway seeds. Cook for 5 minutes. Add wine and simmer for 3 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "sauerkraut"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 284
       },
       {
-        "title": "Quick British Bangers and Mash",
+        "recipe_name": "Quick British Bangers and Mash",
         "cuisine": "British",
-        "ingredients": ["4 pork sausages", "4 potatoes, cubed", "2 tbsp butter", "1/4 cup milk", "1 onion, sliced", "2 cups beef gravy", "Salt and pepper"],
-        "instructions": "Cook sausages in pan for 10 minutes. Boil potatoes until tender. Mash with butter and milk. Cook onion until caramelized. Serve sausages over mashed potatoes with gravy and onions.",
-        "proteins": ["pork sausages"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 pork sausages",
+          "4 potatoes, cubed",
+          "2 tbsp butter",
+          "1/4 cup milk",
+          "1 onion, sliced",
+          "2 cups beef gravy",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook sausages in pan for 10 minutes. Boil potatoes until tender. Mash with butter and milk. Cook onion until caramelized. Serve sausages over mashed potatoes with gravy and onions.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork sausages"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Irish Colcannon",
+        "recipe_name": "Quick Irish Colcannon",
         "cuisine": "Irish",
-        "ingredients": ["4 potatoes, cubed", "1 cup cabbage, shredded", "2 tbsp butter", "1/4 cup milk", "2 green onions", "Salt and pepper"],
-        "instructions": "Boil potatoes until tender. Cook cabbage for 5 minutes. Mash potatoes with butter and milk. Mix in cabbage and green onions. Season with salt and pepper. Serve hot.",
-        "proteins": ["potatoes"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 potatoes, cubed",
+          "1 cup cabbage, shredded",
+          "2 tbsp butter",
+          "1/4 cup milk",
+          "2 green onions",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Boil potatoes until tender. Cook cabbage for 5 minutes. Mash potatoes with butter and milk. Mix in cabbage and green onions. Season with salt and pepper. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "potatoes"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Swiss Cheese Fondue",
+        "recipe_name": "Quick Swiss Cheese Fondue",
         "cuisine": "Swiss",
-        "ingredients": ["1 cup Gruyère cheese", "1 cup Emmental cheese", "1 cup white wine", "2 tbsp cornstarch", "1 clove garlic", "Bread cubes for dipping"],
-        "instructions": "Rub pot with garlic. Heat wine until simmering. Mix cheeses with cornstarch. Add cheese gradually, stirring until melted. Serve with bread cubes for dipping.",
-        "proteins": ["gruyère cheese", "emmental cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup Gruyère cheese",
+          "1 cup Emmental cheese",
+          "1 cup white wine",
+          "2 tbsp cornstarch",
+          "1 clove garlic",
+          "Bread cubes for dipping"
+        ],
+        "cooking_instructions": "Rub pot with garlic. Heat wine until simmering. Mix cheeses with cornstarch. Add cheese gradually, stirring until melted. Serve with bread cubes for dipping.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "gruyère cheese",
+          "emmental cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick Austrian Apfelstrudel",
+        "recipe_name": "Quick Austrian Apfelstrudel",
         "cuisine": "Austrian",
-        "ingredients": ["4 apples, sliced", "1/2 cup sugar", "1 tsp cinnamon", "1/4 cup raisins", "6 sheets phyllo dough", "4 tbsp butter, melted", "Powdered sugar"],
-        "instructions": "Mix apples with sugar, cinnamon, and raisins. Layer phyllo sheets with butter. Add apple mixture. Roll and seal. Brush with butter. Bake at 375°F for 25 minutes. Dust with powdered sugar.",
-        "proteins": ["apples"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "ingredients": [
+          "4 apples, sliced",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "1/4 cup raisins",
+          "6 sheets phyllo dough",
+          "4 tbsp butter, melted",
+          "Powdered sugar"
+        ],
+        "cooking_instructions": "Mix apples with sugar, cinnamon, and raisins. Layer phyllo sheets with butter. Add apple mixture. Roll and seal. Brush with butter. Bake at 375°F for 25 minutes. Dust with powdered sugar.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "apples"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 330
       },
       {
         "recipe_name": "French Onion Soup Gratinée",
@@ -445,7 +1162,8 @@
           "Add beef stock, bay leaf, and thyme. Bring to boil, then reduce heat and simmer for 15 minutes. Season with salt and pepper.",
           "Preheat broiler. Toast bread slices until golden. Ladle soup into oven-safe bowls, top with bread and cheeses. Broil for 3-4 minutes until cheese is bubbly and golden."
         ],
-        "chef_tips": "The key to perfect French onion soup is patience - let the onions caramelize slowly for maximum flavor. Use a good quality beef stock and don't skip the wine deglazing step."
+        "chef_tips": "The key to perfect French onion soup is patience - let the onions caramelize slowly for maximum flavor. Use a good quality beef stock and don't skip the wine deglazing step.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Coq au Vin Blanc",
@@ -488,7 +1206,8 @@
           "Add wine and stock, scraping up browned bits. Return chicken and bacon to pot. Add bouquet garni. Simmer for 35 minutes.",
           "In separate skillet, sauté mushrooms in butter for 8 minutes until golden. Add to pot and cook for 5 more minutes. Garnish with parsley."
         ],
-        "chef_tips": "Use a good quality white wine - you should be happy to drink it. The bouquet garni adds essential herbal notes, and don't rush the browning process as it builds the foundation of flavor."
+        "chef_tips": "Use a good quality white wine - you should be happy to drink it. The bouquet garni adds essential herbal notes, and don't rush the browning process as it builds the foundation of flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Ratatouille Provençale",
@@ -527,7 +1246,8 @@
           "Add zucchinis and cook for 5 minutes. Add tomatoes, herbs, and remaining oil. Simmer for 15 minutes until vegetables are tender.",
           "Season with salt and pepper. Garnish with fresh parsley and serve warm or at room temperature."
         ],
-        "chef_tips": "The secret to perfect ratatouille is cooking each vegetable separately first to develop individual flavors, then combining them. Don't overcook - vegetables should retain some texture."
+        "chef_tips": "The secret to perfect ratatouille is cooking each vegetable separately first to develop individual flavors, then combining them. Don't overcook - vegetables should retain some texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Sole Meunière",
@@ -561,7 +1281,8 @@
           "Remove fish to warm plates. Add remaining butter to skillet and cook until nutty brown, about 2 minutes.",
           "Remove from heat and add lemon juice carefully. Spoon sauce over fish and garnish with parsley. Serve immediately with lemon wedges."
         ],
-        "chef_tips": "The key is the brown butter sauce - cook it until it's a beautiful nutty brown color. Be careful when adding lemon juice to hot butter as it will splatter. Serve immediately for best texture."
+        "chef_tips": "The key is the brown butter sauce - cook it until it's a beautiful nutty brown color. Be careful when adding lemon juice to hot butter as it will splatter. Serve immediately for best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Crêpes Suzette",
@@ -600,7 +1321,8 @@
           "Make sauce: melt butter in large skillet. Add sugar and cook until caramelized, about 3 minutes. Add orange juice and zest, cook for 2 minutes.",
           "Add Grand Marnier and carefully ignite with match. Let flames subside. Fold crêpes into quarters and add to sauce. Toss gently to coat. Serve immediately dusted with powdered sugar."
         ],
-        "chef_tips": "The flambéing is the show-stopping moment - make sure to use a long match and stand back. The crêpes should be thin and delicate. Practice the flipping technique for perfect results."
+        "chef_tips": "The flambéing is the show-stopping moment - make sure to use a long match and stand back. The crêpes should be thin and delicate. Practice the flipping technique for perfect results.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Bouillabaisse Marseillaise",
@@ -646,7 +1368,8 @@
           "Add fish fillets and cook for 5 minutes. Add shellfish and cook for 3-4 minutes until shells open. Discard any unopened shells.",
           "Ladle into bowls, garnish with parsley and fennel fronds. Serve with rouille sauce and crusty bread."
         ],
-        "chef_tips": "The key is using the freshest seafood possible and building layers of flavor with the aromatic base. The saffron is essential for authentic bouillabaisse. Serve with traditional rouille for the complete experience."
+        "chef_tips": "The key is using the freshest seafood possible and building layers of flavor with the aromatic base. The saffron is essential for authentic bouillabaisse. Serve with traditional rouille for the complete experience.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Tarte Tatin",
@@ -680,7 +1403,8 @@
           "Roll puff pastry to fit skillet. Place over apples, tucking edges down. Bake for 25-30 minutes until pastry is golden and puffed.",
           "Let cool for 5 minutes. Place large plate over skillet and carefully flip. Remove skillet. Serve warm with crème fraîche or ice cream."
         ],
-        "chef_tips": "The caramel must be the right color - golden, not dark. Use firm apples that won't turn to mush. The flipping is the dramatic moment - be confident and quick. Practice makes perfect with this classic French dessert."
+        "chef_tips": "The caramel must be the right color - golden, not dark. Use firm apples that won't turn to mush. The flipping is the dramatic moment - be confident and quick. Practice makes perfect with this classic French dessert.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Spaghetti Carbonara Classica",
@@ -718,7 +1442,8 @@
           "Drain pasta, reserving 1 cup pasta water. Add hot pasta to skillet with guanciale. Remove from heat.",
           "Quickly add egg mixture, tossing constantly. Add pasta water gradually until creamy. Serve immediately with remaining cheese and parsley."
         ],
-        "chef_tips": "The key is removing the pan from heat before adding eggs to prevent scrambling. Use the pasta water to create the perfect creamy consistency. Work quickly and confidently for authentic carbonara."
+        "chef_tips": "The key is removing the pan from heat before adding eggs to prevent scrambling. Use the pasta water to create the perfect creamy consistency. Work quickly and confidently for authentic carbonara.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Osso Buco alla Milanese",
@@ -760,7 +1485,8 @@
           "Return shanks to pot. Add stock, tomatoes, tomato paste, and bouquet garni. Bring to boil, then reduce heat and simmer for 1.5 hours until tender.",
           "Make gremolata by combining parsley, lemon zest, and garlic. Serve shanks with sauce and gremolata."
         ],
-        "chef_tips": "The marrow in the bone is the treasure - don't overcook or it will disappear. The gremolata adds essential brightness. Serve with risotto alla Milanese for the complete experience."
+        "chef_tips": "The marrow in the bone is the treasure - don't overcook or it will disappear. The gremolata adds essential brightness. Serve with risotto alla Milanese for the complete experience.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Risotto ai Funghi Porcini",
@@ -801,7 +1527,8 @@
           "Add stock 1/2 cup at a time, stirring constantly until absorbed. After 15 minutes, add mushrooms and thyme. Continue cooking until rice is creamy and al dente.",
           "Remove from heat. Stir in butter and cheese. Season with salt and pepper. Serve immediately garnished with parsley."
         ],
-        "chef_tips": "Constant stirring is essential for creamy risotto. The rice should be al dente with a slight bite. Don't rush the process - risotto demands patience and attention."
+        "chef_tips": "Constant stirring is essential for creamy risotto. The rice should be al dente with a slight bite. Don't rush the process - risotto demands patience and attention.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Saltimbocca alla Romana",
@@ -839,7 +1566,8 @@
           "Add wine to skillet and cook for 2 minutes, scraping up browned bits. Add stock and butter, cook for 1 minute.",
           "Return cutlets to skillet and cook for 1 minute. Remove toothpicks and serve immediately with sauce."
         ],
-        "chef_tips": "The name 'saltimbocca' means 'jumps in the mouth' - it should be incredibly tender and flavorful. Don't overcook the veal or it will become tough."
+        "chef_tips": "The name 'saltimbocca' means 'jumps in the mouth' - it should be incredibly tender and flavorful. Don't overcook the veal or it will become tough.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Penne all'Arrabbiata",
@@ -875,7 +1603,8 @@
           "Drain pasta and add to skillet. Toss with sauce and parsley. Season with salt.",
           "Serve immediately with grated Parmigiano-Reggiano cheese."
         ],
-        "chef_tips": "Arrabbiata means 'angry' - this sauce should have a good kick from the chilies. Adjust heat level to your preference. The sauce should be simple but bold."
+        "chef_tips": "Arrabbiata means 'angry' - this sauce should have a good kick from the chilies. Adjust heat level to your preference. The sauce should be simple but bold.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Tiramisu Classico",
@@ -912,7 +1641,8 @@
           "Layer half the ladyfingers in baking dish. Spread half the mascarpone mixture over top. Repeat layers.",
           "Cover and refrigerate for 4 hours. Dust with cocoa powder before serving."
         ],
-        "chef_tips": "Don't oversoak the ladyfingers or they'll become mushy. The tiramisu needs time to set - overnight is even better. Use good quality mascarpone for the best results."
+        "chef_tips": "Don't oversoak the ladyfingers or they'll become mushy. The tiramisu needs time to set - overnight is even better. Use good quality mascarpone for the best results.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Cacio e Pepe",
@@ -945,7 +1675,8 @@
           "Add pasta water gradually while tossing constantly. Remove from heat and add cheese, tossing until creamy.",
           "Serve immediately with extra cheese and pepper."
         ],
-        "chef_tips": "This is one of Rome's most famous dishes - simple but requires technique. The pasta water is crucial for creating the creamy sauce. Work quickly and confidently."
+        "chef_tips": "This is one of Rome's most famous dishes - simple but requires technique. The pasta water is crucial for creating the creamy sauce. Work quickly and confidently.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vitello Tonnato",
@@ -987,7 +1718,8 @@
           "Add lemon juice and enough cooking liquid to make smooth sauce. Season with salt and pepper.",
           "Slice veal thinly and arrange on platter. Spoon sauce over top. Serve chilled."
         ],
-        "chef_tips": "This classic Piedmontese dish is perfect for summer. The veal should be very tender and the sauce smooth and creamy. Serve with capers and lemon wedges."
+        "chef_tips": "This classic Piedmontese dish is perfect for summer. The veal should be very tender and the sauce smooth and creamy. Serve with capers and lemon wedges.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "French Coq au Vin",
@@ -1021,7 +1753,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Season chicken with salt and pepper. Heat butter in Dutch oven over medium-high heat. Brown chicken on all sides. Remove and set aside. Add bacon, cook until crispy. Add onion, garlic, and carrots. Cook until soft. Add tomato paste, cook 1 minute. Add wine, bring to boil. Return chicken to pot. Add herbs. Cover and simmer 1 hour. Add mushrooms, cook 15 minutes. Thicken with flour if needed. Serve hot.",
-        "chef_tips": "The chicken should be well-browned. The wine should be reduced and flavorful. The sauce should be thick and rich. Let it rest before serving."
+        "chef_tips": "The chicken should be well-browned. The wine should be reduced and flavorful. The sauce should be thick and rich. Let it rest before serving.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "French Ratatouille",
@@ -1053,7 +1786,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat olive oil in pot over medium heat. Add onion and garlic, cook until soft. Add eggplant, cook 10 minutes. Add zucchini and bell peppers, cook 10 minutes. Add tomatoes, herbs, and bay leaf. Simmer 30 minutes until vegetables are tender. Season with salt and pepper. Remove bay leaf. Serve hot or at room temperature.",
-        "chef_tips": "The vegetables should be tender but not mushy. The dish should be well-seasoned. Let it cool slightly before serving. The flavors develop over time."
+        "chef_tips": "The vegetables should be tender but not mushy. The dish should be well-seasoned. Let it cool slightly before serving. The flavors develop over time.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "French Sole Meunière",
@@ -1081,7 +1815,8 @@
           "Fish spatula"
         ],
         "cooking_instructions": "Season fish with salt and pepper. Dredge in flour. Heat butter and oil in skillet over medium-high heat. Cook fish 3-4 minutes per side until golden. Remove and set aside. Add lemon juice to pan. Add parsley. Pour sauce over fish. Serve immediately.",
-        "chef_tips": "The fish should be golden and crispy. Don't overcook. The sauce should be buttery and lemony. Serve immediately while hot."
+        "chef_tips": "The fish should be golden and crispy. Don't overcook. The sauce should be buttery and lemony. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "French Crêpes Suzette",
@@ -1114,7 +1849,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Make crêpe batter: whisk flour, eggs, milk, melted butter, sugar, and salt. Let rest 30 minutes. Heat skillet over medium heat. Pour 1/4 cup batter, swirl to coat. Cook 1-2 minutes, flip, cook 30 seconds. Repeat. Make sauce: melt butter, add sugar, cook until caramelized. Add orange juice and zest. Add Grand Marnier, carefully ignite. Fold crêpes, add to sauce. Toss to coat. Serve immediately.",
-        "chef_tips": "The crêpes should be thin and delicate. The flambéing is dramatic - stand back. The sauce should be hot and glossy. Serve immediately while hot."
+        "chef_tips": "The crêpes should be thin and delicate. The flambéing is dramatic - stand back. The sauce should be hot and glossy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "German Bratwurst",
@@ -1143,7 +1879,8 @@
           "Tongs"
         ],
         "cooking_instructions": "Heat oil in skillet over medium heat. Add sausages, cook 15 minutes, turning occasionally, until golden and cooked through. Remove and set aside. Add onion and bell pepper to same pan. Cook until soft. Add caraway seeds and paprika. Season with salt and pepper. Return sausages to pan. Serve hot with mustard and sauerkraut.",
-        "chef_tips": "The sausages should be golden and crispy. Don't overcook. The vegetables should be tender. Serve immediately while hot."
+        "chef_tips": "The sausages should be golden and crispy. Don't overcook. The vegetables should be tender. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "German Sauerkraut",
@@ -1172,7 +1909,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Rinse sauerkraut and drain. Heat butter in pot over medium heat. Add onion and garlic, cook until soft. Add sauerkraut, caraway seeds, and bay leaf. Add wine. Simmer 30 minutes until tender. Season with salt and pepper. Remove bay leaf. Serve hot.",
-        "chef_tips": "The sauerkraut should be tender but not mushy. The wine adds depth of flavor. Let it simmer gently. Serve hot."
+        "chef_tips": "The sauerkraut should be tender but not mushy. The wine adds depth of flavor. Let it simmer gently. Serve hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "German Apple Strudel",
@@ -1203,7 +1941,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Preheat oven to 375°F (190°C). Mix apples with breadcrumbs, sugar, cinnamon, nutmeg, and raisins. Brush phyllo with butter. Layer 6 sheets, brushing each with butter. Add apple mixture. Roll tightly. Place on baking sheet. Brush with remaining butter. Bake 30-35 minutes until golden. Cool slightly. Dust with powdered sugar. Serve warm.",
-        "chef_tips": "The phyllo should be well-brushed with butter. Don't overfill. The strudel should be golden and crispy. Let it cool slightly before cutting."
+        "chef_tips": "The phyllo should be well-brushed with butter. Don't overfill. The strudel should be golden and crispy. Let it cool slightly before cutting.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "British Fish and Chips",
@@ -1232,7 +1971,8 @@
           "Slotted spoon"
         ],
         "cooking_instructions": "Cut potatoes into chips. Fry chips in hot oil until golden and crispy. Drain on paper towels. Season with salt. Make batter: mix flour, baking powder, and beer. Season fish with salt and pepper. Dip in batter. Fry in hot oil until golden and crispy. Drain on paper towels. Serve hot with chips, vinegar, and mushy peas.",
-        "chef_tips": "The fish should be crispy on the outside, tender inside. The chips should be golden and crispy. Don't overcook. Serve immediately while hot."
+        "chef_tips": "The fish should be crispy on the outside, tender inside. The chips should be golden and crispy. Don't overcook. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "British Shepherd's Pie",
@@ -1265,7 +2005,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Preheat oven to 375°F (190°C). Brown lamb in skillet. Add onion, carrot, celery, and garlic. Cook until soft. Add flour, cook 1 minute. Add stock and Worcestershire sauce. Simmer 15 minutes. Season with salt and pepper. Place in baking dish. Top with mashed potatoes. Bake 25 minutes until golden. Serve hot.",
-        "chef_tips": "The lamb should be well-browned. The potatoes should be smooth and creamy. The top should be golden. Let it rest before serving."
+        "chef_tips": "The lamb should be well-browned. The potatoes should be smooth and creamy. The top should be golden. Let it rest before serving.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "British Yorkshire Pudding",
@@ -1292,7 +2033,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Preheat oven to 425°F (220°C). Mix flour, eggs, milk, and salt. Let rest 30 minutes. Heat beef drippings in muffin tin in oven. Pour batter into hot tin. Bake 20-25 minutes until puffed and golden. Serve immediately.",
-        "chef_tips": "The tin should be very hot. Don't open the oven door. The puddings should be puffed and golden. Serve immediately while hot."
+        "chef_tips": "The tin should be very hot. Don't open the oven door. The puddings should be puffed and golden. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Irish Soda Bread",
@@ -1319,7 +2061,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Preheat oven to 425°F (220°C). Mix flour, baking soda, and salt. Add buttermilk and butter. Mix until just combined. Shape into round loaf. Place on baking sheet. Cut cross on top. Bake 25-30 minutes until golden. Cool on wire rack. Serve warm.",
-        "chef_tips": "Don't overmix the dough. The bread should be golden and crusty. Let it cool slightly before slicing. Serve warm with butter."
+        "chef_tips": "Don't overmix the dough. The bread should be golden and crusty. Let it cool slightly before slicing. Serve warm with butter.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Swiss Rösti",
@@ -1344,7 +2087,8 @@
           "Spatula"
         ],
         "cooking_instructions": "Squeeze excess water from potatoes. Heat butter in skillet over medium heat. Add onion, cook until soft. Add potatoes, press down. Cook 10 minutes until golden. Flip carefully. Cook 10 minutes until golden. Season with salt and pepper. Serve hot.",
-        "chef_tips": "The potatoes should be well-drained. The rösti should be golden and crispy. Don't stir. Serve immediately while hot."
+        "chef_tips": "The potatoes should be well-drained. The rösti should be golden and crispy. Don't stir. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Swiss Cheese Fondue",
@@ -1374,7 +2118,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Rub fondue pot with garlic. Heat wine over medium heat. Mix cornstarch with kirsch. Add cheeses gradually, whisking constantly. Add cornstarch mixture. Cook until smooth and creamy. Add nutmeg, salt, and pepper. Serve hot with bread for dipping.",
-        "chef_tips": "The cheese should be smooth and creamy. Don't let it boil. Stir constantly. Serve immediately while hot."
+        "chef_tips": "The cheese should be smooth and creamy. Don't let it boil. Stir constantly. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Austrian Apfelstrudel",
@@ -1405,7 +2150,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Preheat oven to 375°F (190°C). Mix apples with breadcrumbs, sugar, cinnamon, nutmeg, and raisins. Brush phyllo with butter. Layer 6 sheets, brushing each with butter. Add apple mixture. Roll tightly. Place on baking sheet. Brush with remaining butter. Bake 30-35 minutes until golden. Cool slightly. Dust with powdered sugar. Serve warm.",
-        "chef_tips": "The phyllo should be well-brushed with butter. Don't overfill. The strudel should be golden and crispy. Let it cool slightly before cutting."
+        "chef_tips": "The phyllo should be well-brushed with butter. Don't overfill. The strudel should be golden and crispy. Let it cool slightly before cutting.",
+        "meal_type": "Regular"
       }
     ]
   }

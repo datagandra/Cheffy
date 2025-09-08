@@ -2,7 +2,7 @@
   "cuisines": {
     "Brazilian": [
       {
-        "title": "Feijoada",
+        "recipe_name": "Feijoada",
         "cuisine": "Brazilian",
         "ingredients": [
           "2 lbs black beans, soaked overnight",
@@ -19,14 +19,23 @@
           "White rice for serving",
           "Orange slices for garnish"
         ],
-        "instructions": "Cook beans until tender. Brown all meats separately. Add onions and garlic, cook until soft. Add meats to beans with seasonings. Simmer for 2 hours until tender. Serve with rice and orange slices.",
-        "proteins": ["pork shoulder", "beef short ribs", "smoked sausage", "bacon"],
+        "cooking_instructions": "Cook beans until tender. Brown all meats separately. Add onions and garlic, cook until soft. Add meats to beans with seasonings. Simmer for 2 hours until tender. Serve with rice and orange slices.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork shoulder",
+          "beef short ribs",
+          "smoked sausage",
+          "bacon"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 180,
-        "difficulty": "hard"
+        "calories_per_serving": 690
       },
       {
-        "title": "Pão de Açúcar",
+        "recipe_name": "Pão de Açúcar",
         "cuisine": "Brazilian",
         "ingredients": [
           "4 cups all-purpose flour",
@@ -39,14 +48,23 @@
           "1/2 cup milk",
           "1/4 cup sugar for topping"
         ],
-        "instructions": "Dissolve yeast in warm water with sugar. Mix flour, salt, butter, eggs, and milk. Add yeast mixture and knead until smooth. Let rise for 1 hour. Shape into rolls and let rise again. Bake at 375°F for 20 minutes. Brush with melted butter and sprinkle with sugar.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 90,
-        "difficulty": "medium"
+        "cooking_instructions": "Dissolve yeast in warm water with sugar. Mix flour, salt, butter, eggs, and milk. Add yeast mixture and knead until smooth. Let rise for 1 hour. Shape into rolls and let rise again. Bake at 375°F for 20 minutes. Brush with melted butter and sprinkle with sugar.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 470
       },
       {
-        "title": "Brigadeiro",
+        "recipe_name": "Brigadeiro",
         "cuisine": "Brazilian",
         "ingredients": [
           "1 can sweetened condensed milk",
@@ -55,14 +73,23 @@
           "1 tsp vanilla extract",
           "Chocolate sprinkles for coating"
         ],
-        "instructions": "Mix condensed milk, cocoa powder, and butter in saucepan. Cook over medium heat, stirring constantly, until mixture thickens and pulls away from pan. Remove from heat and add vanilla. Let cool completely. Roll into balls and coat with sprinkles. Chill before serving.",
-        "proteins": ["condensed milk"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "cooking_instructions": "Mix condensed milk, cocoa powder, and butter in saucepan. Cook over medium heat, stirring constantly, until mixture thickens and pulls away from pan. Remove from heat and add vanilla. Let cool completely. Roll into balls and coat with sprinkles. Chill before serving.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "condensed milk"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Moqueca de Peixe",
+        "recipe_name": "Moqueca de Peixe",
         "cuisine": "Brazilian",
         "ingredients": [
           "2 lbs white fish fillets",
@@ -78,14 +105,22 @@
           "Salt and pepper to taste",
           "Fresh cilantro for garnish"
         ],
-        "instructions": "Marinate fish with lime juice, garlic, and seasonings for 30 minutes. Heat palm oil and cook onions and peppers until soft. Add tomatoes and cook for 5 minutes. Add fish and coconut milk. Simmer for 15 minutes until fish is cooked. Garnish with cilantro and serve with rice.",
-        "proteins": ["white fish"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "cooking_instructions": "Marinate fish with lime juice, garlic, and seasonings for 30 minutes. Heat palm oil and cook onions and peppers until soft. Add tomatoes and cook for 5 minutes. Add fish and coconut milk. Simmer for 15 minutes until fish is cooked. Garnish with cilantro and serve with rice.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 410
       },
       {
-        "title": "Açaí Bowl",
+        "recipe_name": "Açaí Bowl",
         "cuisine": "Brazilian",
         "ingredients": [
           "2 cups frozen açaí puree",
@@ -97,16 +132,26 @@
           "1 tbsp coconut flakes",
           "1 tbsp almond butter"
         ],
-        "instructions": "Blend açaí puree with banana until smooth. Pour into bowl. Top with granola, berries, chia seeds, and coconut flakes. Drizzle with honey and almond butter. Serve immediately.",
-        "proteins": ["banana", "berries"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "cooking_instructions": "Blend açaí puree with banana until smooth. Pour into bowl. Top with granola, berries, chia seeds, and coconut flakes. Drizzle with honey and almond butter. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "banana",
+          "berries"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 300
       }
     ],
     "Argentine": [
       {
-        "title": "Asado",
+        "recipe_name": "Asado",
         "cuisine": "Argentine",
         "ingredients": [
           "3 lbs beef ribs",
@@ -120,14 +165,22 @@
           "1 tbsp black pepper",
           "Chimichurri sauce for serving"
         ],
-        "instructions": "Mix olive oil with garlic, herbs, salt, and pepper. Rub mixture over all meats. Grill over medium heat, turning frequently, until cooked through. Serve with chimichurri sauce.",
-        "proteins": ["beef ribs", "chorizo sausage", "blood sausage"],
+        "cooking_instructions": "Mix olive oil with garlic, herbs, salt, and pepper. Rub mixture over all meats. Grill over medium heat, turning frequently, until cooked through. Serve with chimichurri sauce.",
+        "cooking_time_category": "Under 2 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef ribs",
+          "chorizo sausage",
+          "blood sausage"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 120,
-        "difficulty": "medium"
+        "calories_per_serving": 540
       },
       {
-        "title": "Empanadas",
+        "recipe_name": "Empanadas",
         "cuisine": "Argentine",
         "ingredients": [
           "For dough: 3 cups all-purpose flour",
@@ -144,27 +197,43 @@
           "2 hard-boiled eggs, chopped",
           "1/2 cup green olives, chopped"
         ],
-        "instructions": "Make dough with flour, lard, water, and salt. Let rest for 30 minutes. Brown ground beef with onion and garlic. Add spices and cook for 10 minutes. Add eggs and olives. Roll dough and cut into circles. Fill with meat mixture and seal. Bake at 375°F for 25 minutes until golden.",
-        "proteins": ["ground beef", "eggs"],
+        "cooking_instructions": "Make dough with flour, lard, water, and salt. Let rest for 30 minutes. Brown ground beef with onion and garlic. Add spices and cook for 10 minutes. Add eggs and olives. Roll dough and cut into circles. Fill with meat mixture and seal. Bake at 375°F for 25 minutes until golden.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "calories_per_serving": 450
       },
       {
-        "title": "Dulce de Leche",
+        "recipe_name": "Dulce de Leche",
         "cuisine": "Argentine",
         "ingredients": [
           "1 can sweetened condensed milk",
           "1 tsp vanilla extract"
         ],
-        "instructions": "Remove label from can and place in large pot. Cover with water and bring to boil. Reduce heat and simmer for 3 hours, adding water as needed. Let cool completely before opening. Mix with vanilla extract. Serve as spread or filling.",
-        "proteins": ["condensed milk"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 180,
-        "difficulty": "easy"
+        "cooking_instructions": "Remove label from can and place in large pot. Cover with water and bring to boil. Reduce heat and simmer for 3 hours, adding water as needed. Let cool completely before opening. Mix with vanilla extract. Serve as spread or filling.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "condensed milk"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 580
       },
       {
-        "title": "Chimichurri",
+        "recipe_name": "Chimichurri",
         "cuisine": "Argentine",
         "ingredients": [
           "1 cup fresh parsley",
@@ -176,14 +245,23 @@
           "1/2 tsp black pepper",
           "1/2 tsp red pepper flakes"
         ],
-        "instructions": "Chop parsley, cilantro, and garlic finely. Mix with vinegar, oil, and seasonings. Let sit for 30 minutes to blend flavors. Serve with grilled meats.",
-        "proteins": ["herbs"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "cooking_instructions": "Chop parsley, cilantro, and garlic finely. Mix with vinegar, oil, and seasonings. Let sit for 30 minutes to blend flavors. Serve with grilled meats.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "herbs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Alfajores",
+        "recipe_name": "Alfajores",
         "cuisine": "Argentine",
         "ingredients": [
           "2 cups all-purpose flour",
@@ -197,16 +275,25 @@
           "1 cup dulce de leche",
           "Powdered sugar for dusting"
         ],
-        "instructions": "Mix flour, cornstarch, sugar, butter, egg yolks, vanilla, baking powder, and salt. Knead until smooth. Roll out and cut into circles. Bake at 350°F for 12 minutes. Cool completely. Spread dulce de leche between two cookies. Dust with powdered sugar.",
-        "proteins": ["egg yolks"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "cooking_instructions": "Mix flour, cornstarch, sugar, butter, egg yolks, vanilla, baking powder, and salt. Knead until smooth. Roll out and cut into circles. Bake at 350°F for 12 minutes. Cool completely. Spread dulce de leche between two cookies. Dust with powdered sugar.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg yolks"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 390
       }
     ],
     "Peruvian": [
       {
-        "title": "Peruvian Ceviche",
+        "recipe_name": "Peruvian Ceviche",
         "cuisine": "Peruvian",
         "ingredients": [
           "2 lbs fresh white fish, diced",
@@ -221,14 +308,20 @@
           "1 ear corn, boiled and sliced",
           "Lettuce leaves for serving"
         ],
-        "instructions": "Marinate fish in lime and orange juice for 30 minutes. Add onion, jalapeños, salt, and pepper. Mix well and chill for 1 hour. Serve with sweet potato, corn, and lettuce leaves.",
-        "proteins": ["white fish"],
+        "cooking_instructions": "Marinate fish in lime and orange juice for 30 minutes. Add onion, jalapeños, salt, and pepper. Mix well and chill for 1 hour. Serve with sweet potato, corn, and lettuce leaves.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "easy"
+        "calories_per_serving": 400
       },
       {
-        "title": "Lomo Saltado",
+        "recipe_name": "Lomo Saltado",
         "cuisine": "Peruvian",
         "ingredients": [
           "2 lbs beef sirloin, sliced thin",
@@ -245,14 +338,20 @@
           "French fries for serving",
           "White rice for serving"
         ],
-        "instructions": "Heat oil in large skillet. Cook beef until browned. Add onions, tomatoes, jalapeños, and garlic. Cook for 5 minutes. Add soy sauce, vinegar, and seasonings. Cook for 5 minutes more. Serve with French fries and rice.",
-        "proteins": ["beef sirloin"],
+        "cooking_instructions": "Heat oil in large skillet. Cook beef until browned. Add onions, tomatoes, jalapeños, and garlic. Cook for 5 minutes. Add soy sauce, vinegar, and seasonings. Cook for 5 minutes more. Serve with French fries and rice.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef sirloin"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 390
       },
       {
-        "title": "Aji de Gallina",
+        "recipe_name": "Aji de Gallina",
         "cuisine": "Peruvian",
         "ingredients": [
           "2 lbs chicken breast, cooked and shredded",
@@ -269,14 +368,24 @@
           "White rice for serving",
           "Black olives for garnish"
         ],
-        "instructions": "Heat oil and cook onions, garlic, and jalapeños until soft. Add walnuts, cheese, stock, and cream. Simmer for 15 minutes. Add chicken and turmeric. Simmer for 10 minutes. Season with salt and pepper. Serve with rice and olives.",
-        "proteins": ["chicken breast", "parmesan cheese"],
-        "dietary_restrictions": ["contains_dairy", "contains_nuts"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "cooking_instructions": "Heat oil and cook onions, garlic, and jalapeños until soft. Add walnuts, cheese, stock, and cream. Simmer for 15 minutes. Add chicken and turmeric. Simmer for 10 minutes. Season with salt and pepper. Serve with rice and olives.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken breast",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 420
       },
       {
-        "title": "Anticuchos",
+        "recipe_name": "Anticuchos",
         "cuisine": "Peruvian",
         "ingredients": [
           "2 lbs beef heart, cut into cubes",
@@ -290,14 +399,20 @@
           "Wooden skewers",
           "Grilled corn for serving"
         ],
-        "instructions": "Marinate beef heart in vinegar, aji pastes, garlic, and seasonings for 2 hours. Thread onto skewers. Grill over medium heat, turning frequently, until cooked through. Serve with grilled corn.",
-        "proteins": ["beef heart"],
+        "cooking_instructions": "Marinate beef heart in vinegar, aji pastes, garlic, and seasonings for 2 hours. Thread onto skewers. Grill over medium heat, turning frequently, until cooked through. Serve with grilled corn.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef heart"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 360
       },
       {
-        "title": "Pisco Sour",
+        "recipe_name": "Pisco Sour",
         "cuisine": "Peruvian",
         "ingredients": [
           "2 oz Pisco",
@@ -307,16 +422,24 @@
           "3 drops Angostura bitters",
           "Ice cubes"
         ],
-        "instructions": "Shake Pisco, lime juice, simple syrup, and egg white with ice. Strain into glass. Add bitters on top. Serve immediately.",
-        "proteins": ["egg white"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "cooking_instructions": "Shake Pisco, lime juice, simple syrup, and egg white with ice. Strain into glass. Add bitters on top. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "egg white"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 270
       }
     ],
     "Colombian": [
       {
-        "title": "Bandeja Paisa",
+        "recipe_name": "Bandeja Paisa",
         "cuisine": "Colombian",
         "ingredients": [
           "2 cups red beans, cooked",
@@ -334,14 +457,23 @@
           "Salt and pepper to taste",
           "Vegetable oil for cooking"
         ],
-        "instructions": "Cook beans until tender. Brown ground beef with onion, garlic, and seasonings. Cook chorizo and pork belly separately. Fry eggs sunny-side up. Fry plantains until golden. Arrange all components on large platter. Serve immediately.",
-        "proteins": ["ground beef", "chorizo sausage", "pork belly", "eggs"],
+        "cooking_instructions": "Cook beans until tender. Brown ground beef with onion, garlic, and seasonings. Cook chorizo and pork belly separately. Fry eggs sunny-side up. Fry plantains until golden. Arrange all components on large platter. Serve immediately.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "chorizo sausage",
+          "pork belly",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "calories_per_serving": 460
       },
       {
-        "title": "Arepas",
+        "recipe_name": "Arepas",
         "cuisine": "Colombian",
         "ingredients": [
           "2 cups precooked cornmeal",
@@ -351,14 +483,23 @@
           "1/2 cup cheese, grated",
           "Vegetable oil for cooking"
         ],
-        "instructions": "Mix cornmeal with warm water and salt. Let rest for 5 minutes. Add butter and cheese. Form into patties. Cook in oil until golden on both sides. Serve warm.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "easy"
+        "cooking_instructions": "Mix cornmeal with warm water and salt. Let rest for 5 minutes. Add butter and cheese. Form into patties. Cook in oil until golden on both sides. Serve warm.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Sancocho",
+        "recipe_name": "Sancocho",
         "cuisine": "Colombian",
         "ingredients": [
           "2 lbs chicken, cut into pieces",
@@ -377,14 +518,22 @@
           "Salt and pepper to taste",
           "8 cups water"
         ],
-        "instructions": "Brown all meats in large pot. Add onions, garlic, and tomatoes. Cook until soft. Add water and seasonings. Simmer for 1 hour. Add vegetables and simmer for 30 minutes. Garnish with cilantro and serve hot.",
-        "proteins": ["chicken", "beef", "pork"],
+        "cooking_instructions": "Brown all meats in large pot. Add onions, garlic, and tomatoes. Cook until soft. Add water and seasonings. Simmer for 1 hour. Add vegetables and simmer for 30 minutes. Garnish with cilantro and serve hot.",
+        "cooking_time_category": "Under 2 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "beef",
+          "pork"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 120,
-        "difficulty": "medium"
+        "calories_per_serving": 590
       },
       {
-        "title": "Empanadas Colombianas",
+        "recipe_name": "Empanadas Colombianas",
         "cuisine": "Colombian",
         "ingredients": [
           "For dough: 3 cups all-purpose flour",
@@ -401,14 +550,21 @@
           "2 hard-boiled eggs, chopped",
           "1/2 cup green olives, chopped"
         ],
-        "instructions": "Make dough with flour, lard, water, and salt. Let rest for 30 minutes. Brown ground beef with onion and garlic. Add spices and cook for 10 minutes. Add eggs and olives. Roll dough and cut into circles. Fill with meat mixture and seal. Fry in hot oil until golden.",
-        "proteins": ["ground beef", "eggs"],
+        "cooking_instructions": "Make dough with flour, lard, water, and salt. Let rest for 30 minutes. Brown ground beef with onion and garlic. Add spices and cook for 10 minutes. Add eggs and olives. Roll dough and cut into circles. Fill with meat mixture and seal. Fry in hot oil until golden.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "calories_per_serving": 450
       },
       {
-        "title": "Ajiaco",
+        "recipe_name": "Ajiaco",
         "cuisine": "Colombian",
         "ingredients": [
           "2 lbs chicken, cut into pieces",
@@ -426,261 +582,658 @@
           "Avocado slices for serving",
           "Sour cream for serving"
         ],
-        "instructions": "Brown chicken in large pot. Add onions, garlic, and tomatoes. Cook until soft. Add stock and seasonings. Simmer for 1 hour. Add vegetables and simmer for 30 minutes. Garnish with cilantro and serve with avocado and sour cream.",
-        "proteins": ["chicken"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 120,
-        "difficulty": "medium"
+        "cooking_instructions": "Brown chicken in large pot. Add onions, garlic, and tomatoes. Cook until soft. Add stock and seasonings. Simmer for 1 hour. Add vegetables and simmer for 30 minutes. Garnish with cilantro and serve with avocado and sour cream.",
+        "cooking_time_category": "Under 2 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 580
       },
       {
-        "title": "Quick Brazilian Açaí Bowl",
+        "recipe_name": "Quick Brazilian Açaí Bowl",
         "cuisine": "Brazilian",
-        "ingredients": ["2 cups frozen açaí puree", "1 banana", "1/2 cup granola", "1/4 cup fresh berries", "1 tbsp honey", "1 tbsp coconut flakes", "1 tbsp chia seeds"],
-        "instructions": "Blend açaí puree with banana until smooth. Pour into bowl. Top with granola, berries, coconut flakes, and chia seeds. Drizzle with honey. Serve immediately.",
+        "ingredients": [
+          "2 cups frozen açaí puree",
+          "1 banana",
+          "1/2 cup granola",
+          "1/4 cup fresh berries",
+          "1 tbsp honey",
+          "1 tbsp coconut flakes",
+          "1 tbsp chia seeds"
+        ],
+        "cooking_instructions": "Blend açaí puree with banana until smooth. Pour into bowl. Top with granola, berries, coconut flakes, and chia seeds. Drizzle with honey. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick Brazilian Cheese Bread",
+        "recipe_name": "Quick Brazilian Cheese Bread",
         "cuisine": "Brazilian",
-        "ingredients": ["1 cup tapioca flour", "1/2 cup milk", "1/4 cup oil", "1 egg", "1/2 cup Parmesan cheese, grated", "1 tsp salt", "1/2 tsp baking powder"],
-        "instructions": "Blend all ingredients until smooth. Pour into mini muffin tins. Bake at 400°F for 15-20 minutes until golden. Serve warm.",
-        "proteins": ["eggs", "parmesan cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup tapioca flour",
+          "1/2 cup milk",
+          "1/4 cup oil",
+          "1 egg",
+          "1/2 cup Parmesan cheese, grated",
+          "1 tsp salt",
+          "1/2 tsp baking powder"
+        ],
+        "cooking_instructions": "Blend all ingredients until smooth. Pour into mini muffin tins. Bake at 400°F for 15-20 minutes until golden. Serve warm.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs",
+          "parmesan cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Argentine Empanadas",
+        "recipe_name": "Quick Argentine Empanadas",
         "cuisine": "Argentine",
-        "ingredients": ["1 lb ground beef", "1 onion, chopped", "2 cloves garlic, minced", "1 tsp cumin", "1 tsp paprika", "1 package empanada dough", "2 tbsp oil", "Salt and pepper to taste"],
-        "instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal edges and bake at 375°F for 20 minutes until golden.",
-        "proteins": ["ground beef"],
+        "ingredients": [
+          "1 lb ground beef",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "1 package empanada dough",
+          "2 tbsp oil",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal edges and bake at 375°F for 20 minutes until golden.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Peruvian Ceviche",
+        "recipe_name": "Quick Peruvian Ceviche",
         "cuisine": "Peruvian",
-        "ingredients": ["1 lb white fish, cubed", "1 red onion, sliced", "2 jalapeños, sliced", "1/2 cup lime juice", "1/4 cup cilantro, chopped", "1 tsp salt", "Sweet potato and corn for serving"],
-        "instructions": "Marinate fish in lime juice for 10 minutes. Add onion, jalapeños, cilantro, and salt. Mix well. Serve with sweet potato and corn.",
-        "proteins": ["white fish"],
+        "ingredients": [
+          "1 lb white fish, cubed",
+          "1 red onion, sliced",
+          "2 jalapeños, sliced",
+          "1/2 cup lime juice",
+          "1/4 cup cilantro, chopped",
+          "1 tsp salt",
+          "Sweet potato and corn for serving"
+        ],
+        "cooking_instructions": "Marinate fish in lime juice for 10 minutes. Add onion, jalapeños, cilantro, and salt. Mix well. Serve with sweet potato and corn.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Colombian Arepas",
+        "recipe_name": "Quick Colombian Arepas",
         "cuisine": "Colombian",
-        "ingredients": ["2 cups masarepa flour", "2 cups warm water", "1 tsp salt", "2 tbsp butter", "Cheese for filling"],
-        "instructions": "Mix flour with water and salt. Knead until smooth. Form into patties. Cook in butter for 5 minutes per side. Fill with cheese and serve hot.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups masarepa flour",
+          "2 cups warm water",
+          "1 tsp salt",
+          "2 tbsp butter",
+          "Cheese for filling"
+        ],
+        "cooking_instructions": "Mix flour with water and salt. Knead until smooth. Form into patties. Cook in butter for 5 minutes per side. Fill with cheese and serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick Chilean Completo",
+        "recipe_name": "Quick Chilean Completo",
         "cuisine": "Chilean",
-        "ingredients": ["4 hot dog buns", "4 hot dogs", "1 avocado, mashed", "2 tomatoes, diced", "1/4 cup mayonnaise", "Sauerkraut", "Mustard"],
-        "instructions": "Cook hot dogs. Toast buns. Spread mashed avocado on buns. Add hot dogs, tomatoes, sauerkraut, mayonnaise, and mustard. Serve immediately.",
-        "proteins": ["hot dogs"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 hot dog buns",
+          "4 hot dogs",
+          "1 avocado, mashed",
+          "2 tomatoes, diced",
+          "1/4 cup mayonnaise",
+          "Sauerkraut",
+          "Mustard"
+        ],
+        "cooking_instructions": "Cook hot dogs. Toast buns. Spread mashed avocado on buns. Add hot dogs, tomatoes, sauerkraut, mayonnaise, and mustard. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "hot dogs"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Venezuelan Arepas",
+        "recipe_name": "Quick Venezuelan Arepas",
         "cuisine": "Venezuelan",
-        "ingredients": ["2 cups pre-cooked cornmeal", "2 cups warm water", "1 tsp salt", "2 tbsp oil", "Shredded chicken and cheese for filling"],
-        "instructions": "Mix cornmeal with water and salt. Let rest for 5 minutes. Form into patties. Cook in oil for 5 minutes per side. Split and fill with chicken and cheese.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups pre-cooked cornmeal",
+          "2 cups warm water",
+          "1 tsp salt",
+          "2 tbsp oil",
+          "Shredded chicken and cheese for filling"
+        ],
+        "cooking_instructions": "Mix cornmeal with water and salt. Let rest for 5 minutes. Form into patties. Cook in oil for 5 minutes per side. Split and fill with chicken and cheese.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick Mexican Street Corn",
+        "recipe_name": "Quick Mexican Street Corn",
         "cuisine": "Mexican",
-        "ingredients": ["4 ears corn", "1/4 cup mayonnaise", "1/4 cup sour cream", "1/2 cup cotija cheese, crumbled", "1 tsp chili powder", "1 lime, juiced", "Cilantro for garnish"],
-        "instructions": "Grill corn until charred. Mix mayonnaise and sour cream. Brush corn with mixture. Sprinkle with cheese, chili powder, and lime juice. Garnish with cilantro.",
-        "proteins": ["cotija cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 ears corn",
+          "1/4 cup mayonnaise",
+          "1/4 cup sour cream",
+          "1/2 cup cotija cheese, crumbled",
+          "1 tsp chili powder",
+          "1 lime, juiced",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Grill corn until charred. Mix mayonnaise and sour cream. Brush corn with mixture. Sprinkle with cheese, chili powder, and lime juice. Garnish with cilantro.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cotija cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Cuban Sandwich",
+        "recipe_name": "Quick Cuban Sandwich",
         "cuisine": "Cuban",
-        "ingredients": ["4 Cuban bread rolls", "1 lb roast pork, sliced", "8 slices ham", "8 slices Swiss cheese", "Dill pickles", "Mustard", "Butter"],
-        "instructions": "Spread mustard on bread. Layer pork, ham, cheese, and pickles. Butter outside of bread. Press in panini press for 5 minutes until golden and cheese melts.",
-        "proteins": ["roast pork", "ham", "swiss cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 Cuban bread rolls",
+          "1 lb roast pork, sliced",
+          "8 slices ham",
+          "8 slices Swiss cheese",
+          "Dill pickles",
+          "Mustard",
+          "Butter"
+        ],
+        "cooking_instructions": "Spread mustard on bread. Layer pork, ham, cheese, and pickles. Butter outside of bread. Press in panini press for 5 minutes until golden and cheese melts.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "roast pork",
+          "ham",
+          "swiss cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Puerto Rican Mofongo",
+        "recipe_name": "Quick Puerto Rican Mofongo",
         "cuisine": "Puerto Rican",
-        "ingredients": ["4 green plantains", "4 cloves garlic, minced", "1/4 cup olive oil", "1/4 cup pork cracklings", "Salt to taste"],
-        "instructions": "Fry plantains until golden. Mash with garlic, olive oil, and cracklings. Season with salt. Form into balls and serve hot.",
-        "proteins": ["pork cracklings"],
+        "ingredients": [
+          "4 green plantains",
+          "4 cloves garlic, minced",
+          "1/4 cup olive oil",
+          "1/4 cup pork cracklings",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Fry plantains until golden. Mash with garlic, olive oil, and cracklings. Season with salt. Form into balls and serve hot.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork cracklings"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Brazilian Pão de Queijo",
+        "recipe_name": "Quick Brazilian Pão de Queijo",
         "cuisine": "Brazilian",
-        "ingredients": ["1 cup tapioca flour", "1/2 cup milk", "1/4 cup oil", "1 egg", "1/2 cup cheese, grated", "1 tsp salt"],
-        "instructions": "Blend all ingredients until smooth. Pour into mini muffin tins. Bake at 400°F for 15 minutes until golden. Serve warm.",
-        "proteins": ["eggs", "cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup tapioca flour",
+          "1/2 cup milk",
+          "1/4 cup oil",
+          "1 egg",
+          "1/2 cup cheese, grated",
+          "1 tsp salt"
+        ],
+        "cooking_instructions": "Blend all ingredients until smooth. Pour into mini muffin tins. Bake at 400°F for 15 minutes until golden. Serve warm.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 296
       },
       {
-        "title": "Quick Argentine Chimichurri",
+        "recipe_name": "Quick Argentine Chimichurri",
         "cuisine": "Argentine",
-        "ingredients": ["1 cup parsley", "1/2 cup cilantro", "4 cloves garlic", "1/4 cup vinegar", "1/2 cup olive oil", "1 tsp salt", "1/2 tsp pepper"],
-        "instructions": "Chop herbs and garlic finely. Mix with vinegar, oil, salt, and pepper. Let sit for 10 minutes. Serve with grilled meats.",
-        "proteins": ["herbs"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup parsley",
+          "1/2 cup cilantro",
+          "4 cloves garlic",
+          "1/4 cup vinegar",
+          "1/2 cup olive oil",
+          "1 tsp salt",
+          "1/2 tsp pepper"
+        ],
+        "cooking_instructions": "Chop herbs and garlic finely. Mix with vinegar, oil, salt, and pepper. Let sit for 10 minutes. Serve with grilled meats.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "herbs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 280
       },
       {
-        "title": "Quick Peruvian Lomo Saltado",
+        "recipe_name": "Quick Peruvian Lomo Saltado",
         "cuisine": "Peruvian",
-        "ingredients": ["1 lb beef, sliced", "1 onion, sliced", "2 tomatoes, sliced", "2 cloves garlic", "1/4 cup soy sauce", "2 tbsp vinegar", "1 tsp cumin", "Salt and pepper"],
-        "instructions": "Cook beef until browned. Add onion, tomatoes, and garlic. Cook for 5 minutes. Add soy sauce, vinegar, and cumin. Season with salt and pepper. Serve with rice.",
-        "proteins": ["beef"],
+        "ingredients": [
+          "1 lb beef, sliced",
+          "1 onion, sliced",
+          "2 tomatoes, sliced",
+          "2 cloves garlic",
+          "1/4 cup soy sauce",
+          "2 tbsp vinegar",
+          "1 tsp cumin",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook beef until browned. Add onion, tomatoes, and garlic. Cook for 5 minutes. Add soy sauce, vinegar, and cumin. Season with salt and pepper. Serve with rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Colombian Sancocho",
+        "recipe_name": "Quick Colombian Sancocho",
         "cuisine": "Colombian",
-        "ingredients": ["1 lb chicken, cubed", "1 lb beef, cubed", "2 potatoes, cubed", "2 yams, cubed", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "Salt and pepper"],
-        "instructions": "Brown meats in pot. Add onion and garlic. Cook for 3 minutes. Add potatoes, yams, and spices. Simmer for 20 minutes. Season with salt and pepper.",
-        "proteins": ["chicken", "beef"],
+        "ingredients": [
+          "1 lb chicken, cubed",
+          "1 lb beef, cubed",
+          "2 potatoes, cubed",
+          "2 yams, cubed",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Brown meats in pot. Add onion and garlic. Cook for 3 minutes. Add potatoes, yams, and spices. Simmer for 20 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "calories_per_serving": 340
       },
       {
-        "title": "Quick Chilean Empanadas",
+        "recipe_name": "Quick Chilean Empanadas",
         "cuisine": "Chilean",
-        "ingredients": ["1 lb ground beef", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika", "1 package empanada dough", "2 tbsp oil", "Salt and pepper"],
-        "instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal and bake at 375°F for 20 minutes.",
-        "proteins": ["ground beef"],
+        "ingredients": [
+          "1 lb ground beef",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "1 package empanada dough",
+          "2 tbsp oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal and bake at 375°F for 20 minutes.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Venezuelan Cachapas",
+        "recipe_name": "Quick Venezuelan Cachapas",
         "cuisine": "Venezuelan",
-        "ingredients": ["2 cups fresh corn kernels", "1/4 cup milk", "1 egg", "1/4 cup cheese, grated", "1 tsp salt", "2 tbsp oil"],
-        "instructions": "Blend corn with milk, egg, and salt. Heat oil in pan. Pour batter and cook for 3 minutes per side. Top with cheese and serve hot.",
-        "proteins": ["eggs", "cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups fresh corn kernels",
+          "1/4 cup milk",
+          "1 egg",
+          "1/4 cup cheese, grated",
+          "1 tsp salt",
+          "2 tbsp oil"
+        ],
+        "cooking_instructions": "Blend corn with milk, egg, and salt. Heat oil in pan. Pour batter and cook for 3 minutes per side. Top with cheese and serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 276
       },
       {
-        "title": "Quick Ecuadorian Ceviche",
+        "recipe_name": "Quick Ecuadorian Ceviche",
         "cuisine": "Ecuadorian",
-        "ingredients": ["1 lb shrimp, cooked", "1 red onion, sliced", "2 tomatoes, diced", "1/2 cup lime juice", "1/4 cup cilantro", "1 tsp salt", "Tortilla chips"],
-        "instructions": "Mix shrimp with onion, tomatoes, lime juice, cilantro, and salt. Let sit for 10 minutes. Serve with tortilla chips.",
-        "proteins": ["shrimp"],
+        "ingredients": [
+          "1 lb shrimp, cooked",
+          "1 red onion, sliced",
+          "2 tomatoes, diced",
+          "1/2 cup lime juice",
+          "1/4 cup cilantro",
+          "1 tsp salt",
+          "Tortilla chips"
+        ],
+        "cooking_instructions": "Mix shrimp with onion, tomatoes, lime juice, cilantro, and salt. Let sit for 10 minutes. Serve with tortilla chips.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Bolivian Salteñas",
+        "recipe_name": "Quick Bolivian Salteñas",
         "cuisine": "Bolivian",
-        "ingredients": ["1 lb ground beef", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "1 tsp paprika", "1 package empanada dough", "2 tbsp oil", "Salt and pepper"],
-        "instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal and bake at 375°F for 20 minutes.",
-        "proteins": ["ground beef"],
+        "ingredients": [
+          "1 lb ground beef",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "1 tsp paprika",
+          "1 package empanada dough",
+          "2 tbsp oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Cook beef with onion and garlic until browned. Add spices and season with salt and pepper. Fill dough circles with mixture. Seal and bake at 375°F for 20 minutes.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Paraguayan Chipa",
+        "recipe_name": "Quick Paraguayan Chipa",
         "cuisine": "Paraguayan",
-        "ingredients": ["2 cups cassava flour", "1/2 cup milk", "1/4 cup oil", "1 egg", "1/2 cup cheese, grated", "1 tsp salt"],
-        "instructions": "Mix flour with milk, oil, egg, and salt. Add cheese. Form into balls. Bake at 400°F for 15 minutes until golden. Serve warm.",
-        "proteins": ["eggs", "cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 18,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups cassava flour",
+          "1/2 cup milk",
+          "1/4 cup oil",
+          "1 egg",
+          "1/2 cup cheese, grated",
+          "1 tsp salt"
+        ],
+        "cooking_instructions": "Mix flour with milk, oil, egg, and salt. Add cheese. Form into balls. Bake at 400°F for 15 minutes until golden. Serve warm.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 296
       },
       {
-        "title": "Quick Uruguayan Chivito",
+        "recipe_name": "Quick Uruguayan Chivito",
         "cuisine": "Uruguayan",
-        "ingredients": ["4 beef steaks", "4 hamburger buns", "4 slices ham", "4 slices cheese", "2 tomatoes, sliced", "Lettuce", "Mayonnaise", "Salt and pepper"],
-        "instructions": "Season steaks with salt and pepper. Cook for 4 minutes per side. Toast buns. Layer steak, ham, cheese, tomato, and lettuce. Spread mayonnaise. Serve hot.",
-        "proteins": ["beef steaks", "ham", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 beef steaks",
+          "4 hamburger buns",
+          "4 slices ham",
+          "4 slices cheese",
+          "2 tomatoes, sliced",
+          "Lettuce",
+          "Mayonnaise",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season steaks with salt and pepper. Cook for 4 minutes per side. Toast buns. Layer steak, ham, cheese, tomato, and lettuce. Spread mayonnaise. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef steaks",
+          "ham",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 304
       },
       {
-        "title": "Quick Guatemalan Pepián",
+        "recipe_name": "Quick Guatemalan Pepián",
         "cuisine": "Guatemalan",
-        "ingredients": ["1 lb chicken, cubed", "2 tomatoes", "1 onion", "2 cloves garlic", "1 tsp cumin", "1 tsp oregano", "Salt and pepper"],
-        "instructions": "Blend tomatoes, onion, and garlic. Cook chicken until browned. Add blended mixture and spices. Simmer for 15 minutes. Season with salt and pepper.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "1 lb chicken, cubed",
+          "2 tomatoes",
+          "1 onion",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Blend tomatoes, onion, and garlic. Cook chicken until browned. Add blended mixture and spices. Simmer for 15 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Honduran Baleadas",
+        "recipe_name": "Quick Honduran Baleadas",
         "cuisine": "Honduran",
-        "ingredients": ["4 flour tortillas", "1 cup refried beans", "1 cup cheese, grated", "1/2 cup sour cream", "1/2 cup avocado, sliced"],
-        "instructions": "Warm tortillas. Spread with beans. Top with cheese, sour cream, and avocado. Fold in half and serve hot.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 flour tortillas",
+          "1 cup refried beans",
+          "1 cup cheese, grated",
+          "1/2 cup sour cream",
+          "1/2 cup avocado, sliced"
+        ],
+        "cooking_instructions": "Warm tortillas. Spread with beans. Top with cheese, sour cream, and avocado. Fold in half and serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 266
       },
       {
-        "title": "Quick Nicaraguan Gallo Pinto",
+        "recipe_name": "Quick Nicaraguan Gallo Pinto",
         "cuisine": "Nicaraguan",
-        "ingredients": ["2 cups cooked rice", "1 cup cooked black beans", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "2 tbsp oil", "Salt and pepper"],
-        "instructions": "Heat oil and cook onion and garlic until soft. Add rice, beans, and cumin. Cook for 5 minutes. Season with salt and pepper. Serve hot.",
-        "proteins": ["black beans"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups cooked rice",
+          "1 cup cooked black beans",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "2 tbsp oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Heat oil and cook onion and garlic until soft. Add rice, beans, and cumin. Cook for 5 minutes. Season with salt and pepper. Serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "black beans"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Costa Rican Casado",
+        "recipe_name": "Quick Costa Rican Casado",
         "cuisine": "Costa Rican",
-        "ingredients": ["1 lb chicken, cubed", "2 cups cooked rice", "1 cup black beans", "1 plantain, sliced", "2 tbsp oil", "Salt and pepper"],
-        "instructions": "Season chicken with salt and pepper. Cook in oil for 8 minutes. Fry plantain until golden. Serve chicken with rice, beans, and plantain.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "1 lb chicken, cubed",
+          "2 cups cooked rice",
+          "1 cup black beans",
+          "1 plantain, sliced",
+          "2 tbsp oil",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Season chicken with salt and pepper. Cook in oil for 8 minutes. Fry plantain until golden. Serve chicken with rice, beans, and plantain.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Panamanian Sancocho",
+        "recipe_name": "Quick Panamanian Sancocho",
         "cuisine": "Panamanian",
-        "ingredients": ["1 lb chicken, cubed", "2 potatoes, cubed", "1 yam, cubed", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "Salt and pepper"],
-        "instructions": "Brown chicken in pot. Add onion and garlic. Cook for 3 minutes. Add potatoes, yam, and cumin. Simmer for 20 minutes. Season with salt and pepper.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "1 lb chicken, cubed",
+          "2 potatoes, cubed",
+          "1 yam, cubed",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "Salt and pepper"
+        ],
+        "cooking_instructions": "Brown chicken in pot. Add onion and garlic. Cook for 3 minutes. Add potatoes, yam, and cumin. Simmer for 20 minutes. Season with salt and pepper.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "calories_per_serving": 330
       }
     ]
   }

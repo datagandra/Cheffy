@@ -2,444 +2,1233 @@
   "cuisines": {
     "Mexican": [
       {
-        "title": "Authentic Tacos al Pastor",
+        "recipe_name": "Authentic Tacos al Pastor",
         "cuisine": "Mexican",
-        "ingredients": ["2 lbs pork shoulder, sliced thin", "1 large onion, sliced", "4 cloves garlic, minced", "2 chipotle peppers in adobo", "1/4 cup achiote paste", "1/4 cup orange juice", "1/4 cup white vinegar", "1 tsp cumin", "1 tsp oregano", "1 tsp salt", "1/2 tsp black pepper", "Corn tortillas", "Pineapple, diced", "Cilantro, chopped", "Onion, diced", "Lime wedges"],
-        "instructions": "Marinate pork with achiote paste, orange juice, vinegar, and spices for 2 hours. Cook on grill or skillet until done. Warm tortillas. Serve pork with pineapple, cilantro, onion, and lime wedges.",
-        "proteins": ["pork shoulder"],
+        "ingredients": [
+          "2 lbs pork shoulder, sliced thin",
+          "1 large onion, sliced",
+          "4 cloves garlic, minced",
+          "2 chipotle peppers in adobo",
+          "1/4 cup achiote paste",
+          "1/4 cup orange juice",
+          "1/4 cup white vinegar",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "Corn tortillas",
+          "Pineapple, diced",
+          "Cilantro, chopped",
+          "Onion, diced",
+          "Lime wedges"
+        ],
+        "cooking_instructions": "Marinate pork with achiote paste, orange juice, vinegar, and spices for 2 hours. Cook on grill or skillet until done. Warm tortillas. Serve pork with pineapple, cilantro, onion, and lime wedges.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork shoulder"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 420
       },
       {
-        "title": "Mole Poblano",
+        "recipe_name": "Mole Poblano",
         "cuisine": "Mexican",
-        "ingredients": ["3 lbs chicken pieces", "6 dried ancho chiles", "4 dried pasilla chiles", "2 dried mulato chiles", "1/4 cup sesame seeds", "1/4 cup almonds", "1/4 cup raisins", "2 tbsp pumpkin seeds", "1 large onion, quartered", "4 cloves garlic", "2 tomatoes, quartered", "1/4 cup lard", "2 oz dark chocolate", "1 tsp cinnamon", "1 tsp cumin", "1 tsp oregano", "Salt to taste", "Chicken stock"],
-        "instructions": "Toast chiles and remove seeds. Toast nuts and seeds. Sauté onion and garlic. Blend all ingredients except chicken. Cook sauce for 2 hours. Add chicken and simmer for 1 hour. Serve with rice and tortillas.",
-        "proteins": ["chicken"],
-        "dietary_restrictions": ["contains_nuts"],
-        "cooking_time": 180,
-        "difficulty": "hard"
+        "ingredients": [
+          "3 lbs chicken pieces",
+          "6 dried ancho chiles",
+          "4 dried pasilla chiles",
+          "2 dried mulato chiles",
+          "1/4 cup sesame seeds",
+          "1/4 cup almonds",
+          "1/4 cup raisins",
+          "2 tbsp pumpkin seeds",
+          "1 large onion, quartered",
+          "4 cloves garlic",
+          "2 tomatoes, quartered",
+          "1/4 cup lard",
+          "2 oz dark chocolate",
+          "1 tsp cinnamon",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "Salt to taste",
+          "Chicken stock"
+        ],
+        "cooking_instructions": "Toast chiles and remove seeds. Toast nuts and seeds. Sauté onion and garlic. Blend all ingredients except chicken. Cook sauce for 2 hours. Add chicken and simmer for 1 hour. Serve with rice and tortillas.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
+        "dietary_restrictions": [
+          "contains_nuts"
+        ],
+        "calories_per_serving": 740
       },
       {
-        "title": "Enchiladas Verdes",
+        "recipe_name": "Enchiladas Verdes",
         "cuisine": "Mexican",
-        "ingredients": ["12 corn tortillas", "2 lbs tomatillos, husked", "2 jalapeños", "1 large onion, chopped", "4 cloves garlic", "1/2 cup cilantro", "1 tsp salt", "2 cups shredded chicken", "1 cup sour cream", "1 cup shredded cheese", "Oil for frying"],
-        "instructions": "Boil tomatillos and jalapeños. Blend with onion, garlic, cilantro, and salt. Fry tortillas briefly. Fill with chicken and roll. Place in baking dish. Cover with sauce and cheese. Bake at 350°F for 20 minutes. Serve with sour cream.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "ingredients": [
+          "12 corn tortillas",
+          "2 lbs tomatillos, husked",
+          "2 jalapeños",
+          "1 large onion, chopped",
+          "4 cloves garlic",
+          "1/2 cup cilantro",
+          "1 tsp salt",
+          "2 cups shredded chicken",
+          "1 cup sour cream",
+          "1 cup shredded cheese",
+          "Oil for frying"
+        ],
+        "cooking_instructions": "Boil tomatillos and jalapeños. Blend with onion, garlic, cilantro, and salt. Fry tortillas briefly. Fill with chicken and roll. Place in baking dish. Cover with sauce and cheese. Bake at 350°F for 20 minutes. Serve with sour cream.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 400
       },
       {
-        "title": "Pozole",
+        "recipe_name": "Pozole",
         "cuisine": "Mexican",
-        "ingredients": ["2 lbs pork shoulder", "1 lb hominy", "6 dried guajillo chiles", "4 cloves garlic", "1 large onion, quartered", "2 tsp cumin", "1 tsp oregano", "1 tsp salt", "1/2 head cabbage, shredded", "1 large onion, diced", "Radishes, sliced", "Lime wedges", "Oregano for garnish"],
-        "instructions": "Cook pork and hominy in water for 2 hours. Toast chiles and blend with garlic, onion, and spices. Add to pot and simmer for 30 minutes. Shred pork. Serve with cabbage, onion, radishes, lime, and oregano.",
-        "proteins": ["pork shoulder"],
+        "ingredients": [
+          "2 lbs pork shoulder",
+          "1 lb hominy",
+          "6 dried guajillo chiles",
+          "4 cloves garlic",
+          "1 large onion, quartered",
+          "2 tsp cumin",
+          "1 tsp oregano",
+          "1 tsp salt",
+          "1/2 head cabbage, shredded",
+          "1 large onion, diced",
+          "Radishes, sliced",
+          "Lime wedges",
+          "Oregano for garnish"
+        ],
+        "cooking_instructions": "Cook pork and hominy in water for 2 hours. Toast chiles and blend with garlic, onion, and spices. Add to pot and simmer for 30 minutes. Shred pork. Serve with cabbage, onion, radishes, lime, and oregano.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork shoulder"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 150,
-        "difficulty": "medium"
+        "calories_per_serving": 630
       },
       {
-        "title": "Chiles Rellenos",
+        "recipe_name": "Chiles Rellenos",
         "cuisine": "Mexican",
-        "ingredients": ["6 poblano peppers", "1 lb ground beef", "1 large onion, chopped", "4 cloves garlic, minced", "1 tsp cumin", "1 tsp oregano", "Salt and pepper to taste", "1 cup all-purpose flour", "4 eggs, separated", "Oil for frying", "Tomato sauce for serving"],
-        "instructions": "Roast peppers and remove skins. Make filling with beef, onion, garlic, and spices. Stuff peppers. Beat egg whites until stiff. Fold in yolks and flour. Dip peppers in batter and fry until golden. Serve with tomato sauce.",
-        "proteins": ["ground beef", "eggs"],
+        "ingredients": [
+          "6 poblano peppers",
+          "1 lb ground beef",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "Salt and pepper to taste",
+          "1 cup all-purpose flour",
+          "4 eggs, separated",
+          "Oil for frying",
+          "Tomato sauce for serving"
+        ],
+        "cooking_instructions": "Roast peppers and remove skins. Make filling with beef, onion, garlic, and spices. Stuff peppers. Beat egg whites until stiff. Fold in yolks and flour. Dip peppers in batter and fry until golden. Serve with tomato sauce.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "hard"
+        "calories_per_serving": 430
       },
       {
-        "title": "Tamales",
+        "recipe_name": "Tamales",
         "cuisine": "Mexican",
-        "ingredients": ["2 cups masa harina", "1 cup lard", "1 tsp salt", "1 tsp baking powder", "2 cups chicken stock", "2 cups shredded chicken", "1 cup red chile sauce", "Corn husks, soaked", "Salsa for serving"],
-        "instructions": "Beat lard until fluffy. Mix masa with salt and baking powder. Add stock gradually. Beat into lard. Spread masa on husks. Add chicken and sauce. Fold and steam for 1 hour. Serve with salsa.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "2 cups masa harina",
+          "1 cup lard",
+          "1 tsp salt",
+          "1 tsp baking powder",
+          "2 cups chicken stock",
+          "2 cups shredded chicken",
+          "1 cup red chile sauce",
+          "Corn husks, soaked",
+          "Salsa for serving"
+        ],
+        "cooking_instructions": "Beat lard until fluffy. Mix masa with salt and baking powder. Add stock gradually. Beat into lard. Spread masa on husks. Add chicken and sauce. Fold and steam for 1 hour. Serve with salsa.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "calories_per_serving": 470
       },
       {
-        "title": "Guacamole",
+        "recipe_name": "Guacamole",
         "cuisine": "Mexican",
-        "ingredients": ["4 ripe avocados", "1 large tomato, diced", "1 small onion, diced", "2 jalapeños, minced", "4 cloves garlic, minced", "1/4 cup cilantro, chopped", "2 limes, juiced", "1 tsp salt", "1/2 tsp cumin"],
-        "instructions": "Mash avocados with lime juice and salt. Mix in remaining ingredients. Adjust seasoning. Serve immediately with tortilla chips.",
-        "proteins": ["avocados"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 ripe avocados",
+          "1 large tomato, diced",
+          "1 small onion, diced",
+          "2 jalapeños, minced",
+          "4 cloves garlic, minced",
+          "1/4 cup cilantro, chopped",
+          "2 limes, juiced",
+          "1 tsp salt",
+          "1/2 tsp cumin"
+        ],
+        "cooking_instructions": "Mash avocados with lime juice and salt. Mix in remaining ingredients. Adjust seasoning. Serve immediately with tortilla chips.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "avocados"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Churros",
+        "recipe_name": "Churros",
         "cuisine": "Mexican",
-        "ingredients": ["1 cup water", "1/2 cup butter", "1/4 tsp salt", "1 cup all-purpose flour", "3 eggs", "Oil for frying", "1/2 cup sugar", "1 tsp cinnamon", "Chocolate sauce for dipping"],
-        "instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. Serve with chocolate sauce.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 cup water",
+          "1/2 cup butter",
+          "1/4 tsp salt",
+          "1 cup all-purpose flour",
+          "3 eggs",
+          "Oil for frying",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "Chocolate sauce for dipping"
+        ],
+        "cooking_instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs one at a time. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. Serve with chocolate sauce.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 350
       },
       {
-        "title": "Mexican Ceviche",
+        "recipe_name": "Mexican Ceviche",
         "cuisine": "Mexican",
-        "ingredients": ["1 lb fresh white fish, diced", "1 lb shrimp, cooked and diced", "1 large red onion, sliced", "4 tomatoes, diced", "2 jalapeños, minced", "1/2 cup cilantro, chopped", "1/2 cup lime juice", "1/4 cup orange juice", "1 tsp salt", "1/2 tsp black pepper", "Avocado, diced", "Tortilla chips for serving"],
-        "instructions": "Marinate fish in lime juice for 30 minutes. Add shrimp, vegetables, and seasonings. Mix well and chill for 1 hour. Serve with avocado and tortilla chips.",
-        "proteins": ["fish", "shrimp"],
+        "ingredients": [
+          "1 lb fresh white fish, diced",
+          "1 lb shrimp, cooked and diced",
+          "1 large red onion, sliced",
+          "4 tomatoes, diced",
+          "2 jalapeños, minced",
+          "1/2 cup cilantro, chopped",
+          "1/2 cup lime juice",
+          "1/4 cup orange juice",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "Avocado, diced",
+          "Tortilla chips for serving"
+        ],
+        "cooking_instructions": "Marinate fish in lime juice for 30 minutes. Add shrimp, vegetables, and seasonings. Mix well and chill for 1 hour. Serve with avocado and tortilla chips.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "fish",
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "easy"
+        "calories_per_serving": 410
       },
       {
-        "title": "Flan",
+        "recipe_name": "Flan",
         "cuisine": "Mexican",
-        "ingredients": ["1 cup sugar", "4 eggs", "1 can sweetened condensed milk", "1 can evaporated milk", "1 tsp vanilla extract", "1/4 tsp salt"],
-        "instructions": "Caramelize sugar in ramekins. Beat eggs with milks, vanilla, and salt. Pour over caramel. Bake in water bath at 350°F for 45 minutes. Chill for 4 hours. Invert and serve.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 cup sugar",
+          "4 eggs",
+          "1 can sweetened condensed milk",
+          "1 can evaporated milk",
+          "1 tsp vanilla extract",
+          "1/4 tsp salt"
+        ],
+        "cooking_instructions": "Caramelize sugar in ramekins. Beat eggs with milks, vanilla, and salt. Pour over caramel. Bake in water bath at 350°F for 45 minutes. Chill for 4 hours. Invert and serve.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 380
       },
       {
-        "title": "Carnitas",
+        "recipe_name": "Carnitas",
         "cuisine": "Mexican",
-        "ingredients": ["3 lbs pork shoulder, cut into chunks", "1 large orange, juiced", "1 large lime, juiced", "4 cloves garlic, minced", "1 tbsp cumin", "1 tbsp oregano", "1 tsp salt", "1/2 tsp black pepper", "1/2 cup lard", "Corn tortillas", "Salsa verde", "Cilantro, chopped", "Onion, diced"],
-        "instructions": "Marinate pork with citrus juices, garlic, and spices for 2 hours. Cook in lard until tender and crispy. Shred meat. Serve on tortillas with salsa, cilantro, and onion.",
-        "proteins": ["pork shoulder"],
+        "ingredients": [
+          "3 lbs pork shoulder, cut into chunks",
+          "1 large orange, juiced",
+          "1 large lime, juiced",
+          "4 cloves garlic, minced",
+          "1 tbsp cumin",
+          "1 tbsp oregano",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 cup lard",
+          "Corn tortillas",
+          "Salsa verde",
+          "Cilantro, chopped",
+          "Onion, diced"
+        ],
+        "cooking_instructions": "Marinate pork with citrus juices, garlic, and spices for 2 hours. Cook in lard until tender and crispy. Shred meat. Serve on tortillas with salsa, cilantro, and onion.",
+        "cooking_time_category": "Under 2 hours",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork shoulder"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 120,
-        "difficulty": "medium"
+        "calories_per_serving": 570
       },
       {
-        "title": "Quesadillas",
+        "recipe_name": "Quesadillas",
         "cuisine": "Mexican",
-        "ingredients": ["8 flour tortillas", "2 cups shredded cheese", "1 cup cooked chicken, shredded", "1 bell pepper, diced", "1 onion, diced", "2 jalapeños, minced", "1/4 cup cilantro, chopped", "2 tbsp oil", "Salsa and sour cream for serving"],
-        "instructions": "Heat oil in skillet. Place tortilla and add cheese, chicken, and vegetables. Top with another tortilla. Cook until golden and cheese melts. Flip and cook other side. Cut into wedges and serve with salsa and sour cream.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 flour tortillas",
+          "2 cups shredded cheese",
+          "1 cup cooked chicken, shredded",
+          "1 bell pepper, diced",
+          "1 onion, diced",
+          "2 jalapeños, minced",
+          "1/4 cup cilantro, chopped",
+          "2 tbsp oil",
+          "Salsa and sour cream for serving"
+        ],
+        "cooking_instructions": "Heat oil in skillet. Place tortilla and add cheese, chicken, and vegetables. Top with another tortilla. Cook until golden and cheese melts. Flip and cook other side. Cut into wedges and serve with salsa and sour cream.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 330
       },
       {
-        "title": "Sopa de Tortilla",
+        "recipe_name": "Sopa de Tortilla",
         "cuisine": "Mexican",
-        "ingredients": ["6 corn tortillas, cut into strips", "2 large tomatoes, chopped", "1 large onion, chopped", "4 cloves garlic, minced", "2 chipotle peppers", "4 cups chicken stock", "1 tsp cumin", "1 tsp oregano", "Salt to taste", "Oil for frying", "Avocado, diced", "Cheese, grated", "Cilantro, chopped"],
-        "instructions": "Fry tortilla strips until crispy. Blend tomatoes, onion, garlic, and chipotles. Cook in stock with spices for 20 minutes. Add tortilla strips. Serve with avocado, cheese, and cilantro.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 35,
-        "difficulty": "medium"
+        "ingredients": [
+          "6 corn tortillas, cut into strips",
+          "2 large tomatoes, chopped",
+          "1 large onion, chopped",
+          "4 cloves garlic, minced",
+          "2 chipotle peppers",
+          "4 cups chicken stock",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "Salt to taste",
+          "Oil for frying",
+          "Avocado, diced",
+          "Cheese, grated",
+          "Cilantro, chopped"
+        ],
+        "cooking_instructions": "Fry tortilla strips until crispy. Blend tomatoes, onion, garlic, and chipotles. Cook in stock with spices for 20 minutes. Add tortilla strips. Serve with avocado, cheese, and cilantro.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 400
       },
       {
-        "title": "Elote (Mexican Street Corn)",
+        "recipe_name": "Elote (Mexican Street Corn)",
         "cuisine": "Mexican",
-        "ingredients": ["6 ears corn", "1/2 cup mayonnaise", "1/2 cup sour cream", "1 cup cotija cheese, grated", "2 tsp chili powder", "1 tsp paprika", "1/2 tsp cayenne pepper", "2 limes, juiced", "Cilantro, chopped", "Salt to taste"],
-        "instructions": "Grill corn until charred. Mix mayonnaise, sour cream, and lime juice. Brush corn with mixture. Sprinkle with cheese, spices, and cilantro. Serve immediately.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "6 ears corn",
+          "1/2 cup mayonnaise",
+          "1/2 cup sour cream",
+          "1 cup cotija cheese, grated",
+          "2 tsp chili powder",
+          "1 tsp paprika",
+          "1/2 tsp cayenne pepper",
+          "2 limes, juiced",
+          "Cilantro, chopped",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Grill corn until charred. Mix mayonnaise, sour cream, and lime juice. Brush corn with mixture. Sprinkle with cheese, spices, and cilantro. Serve immediately.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 340
       },
       {
-        "title": "Horchata",
+        "recipe_name": "Horchata",
         "cuisine": "Mexican",
-        "ingredients": ["1 cup long-grain rice", "1/2 cup almonds", "1 cinnamon stick", "4 cups water", "1/2 cup sugar", "1 tsp vanilla extract", "Ground cinnamon for garnish"],
-        "instructions": "Soak rice, almonds, and cinnamon in water overnight. Blend until smooth. Strain through cheesecloth. Add sugar and vanilla. Chill for 2 hours. Serve over ice with cinnamon garnish.",
-        "proteins": ["almonds"],
-        "dietary_restrictions": ["vegetarian", "vegan", "contains_nuts"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup long-grain rice",
+          "1/2 cup almonds",
+          "1 cinnamon stick",
+          "4 cups water",
+          "1/2 cup sugar",
+          "1 tsp vanilla extract",
+          "Ground cinnamon for garnish"
+        ],
+        "cooking_instructions": "Soak rice, almonds, and cinnamon in water overnight. Blend until smooth. Strain through cheesecloth. Add sugar and vanilla. Chill for 2 hours. Serve over ice with cinnamon garnish.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "almonds"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Tres Leches Cake",
+        "recipe_name": "Tres Leches Cake",
         "cuisine": "Mexican",
-        "ingredients": ["1 1/2 cups all-purpose flour", "1 tsp baking powder", "1/2 cup butter", "1 cup sugar", "5 eggs", "1/2 tsp vanilla extract", "1 cup whole milk", "1 can sweetened condensed milk", "1 can evaporated milk", "1 1/2 cups heavy cream", "1/4 cup sugar", "1 tsp vanilla extract"],
-        "instructions": "Bake cake with flour, baking powder, butter, sugar, eggs, and vanilla. Mix three milks. Poke holes in cake and pour milk mixture. Chill for 4 hours. Whip cream with sugar and vanilla. Frost cake and serve.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 1/2 cups all-purpose flour",
+          "1 tsp baking powder",
+          "1/2 cup butter",
+          "1 cup sugar",
+          "5 eggs",
+          "1/2 tsp vanilla extract",
+          "1 cup whole milk",
+          "1 can sweetened condensed milk",
+          "1 can evaporated milk",
+          "1 1/2 cups heavy cream",
+          "1/4 cup sugar",
+          "1 tsp vanilla extract"
+        ],
+        "cooking_instructions": "Bake cake with flour, baking powder, butter, sugar, eggs, and vanilla. Mix three milks. Poke holes in cake and pour milk mixture. Chill for 4 hours. Whip cream with sugar and vanilla. Frost cake and serve.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 440
       },
       {
-        "title": "Birria",
+        "recipe_name": "Birria",
         "cuisine": "Mexican",
-        "ingredients": ["3 lbs goat or beef, cut into chunks", "6 dried guajillo chiles", "4 dried ancho chiles", "1 large onion, quartered", "6 cloves garlic", "2 tomatoes, quartered", "1/4 cup apple cider vinegar", "2 tsp cumin", "2 tsp oregano", "1 tsp thyme", "Salt to taste", "Corn tortillas", "Onion, diced", "Cilantro, chopped", "Lime wedges"],
-        "instructions": "Toast chiles and remove seeds. Blend with vegetables, vinegar, and spices. Marinate meat for 2 hours. Cook in Dutch oven for 3 hours until tender. Shred meat. Serve in tortillas with onion, cilantro, and lime.",
-        "proteins": ["goat", "beef"],
+        "ingredients": [
+          "3 lbs goat or beef, cut into chunks",
+          "6 dried guajillo chiles",
+          "4 dried ancho chiles",
+          "1 large onion, quartered",
+          "6 cloves garlic",
+          "2 tomatoes, quartered",
+          "1/4 cup apple cider vinegar",
+          "2 tsp cumin",
+          "2 tsp oregano",
+          "1 tsp thyme",
+          "Salt to taste",
+          "Corn tortillas",
+          "Onion, diced",
+          "Cilantro, chopped",
+          "Lime wedges"
+        ],
+        "cooking_instructions": "Toast chiles and remove seeds. Blend with vegetables, vinegar, and spices. Marinate meat for 2 hours. Cook in Dutch oven for 3 hours until tender. Shred meat. Serve in tortillas with onion, cilantro, and lime.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "goat",
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 180,
-        "difficulty": "hard"
+        "calories_per_serving": 710
       },
       {
-        "title": "Agua Fresca",
+        "recipe_name": "Agua Fresca",
         "cuisine": "Mexican",
-        "ingredients": ["4 cups fresh fruit (watermelon, cantaloupe, or mango)", "2 cups water", "1/4 cup sugar", "1/4 cup lime juice", "Ice cubes", "Fresh mint for garnish"],
-        "instructions": "Blend fruit with water, sugar, and lime juice. Strain through fine mesh. Chill for 1 hour. Serve over ice with mint garnish.",
-        "proteins": ["fruit"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 cups fresh fruit (watermelon, cantaloupe, or mango)",
+          "2 cups water",
+          "1/4 cup sugar",
+          "1/4 cup lime juice",
+          "Ice cubes",
+          "Fresh mint for garnish"
+        ],
+        "cooking_instructions": "Blend fruit with water, sugar, and lime juice. Strain through fine mesh. Chill for 1 hour. Serve over ice with mint garnish.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "fruit"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Churros con Cajeta",
+        "recipe_name": "Churros con Cajeta",
         "cuisine": "Mexican",
-        "ingredients": ["1 cup water", "1/2 cup butter", "1/4 tsp salt", "1 cup all-purpose flour", "3 eggs", "Oil for frying", "1/2 cup sugar", "1 tsp cinnamon", "1 cup cajeta (goat's milk caramel)", "Chopped pecans for garnish"],
-        "instructions": "Make churros as usual. Heat cajeta until warm. Drizzle over churros and sprinkle with pecans. Serve immediately.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy", "contains_nuts"],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 cup water",
+          "1/2 cup butter",
+          "1/4 tsp salt",
+          "1 cup all-purpose flour",
+          "3 eggs",
+          "Oil for frying",
+          "1/2 cup sugar",
+          "1 tsp cinnamon",
+          "1 cup cajeta (goat's milk caramel)",
+          "Chopped pecans for garnish"
+        ],
+        "cooking_instructions": "Make churros as usual. Heat cajeta until warm. Drizzle over churros and sprinkle with pecans. Serve immediately.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy",
+          "contains_nuts"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "Pico de Gallo",
+        "recipe_name": "Pico de Gallo",
         "cuisine": "Mexican",
-        "ingredients": ["4 large tomatoes, diced", "1 large white onion, diced", "2 jalapeños, minced", "1/2 cup cilantro, chopped", "3 limes, juiced", "1 tsp salt", "1/2 tsp black pepper", "1/2 tsp cumin"],
-        "instructions": "Mix all ingredients in bowl. Let sit for 30 minutes to blend flavors. Serve with tortilla chips or as topping for tacos.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 large tomatoes, diced",
+          "1 large white onion, diced",
+          "2 jalapeños, minced",
+          "1/2 cup cilantro, chopped",
+          "3 limes, juiced",
+          "1 tsp salt",
+          "1/2 tsp black pepper",
+          "1/2 tsp cumin"
+        ],
+        "cooking_instructions": "Mix all ingredients in bowl. Let sit for 30 minutes to blend flavors. Serve with tortilla chips or as topping for tacos.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Mexican Quesadillas",
+        "recipe_name": "Quick Mexican Quesadillas",
         "cuisine": "Mexican",
-        "ingredients": ["4 flour tortillas", "2 cups shredded cheese", "1/2 cup cooked chicken, shredded", "1/4 cup salsa", "2 tbsp butter", "Sour cream and guacamole for serving"],
-        "instructions": "Heat butter in pan. Place tortilla, add cheese, chicken, and salsa. Top with second tortilla. Cook for 2-3 minutes per side until golden and cheese melts. Cut into wedges. Serve with sour cream and guacamole.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 flour tortillas",
+          "2 cups shredded cheese",
+          "1/2 cup cooked chicken, shredded",
+          "1/4 cup salsa",
+          "2 tbsp butter",
+          "Sour cream and guacamole for serving"
+        ],
+        "cooking_instructions": "Heat butter in pan. Place tortilla, add cheese, chicken, and salsa. Top with second tortilla. Cook for 2-3 minutes per side until golden and cheese melts. Cut into wedges. Serve with sour cream and guacamole.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 276
       },
       {
-        "title": "Quick Guacamole",
+        "recipe_name": "Quick Guacamole",
         "cuisine": "Mexican",
-        "ingredients": ["3 ripe avocados", "1 lime, juiced", "1/2 red onion, diced", "2 tomatoes, diced", "1 jalapeño, minced", "1/4 cup cilantro, chopped", "1 tsp salt", "Tortilla chips for serving"],
-        "instructions": "Mash avocados with lime juice. Mix in onion, tomatoes, jalapeño, cilantro, and salt. Serve immediately with tortilla chips.",
-        "proteins": ["avocados"],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "3 ripe avocados",
+          "1 lime, juiced",
+          "1/2 red onion, diced",
+          "2 tomatoes, diced",
+          "1 jalapeño, minced",
+          "1/4 cup cilantro, chopped",
+          "1 tsp salt",
+          "Tortilla chips for serving"
+        ],
+        "cooking_instructions": "Mash avocados with lime juice. Mix in onion, tomatoes, jalapeño, cilantro, and salt. Serve immediately with tortilla chips.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "avocados"
+        ],
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Mexican Rice",
+        "recipe_name": "Quick Mexican Rice",
         "cuisine": "Mexican",
-        "ingredients": ["2 cups white rice", "4 cups chicken broth", "1 onion, chopped", "2 cloves garlic, minced", "1 can diced tomatoes", "1 tsp cumin", "1 tsp chili powder", "2 tbsp oil", "Salt to taste"],
-        "instructions": "Heat oil and cook onion until soft. Add garlic and rice. Cook for 2 minutes. Add tomatoes, broth, and spices. Bring to boil, then simmer for 15 minutes. Season with salt.",
+        "ingredients": [
+          "2 cups white rice",
+          "4 cups chicken broth",
+          "1 onion, chopped",
+          "2 cloves garlic, minced",
+          "1 can diced tomatoes",
+          "1 tsp cumin",
+          "1 tsp chili powder",
+          "2 tbsp oil",
+          "Salt to taste"
+        ],
+        "cooking_instructions": "Heat oil and cook onion until soft. Add garlic and rice. Cook for 2 minutes. Add tomatoes, broth, and spices. Bring to boil, then simmer for 15 minutes. Season with salt.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Fish Tacos",
+        "recipe_name": "Quick Fish Tacos",
         "cuisine": "Mexican",
-        "ingredients": ["1 lb white fish fillets", "8 corn tortillas", "1 cup cabbage, shredded", "1/2 cup sour cream", "1 lime, juiced", "1 tsp cumin", "1 tsp chili powder", "Salt and pepper to taste", "Cilantro for garnish"],
-        "instructions": "Season fish with cumin, chili powder, salt, and pepper. Cook fish for 3-4 minutes per side. Warm tortillas. Mix sour cream with lime juice. Assemble tacos with fish, cabbage, and sour cream mixture. Garnish with cilantro.",
-        "proteins": ["white fish"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb white fish fillets",
+          "8 corn tortillas",
+          "1 cup cabbage, shredded",
+          "1/2 cup sour cream",
+          "1 lime, juiced",
+          "1 tsp cumin",
+          "1 tsp chili powder",
+          "Salt and pepper to taste",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Season fish with cumin, chili powder, salt, and pepper. Cook fish for 3-4 minutes per side. Warm tortillas. Mix sour cream with lime juice. Assemble tacos with fish, cabbage, and sour cream mixture. Garnish with cilantro.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Mexican Street Corn",
+        "recipe_name": "Quick Mexican Street Corn",
         "cuisine": "Mexican",
-        "ingredients": ["4 ears corn", "1/4 cup mayonnaise", "1/4 cup sour cream", "1/2 cup cotija cheese, crumbled", "1 tsp chili powder", "1 lime, juiced", "Cilantro for garnish"],
-        "instructions": "Grill corn until charred. Mix mayonnaise and sour cream. Brush corn with mixture. Sprinkle with cheese, chili powder, and lime juice. Garnish with cilantro.",
-        "proteins": ["cotija cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 ears corn",
+          "1/4 cup mayonnaise",
+          "1/4 cup sour cream",
+          "1/2 cup cotija cheese, crumbled",
+          "1 tsp chili powder",
+          "1 lime, juiced",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Grill corn until charred. Mix mayonnaise and sour cream. Brush corn with mixture. Sprinkle with cheese, chili powder, and lime juice. Garnish with cilantro.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cotija cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Chicken Tacos",
+        "recipe_name": "Quick Chicken Tacos",
         "cuisine": "Mexican",
-        "ingredients": ["1 lb chicken breast, sliced", "8 corn tortillas", "1 onion, sliced", "2 cloves garlic, minced", "1 tsp cumin", "1 tsp chili powder", "1 lime, juiced", "Salt and pepper to taste", "Toppings: lettuce, tomato, cheese, sour cream"],
-        "instructions": "Season chicken with cumin, chili powder, salt, and pepper. Cook chicken with onion and garlic for 5 minutes. Add lime juice. Warm tortillas. Serve chicken with desired toppings.",
-        "proteins": ["chicken breast"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 lb chicken breast, sliced",
+          "8 corn tortillas",
+          "1 onion, sliced",
+          "2 cloves garlic, minced",
+          "1 tsp cumin",
+          "1 tsp chili powder",
+          "1 lime, juiced",
+          "Salt and pepper to taste",
+          "Toppings: lettuce, tomato, cheese, sour cream"
+        ],
+        "cooking_instructions": "Season chicken with cumin, chili powder, salt, and pepper. Cook chicken with onion and garlic for 5 minutes. Add lime juice. Warm tortillas. Serve chicken with desired toppings.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken breast"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 314
       },
       {
-        "title": "Quick Mexican Bean Dip",
+        "recipe_name": "Quick Mexican Bean Dip",
         "cuisine": "Mexican",
-        "ingredients": ["1 can refried beans", "1/2 cup sour cream", "1/2 cup salsa", "1 cup shredded cheese", "1/4 cup green onions, sliced", "Tortilla chips for serving"],
-        "instructions": "Heat refried beans. Layer in dish with sour cream, salsa, and cheese. Microwave until cheese melts. Top with green onions. Serve with tortilla chips.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 can refried beans",
+          "1/2 cup sour cream",
+          "1/2 cup salsa",
+          "1 cup shredded cheese",
+          "1/4 cup green onions, sliced",
+          "Tortilla chips for serving"
+        ],
+        "cooking_instructions": "Heat refried beans. Layer in dish with sour cream, salsa, and cheese. Microwave until cheese melts. Top with green onions. Serve with tortilla chips.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 276
       },
       {
-        "title": "Quick Mexican Ceviche",
+        "recipe_name": "Quick Mexican Ceviche",
         "cuisine": "Mexican",
-        "ingredients": ["1 lb white fish, cubed", "1 red onion, sliced", "2 jalapeños, sliced", "1/2 cup lime juice", "1/4 cup cilantro, chopped", "1 tsp salt", "Tortilla chips for serving"],
-        "instructions": "Marinate fish in lime juice for 10 minutes. Add onion, jalapeños, cilantro, and salt. Mix well. Serve with tortilla chips.",
-        "proteins": ["white fish"],
+        "ingredients": [
+          "1 lb white fish, cubed",
+          "1 red onion, sliced",
+          "2 jalapeños, sliced",
+          "1/2 cup lime juice",
+          "1/4 cup cilantro, chopped",
+          "1 tsp salt",
+          "Tortilla chips for serving"
+        ],
+        "cooking_instructions": "Marinate fish in lime juice for 10 minutes. Add onion, jalapeños, cilantro, and salt. Mix well. Serve with tortilla chips.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "white fish"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Mexican Breakfast Burrito",
+        "recipe_name": "Quick Mexican Breakfast Burrito",
         "cuisine": "Mexican",
-        "ingredients": ["4 large flour tortillas", "6 eggs", "1/2 lb chorizo", "1 cup hash browns", "1 cup shredded cheese", "1/4 cup salsa", "Salt and pepper to taste"],
-        "instructions": "Cook chorizo until browned. Add hash browns and cook until crispy. Scramble eggs with salt and pepper. Warm tortillas. Fill with chorizo mixture, eggs, cheese, and salsa. Roll and serve.",
-        "proteins": ["eggs", "chorizo", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 large flour tortillas",
+          "6 eggs",
+          "1/2 lb chorizo",
+          "1 cup hash browns",
+          "1 cup shredded cheese",
+          "1/4 cup salsa",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Cook chorizo until browned. Add hash browns and cook until crispy. Scramble eggs with salt and pepper. Warm tortillas. Fill with chorizo mixture, eggs, cheese, and salsa. Roll and serve.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "eggs",
+          "chorizo",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Mexican Salsa Verde",
+        "recipe_name": "Quick Mexican Salsa Verde",
         "cuisine": "Mexican",
-        "ingredients": ["1 lb tomatillos, husked", "2 jalapeños", "1/2 onion, chopped", "2 cloves garlic", "1/4 cup cilantro", "1 tsp salt", "1 lime, juiced"],
-        "instructions": "Boil tomatillos and jalapeños for 5 minutes. Blend with onion, garlic, cilantro, salt, and lime juice. Serve immediately or store in refrigerator.",
+        "ingredients": [
+          "1 lb tomatillos, husked",
+          "2 jalapeños",
+          "1/2 onion, chopped",
+          "2 cloves garlic",
+          "1/4 cup cilantro",
+          "1 tsp salt",
+          "1 lime, juiced"
+        ],
+        "cooking_instructions": "Boil tomatillos and jalapeños for 5 minutes. Blend with onion, garlic, cilantro, salt, and lime juice. Serve immediately or store in refrigerator.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegan"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegan"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Mexican Nachos",
+        "recipe_name": "Quick Mexican Nachos",
         "cuisine": "Mexican",
-        "ingredients": ["1 bag tortilla chips", "1 cup refried beans", "1 cup shredded cheese", "1/2 cup jalapeños", "1/4 cup sour cream", "1/4 cup guacamole", "1/4 cup salsa", "Cilantro for garnish"],
-        "instructions": "Layer chips with beans and cheese. Microwave until cheese melts. Top with jalapeños, sour cream, guacamole, and salsa. Garnish with cilantro. Serve immediately.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 bag tortilla chips",
+          "1 cup refried beans",
+          "1 cup shredded cheese",
+          "1/2 cup jalapeños",
+          "1/4 cup sour cream",
+          "1/4 cup guacamole",
+          "1/4 cup salsa",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Layer chips with beans and cheese. Microwave until cheese melts. Top with jalapeños, sour cream, guacamole, and salsa. Garnish with cilantro. Serve immediately.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Mexican Enchiladas",
+        "recipe_name": "Quick Mexican Enchiladas",
         "cuisine": "Mexican",
-        "ingredients": ["8 corn tortillas", "2 cups shredded chicken", "1 cup enchilada sauce", "1 cup shredded cheese", "1/4 cup sour cream", "Cilantro for garnish"],
-        "instructions": "Warm tortillas. Fill with chicken and roll. Place in baking dish. Cover with sauce and cheese. Bake at 375°F for 15 minutes. Top with sour cream and cilantro.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 corn tortillas",
+          "2 cups shredded chicken",
+          "1 cup enchilada sauce",
+          "1 cup shredded cheese",
+          "1/4 cup sour cream",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Warm tortillas. Fill with chicken and roll. Place in baking dish. Cover with sauce and cheese. Bake at 375°F for 15 minutes. Top with sour cream and cilantro.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Mexican Tostadas",
+        "recipe_name": "Quick Mexican Tostadas",
         "cuisine": "Mexican",
-        "ingredients": ["8 tostada shells", "1 cup refried beans", "1 cup shredded chicken", "1 cup lettuce, shredded", "1 tomato, diced", "1/2 cup cheese", "1/4 cup sour cream", "Cilantro for garnish"],
-        "instructions": "Spread beans on tostada shells. Top with chicken, lettuce, tomato, and cheese. Add sour cream and cilantro. Serve immediately.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 tostada shells",
+          "1 cup refried beans",
+          "1 cup shredded chicken",
+          "1 cup lettuce, shredded",
+          "1 tomato, diced",
+          "1/2 cup cheese",
+          "1/4 cup sour cream",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Spread beans on tostada shells. Top with chicken, lettuce, tomato, and cheese. Add sour cream and cilantro. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 296
       },
       {
-        "title": "Quick Mexican Churros",
+        "recipe_name": "Quick Mexican Churros",
         "cuisine": "Mexican",
-        "ingredients": ["1 cup water", "1/2 cup butter", "1/4 tsp salt", "1 cup flour", "2 eggs", "Oil for frying", "1/2 cup sugar", "1 tsp cinnamon"],
-        "instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. Serve hot.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 15,
-        "difficulty": "medium"
+        "ingredients": [
+          "1 cup water",
+          "1/2 cup butter",
+          "1/4 tsp salt",
+          "1 cup flour",
+          "2 eggs",
+          "Oil for frying",
+          "1/2 cup sugar",
+          "1 tsp cinnamon"
+        ],
+        "cooking_instructions": "Boil water, butter, and salt. Add flour and stir until smooth. Beat in eggs. Pipe into hot oil and fry until golden. Roll in cinnamon sugar. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 310
       },
       {
-        "title": "Quick Mexican Pozole",
+        "recipe_name": "Quick Mexican Pozole",
         "cuisine": "Mexican",
-        "ingredients": ["2 cups hominy", "1 lb pork, cubed", "4 cups chicken broth", "1 onion, diced", "2 cloves garlic", "1 tsp cumin", "1 tsp oregano", "Salt and pepper", "Toppings: cabbage, radishes, lime"],
-        "instructions": "Cook pork in broth for 15 minutes. Add hominy, onion, garlic, and spices. Simmer for 10 minutes. Season with salt and pepper. Serve with toppings.",
-        "proteins": ["pork"],
+        "ingredients": [
+          "2 cups hominy",
+          "1 lb pork, cubed",
+          "4 cups chicken broth",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp cumin",
+          "1 tsp oregano",
+          "Salt and pepper",
+          "Toppings: cabbage, radishes, lime"
+        ],
+        "cooking_instructions": "Cook pork in broth for 15 minutes. Add hominy, onion, garlic, and spices. Simmer for 10 minutes. Season with salt and pepper. Serve with toppings.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "calories_per_serving": 350
       },
       {
-        "title": "Quick Mexican Flautas",
+        "recipe_name": "Quick Mexican Flautas",
         "cuisine": "Mexican",
-        "ingredients": ["8 flour tortillas", "2 cups shredded chicken", "1 cup cheese", "Oil for frying", "Sour cream and salsa for serving"],
-        "instructions": "Fill tortillas with chicken and cheese. Roll tightly. Fry until golden and crispy. Serve with sour cream and salsa.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 flour tortillas",
+          "2 cups shredded chicken",
+          "1 cup cheese",
+          "Oil for frying",
+          "Sour cream and salsa for serving"
+        ],
+        "cooking_instructions": "Fill tortillas with chicken and cheese. Roll tightly. Fry until golden and crispy. Serve with sour cream and salsa.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 274
       },
       {
-        "title": "Quick Mexican Sopes",
+        "recipe_name": "Quick Mexican Sopes",
         "cuisine": "Mexican",
-        "ingredients": ["8 sope shells", "1 cup refried beans", "1 cup shredded chicken", "1 cup lettuce", "1 tomato, diced", "1/2 cup cheese", "1/4 cup sour cream"],
-        "instructions": "Warm sope shells. Spread with beans. Top with chicken, lettuce, tomato, and cheese. Add sour cream. Serve immediately.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 sope shells",
+          "1 cup refried beans",
+          "1 cup shredded chicken",
+          "1 cup lettuce",
+          "1 tomato, diced",
+          "1/2 cup cheese",
+          "1/4 cup sour cream"
+        ],
+        "cooking_instructions": "Warm sope shells. Spread with beans. Top with chicken, lettuce, tomato, and cheese. Add sour cream. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Mexican Molletes",
+        "recipe_name": "Quick Mexican Molletes",
         "cuisine": "Mexican",
-        "ingredients": ["4 bolillo rolls", "1 cup refried beans", "1 cup shredded cheese", "1/4 cup pico de gallo", "Cilantro for garnish"],
-        "instructions": "Split rolls and toast. Spread with beans. Top with cheese. Broil until cheese melts. Add pico de gallo and cilantro. Serve hot.",
-        "proteins": ["cheese"],
-        "dietary_restrictions": ["vegetarian", "contains_dairy"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 bolillo rolls",
+          "1 cup refried beans",
+          "1 cup shredded cheese",
+          "1/4 cup pico de gallo",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Split rolls and toast. Spread with beans. Top with cheese. Broil until cheese melts. Add pico de gallo and cilantro. Serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "contains_dairy"
+        ],
+        "calories_per_serving": 270
       },
       {
-        "title": "Quick Mexican Chilaquiles",
+        "recipe_name": "Quick Mexican Chilaquiles",
         "cuisine": "Mexican",
-        "ingredients": ["4 cups tortilla chips", "2 cups salsa verde", "1 cup shredded chicken", "1/2 cup cheese", "1/4 cup sour cream", "Cilantro for garnish"],
-        "instructions": "Heat salsa verde. Add tortilla chips and chicken. Cook for 3 minutes. Top with cheese, sour cream, and cilantro. Serve immediately.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 cups tortilla chips",
+          "2 cups salsa verde",
+          "1 cup shredded chicken",
+          "1/2 cup cheese",
+          "1/4 cup sour cream",
+          "Cilantro for garnish"
+        ],
+        "cooking_instructions": "Heat salsa verde. Add tortilla chips and chicken. Cook for 3 minutes. Top with cheese, sour cream, and cilantro. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 276
       },
       {
-        "title": "Quick Mexican Gorditas",
+        "recipe_name": "Quick Mexican Gorditas",
         "cuisine": "Mexican",
-        "ingredients": ["8 gordita shells", "1 cup refried beans", "1 cup shredded beef", "1 cup lettuce", "1 tomato, diced", "1/2 cup cheese", "1/4 cup sour cream"],
-        "instructions": "Warm gordita shells. Fill with beans, beef, lettuce, tomato, and cheese. Top with sour cream. Serve immediately.",
-        "proteins": ["beef", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "8 gordita shells",
+          "1 cup refried beans",
+          "1 cup shredded beef",
+          "1 cup lettuce",
+          "1 tomato, diced",
+          "1/2 cup cheese",
+          "1/4 cup sour cream"
+        ],
+        "cooking_instructions": "Warm gordita shells. Fill with beans, beef, lettuce, tomato, and cheese. Top with sour cream. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 286
       },
       {
-        "title": "Quick Mexican Tamales",
+        "recipe_name": "Quick Mexican Tamales",
         "cuisine": "Mexican",
-        "ingredients": ["8 tamale wrappers", "2 cups masa", "1 cup shredded chicken", "1/2 cup red sauce", "1/4 cup cheese"],
-        "instructions": "Spread masa on wrappers. Add chicken and sauce. Wrap tightly. Steam for 15 minutes. Top with cheese and serve.",
-        "proteins": ["chicken", "cheese"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 20,
-        "difficulty": "medium"
+        "ingredients": [
+          "8 tamale wrappers",
+          "2 cups masa",
+          "1 cup shredded chicken",
+          "1/2 cup red sauce",
+          "1/4 cup cheese"
+        ],
+        "cooking_instructions": "Spread masa on wrappers. Add chicken and sauce. Wrap tightly. Steam for 15 minutes. Top with cheese and serve.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "cheese"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 290
       },
       {
-        "title": "Quick Mexican Menudo",
+        "recipe_name": "Quick Mexican Menudo",
         "cuisine": "Mexican",
-        "ingredients": ["2 cups hominy", "1 lb beef tripe", "4 cups beef broth", "1 onion, diced", "2 cloves garlic", "1 tsp oregano", "Salt and pepper", "Lime wedges"],
-        "instructions": "Cook tripe in broth for 20 minutes. Add hominy, onion, garlic, and oregano. Simmer for 10 minutes. Season with salt and pepper. Serve with lime wedges.",
-        "proteins": ["beef tripe"],
+        "ingredients": [
+          "2 cups hominy",
+          "1 lb beef tripe",
+          "4 cups beef broth",
+          "1 onion, diced",
+          "2 cloves garlic",
+          "1 tsp oregano",
+          "Salt and pepper",
+          "Lime wedges"
+        ],
+        "cooking_instructions": "Cook tripe in broth for 20 minutes. Add hominy, onion, garlic, and oregano. Simmer for 10 minutes. Season with salt and pepper. Serve with lime wedges.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef tripe"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 35,
-        "difficulty": "medium"
+        "calories_per_serving": 350
       },
       {
-        "title": "Quick Mexican Agua Fresca",
+        "recipe_name": "Quick Mexican Agua Fresca",
         "cuisine": "Mexican",
-        "ingredients": ["2 cups fresh fruit", "2 cups water", "1/4 cup sugar", "1 lime, juiced", "Ice cubes"],
-        "instructions": "Blend fruit with water, sugar, and lime juice. Strain and chill. Serve over ice.",
-        "proteins": ["fruit"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups fresh fruit",
+          "2 cups water",
+          "1/4 cup sugar",
+          "1 lime, juiced",
+          "Ice cubes"
+        ],
+        "cooking_instructions": "Blend fruit with water, sugar, and lime juice. Strain and chill. Serve over ice.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "fruit"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 260
       },
       {
-        "title": "Quick Mexican Paletas",
+        "recipe_name": "Quick Mexican Paletas",
         "cuisine": "Mexican",
-        "ingredients": ["2 cups fresh fruit", "1 cup water", "1/4 cup sugar", "1 lime, juiced", "Popsicle molds"],
-        "instructions": "Blend fruit with water, sugar, and lime juice. Pour into molds. Freeze for 4 hours. Serve frozen.",
-        "proteins": ["fruit"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups fresh fruit",
+          "1 cup water",
+          "1/4 cup sugar",
+          "1 lime, juiced",
+          "Popsicle molds"
+        ],
+        "cooking_instructions": "Blend fruit with water, sugar, and lime juice. Pour into molds. Freeze for 4 hours. Serve frozen.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "fruit"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 260
       }
     ]
   }

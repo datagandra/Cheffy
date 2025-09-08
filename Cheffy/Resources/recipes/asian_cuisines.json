@@ -2,157 +2,402 @@
   "cuisines": {
     "Japanese": [
       {
-        "title": "Sushi Roll California",
+        "recipe_name": "Sushi Roll California",
         "cuisine": "Japanese",
-        "ingredients": ["2 cups sushi rice", "1/4 cup rice vinegar", "1 tbsp sugar", "1 tsp salt", "Nori sheets", "1 avocado, sliced", "1 cucumber, julienned", "1/2 cup imitation crab", "1 tbsp mayonnaise", "1 tsp sriracha", "Soy sauce for serving"],
-        "instructions": "Cook sushi rice and mix with rice vinegar, sugar, and salt. Let cool to room temperature. Mix crab with mayonnaise and sriracha. Place nori sheet on bamboo mat. Spread rice evenly over nori, leaving 1 inch at top. Place avocado, cucumber, and crab mixture in center. Roll tightly using bamboo mat. Slice into 8 pieces and serve with soy sauce.",
-        "proteins": ["imitation crab"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "ingredients": [
+          "2 cups sushi rice",
+          "1/4 cup rice vinegar",
+          "1 tbsp sugar",
+          "1 tsp salt",
+          "Nori sheets",
+          "1 avocado, sliced",
+          "1 cucumber, julienned",
+          "1/2 cup imitation crab",
+          "1 tbsp mayonnaise",
+          "1 tsp sriracha",
+          "Soy sauce for serving"
+        ],
+        "cooking_instructions": "Cook sushi rice and mix with rice vinegar, sugar, and salt. Let cool to room temperature. Mix crab with mayonnaise and sriracha. Place nori sheet on bamboo mat. Spread rice evenly over nori, leaving 1 inch at top. Place avocado, cucumber, and crab mixture in center. Roll tightly using bamboo mat. Slice into 8 pieces and serve with soy sauce.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "imitation crab"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 360
       },
       {
-        "title": "Quick Chicken Teriyaki",
+        "recipe_name": "Quick Chicken Teriyaki",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb chicken breast, sliced", "1/4 cup soy sauce", "2 tbsp mirin", "2 tbsp sake", "1 tbsp sugar", "1 tsp ginger, grated", "1 clove garlic, minced", "2 tbsp oil", "Sesame seeds for garnish"],
-        "instructions": "Mix soy sauce, mirin, sake, sugar, ginger, and garlic for sauce. Heat oil and cook chicken for 5 minutes. Add sauce and cook for 3 minutes. Garnish with sesame seeds.",
-        "proteins": ["chicken breast"],
+        "ingredients": [
+          "1 lb chicken breast, sliced",
+          "1/4 cup soy sauce",
+          "2 tbsp mirin",
+          "2 tbsp sake",
+          "1 tbsp sugar",
+          "1 tsp ginger, grated",
+          "1 clove garlic, minced",
+          "2 tbsp oil",
+          "Sesame seeds for garnish"
+        ],
+        "cooking_instructions": "Mix soy sauce, mirin, sake, sugar, ginger, and garlic for sauce. Heat oil and cook chicken for 5 minutes. Add sauce and cook for 3 minutes. Garnish with sesame seeds.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken breast"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "calories_per_serving": 310
       },
       {
-        "title": "Instant Miso Soup",
+        "recipe_name": "Instant Miso Soup",
         "cuisine": "Japanese",
-        "ingredients": ["2 cups dashi stock", "2 tbsp miso paste", "1/2 cup silken tofu, cubed", "2 green onions, sliced", "1 sheet nori, torn"],
-        "instructions": "Heat dashi stock. Dissolve miso paste in hot stock. Add tofu and simmer for 2 minutes. Garnish with green onions and nori.",
-        "proteins": ["tofu"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 5,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups dashi stock",
+          "2 tbsp miso paste",
+          "1/2 cup silken tofu, cubed",
+          "2 green onions, sliced",
+          "1 sheet nori, torn"
+        ],
+        "cooking_instructions": "Heat dashi stock. Dissolve miso paste in hot stock. Add tofu and simmer for 2 minutes. Garnish with green onions and nori.",
+        "cooking_time_category": "Under 5 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "tofu"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 260
       },
       {
-        "title": "Quick Beef Stir Fry",
+        "recipe_name": "Quick Beef Stir Fry",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb beef, thinly sliced", "1 bell pepper, sliced", "1 onion, sliced", "2 cloves garlic, minced", "2 tbsp soy sauce", "1 tbsp mirin", "1 tbsp oil", "Sesame seeds for garnish"],
-        "instructions": "Heat oil and cook beef for 3 minutes. Add vegetables and garlic, cook for 4 minutes. Add soy sauce and mirin, cook for 2 minutes. Garnish with sesame seeds.",
-        "proteins": ["beef"],
+        "ingredients": [
+          "1 lb beef, thinly sliced",
+          "1 bell pepper, sliced",
+          "1 onion, sliced",
+          "2 cloves garlic, minced",
+          "2 tbsp soy sauce",
+          "1 tbsp mirin",
+          "1 tbsp oil",
+          "Sesame seeds for garnish"
+        ],
+        "cooking_instructions": "Heat oil and cook beef for 3 minutes. Add vegetables and garlic, cook for 4 minutes. Add soy sauce and mirin, cook for 2 minutes. Garnish with sesame seeds.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "calories_per_serving": 300
       },
       {
-        "title": "Speedy Salmon Teriyaki",
+        "recipe_name": "Speedy Salmon Teriyaki",
         "cuisine": "Japanese",
-        "ingredients": ["4 salmon fillets", "1/4 cup soy sauce", "2 tbsp mirin", "1 tbsp sugar", "1 tsp ginger, grated", "2 tbsp oil", "Sesame seeds for garnish"],
-        "instructions": "Mix soy sauce, mirin, sugar, and ginger for sauce. Heat oil and cook salmon for 4 minutes per side. Add sauce and cook for 2 minutes. Garnish with sesame seeds.",
-        "proteins": ["salmon"],
+        "ingredients": [
+          "4 salmon fillets",
+          "1/4 cup soy sauce",
+          "2 tbsp mirin",
+          "1 tbsp sugar",
+          "1 tsp ginger, grated",
+          "2 tbsp oil",
+          "Sesame seeds for garnish"
+        ],
+        "cooking_instructions": "Mix soy sauce, mirin, sugar, and ginger for sauce. Heat oil and cook salmon for 4 minutes per side. Add sauce and cook for 2 minutes. Garnish with sesame seeds.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "salmon"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Vegetable Tempura",
+        "recipe_name": "Quick Vegetable Tempura",
         "cuisine": "Japanese",
-        "ingredients": ["1 cup mixed vegetables", "1/2 cup tempura flour", "1/2 cup ice water", "Oil for frying", "Tempura sauce for dipping"],
-        "instructions": "Mix tempura flour with ice water. Heat oil to 350°F. Dip vegetables in batter and fry for 3 minutes until golden. Serve with tempura sauce.",
-        "proteins": ["vegetables"],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "1 cup mixed vegetables",
+          "1/2 cup tempura flour",
+          "1/2 cup ice water",
+          "Oil for frying",
+          "Tempura sauce for dipping"
+        ],
+        "cooking_instructions": "Mix tempura flour with ice water. Heat oil to 350°F. Dip vegetables in batter and fry for 3 minutes until golden. Serve with tempura sauce.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
+        "proteins": [
+          "vegetables"
+        ],
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 266
       },
       {
-        "title": "Instant Chicken Katsu",
+        "recipe_name": "Instant Chicken Katsu",
         "cuisine": "Japanese",
-        "ingredients": ["4 chicken cutlets", "1 cup panko breadcrumbs", "2 eggs, beaten", "1/2 cup flour", "Oil for frying", "Tonkatsu sauce"],
-        "instructions": "Dredge chicken in flour, dip in eggs, then coat with panko. Heat oil and fry for 4 minutes per side. Serve with tonkatsu sauce.",
-        "proteins": ["chicken"],
+        "ingredients": [
+          "4 chicken cutlets",
+          "1 cup panko breadcrumbs",
+          "2 eggs, beaten",
+          "1/2 cup flour",
+          "Oil for frying",
+          "Tonkatsu sauce"
+        ],
+        "cooking_instructions": "Dredge chicken in flour, dip in eggs, then coat with panko. Heat oil and fry for 4 minutes per side. Serve with tonkatsu sauce.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 284
       },
       {
-        "title": "Quick Gyoza",
+        "recipe_name": "Quick Gyoza",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb ground pork", "1/2 cup cabbage, chopped", "2 green onions, minced", "1 tbsp soy sauce", "Gyoza wrappers", "2 tbsp oil", "1/4 cup water"],
-        "instructions": "Mix pork, cabbage, green onions, and soy sauce. Fill gyoza wrappers and seal. Heat oil and cook gyoza for 3 minutes. Add water and steam for 2 minutes.",
-        "proteins": ["ground pork"],
+        "ingredients": [
+          "1 lb ground pork",
+          "1/2 cup cabbage, chopped",
+          "2 green onions, minced",
+          "1 tbsp soy sauce",
+          "Gyoza wrappers",
+          "2 tbsp oil",
+          "1/4 cup water"
+        ],
+        "cooking_instructions": "Mix pork, cabbage, green onions, and soy sauce. Fill gyoza wrappers and seal. Heat oil and cook gyoza for 3 minutes. Add water and steam for 2 minutes.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground pork"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "medium"
+        "calories_per_serving": 300
       },
       {
-        "title": "Speedy Beef Sukiyaki",
+        "recipe_name": "Speedy Beef Sukiyaki",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb beef, thinly sliced", "1 package shirataki noodles", "1 cup mushrooms", "1 cup napa cabbage", "1/4 cup soy sauce", "2 tbsp mirin", "1 tbsp sugar"],
-        "instructions": "Mix soy sauce, mirin, and sugar for sauce. Heat pan and add sauce. Add beef and cook for 3 minutes. Add vegetables and noodles, cook for 5 minutes.",
-        "proteins": ["beef"],
+        "ingredients": [
+          "1 lb beef, thinly sliced",
+          "1 package shirataki noodles",
+          "1 cup mushrooms",
+          "1 cup napa cabbage",
+          "1/4 cup soy sauce",
+          "2 tbsp mirin",
+          "1 tbsp sugar"
+        ],
+        "cooking_instructions": "Mix soy sauce, mirin, and sugar for sauce. Heat pan and add sauce. Add beef and cook for 3 minutes. Add vegetables and noodles, cook for 5 minutes.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 294
       },
       {
-        "title": "Quick Onigiri",
+        "recipe_name": "Quick Onigiri",
         "cuisine": "Japanese",
-        "ingredients": ["2 cups cooked sushi rice", "1/4 cup rice vinegar", "1 tbsp sugar", "1 tsp salt", "1/2 cup salmon, cooked", "Nori sheets", "Sesame seeds"],
-        "instructions": "Mix rice with vinegar, sugar, and salt. Wet hands and form rice into triangles. Add salmon filling and wrap with nori. Sprinkle with sesame seeds.",
-        "proteins": ["salmon", "rice"],
+        "ingredients": [
+          "2 cups cooked sushi rice",
+          "1/4 cup rice vinegar",
+          "1 tbsp sugar",
+          "1 tsp salt",
+          "1/2 cup salmon, cooked",
+          "Nori sheets",
+          "Sesame seeds"
+        ],
+        "cooking_instructions": "Mix rice with vinegar, sugar, and salt. Wet hands and form rice into triangles. Add salmon filling and wrap with nori. Sprinkle with sesame seeds.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "salmon",
+          "rice"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "calories_per_serving": 286
       },
       {
         "title": "Ramen Tonkotsu",
         "cuisine": "Japanese",
-        "ingredients": ["2 lbs pork bones", "1 lb pork belly", "2 tbsp soy sauce", "1 tbsp mirin", "1 tbsp sake", "2 cloves garlic, minced", "1 inch ginger, grated", "4 eggs", "2 green onions, sliced", "1 cup bamboo shoots", "1 cup bean sprouts", "Ramen noodles"],
+        "ingredients": [
+          "2 lbs pork bones",
+          "1 lb pork belly",
+          "2 tbsp soy sauce",
+          "1 tbsp mirin",
+          "1 tbsp sake",
+          "2 cloves garlic, minced",
+          "1 inch ginger, grated",
+          "4 eggs",
+          "2 green onions, sliced",
+          "1 cup bamboo shoots",
+          "1 cup bean sprouts",
+          "Ramen noodles"
+        ],
         "instructions": "Simmer pork bones in water for 8 hours to make rich broth. Strain and season with soy sauce, mirin, and sake. Cook pork belly in broth until tender. Boil eggs for 6 minutes, then marinate in soy sauce. Cook ramen noodles according to package. Assemble bowls with noodles, broth, sliced pork, soft-boiled eggs, green onions, bamboo shoots, and bean sprouts."
       },
       {
         "title": "Teriyaki Chicken",
         "cuisine": "Japanese",
-        "ingredients": ["2 lbs chicken thighs", "1/2 cup soy sauce", "1/4 cup mirin", "1/4 cup sake", "2 tbsp sugar", "1 tbsp honey", "1 inch ginger, grated", "2 cloves garlic, minced", "2 tbsp vegetable oil", "Sesame seeds for garnish"],
+        "ingredients": [
+          "2 lbs chicken thighs",
+          "1/2 cup soy sauce",
+          "1/4 cup mirin",
+          "1/4 cup sake",
+          "2 tbsp sugar",
+          "1 tbsp honey",
+          "1 inch ginger, grated",
+          "2 cloves garlic, minced",
+          "2 tbsp vegetable oil",
+          "Sesame seeds for garnish"
+        ],
         "instructions": "Mix soy sauce, mirin, sake, sugar, honey, ginger, and garlic to make teriyaki sauce. Heat oil in a large pan and brown chicken thighs on both sides. Add teriyaki sauce and simmer for 20 minutes, turning chicken occasionally. Increase heat to reduce sauce until thickened and glossy. Garnish with sesame seeds and serve with rice."
       },
       {
         "title": "Tempura Shrimp",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb large shrimp", "1 cup all-purpose flour", "1 cup ice-cold water", "1 egg yolk", "1/2 cup cornstarch", "Vegetable oil for frying", "1/2 cup tempura sauce", "1 daikon radish, grated", "1 cup tempura flour"],
+        "ingredients": [
+          "1 lb large shrimp",
+          "1 cup all-purpose flour",
+          "1 cup ice-cold water",
+          "1 egg yolk",
+          "1/2 cup cornstarch",
+          "Vegetable oil for frying",
+          "1/2 cup tempura sauce",
+          "1 daikon radish, grated",
+          "1 cup tempura flour"
+        ],
         "instructions": "Peel and devein shrimp, leaving tail intact. Mix tempura flour with ice-cold water and egg yolk to make batter. Heat oil to 350°F. Dust shrimp with cornstarch, dip in batter, and fry until golden and crispy. Drain on paper towels. Serve with tempura sauce and grated daikon radish."
       },
       {
         "title": "Classic Miso Soup",
         "cuisine": "Japanese",
-        "ingredients": ["4 cups dashi stock", "3 tbsp white miso paste", "1/2 cup silken tofu, cubed", "1/4 cup wakame seaweed", "2 green onions, sliced", "1 tbsp bonito flakes", "1 sheet nori, torn into pieces"],
+        "ingredients": [
+          "4 cups dashi stock",
+          "3 tbsp white miso paste",
+          "1/2 cup silken tofu, cubed",
+          "1/4 cup wakame seaweed",
+          "2 green onions, sliced",
+          "1 tbsp bonito flakes",
+          "1 sheet nori, torn into pieces"
+        ],
         "instructions": "Bring dashi stock to a gentle simmer. Dissolve miso paste in a small amount of hot stock, then add to pot. Add wakame seaweed and simmer for 2 minutes. Carefully add tofu cubes and simmer for 1 minute. Remove from heat and ladle into bowls. Garnish with green onions, bonito flakes, and nori pieces."
       },
       {
         "title": "Beef Sukiyaki",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb beef, thinly sliced", "1 package shirataki noodles", "1 package enoki mushrooms", "1 package shiitake mushrooms", "1 napa cabbage, chopped", "1 bunch green onions", "1/2 cup soy sauce", "1/4 cup mirin", "1/4 cup sake", "2 tbsp sugar", "2 eggs"],
+        "ingredients": [
+          "1 lb beef, thinly sliced",
+          "1 package shirataki noodles",
+          "1 package enoki mushrooms",
+          "1 package shiitake mushrooms",
+          "1 napa cabbage, chopped",
+          "1 bunch green onions",
+          "1/2 cup soy sauce",
+          "1/4 cup mirin",
+          "1/4 cup sake",
+          "2 tbsp sugar",
+          "2 eggs"
+        ],
         "instructions": "Mix soy sauce, mirin, sake, and sugar to make sukiyaki sauce. Heat a large skillet and add sauce. Add beef slices and cook until browned. Add vegetables and noodles, cooking until vegetables are tender. Crack eggs into small bowls for dipping. Serve hot with raw eggs for dipping."
       },
       {
         "title": "Chicken Katsu",
         "cuisine": "Japanese",
-        "ingredients": ["4 chicken breasts", "1 cup all-purpose flour", "2 eggs, beaten", "2 cups panko breadcrumbs", "Vegetable oil for frying", "1/2 cup tonkatsu sauce", "1 cup shredded cabbage", "1 lemon, wedged"],
+        "ingredients": [
+          "4 chicken breasts",
+          "1 cup all-purpose flour",
+          "2 eggs, beaten",
+          "2 cups panko breadcrumbs",
+          "Vegetable oil for frying",
+          "1/2 cup tonkatsu sauce",
+          "1 cup shredded cabbage",
+          "1 lemon, wedged"
+        ],
         "instructions": "Pound chicken breasts to even thickness. Season with salt and pepper. Dredge in flour, dip in beaten eggs, then coat with panko breadcrumbs. Heat oil to 350°F and fry chicken until golden and crispy. Drain on paper towels. Slice and serve with tonkatsu sauce, shredded cabbage, and lemon wedges."
       },
       {
         "title": "Gyoza Dumplings",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb ground pork", "1/2 cup napa cabbage, finely chopped", "2 green onions, minced", "1 tbsp soy sauce", "1 tsp sesame oil", "1/2 tsp white pepper", "Gyoza wrappers", "2 tbsp vegetable oil", "1/2 cup water", "Soy sauce and rice vinegar for dipping"],
+        "ingredients": [
+          "1 lb ground pork",
+          "1/2 cup napa cabbage, finely chopped",
+          "2 green onions, minced",
+          "1 tbsp soy sauce",
+          "1 tsp sesame oil",
+          "1/2 tsp white pepper",
+          "Gyoza wrappers",
+          "2 tbsp vegetable oil",
+          "1/2 cup water",
+          "Soy sauce and rice vinegar for dipping"
+        ],
         "instructions": "Mix pork, cabbage, green onions, soy sauce, sesame oil, and white pepper for filling. Place small amount of filling in center of gyoza wrapper. Moisten edges with water and fold to seal. Heat oil in a large pan and arrange gyoza in a single layer. Cook until bottom is golden. Add water and cover to steam for 5 minutes. Serve with soy sauce and rice vinegar."
       },
       {
         "title": "Salmon Teriyaki",
         "cuisine": "Japanese",
-        "ingredients": ["4 salmon fillets", "1/2 cup soy sauce", "1/4 cup mirin", "1/4 cup sake", "2 tbsp sugar", "1 tbsp honey", "1 inch ginger, grated", "2 cloves garlic, minced", "2 tbsp vegetable oil", "Sesame seeds for garnish"],
+        "ingredients": [
+          "4 salmon fillets",
+          "1/2 cup soy sauce",
+          "1/4 cup mirin",
+          "1/4 cup sake",
+          "2 tbsp sugar",
+          "1 tbsp honey",
+          "1 inch ginger, grated",
+          "2 cloves garlic, minced",
+          "2 tbsp vegetable oil",
+          "Sesame seeds for garnish"
+        ],
         "instructions": "Mix soy sauce, mirin, sake, sugar, honey, ginger, and garlic to make teriyaki sauce. Heat oil in a large pan and sear salmon fillets skin-side down for 3 minutes. Flip and cook for 2 minutes. Add teriyaki sauce and simmer for 5 minutes, basting salmon with sauce. Garnish with sesame seeds and serve with rice."
       },
       {
         "title": "Onigiri Rice Balls",
         "cuisine": "Japanese",
-        "ingredients": ["3 cups sushi rice", "1/4 cup rice vinegar", "1 tbsp sugar", "1 tsp salt", "1/2 cup salmon, cooked and flaked", "1/2 cup tuna, cooked and flaked", "1/4 cup pickled plum", "Nori sheets, cut into strips", "Sesame seeds"],
+        "ingredients": [
+          "3 cups sushi rice",
+          "1/4 cup rice vinegar",
+          "1 tbsp sugar",
+          "1 tsp salt",
+          "1/2 cup salmon, cooked and flaked",
+          "1/2 cup tuna, cooked and flaked",
+          "1/4 cup pickled plum",
+          "Nori sheets, cut into strips",
+          "Sesame seeds"
+        ],
         "instructions": "Cook sushi rice and mix with rice vinegar, sugar, and salt. Let cool to room temperature. Wet hands with water and salt. Take a handful of rice and form into a triangle shape. Make a small indentation and add filling (salmon, tuna, or pickled plum). Wrap with nori strip and sprinkle with sesame seeds. Serve immediately."
       },
       {
@@ -188,7 +433,8 @@
           "Add another 1 tsp oil and pour more egg mixture. Lift rolled egg and pour mixture underneath. Roll again.",
           "Repeat process until all egg mixture is used. Cook for 2 more minutes until golden. Slice and serve with scallions."
         ],
-        "chef_tips": "The key is rolling the egg while it's still slightly runny on top. Use a proper tamagoyaki pan for best results. The layers should be thin and even for the characteristic texture."
+        "chef_tips": "The key is rolling the egg while it's still slightly runny on top. Use a proper tamagoyaki pan for best results. The layers should be thin and even for the characteristic texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chawanmushi (Savory Egg Custard)",
@@ -226,7 +472,8 @@
           "Steam over medium heat for 12-15 minutes until set. Test with toothpick - it should come out clean.",
           "Garnish with mitsuba leaves and serve immediately."
         ],
-        "chef_tips": "The custard should be silky smooth with no bubbles. Steaming temperature is crucial - too hot and it will be rubbery. The ingredients should be arranged beautifully in the cups."
+        "chef_tips": "The custard should be silky smooth with no bubbles. Steaming temperature is crucial - too hot and it will be rubbery. The ingredients should be arranged beautifully in the cups.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Yakitori (Grilled Chicken Skewers)",
@@ -264,7 +511,8 @@
           "Continue basting and turning until chicken is cooked through and glazed.",
           "Serve immediately with remaining sauce and sesame seeds."
         ],
-        "chef_tips": "The key is frequent turning and basting to build up layers of flavor. Don't overcook the chicken - it should be juicy inside. The sauce should be glossy and slightly sticky."
+        "chef_tips": "The key is frequent turning and basting to build up layers of flavor. Don't overcook the chicken - it should be juicy inside. The sauce should be glossy and slightly sticky.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Tonkatsu (Japanese Pork Cutlet)",
@@ -302,7 +550,8 @@
           "Heat oil to 350°F. Fry cutlets for 4-5 minutes per side until golden and cooked through.",
           "Drain on paper towels. Slice and serve with tonkatsu sauce, cabbage, and lemon wedges."
         ],
-        "chef_tips": "The panko creates the characteristic light, crispy coating. Don't overcrowd the pan when frying. The cutlets should be golden brown and the pork just cooked through."
+        "chef_tips": "The panko creates the characteristic light, crispy coating. Don't overcrowd the pan when frying. The cutlets should be golden brown and the pork just cooked through.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Oyakodon (Chicken and Egg Rice Bowl)",
@@ -339,7 +588,8 @@
           "Beat eggs lightly and pour over chicken mixture. Cover and cook for 2 minutes until eggs are set but still slightly runny.",
           "Divide rice among 4 bowls. Top with chicken and egg mixture. Garnish with scallions and mitsuba."
         ],
-        "chef_tips": "The eggs should be creamy, not fully set. The name 'oyakodon' means 'parent and child' - chicken and egg. Don't overcook the eggs for the best texture."
+        "chef_tips": "The eggs should be creamy, not fully set. The name 'oyakodon' means 'parent and child' - chicken and egg. Don't overcook the eggs for the best texture.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Kaiseki Ryori (Traditional Multi-Course Meal)",
@@ -379,7 +629,8 @@
           "Serve courses in proper sequence, allowing time to appreciate each dish.",
           "The meal should tell a story and create a complete sensory experience."
         ],
-        "chef_tips": "Kaiseki is the pinnacle of Japanese cuisine - it's about balance, seasonality, and perfection in every detail. Each course should complement the others and create a harmonious whole. The presentation should be as beautiful as the taste."
+        "chef_tips": "Kaiseki is the pinnacle of Japanese cuisine - it's about balance, seasonality, and perfection in every detail. Each course should complement the others and create a harmonious whole. The presentation should be as beautiful as the taste.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Wagyu Beef Sukiyaki",
@@ -420,7 +671,8 @@
           "Cook for 8-10 minutes, turning ingredients occasionally, until vegetables are tender.",
           "Serve with raw eggs for dipping. Each person cooks their own ingredients at the table."
         ],
-        "chef_tips": "Sukiyaki is a communal dish meant to be shared. The wagyu should be the star - don't overcook it. The raw egg dip is traditional and adds richness to the dish."
+        "chef_tips": "Sukiyaki is a communal dish meant to be shared. The wagyu should be the star - don't overcook it. The raw egg dip is traditional and adds richness to the dish.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Matcha Green Tea Ice Cream",
@@ -455,7 +707,8 @@
           "Strain custard and whisk in matcha powder, vanilla, and salt. Chill completely.",
           "Churn in ice cream maker according to manufacturer's instructions. Freeze until firm."
         ],
-        "chef_tips": "Use high-quality ceremonial grade matcha for the best flavor and color. The custard should be smooth and silky. Don't over-churn or the ice cream will become grainy."
+        "chef_tips": "Use high-quality ceremonial grade matcha for the best flavor and color. The custard should be smooth and silky. Don't over-churn or the ice cream will become grainy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Kung Pao Chicken",
@@ -498,7 +751,8 @@
           "Add chilies and Sichuan peppercorns to wok. Cook for 30 seconds until fragrant. Add garlic and ginger.",
           "Add bell pepper and scallions. Stir-fry for 2 minutes. Return chicken and add sauce. Toss for 1 minute. Add peanuts and serve."
         ],
-        "chef_tips": "The key is high heat and quick cooking. Don't overcook the chicken or it will be tough. The Sichuan peppercorns add the characteristic numbing sensation."
+        "chef_tips": "The key is high heat and quick cooking. Don't overcook the chicken or it will be tough. The Sichuan peppercorns add the characteristic numbing sensation.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Peking Duck",
@@ -537,7 +791,8 @@
           "Increase heat to 400°F and roast for 30 minutes until skin is crispy and golden.",
           "Let rest for 15 minutes. Carve and serve with pancakes, cucumber, and hoisin sauce."
         ],
-        "chef_tips": "The air-drying step is crucial for crispy skin. The duck should be golden and the skin should crackle when cut. This is a ceremonial dish that requires patience and precision."
+        "chef_tips": "The air-drying step is crucial for crispy skin. The duck should be golden and the skin should crackle when cut. This is a ceremonial dish that requires patience and precision.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Mapo Tofu",
@@ -578,7 +833,8 @@
           "Gently add tofu cubes. Simmer for 5 minutes, stirring carefully.",
           "Add cornstarch slurry and cook for 1 minute until thickened. Garnish with scallions and Sichuan peppercorns."
         ],
-        "chef_tips": "Handle the tofu gently to avoid breaking it. The doubanjiang is the key ingredient - it provides the characteristic spicy, fermented flavor. The dish should be slightly saucy."
+        "chef_tips": "Handle the tofu gently to avoid breaking it. The doubanjiang is the key ingredient - it provides the characteristic spicy, fermented flavor. The dish should be slightly saucy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Xiaolongbao (Soup Dumplings)",
@@ -621,7 +877,8 @@
           "Roll dough into thin circles. Place filling in center and pleat edges to seal.",
           "Steam over high heat for 8-10 minutes until cooked through. Serve immediately with dipping sauce."
         ],
-        "chef_tips": "The key is the gelatinous stock that becomes soup when steamed. The pleating technique takes practice. Don't overfill the dumplings or they'll burst during steaming."
+        "chef_tips": "The key is the gelatinous stock that becomes soup when steamed. The pleating technique takes practice. Don't overfill the dumplings or they'll burst during steaming.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Sweet and Sour Pork",
@@ -665,7 +922,8 @@
           "Heat 2 tbsp oil in wok. Stir-fry bell pepper and onion for 3 minutes. Add pineapple.",
           "Add sauce and bring to boil. Add pork and toss to coat. Serve immediately."
         ],
-        "chef_tips": "The pork should be crispy on the outside and tender inside. Don't overcook the vegetables - they should retain some crunch. The sauce should be glossy and well-balanced."
+        "chef_tips": "The pork should be crispy on the outside and tender inside. Don't overcook the vegetables - they should retain some crunch. The sauce should be glossy and well-balanced.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Hot and Sour Soup",
@@ -706,7 +964,8 @@
           "Slowly pour beaten eggs in thin stream while stirring to create ribbons.",
           "Garnish with scallions and sesame oil. Serve immediately."
         ],
-        "chef_tips": "The soup should be both hot (spicy) and sour. The egg ribbons should be thin and delicate. Adjust the heat and sour levels to your preference."
+        "chef_tips": "The soup should be both hot (spicy) and sour. The egg ribbons should be thin and delicate. Adjust the heat and sour levels to your preference.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Char Siu (Chinese BBQ Pork)",
@@ -746,7 +1005,8 @@
           "Roast for 20 minutes. Baste with marinade and continue roasting for 15-20 minutes until caramelized.",
           "Let rest for 10 minutes. Slice and serve with remaining sauce."
         ],
-        "chef_tips": "The pork should be slightly charred on the edges and glazed with the sweet sauce. The red food coloring gives it the traditional appearance. Don't overcook or it will be dry."
+        "chef_tips": "The pork should be slightly charred on the edges and glazed with the sweet sauce. The red food coloring gives it the traditional appearance. Don't overcook or it will be dry.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Dan Dan Noodles",
@@ -789,7 +1049,8 @@
           "Make sauce: mix tahini, soy sauce, vinegar, chili oil, sugar, and stock in bowl.",
           "Add sauce to pork mixture. Simmer for 2 minutes. Toss with noodles and garnish with scallions and Sichuan peppercorns."
         ],
-        "chef_tips": "The noodles should be slightly chewy. The sauce should be creamy from the tahini and spicy from the doubanjiang. The Sichuan peppercorns add the characteristic numbing sensation."
+        "chef_tips": "The noodles should be slightly chewy. The sauce should be creamy from the tahini and spicy from the doubanjiang. The Sichuan peppercorns add the characteristic numbing sensation.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Pad Thai",
@@ -832,7 +1093,8 @@
           "Add remaining oil, garlic, and shallot. Stir-fry for 30 seconds. Add shrimp and cook for 2 minutes.",
           "Add noodles and sauce. Toss for 3 minutes. Add bean sprouts, scallions, and eggs. Toss for 1 minute. Serve with peanuts, lime, and cilantro."
         ],
-        "chef_tips": "The key is high heat and quick cooking. Don't overcook the noodles or they'll become mushy. The balance of sweet, sour, salty, and spicy is crucial for authentic pad Thai."
+        "chef_tips": "The key is high heat and quick cooking. Don't overcook the noodles or they'll become mushy. The balance of sweet, sour, salty, and spicy is crucial for authentic pad Thai.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Tom Yum Goong (Spicy Shrimp Soup)",
@@ -872,7 +1134,8 @@
           "Season with lime juice, fish sauce, and palm sugar. Taste and adjust seasoning.",
           "Garnish with cilantro and drizzle with chili oil. Serve immediately."
         ],
-        "chef_tips": "The soup should be hot, sour, and aromatic. Don't overcook the shrimp or they'll become rubbery. The balance of flavors is key - it should be spicy, sour, and slightly sweet."
+        "chef_tips": "The soup should be hot, sour, and aromatic. Don't overcook the shrimp or they'll become rubbery. The balance of flavors is key - it should be spicy, sour, and slightly sweet.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Green Curry (Gaeng Keow Wan)",
@@ -911,7 +1174,8 @@
           "Add remaining coconut milk, eggplant, bamboo shoots, and lime leaves. Simmer for 10 minutes.",
           "Season with fish sauce and palm sugar. Add basil and chilies. Serve with jasmine rice."
         ],
-        "chef_tips": "The curry should be creamy and aromatic. Don't boil the coconut milk or it will separate. The green curry paste is the foundation - use a good quality one for best results."
+        "chef_tips": "The curry should be creamy and aromatic. Don't boil the coconut milk or it will separate. The green curry paste is the foundation - use a good quality one for best results.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Som Tam (Green Papaya Salad)",
@@ -950,7 +1214,8 @@
           "Add shredded papaya and toss with dressing. Add peanuts and dried shrimp if using.",
           "Taste and adjust seasoning. Garnish with cilantro and serve immediately."
         ],
-        "chef_tips": "The salad should be spicy, sour, and slightly sweet. Don't over-pound the vegetables or they'll become mushy. The papaya should be crisp and fresh."
+        "chef_tips": "The salad should be spicy, sour, and slightly sweet. Don't over-pound the vegetables or they'll become mushy. The papaya should be crisp and fresh.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Massaman Curry",
@@ -991,7 +1256,8 @@
           "Simmer for 1 hour until beef is tender. Add potatoes and onion. Simmer for 20 minutes.",
           "Season with fish sauce, palm sugar, and tamarind paste. Add peanuts. Serve with jasmine rice."
         ],
-        "chef_tips": "This is a rich, complex curry that benefits from long, slow cooking. The beef should be fall-apart tender. The spices should be whole for authentic flavor."
+        "chef_tips": "This is a rich, complex curry that benefits from long, slow cooking. The beef should be fall-apart tender. The spices should be whole for authentic flavor.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Mango Sticky Rice (Khao Niew Mamuang)",
@@ -1026,7 +1292,8 @@
           "Heat remaining coconut milk until thickened. Serve rice with mango slices and drizzle with coconut cream.",
           "Garnish with sesame seeds and serve immediately."
         ],
-        "chef_tips": "The rice should be sticky but not mushy. Use ripe, sweet mangoes for the best results. The coconut cream should be thick and rich."
+        "chef_tips": "The rice should be sticky but not mushy. Use ripe, sweet mangoes for the best results. The coconut cream should be thick and rich.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Pho Bo (Beef Noodle Soup)",
@@ -1070,7 +1337,8 @@
           "Strain broth, return to pot. Season with fish sauce, rock sugar, and salt. Keep hot.",
           "Cook rice noodles according to package directions. Divide among bowls, top with sliced brisket, pour hot broth over. Serve with garnishes."
         ],
-        "chef_tips": "The key is a clear, aromatic broth. Don't skip the bone roasting and charring aromatics - this creates the deep, complex flavor that makes pho special."
+        "chef_tips": "The key is a clear, aromatic broth. Don't skip the bone roasting and charring aromatics - this creates the deep, complex flavor that makes pho special.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Banh Mi",
@@ -1111,7 +1379,8 @@
           "Spread spicy mayonnaise on both sides of bread. Layer with pork, pickled vegetables, cucumber, cilantro, and jalapeños.",
           "Press sandwich gently and serve immediately."
         ],
-        "chef_tips": "The perfect banh mi balances sweet, sour, salty, and spicy flavors. The bread should be crispy outside, soft inside. Don't skimp on the pickled vegetables - they're essential."
+        "chef_tips": "The perfect banh mi balances sweet, sour, salty, and spicy flavors. The bread should be crispy outside, soft inside. Don't skimp on the pickled vegetables - they're essential.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Spring Rolls (Goi Cuon)",
@@ -1155,7 +1424,8 @@
           "Repeat with remaining wrappers and filling. Cover with damp towel to prevent drying.",
           "Make dipping sauce: mix fish sauce, lime juice, sugar, garlic, chili, and water until sugar dissolves. Serve spring rolls with sauce."
         ],
-        "chef_tips": "The key is not over-soaking the rice paper and rolling tightly. Keep finished rolls covered to prevent drying. The sauce should be balanced - sweet, sour, and salty."
+        "chef_tips": "The key is not over-soaking the rice paper and rolling tightly. Keep finished rolls covered to prevent drying. The sauce should be balanced - sweet, sour, and salty.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Bun Cha",
@@ -1200,7 +1470,8 @@
           "Make nuoc cham sauce: mix remaining fish sauce, sugar, lime juice, garlic, chili, and water until sugar dissolves.",
           "Divide noodles among bowls. Top with grilled pork, lettuce, bean sprouts, herbs, and cucumber. Drizzle with sauce and sprinkle with peanuts."
         ],
-        "chef_tips": "The pork should be slightly charred for authentic flavor. The nuoc cham sauce is the soul of this dish - it should be perfectly balanced between sweet, sour, and salty."
+        "chef_tips": "The pork should be slightly charred for authentic flavor. The nuoc cham sauce is the soul of this dish - it should be perfectly balanced between sweet, sour, and salty.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Ca Kho To (Caramelized Fish)",
@@ -1241,7 +1512,8 @@
           "Cover and simmer for 15 minutes, turning fish once. Add lime juice and black pepper.",
           "Garnish with cilantro and scallions. Serve with steamed rice."
         ],
-        "chef_tips": "The key is the caramelization - don't rush it. The fish should be tender and the sauce should be rich and slightly sweet. This dish is all about the balance of flavors."
+        "chef_tips": "The key is the caramelization - don't rush it. The fish should be tender and the sauce should be rich and slightly sweet. This dish is all about the balance of flavors.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Che Ba Mau (Three Color Dessert)",
@@ -1280,7 +1552,8 @@
           "Layer beans in serving bowls: mung beans, red beans, then black-eyed peas.",
           "Top with coconut milk, crushed ice, peanuts, sesame seeds, and coconut flakes. Serve immediately."
         ],
-        "chef_tips": "This refreshing dessert represents the three colors of the Vietnamese flag. The beans should be tender but not mushy. The coconut milk should be sweet and creamy."
+        "chef_tips": "This refreshing dessert represents the three colors of the Vietnamese flag. The beans should be tender but not mushy. The coconut milk should be sweet and creamy.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Bibimbap",
@@ -1325,7 +1598,8 @@
           "Fry eggs sunny-side up. Divide rice among bowls. Arrange vegetables and beef on top of rice.",
           "Top with fried egg, drizzle with remaining sesame oil, and serve with gochujang on the side. Sprinkle with sesame seeds."
         ],
-        "chef_tips": "The key is cooking each component separately to maintain distinct flavors and textures. Mix everything together with gochujang just before eating for the authentic bibimbap experience."
+        "chef_tips": "The key is cooking each component separately to maintain distinct flavors and textures. Mix everything together with gochujang just before eating for the authentic bibimbap experience.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Kimchi Jjigae (Kimchi Stew)",
@@ -1365,7 +1639,8 @@
           "Reduce heat and simmer for 10 minutes. Add tofu and scallions. Simmer for 5 minutes.",
           "Drizzle with sesame oil and serve immediately with steamed rice."
         ],
-        "chef_tips": "Use well-fermented kimchi for the best flavor. The stew should be spicy, sour, and slightly sweet. The pork belly adds richness to balance the kimchi's acidity."
+        "chef_tips": "Use well-fermented kimchi for the best flavor. The stew should be spicy, sour, and slightly sweet. The pork belly adds richness to balance the kimchi's acidity.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Bulgogi (Marinated Beef)",
@@ -1406,7 +1681,8 @@
           "Don't overcrowd the pan. Cook until beef is caramelized and cooked through.",
           "Garnish with scallions and sesame seeds. Serve with steamed rice and lettuce leaves for wrapping."
         ],
-        "chef_tips": "The Asian pear helps tenderize the meat and adds natural sweetness. Don't overcook the beef - it should be tender and slightly pink inside. The marinade creates a beautiful caramelization."
+        "chef_tips": "The Asian pear helps tenderize the meat and adds natural sweetness. Don't overcook the beef - it should be tender and slightly pink inside. The marinade creates a beautiful caramelization.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Japchae (Stir-Fried Noodles)",
@@ -1450,7 +1726,8 @@
           "Add garlic and cook for 30 seconds. Add noodles and sauce. Toss everything together for 3-4 minutes until well combined.",
           "Add spinach, scallions, and sesame seeds. Toss for 1 minute. Season with salt and pepper. Serve warm or at room temperature."
         ],
-        "chef_tips": "The key is cooking each vegetable separately to maintain their individual textures and colors. The noodles should be chewy, not mushy. This dish is perfect served warm or cold."
+        "chef_tips": "The key is cooking each vegetable separately to maintain their individual textures and colors. The noodles should be chewy, not mushy. This dish is perfect served warm or cold.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Tteokbokki (Spicy Rice Cakes)",
@@ -1492,7 +1769,8 @@
           "Add rice cakes and fish cakes. Simmer for 8-10 minutes until rice cakes are soft and sauce thickens.",
           "Add scallions and sesame oil. Simmer for 2 minutes. Garnish with sesame seeds and seaweed. Serve with hard-boiled eggs if desired."
         ],
-        "chef_tips": "This is Korea's ultimate street food. The rice cakes should be chewy, not mushy. The sauce should be thick and cling to the rice cakes. Adjust the spice level to your preference."
+        "chef_tips": "This is Korea's ultimate street food. The rice cakes should be chewy, not mushy. The sauce should be thick and cling to the rice cakes. Adjust the spice level to your preference.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Samgyeopsal (Grilled Pork Belly)",
@@ -1532,7 +1810,8 @@
           "Serve with lettuce leaves, perilla leaves, ssamjang, green onions, garlic, jalapeños, and kimchi.",
           "To eat: wrap pork belly and condiments in lettuce leaf, dip in ssamjang, and enjoy."
         ],
-        "chef_tips": "This is Korean BBQ at its finest. The pork belly should be crispy outside, tender inside. The ssamjang adds the perfect spicy, savory flavor. Don't skip the lettuce wraps - they're essential for the full experience."
+        "chef_tips": "This is Korean BBQ at its finest. The pork belly should be crispy outside, tender inside. The ssamjang adds the perfect spicy, savory flavor. Don't skip the lettuce wraps - they're essential for the full experience.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Japanese Ramen",
@@ -1567,7 +1846,8 @@
           "Slotted spoon"
         ],
         "cooking_instructions": "Cook noodles according to package directions. Drain and set aside. Heat stock in pot. Add miso paste, soy sauce, and sesame oil. Simmer 10 minutes. Season with salt. Cook pork belly in small pan until crispy. Soft-boil egg for 6 minutes. Place noodles in bowl. Add hot broth. Top with pork belly, egg, green onions, nori, and bean sprouts. Serve immediately.",
-        "chef_tips": "The broth should be rich and flavorful. The noodles should be al dente. The egg should be soft-boiled. Serve immediately while hot."
+        "chef_tips": "The broth should be rich and flavorful. The noodles should be al dente. The egg should be soft-boiled. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Japanese Tempura",
@@ -1596,7 +1876,8 @@
           "Slotted spoon"
         ],
         "cooking_instructions": "Cut vegetables into bite-sized pieces. Mix flour, egg, and ice-cold water until just combined. Don't overmix. Heat oil to 350°F (175°C). Dip vegetables in batter. Fry until golden and crispy, about 2-3 minutes. Drain on paper towels. Make tentsuyu: mix dashi, soy sauce, and mirin. Serve tempura hot with dipping sauce.",
-        "chef_tips": "The batter should be lumpy. Use ice-cold water. Don't overmix the batter. The oil should be at the right temperature."
+        "chef_tips": "The batter should be lumpy. Use ice-cold water. Don't overmix the batter. The oil should be at the right temperature.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Japanese Miso Soup",
@@ -1624,7 +1905,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Heat dashi in saucepan over medium heat. Add tofu and wakame. Simmer 2 minutes. Remove from heat. Add miso paste, whisk until dissolved. Add green onions and nori. Add soy sauce. Serve hot.",
-        "chef_tips": "Don't boil the miso paste. The soup should be hot but not boiling. The miso should be well-dissolved. Serve immediately."
+        "chef_tips": "Don't boil the miso paste. The soup should be hot but not boiling. The miso should be well-dissolved. Serve immediately.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Japanese Teriyaki Chicken",
@@ -1655,7 +1937,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Mix soy sauce, mirin, sake, sugar, and cornstarch. Heat oil in skillet over medium-high heat. Add chicken and cook until golden. Add garlic and ginger. Cook 1 minute. Add sauce mixture. Cook until thickened and glossy. Garnish with sesame seeds. Serve hot over rice.",
-        "chef_tips": "The chicken should be golden and crispy. The sauce should be thick and glossy. Don't overcook the chicken. Serve immediately while hot."
+        "chef_tips": "The chicken should be golden and crispy. The sauce should be thick and glossy. Don't overcook the chicken. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Japanese Onigiri",
@@ -1682,7 +1965,8 @@
           "Plastic wrap"
         ],
         "cooking_instructions": "Mix rice with vinegar and salt. Wet hands with water. Take 1/3 of rice, shape into triangle. Sprinkle with furikake. Wrap with nori. Repeat with remaining rice. Serve immediately or wrap in plastic wrap.",
-        "chef_tips": "Wet hands to prevent sticking. The rice should be warm. Don't overpack the rice. The nori should be crisp."
+        "chef_tips": "Wet hands to prevent sticking. The rice should be warm. Don't overpack the rice. The nori should be crisp.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Thai Pad Thai",
@@ -1715,7 +1999,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Soak noodles in warm water 10 minutes. Drain. Mix fish sauce, tamarind paste, sugar, and chili powder. Heat oil in wok over medium-high heat. Add garlic, cook 30 seconds. Add shrimp, cook 2 minutes. Push to side, add eggs, scramble. Add noodles and sauce. Toss 2 minutes. Add green onions and bean sprouts. Toss 1 minute. Serve with lime and peanuts.",
-        "chef_tips": "The noodles should be al dente. Don't overcook the shrimp. The sauce should be well-balanced. Serve immediately while hot."
+        "chef_tips": "The noodles should be al dente. Don't overcook the shrimp. The sauce should be well-balanced. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Thai Tom Yum Goong",
@@ -1747,7 +2032,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Bring stock to boil. Add lemongrass and lime leaves. Simmer 5 minutes. Add mushrooms, cook 2 minutes. Add shrimp, cook 2 minutes. Add fish sauce, lime juice, sugar, and chili paste. Simmer 2 minutes. Add green onions. Garnish with cilantro. Serve hot.",
-        "chef_tips": "The soup should be hot and sour. Don't overcook the shrimp. The lemongrass should be bruised. Serve immediately while hot."
+        "chef_tips": "The soup should be hot and sour. Don't overcook the shrimp. The lemongrass should be bruised. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Thai Green Curry",
@@ -1779,7 +2065,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat oil in wok over medium heat. Add curry paste, cook 1 minute until fragrant. Add half the coconut milk, simmer 5 minutes. Add chicken, cook 5 minutes. Add remaining coconut milk, bell pepper, and eggplant. Simmer 10 minutes. Add fish sauce, sugar, and lime leaves. Simmer 5 minutes. Add basil leaves. Serve hot over rice.",
-        "chef_tips": "The curry should be thick and creamy. Don't overcook the vegetables. The paste should be well-cooked. Serve immediately while hot."
+        "chef_tips": "The curry should be thick and creamy. Don't overcook the vegetables. The paste should be well-cooked. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Bibimbap",
@@ -1812,7 +2099,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Cook rice. Season beef with soy sauce and sugar. Cook vegetables separately until tender. Season each with sesame oil and salt. Fry egg sunny-side up. Place rice in bowl. Arrange vegetables and beef on top. Add egg. Mix gochujang with sesame oil. Serve with gochujang sauce. Mix everything together before eating.",
-        "chef_tips": "The vegetables should be well-seasoned. The egg should be runny. The gochujang should be well-mixed. Mix everything together before eating."
+        "chef_tips": "The vegetables should be well-seasoned. The egg should be runny. The gochujang should be well-mixed. Mix everything together before eating.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Korean Kimchi Jjigae",
@@ -1844,7 +2132,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat pot over medium heat. Add pork belly, cook until browned. Add kimchi, cook 5 minutes. Add onion and garlic, cook 2 minutes. Add water, gochujang, soy sauce, and sugar. Bring to boil. Add tofu, simmer 10 minutes. Add green onions and sesame oil. Serve hot.",
-        "chef_tips": "The kimchi should be well-cooked. The soup should be hot and spicy. Don't overcook the tofu. Serve immediately while hot."
+        "chef_tips": "The kimchi should be well-cooked. The soup should be hot and spicy. Don't overcook the tofu. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Pho",
@@ -1877,7 +2166,8 @@
           "Strainer"
         ],
         "cooking_instructions": "Char ginger and onion in dry pan. Add to stock with spices. Simmer 1 hour. Strain. Add fish sauce and sugar. Cook noodles according to package directions. Place noodles in bowl. Top with raw beef. Pour hot broth over. Garnish with bean sprouts, basil, lime, and jalapeños. Serve immediately.",
-        "chef_tips": "The broth should be clear and flavorful. The beef should be very thin. The noodles should be al dente. Serve immediately while hot."
+        "chef_tips": "The broth should be clear and flavorful. The beef should be very thin. The noodles should be al dente. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Vietnamese Banh Mi",
@@ -1908,7 +2198,8 @@
           "Toaster or oven"
         ],
         "cooking_instructions": "Slice baguette lengthwise. Toast lightly. Spread mayonnaise on both sides. Add pate, pork belly, pickled vegetables, green onions, jalapeño, and cilantro. Drizzle with soy sauce. Season with salt and pepper. Close sandwich. Serve immediately.",
-        "chef_tips": "The baguette should be crispy. Don't overstuff the sandwich. The pickled vegetables should be tangy. Serve immediately while fresh."
+        "chef_tips": "The baguette should be crispy. Don't overstuff the sandwich. The pickled vegetables should be tangy. Serve immediately while fresh.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Mini Sushi Rolls",
@@ -1931,7 +2222,11 @@
           "1/2 tsp salt",
           "1 tbsp sesame seeds (8g)"
         ],
-        "utensils_required": ["bamboo mat", "knife", "lunchbox"],
+        "utensils_required": [
+          "bamboo mat",
+          "knife",
+          "lunchbox"
+        ],
         "cooking_instructions": "Cook rice and mix with vinegar, sugar, and salt. Let cool. Place nori on bamboo mat. Spread rice evenly. Add vegetables in center. Roll tightly. Cut into small pieces. Sprinkle with sesame seeds.",
         "chef_tips": "Make small rolls for easy eating. Use fresh vegetables. Keep rice moist but not sticky.",
         "lunchbox_presentation": "Arrange mini rolls in bento box. Add soy sauce in small container. Decorate with pickled ginger."
@@ -1957,7 +2252,11 @@
           "1 tbsp sesame seeds (8g)",
           "1/4 cup steamed broccoli (30g)"
         ],
-        "utensils_required": ["frying pan", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "frying pan",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix soy sauce, mirin, honey, ginger, and garlic. Marinate chicken for 15 minutes. Heat oil in pan and cook chicken until golden. Add marinade and cook until glazed. Sprinkle with sesame seeds. Serve with broccoli.",
         "chef_tips": "Make small bite-sized pieces. Use mild teriyaki sauce. Cook until chicken is tender.",
         "lunchbox_presentation": "Arrange chicken bites in bento box. Add steamed broccoli on the side. Decorate with sesame seeds."
@@ -1984,7 +2283,11 @@
           "1 tbsp oil for frying (15ml)",
           "1/4 cup sweet and sour sauce (60ml)"
         ],
-        "utensils_required": ["frying pan", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "frying pan",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix vegetables with soy sauce, sesame oil, and ginger. Place filling in center of wrappers. Roll tightly and seal edges. Heat oil and fry until golden brown. Drain on paper towel. Serve with sweet and sour sauce.",
         "chef_tips": "Make small rolls for easy eating. Use fresh vegetables. Don't overfill the wrappers.",
         "lunchbox_presentation": "Arrange spring rolls in bento box. Add sweet and sour sauce in small container. Decorate with cilantro leaves."
@@ -2010,7 +2313,11 @@
           "1 tbsp oil for cooking (15ml)",
           "1/4 cup soy dipping sauce (60ml)"
         ],
-        "utensils_required": ["steamer", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "steamer",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix vegetables with soy sauce, sesame oil, and ginger. Place filling in center of wrappers. Fold and seal edges. Steam for 8-10 minutes until cooked. Serve with dipping sauce.",
         "chef_tips": "Make small dumplings for easy eating. Use fresh vegetables. Steam until tender.",
         "lunchbox_presentation": "Arrange dumplings in bento box. Add dipping sauce in small container. Decorate with green onions."
@@ -2037,7 +2344,11 @@
           "1 tsp sesame seeds (5g)",
           "1 tbsp gochujang (15ml)"
         ],
-        "utensils_required": ["mixing bowl", "frying pan", "lunchbox"],
+        "utensils_required": [
+          "mixing bowl",
+          "frying pan",
+          "lunchbox"
+        ],
         "cooking_instructions": "Cook rice and let cool. Blanch spinach and season with sesame oil. Julienne vegetables. Fry egg sunny side up. Arrange rice in bowl. Top with vegetables and egg. Drizzle with soy sauce and sesame oil. Serve with gochujang.",
         "chef_tips": "Make colorful and appealing. Use fresh vegetables. Arrange in separate sections for visual appeal.",
         "lunchbox_presentation": "Arrange in bento box with separate compartments. Add gochujang in small container. Decorate with sesame seeds."
@@ -2061,7 +2372,11 @@
           "1 tbsp coconut cream (15ml)",
           "1 tsp sesame seeds (5g)"
         ],
-        "utensils_required": ["steamer", "mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "steamer",
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Soak rice for 30 minutes. Steam for 15 minutes. Mix coconut milk with sugar and salt. Pour over rice and let absorb. Serve with mango slices. Drizzle with coconut cream and sesame seeds.",
         "chef_tips": "Use sweet, ripe mango. The rice should be sticky but not mushy. Kids love the sweet flavor.",
         "lunchbox_presentation": "Arrange rice and mango in bento box. Add coconut cream in small container. Decorate with sesame seeds."
@@ -2087,7 +2402,10 @@
           "1/4 cup hoisin sauce (60ml)",
           "1 tbsp crushed peanuts (8g)"
         ],
-        "utensils_required": ["mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Soak rice paper in warm water until soft. Place lettuce on wrapper. Add vegetables and herbs. Roll tightly. Serve with hoisin sauce and crushed peanuts.",
         "chef_tips": "Use fresh herbs. Don't overfill the wrappers. Keep them moist until serving.",
         "lunchbox_presentation": "Arrange spring rolls in bento box. Add hoisin sauce in small container. Decorate with crushed peanuts."
@@ -2111,7 +2429,10 @@
           "1 tbsp rice vinegar (15ml)",
           "1/2 tsp salt"
         ],
-        "utensils_required": ["mixing bowl", "lunchbox"],
+        "utensils_required": [
+          "mixing bowl",
+          "lunchbox"
+        ],
         "cooking_instructions": "Mix rice with vinegar and salt. Wet hands and shape rice into balls. Press edamame into center. Wrap with nori strips. Sprinkle with sesame seeds.",
         "chef_tips": "Keep hands wet when shaping. Make small, bite-sized balls. Use fresh nori.",
         "lunchbox_presentation": "Arrange rice balls in bento box. Add pickled plum on the side. Decorate with nori strips."

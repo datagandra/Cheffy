@@ -196,87 +196,54 @@ class RecipeDatabaseService: ObservableObject {
         
         let data = try Data(contentsOf: url)
         
-        // Parse as RecipeDatabase (which contains both old and new format recipes)
+        // Parse JSON using the standardized new format
         let recipeData = try JSONDecoder().decode(RecipeDatabase.self, from: data)
         
         var recipes: [Recipe] = []
         
         for (cuisineName, cuisineRecipes) in recipeData.cuisines {
             for localRecipeData in cuisineRecipes {
-                // Handle both old and new JSON formats
-                let title: String
-                let ingredients: [String]
-                let instructions: String
-                let cookingTime: Int
-                let difficultyString: String
-                
-                // Check for new format first (with recipe_name and cooking_time_category)
-                if let recipeName = localRecipeData.recipe_name,
-                   let recipeIngredients = localRecipeData.ingredients,
-                   let cookingTimeCategory = localRecipeData.cooking_time_category,
-                   let recipeDifficulty = localRecipeData.difficulty {
-                    
-                    title = recipeName
-                    ingredients = recipeIngredients
-                    
-                    // Handle cooking_instructions as either string or array
-                    if let cookingInstructionsString = localRecipeData.cooking_instructions {
-                        instructions = cookingInstructionsString
-                    } else if let cookingInstructionsArray = localRecipeData.cooking_instructions_array {
-                        instructions = cookingInstructionsArray.joined(separator: " ")
-                    } else {
-                        instructions = "No cooking instructions available"
-                    }
-                    
-                    difficultyString = recipeDifficulty
-                    
-                    // Convert cooking_time_category to numeric cooking time
-                    switch cookingTimeCategory.lowercased() {
-                    case "under 5 min":
-                        cookingTime = 5
-                    case "under 10 min":
-                        cookingTime = 10
-                    case "under 15 min":
-                        cookingTime = 15
-                    case "under 20 min":
-                        cookingTime = 20
-                    case "under 25 min":
-                        cookingTime = 25
-                    case "under 30 min":
-                        cookingTime = 30
-                    case "under 40 min":
-                        cookingTime = 40
-                    case "under 45 min":
-                        cookingTime = 45
-                    case "under 50 min":
-                        cookingTime = 50
-                    case "under 1 hour":
-                        cookingTime = 60
-                    case "under 1.5 hours":
-                        cookingTime = 90
-                    case "under 2 hours":
-                        cookingTime = 120
-                    case "any time":
-                        cookingTime = 180 // Set to 3 hours for "Any Time" recipes
-                    default:
-                        cookingTime = 45 // Default fallback
-                    }
-                }
-                // Handle old format (with title and cooking_time)
-                else if let recipeTitle = localRecipeData.title,
-                        let recipeIngredients = localRecipeData.ingredients,
-                        let recipeInstructions = localRecipeData.instructions,
-                        let recipeCookingTime = localRecipeData.cooking_time,
-                        let recipeDifficulty = localRecipeData.difficulty {
-                    
-                    title = recipeTitle
-                    ingredients = recipeIngredients
-                    instructions = recipeInstructions
-                    cookingTime = recipeCookingTime
-                    difficultyString = recipeDifficulty
-                } else {
+                // All recipes now use the new format
+                guard let recipeName = localRecipeData.recipe_name,
+                      let recipeIngredients = localRecipeData.ingredients,
+                      let cookingTimeCategory = localRecipeData.cooking_time_category,
+                      let recipeDifficulty = localRecipeData.difficulty else {
                     logger.warning("Skipping recipe in \(cuisineName) - missing required fields")
                     continue
+                }
+                
+                let title = recipeName
+                let ingredients = recipeIngredients
+                
+                // Handle cooking_instructions as either string or array
+                let instructions: String
+                if let cookingInstructionsString = localRecipeData.cooking_instructions {
+                    instructions = cookingInstructionsString
+                } else if let cookingInstructionsArray = localRecipeData.cooking_instructions_array {
+                    instructions = cookingInstructionsArray.joined(separator: " ")
+                } else {
+                    instructions = "No cooking instructions available"
+                }
+                
+                let difficultyString = recipeDifficulty
+                
+                // Convert cooking_time_category to numeric cooking time
+                let cookingTime: Int
+                switch cookingTimeCategory.lowercased() {
+                case "under 5 min": cookingTime = 5
+                case "under 10 min": cookingTime = 10
+                case "under 15 min": cookingTime = 15
+                case "under 20 min": cookingTime = 20
+                case "under 25 min": cookingTime = 25
+                case "under 30 min": cookingTime = 30
+                case "under 40 min": cookingTime = 40
+                case "under 45 min": cookingTime = 45
+                case "under 50 min": cookingTime = 50
+                case "under 1 hour": cookingTime = 60
+                case "under 1.5 hours": cookingTime = 90
+                case "under 2 hours": cookingTime = 120
+                case "any time": cookingTime = 180
+                default: cookingTime = 45
                 }
                 
                 let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
@@ -291,7 +258,7 @@ class RecipeDatabaseService: ObservableObject {
                     }
                 }
                 
-                // Parse diet_type for new format
+                // Parse diet_type
                 if let dietType = localRecipeData.diet_type {
                     if dietType == "vegetarian" {
                         dietaryNotes.append(.vegetarian)
@@ -300,24 +267,24 @@ class RecipeDatabaseService: ObservableObject {
                     }
                 }
                 
-                // Parse meal_type and lunchbox_presentation for new format
+                // Parse meal_type and lunchbox_presentation
                 let mealType: MealType
                 let lunchboxPresentation: String?
                 
                 if let mealTypeString = localRecipeData.meal_type {
                     mealType = MealType(rawValue: mealTypeString) ?? .regular
                 } else {
-                    mealType = .regular // Default for old format recipes
+                    mealType = .regular // Default fallback
                 }
                 
                 lunchboxPresentation = localRecipeData.lunchbox_presentation
                 
-                // Parse servings from new format, default to 4 for old format
+                // Parse servings
                 let servings: Int
                 if let servingsValue = localRecipeData.servings {
                     servings = servingsValue
                 } else {
-                    servings = 4 // Default for old format
+                    servings = 4 // Default fallback
                 }
                 
                 let recipe = Recipe(

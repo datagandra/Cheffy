@@ -2,7 +2,7 @@
   "cuisines": {
     "Chinese": [
       {
-        "title": "Kung Pao Chicken",
+        "recipe_name": "Kung Pao Chicken",
         "cuisine": "Chinese",
         "ingredients": [
           "500g chicken breast, cut into 1-inch cubes",
@@ -21,14 +21,21 @@
           "1/2 teaspoon Sichuan peppercorns",
           "Salt and white pepper to taste"
         ],
-        "instructions": "Marinate chicken with soy sauce, Shaoxing wine, and cornstarch for 20 minutes. Heat oil in a wok over high heat. Add chili peppers and stir-fry for 30 seconds until fragrant. Add chicken and stir-fry for 3-4 minutes until golden. Add garlic and ginger, stir-fry for 1 minute. Add peanuts and green onions, stir-fry for 1 minute. Add hoisin sauce, rice vinegar, sesame oil, and Sichuan peppercorns. Stir-fry for 1 minute until sauce thickens. Season with salt and white pepper. Serve hot with steamed rice.",
-        "proteins": ["chicken", "peanuts"],
+        "cooking_instructions": "Marinate chicken with soy sauce, Shaoxing wine, and cornstarch for 20 minutes. Heat oil in a wok over high heat. Add chili peppers and stir-fry for 30 seconds until fragrant. Add chicken and stir-fry for 3-4 minutes until golden. Add garlic and ginger, stir-fry for 1 minute. Add peanuts and green onions, stir-fry for 1 minute. Add hoisin sauce, rice vinegar, sesame oil, and Sichuan peppercorns. Stir-fry for 1 minute until sauce thickens. Season with salt and white pepper. Serve hot with steamed rice.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken",
+          "peanuts"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 410
       },
       {
-        "title": "Mapo Tofu",
+        "recipe_name": "Mapo Tofu",
         "cuisine": "Chinese",
         "ingredients": [
           "400g soft tofu, cut into 1-inch cubes",
@@ -46,14 +53,21 @@
           "1 teaspoon sesame oil",
           "Salt to taste"
         ],
-        "instructions": "Heat oil in a wok over medium heat. Add ground pork and stir-fry until browned, about 3 minutes. Add doubanjiang and stir-fry for 1 minute. Add garlic and ginger, stir-fry for 30 seconds. Add soy sauce, Shaoxing wine, and Sichuan peppercorns. Add chicken stock and bring to simmer. Gently add tofu cubes and simmer for 3-4 minutes. Add cornstarch mixture and stir gently until sauce thickens. Add green onions and sesame oil. Season with salt if needed. Serve hot with steamed rice.",
-        "proteins": ["pork", "tofu"],
+        "cooking_instructions": "Heat oil in a wok over medium heat. Add ground pork and stir-fry until browned, about 3 minutes. Add doubanjiang and stir-fry for 1 minute. Add garlic and ginger, stir-fry for 30 seconds. Add soy sauce, Shaoxing wine, and Sichuan peppercorns. Add chicken stock and bring to simmer. Gently add tofu cubes and simmer for 3-4 minutes. Add cornstarch mixture and stir gently until sauce thickens. Add green onions and sesame oil. Season with salt if needed. Serve hot with steamed rice.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork",
+          "tofu"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 390
       },
       {
-        "title": "Peking Duck",
+        "recipe_name": "Peking Duck",
         "cuisine": "Chinese",
         "ingredients": [
           "1 whole duck (about 2kg)",
@@ -67,14 +81,20 @@
           "20 Chinese pancakes",
           "Hoisin sauce for serving"
         ],
-        "instructions": "Clean and dry duck thoroughly. Mix honey, soy sauce, Shaoxing wine, five-spice powder, and salt. Rub mixture all over duck, inside and out. Hang duck in a cool, dry place for 24 hours to dry skin. Preheat oven to 350°F (175°C). Place duck on a rack in a roasting pan. Roast for 1 hour, then increase temperature to 400°F (200°C) and roast for additional 30 minutes until skin is crispy and golden. Let rest for 15 minutes. Carve duck into thin slices. Serve with pancakes, cucumber, green onions, and hoisin sauce.",
-        "proteins": ["duck"],
+        "cooking_instructions": "Clean and dry duck thoroughly. Mix honey, soy sauce, Shaoxing wine, five-spice powder, and salt. Rub mixture all over duck, inside and out. Hang duck in a cool, dry place for 24 hours to dry skin. Preheat oven to 350°F (175°C). Place duck on a rack in a roasting pan. Roast for 1 hour, then increase temperature to 400°F (200°C) and roast for additional 30 minutes until skin is crispy and golden. Let rest for 15 minutes. Carve duck into thin slices. Serve with pancakes, cucumber, green onions, and hoisin sauce.",
+        "cooking_time_category": "Under 1.5 hours",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "duck"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 90,
-        "difficulty": "hard"
+        "calories_per_serving": 480
       },
       {
-        "title": "Dim Sum Har Gow",
+        "recipe_name": "Dim Sum Har Gow",
         "cuisine": "Chinese",
         "ingredients": [
           "200g shrimp, peeled and deveined",
@@ -89,14 +109,20 @@
           "2 tablespoons vegetable oil",
           "1/2 teaspoon salt"
         ],
-        "instructions": "Chop shrimp into small pieces. Mix with bamboo shoots, soy sauce, sesame oil, white pepper, and sugar. Refrigerate for 30 minutes. Mix wheat starch, tapioca starch, and salt. Add boiling water and stir until dough forms. Knead for 5 minutes until smooth. Divide into 20 pieces. Roll each piece into thin circles. Place 1 tablespoon filling in center of each wrapper. Fold edges to form pleats and seal. Steam in bamboo steamer for 8-10 minutes until translucent. Serve hot with soy sauce and chili oil.",
-        "proteins": ["shrimp"],
+        "cooking_instructions": "Chop shrimp into small pieces. Mix with bamboo shoots, soy sauce, sesame oil, white pepper, and sugar. Refrigerate for 30 minutes. Mix wheat starch, tapioca starch, and salt. Add boiling water and stir until dough forms. Knead for 5 minutes until smooth. Divide into 20 pieces. Roll each piece into thin circles. Place 1 tablespoon filling in center of each wrapper. Fold edges to form pleats and seal. Steam in bamboo steamer for 8-10 minutes until translucent. Serve hot with soy sauce and chili oil.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "hard"
+        "calories_per_serving": 400
       },
       {
-        "title": "Hot and Sour Soup",
+        "recipe_name": "Hot and Sour Soup",
         "cuisine": "Chinese",
         "ingredients": [
           "1 liter chicken stock",
@@ -113,16 +139,25 @@
           "1 tablespoon cornstarch mixed with 2 tablespoons water",
           "Salt to taste"
         ],
-        "instructions": "Bring chicken stock to boil in a large pot. Add tofu, bamboo shoots, wood ear mushrooms, and lily flowers. Simmer for 5 minutes. Add soy sauce, rice vinegar, chili oil, and white pepper. Stir in cornstarch mixture and simmer until soup thickens slightly. Slowly drizzle beaten eggs into soup while stirring gently to form ribbons. Add green onions and season with salt. Serve hot.",
-        "proteins": ["tofu", "eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 20,
-        "difficulty": "easy"
+        "cooking_instructions": "Bring chicken stock to boil in a large pot. Add tofu, bamboo shoots, wood ear mushrooms, and lily flowers. Simmer for 5 minutes. Add soy sauce, rice vinegar, chili oil, and white pepper. Stir in cornstarch mixture and simmer until soup thickens slightly. Slowly drizzle beaten eggs into soup while stirring gently to form ribbons. Add green onions and season with salt. Serve hot.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "tofu",
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 370
       }
     ],
     "Japanese": [
       {
-        "title": "Sushi Nigiri",
+        "recipe_name": "Sushi Nigiri",
         "cuisine": "Japanese",
         "ingredients": [
           "400g sushi rice",
@@ -137,14 +172,22 @@
           "Soy sauce for serving",
           "Pickled ginger for serving"
         ],
-        "instructions": "Rinse rice until water runs clear. Cook rice with water in a rice cooker or on stovetop. Mix rice vinegar, sugar, and salt until dissolved. Fold vinegar mixture into hot rice. Let rice cool to room temperature. Wet hands with water and vinegar. Take a small amount of rice and form into oval shape. Place a small amount of wasabi on rice. Top with fish slice and press gently to adhere. Repeat with different fish. Serve with soy sauce and pickled ginger.",
-        "proteins": ["salmon", "tuna", "yellowtail"],
+        "cooking_instructions": "Rinse rice until water runs clear. Cook rice with water in a rice cooker or on stovetop. Mix rice vinegar, sugar, and salt until dissolved. Fold vinegar mixture into hot rice. Let rice cool to room temperature. Wet hands with water and vinegar. Take a small amount of rice and form into oval shape. Place a small amount of wasabi on rice. Top with fish slice and press gently to adhere. Repeat with different fish. Serve with soy sauce and pickled ginger.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "salmon",
+          "tuna",
+          "yellowtail"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "calories_per_serving": 430
       },
       {
-        "title": "Tonkatsu",
+        "recipe_name": "Tonkatsu",
         "cuisine": "Japanese",
         "ingredients": [
           "4 pork cutlets, pounded thin",
@@ -159,14 +202,20 @@
           "1 teaspoon sugar",
           "Salt and black pepper to taste"
         ],
-        "instructions": "Season pork cutlets with salt and pepper. Dredge in flour, then dip in beaten eggs, then coat with panko breadcrumbs. Heat oil to 350°F (175°C). Fry cutlets for 3-4 minutes per side until golden brown and crispy. Drain on paper towels. Mix tonkatsu sauce, soy sauce, mirin, and sugar. Slice cutlets and serve with shredded cabbage and sauce.",
-        "proteins": ["pork"],
+        "cooking_instructions": "Season pork cutlets with salt and pepper. Dredge in flour, then dip in beaten eggs, then coat with panko breadcrumbs. Heat oil to 350°F (175°C). Fry cutlets for 3-4 minutes per side until golden brown and crispy. Drain on paper towels. Mix tonkatsu sauce, soy sauce, mirin, and sugar. Slice cutlets and serve with shredded cabbage and sauce.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 360
       },
       {
-        "title": "Ramen",
+        "recipe_name": "Ramen",
         "cuisine": "Japanese",
         "ingredients": [
           "4 portions ramen noodles",
@@ -183,14 +232,21 @@
           "1 tablespoon sesame oil",
           "Salt to taste"
         ],
-        "instructions": "Bring chicken stock to boil. Add soy sauce, mirin, and sake. Simmer for 10 minutes. Cook ramen noodles according to package directions. Drain and divide among 4 bowls. Ladle hot broth over noodles. Top with soft-boiled eggs, chashu pork, nori, green onions, bean sprouts, and corn. Drizzle with sesame oil and serve hot.",
-        "proteins": ["pork", "eggs"],
+        "cooking_instructions": "Bring chicken stock to boil. Add soy sauce, mirin, and sake. Simmer for 10 minutes. Cook ramen noodles according to package directions. Drain and divide among 4 bowls. Ladle hot broth over noodles. Top with soft-boiled eggs, chashu pork, nori, green onions, bean sprouts, and corn. Drizzle with sesame oil and serve hot.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 390
       },
       {
-        "title": "Tempura",
+        "recipe_name": "Tempura",
         "cuisine": "Japanese",
         "ingredients": [
           "200g shrimp, peeled and deveined",
@@ -206,14 +262,20 @@
           "1 tablespoon sake",
           "Salt to taste"
         ],
-        "instructions": "Heat oil to 350°F (175°C). Mix flour, ice-cold water, and egg yolk to make tempura batter. Dip shrimp and vegetables in batter. Fry in hot oil for 2-3 minutes until golden and crispy. Drain on paper towels. Mix dashi stock, soy sauce, mirin, and sake for dipping sauce. Serve tempura hot with dipping sauce.",
-        "proteins": ["shrimp"],
+        "cooking_instructions": "Heat oil to 350°F (175°C). Mix flour, ice-cold water, and egg yolk to make tempura batter. Dip shrimp and vegetables in batter. Fry in hot oil for 2-3 minutes until golden and crispy. Drain on paper towels. Mix dashi stock, soy sauce, mirin, and sake for dipping sauce. Serve tempura hot with dipping sauce.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 20,
-        "difficulty": "medium"
+        "calories_per_serving": 360
       },
       {
-        "title": "Traditional Miso Soup",
+        "recipe_name": "Traditional Miso Soup",
         "cuisine": "Japanese",
         "ingredients": [
           "1 liter dashi stock",
@@ -225,16 +287,24 @@
           "1 tablespoon mirin",
           "Salt to taste"
         ],
-        "instructions": "Bring dashi stock to simmer. Add tofu and wakame seaweed. Simmer for 2 minutes. Dissolve miso paste in a small amount of hot stock, then add to soup. Add green onions and nori. Season with mirin and salt if needed. Serve hot.",
-        "proteins": ["tofu"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "cooking_instructions": "Bring dashi stock to simmer. Add tofu and wakame seaweed. Simmer for 2 minutes. Dissolve miso paste in a small amount of hot stock, then add to soup. Add green onions and nori. Season with mirin and salt if needed. Serve hot.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "tofu"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 310
       }
     ],
     "Thai": [
       {
-        "title": "Pad Thai",
+        "recipe_name": "Pad Thai",
         "cuisine": "Thai",
         "ingredients": [
           "200g rice noodles",
@@ -252,14 +322,22 @@
           "1 lime, cut into wedges",
           "Fresh cilantro for garnish"
         ],
-        "instructions": "Soak rice noodles in warm water for 30 minutes. Heat oil in a wok over high heat. Add garlic and stir-fry for 30 seconds. Add shrimp and tofu, stir-fry for 2 minutes. Push ingredients to one side and scramble eggs in the other side. Add noodles, fish sauce, tamarind paste, and palm sugar. Stir-fry for 2-3 minutes. Add green onions and bean sprouts, stir-fry for 1 minute. Garnish with peanuts, lime wedges, and cilantro. Serve hot.",
-        "proteins": ["shrimp", "tofu", "eggs"],
+        "cooking_instructions": "Soak rice noodles in warm water for 30 minutes. Heat oil in a wok over high heat. Add garlic and stir-fry for 30 seconds. Add shrimp and tofu, stir-fry for 2 minutes. Push ingredients to one side and scramble eggs in the other side. Add noodles, fish sauce, tamarind paste, and palm sugar. Stir-fry for 2-3 minutes. Add green onions and bean sprouts, stir-fry for 1 minute. Garnish with peanuts, lime wedges, and cilantro. Serve hot.",
+        "cooking_time_category": "Under 25 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp",
+          "tofu",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 25,
-        "difficulty": "medium"
+        "calories_per_serving": 390
       },
       {
-        "title": "Tom Yum Goong",
+        "recipe_name": "Tom Yum Goong",
         "cuisine": "Thai",
         "ingredients": [
           "1 liter chicken stock",
@@ -276,14 +354,20 @@
           "2 green onions, sliced",
           "Fresh cilantro for garnish"
         ],
-        "instructions": "Bring chicken stock to boil. Add lemongrass, kaffir lime leaves, chilies, garlic, and galangal. Simmer for 10 minutes. Add shrimp and mushrooms, cook for 3-4 minutes until shrimp turn pink. Add fish sauce, lime juice, and chili paste. Garnish with green onions and cilantro. Serve hot.",
-        "proteins": ["shrimp"],
+        "cooking_instructions": "Bring chicken stock to boil. Add lemongrass, kaffir lime leaves, chilies, garlic, and galangal. Simmer for 10 minutes. Add shrimp and mushrooms, cook for 3-4 minutes until shrimp turn pink. Add fish sauce, lime juice, and chili paste. Garnish with green onions and cilantro. Serve hot.",
+        "cooking_time_category": "Under 20 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 20,
-        "difficulty": "medium"
+        "calories_per_serving": 370
       },
       {
-        "title": "Green Curry",
+        "recipe_name": "Green Curry",
         "cuisine": "Thai",
         "ingredients": [
           "400ml coconut milk",
@@ -299,14 +383,20 @@
           "2 green onions, sliced",
           "Fresh cilantro for garnish"
         ],
-        "instructions": "Heat coconut milk in a large pot. Add green curry paste and stir-fry for 2 minutes until fragrant. Add chicken and cook for 3-4 minutes. Add eggplants, bamboo shoots, kaffir lime leaves, fish sauce, and palm sugar. Simmer for 10-15 minutes until chicken is cooked and vegetables are tender. Add Thai basil and chilies. Garnish with green onions and cilantro. Serve hot with steamed rice.",
-        "proteins": ["chicken"],
+        "cooking_instructions": "Heat coconut milk in a large pot. Add green curry paste and stir-fry for 2 minutes until fragrant. Add chicken and cook for 3-4 minutes. Add eggplants, bamboo shoots, kaffir lime leaves, fish sauce, and palm sugar. Simmer for 10-15 minutes until chicken is cooked and vegetables are tender. Add Thai basil and chilies. Garnish with green onions and cilantro. Serve hot with steamed rice.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
+        "calories_per_serving": 380
       },
       {
-        "title": "Som Tam",
+        "recipe_name": "Som Tam",
         "cuisine": "Thai",
         "ingredients": [
           "1 large green papaya, shredded",
@@ -321,14 +411,20 @@
           "2 green onions, sliced",
           "Fresh cilantro for garnish"
         ],
-        "instructions": "In a mortar and pestle, pound chilies and garlic until crushed. Add fish sauce, lime juice, and palm sugar, mix well. Add shredded papaya and tomatoes. Pound gently to combine. Add peanuts and dried shrimp. Toss well. Garnish with green onions and cilantro. Serve immediately.",
-        "proteins": ["shrimp"],
+        "cooking_instructions": "In a mortar and pestle, pound chilies and garlic until crushed. Add fish sauce, lime juice, and palm sugar, mix well. Add shredded papaya and tomatoes. Pound gently to combine. Add peanuts and dried shrimp. Toss well. Garnish with green onions and cilantro. Serve immediately.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 340
       },
       {
-        "title": "Mango Sticky Rice",
+        "recipe_name": "Mango Sticky Rice",
         "cuisine": "Thai",
         "ingredients": [
           "1 cup glutinous rice",
@@ -339,317 +435,23 @@
           "1/4 cup coconut cream",
           "1 tablespoon toasted sesame seeds"
         ],
-        "instructions": "Soak glutinous rice in water for 4 hours or overnight. Drain rice and steam for 20 minutes until tender. In a saucepan, heat coconut milk, sugar, and salt until sugar dissolves. Pour over hot rice and let absorb for 30 minutes. Arrange mango slices on serving plates. Top with sticky rice. Drizzle with coconut cream and sprinkle with sesame seeds. Serve warm or at room temperature.",
+        "cooking_instructions": "Soak glutinous rice in water for 4 hours or overnight. Drain rice and steam for 20 minutes until tender. In a saucepan, heat coconut milk, sugar, and salt until sugar dissolves. Pour over hot rice and let absorb for 30 minutes. Arrange mango slices on serving plates. Top with sticky rice. Drizzle with coconut cream and sprinkle with sesame seeds. Serve warm or at room temperature.",
+        "cooking_time_category": "Under 1 hour",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegan",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian", "vegan"],
-        "cooking_time": 60,
-        "difficulty": "medium"
+        "dietary_restrictions": [
+          "vegetarian",
+          "vegan"
+        ],
+        "calories_per_serving": 390
       }
     ],
     "Korean": [
       {
-        "title": "Bibimbap",
-        "cuisine": "Korean",
-        "ingredients": [
-          "2 cups cooked rice",
-          "200g beef, thinly sliced",
-          "2 carrots, julienned",
-          "1 zucchini, julienned",
-          "1 cup bean sprouts",
-          "1 cup spinach",
-          "4 eggs",
-          "2 tablespoons gochujang",
-          "2 tablespoons sesame oil",
-          "2 tablespoons soy sauce",
-          "1 tablespoon sugar",
-          "1 tablespoon sesame seeds",
-          "Vegetable oil for cooking"
-        ],
-        "instructions": "Marinate beef with soy sauce, sugar, and sesame oil for 30 minutes. Cook each vegetable separately in a little oil until tender. Cook beef until browned. Fry eggs sunny-side up. Arrange rice in bowls. Top with vegetables, beef, and egg in sections. Add gochujang and sesame oil. Mix well before eating.",
-        "proteins": ["beef", "eggs"],
-        "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Bulgogi",
-        "cuisine": "Korean",
-        "ingredients": [
-          "500g beef sirloin, thinly sliced",
-          "1/4 cup soy sauce",
-          "2 tablespoons sugar",
-          "2 tablespoons sesame oil",
-          "2 tablespoons rice wine",
-          "4 cloves garlic, minced",
-          "1 tablespoon ginger, minced",
-          "2 green onions, sliced",
-          "1 tablespoon sesame seeds",
-          "Black pepper to taste"
-        ],
-        "instructions": "Mix soy sauce, sugar, sesame oil, rice wine, garlic, ginger, green onions, sesame seeds, and black pepper. Marinate beef in mixture for 2 hours or overnight. Heat a large skillet over high heat. Cook beef in batches until browned and caramelized, about 2-3 minutes per batch. Serve hot with steamed rice and lettuce wraps.",
-        "proteins": ["beef"],
-        "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Kimchi Jjigae",
-        "cuisine": "Korean",
-        "ingredients": [
-          "2 cups kimchi, chopped",
-          "200g pork belly, sliced",
-          "1 onion, sliced",
-          "2 cloves garlic, minced",
-          "1 tablespoon gochugaru",
-          "2 tablespoons sesame oil",
-          "1 cup kimchi juice",
-          "2 cups water",
-          "200g tofu, cut into cubes",
-          "2 green onions, sliced",
-          "Salt to taste"
-        ],
-        "instructions": "Heat sesame oil in a large pot. Add pork belly and cook until browned. Add kimchi and stir-fry for 2 minutes. Add onion and garlic, cook for 2 minutes. Add gochugaru, kimchi juice, and water. Bring to boil, then simmer for 20 minutes. Add tofu and green onions. Simmer for 5 minutes. Season with salt if needed. Serve hot with steamed rice.",
-        "proteins": ["pork", "tofu"],
-        "dietary_restrictions": [],
-        "cooking_time": 35,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Japchae",
-        "cuisine": "Korean",
-        "ingredients": [
-          "200g sweet potato noodles",
-          "200g beef, thinly sliced",
-          "2 carrots, julienned",
-          "1 zucchini, julienned",
-          "1 cup spinach",
-          "4 mushrooms, sliced",
-          "2 tablespoons soy sauce",
-          "2 tablespoons sesame oil",
-          "1 tablespoon sugar",
-          "2 cloves garlic, minced",
-          "1 tablespoon sesame seeds",
-          "Black pepper to taste"
-        ],
-        "instructions": "Cook noodles according to package directions. Drain and rinse with cold water. Marinate beef with soy sauce, sugar, and sesame oil for 30 minutes. Cook each vegetable separately in a little oil until tender. Cook beef until browned. Mix all ingredients together. Season with additional soy sauce, sesame oil, and black pepper. Garnish with sesame seeds. Serve at room temperature.",
-        "proteins": ["beef"],
-        "dietary_restrictions": [],
-        "cooking_time": 40,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Tteokbokki",
-        "cuisine": "Korean",
-        "ingredients": [
-          "400g rice cakes",
-          "200g fish cakes, sliced",
-          "2 tablespoons gochujang",
-          "1 tablespoon gochugaru",
-          "2 tablespoons soy sauce",
-          "1 tablespoon sugar",
-          "2 cloves garlic, minced",
-          "2 green onions, sliced",
-          "2 cups water",
-          "1 tablespoon sesame oil",
-          "Sesame seeds for garnish"
-        ],
-        "instructions": "Soak rice cakes in warm water for 30 minutes. In a large pot, combine water, gochujang, gochugaru, soy sauce, sugar, and garlic. Bring to boil. Add rice cakes and fish cakes. Simmer for 10-15 minutes until rice cakes are tender and sauce thickens. Add green onions and sesame oil. Garnish with sesame seeds. Serve hot.",
-        "proteins": ["fish"],
-        "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "easy"
-      }
-    ],
-    "Vietnamese": [
-      {
-        "title": "Pho Bo (Beef Noodle Soup)",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "2 lbs beef bones (marrow bones)",
-          "1 lb beef brisket",
-          "1 large onion, halved",
-          "4-inch piece ginger, sliced",
-          "6 star anise pods",
-          "1 cinnamon stick",
-          "4 cloves",
-          "1 tsp coriander seeds",
-          "1 tsp fennel seeds",
-          "2 tbsp fish sauce",
-          "1 tbsp sugar",
-          "1 lb rice noodles (banh pho)",
-          "1/2 lb beef sirloin, thinly sliced",
-          "1 bunch cilantro, chopped",
-          "1 bunch Thai basil",
-          "2 limes, cut into wedges",
-          "2 jalapeños, sliced",
-          "Bean sprouts for serving"
-        ],
-        "instructions": "Roast beef bones in oven at 400°F for 30 minutes. In a large pot, add bones, brisket, onion, ginger, and cover with water. Bring to boil, skim foam, then simmer for 3-4 hours. Toast spices in a dry pan until fragrant. Add to broth with fish sauce and sugar. Strain broth and return to pot. Cook rice noodles according to package directions. Slice brisket thinly. Divide noodles among bowls, top with brisket and raw sirloin. Pour hot broth over meat to cook it. Serve with herbs, lime, jalapeños, and bean sprouts.",
-        "proteins": ["beef"],
-        "dietary_restrictions": [],
-        "cooking_time": 240,
-        "difficulty": "hard"
-      },
-      {
-        "title": "Banh Mi (Vietnamese Sandwich)",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "4 Vietnamese baguettes",
-          "1 lb pork belly or pork shoulder",
-          "2 tbsp fish sauce",
-          "1 tbsp soy sauce",
-          "1 tbsp sugar",
-          "2 cloves garlic, minced",
-          "1 tsp five-spice powder",
-          "1 cup pickled carrots and daikon",
-          "1 cucumber, julienned",
-          "1 bunch cilantro",
-          "2 jalapeños, sliced",
-          "Mayonnaise",
-          "Sriracha sauce",
-          "2 tbsp vegetable oil"
-        ],
-        "instructions": "Marinate pork with fish sauce, soy sauce, sugar, garlic, and five-spice powder for 2 hours. Heat oil in a pan and cook pork until golden and cooked through, about 15 minutes. Slice pork thinly. Cut baguettes lengthwise, leaving one edge intact. Spread mayonnaise on both sides. Add pork, pickled vegetables, cucumber, cilantro, and jalapeños. Drizzle with sriracha. Serve immediately.",
-        "proteins": ["pork"],
-        "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Goi Cuon (Fresh Spring Rolls)",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "12 rice paper wrappers",
-          "1 lb shrimp, cooked and peeled",
-          "1 lb pork belly, cooked and sliced",
-          "1 package rice vermicelli noodles",
-          "1 head lettuce, leaves separated",
-          "1 bunch mint",
-          "1 bunch cilantro",
-          "1 bunch Thai basil",
-          "1 cucumber, julienned",
-          "1 cup bean sprouts",
-          "1/2 cup hoisin sauce",
-          "2 tbsp peanut butter",
-          "2 tbsp water",
-          "1 clove garlic, minced",
-          "1 tbsp lime juice",
-          "1 tsp sriracha"
-        ],
-        "instructions": "Cook rice vermicelli according to package directions. Mix hoisin sauce, peanut butter, water, garlic, lime juice, and sriracha for dipping sauce. Soak rice paper wrappers in warm water for 30 seconds until pliable. Place on damp towel. Add lettuce, herbs, noodles, shrimp, pork, cucumber, and bean sprouts. Roll tightly, tucking in sides. Serve with dipping sauce.",
-        "proteins": ["shrimp", "pork"],
-        "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Bun Cha (Grilled Pork with Noodles)",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "1 lb ground pork",
-          "1 lb pork shoulder, sliced thin",
-          "2 tbsp fish sauce",
-          "1 tbsp sugar",
-          "2 cloves garlic, minced",
-          "1 shallot, minced",
-          "1 tsp black pepper",
-          "1 lb rice vermicelli noodles",
-          "1 head lettuce, shredded",
-          "1 bunch mint",
-          "1 bunch cilantro",
-          "1 cucumber, julienned",
-          "1 cup bean sprouts",
-          "1/4 cup fish sauce",
-          "1/4 cup lime juice",
-          "2 tbsp sugar",
-          "2 cloves garlic, minced",
-          "1 chili pepper, minced",
-          "1/2 cup water"
-        ],
-        "instructions": "Mix ground pork with fish sauce, sugar, garlic, shallot, and black pepper. Form into small patties. Marinate sliced pork with same mixture. Grill pork patties and sliced pork until cooked through. Cook rice vermicelli according to package directions. Make dipping sauce with fish sauce, lime juice, sugar, garlic, chili, and water. Serve noodles with lettuce, herbs, cucumber, bean sprouts, and grilled pork. Serve with dipping sauce.",
-        "proteins": ["pork"],
-        "dietary_restrictions": [],
-        "cooking_time": 40,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Ca Kho To (Caramelized Fish)",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "2 lbs catfish or cod fillets",
-          "1/4 cup fish sauce",
-          "1/4 cup sugar",
-          "2 tbsp vegetable oil",
-          "4 cloves garlic, minced",
-          "2 shallots, sliced",
-          "1 inch ginger, julienned",
-          "2 red chilies, sliced",
-          "1/2 cup coconut water",
-          "2 green onions, chopped",
-          "1 tsp black pepper",
-          "1 tbsp lime juice"
-        ],
-        "instructions": "Cut fish into 2-inch pieces. Heat oil in a clay pot or heavy-bottomed pan. Add garlic, shallots, and ginger, cook until fragrant. Add sugar and cook until caramelized. Add fish sauce and coconut water. Add fish pieces and chilies. Simmer for 15-20 minutes until fish is cooked and sauce is reduced. Add green onions, black pepper, and lime juice. Serve hot with steamed rice.",
-        "proteins": ["fish"],
-        "dietary_restrictions": [],
-        "cooking_time": 35,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Banh Mi",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "4 Vietnamese baguettes",
-          "1 lb pork belly, sliced",
-          "1/2 cup fish sauce",
-          "1/4 cup sugar",
-          "2 cloves garlic, minced",
-          "1/2 cup mayonnaise",
-          "1/4 cup Sriracha",
-          "1 cucumber, julienned",
-          "1 carrot, julienned",
-          "1/2 cup daikon, julienned",
-          "1/4 cup rice vinegar",
-          "1 tbsp sugar",
-          "1/2 cup cilantro",
-          "2 jalapeños, sliced"
-        ],
-        "instructions": "Marinate pork in fish sauce, sugar, and garlic for 2 hours. Grill pork until cooked. Mix mayonnaise with Sriracha. Pickle vegetables in vinegar and sugar. Slice baguettes and spread with mayo mixture. Add pork, vegetables, cilantro, and jalapeños. Serve immediately.",
-        "proteins": ["pork belly"],
-        "dietary_restrictions": ["contains_dairy"],
-        "cooking_time": 45,
-        "difficulty": "medium"
-      },
-      {
-        "title": "Goi Cuon (Fresh Spring Rolls)",
-        "cuisine": "Vietnamese",
-        "ingredients": [
-          "12 rice paper wrappers",
-          "1/2 lb shrimp, cooked and sliced",
-          "1/2 lb pork belly, cooked and sliced",
-          "1/2 cup rice vermicelli, cooked",
-          "1 cucumber, julienned",
-          "1 carrot, julienned",
-          "1/2 cup mint leaves",
-          "1/2 cup cilantro",
-          "1/2 cup Thai basil",
-          "Lettuce leaves",
-          "For dipping sauce: 1/4 cup fish sauce",
-          "2 tbsp lime juice",
-          "2 tbsp sugar",
-          "1 clove garlic, minced",
-          "1 red chili, minced"
-        ],
-        "instructions": "Soak rice paper in warm water until pliable. Place shrimp, pork, noodles, and vegetables on wrapper. Add herbs and lettuce. Roll tightly. For sauce, mix fish sauce, lime juice, sugar, garlic, and chili. Serve rolls with dipping sauce.",
-        "proteins": ["shrimp", "pork belly"],
-        "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "medium"
-      }
-    ],
-    "Korean": [
-      {
-        "title": "Bulgogi",
+        "recipe_name": "Bulgogi",
         "cuisine": "Korean",
         "ingredients": [
           "2 lbs beef sirloin, sliced thin",
@@ -664,14 +466,20 @@
           "1 tbsp sesame seeds",
           "Black pepper to taste"
         ],
-        "instructions": "Mix soy sauce, brown sugar, sesame oil, garlic, and ginger. Marinate beef for 2 hours. Heat a large skillet or grill. Cook beef with onions and carrots until done. Garnish with sesame seeds and green onions. Serve with rice and kimchi.",
-        "proteins": ["beef sirloin"],
+        "cooking_instructions": "Mix soy sauce, brown sugar, sesame oil, garlic, and ginger. Marinate beef for 2 hours. Heat a large skillet or grill. Cook beef with onions and carrots until done. Garnish with sesame seeds and green onions. Serve with rice and kimchi.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef sirloin"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 30,
-        "difficulty": "easy"
+        "calories_per_serving": 370
       },
       {
-        "title": "Kimchi Jjigae",
+        "recipe_name": "Kimchi Jjigae",
         "cuisine": "Korean",
         "ingredients": [
           "2 cups kimchi, chopped",
@@ -687,14 +495,21 @@
           "2 cups water",
           "1 tbsp sesame oil"
         ],
-        "instructions": "Heat sesame oil in a pot. Add pork belly and cook until browned. Add kimchi and cook for 5 minutes. Add water, gochujang, gochugaru, soy sauce, and sugar. Simmer for 20 minutes. Add tofu and onion. Simmer for 10 minutes. Garnish with green onions. Serve hot with rice.",
-        "proteins": ["pork belly", "tofu"],
+        "cooking_instructions": "Heat sesame oil in a pot. Add pork belly and cook until browned. Add kimchi and cook for 5 minutes. Add water, gochujang, gochugaru, soy sauce, and sugar. Simmer for 20 minutes. Add tofu and onion. Simmer for 10 minutes. Garnish with green onions. Serve hot with rice.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork belly",
+          "tofu"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 45,
-        "difficulty": "medium"
+        "calories_per_serving": 410
       },
       {
-        "title": "Bibimbap",
+        "recipe_name": "Bibimbap",
         "cuisine": "Korean",
         "ingredients": [
           "4 cups cooked rice",
@@ -712,14 +527,21 @@
           "1 tbsp sesame seeds",
           "Vegetable oil for cooking"
         ],
-        "instructions": "Cook each vegetable separately in oil. Marinate beef in soy sauce, sugar, and sesame oil. Cook beef until done. Fry eggs sunny-side up. Arrange rice in bowls. Top with vegetables, beef, and egg. Serve with gochujang and sesame seeds.",
-        "proteins": ["beef", "eggs"],
+        "cooking_instructions": "Cook each vegetable separately in oil. Marinate beef in soy sauce, sugar, and sesame oil. Cook beef until done. Fry eggs sunny-side up. Arrange rice in bowls. Top with vegetables, beef, and egg. Serve with gochujang and sesame seeds.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 40,
-        "difficulty": "medium"
+        "calories_per_serving": 420
       },
       {
-        "title": "Korean Fried Chicken",
+        "recipe_name": "Korean Fried Chicken",
         "cuisine": "Korean",
         "ingredients": [
           "2 lbs chicken wings",
@@ -737,14 +559,20 @@
           "1 tbsp sesame oil",
           "1 tbsp sesame seeds"
         ],
-        "instructions": "Mix flour, cornstarch, salt, and pepper. Coat chicken wings. Fry in hot oil until golden and crispy. For sauce, mix gochujang, soy sauce, honey, vinegar, garlic, and ginger. Toss fried chicken in sauce. Garnish with sesame oil and seeds. Serve immediately.",
-        "proteins": ["chicken wings"],
+        "cooking_instructions": "Mix flour, cornstarch, salt, and pepper. Coat chicken wings. Fry in hot oil until golden and crispy. For sauce, mix gochujang, soy sauce, honey, vinegar, garlic, and ginger. Toss fried chicken in sauce. Garnish with sesame oil and seeds. Serve immediately.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken wings"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 35,
-        "difficulty": "medium"
+        "calories_per_serving": 410
       },
       {
-        "title": "Japchae",
+        "recipe_name": "Japchae",
         "cuisine": "Korean",
         "ingredients": [
           "1/2 lb sweet potato noodles",
@@ -761,111 +589,281 @@
           "1 tbsp sesame seeds",
           "Black pepper to taste"
         ],
-        "instructions": "Cook noodles according to package directions. Marinate beef in soy sauce, sugar, and sesame oil. Cook each vegetable separately. Cook beef until done. Mix noodles with vegetables and beef. Add garlic, sesame oil, and sesame seeds. Season with black pepper. Serve warm or cold.",
-        "proteins": ["beef"],
+        "cooking_instructions": "Cook noodles according to package directions. Marinate beef in soy sauce, sugar, and sesame oil. Cook each vegetable separately. Cook beef until done. Mix noodles with vegetables and beef. Add garlic, sesame oil, and sesame seeds. Season with black pepper. Serve warm or cold.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 35,
-        "difficulty": "medium"
+        "calories_per_serving": 400
       },
       {
-        "title": "Quick Egg Fried Rice",
+        "recipe_name": "Quick Egg Fried Rice",
         "cuisine": "Chinese",
-        "ingredients": ["2 cups cooked rice", "3 eggs", "2 tbsp vegetable oil", "2 cloves garlic, minced", "1/2 cup frozen peas", "2 tbsp soy sauce", "1 tsp sesame oil", "2 green onions, sliced", "Salt and pepper to taste"],
-        "instructions": "Heat oil in wok. Scramble eggs and set aside. Add garlic and stir-fry for 30 seconds. Add rice and stir-fry for 2 minutes. Add peas and cook for 1 minute. Add eggs, soy sauce, and sesame oil. Stir-fry for 1 minute. Garnish with green onions. Season with salt and pepper.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups cooked rice",
+          "3 eggs",
+          "2 tbsp vegetable oil",
+          "2 cloves garlic, minced",
+          "1/2 cup frozen peas",
+          "2 tbsp soy sauce",
+          "1 tsp sesame oil",
+          "2 green onions, sliced",
+          "Salt and pepper to taste"
+        ],
+        "cooking_instructions": "Heat oil in wok. Scramble eggs and set aside. Add garlic and stir-fry for 30 seconds. Add rice and stir-fry for 2 minutes. Add peas and cook for 1 minute. Add eggs, soy sauce, and sesame oil. Stir-fry for 1 minute. Garnish with green onions. Season with salt and pepper.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 306
       },
       {
-        "title": "Quick Chicken Teriyaki",
+        "recipe_name": "Quick Chicken Teriyaki",
         "cuisine": "Japanese",
-        "ingredients": ["1 lb chicken breast, sliced", "1/4 cup soy sauce", "2 tbsp honey", "1 tbsp rice vinegar", "1 tsp ginger, grated", "2 cloves garlic, minced", "2 tbsp vegetable oil", "Sesame seeds for garnish", "Cooked rice for serving"],
-        "instructions": "Mix soy sauce, honey, rice vinegar, ginger, and garlic. Heat oil in pan. Cook chicken for 4 minutes per side. Add sauce and simmer for 2 minutes. Garnish with sesame seeds. Serve over rice.",
-        "proteins": ["chicken breast"],
+        "ingredients": [
+          "1 lb chicken breast, sliced",
+          "1/4 cup soy sauce",
+          "2 tbsp honey",
+          "1 tbsp rice vinegar",
+          "1 tsp ginger, grated",
+          "2 cloves garlic, minced",
+          "2 tbsp vegetable oil",
+          "Sesame seeds for garnish",
+          "Cooked rice for serving"
+        ],
+        "cooking_instructions": "Mix soy sauce, honey, rice vinegar, ginger, and garlic. Heat oil in pan. Cook chicken for 4 minutes per side. Add sauce and simmer for 2 minutes. Garnish with sesame seeds. Serve over rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "chicken breast"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 314
       },
       {
-        "title": "Quick Miso Soup",
+        "recipe_name": "Quick Miso Soup",
         "cuisine": "Japanese",
-        "ingredients": ["4 cups dashi stock", "3 tbsp miso paste", "1/2 cup tofu, cubed", "2 green onions, sliced", "1 sheet nori, cut into strips", "1 tsp soy sauce"],
-        "instructions": "Heat dashi stock to simmer. Dissolve miso paste in small amount of hot stock. Add to pot with tofu. Simmer for 2 minutes. Add green onions and nori. Season with soy sauce. Serve hot.",
-        "proteins": ["tofu"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 7,
-        "difficulty": "easy"
+        "ingredients": [
+          "4 cups dashi stock",
+          "3 tbsp miso paste",
+          "1/2 cup tofu, cubed",
+          "2 green onions, sliced",
+          "1 sheet nori, cut into strips",
+          "1 tsp soy sauce"
+        ],
+        "cooking_instructions": "Heat dashi stock to simmer. Dissolve miso paste in small amount of hot stock. Add to pot with tofu. Simmer for 2 minutes. Add green onions and nori. Season with soy sauce. Serve hot.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "tofu"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 274
       },
       {
-        "title": "Quick Pad Thai",
+        "recipe_name": "Quick Pad Thai",
         "cuisine": "Thai",
-        "ingredients": ["8 oz rice noodles", "2 tbsp vegetable oil", "2 cloves garlic, minced", "1/2 lb shrimp", "2 eggs", "2 tbsp fish sauce", "2 tbsp brown sugar", "1 tbsp lime juice", "1/4 cup peanuts, chopped", "Bean sprouts and lime wedges for serving"],
-        "instructions": "Soak noodles in hot water for 5 minutes. Heat oil and cook garlic for 30 seconds. Add shrimp and cook for 2 minutes. Push aside, add eggs and scramble. Add noodles, fish sauce, brown sugar, and lime juice. Toss for 2 minutes. Top with peanuts, bean sprouts, and lime wedges.",
-        "proteins": ["shrimp", "eggs"],
+        "ingredients": [
+          "8 oz rice noodles",
+          "2 tbsp vegetable oil",
+          "2 cloves garlic, minced",
+          "1/2 lb shrimp",
+          "2 eggs",
+          "2 tbsp fish sauce",
+          "2 tbsp brown sugar",
+          "1 tbsp lime juice",
+          "1/4 cup peanuts, chopped",
+          "Bean sprouts and lime wedges for serving"
+        ],
+        "cooking_instructions": "Soak noodles in hot water for 5 minutes. Heat oil and cook garlic for 30 seconds. Add shrimp and cook for 2 minutes. Push aside, add eggs and scramble. Add noodles, fish sauce, brown sugar, and lime juice. Toss for 2 minutes. Top with peanuts, bean sprouts, and lime wedges.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp",
+          "eggs"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 330
       },
       {
-        "title": "Quick Korean Beef Bowl",
+        "recipe_name": "Quick Korean Beef Bowl",
         "cuisine": "Korean",
-        "ingredients": ["1 lb ground beef", "3 tbsp soy sauce", "2 tbsp brown sugar", "1 tbsp sesame oil", "2 cloves garlic, minced", "1 tsp ginger, grated", "2 green onions, sliced", "1 tbsp sesame seeds", "Cooked rice for serving"],
-        "instructions": "Cook ground beef until browned. Add soy sauce, brown sugar, sesame oil, garlic, and ginger. Simmer for 3 minutes. Garnish with green onions and sesame seeds. Serve over rice.",
-        "proteins": ["ground beef"],
+        "ingredients": [
+          "1 lb ground beef",
+          "3 tbsp soy sauce",
+          "2 tbsp brown sugar",
+          "1 tbsp sesame oil",
+          "2 cloves garlic, minced",
+          "1 tsp ginger, grated",
+          "2 green onions, sliced",
+          "1 tbsp sesame seeds",
+          "Cooked rice for serving"
+        ],
+        "cooking_instructions": "Cook ground beef until browned. Add soy sauce, brown sugar, sesame oil, garlic, and ginger. Simmer for 3 minutes. Garnish with green onions and sesame seeds. Serve over rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground beef"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 314
       },
       {
-        "title": "Quick Vietnamese Pho",
+        "recipe_name": "Quick Vietnamese Pho",
         "cuisine": "Vietnamese",
-        "ingredients": ["4 cups beef broth", "8 oz rice noodles", "1/2 lb beef sirloin, sliced thin", "2 green onions, sliced", "1/4 cup cilantro", "1/4 cup basil", "1 lime, juiced", "2 tbsp fish sauce", "Sriracha and hoisin sauce for serving"],
-        "instructions": "Heat broth to simmer. Cook noodles according to package directions. Add beef to hot broth for 1 minute. Divide noodles among bowls. Top with beef and broth. Garnish with green onions, cilantro, and basil. Add lime juice and fish sauce. Serve with sriracha and hoisin.",
-        "proteins": ["beef sirloin"],
+        "ingredients": [
+          "4 cups beef broth",
+          "8 oz rice noodles",
+          "1/2 lb beef sirloin, sliced thin",
+          "2 green onions, sliced",
+          "1/4 cup cilantro",
+          "1/4 cup basil",
+          "1 lime, juiced",
+          "2 tbsp fish sauce",
+          "Sriracha and hoisin sauce for serving"
+        ],
+        "cooking_instructions": "Heat broth to simmer. Cook noodles according to package directions. Add beef to hot broth for 1 minute. Divide noodles among bowls. Top with beef and broth. Garnish with green onions, cilantro, and basil. Add lime juice and fish sauce. Serve with sriracha and hoisin.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef sirloin"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 15,
-        "difficulty": "easy"
+        "calories_per_serving": 320
       },
       {
-        "title": "Quick Stir-Fried Noodles",
+        "recipe_name": "Quick Stir-Fried Noodles",
         "cuisine": "Chinese",
-        "ingredients": ["8 oz fresh noodles", "2 tbsp vegetable oil", "2 cloves garlic, minced", "1 cup mixed vegetables", "2 tbsp soy sauce", "1 tbsp oyster sauce", "1 tsp sesame oil", "2 green onions, sliced"],
-        "instructions": "Cook noodles according to package directions. Heat oil and stir-fry garlic for 30 seconds. Add vegetables and cook for 2 minutes. Add noodles, soy sauce, and oyster sauce. Toss for 2 minutes. Drizzle with sesame oil and garnish with green onions.",
+        "ingredients": [
+          "8 oz fresh noodles",
+          "2 tbsp vegetable oil",
+          "2 cloves garlic, minced",
+          "1 cup mixed vegetables",
+          "2 tbsp soy sauce",
+          "1 tbsp oyster sauce",
+          "1 tsp sesame oil",
+          "2 green onions, sliced"
+        ],
+        "cooking_instructions": "Cook noodles according to package directions. Heat oil and stir-fry garlic for 30 seconds. Add vegetables and cook for 2 minutes. Add noodles, soy sauce, and oyster sauce. Toss for 2 minutes. Drizzle with sesame oil and garnish with green onions.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
         "proteins": [],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 300
       },
       {
-        "title": "Quick Sushi Bowl",
+        "recipe_name": "Quick Sushi Bowl",
         "cuisine": "Japanese",
-        "ingredients": ["2 cups cooked sushi rice", "1/2 lb salmon, cubed", "1 avocado, sliced", "1 cucumber, sliced", "2 tbsp soy sauce", "1 tbsp rice vinegar", "1 tsp sesame oil", "Nori strips and sesame seeds for garnish"],
-        "instructions": "Mix rice with rice vinegar. Top with salmon, avocado, and cucumber. Drizzle with soy sauce and sesame oil. Garnish with nori strips and sesame seeds. Serve immediately.",
-        "proteins": ["salmon"],
+        "ingredients": [
+          "2 cups cooked sushi rice",
+          "1/2 lb salmon, cubed",
+          "1 avocado, sliced",
+          "1 cucumber, sliced",
+          "2 tbsp soy sauce",
+          "1 tbsp rice vinegar",
+          "1 tsp sesame oil",
+          "Nori strips and sesame seeds for garnish"
+        ],
+        "cooking_instructions": "Mix rice with rice vinegar. Top with salmon, avocado, and cucumber. Drizzle with soy sauce and sesame oil. Garnish with nori strips and sesame seeds. Serve immediately.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "salmon"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 8,
-        "difficulty": "easy"
+        "calories_per_serving": 296
       },
       {
-        "title": "Quick Thai Basil Chicken",
+        "recipe_name": "Quick Thai Basil Chicken",
         "cuisine": "Thai",
-        "ingredients": ["1 lb ground chicken", "2 tbsp vegetable oil", "4 cloves garlic, minced", "2 Thai chilies, sliced", "1/4 cup Thai basil leaves", "2 tbsp fish sauce", "1 tbsp soy sauce", "1 tbsp brown sugar", "1 tbsp lime juice", "Cooked rice for serving"],
-        "instructions": "Heat oil and cook garlic and chilies for 30 seconds. Add ground chicken and cook for 4 minutes. Add fish sauce, soy sauce, brown sugar, and lime juice. Stir-fry for 2 minutes. Add basil leaves and toss. Serve over rice.",
-        "proteins": ["ground chicken"],
+        "ingredients": [
+          "1 lb ground chicken",
+          "2 tbsp vegetable oil",
+          "4 cloves garlic, minced",
+          "2 Thai chilies, sliced",
+          "1/4 cup Thai basil leaves",
+          "2 tbsp fish sauce",
+          "1 tbsp soy sauce",
+          "1 tbsp brown sugar",
+          "1 tbsp lime juice",
+          "Cooked rice for serving"
+        ],
+        "cooking_instructions": "Heat oil and cook garlic and chilies for 30 seconds. Add ground chicken and cook for 4 minutes. Add fish sauce, soy sauce, brown sugar, and lime juice. Stir-fry for 2 minutes. Add basil leaves and toss. Serve over rice.",
+        "cooking_time_category": "Under 15 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "ground chicken"
+        ],
         "dietary_restrictions": [],
-        "cooking_time": 12,
-        "difficulty": "easy"
+        "calories_per_serving": 324
       },
       {
-        "title": "Quick Korean Kimchi Fried Rice",
+        "recipe_name": "Quick Korean Kimchi Fried Rice",
         "cuisine": "Korean",
-        "ingredients": ["2 cups cooked rice", "1/2 cup kimchi, chopped", "3 eggs", "2 tbsp vegetable oil", "2 cloves garlic, minced", "2 tbsp soy sauce", "1 tsp sesame oil", "2 green onions, sliced", "Sesame seeds for garnish"],
-        "instructions": "Heat oil and scramble eggs. Set aside. Add garlic and stir-fry for 30 seconds. Add rice and stir-fry for 2 minutes. Add kimchi and cook for 1 minute. Add eggs, soy sauce, and sesame oil. Toss for 1 minute. Garnish with green onions and sesame seeds.",
-        "proteins": ["eggs"],
-        "dietary_restrictions": ["vegetarian"],
-        "cooking_time": 10,
-        "difficulty": "easy"
+        "ingredients": [
+          "2 cups cooked rice",
+          "1/2 cup kimchi, chopped",
+          "3 eggs",
+          "2 tbsp vegetable oil",
+          "2 cloves garlic, minced",
+          "2 tbsp soy sauce",
+          "1 tsp sesame oil",
+          "2 green onions, sliced",
+          "Sesame seeds for garnish"
+        ],
+        "cooking_instructions": "Heat oil and scramble eggs. Set aside. Add garlic and stir-fry for 30 seconds. Add rice and stir-fry for 2 minutes. Add kimchi and cook for 1 minute. Add eggs, soy sauce, and sesame oil. Toss for 1 minute. Garnish with green onions and sesame seeds.",
+        "cooking_time_category": "Under 10 min",
+        "difficulty": "Easy",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "vegetarian",
+        "proteins": [
+          "eggs"
+        ],
+        "dietary_restrictions": [
+          "vegetarian"
+        ],
+        "calories_per_serving": 310
       },
       {
         "recipe_name": "Chinese Peking Duck",
@@ -897,7 +895,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Preheat oven to 425°F (220°C). Score duck skin in diamond pattern. Mix honey, soy sauce, vinegar, and five-spice powder. Brush over duck. Place on wire rack in roasting pan. Roast 1.5 hours, basting every 20 minutes, until skin is crispy and golden. Let rest 15 minutes. Carve into thin slices. Serve with pancakes, cucumber, spring onions, and hoisin sauce.",
-        "chef_tips": "The skin should be very crispy. Score the skin well for even cooking. The duck should be well-rested before carving. Serve immediately while hot."
+        "chef_tips": "The skin should be very crispy. Score the skin well for even cooking. The duck should be well-rested before carving. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Mapo Tofu",
@@ -930,7 +929,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat oil in wok over medium-high heat. Add pork and cook until browned. Add doubanjiang, garlic, and ginger. Cook 1 minute until fragrant. Add stock, soy sauce, and sugar. Bring to boil. Add tofu gently. Simmer 5 minutes. Add cornstarch mixture, stir gently until thickened. Garnish with green onions and Sichuan peppercorns. Serve hot over rice.",
-        "chef_tips": "Don't stir the tofu too much to keep it intact. The doubanjiang should be well-cooked. The sauce should be thick and glossy. Serve immediately while hot."
+        "chef_tips": "Don't stir the tofu too much to keep it intact. The doubanjiang should be well-cooked. The sauce should be thick and glossy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Xiaolongbao",
@@ -963,7 +963,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Make dough with flour and hot water. Knead until smooth, rest 30 minutes. Mix pork with soy sauce, sesame oil, sugar, salt, green onions, and ginger. Add chilled stock, mix well. Roll dough thin, cut into circles. Place 1 tbsp filling in center. Pleat edges to seal. Steam 8-10 minutes until cooked through. Serve hot with vinegar and ginger dipping sauce.",
-        "chef_tips": "The dough should be soft but not sticky. Don't overfill the dumplings. The pleating should be tight to seal. Steam until the wrappers are translucent."
+        "chef_tips": "The dough should be soft but not sticky. Don't overfill the dumplings. The pleating should be tight to seal. Steam until the wrappers are translucent.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Sweet and Sour Pork",
@@ -993,7 +994,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Season pork with salt and pepper. Dip in egg, then cornstarch. Heat oil in wok over medium-high heat. Fry pork until golden and crispy. Remove and set aside. Add bell pepper and onion, stir-fry 2 minutes. Add pineapple, cook 1 minute. Add sauce ingredients, bring to boil. Return pork to wok, toss to coat. Cook 2 minutes until heated through. Serve hot over rice.",
-        "chef_tips": "The pork should be crispy on the outside. Don't overcook the vegetables. The sauce should be thick and glossy. Serve immediately while hot."
+        "chef_tips": "The pork should be crispy on the outside. Don't overcook the vegetables. The sauce should be thick and glossy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Hot and Sour Soup",
@@ -1026,7 +1028,8 @@
           "Whisk"
         ],
         "cooking_instructions": "Bring stock to boil. Add tofu, mushrooms, and bamboo shoots. Simmer 5 minutes. Add soy sauce, vinegar, chili oil, white pepper, and sugar. Bring to boil. Slowly pour in beaten eggs while stirring. Cook 1 minute. Remove from heat. Add green onions and sesame oil. Serve hot.",
-        "chef_tips": "The soup should be hot and sour. Don't overcook the eggs. The vegetables should be tender but not mushy. Serve immediately while hot."
+        "chef_tips": "The soup should be hot and sour. Don't overcook the eggs. The vegetables should be tender but not mushy. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Char Siu",
@@ -1058,7 +1061,8 @@
           "Measuring cups and spoons"
         ],
         "cooking_instructions": "Mix all ingredients except pork. Marinate pork for 2 hours minimum. Preheat oven to 375°F (190°C). Place pork on rack in roasting pan. Roast 45 minutes, basting every 15 minutes, until cooked through and caramelized. Let rest 10 minutes. Slice thinly. Serve hot or at room temperature.",
-        "chef_tips": "The pork should be well-marinated. Baste frequently for even color. The meat should be tender and juicy. Let it rest before slicing."
+        "chef_tips": "The pork should be well-marinated. Baste frequently for even color. The meat should be tender and juicy. Let it rest before slicing.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Dan Dan Noodles",
@@ -1092,7 +1096,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Cook noodles according to package directions. Drain and set aside. Heat oil in wok over medium-high heat. Add pork and cook until browned. Add doubanjiang, garlic, and ginger. Cook 1 minute until fragrant. Add stock, soy sauce, and sugar. Bring to boil. Add noodles, toss to combine. Add sesame oil and green onions. Serve hot.",
-        "chef_tips": "The noodles should be al dente. The sauce should be thick and flavorful. Don't overcook the noodles. Serve immediately while hot."
+        "chef_tips": "The noodles should be al dente. The sauce should be thick and flavorful. Don't overcook the noodles. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Wonton Soup",
@@ -1127,7 +1132,8 @@
           "Slotted spoon"
         ],
         "cooking_instructions": "Mix pork with soy sauce, sesame oil, sugar, salt, green onions, and ginger. Place 1 tsp filling in center of each wrapper. Wet edges, fold in half, seal tightly. Bring stock to boil. Add wontons, cook 5-7 minutes until they float. Add soy sauce and sesame oil. Garnish with green onions and cilantro. Serve hot.",
-        "chef_tips": "Don't overfill the wontons. Seal the edges well. The wontons should float when cooked. Serve immediately while hot."
+        "chef_tips": "Don't overfill the wontons. Seal the edges well. The wontons should float when cooked. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Egg Fried Rice",
@@ -1157,7 +1163,8 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat 1 tbsp oil in wok over medium-high heat. Scramble eggs until just set. Remove and set aside. Add remaining oil. Add garlic and ginger, stir-fry 30 seconds. Add rice, break up clumps. Stir-fry 2 minutes. Add eggs, soy sauce, and sesame oil. Toss to combine. Add green onions. Season with salt and white pepper. Serve hot.",
-        "chef_tips": "Use cold rice for best texture. Don't overcook the eggs. The rice should be well-separated. Serve immediately while hot."
+        "chef_tips": "Use cold rice for best texture. Don't overcook the eggs. The rice should be well-separated. Serve immediately while hot.",
+        "meal_type": "Regular"
       },
       {
         "recipe_name": "Chinese Kung Pao Chicken",
@@ -1191,8 +1198,242 @@
           "Wooden spoon"
         ],
         "cooking_instructions": "Heat oil in wok over medium-high heat. Add chicken and cook until golden. Remove and set aside. Add peppercorns, doubanjiang, garlic, and ginger. Cook 1 minute until fragrant. Add bell pepper, cook 2 minutes. Add chicken back to wok. Add soy sauce, vinegar, and sugar. Add cornstarch mixture, stir until thickened. Add peanuts and green onions. Serve hot over rice.",
-        "chef_tips": "The chicken should be golden and crispy. Don't overcook the vegetables. The sauce should be thick and glossy. Serve immediately while hot."
+        "chef_tips": "The chicken should be golden and crispy. Don't overcook the vegetables. The sauce should be thick and glossy. Serve immediately while hot.",
+        "meal_type": "Regular"
+      }
+    ],
+    "Vietnamese": [
+      {
+        "recipe_name": "Pho Bo (Beef Noodle Soup)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "2 lbs beef bones (marrow bones)",
+          "1 lb beef brisket",
+          "1 large onion, halved",
+          "4-inch piece ginger, sliced",
+          "6 star anise pods",
+          "1 cinnamon stick",
+          "4 cloves",
+          "1 tsp coriander seeds",
+          "1 tsp fennel seeds",
+          "2 tbsp fish sauce",
+          "1 tbsp sugar",
+          "1 lb rice noodles (banh pho)",
+          "1/2 lb beef sirloin, thinly sliced",
+          "1 bunch cilantro, chopped",
+          "1 bunch Thai basil",
+          "2 limes, cut into wedges",
+          "2 jalapeños, sliced",
+          "Bean sprouts for serving"
+        ],
+        "cooking_instructions": "Roast beef bones in oven at 400°F for 30 minutes. In a large pot, add bones, brisket, onion, ginger, and cover with water. Bring to boil, skim foam, then simmer for 3-4 hours. Toast spices in a dry pan until fragrant. Add to broth with fish sauce and sugar. Strain broth and return to pot. Cook rice noodles according to package directions. Slice brisket thinly. Divide noodles among bowls, top with brisket and raw sirloin. Pour hot broth over meat to cook it. Serve with herbs, lime, jalapeños, and bean sprouts.",
+        "cooking_time_category": "Any Time",
+        "difficulty": "Hard",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "beef"
+        ],
+        "dietary_restrictions": [],
+        "calories_per_serving": 860
+      },
+      {
+        "recipe_name": "Banh Mi (Vietnamese Sandwich)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "4 Vietnamese baguettes",
+          "1 lb pork belly or pork shoulder",
+          "2 tbsp fish sauce",
+          "1 tbsp soy sauce",
+          "1 tbsp sugar",
+          "2 cloves garlic, minced",
+          "1 tsp five-spice powder",
+          "1 cup pickled carrots and daikon",
+          "1 cucumber, julienned",
+          "1 bunch cilantro",
+          "2 jalapeños, sliced",
+          "Mayonnaise",
+          "Sriracha sauce",
+          "2 tbsp vegetable oil"
+        ],
+        "cooking_instructions": "Marinate pork with fish sauce, soy sauce, sugar, garlic, and five-spice powder for 2 hours. Heat oil in a pan and cook pork until golden and cooked through, about 15 minutes. Slice pork thinly. Cut baguettes lengthwise, leaving one edge intact. Spread mayonnaise on both sides. Add pork, pickled vegetables, cucumber, cilantro, and jalapeños. Drizzle with sriracha. Serve immediately.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork"
+        ],
+        "dietary_restrictions": [],
+        "calories_per_serving": 400
+      },
+      {
+        "recipe_name": "Goi Cuon (Fresh Spring Rolls)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "12 rice paper wrappers",
+          "1 lb shrimp, cooked and peeled",
+          "1 lb pork belly, cooked and sliced",
+          "1 package rice vermicelli noodles",
+          "1 head lettuce, leaves separated",
+          "1 bunch mint",
+          "1 bunch cilantro",
+          "1 bunch Thai basil",
+          "1 cucumber, julienned",
+          "1 cup bean sprouts",
+          "1/2 cup hoisin sauce",
+          "2 tbsp peanut butter",
+          "2 tbsp water",
+          "1 clove garlic, minced",
+          "1 tbsp lime juice",
+          "1 tsp sriracha"
+        ],
+        "cooking_instructions": "Cook rice vermicelli according to package directions. Mix hoisin sauce, peanut butter, water, garlic, lime juice, and sriracha for dipping sauce. Soak rice paper wrappers in warm water for 30 seconds until pliable. Place on damp towel. Add lettuce, herbs, noodles, shrimp, pork, cucumber, and bean sprouts. Roll tightly, tucking in sides. Serve with dipping sauce.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp",
+          "pork"
+        ],
+        "dietary_restrictions": [],
+        "calories_per_serving": 450
+      },
+      {
+        "recipe_name": "Bun Cha (Grilled Pork with Noodles)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "1 lb ground pork",
+          "1 lb pork shoulder, sliced thin",
+          "2 tbsp fish sauce",
+          "1 tbsp sugar",
+          "2 cloves garlic, minced",
+          "1 shallot, minced",
+          "1 tsp black pepper",
+          "1 lb rice vermicelli noodles",
+          "1 head lettuce, shredded",
+          "1 bunch mint",
+          "1 bunch cilantro",
+          "1 cucumber, julienned",
+          "1 cup bean sprouts",
+          "1/4 cup fish sauce",
+          "1/4 cup lime juice",
+          "2 tbsp sugar",
+          "2 cloves garlic, minced",
+          "1 chili pepper, minced",
+          "1/2 cup water"
+        ],
+        "cooking_instructions": "Mix ground pork with fish sauce, sugar, garlic, shallot, and black pepper. Form into small patties. Marinate sliced pork with same mixture. Grill pork patties and sliced pork until cooked through. Cook rice vermicelli according to package directions. Make dipping sauce with fish sauce, lime juice, sugar, garlic, chili, and water. Serve noodles with lettuce, herbs, cucumber, bean sprouts, and grilled pork. Serve with dipping sauce.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork"
+        ],
+        "dietary_restrictions": [],
+        "calories_per_serving": 470
+      },
+      {
+        "recipe_name": "Ca Kho To (Caramelized Fish)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "2 lbs catfish or cod fillets",
+          "1/4 cup fish sauce",
+          "1/4 cup sugar",
+          "2 tbsp vegetable oil",
+          "4 cloves garlic, minced",
+          "2 shallots, sliced",
+          "1 inch ginger, julienned",
+          "2 red chilies, sliced",
+          "1/2 cup coconut water",
+          "2 green onions, chopped",
+          "1 tsp black pepper",
+          "1 tbsp lime juice"
+        ],
+        "cooking_instructions": "Cut fish into 2-inch pieces. Heat oil in a clay pot or heavy-bottomed pan. Add garlic, shallots, and ginger, cook until fragrant. Add sugar and cook until caramelized. Add fish sauce and coconut water. Add fish pieces and chilies. Simmer for 15-20 minutes until fish is cooked and sauce is reduced. Add green onions, black pepper, and lime juice. Serve hot with steamed rice.",
+        "cooking_time_category": "Under 40 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "fish"
+        ],
+        "dietary_restrictions": [],
+        "calories_per_serving": 390
+      },
+      {
+        "recipe_name": "Banh Mi",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "4 Vietnamese baguettes",
+          "1 lb pork belly, sliced",
+          "1/2 cup fish sauce",
+          "1/4 cup sugar",
+          "2 cloves garlic, minced",
+          "1/2 cup mayonnaise",
+          "1/4 cup Sriracha",
+          "1 cucumber, julienned",
+          "1 carrot, julienned",
+          "1/2 cup daikon, julienned",
+          "1/4 cup rice vinegar",
+          "1 tbsp sugar",
+          "1/2 cup cilantro",
+          "2 jalapeños, sliced"
+        ],
+        "cooking_instructions": "Marinate pork in fish sauce, sugar, and garlic for 2 hours. Grill pork until cooked. Mix mayonnaise with Sriracha. Pickle vegetables in vinegar and sugar. Slice baguettes and spread with mayo mixture. Add pork, vegetables, cilantro, and jalapeños. Serve immediately.",
+        "cooking_time_category": "Under 45 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "pork belly"
+        ],
+        "dietary_restrictions": [
+          "contains_dairy"
+        ],
+        "calories_per_serving": 430
+      },
+      {
+        "recipe_name": "Goi Cuon (Fresh Spring Rolls)",
+        "cuisine": "Vietnamese",
+        "ingredients": [
+          "12 rice paper wrappers",
+          "1/2 lb shrimp, cooked and sliced",
+          "1/2 lb pork belly, cooked and sliced",
+          "1/2 cup rice vermicelli, cooked",
+          "1 cucumber, julienned",
+          "1 carrot, julienned",
+          "1/2 cup mint leaves",
+          "1/2 cup cilantro",
+          "1/2 cup Thai basil",
+          "Lettuce leaves",
+          "For dipping sauce: 1/4 cup fish sauce",
+          "2 tbsp lime juice",
+          "2 tbsp sugar",
+          "1 clove garlic, minced",
+          "1 red chili, minced"
+        ],
+        "cooking_instructions": "Soak rice paper in warm water until pliable. Place shrimp, pork, noodles, and vegetables on wrapper. Add herbs and lettuce. Roll tightly. For sauce, mix fish sauce, lime juice, sugar, garlic, and chili. Serve rolls with dipping sauce.",
+        "cooking_time_category": "Under 30 min",
+        "difficulty": "Medium",
+        "meal_type": "Regular",
+        "servings": 4,
+        "diet_type": "non-vegetarian",
+        "proteins": [
+          "shrimp",
+          "pork belly"
+        ],
+        "dietary_restrictions": [],
+        "calories_per_serving": 410
       }
     ]
   }
-} 
+}
