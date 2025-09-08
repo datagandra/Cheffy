@@ -37,8 +37,7 @@ class RecipeDatabaseService: ObservableObject {
         ]
         
         for fileName in cuisineFiles {
-            if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
-                let recipes = loadRecipesFromURL(url)
+            if let recipes = try? await loadRecipesFromFile(fileName) {
                 allRecipes.append(contentsOf: recipes)
                 logger.info("Loaded \(recipes.count) recipes from \(fileName).json")
                 
@@ -204,64 +203,139 @@ class RecipeDatabaseService: ObservableObject {
         
         for (cuisineName, cuisineRecipes) in recipeData.cuisines {
             for localRecipeData in cuisineRecipes {
-                // Parse ingredients from strings to Ingredient objects
-                let ingredients = localRecipeData.ingredients.map { ingredientString in
-                    parseIngredient(from: ingredientString)
+                // Handle both old and new JSON formats
+                let title: String
+                let ingredients: [String]
+                let instructions: String
+                let cookingTime: Int
+                let difficultyString: String
+                
+                // Check for new format first (with recipe_name and cooking_time_category)
+                if let recipeName = localRecipeData.recipe_name,
+                   let recipeIngredients = localRecipeData.ingredients,
+                   let cookingTimeCategory = localRecipeData.cooking_time_category,
+                   let recipeDifficulty = localRecipeData.difficulty {
+                    
+                    title = recipeName
+                    ingredients = recipeIngredients
+                    
+                    // Handle cooking_instructions as either string or array
+                    if let cookingInstructionsString = localRecipeData.cooking_instructions {
+                        instructions = cookingInstructionsString
+                    } else if let cookingInstructionsArray = localRecipeData.cooking_instructions_array {
+                        instructions = cookingInstructionsArray.joined(separator: " ")
+                    } else {
+                        instructions = "No cooking instructions available"
+                    }
+                    
+                    difficultyString = recipeDifficulty
+                    
+                    // Convert cooking_time_category to numeric cooking time
+                    switch cookingTimeCategory.lowercased() {
+                    case "under 5 min":
+                        cookingTime = 5
+                    case "under 10 min":
+                        cookingTime = 10
+                    case "under 15 min":
+                        cookingTime = 15
+                    case "under 20 min":
+                        cookingTime = 20
+                    case "under 25 min":
+                        cookingTime = 25
+                    case "under 30 min":
+                        cookingTime = 30
+                    case "under 40 min":
+                        cookingTime = 40
+                    case "under 45 min":
+                        cookingTime = 45
+                    case "under 50 min":
+                        cookingTime = 50
+                    case "under 1 hour":
+                        cookingTime = 60
+                    case "under 1.5 hours":
+                        cookingTime = 90
+                    case "under 2 hours":
+                        cookingTime = 120
+                    case "any time":
+                        cookingTime = 180 // Set to 3 hours for "Any Time" recipes
+                    default:
+                        cookingTime = 45 // Default fallback
+                    }
+                }
+                // Handle old format (with title and cooking_time)
+                else if let recipeTitle = localRecipeData.title,
+                        let recipeIngredients = localRecipeData.ingredients,
+                        let recipeInstructions = localRecipeData.instructions,
+                        let recipeCookingTime = localRecipeData.cooking_time,
+                        let recipeDifficulty = localRecipeData.difficulty {
+                    
+                    title = recipeTitle
+                    ingredients = recipeIngredients
+                    instructions = recipeInstructions
+                    cookingTime = recipeCookingTime
+                    difficultyString = recipeDifficulty
+                } else {
+                    logger.warning("Skipping recipe in \(cuisineName) - missing required fields")
+                    continue
                 }
                 
-                // Parse instructions into cooking steps
-                let instructionLines = localRecipeData.instructions.components(separatedBy: ". ")
-                let cookingSteps = instructionLines.enumerated().map { index, instruction in
-                    CookingStep(
-                        stepNumber: index + 1,
-                        description: instruction.trimmingCharacters(in: .whitespacesAndNewlines),
-                        duration: nil,
-                        temperature: nil,
-                        imageURL: nil,
-                        tips: nil
-                    )
+                let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
+                
+                // Parse dietary restrictions
+                var dietaryNotes: [DietaryNote] = []
+                if let dietaryRestrictions = localRecipeData.dietary_restrictions {
+                    for restriction in dietaryRestrictions {
+                        if let note = DietaryNote(rawValue: restriction) {
+                            dietaryNotes.append(note)
+                        }
+                    }
                 }
                 
-                // Convert cuisine string to Cuisine enum
-                let cuisine = Cuisine(rawValue: cuisineName) ?? .italian
-                
-                // Convert difficulty string to Difficulty enum
-                let difficulty = Difficulty(rawValue: localRecipeData.difficulty ?? "medium") ?? .medium
-                
-                // Convert dietary restrictions to DietaryNote enum
-                let dietaryNotes = (localRecipeData.dietary_restrictions ?? []).compactMap { restrictionString in
-                    DietaryNote(rawValue: restrictionString.replacingOccurrences(of: "contains_", with: ""))
+                // Parse diet_type for new format
+                if let dietType = localRecipeData.diet_type {
+                    if dietType == "vegetarian" {
+                        dietaryNotes.append(.vegetarian)
+                    } else if dietType == "vegan" {
+                        dietaryNotes.append(.vegan)
+                    }
                 }
                 
-                // Parse meal_type for new format recipes
+                // Parse meal_type and lunchbox_presentation for new format
                 let mealType: MealType
+                let lunchboxPresentation: String?
+                
                 if let mealTypeString = localRecipeData.meal_type {
                     mealType = MealType(rawValue: mealTypeString) ?? .regular
                 } else {
                     mealType = .regular // Default for old format recipes
                 }
                 
+                lunchboxPresentation = localRecipeData.lunchbox_presentation
+                
+                // Parse servings from new format, default to 4 for old format
+                let servings: Int
+                if let servingsValue = localRecipeData.servings {
+                    servings = servingsValue
+                } else {
+                    servings = 4 // Default for old format
+                }
+                
                 let recipe = Recipe(
-                    title: localRecipeData.title,
-                    cuisine: cuisine,
+                    title: title,
+                    cuisine: Cuisine(rawValue: cuisineName) ?? .italian,
                     difficulty: difficulty,
-                    prepTime: 15, // Default prep time
-                    cookTime: localRecipeData.cooking_time ?? 45, // Use provided cooking time or default
-                    servings: localRecipeData.servings ?? 4, // Use provided servings or default
-                    ingredients: ingredients,
-                    steps: cookingSteps,
+                    prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
+                    cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
+                    servings: servings,
+                    ingredients: ingredients.map { parseIngredient(from: $0) },
+                    steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
                     winePairings: [],
                     dietaryNotes: dietaryNotes,
-                    platingTips: "",
-                    chefNotes: "",
-                    imageURL: nil,
-                    stepImages: [],
-                    createdAt: Date(),
-                    isFavorite: false,
+                    platingTips: "Serve with traditional \(cuisineName) presentation",
+                    chefNotes: "Traditional \(cuisineName) recipe from our database",
                     mealType: mealType,
-                    lunchboxPresentation: localRecipeData.lunchbox_presentation
+                    lunchboxPresentation: lunchboxPresentation
                 )
-                
                 recipes.append(recipe)
             }
         }
@@ -428,193 +502,6 @@ class RecipeDatabaseService: ObservableObject {
         )
     }
     
-    /// Loads recipes from a specific JSON file URL
-    private func loadRecipesFromURL(_ url: URL) -> [Recipe] {
-        var recipes: [Recipe] = []
-        
-        guard let data = try? Data(contentsOf: url) else {
-            logger.error("Could not read data from: \(url)")
-            return recipes
-        }
-        
-        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-            logger.error("Could not parse JSON from: \(url)")
-            return recipes
-        }
-        
-        guard let cuisines = json["cuisines"] as? [String: Any] else {
-            logger.error("Could not find 'cuisines' key in JSON")
-            return recipes
-        }
-        
-        for (cuisineName, cuisineData) in cuisines {
-            guard let cuisineRecipes = cuisineData as? [[String: Any]] else {
-                continue
-            }
-            
-            guard let cuisine = Cuisine(rawValue: cuisineName) else {
-                logger.warning("Unknown cuisine: \(cuisineName)")
-                continue
-            }
-            
-                            // Debug: Log cuisine processing
-                if cuisineName == "Chinese" {
-                    logger.info("Processing Chinese cuisine with \(cuisineRecipes.count) recipes")
-                }
-                if cuisineName == "Indian" {
-                    logger.info("Processing Indian cuisine with \(cuisineRecipes.count) recipes")
-                }
-            
-            for (index, recipeData) in cuisineRecipes.enumerated() {
-                // Handle both old and new JSON formats
-                let title: String
-                let ingredients: [String]
-                let instructions: String
-                let cookingTime: Int
-                let difficultyString: String
-                
-                // Check for new format first (with recipe_name and cooking_time_category)
-                if let recipeName = recipeData["recipe_name"] as? String,
-                   let recipeIngredients = recipeData["ingredients"] as? [String],
-                   let cookingTimeCategory = recipeData["cooking_time_category"] as? String,
-                   let recipeDifficulty = recipeData["difficulty"] as? String {
-                    
-                    title = recipeName
-                    ingredients = recipeIngredients
-                    
-                    // Handle cooking_instructions as either string or array
-                    if let cookingInstructionsString = recipeData["cooking_instructions"] as? String {
-                        instructions = cookingInstructionsString
-                    } else if let cookingInstructionsArray = recipeData["cooking_instructions"] as? [String] {
-                        instructions = cookingInstructionsArray.joined(separator: " ")
-                    } else {
-                        instructions = "No cooking instructions available"
-                    }
-                    
-                    difficultyString = recipeDifficulty
-                    
-                    // Convert cooking_time_category to numeric cooking time
-                    switch cookingTimeCategory.lowercased() {
-                    case "under 5 min":
-                        cookingTime = 5
-                    case "under 10 min":
-                        cookingTime = 10
-                    case "under 15 min":
-                        cookingTime = 15
-                    case "under 20 min":
-                        cookingTime = 20
-                    case "under 25 min":
-                        cookingTime = 25
-                    case "under 30 min":
-                        cookingTime = 30
-                    case "under 40 min":
-                        cookingTime = 40
-                    case "under 45 min":
-                        cookingTime = 45
-                    case "under 50 min":
-                        cookingTime = 50
-                    case "under 1 hour":
-                        cookingTime = 60
-                    case "under 1.5 hours":
-                        cookingTime = 90
-                    case "under 2 hours":
-                        cookingTime = 120
-                    case "any time":
-                        cookingTime = 180 // Set to 3 hours for "Any Time" recipes
-                    default:
-                        cookingTime = 45 // Default fallback
-                    }
-                }
-                // Handle old format (with title and cooking_time)
-                else if let recipeTitle = recipeData["title"] as? String,
-                        let recipeIngredients = recipeData["ingredients"] as? [String],
-                        let recipeInstructions = recipeData["instructions"] as? String,
-                        let recipeCookingTime = recipeData["cooking_time"] as? Int,
-                        let recipeDifficulty = recipeData["difficulty"] as? String {
-                    
-                    title = recipeTitle
-                    ingredients = recipeIngredients
-                    instructions = recipeInstructions
-                    cookingTime = recipeCookingTime
-                    difficultyString = recipeDifficulty
-                } else {
-                    logger.warning("Skipping recipe \(index) in \(cuisineName) - missing required fields")
-                    continue
-                }
-                
-                let difficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
-                
-                // Parse dietary restrictions
-                var dietaryNotes: [DietaryNote] = []
-                if let dietaryRestrictions = recipeData["dietary_restrictions"] as? [String] {
-                    for restriction in dietaryRestrictions {
-                        if let note = DietaryNote(rawValue: restriction) {
-                            dietaryNotes.append(note)
-                        }
-                    }
-                }
-                
-                // If no dietary restrictions specified in JSON, infer from ingredients
-                if dietaryNotes.isEmpty {
-                    let hasMeat = ingredients.contains { ingredient in
-                        let lowercased = ingredient.lowercased()
-                        return lowercased.contains("chicken") || lowercased.contains("beef") || 
-                               lowercased.contains("lamb") || lowercased.contains("pork") ||
-                               lowercased.contains("fish") || lowercased.contains("shrimp") ||
-                               lowercased.contains("goat") || lowercased.contains("turkey") ||
-                               lowercased.contains("mutton") || lowercased.contains("prawn") ||
-                               lowercased.contains("duck") || lowercased.contains("meat")
-                    }
-                    
-                    if hasMeat {
-                        dietaryNotes.append(.nonVegetarian)
-                    } else {
-                        dietaryNotes.append(.vegetarian)
-                    }
-                }
-                
-                // Parse meal_type and lunchbox_presentation for new format
-                let mealType: MealType
-                let lunchboxPresentation: String?
-                
-                if let mealTypeString = recipeData["meal_type"] as? String {
-                    mealType = MealType(rawValue: mealTypeString) ?? .regular
-                } else {
-                    mealType = .regular // Default for old format recipes
-                }
-                
-                lunchboxPresentation = recipeData["lunchbox_presentation"] as? String
-                
-                // Parse servings from new format, default to 4 for old format
-                let servings: Int
-                if let servingsValue = recipeData["servings"] as? Int {
-                    servings = servingsValue
-                } else {
-                    servings = 4 // Default for old format
-                }
-                
-                let recipe = Recipe(
-                    title: title,
-                    cuisine: cuisine,
-                    difficulty: difficulty,
-                    prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
-                    cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
-                    servings: servings,
-                    ingredients: ingredients.map { parseIngredient(from: $0) },
-                    steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
-                    winePairings: [],
-                    dietaryNotes: dietaryNotes,
-                    platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
-                    chefNotes: "Traditional \(cuisine.rawValue) recipe from our database",
-                    mealType: mealType,
-                    lunchboxPresentation: lunchboxPresentation
-                )
-                recipes.append(recipe)
-            }
-        }
-        
-        return recipes
-    }
     
 
 }
@@ -626,17 +513,22 @@ struct RecipeDatabase: Codable {
 }
 
 struct LocalRecipeData: Codable {
-    let title: String
+    let title: String?
+    let recipe_name: String?
     let cuisine: String
-    let ingredients: [String]
-    let instructions: String
+    let ingredients: [String]?
+    let instructions: String?
+    let cooking_instructions: String?
+    let cooking_instructions_array: [String]?
     let proteins: [String]?
     let dietary_restrictions: [String]?
     let cooking_time: Int?
+    let cooking_time_category: String?
     let difficulty: String?
     let meal_type: String?
     let lunchbox_presentation: String?
     let servings: Int?
+    let diet_type: String?
 }
 
 struct RecipeStats {
