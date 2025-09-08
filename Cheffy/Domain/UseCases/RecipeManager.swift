@@ -624,15 +624,16 @@ class RecipeManager: ObservableObject {
         logger.warning("✅ Found \(recipes.count) total recipes in \(url.lastPathComponent) for \(cuisine.rawValue)")
         
         for (index, recipeData) in recipes.enumerated() {
-            guard let title = recipeData["title"] as? String,
+            // Use new standardized JSON format
+            guard let recipeName = recipeData["recipe_name"] as? String,
                   let ingredients = recipeData["ingredients"] as? [String],
-                  let instructions = recipeData["instructions"] as? String,
-                  let cookingTime = recipeData["cooking_time"] as? Int,
+                  let cookingTimeCategory = recipeData["cooking_time_category"] as? String,
                   let difficultyString = recipeData["difficulty"] as? String else {
                 logger.warning("⚠️ Skipping recipe \(index) - missing required fields")
                 continue
             }
             
+            let title = recipeName
             let recipeDifficulty = Difficulty(rawValue: difficultyString.lowercased()) ?? .medium
             
             // Filter by difficulty if specified
@@ -640,9 +641,38 @@ class RecipeManager: ObservableObject {
                 continue
             }
             
+            // Convert cooking_time_category to numeric cooking time
+            let cookingTime: Int
+            switch cookingTimeCategory.lowercased() {
+            case "under 5 min": cookingTime = 5
+            case "under 10 min": cookingTime = 10
+            case "under 15 min": cookingTime = 15
+            case "under 20 min": cookingTime = 20
+            case "under 25 min": cookingTime = 25
+            case "under 30 min": cookingTime = 30
+            case "under 40 min": cookingTime = 40
+            case "under 45 min": cookingTime = 45
+            case "under 50 min": cookingTime = 50
+            case "under 1 hour": cookingTime = 60
+            case "under 1.5 hours": cookingTime = 90
+            case "under 2 hours": cookingTime = 120
+            case "any time": cookingTime = 180
+            default: cookingTime = 45
+            }
+            
             // Filter by cooking time if specified
             if let maxTime = maxTime, cookingTime > maxTime {
                 continue
+            }
+            
+            // Handle cooking_instructions as either string or array
+            let instructions: String
+            if let cookingInstructionsString = recipeData["cooking_instructions"] as? String {
+                instructions = cookingInstructionsString
+            } else if let cookingInstructionsArray = recipeData["cooking_instructions_array"] as? [String] {
+                instructions = cookingInstructionsArray.joined(separator: " ")
+            } else {
+                instructions = "No cooking instructions available"
             }
             
             // Parse dietary restrictions
@@ -652,6 +682,15 @@ class RecipeManager: ObservableObject {
                     if let note = DietaryNote(rawValue: restriction) {
                         dietaryNotes.append(note)
                     }
+                }
+            }
+            
+            // Parse diet_type
+            if let dietType = recipeData["diet_type"] as? String {
+                if dietType == "vegetarian" {
+                    dietaryNotes.append(.vegetarian)
+                } else if dietType == "vegan" {
+                    dietaryNotes.append(.vegan)
                 }
             }
             
@@ -674,19 +713,41 @@ class RecipeManager: ObservableObject {
                 }
             }
             
+            // Parse meal_type and lunchbox_presentation
+            let mealType: MealType
+            let lunchboxPresentation: String?
+            
+            if let mealTypeString = recipeData["meal_type"] as? String {
+                mealType = MealType(rawValue: mealTypeString) ?? .regular
+            } else {
+                mealType = .regular // Default fallback
+            }
+            
+            lunchboxPresentation = recipeData["lunchbox_presentation"] as? String
+            
+            // Parse servings
+            let recipeServings: Int
+            if let servingsValue = recipeData["servings"] as? Int {
+                recipeServings = servingsValue
+            } else {
+                recipeServings = servings // Use parameter as fallback
+            }
+            
             let recipe = Recipe(
                 title: title,
                 cuisine: cuisine,
                 difficulty: recipeDifficulty,
                 prepTime: max(1, cookingTime / 4), // Use 1/4 for prep time
                 cookTime: max(1, cookingTime * 3 / 4), // Use 3/4 for cook time
-                servings: servings,
+                servings: recipeServings,
                 ingredients: ingredients.map { parseIngredient(from: $0) },
                 steps: [CookingStep(stepNumber: 1, description: instructions, duration: cookingTime)],
                 winePairings: [],
                 dietaryNotes: dietaryNotes,
                 platingTips: "Serve with traditional \(cuisine.rawValue) presentation",
-                chefNotes: "Traditional \(cuisine.rawValue) recipe from our local database"
+                chefNotes: "Traditional \(cuisine.rawValue) recipe from our local database",
+                mealType: mealType,
+                lunchboxPresentation: lunchboxPresentation
             )
             
             allRecipes.append(recipe)

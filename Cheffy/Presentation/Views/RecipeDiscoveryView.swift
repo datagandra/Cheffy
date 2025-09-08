@@ -656,11 +656,14 @@ struct RecipeDiscoveryView: View {
     }
     
     private func loadRecipes() async {
+        print("🚀 DEBUG: loadRecipes() called")
         await MainActor.run {
             isLoading = true
         }
         
+        print("🚀 DEBUG: About to call recipeDatabase.loadAllRecipes()")
         await recipeDatabase.loadAllRecipes()
+        print("🚀 DEBUG: recipeDatabase.loadAllRecipes() completed")
         
         // Wait a moment for the @Published recipes to update
         try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds

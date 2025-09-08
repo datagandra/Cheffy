@@ -4,6 +4,7 @@ struct RecipeGeneratorView: View {
     @EnvironmentObject var recipeManager: RecipeManager
     @EnvironmentObject var subscriptionManager: SubscriptionManager
     @EnvironmentObject var userManager: UserManager
+    @StateObject private var recipeDatabase = RecipeDatabaseService.shared
     
     // MARK: - State Management
     @State private var selectedCuisine: Cuisine = .any
@@ -14,6 +15,9 @@ struct RecipeGeneratorView: View {
     @State private var showValidationError = false
     @State private var validationMessage = ""
     @State private var showIngredientAnalysis = false
+    @State private var isLoading = false
+    @State private var selectedRecipe: Recipe?
+    @State private var showingRecipeDetail = false
     
     // MARK: - Haptic Feedback
     private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
@@ -21,6 +25,43 @@ struct RecipeGeneratorView: View {
     // MARK: - Computed Properties
     private var shouldDisableInteractions: Bool {
         false
+    }
+    
+    private var filteredRecipes: [Recipe] {
+        var recipes = recipeDatabase.recipes
+        
+        print("🔍 DEBUG: Total recipes in database: \(recipes.count)")
+        print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
+        
+        // Filter by meal type
+        recipes = recipes.filter { $0.mealType == selectedMealType }
+        
+        print("🔍 DEBUG: After meal type filtering: \(recipes.count) recipes")
+        
+        // Filter by cuisine
+        if selectedCuisine != .any {
+            recipes = recipes.filter { $0.cuisine == selectedCuisine }
+        }
+        
+        // Filter by dietary restrictions
+        if !selectedDietaryRestrictions.isEmpty {
+            recipes = recipes.filter { recipe in
+                let recipeDietaryNotes = Set(recipe.dietaryNotes.map { $0.rawValue })
+                let selectedDietaryNotes = Set(selectedDietaryRestrictions.map { $0.rawValue })
+                return selectedDietaryNotes.isSubset(of: recipeDietaryNotes)
+            }
+        }
+        
+        // Filter by cooking time
+        if selectedCookingTime != .any {
+            let maxTime = selectedCookingTime.maxTotalTime
+            recipes = recipes.filter { recipe in
+                let totalTime = recipe.prepTime + recipe.cookTime
+                return totalTime <= maxTime
+            }
+        }
+        
+        return recipes
     }
     
     private func initializeUserPreferences() {
@@ -58,6 +99,79 @@ struct RecipeGeneratorView: View {
                 
                 // Results Section
                 resultsSection
+                
+                // Database Recipes Section
+                if !filteredRecipes.isEmpty {
+                    VStack(alignment: .leading, spacing: 16) {
+                        HStack {
+                            Text("Available Recipes")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
+                            
+                            Spacer()
+                            
+                            Text("\(filteredRecipes.count) recipes")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 4)
+                                .background(Color(.systemGray5))
+                                .cornerRadius(12)
+                        }
+                        
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible())
+                        ], spacing: 16) {
+                            ForEach(filteredRecipes.prefix(6), id: \.id) { recipe in
+                                Button(action: {
+                                    selectedRecipe = recipe
+                                    showingRecipeDetail = true
+                                }) {
+                                    VStack(alignment: .leading, spacing: 8) {
+                                        Text(recipe.title)
+                                            .font(.headline)
+                                            .foregroundColor(.primary)
+                                            .lineLimit(2)
+                                        
+                                        Text(recipe.cuisine.rawValue)
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                        
+                                        Text("\(recipe.prepTime + recipe.cookTime) min")
+                                            .font(.caption)
+                                            .foregroundColor(.orange)
+                                    }
+                                    .padding()
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(Color(.systemGray6))
+                                    .cornerRadius(12)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                        }
+                        
+                        if filteredRecipes.count > 6 {
+                            Button("View All Recipes") {
+                                // TODO: Navigate to full recipe list
+                            }
+                            .font(.subheadline)
+                            .fontWeight(.medium)
+                            .foregroundColor(.blue)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(12)
+                        }
+                    }
+                    .padding(.vertical, 16)
+                    .sheet(isPresented: $showingRecipeDetail) {
+                        if let recipe = selectedRecipe {
+                            RecipeDetailView(recipe: recipe)
+                        }
+                    }
+                }
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
@@ -69,6 +183,14 @@ struct RecipeGeneratorView: View {
         .accessibilityElement(children: .contain)
         .onAppear {
             initializeUserPreferences()
+            Task {
+                await loadRecipes()
+            }
+        }
+        .onChange(of: selectedMealType) { _, newValue in
+            Task {
+                await loadRecipes()
+            }
         }
     }
     
@@ -136,11 +258,14 @@ struct RecipeGeneratorView: View {
             HStack(spacing: 16) {
                 ForEach(MealType.allCases, id: \.self) { mealType in
                     Button(action: {
+                        print("🚀 DEBUG: Meal type selected: \(mealType.rawValue)")
+                        print("🚀 DEBUG: Current selectedMealType: \(selectedMealType.rawValue)")
                         withAnimation(.easeInOut(duration: 0.2)) {
                             selectedMealType = mealType
                             // Update servings based on meal type
                             selectedServings = mealType.defaultServings
                         }
+                        print("🚀 DEBUG: After selection, selectedMealType: \(selectedMealType.rawValue)")
                         impactFeedback.impactOccurred()
                     }) {
                         VStack(spacing: 8) {
@@ -574,6 +699,49 @@ struct RecipeGeneratorView: View {
     }
     
     // MARK: - Helper Methods
+    
+    private func loadRecipes() async {
+        print("🚀 DEBUG: loadRecipes() called in RecipeGeneratorView")
+        await MainActor.run {
+            isLoading = true
+        }
+        
+        print("🚀 DEBUG: About to call recipeDatabase.loadAllRecipes()")
+        await recipeDatabase.loadAllRecipes()
+        print("🚀 DEBUG: recipeDatabase.loadAllRecipes() completed")
+        
+        // Force a UI update
+        await MainActor.run {
+            isLoading = false
+        }
+        
+        // Wait a moment for the @Published recipes to update
+        try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
+        
+        // Debug logging
+        print("🔍 DEBUG: Recipe loading completed")
+        print("🔍 DEBUG: Total recipes loaded: \(recipeDatabase.recipes.count)")
+        print("🔍 DEBUG: Filtered recipes count: \(filteredRecipes.count)")
+        print("🔍 DEBUG: Selected cuisine: \(selectedCuisine.rawValue)")
+        print("🔍 DEBUG: Selected cooking time: \(selectedCookingTime.rawValue)")
+        print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
+        
+        // Debug meal type distribution
+        let kidsRecipes = recipeDatabase.recipes.filter { $0.mealType == .kids }
+        let regularRecipes = recipeDatabase.recipes.filter { $0.mealType == .regular }
+        print("🔍 DEBUG: Kids recipes count: \(kidsRecipes.count)")
+        print("🔍 DEBUG: Regular recipes count: \(regularRecipes.count)")
+        
+        // Debug filtered results
+        let filteredKids = filteredRecipes.filter { $0.mealType == .kids }
+        let filteredRegular = filteredRecipes.filter { $0.mealType == .regular }
+        print("🔍 DEBUG: Filtered kids recipes: \(filteredKids.count)")
+        print("🔍 DEBUG: Filtered regular recipes: \(filteredRegular.count)")
+        
+        await MainActor.run {
+            isLoading = false
+        }
+    }
     
     private func generateRecipe() {
         guard validateInput() else { return }

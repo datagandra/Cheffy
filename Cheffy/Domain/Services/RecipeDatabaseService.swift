@@ -201,7 +201,10 @@ class RecipeDatabaseService: ObservableObject {
         
         var recipes: [Recipe] = []
         
+        logger.info("Successfully parsed JSON for \(fileName) - found \(recipeData.cuisines.count) cuisines")
+        
         for (cuisineName, cuisineRecipes) in recipeData.cuisines {
+            logger.info("Processing \(cuisineName) cuisine with \(cuisineRecipes.count) recipes")
             for localRecipeData in cuisineRecipes {
                 // All recipes now use the new format
                 guard let recipeName = localRecipeData.recipe_name,
@@ -273,8 +276,10 @@ class RecipeDatabaseService: ObservableObject {
                 
                 if let mealTypeString = localRecipeData.meal_type {
                     mealType = MealType(rawValue: mealTypeString) ?? .regular
+                    logger.info("Parsed meal_type: \(mealTypeString) -> \(mealType)")
                 } else {
                     mealType = .regular // Default fallback
+                    logger.info("No meal_type found, defaulting to regular")
                 }
                 
                 lunchboxPresentation = localRecipeData.lunchbox_presentation
@@ -482,7 +487,7 @@ struct RecipeDatabase: Codable {
 struct LocalRecipeData: Codable {
     let title: String?
     let recipe_name: String?
-    let cuisine: String
+    let cuisine: String?
     let ingredients: [String]?
     let instructions: String?
     let cooking_instructions: String?
