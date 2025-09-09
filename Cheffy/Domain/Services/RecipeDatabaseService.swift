@@ -16,6 +16,7 @@ class RecipeDatabaseService: ObservableObject {
     
     /// Loads all recipes from the local database files
     func loadAllRecipes() async {
+        print("🚀 DEBUG: RecipeDatabaseService.loadAllRecipes() called")
         await MainActor.run {
             isLoading = true
             error = nil
@@ -57,6 +58,7 @@ class RecipeDatabaseService: ObservableObject {
         await MainActor.run {
             self.recipes = allRecipes
             self.isLoading = false
+            print("🔍 DEBUG: RecipeDatabaseService loaded \(allRecipes.count) recipes")
             logger.info("Loaded \(allRecipes.count) total recipes from JSON files")
             
             // Debug: Count recipes by cuisine
@@ -276,10 +278,10 @@ class RecipeDatabaseService: ObservableObject {
                 
                 if let mealTypeString = localRecipeData.meal_type {
                     mealType = MealType(rawValue: mealTypeString) ?? .regular
-                    logger.info("Parsed meal_type: \(mealTypeString) -> \(mealType)")
+                    print("🔍 RECIPE PARSING: '\(title)' -> meal_type: '\(mealTypeString)' -> \(mealType.rawValue)")
                 } else {
                     mealType = .regular // Default fallback
-                    logger.info("No meal_type found, defaulting to regular")
+                    print("🔍 RECIPE PARSING: '\(title)' -> No meal_type found, defaulting to regular")
                 }
                 
                 lunchboxPresentation = localRecipeData.lunchbox_presentation

@@ -33,10 +33,28 @@ struct RecipeGeneratorView: View {
         print("🔍 DEBUG: Total recipes in database: \(recipes.count)")
         print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
         
-        // Filter by meal type
-        recipes = recipes.filter { $0.mealType == selectedMealType }
+        // Debug: Show meal type distribution
+        let kidsCount = recipes.filter { $0.mealType == .kids }.count
+        let regularCount = recipes.filter { $0.mealType == .regular }.count
+        print("🔍 DEBUG: Kids recipes: \(kidsCount), Regular recipes: \(regularCount)")
         
-        print("🔍 DEBUG: After meal type filtering: \(recipes.count) recipes")
+        // STRICT FILTERING: Only show recipes that match the selected meal type exactly
+        recipes = recipes.filter { recipe in
+            let matches = recipe.mealType == selectedMealType
+            if !matches {
+                print("🔍 DEBUG: Filtering out recipe '\(recipe.title)' with meal type '\(recipe.mealType.rawValue)'")
+            }
+            return matches
+        }
+        
+        print("🔍 DEBUG: After STRICT meal type filtering: \(recipes.count) recipes")
+        
+        // Verify all remaining recipes have the correct meal type
+        for recipe in recipes {
+            if recipe.mealType != selectedMealType {
+                print("❌ ERROR: Recipe '\(recipe.title)' has wrong meal type: \(recipe.mealType.rawValue) (expected: \(selectedMealType.rawValue))")
+            }
+        }
         
         // Filter by cuisine
         if selectedCuisine != .any {
@@ -182,13 +200,17 @@ struct RecipeGeneratorView: View {
         }
         .accessibilityElement(children: .contain)
         .onAppear {
+            print("🚀 DEBUG: RecipeGeneratorView onAppear called")
             initializeUserPreferences()
             Task {
+                print("🚀 DEBUG: About to call loadRecipes() from onAppear")
                 await loadRecipes()
             }
         }
         .onChange(of: selectedMealType) { _, newValue in
+            print("🚀 DEBUG: selectedMealType changed to: \(newValue.rawValue)")
             Task {
+                print("🚀 DEBUG: About to call loadRecipes() from onChange")
                 await loadRecipes()
             }
         }
@@ -707,8 +729,10 @@ struct RecipeGeneratorView: View {
         }
         
         print("🚀 DEBUG: About to call recipeDatabase.loadAllRecipes()")
+        print("🚀 DEBUG: Current recipeDatabase.recipes count: \(recipeDatabase.recipes.count)")
         await recipeDatabase.loadAllRecipes()
         print("🚀 DEBUG: recipeDatabase.loadAllRecipes() completed")
+        print("🚀 DEBUG: After loadAllRecipes, recipeDatabase.recipes count: \(recipeDatabase.recipes.count)")
         
         // Force a UI update
         await MainActor.run {
@@ -724,6 +748,17 @@ struct RecipeGeneratorView: View {
         print("🔍 DEBUG: Filtered recipes count: \(filteredRecipes.count)")
         print("🔍 DEBUG: Selected cuisine: \(selectedCuisine.rawValue)")
         print("🔍 DEBUG: Selected cooking time: \(selectedCookingTime.rawValue)")
+        
+        // Additional debug: Check if recipes are actually loaded
+        if recipeDatabase.recipes.isEmpty {
+            print("❌ ERROR: No recipes loaded from database!")
+        } else {
+            print("✅ SUCCESS: \(recipeDatabase.recipes.count) recipes loaded from database")
+            // Show first few recipe meal types
+            for (index, recipe) in recipeDatabase.recipes.prefix(5).enumerated() {
+                print("🔍 DEBUG: Recipe \(index + 1): '\(recipe.title)' - Meal Type: \(recipe.mealType.rawValue)")
+            }
+        }
         print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
         
         // Debug meal type distribution
