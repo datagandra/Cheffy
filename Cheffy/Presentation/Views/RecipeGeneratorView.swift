@@ -122,7 +122,7 @@ struct RecipeGeneratorView: View {
                 if !filteredRecipes.isEmpty {
                     VStack(alignment: .leading, spacing: 16) {
                         HStack {
-                            Text("Available Recipes")
+                            Text(selectedMealType == .kids ? "Kids Recipes" : "Available Recipes")
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.primary)
@@ -595,7 +595,9 @@ struct RecipeGeneratorView: View {
         if recipeManager.isLoading {
             return "Generating..."
         } else {
-            return "Generate Popular \(selectedCuisine.rawValue) Recipes"
+            let mealTypeText = selectedMealType == .kids ? "Kids" : ""
+            let cuisineText = selectedCuisine == .any ? "Any Cuisine" : selectedCuisine.rawValue
+            return "Generate Popular \(mealTypeText) \(cuisineText) Recipes".trimmingCharacters(in: .whitespaces)
         }
     }
     
