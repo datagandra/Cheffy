@@ -38,9 +38,15 @@ class RecipeDatabaseService: ObservableObject {
         ]
         
         for fileName in cuisineFiles {
+            print("🔍 DEBUG: Attempting to load \(fileName).json")
             if let recipes = try? await loadRecipesFromFile(fileName) {
                 allRecipes.append(contentsOf: recipes)
                 logger.info("Loaded \(recipes.count) recipes from \(fileName).json")
+                
+                // Debug logging for meal type distribution
+                let kidsCount = recipes.filter { $0.mealType == .kids }.count
+                let regularCount = recipes.filter { $0.mealType == .regular }.count
+                print("🔍 DEBUG: \(fileName).json - Kids: \(kidsCount), Regular: \(regularCount)")
                 
                 // Debug: Check for Chinese recipes specifically
                 if fileName == "asian_cuisines_extended" {
@@ -51,6 +57,7 @@ class RecipeDatabaseService: ObservableObject {
                     }
                 }
             } else {
+                print("❌ ERROR: Could not find \(fileName).json")
                 logger.warning("Could not find \(fileName).json")
             }
         }
@@ -190,11 +197,28 @@ class RecipeDatabaseService: ObservableObject {
     
     /// Loads recipes from a specific cuisine file
     private func loadRecipesFromFile(_ fileName: String) async throws -> [Recipe]? {
-        guard let url = Bundle.main.url(forResource: fileName.replacingOccurrences(of: ".json", with: ""), 
-                                       withExtension: "json") else {
+        let resourceName = fileName.replacingOccurrences(of: ".json", with: "")
+        print("🔍 DEBUG: Looking for resource: \(resourceName).json")
+        
+        // Debug: List all available resources
+        if let resourcePath = Bundle.main.resourcePath {
+            print("🔍 DEBUG: Bundle resource path: \(resourcePath)")
+            do {
+                let resourceContents = try FileManager.default.contentsOfDirectory(atPath: resourcePath)
+                let jsonFiles = resourceContents.filter { $0.hasSuffix(".json") }
+                print("🔍 DEBUG: Available JSON files in bundle: \(jsonFiles)")
+            } catch {
+                print("❌ ERROR: Could not list bundle contents: \(error)")
+            }
+        }
+        
+        guard let url = Bundle.main.url(forResource: resourceName, withExtension: "json") else {
+            print("❌ ERROR: Recipe file not found: \(resourceName).json")
             logger.warning("Recipe file not found: \(fileName)")
             return nil
         }
+        
+        print("✅ SUCCESS: Found recipe file: \(url.path)")
         
         let data = try Data(contentsOf: url)
         
@@ -277,8 +301,14 @@ class RecipeDatabaseService: ObservableObject {
                 let lunchboxPresentation: String?
                 
                 if let mealTypeString = localRecipeData.meal_type {
-                    mealType = MealType(rawValue: mealTypeString) ?? .regular
-                    print("🔍 RECIPE PARSING: '\(title)' -> meal_type: '\(mealTypeString)' -> \(mealType.rawValue)")
+                    print("🔍 RECIPE PARSING: '\(title)' -> Raw meal_type from JSON: '\(mealTypeString)'")
+                    if let parsedMealType = MealType(rawValue: mealTypeString) {
+                        mealType = parsedMealType
+                        print("✅ RECIPE PARSING: '\(title)' -> Successfully parsed meal_type: \(mealType.rawValue)")
+                    } else {
+                        mealType = .regular
+                        print("❌ RECIPE PARSING: '\(title)' -> Failed to parse meal_type '\(mealTypeString)', defaulting to regular")
+                    }
                 } else {
                     mealType = .regular // Default fallback
                     print("🔍 RECIPE PARSING: '\(title)' -> No meal_type found, defaulting to regular")

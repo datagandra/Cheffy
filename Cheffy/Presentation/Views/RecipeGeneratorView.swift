@@ -28,9 +28,10 @@ struct RecipeGeneratorView: View {
     }
     
     private var filteredRecipes: [Recipe] {
-        var recipes = recipeDatabase.recipes
+        // Use the correct data source - recipeManager.popularRecipes instead of recipeDatabase.recipes
+        var recipes = recipeManager.popularRecipes
         
-        print("🔍 DEBUG: Total recipes in database: \(recipes.count)")
+        print("🔍 DEBUG: Total recipes in popularRecipes: \(recipes.count)")
         print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
         
         // Debug: Show meal type distribution
@@ -42,7 +43,9 @@ struct RecipeGeneratorView: View {
         recipes = recipes.filter { recipe in
             let matches = recipe.mealType == selectedMealType
             if !matches {
-                print("🔍 DEBUG: Filtering out recipe '\(recipe.title)' with meal type '\(recipe.mealType.rawValue)'")
+                print("🔍 DEBUG: Filtering out recipe '\(recipe.title)' with meal type '\(recipe.mealType.rawValue)' (selected: \(selectedMealType.rawValue))")
+            } else {
+                print("✅ DEBUG: Keeping recipe '\(recipe.title)' with meal type '\(recipe.mealType.rawValue)' (selected: \(selectedMealType.rawValue))")
             }
             return matches
         }
@@ -619,11 +622,31 @@ struct RecipeGeneratorView: View {
             }
             
             if !recipeManager.popularRecipes.isEmpty {
-                let filteredRecipes = filterRecipesByDietaryRestrictions(recipeManager.popularRecipes)
                 if !filteredRecipes.isEmpty {
                     PopularRecipesView(recipes: filteredRecipes)
                 } else {
-                    emptyStateView
+                    // Show specific message for no Kids recipes found
+                    if selectedMealType == .kids {
+                        VStack(spacing: 16) {
+                            Image(systemName: "child.fill")
+                                .font(.system(size: 48))
+                                .foregroundColor(.orange)
+                            
+                            Text("No Kids recipes found for this selection")
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            Text("Try another cuisine or dietary option")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(12)
+                    } else {
+                        emptyStateView
+                    }
                 }
                 
                 // Analysis button
@@ -730,11 +753,22 @@ struct RecipeGeneratorView: View {
             isLoading = true
         }
         
-        print("🚀 DEBUG: About to call recipeDatabase.loadAllRecipes()")
-        print("🚀 DEBUG: Current recipeDatabase.recipes count: \(recipeDatabase.recipes.count)")
-        await recipeDatabase.loadAllRecipes()
-        print("🚀 DEBUG: recipeDatabase.loadAllRecipes() completed")
-        print("🚀 DEBUG: After loadAllRecipes, recipeDatabase.recipes count: \(recipeDatabase.recipes.count)")
+        print("🚀 DEBUG: About to call recipeManager.generatePopularRecipes()")
+        print("🚀 DEBUG: Current recipeManager.popularRecipes count: \(recipeManager.popularRecipes.count)")
+        print("🚀 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
+        
+        // Use RecipeManager to load recipes with the correct meal type
+        await recipeManager.generatePopularRecipes(
+            cuisine: selectedCuisine,
+            difficulty: .medium, // Default to medium difficulty
+            dietaryRestrictions: Array(selectedDietaryRestrictions),
+            maxTime: selectedCookingTime.maxTotalTime,
+            servings: 4, // Default servings
+            mealType: selectedMealType // Pass the selected meal type
+        )
+        
+        print("🚀 DEBUG: recipeManager.generatePopularRecipes() completed")
+        print("🚀 DEBUG: After generatePopularRecipes, recipeManager.popularRecipes count: \(recipeManager.popularRecipes.count)")
         
         // Force a UI update
         await MainActor.run {
@@ -746,26 +780,26 @@ struct RecipeGeneratorView: View {
         
         // Debug logging
         print("🔍 DEBUG: Recipe loading completed")
-        print("🔍 DEBUG: Total recipes loaded: \(recipeDatabase.recipes.count)")
+        print("🔍 DEBUG: Total recipes loaded: \(recipeManager.popularRecipes.count)")
         print("🔍 DEBUG: Filtered recipes count: \(filteredRecipes.count)")
         print("🔍 DEBUG: Selected cuisine: \(selectedCuisine.rawValue)")
         print("🔍 DEBUG: Selected cooking time: \(selectedCookingTime.rawValue)")
         
         // Additional debug: Check if recipes are actually loaded
-        if recipeDatabase.recipes.isEmpty {
-            print("❌ ERROR: No recipes loaded from database!")
+        if recipeManager.popularRecipes.isEmpty {
+            print("❌ ERROR: No recipes loaded from RecipeManager!")
         } else {
-            print("✅ SUCCESS: \(recipeDatabase.recipes.count) recipes loaded from database")
+            print("✅ SUCCESS: \(recipeManager.popularRecipes.count) recipes loaded from RecipeManager")
             // Show first few recipe meal types
-            for (index, recipe) in recipeDatabase.recipes.prefix(5).enumerated() {
+            for (index, recipe) in recipeManager.popularRecipes.prefix(5).enumerated() {
                 print("🔍 DEBUG: Recipe \(index + 1): '\(recipe.title)' - Meal Type: \(recipe.mealType.rawValue)")
             }
         }
         print("🔍 DEBUG: Selected meal type: \(selectedMealType.rawValue)")
         
         // Debug meal type distribution
-        let kidsRecipes = recipeDatabase.recipes.filter { $0.mealType == .kids }
-        let regularRecipes = recipeDatabase.recipes.filter { $0.mealType == .regular }
+        let kidsRecipes = recipeManager.popularRecipes.filter { $0.mealType == .kids }
+        let regularRecipes = recipeManager.popularRecipes.filter { $0.mealType == .regular }
         print("🔍 DEBUG: Kids recipes count: \(kidsRecipes.count)")
         print("🔍 DEBUG: Regular recipes count: \(regularRecipes.count)")
         
