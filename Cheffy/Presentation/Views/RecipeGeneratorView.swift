@@ -463,7 +463,7 @@ struct RecipeGeneratorView: View {
                 .foregroundColor(.primary)
             
             Menu {
-                ForEach(Cuisine.allCases, id: \.self) { cuisine in
+                ForEach(Cuisine.sortedCuisines, id: \.self) { cuisine in
                     Button(action: {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             selectedCuisine = cuisine

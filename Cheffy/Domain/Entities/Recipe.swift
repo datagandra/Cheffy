@@ -92,6 +92,16 @@ enum Cuisine: String, CaseIterable, Codable {
     case ethiopian = "Ethiopian"
     case brazilian = "Brazilian"
     case peruvian = "Peruvian"
+    
+    /// Returns cuisines in alphabetical order with "Any Cuisine" at the top
+    static var sortedCuisines: [Cuisine] {
+        let allCuisines = Cuisine.allCases
+        let anyCuisine = allCuisines.first { $0 == .any } ?? .any
+        let otherCuisines = allCuisines.filter { $0 != .any }
+            .sorted { $0.rawValue.localizedCaseInsensitiveCompare($1.rawValue) == .orderedAscending }
+        
+        return [anyCuisine] + otherCuisines
+    }
 }
 
 enum Difficulty: String, CaseIterable, Codable {

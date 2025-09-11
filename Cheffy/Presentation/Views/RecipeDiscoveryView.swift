@@ -956,7 +956,7 @@ struct QuickRecipeFilterView: View {
                 
                 // Cuisine Selection
                 Section("Preferred Cuisine") {
-                    ForEach(Cuisine.allCases.filter { $0 != .any }, id: \.self) { cuisine in
+                    ForEach(Cuisine.sortedCuisines.filter { $0 != .any }, id: \.self) { cuisine in
                         HStack {
                             Text(cuisine.rawValue)
                             Spacer()
@@ -1027,7 +1027,7 @@ struct RecipeFilterView: View {
             Form {
                 // Cuisine Selection
                 Section("Cuisine") {
-                    ForEach(Cuisine.allCases, id: \.self) { cuisine in
+                    ForEach(Cuisine.sortedCuisines, id: \.self) { cuisine in
                         HStack {
                             Text(cuisine.rawValue)
                             Spacer()

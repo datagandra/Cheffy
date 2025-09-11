@@ -234,7 +234,7 @@ struct CookingExperienceStepView: View {
             
             ScrollView {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 16) {
-                    ForEach(Cuisine.allCases, id: \.self) { cuisine in
+                    ForEach(Cuisine.sortedCuisines, id: \.self) { cuisine in
                         CuisineCard(
                             cuisine: cuisine,
                             isSelected: userProfile.preferredCuisines.contains(cuisine.rawValue)
