@@ -44,7 +44,8 @@ class RecipeManager: ObservableObject {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int?,
-        servings: Int
+        servings: Int,
+        mealType: MealType = .regular
     ) -> Bool {
         let filterKey = generateFilterKey(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
         
@@ -67,7 +68,8 @@ class RecipeManager: ObservableObject {
             difficulty: difficulty,
             dietaryRestrictions: dietaryRestrictions,
             maxTime: maxTime,
-            servings: servings
+            servings: servings,
+            mealType: mealType
         ).count
         
         // If we have 3+ cached recipes for these exact filters, use cache
@@ -154,7 +156,7 @@ class RecipeManager: ObservableObject {
             // Cache the generated recipe
             os_log("Recipe cached successfully - recipeName: %{public}@", log: .default, type: .info, recipe?.title ?? "Unknown")
             if let recipe = recipe {
-                self.cacheManager.cacheRecipe(recipe)
+            self.cacheManager.cacheRecipe(recipe)
             }
             self.updateCachedData()
             
@@ -284,7 +286,8 @@ class RecipeManager: ObservableObject {
                 difficulty: difficulty,
                 dietaryRestrictions: dietaryRestrictions,
                 maxTime: maxTime,
-                servings: servings
+                servings: servings,
+                mealType: mealType
             )
         }
         
@@ -295,7 +298,8 @@ class RecipeManager: ObservableObject {
                 difficulty: difficulty,
                 dietaryRestrictions: dietaryRestrictions,
                 maxTime: maxTime,
-                servings: servings
+                servings: servings,
+                mealType: mealType
             )
             
             if !filteredCachedRecipes.isEmpty {
@@ -1566,22 +1570,25 @@ class RecipeManager: ObservableObject {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int?,
-        servings: Int
+        servings: Int,
+        mealType: MealType = .regular
     ) -> [Recipe] {
         logger.debug("Searching for cached popular recipes matching criteria...")
         logger.debug("   - Cuisine: \(cuisine.rawValue)")
         logger.debug("   - Difficulty: \(difficulty.rawValue)")
         logger.debug("   - Servings: \(servings)")
+        logger.debug("   - Meal Type: \(mealType.rawValue)")
         logger.debug("   - Dietary restrictions: \(dietaryRestrictions.count)")
         
         // Filter cached recipes by basic criteria
         var matchingRecipes = cachedRecipes.filter { recipe in
             let cuisineMatches = cuisine == .any || recipe.cuisine == cuisine
             let difficultyMatches = recipe.difficulty == difficulty
+            let mealTypeMatches = recipe.mealType == mealType
             // Make servings filter more flexible - allow recipes with similar serving sizes
             let servingsMatches = abs(recipe.servings - servings) <= 2 || recipe.servings == servings
             
-            return cuisineMatches && difficultyMatches && servingsMatches
+            return cuisineMatches && difficultyMatches && mealTypeMatches && servingsMatches
         }
         
         logger.debug("Found \(matchingRecipes.count) recipes matching basic criteria")
@@ -1792,14 +1799,16 @@ class RecipeManager: ObservableObject {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int?,
-        servings: Int
+        servings: Int,
+        mealType: MealType = .regular
     ) -> Bool {
         let cachedRecipes = findCachedPopularRecipes(
             cuisine: cuisine,
             difficulty: difficulty,
             dietaryRestrictions: dietaryRestrictions,
             maxTime: maxTime,
-            servings: servings
+            servings: servings,
+            mealType: mealType
         )
         
         // We consider it sufficient if we have at least 3 recipes
@@ -1816,14 +1825,16 @@ class RecipeManager: ObservableObject {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int?,
-        servings: Int
+        servings: Int,
+        mealType: MealType = .regular
     ) -> [String: Any] {
         let cachedRecipes = findCachedPopularRecipes(
             cuisine: cuisine,
             difficulty: difficulty,
             dietaryRestrictions: dietaryRestrictions,
             maxTime: maxTime,
-            servings: servings
+            servings: servings,
+            mealType: mealType
         )
         
         let filterKey = generateFilterKey(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
@@ -1834,7 +1845,7 @@ class RecipeManager: ObservableObject {
             "isSufficient": cachedRecipes.count >= 3,
             "lastLLMCall": lastLLMGenerationTime,
             "timeSinceLastCall": Date().timeIntervalSince(lastLLMGenerationTime),
-            "shouldUseCache": shouldUseCachedData(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings)
+            "shouldUseCache": shouldUseCachedData(cuisine: cuisine, difficulty: difficulty, dietaryRestrictions: dietaryRestrictions, maxTime: maxTime, servings: servings, mealType: mealType)
         ]
     }
     
@@ -1987,7 +1998,7 @@ class RecipeManager: ObservableObject {
                 }
                 
                 // Cooking time must be within limit if specified
-                if let maxTime = maxTime {
+            if let maxTime = maxTime {
                     let totalTime = recipe.prepTime + recipe.cookTime
                     guard totalTime <= maxTime else {
                         logger.warning("Recipe \(recipe.name) time mismatch: \(totalTime)min > \(maxTime)min")
@@ -2042,11 +2053,11 @@ class RecipeManager: ObservableObject {
             }
             
             // Fallback to local recipes
-            await fallbackToLocalPopularRecipes(
-                cuisine: cuisine,
-                difficulty: difficulty,
-                dietaryRestrictions: dietaryRestrictions
-            )
+                await fallbackToLocalPopularRecipes(
+                    cuisine: cuisine,
+                    difficulty: difficulty,
+                    dietaryRestrictions: dietaryRestrictions
+                )
         }
     }
     

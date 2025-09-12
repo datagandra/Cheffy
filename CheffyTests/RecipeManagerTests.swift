@@ -96,6 +96,178 @@ final class RecipeManagerTests: XCTestCase {
         XCTAssertNil(recipeManager.error)
     }
     
+    // MARK: - Kids Meals Tests
+    
+    func testGenerateKidsRecipesChinese() async {
+        // Given
+        let expectedKidsRecipes = [
+            Recipe(
+                title: "Kids Chinese Fried Rice",
+                cuisine: .chinese,
+                difficulty: .easy,
+                prepTime: 15,
+                cookTime: 20,
+                servings: 2,
+                ingredients: [Ingredient(name: "Rice", amount: 1, unit: "cup")],
+                steps: [CookingStep(stepNumber: 1, description: "Cook rice")],
+                mealType: .kids
+            ),
+            Recipe(
+                title: "Kids Chinese Dumplings",
+                cuisine: .chinese,
+                difficulty: .easy,
+                prepTime: 20,
+                cookTime: 15,
+                servings: 4,
+                ingredients: [Ingredient(name: "Dumpling Wrappers", amount: 20, unit: "pieces")],
+                steps: [CookingStep(stepNumber: 1, description: "Fill wrappers")],
+                mealType: .kids
+            )
+        ]
+        mockOpenAIClient.mockPopularRecipes = expectedKidsRecipes
+        
+        // When
+        await recipeManager.generatePopularRecipes(
+            cuisine: .chinese,
+            difficulty: .easy,
+            dietaryRestrictions: [],
+            servings: 2,
+            mealType: .kids
+        )
+        
+        // Then
+        XCTAssertEqual(recipeManager.popularRecipes.count, expectedKidsRecipes.count)
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.mealType == .kids })
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.cuisine == .chinese })
+        XCTAssertFalse(recipeManager.isLoading)
+        XCTAssertNil(recipeManager.error)
+    }
+    
+    func testGenerateKidsRecipesIndian() async {
+        // Given
+        let expectedKidsRecipes = [
+            Recipe(
+                title: "Kids Indian Dal",
+                cuisine: .indian,
+                difficulty: .easy,
+                prepTime: 10,
+                cookTime: 25,
+                servings: 3,
+                ingredients: [Ingredient(name: "Lentils", amount: 1, unit: "cup")],
+                steps: [CookingStep(stepNumber: 1, description: "Boil lentils")],
+                mealType: .kids
+            ),
+            Recipe(
+                title: "Kids Indian Roti",
+                cuisine: .indian,
+                difficulty: .easy,
+                prepTime: 15,
+                cookTime: 10,
+                servings: 4,
+                ingredients: [Ingredient(name: "Wheat Flour", amount: 2, unit: "cups")],
+                steps: [CookingStep(stepNumber: 1, description: "Make dough")],
+                mealType: .kids
+            )
+        ]
+        mockOpenAIClient.mockPopularRecipes = expectedKidsRecipes
+        
+        // When
+        await recipeManager.generatePopularRecipes(
+            cuisine: .indian,
+            difficulty: .easy,
+            dietaryRestrictions: [.vegetarian],
+            servings: 3,
+            mealType: .kids
+        )
+        
+        // Then
+        XCTAssertEqual(recipeManager.popularRecipes.count, expectedKidsRecipes.count)
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.mealType == .kids })
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.cuisine == .indian })
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.dietaryNotes.contains(.vegetarian) })
+        XCTAssertFalse(recipeManager.isLoading)
+        XCTAssertNil(recipeManager.error)
+    }
+    
+    func testGenerateKidsRecipesItalian() async {
+        // Given
+        let expectedKidsRecipes = [
+            Recipe(
+                title: "Kids Italian Pasta",
+                cuisine: .italian,
+                difficulty: .easy,
+                prepTime: 10,
+                cookTime: 15,
+                servings: 2,
+                ingredients: [Ingredient(name: "Pasta", amount: 200, unit: "grams")],
+                steps: [CookingStep(stepNumber: 1, description: "Boil pasta")],
+                mealType: .kids
+            ),
+            Recipe(
+                title: "Kids Italian Pizza",
+                cuisine: .italian,
+                difficulty: .easy,
+                prepTime: 20,
+                cookTime: 20,
+                servings: 4,
+                ingredients: [Ingredient(name: "Pizza Dough", amount: 1, unit: "ball")],
+                steps: [CookingStep(stepNumber: 1, description: "Roll dough")],
+                mealType: .kids
+            )
+        ]
+        mockOpenAIClient.mockPopularRecipes = expectedKidsRecipes
+        
+        // When
+        await recipeManager.generatePopularRecipes(
+            cuisine: .italian,
+            difficulty: .easy,
+            dietaryRestrictions: [],
+            servings: 2,
+            mealType: .kids
+        )
+        
+        // Then
+        XCTAssertEqual(recipeManager.popularRecipes.count, expectedKidsRecipes.count)
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.mealType == .kids })
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.cuisine == .italian })
+        XCTAssertFalse(recipeManager.isLoading)
+        XCTAssertNil(recipeManager.error)
+    }
+    
+    func testKidsRecipesWithDietaryRestrictions() async {
+        // Given
+        let expectedKidsRecipes = [
+            Recipe(
+                title: "Kids Vegan Pasta",
+                cuisine: .italian,
+                difficulty: .easy,
+                prepTime: 10,
+                cookTime: 15,
+                servings: 2,
+                ingredients: [Ingredient(name: "Vegan Pasta", amount: 200, unit: "grams")],
+                steps: [CookingStep(stepNumber: 1, description: "Boil pasta")],
+                mealType: .kids
+            )
+        ]
+        mockOpenAIClient.mockPopularRecipes = expectedKidsRecipes
+        
+        // When
+        await recipeManager.generatePopularRecipes(
+            cuisine: .italian,
+            difficulty: .easy,
+            dietaryRestrictions: [.vegan],
+            servings: 2,
+            mealType: .kids
+        )
+        
+        // Then
+        XCTAssertEqual(recipeManager.popularRecipes.count, expectedKidsRecipes.count)
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.mealType == .kids })
+        XCTAssertTrue(recipeManager.popularRecipes.allSatisfy { $0.dietaryNotes.contains(.vegan) })
+        XCTAssertFalse(recipeManager.isLoading)
+        XCTAssertNil(recipeManager.error)
+    }
+    
     // MARK: - Caching Tests
     
     func testCacheRecipe() {
@@ -288,7 +460,8 @@ class MockOpenAIClient: OpenAIClientProtocol {
         difficulty: Difficulty,
         dietaryRestrictions: [DietaryNote],
         maxTime: Int?,
-        servings: Int
+        servings: Int,
+        mealType: MealType = .regular
     ) async -> [Recipe]? {
         if let error = mockError {
             self.error = error
