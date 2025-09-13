@@ -220,6 +220,7 @@
 		A6C39203233EEAAC85D18D05 /* PerformanceOptimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceOptimizer.swift; sourceTree = "<group>"; };
 		A8BB250F977E3569BC18E58E /* UserAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsService.swift; sourceTree = "<group>"; };
 		A8EBE85F884FA643344BFCE8 /* TestSuite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuite.swift; sourceTree = "<group>"; };
+		A98E4DA22E759A9700FAE50C /* Cheffy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Cheffy.entitlements; sourceTree = "<group>"; };
 		A9DF15D62E65311A00A9FB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AAD153ACE862ECD2DFEBDA76 /* AnalyticsDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDashboardView.swift; sourceTree = "<group>"; };
 		AEE20557647DB569164951DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -425,6 +426,7 @@
 		76867F9439A9615F6CAF918B /* Cheffy */ = {
 			isa = PBXGroup;
 			children = (
+				A98E4DA22E759A9700FAE50C /* Cheffy.entitlements */,
 				A9DF15D62E65311A00A9FB35 /* Info.plist */,
 				F3C4CBBB7B89100B36D8A91D /* Assets.xcassets */,
 				2FAD866B2DB8133868B87E21 /* Cheffy.xcdatamodeld */,
@@ -918,11 +920,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cheffy/Cheffy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffy/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
+				INFOPLIST_KEY_CFBundleDisplayName = iCheffy;
 				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleShortVersionString = 1.0.0;
 				INFOPLIST_KEY_CFBundleVersion = 1;
@@ -1131,11 +1134,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cheffy/Cheffy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KW4STQDL2Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffy/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Cheffy-AI";
+				INFOPLIST_KEY_CFBundleDisplayName = iCheffy;
 				INFOPLIST_KEY_CFBundleName = "Cheffy-AI";
 				INFOPLIST_KEY_CFBundleShortVersionString = 1.0.0;
 				INFOPLIST_KEY_CFBundleVersion = 1;

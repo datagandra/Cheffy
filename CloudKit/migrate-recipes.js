@@ -7,7 +7,7 @@ const { CloudKit } = require('@apple/cloudkit');
 // Configuration
 const CONFIG = {
     // CloudKit Configuration
-    containerIdentifier: 'iCloud.com.cheffy.app',
+    containerIdentifier: 'iCloud.com.naveengandra.cheffy',
     environment: 'development', // or 'production'
     
     // Migration settings
