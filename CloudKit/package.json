@@ -1,0 +1,34 @@
+{
+  "name": "cheffy-cloudkit-migration",
+  "version": "1.0.0",
+  "description": "CloudKit migration tool for Cheffy recipe data",
+  "main": "migrate-recipes.js",
+  "scripts": {
+    "migrate": "node migrate-recipes.js",
+    "migrate:dry-run": "node migrate-recipes.js --dry-run",
+    "validate": "node validate-schema.js",
+    "test": "node test-migration.js"
+  },
+  "keywords": [
+    "cloudkit",
+    "migration",
+    "recipes",
+    "cheffy"
+  ],
+  "author": "Cheffy Team",
+  "license": "MIT",
+  "dependencies": {
+    "@apple/cloudkit": "^3.0.0",
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "progress": "^2.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

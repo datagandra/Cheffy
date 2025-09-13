@@ -1080,9 +1080,9 @@ class RecipeManager: ObservableObject {
         case .indian:
             return "indian_cuisines"
         case .italian:
-            return "european_cuisines" // Italian recipes are in european_cuisines.json
+            return "mediterranean_cuisines" // Italian recipes are in mediterranean_cuisines.json
         case .chinese:
-            return "asian_cuisines_extended"
+            return "asian_cuisines_extended" // Chinese recipes are in asian_cuisines_extended.json
         case .mexican:
             return "mexican_cuisines"
         case .mediterranean:
@@ -1090,9 +1090,9 @@ class RecipeManager: ObservableObject {
         case .american:
             return "american_cuisines"
         case .thai:
-            return "asian_cuisines_extended"
+            return "asian_cuisines_extended" // Thai recipes are in asian_cuisines_extended.json
         case .japanese:
-            return "asian_cuisines_extended"
+            return "asian_cuisines" // Japanese recipes are in asian_cuisines.json
         case .french:
             return "european_cuisines"
         case .greek:
@@ -1100,13 +1100,13 @@ class RecipeManager: ObservableObject {
         case .spanish:
             return "european_cuisines"
         case .lebanese:
-            return "middle_eastern_african_cuisines"
+            return "middle_eastern_african_cuisines" // Lebanese is in middle_eastern_african_cuisines.json
         case .moroccan:
-            return "middle_eastern_african_cuisines"
+            return "middle_eastern_african_cuisines" // Moroccan is in middle_eastern_african_cuisines.json
         case .vietnamese:
-            return "asian_cuisines_extended"
+            return "asian_cuisines_extended" // Vietnamese recipes are in asian_cuisines_extended.json
         case .korean:
-            return "asian_cuisines_extended"
+            return "asian_cuisines_extended" // Korean recipes are in asian_cuisines_extended.json
         case .turkish:
             return "middle_eastern_african_cuisines"
         case .persian:
